@@ -1,0 +1,142 @@
+#!/usr/bin/env python3
+"""
+UniFPGA top-level entry point.
+
+Resolve a configuration (config/configurations/<id>.yml), import the matching
+toolchain module (toolchains/<toolchain_id>/<toolchain_id>.py), and dispatch
+synthesis to it.
+
+Usage:
+    synthesize.py --top top.sv                          # use settings.yml
+    synthesize.py -c nexys4_ddr_default --top top.sv    # explicit configuration
+    synthesize.py -c <id> --top top.sv -o build/        # custom output dir
+"""
+
+import argparse
+import importlib
+import logging
+import os
+import shutil
+import sys
+import tempfile
+
+import config.init
+
+
+log = logging.getLogger(__name__)
+dir_path = os.path.dirname(os.path.realpath(__file__))
+
+
+def _build_parser():
+    p = argparse.ArgumentParser(description="UniFPGA Compile")
+    p.add_argument("-c", "--configuration",
+                   help="Configuration id (from config/configurations/<id>.yml). "
+                        "If omitted, settings.yml is consulted; if that's also absent, "
+                        "the user is prompted interactively.")
+    p.add_argument("-s", "--step", choices=["elaborate", "pnr", "full"], default="full",
+                   help="Compilation step (default: full)")
+    p.add_argument("--top", required=True,
+                   help="Path to the top module")
+    p.add_argument("-i", "--include", action="append", default=[],
+                   help="Include directory (repeatable)")
+    p.add_argument("-o", "--output",
+                   help="Output folder for board-specific and toolchain-specific artifacts. "
+                        "If omitted, a temp dir is created and deleted on exit unless "
+                        "--keep-temp-dir is set.")
+    p.add_argument("--keep-temp-dir", action="store_true",
+                   help="Keep the auto-created temp output dir instead of deleting it")
+    p.add_argument("--program", action="store_true",
+                   help="After successful synthesis, download the bitstream "
+                        "to the connected board (calls toolchain.program()).")
+    return p
+
+
+def main(argv=None):
+    logging.basicConfig(level=logging.INFO, format="%(levelname)s %(name)s: %(message)s")
+    args = _build_parser().parse_args(argv)
+
+    try:
+        resolved = config.init.read_or_init(args.configuration)
+    except config.init.ConfigError as exc:
+        log.error("%s", exc)
+        return 1
+    if resolved is None:
+        log.error("Could not resolve configuration: %s", args.configuration)
+        return 1
+
+    cfg        = resolved["configuration"]
+    board      = resolved["board"]
+    pinmap     = resolved["board_pinmap"]
+    toolchain  = resolved["toolchain"]
+    peripherals = resolved["peripherals"]
+
+    log.info("Configuration: %s  (board: %s, toolchain: %s, %d peripherals)",
+             cfg["id"], board["Id"], toolchain["Id"], len(peripherals))
+
+    if args.output is None:
+        output_folder = tempfile.mkdtemp(prefix="unifpga_{}_".format(cfg["id"]))
+        delete_output = not args.keep_temp_dir
+    else:
+        output_folder = args.output
+        delete_output = False
+        os.makedirs(output_folder, exist_ok=True)
+
+    # Validate the lab_top's declared capability requirements against the
+    # chosen configuration. Fail fast with a clear error if anything's missing.
+    from tools import lab_requirements
+    requirements = lab_requirements.parse(args.top)
+    if requirements:
+        errors = lab_requirements.check(resolved, requirements)
+        if errors:
+            log.error("lab_top capability requirements not met by configuration '%s':",
+                      cfg["id"])
+            for e in errors:
+                log.error("  - %s", e)
+            return 2
+        log.info("All %d lab_top capability requirements satisfied", len(requirements))
+
+    try:
+        # Generate the top-level Verilog wrapper from the configuration.
+        from tools import codegen
+        top_path = os.path.join(output_folder, "top.sv")
+        with open(top_path, "w") as f:
+            f.write(codegen.emit_top_sv(resolved))
+        log.info("Wrote generated top to %s", top_path)
+
+        module_name = "toolchains.{id}.{id}".format(id=toolchain["Id"])
+        toolchain_module = importlib.import_module(module_name)
+        rc = toolchain_module.synthesize(
+            dir=dir_path,
+            configuration=cfg,
+            board=board,
+            board_pinmap=pinmap,
+            toolchain=toolchain,
+            peripherals=peripherals,
+            top=args.top,
+            generated_top=top_path,
+            include=args.include,
+            output=output_folder,
+            step=args.step,
+        )
+        if rc:
+            return rc
+
+        if args.program:
+            log.info("Synthesis succeeded; programming the board.")
+            rc = toolchain_module.program(
+                board=board,
+                board_pinmap=pinmap,
+                toolchain=toolchain,
+                output=output_folder,
+            )
+            if rc:
+                return rc
+    finally:
+        if delete_output:
+            shutil.rmtree(output_folder, ignore_errors=True)
+
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

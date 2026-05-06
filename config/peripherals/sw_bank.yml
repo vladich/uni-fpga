@@ -1,0 +1,17 @@
+# A bank of N slide switches.
+
+Peripheral:
+  id: sw_bank
+  description: Bank of N slide switches (each switch is a single digital input)
+  parameters:
+    width:
+      type: int
+      description: Number of switches
+      required: true
+  signals:
+    - { name: sw, type: bus, width: $width, direction: input }
+  provides:
+    - capability: switches
+      params:
+        width: $width
+  driver: null   # pin.sw -> slice of capability.switches.sw

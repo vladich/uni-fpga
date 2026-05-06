@@ -1,0 +1,16 @@
+# A free-running single-ended clock input from an on-board oscillator.
+
+Peripheral:
+  id: clock_input
+  description: Single-ended clock input (free-running oscillator)
+  parameters:
+    frequency_mhz:
+      type: float
+      required: true
+  signals:
+    - { name: clk, type: scalar, direction: input }
+  provides:
+    - capability: clock
+      params:
+        frequency_mhz: $frequency_mhz
+  driver: null   # pin.clk -> capability.clock.clk (direct wire)

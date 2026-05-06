@@ -1,0 +1,15 @@
+# Bank of RGB LEDs. Each LED is driven independently as three single-bit
+# (or PWM-modulated) channels. Multiple RGB LEDs concatenate into one bank.
+
+Capability:
+  id: rgb_leds
+  description: Bank of RGB LEDs driven by user code.
+  parameters:
+    count:
+      type: int
+      description: Total number of RGB LEDs (sum across providers).
+  signals:
+    - { name: r, type: bus, width: $count, direction: user_to_hw }
+    - { name: g, type: bus, width: $count, direction: user_to_hw }
+    - { name: b, type: bus, width: $count, direction: user_to_hw }
+  aggregation: concat

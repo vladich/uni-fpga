@@ -1,0 +1,32 @@
+# Raster-scan pixel display. The provider drives the pixel-clock domain and
+# emits the current (x, y) raster position; the user computes RGB for that
+# coordinate combinationally (or through registered colour memories).
+# Color-channel widths are negotiated: the screen reports its native depth,
+# the user's lab_top picks compatible w_red/w_green/w_blue.
+
+Capability:
+  id: screen
+  description: Raster-scan pixel display addressable by (x, y) coordinates.
+  parameters:
+    width:
+      type: int
+      required: true
+      description: Active pixel width.
+    height:
+      type: int
+      required: true
+      description: Active pixel height.
+    color_depth:
+      type: enum
+      values: [444, 565, 888]
+      default: 444
+      description: Bits per RGB channel — 4-4-4 (12-bit), 5-6-5 (16-bit), 8-8-8 (24-bit).
+  signals:
+    - { name: x,     type: bus, direction: hw_to_user, comment: "X position; width = ceil(log2(screen_width))" }
+    - { name: y,     type: bus, direction: hw_to_user, comment: "Y position; width = ceil(log2(screen_height))" }
+    - { name: red,   type: bus, direction: user_to_hw, comment: "Width comes from color_depth's R channel" }
+    - { name: green, type: bus, direction: user_to_hw }
+    - { name: blue,  type: bus, direction: user_to_hw }
+  # Only one screen at a time. Boards with both LCD and HDMI list each as a
+  # separate configuration, never both attached.
+  aggregation: exclusive

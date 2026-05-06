@@ -1,0 +1,30 @@
+# INMP441 omnidirectional MEMS microphone with I²S interface. Frequently
+# attached via a Pmod header in basics-graphics-music labs.
+
+Peripheral:
+  id: inmp441_i2s_mic
+  description: INMP441 I²S MEMS microphone
+  signals:
+    - { name: sck, type: scalar, direction: output, comment: "I²S bit clock" }
+    - { name: ws,  type: scalar, direction: output, comment: "Word-select / LRCLK" }
+    - { name: sd,  type: scalar, direction: input,  comment: "Serial data from mic" }
+    - { name: lr,  type: scalar, direction: output, comment: "L/R channel select (tied to GND or VCC on module)" }
+  provides:
+    - capability: audio_in
+  driver:
+    module: inmp441_mic_i2s_receiver
+    file: peripherals/inmp441_mic_i2s_receiver.sv
+    parameters:
+      clk_mhz: context.clk_mhz
+    port_map:
+      clk:    context.clk
+      rst:    context.rst
+      lr:     pin.lr
+      ws:     pin.ws
+      sck:    pin.sck
+      sd:     pin.sd
+      value:  capability.audio_in.sample
+  # No `valid` strobe on this receiver — sample updates continuously.
+  # Codegen assigns capability.audio_in.valid = 1 outside the driver.
+  pin_assigns:
+    capability.audio_in.valid: const.1

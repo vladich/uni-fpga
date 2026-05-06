@@ -1,0 +1,43 @@
+# 800x480 RGB-parallel LCD module (e.g. ER-TFT070-5, common 7" panel).
+
+Peripheral:
+  id: lcd_800_480
+  description: 800x480 RGB-parallel LCD with HSYNC/VSYNC/DE/CLK and optional backlight
+  parameters:
+    color_depth:
+      type: int
+      default: 24
+  signals:
+    - { name: r,    type: bus, width: 8, direction: output }
+    - { name: g,    type: bus, width: 8, direction: output }
+    - { name: b,    type: bus, width: 8, direction: output }
+    - { name: hs,   type: scalar, direction: output }
+    - { name: vs,   type: scalar, direction: output }
+    - { name: de,   type: scalar, direction: output }
+    - { name: ck,   type: scalar, direction: output }
+    - { name: bl,   type: scalar, direction: output, optional: true }
+    - { name: init, type: scalar, direction: output, optional: true }
+  provides:
+    - capability: screen
+      params:
+        width: 800
+        height: 480
+        color_depth: 888
+  driver:
+    module: lcd_800_480
+    file: peripherals/lcd_800_480.sv
+    port_map:
+      PixelClk:  context.clk
+      nRST:      context.rst_n
+      LCD_DE:    pin.de
+      LCD_HSYNC: pin.hs
+      LCD_VSYNC: pin.vs
+      x:         capability.screen.x
+      y:         capability.screen.y
+  pin_assigns:
+    pin.r:    capability.screen.red
+    pin.g:    capability.screen.green
+    pin.b:    capability.screen.blue
+    pin.ck:   context.clk
+    pin.bl:   const.1
+    pin.init: const.1

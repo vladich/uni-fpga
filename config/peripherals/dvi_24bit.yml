@@ -1,0 +1,42 @@
+# 24-bit (8-8-8) DVI parallel output via the icebreaker DVI 24-bit Pmod.
+
+Peripheral:
+  id: dvi_24bit
+  description: 24-bit RGB DVI output (8 bits per channel) plus HSYNC/VSYNC/DE/CLK
+  signals:
+    - { name: r,  type: bus, width: 8, direction: output }
+    - { name: g,  type: bus, width: 8, direction: output }
+    - { name: b,  type: bus, width: 8, direction: output }
+    - { name: hs, type: scalar, direction: output }
+    - { name: vs, type: scalar, direction: output }
+    - { name: de, type: scalar, direction: output }
+    - { name: ck, type: scalar, direction: output }
+  provides:
+    - capability: screen
+      params:
+        width: 640
+        height: 480
+        color_depth: 888
+  driver:
+    module: vga
+    file: peripherals/vga.sv
+    parameters:
+      CLK_MHZ:   context.clk_mhz
+      PIXEL_MHZ: 25
+      H_DISPLAY: 640
+      V_DISPLAY: 480
+    port_map:
+      clk:        context.clk
+      rst:        context.rst
+      hsync:      pin.hs
+      vsync:      pin.vs
+      hpos:       capability.screen.x
+      vpos:       capability.screen.y
+      display_on:
+      pixel_clk:
+  pin_assigns:
+    pin.r:  capability.screen.red
+    pin.g:  capability.screen.green
+    pin.b:  capability.screen.blue
+    pin.ck: context.clk
+    pin.de: const.1

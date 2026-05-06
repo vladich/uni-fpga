@@ -1,0 +1,34 @@
+# 1BitSquared DVI 24b Pmod carrier — uses all 16 pins of two adjacent Pmod
+# headers. Each pin carries 2 logical bits per pixel clock via DDR (double
+# data rate) IO blocks; the rising-edge and falling-edge mappings are encoded
+# in the user's `board_specific_top.sv`. This peripheral exposes only the raw
+# 16 pins; bit-level semantics are not modeled at the schema level.
+
+Peripheral:
+  id: dvi_pmod_ddr_24b
+  description: 1BitSquared DVI 24b Pmod carrier (16 pins, DDR-encoded)
+  signals:
+    - { name: pmod_a, type: bus, width: 8, direction: output, comment: "Top header (P*A1..10) data" }
+    - { name: pmod_b, type: bus, width: 8, direction: output, comment: "Bottom header (P*B1..10) data" }
+  provides:
+    - capability: screen
+      params:
+        width: 640
+        height: 480
+        color_depth: 888
+  driver:
+    module: dvi_pmod_ddr_24b
+    file: peripherals/dvi_pmod_ddr_24b.sv
+    parameters:
+      clk_mhz:   context.clk_mhz
+      pixel_mhz: 25
+    port_map:
+      clk:     context.clk
+      rst:     context.rst
+      x:       capability.screen.x
+      y:       capability.screen.y
+      red_i:   capability.screen.red
+      green_i: capability.screen.green
+      blue_i:  capability.screen.blue
+      pmod_a:  pin.pmod_a
+      pmod_b:  pin.pmod_b

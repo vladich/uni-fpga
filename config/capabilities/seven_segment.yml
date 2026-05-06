@@ -1,0 +1,20 @@
+# Multi-digit 7-segment display with shared segment lines and a per-digit
+# anode-select bus. The user drives the segments synchronously and rotates
+# `digit` themselves (the codegen does NOT auto-multiplex — that's a lab
+# exercise). Boards with native per-digit wiring (Altera HEX[*]) get an
+# adapter inside the codegen-generated top that fans the shared segments out
+# to each digit when its anode is asserted.
+
+Capability:
+  id: seven_segment
+  description: 8-segment display with shared segment lines + digit-select bus.
+  parameters:
+    digits:
+      type: int
+      description: Number of digit positions exposed (sum across providers).
+  signals:
+    # 8 = 7 segments (a..g) + decimal point. Bit ordering matches
+    # basics-graphics-music's `abcdefgh` convention so labs port unchanged.
+    - { name: abcdefgh, type: bus, width: 8,        direction: user_to_hw }
+    - { name: digit,    type: bus, width: $digits,  direction: user_to_hw }
+  aggregation: concat   # multi-source concatenates digit positions

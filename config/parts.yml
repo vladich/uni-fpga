@@ -1,0 +1,153 @@
+Parts:
+- Producer: Altera (Intel)
+  Families:
+#  - Family: Agilex 3  # TBD
+  - Family: Agilex 5
+    Toolchains: [quartus_prime]
+  - Family: Agilex 7
+    Toolchains: [quartus_prime]
+  - Family: Agilex 9
+    Toolchains: [quartus_prime]
+  - Family: Arria
+    Toolchains: [quartus2]
+  - Family: Arria II
+    Toolchains: [quartus_prime]
+  - Family: Arria V
+    Toolchains: [quartus_prime]
+  - Family: Arria 10
+    Toolchains: [quartus_prime]
+  - Family: Cyclone
+    Toolchains: [quartus2]
+  - Family: Cyclone II
+    Toolchains: [quartus2]
+  - Family: Cyclone III
+    Toolchains: [quartus2]
+  - Family: Cyclone IV
+    Toolchains: [quartus_prime]
+  - Family: Cyclone V
+    Toolchains: [quartus_prime, nextpnr_mistral]
+  - Family: Cyclone V SoC
+    Toolchains: [quartus_prime, nextpnr_mistral]
+  - Family: Cyclone 10
+    Toolchains: [quartus_prime]
+  - Family: MAX 10
+    Toolchains: [quartus_prime]
+  - Family: MAX V CPLD
+    Toolchains: [quartus2]
+  - Family: MAX II CPLD
+    Toolchains: [quartus2]
+  - Family: Stratix
+    Toolchains: [quartus2]
+  - Family: Stratix II
+    Toolchains: [quartus2]
+  - Family: Stratix III
+    Toolchains: [quartus2]
+  - Family: Stratix IV
+    Toolchains: [quartus2]
+  - Family: Stratix V
+    Toolchains: [quartus_prime]
+  - Family: Stratix 10
+    Toolchains: [quartus_prime]
+
+- Producer: Xilinx (AMD)
+  Families:
+  - Family: Spartan 2
+    Toolchains: [ise]
+  - Family: Spartan 3
+    Toolchains: [ise]
+  - Family: Spartan 6
+    Toolchains: [ise]
+  - Family: Spartan 7
+    Toolchains: [vivado, nextpnr_openxc7]
+  - Family: Spartan Ultrascale+
+    Toolchains: [vivado]
+  - Family: Artix 7
+    Toolchains: [vivado, nextpnr_openxc7]
+  - Family: Artix Ultrascale+
+    Toolchains: [vivado]
+  - Family: Kintex 7
+    Toolchains: [vivado, nextpnr_openxc7]
+  - Family: Kintex Ultrascale
+    Toolchains: [vivado]
+  - Family: Kintex Ultrascale+
+    Toolchains: [vivado]
+  - Family: Virtex 4
+    Toolchains: [ise]
+  - Family: Virtex 5
+    Toolchains: [ise]
+  - Family: Virtex 6
+    Toolchains: [ise]
+  - Family: Virtex 7
+    Toolchains: [vivado]
+  - Family: Virtex Ultrascale
+    Toolchains: [vivado]
+  - Family: Virtex Ultrascale+
+    Toolchains: [vivado]
+  - Family: Zynq 7000
+    Toolchains: [vivado, nextpnr_openxc7]
+  - Family: Zynq Ultrascale+
+    Toolchains: [vivado]
+  - Family: Versal
+    Toolchains: [vivado]
+
+- Producer: Microchip (Actel)
+  Families:
+  - Family: PolarFire
+  - Family: PolarFire SoC
+  - Family: IGLOO
+  - Family: IGLOO2
+  - Family: SmartFusion
+  - Family: SmartFusion2
+  - Family: ProASIC3
+
+- Producer: Lattice
+  Families:
+  - Family: Avant
+  - Family: Certus-NX
+    Toolchains: [nextpnr_oxide]
+  - Family: CertusPro-NX
+  - Family: ICE40
+    Toolchains: [nextpnr_icestorm]
+  - Family: ECP5
+    Toolchains: [nextpnr_trellis, lattice_diamond]
+  - Family: MachXO2
+    Toolchains: [nextpnr_trellis, lattice_diamond]
+  - Family: MachXO3
+    Toolchains: [lattice_diamond]
+
+- Producer: Efinix
+  Families:
+  - Family: Trion
+    Toolchains: [efinity]
+  - Family: Titanium
+    Toolchains: [efinity]
+
+- Producer: Gowin
+  Families:
+  - Family: LittleBee/GW1N
+    Toolchains: [gowin_eda, nextpnr_apicula]
+  - Family: LittleBee/GW1NR
+    Toolchains: [gowin_eda, nextpnr_apicula]
+  - Family: LittleBee/GW1NSR
+    Toolchains: [gowin_eda, nextpnr_apicula]
+  - Family: Arora/GW2A
+    Toolchains: [gowin_eda, nextpnr_apicula]
+  - Family: Arora/GW2AR
+    Toolchains: [gowin_eda, nextpnr_apicula]
+  - Family: AroraV/GW5A
+    Toolchains: [gowin_eda]
+  - Family: AroraV/GW5AST
+    Toolchains: [gowin_eda]
+  - Family: AroraV/GW5AT
+    Toolchains: [gowin_eda]
+
+- Producer: Pangomicro
+  Families:
+  - Family: Compa CPLD
+  - Family: Logos-2
+  - Family: Kosmo-2
+  - Family: Titan-2
+
+- Producer: Cologne Chip
+  Families:
+  - Family: GateMate

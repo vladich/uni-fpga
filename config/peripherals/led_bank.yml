@@ -1,0 +1,20 @@
+# A bank of N discrete LEDs driven by single-ended outputs.
+
+Peripheral:
+  id: led_bank
+  description: Bank of N discrete LEDs (each LED is a single digital output)
+  parameters:
+    width:
+      type: int
+      required: true
+    active:
+      type: enum
+      values: [high, low]
+      default: high
+  signals:
+    - { name: led, type: bus, width: $width, direction: output }
+  provides:
+    - capability: leds
+      params:
+        width: $width
+  driver: null   # codegen inverts the slice when active=low

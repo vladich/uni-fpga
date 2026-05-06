@@ -1,0 +1,16 @@
+# Bank of N digital switches. Multiple peripherals may contribute (e.g.
+# on-board sw_bank + a TM1638 module's keys); the codegen concatenates their
+# bits into a single `sw[w_sw-1:0]` bus. Polarity is normalized to active-high
+# at the codegen layer.
+
+Capability:
+  id: switches
+  description: Bank of digital switches readable by user code.
+  parameters:
+    width:
+      type: int
+      description: Total number of switches exposed to the user.
+                   Computed at codegen time from the sum of all providers.
+  signals:
+    - { name: sw, type: bus, width: $width, direction: hw_to_user }
+  aggregation: concat

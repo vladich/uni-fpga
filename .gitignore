@@ -1,0 +1,69 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.venv/
+venv/
+.tox/
+.pytest_cache/
+
+# Local user configuration (board/toolchain choice)
+settings.yml
+
+# Toolchain output / intermediate artifacts
+unifpga_*/
+*.bit
+*.bin
+*.bgn
+*.bld
+*.csv
+*.drc
+*.jou
+*.log
+*.lst
+*.mrp
+*.ncd
+*.ngc
+*.ngd
+*.pad
+*.par
+*.pcf
+*.qor
+*.rpt
+*.svf
+*.twr
+*.twx
+*.unroutes
+*.ut
+*.xpi
+*.xrpt
+
+# Vivado / Xilinx
+.Xil/
+gui_prj/
+*.runs/
+*.sim/
+*.cache/
+*.hw/
+*.ip_user_files/
+*.srcs/
+*.gen/
+post_*.rpt
+post_*.dcp
+*.bft.*
+*_impl_netlist.v
+fpga_project.bit
+clock_util.rpt
+bft_impl.xdc
+
+# Quartus
+db/
+incremental_db/
+output_files/
+*.qws
+
+# IDE
+.idea/workspace.xml
+.vscode/
+*.swp

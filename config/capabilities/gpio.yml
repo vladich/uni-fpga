@@ -1,0 +1,15 @@
+# Generic bidirectional I/O bank. Pins from any number of unbound headers
+# (Pmods, GPIO headers, Arduino shields, etc.) are concatenated into a single
+# `gpio[w_gpio-1:0]` bus exposed to user code. Direction is determined per-bit
+# by the user's logic.
+
+Capability:
+  id: gpio
+  description: Generic bidirectional I/O for user-defined uses.
+  parameters:
+    width:
+      type: int
+      description: Total GPIO width (sum across providers).
+  signals:
+    - { name: io, type: bus, width: $width, direction: inout }
+  aggregation: concat

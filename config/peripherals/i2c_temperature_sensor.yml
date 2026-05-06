@@ -1,0 +1,13 @@
+# I²C temperature sensor with interrupt and critical-temp lines (e.g. ADT7420
+# on Nexys 4 DDR).
+
+Peripheral:
+  id: i2c_temperature_sensor
+  description: I²C temperature sensor with INT and CT outputs (e.g. Analog Devices ADT7420)
+  signals:
+    - { name: scl, type: scalar, direction: output }
+    - { name: sda, type: scalar, direction: inout }
+    - { name: int, type: scalar, direction: input, comment: "Interrupt (over/under threshold)" }
+    - { name: ct,  type: scalar, direction: input, comment: "Critical-temperature output" }
+  provides: []
+  driver: null

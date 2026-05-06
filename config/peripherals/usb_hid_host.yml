@@ -1,0 +1,11 @@
+# USB-HID host bridge (PIC microcontroller on Nexys 4 DDR / Basys 3 / Nexys A7
+# that emulates a PS/2 keyboard or mouse over a 2-wire interface to the FPGA).
+
+Peripheral:
+  id: usb_hid_host
+  description: PIC-based USB-HID-to-PS/2 bridge (PS/2-style 2-wire interface)
+  signals:
+    - { name: clk,  type: scalar, direction: inout, comment: "PS/2 clock (open-drain)" }
+    - { name: data, type: scalar, direction: inout, comment: "PS/2 data (open-drain)" }
+  provides: []
+  driver: null

@@ -1,0 +1,14 @@
+# SPI-bus accelerometer with two interrupt lines (e.g. ADXL362 on Nexys 4 DDR).
+
+Peripheral:
+  id: spi_accelerometer
+  description: SPI accelerometer with 2 interrupt lines (e.g. Analog Devices ADXL362)
+  signals:
+    - { name: miso, type: scalar, direction: input }
+    - { name: mosi, type: scalar, direction: output }
+    - { name: sclk, type: scalar, direction: output }
+    - { name: csn,  type: scalar, direction: output, comment: "Chip-select, active low" }
+    - { name: int1, type: scalar, direction: input }
+    - { name: int2, type: scalar, direction: input }
+  provides: []
+  driver: null

@@ -1,0 +1,26 @@
+# Digilent PMOD MIC3 — Knowles SPU0414HR5H electret mic + ADCS7476 12-bit ADC.
+# Sampled by the FPGA over a 4-wire SPI interface.
+
+Peripheral:
+  id: pmod_mic3
+  description: Digilent PMOD MIC3 (mic + 12-bit SPI ADC)
+  signals:
+    - { name: cs,   type: scalar, direction: output, comment: "ADC chip-select, active low" }
+    - { name: sclk, type: scalar, direction: output, comment: "SPI clock" }
+    - { name: miso, type: scalar, direction: input,  comment: "ADC data out (12-bit serial)" }
+  provides:
+    - capability: audio_in
+  driver:
+    module: digilent_pmod_mic3_spi_receiver
+    file: peripherals/digilent_pmod_mic3_spi_receiver.sv
+    parameters:
+      clk_mhz: context.clk_mhz
+    port_map:
+      clk:    context.clk
+      rst:    context.rst
+      cs:     pin.cs
+      sck:    pin.sclk     # the SV port is named `sck`; the bank pin is `sclk`
+      sdo:    pin.miso
+      value:  capability.audio_in.sample   # 12-bit; codegen left-justifies into 24
+  pin_assigns:
+    capability.audio_in.valid: const.1

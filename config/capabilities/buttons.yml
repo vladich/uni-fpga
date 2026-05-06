@@ -1,0 +1,14 @@
+# Bank of momentary push-buttons. Like switches, multiple peripherals may
+# contribute and the codegen concatenates. Polarity is normalized to
+# active-high (pressed = 1) at the codegen layer.
+
+Capability:
+  id: buttons
+  description: Bank of momentary push-buttons readable by user code.
+  parameters:
+    width:
+      type: int
+      description: Total number of buttons exposed (sum across providers).
+  signals:
+    - { name: btn, type: bus, width: $width, direction: hw_to_user }
+  aggregation: concat

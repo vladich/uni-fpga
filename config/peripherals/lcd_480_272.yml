@@ -1,0 +1,43 @@
+# 480x272 RGB-parallel LCD module (e.g. ER-TFT043-3, common 4.3" panel).
+
+Peripheral:
+  id: lcd_480_272
+  description: 480x272 RGB-parallel LCD with HSYNC/VSYNC/DE/CLK and optional backlight
+  parameters:
+    color_depth:
+      type: int
+      default: 16    # 5-6-5 RGB
+  signals:
+    - { name: r,    type: bus, width: 5, direction: output }
+    - { name: g,    type: bus, width: 6, direction: output }
+    - { name: b,    type: bus, width: 5, direction: output }
+    - { name: hs,   type: scalar, direction: output }
+    - { name: vs,   type: scalar, direction: output }
+    - { name: de,   type: scalar, direction: output }
+    - { name: ck,   type: scalar, direction: output }
+    - { name: bl,   type: scalar, direction: output, optional: true, comment: "Backlight enable" }
+    - { name: init, type: scalar, direction: output, optional: true, comment: "Init / display enable" }
+  provides:
+    - capability: screen
+      params:
+        width: 480
+        height: 272
+        color_depth: 565
+  driver:
+    module: lcd_480_272
+    file: peripherals/lcd_480_272.sv
+    port_map:
+      PixelClk:  context.clk
+      nRST:      context.rst_n   # active-low reset
+      LCD_DE:    pin.de
+      LCD_HSYNC: pin.hs
+      LCD_VSYNC: pin.vs
+      x:         capability.screen.x
+      y:         capability.screen.y
+  pin_assigns:
+    pin.r:    capability.screen.red
+    pin.g:    capability.screen.green
+    pin.b:    capability.screen.blue
+    pin.ck:   context.clk    # pixel clock — board may need a PLL upstream
+    pin.bl:   const.1
+    pin.init: const.1

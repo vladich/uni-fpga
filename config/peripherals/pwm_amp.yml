@@ -1,0 +1,23 @@
+# Mono PWM audio output to an on-board class-D amplifier with shutdown control.
+
+Peripheral:
+  id: pwm_amp
+  description: Mono PWM audio output to on-board class-D amplifier
+  signals:
+    - { name: pwm, type: scalar, direction: output, comment: "PWM-modulated audio" }
+    - { name: sd,  type: scalar, direction: output, comment: "Shutdown control (active low)" }
+  provides:
+    - capability: audio_out
+  driver:
+    module: audio_pwm
+    file: peripherals/audio_pwm.sv
+    parameters:
+      data_w: 16
+    port_map:
+      clk_i:  context.clk
+      rst_i:  context.rst
+      data_i: capability.audio_out.sample
+      pwm_o:  pin.pwm
+  # The amp's shutdown line isn't a driver port — codegen assigns it directly.
+  pin_assigns:
+    pin.sd: const.1   # 1 = amp enabled (active-low SD)

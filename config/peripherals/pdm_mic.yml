@@ -1,0 +1,25 @@
+# PDM (Pulse Density Modulation) microphone. The host drives a clock and reads
+# a 1-bit data stream. L/R selection picks left or right channel on stereo modules.
+
+Peripheral:
+  id: pdm_mic
+  description: PDM microphone (1-bit data stream)
+  signals:
+    - { name: clk,   type: scalar, direction: output, comment: "Sample clock to mic" }
+    - { name: data,  type: scalar, direction: input,  comment: "PDM data stream from mic" }
+    - { name: lrsel, type: scalar, direction: output, comment: "Left/right channel select (optional, may be tied off)" }
+  provides:
+    - capability: audio_in
+  driver:
+    module: pdm_mic_decoder
+    file: peripherals/pdm_mic_decoder.sv
+    parameters:
+      clk_mhz: context.clk_mhz
+    port_map:
+      clk:        context.clk
+      rst:        context.rst
+      pdm_clk:    pin.clk
+      pdm_data:   pin.data
+      pdm_lrsel:  pin.lrsel
+      sample_o:   capability.audio_in.sample
+      valid_o:    capability.audio_in.valid

@@ -1,0 +1,40 @@
+# 12-bit VGA (4 bits per channel) plus HSYNC/VSYNC. The standard Digilent VGA carrier.
+
+Peripheral:
+  id: vga_4bit
+  description: 12-bit VGA (4-4-4 R/G/B) with HSYNC/VSYNC
+  signals:
+    - { name: r,  type: bus, width: 4, direction: output }
+    - { name: g,  type: bus, width: 4, direction: output }
+    - { name: b,  type: bus, width: 4, direction: output }
+    - { name: hs, type: scalar, direction: output }
+    - { name: vs, type: scalar, direction: output }
+  provides:
+    - capability: screen
+      params:
+        width: 640
+        height: 480
+        color_depth: 444
+  driver:
+    module: vga
+    file: peripherals/vga.sv
+    parameters:
+      CLK_MHZ:    context.clk_mhz
+      PIXEL_MHZ:  25
+      H_DISPLAY:  640
+      V_DISPLAY:  480
+    port_map:
+      clk:        context.clk
+      rst:        context.rst
+      hsync:      pin.hs
+      vsync:      pin.vs
+      hpos:       capability.screen.x   # raster position drives capability.x
+      vpos:       capability.screen.y
+      display_on: # codegen wires this to a local wire used by pin_assigns
+      pixel_clk:  # also unused by pin_assigns (could be exposed if board needs it)
+  # The `vga` module doesn't expose RGB ports — user's colour goes directly
+  # to pins, gated by display_on.
+  pin_assigns:
+    pin.r: capability.screen.red
+    pin.g: capability.screen.green
+    pin.b: capability.screen.blue

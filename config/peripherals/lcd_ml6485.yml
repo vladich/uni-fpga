@@ -1,0 +1,31 @@
+# ML6485 LCD controller — serial-style interface, used on a few Tang Nano variants.
+
+Peripheral:
+  id: lcd_ml6485
+  description: ML6485-controlled small serial LCD (4-wire SPI plus reset and command/data select)
+  signals:
+    - { name: data,    type: scalar, direction: output }
+    - { name: clk,     type: scalar, direction: output }
+    - { name: resetn,  type: scalar, direction: output }
+    - { name: cs,      type: scalar, direction: output }
+    - { name: rs,      type: scalar, direction: output, comment: "Register-select / data-command" }
+  provides:
+    - capability: screen
+      params:
+        width: 480
+        height: 272
+        color_depth: 565
+  driver:
+    module: lcd_480_272_ml6485
+    file: peripherals/lcd_480_272_ml6485.sv
+    port_map:
+      PixelClk:  context.clk
+      nRST:      context.rst_n
+      LCD_DE:    pin.cs       # ML6485 doesn't use HS/VS/DE — repurpose where suitable
+      LCD_HSYNC: pin.rs
+      LCD_VSYNC: pin.clk
+      x:         capability.screen.x
+      y:         capability.screen.y
+  pin_assigns:
+    pin.data:   capability.screen.red    # serial data — actual encoding done in driver
+    pin.resetn: context.rst_n

@@ -1,0 +1,15 @@
+# Bank of single-colour LEDs driven by user code. Concatenation across
+# providers means a board with 16 on-board LEDs + a TM1638 module's 8 LEDs
+# presents 24 LEDs to the user. Polarity is normalized to active-high at
+# the codegen layer.
+
+Capability:
+  id: leds
+  description: Bank of LEDs driven by user code.
+  parameters:
+    width:
+      type: int
+      description: Total number of LEDs exposed (sum across providers).
+  signals:
+    - { name: led, type: bus, width: $width, direction: user_to_hw }
+  aggregation: concat

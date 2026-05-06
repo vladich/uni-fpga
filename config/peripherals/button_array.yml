@@ -1,0 +1,20 @@
+# A bank of N momentary push-buttons.
+
+Peripheral:
+  id: button_array
+  description: Array of N momentary push-buttons
+  parameters:
+    width:
+      type: int
+      required: true
+    active:
+      type: enum
+      values: [high, low]
+      default: high
+  signals:
+    - { name: btn, type: bus, width: $width, direction: input }
+  provides:
+    - capability: buttons
+      params:
+        width: $width
+  driver: null   # codegen inverts when active=low

@@ -1,0 +1,95 @@
+---
+# List of all supported toolchains
+
+
+Toolchains:
+# 
+#  ----------------- Proprietary toolchains ------------------
+#
+  - Id: vivado    # Xilinx 7/Ultrascale(+)/Versal
+    Name: Vivado
+    Version: "2023.2"
+    InstallDir: "/home/vladimir/Xilinx/Vivado/2023.2/"
+
+  - Id: ise       # older Xilinx parts
+    Name: XilinxISE
+    Version: 
+    InstallDir:
+
+  - Id: quartus_prime   # newer Altera parts
+    Name: QuartusPrime
+    Version: "23.1std"
+    InstallDir: "/home/vladimir/intelFPGA_lite/23.1std/quartus/"
+
+  - Id: quartus2    # older Altera parts
+    Name: Quartus2
+    Version: 
+    InstallDir:
+
+  - Id: libero_soc  # Microchip parts 
+    Name: LiberoSoC
+    Version: 
+    InstallDir:
+
+  - Id: libero_ide  # smaller / older Microchip parts
+    Name: LiberoIDE
+    Version: 
+    InstallDir:
+
+  - Id: efinity     # Efinix parts
+    Name: Efinity
+    Version: 
+    InstallDir:
+
+  - Id: gowin_eda   # Gowin parts
+    Name: GowinEDA
+    Version: "1.9.11.03.Educational"
+    InstallDir: "/home/vladimir/Gowin/1.9.11.03.Educational/"
+
+  - Id: pango_ds    # Pango parts
+    Name: PangoDS
+    Version: 
+    InstallDir:
+
+  - Id: lattice_radiant # Lattice Radiant
+    Name: LatticeRadiant
+    Version:
+    InstallDir:
+
+  - Id: lattice_diamond # Lattice Diamond
+    Name: LatticeDiamond
+    Version:
+    InstallDir:
+
+# 
+#  ------ Open-source toolchains based on yosys/nextpnr -------
+#
+  - Id: nextpnr_openxc7  # yosys/nextpnr: Xilinx Artix7, Spartan 7, Kintex 7, Zynq 7000
+    Name: OpenXC7
+    Version: 
+    InstallDir:
+
+  - Id: nextpnr_icestorm # yosys/nextpnr: Lattice ICE40
+    Name: IceStorm
+    Version:
+    InstallDir:
+
+  - Id: nextpnr_trellis  # yosys/nextpnr: Lattice ECP5, MachXO2 CPLD
+    Name: Trellis
+    Version:
+    InstallDir:
+
+  - Id: nextpnr_oxide    # yosys/nextpnr: Lattice Nexus
+    Name: Oxide
+    Version:
+    InstallDir:
+
+  - Id: nextpnr_mistral  # yosys/nextpnr: Altera Cyclone V
+    Name: Mistral
+    Version:
+    InstallDir:
+
+  - Id: nextpnr_apicula  # yosys/nextpnr: Gowin LittleBee
+    Name: Apicula
+    Version:
+    InstallDir:

@@ -1,0 +1,38 @@
+# HDMI / DVI output via TMDS differential pairs (3 data + 1 clock).
+# Used on Tang Nano / icebreaker DVI Pmod / etc. The differential pair is
+# represented as two pins (positive, negative).
+
+Peripheral:
+  id: hdmi_tmds
+  description: HDMI / DVI digital video output (3 TMDS data pairs + 1 TMDS clock pair)
+  signals:
+    - { name: clk_p, type: scalar, direction: output }
+    - { name: clk_n, type: scalar, direction: output }
+    - { name: d_p,   type: bus, width: 3, direction: output, comment: "Channels 0/1/2 = B/G/R" }
+    - { name: d_n,   type: bus, width: 3, direction: output }
+  provides:
+    - capability: screen
+      params:
+        width: 640
+        height: 480
+        color_depth: 888
+  driver:
+    module: dvi_top
+    file: peripherals/dvi.sv
+    port_map:
+      pixel_clk_i: context.clk        # codegen must supply matching clock domain
+      serial_clk_i: context.clk       # 5x or 10x pixel — TODO: PLL in codegen
+      rst_i:       context.rst
+      red_i:       capability.screen.red
+      green_i:     capability.screen.green
+      blue_i:      capability.screen.blue
+      x_o:         capability.screen.x
+      y_o:         capability.screen.y
+      red_serial_o:   pin.d_p[0]
+      green_serial_o: pin.d_p[1]
+      blue_serial_o:  pin.d_p[2]
+  # TMDS clock pair and the negative data lines are driven directly:
+  pin_assigns:
+    pin.clk_p:  context.clk
+    pin.clk_n: ~context.clk
+    pin.d_n:   ~pin.d_p   # diff pair complement

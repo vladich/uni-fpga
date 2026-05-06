@@ -1,0 +1,15 @@
+# 4-wire UART with hardware flow control (RTS/CTS).
+
+Peripheral:
+  id: uart_4wire
+  description: 4-wire UART (TX, RX, CTS, RTS)
+  signals:
+    - { name: tx,  type: scalar, direction: output, comment: "Transmit (host to peer)" }
+    - { name: rx,  type: scalar, direction: input,  comment: "Receive (peer to host)" }
+    - { name: cts, type: scalar, direction: input,  comment: "Clear-to-send (peer to host)" }
+    - { name: rts, type: scalar, direction: output, comment: "Request-to-send (host to peer)" }
+  provides:
+    - capability: serial_console
+  # No flow control at the capability level — codegen drives RTS=1 and ignores
+  # CTS so the user-visible interface stays a 2-wire UART.
+  driver: null

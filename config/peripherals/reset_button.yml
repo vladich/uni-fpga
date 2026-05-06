@@ -1,0 +1,16 @@
+# Dedicated reset push-button. Same as a button_array of width 1, but kept
+# distinct for clarity in board defaults.
+
+Peripheral:
+  id: reset_button
+  description: Dedicated reset push-button
+  parameters:
+    active:
+      type: enum
+      values: [high, low]
+      default: low
+  signals:
+    - { name: rst, type: scalar, direction: input }
+  provides:
+    - capability: reset
+  driver: null   # codegen inverts when active=low; OR-aggregates if other reset providers exist

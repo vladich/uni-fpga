@@ -1,0 +1,17 @@
+# 2-wire async serial console (UART). The user drives `tx` and reads `rx` at
+# the line-bit rate; framing is left to the user (or to a higher-level macro).
+# Hardware flow control (CTS/RTS) is not part of the capability; providers that
+# only have 4-wire UARTs tie those off.
+
+Capability:
+  id: serial_console
+  description: 2-wire UART for user-defined serial protocols.
+  parameters:
+    baud:
+      type: int
+      default: 115200
+      description: Suggested baud rate (informational; the user implements framing)
+  signals:
+    - { name: tx, type: scalar, direction: user_to_hw }
+    - { name: rx, type: scalar, direction: hw_to_user }
+  aggregation: exclusive

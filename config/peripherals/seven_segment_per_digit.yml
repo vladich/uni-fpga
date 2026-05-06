@@ -1,0 +1,35 @@
+# Per-digit 7-segment display: each digit has its own 7+1 segment lines wired
+# directly. No multiplexing required. Used on Terasic DE0/DE1/DE2/DE10-Lite etc.
+
+Peripheral:
+  id: seven_segment_per_digit
+  description: N-digit 7-segment display with independent per-digit segment lines (no multiplexing)
+  parameters:
+    digits:
+      type: int
+      required: true
+    active:
+      type: enum
+      values: [high, low]
+      default: low
+  signals:
+    - { name: hex, type: bus_of_bus, outer_width: $digits, inner_width: 8,
+        direction: output,
+        comment: "hex[d][s]: digit d, segment s (0..6 = a..g, 7 = decimal point)" }
+  provides:
+    - capability: seven_segment
+      params:
+        digits: $digits
+  # Native per-digit hardware needs a fan-out adapter that broadcasts the
+  # currently-selected digit's abcdefgh value onto all hex[d] outputs (with
+  # the anode pattern routed elsewhere on the FPGA). The capability's
+  # shared-segments + digit-select model is preserved at the user level.
+  driver:
+    module: seven_seg_shared_to_per_digit
+    file: peripherals/seven_seg_shared_to_per_digit.sv
+    parameters:
+      digits: $digits
+    port_map:
+      abcdefgh: capability.seven_segment.abcdefgh
+      digit:    capability.seven_segment.digit
+      hex_o:    pin.hex

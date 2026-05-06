@@ -1,0 +1,11 @@
+# Mono audio sample stream from a microphone. The provider's driver decodes
+# whatever physical-layer signaling the mic uses (PDM, I²S, SPI ADC) into
+# a uniform 24-bit signed sample stream with a `valid` strobe.
+
+Capability:
+  id: audio_in
+  description: 24-bit signed mono audio sample stream.
+  signals:
+    - { name: sample, type: bus,    width: 24, direction: hw_to_user }
+    - { name: valid,  type: scalar,            direction: hw_to_user, comment: "Pulses high for one cycle when `sample` is fresh" }
+  aggregation: exclusive

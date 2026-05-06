@@ -1,0 +1,11 @@
+# Mono audio sample sink. The user produces a 16-bit signed sample stream
+# (free-running, one new sample per `sample_clk` rising edge); the provider's
+# driver encodes it for the actual amplifier (PWM, I²S, hub75-style sigma-delta,
+# etc.).
+
+Capability:
+  id: audio_out
+  description: 16-bit signed mono audio sample sink.
+  signals:
+    - { name: sample, type: bus, width: 16, direction: user_to_hw }
+  aggregation: exclusive

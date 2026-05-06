@@ -1,0 +1,18 @@
+# A free-running synchronous clock visible to user code as `clk`.
+#
+# Direction in `signals`:
+#   hw_to_user - this is an input on the user's lab_top
+#   user_to_hw - this is an output on the user's lab_top
+#   inout      - bidirectional (only used for gpio)
+
+Capability:
+  id: clock
+  description: Free-running synchronous clock for user logic.
+  parameters:
+    frequency_mhz:
+      type: float
+      required: true
+      description: Frequency advertised to user code via the `clk_mhz` parameter.
+  signals:
+    - { name: clk, type: scalar, direction: hw_to_user }
+  aggregation: exclusive

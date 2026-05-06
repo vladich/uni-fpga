@@ -1,0 +1,19 @@
+# A single RGB LED with three independent intensity channels.
+
+Peripheral:
+  id: rgb_led
+  description: Single RGB LED — three independent intensity channels (PWM-driven externally)
+  parameters:
+    active:
+      type: enum
+      values: [high, low]
+      default: high
+  signals:
+    - { name: r, type: scalar, direction: output }
+    - { name: g, type: scalar, direction: output }
+    - { name: b, type: scalar, direction: output }
+  provides:
+    - capability: rgb_leds
+      params:
+        count: 1
+  driver: null   # pins map to slice [n] of the aggregated rgb_leds bus
