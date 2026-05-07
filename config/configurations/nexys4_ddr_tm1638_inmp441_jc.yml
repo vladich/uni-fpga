@@ -1,94 +1,86 @@
-# Nexys 4 DDR with a TM1638 LED&KEY module and an INMP441 I²S mic on Pmod JC.
-# Self-contained — every peripheral binding is listed explicitly, no inheritance
-# from the default configuration.
-
 Configuration:
   id: nexys4_ddr_tm1638_inmp441_jc
   description: Nexys 4 DDR + TM1638 module + INMP441 mic, both on Pmod JC
   board: nexys4_ddr
   toolchain: vivado
-
   attach:
-    # ---- On-board peripherals (same set as nexys4_ddr_default) ----
-    - peripheral: clock_input
-      params: { frequency_mhz: 100 }
-      bind: { clk: clk100mhz }
-
-    - peripheral: reset_button
-      bind: { rst: cpu_resetn }
-
-    - peripheral: sw_bank
-      params: { width: 16 }
-      bind: { sw: onboard_switches }
-
-    - peripheral: led_bank
-      params: { width: 16 }
-      bind: { led: onboard_leds }
-
-    - peripheral: button_array
-      params: { width: 5 }
-      bind: { btn: onboard_buttons }
-
-    - peripheral: rgb_led
-      bind:
-        r: onboard_rgb_led_16.r
-        g: onboard_rgb_led_16.g
-        b: onboard_rgb_led_16.b
-
-    - peripheral: rgb_led
-      bind:
-        r: onboard_rgb_led_17.r
-        g: onboard_rgb_led_17.g
-        b: onboard_rgb_led_17.b
-
-    - peripheral: seven_segment_8digit_shared
-      bind:
-        segments: [onboard_7seg.ca, onboard_7seg.cb, onboard_7seg.cc, onboard_7seg.cd, onboard_7seg.ce, onboard_7seg.cf, onboard_7seg.cg]
-        dp:       onboard_7seg.dp
-        digits:   onboard_7seg.anodes
-
-    - peripheral: vga_4bit
-      bind:
-        r:  onboard_vga.r
-        g:  onboard_vga.g
-        b:  onboard_vga.b
-        hs: onboard_vga.hs
-        vs: onboard_vga.vs
-
-    - peripheral: pdm_mic
-      bind:
-        clk:   onboard_mic.clk
-        data:  onboard_mic.data
-        lrsel: onboard_mic.lrsel
-
-    - peripheral: pwm_amp
-      bind:
-        pwm: onboard_pwm_amp.pwm
-        sd:  onboard_pwm_amp.sd
-
-    - peripheral: uart_2wire
-      bind:
-        tx: onboard_uart.tx
-        rx: onboard_uart.rx
-
-    # Pmods JA, JB, JD remain unbound (could carry other peripherals).
-    - peripheral: pmod_12pin
-      bind: { io: pmod_ja }
-    - peripheral: pmod_12pin
-      bind: { io: pmod_jb }
-    - peripheral: pmod_12pin
-      bind: { io: pmod_jd }
-
-    # ---- External peripherals on Pmod JC ----
-    - peripheral: tm1638_led_key
-      bind:
-        stb: pmod_jc[0]
-        clk: pmod_jc[1]
-        dio: pmod_jc[2]
-
-    - peripheral: inmp441_i2s_mic
-      bind:
-        sck: pmod_jc[3]
-        ws:  pmod_jc[4]
-        sd:  pmod_jc[5]
-        lr:  pmod_jc[6]
+  - peripheral: clock_input
+    params:
+      frequency_mhz: 100
+    bind:
+      clk: clk100mhz
+  - peripheral: reset_button
+    bind:
+      rst: cpu_resetn
+  - peripheral: sw_bank
+    params:
+      width: 16
+    bind:
+      sw: onboard_switches
+  - peripheral: led_bank
+    params:
+      width: 16
+    bind:
+      led: onboard_leds
+  - peripheral: button_array
+    params:
+      width: 5
+    bind:
+      btn: onboard_buttons
+  - peripheral: rgb_led
+    bind:
+      r: onboard_rgb_led_16.r
+      g: onboard_rgb_led_16.g
+      b: onboard_rgb_led_16.b
+  - peripheral: rgb_led
+    bind:
+      r: onboard_rgb_led_17.r
+      g: onboard_rgb_led_17.g
+      b: onboard_rgb_led_17.b
+  - peripheral: seven_segment_8digit_shared
+    bind:
+      segments:
+      - onboard_7seg.ca
+      - onboard_7seg.cb
+      - onboard_7seg.cc
+      - onboard_7seg.cd
+      - onboard_7seg.ce
+      - onboard_7seg.cf
+      - onboard_7seg.cg
+      dp: onboard_7seg.dp
+      digits: onboard_7seg.anodes
+  - peripheral: vga_4bit
+    bind:
+      r: onboard_vga.r
+      g: onboard_vga.g
+      b: onboard_vga.b
+      hs: onboard_vga.hs
+      vs: onboard_vga.vs
+  - peripheral: pwm_amp
+    bind:
+      pwm: onboard_pwm_amp.pwm
+      sd: onboard_pwm_amp.sd
+  - peripheral: uart_2wire
+    bind:
+      tx: onboard_uart.tx
+      rx: onboard_uart.rx
+  - peripheral: pmod_12pin
+    bind:
+      io: pmod_ja
+  - peripheral: pmod_12pin
+    bind:
+      io: pmod_jb
+  - peripheral: pmod_12pin
+    bind:
+      io: pmod_jd
+  - peripheral: tm1638_led_key
+    bind:
+      stb: pmod_jc[0]
+      clk: pmod_jc[1]
+      dio: pmod_jc[2]
+  - peripheral: inmp441_i2s_mic
+    bind:
+      sck: pmod_jc[3]
+      ws: pmod_jc[4]
+      sd: pmod_jc[5]
+      lr: pmod_jc[6]

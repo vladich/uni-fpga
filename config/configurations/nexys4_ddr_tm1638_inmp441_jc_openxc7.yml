@@ -1,5 +1,4 @@
-# nexys4_ddr_tm1638_inmp441_jc_openxc7 retargeted to nextpnr_openxc7 (open-source flow).
-# Mirrors nexys4_ddr_tm1638_inmp441_jc — only the toolchain differs.
+# nexys4_ddr_tm1638_inmp441_jc_openxc7 retargeted to nextpnr_openxc7.
 
 Configuration:
   id: nexys4_ddr_tm1638_inmp441_jc_openxc7
@@ -59,11 +58,6 @@ Configuration:
       b: onboard_vga.b
       hs: onboard_vga.hs
       vs: onboard_vga.vs
-  - peripheral: pdm_mic
-    bind:
-      clk: onboard_mic.clk
-      data: onboard_mic.data
-      lrsel: onboard_mic.lrsel
   - peripheral: pwm_amp
     bind:
       pwm: onboard_pwm_amp.pwm
