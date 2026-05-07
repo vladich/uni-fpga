@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "uni-fpga"
 version = "0.1.0"
-description = "Multi-vendor FPGA build orchestrator for university lab projects"
+description = "Multi-vendor FPGA build orchestrator"
 requires-python = ">=3.8"
 dependencies = [
     "PyYAML>=6.0",
