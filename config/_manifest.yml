@@ -91,6 +91,10 @@ Boards:
     representative: emooc_cc
     variants:
       - emooc_cc
+  - id: fireant
+    representative: fireant
+    variants:
+      - fireant
   - id: ice40hx8k_evb
     representative: ice40hx8k_evb_yosys
     variants:

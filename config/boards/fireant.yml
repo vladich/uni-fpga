@@ -1,0 +1,31 @@
+# fireant pin map.
+# Hand-curated from basics-graphics-music/boards/fireant/board_specific.peri.xml.
+# Efinity differs from XDC/QSF/CST/PCF/LPF in two ways: pins are referenced by
+# GPIO def name (GPIOR_NN), not physical ball/pad number; and the design clock
+# is sourced from an internal oscillator (T8F81 has no external clock pin —
+# the OSC_0 primitive provides clk_mhz).
+
+Board:
+  id: fireant
+  fpga:
+    producer: Efinix
+    family: Trion
+    part: T8F81
+  defaults:
+    iostandard: "3.3 V LVTTL / LVCMOS"
+
+  pinBanks:
+    # Internal oscillator instead of a clock pin — codegen / driver will
+    # instantiate `osc_inst1` (OSC_0). We model it as a virtual clock source
+    # so the rest of the codegen pipeline (clock_input peripheral, SDC
+    # create_clock) keeps working.
+    clk:        { virtual: true, source: "osc", frequency_mhz: 50 }
+    onboard_reset:    { pins: "GPIOR_34" }
+    onboard_buttons:  { pins: ["GPIOR_28", "GPIOR_30"] }    # keys[0..1]
+    onboard_leds:                                          # led_n[0..3], active-low
+      pins: ["GPIOR_02", "GPIOR_05", "GPIOR_07", "GPIOR_10"]
+      active: low
+    onboard_uart:
+      pins:
+        rx: "GPIOR_00"
+        tx: "GPIOR_01"

@@ -139,6 +139,13 @@ Boards:
   PartFamily: Cyclone IV
   Part: EP4CE6F17C8
 
+- Id: fireant
+  BoardName: FireAnt
+  BoardProducer: Efinix
+  PartProducer: Efinix
+  PartFamily: Trion
+  Part: T8F81
+
 - Id: ice40hx8k_evb
   BoardName: iCE40HX8K-EVB  
   BoardProducer: Olimex
