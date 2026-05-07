@@ -104,16 +104,9 @@ def _collect_sv_sources(repo, peripherals, user_lab_top, generated_top):
                 files.append(full)
                 seen.add(full)
 
-    # Xilinx-primitive stubs (BUFG etc.) for labs that target Vivado directly.
-    compat_dir = os.path.join(repo, "peripherals", "_quartus_compat")
-    if os.path.isdir(compat_dir):
-        for name in sorted(os.listdir(compat_dir)):
-            if not name.endswith(".sv"):
-                continue
-            full = os.path.join(compat_dir, name)
-            if full not in seen:
-                files.append(full)
-                seen.add(full)
+    # Skip _quartus_compat stubs: Efinity's Verific frontend chokes on the
+    # BUFGCE pass-through (and 5_4_yrv_plus is the only design that needs
+    # them; it won't fit on T8F81 anyway).
 
     return files
 
@@ -164,6 +157,15 @@ def synthesize(*, dir, configuration, board, board_pinmap, toolchain, peripheral
     log.info("Source files (%d):", len(sv_files))
     for sv in sv_files:
         log.info("  - %s", os.path.relpath(sv, REPO) if sv.startswith(REPO) else sv)
+
+    # Copy data files (.hex, .mem) referenced by `$readmemh` from the design
+    # dir into the work dir — Efinity runs efx_map.py from work_pnr/ and
+    # resolves relative paths against that, not the source location.
+    lab_dir = os.path.dirname(os.path.abspath(top))
+    if os.path.isdir(lab_dir):
+        for name in os.listdir(lab_dir):
+            if name.endswith((".hex", ".mem")):
+                shutil.copy(os.path.join(lab_dir, name), output)
 
     if os.environ.get("UNIFPGA_DRY_RUN"):
         log.info("[dry run] Efinity not invoked. Artifacts in %s", output)
