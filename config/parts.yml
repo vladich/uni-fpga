@@ -16,8 +16,6 @@ Parts:
     Toolchains: [quartus_prime]
   - Family: Arria 10
     Toolchains: [quartus_prime]
-  - Family: Cyclone
-    Toolchains: [quartus2]
   - Family: Cyclone II
     Toolchains: [quartus2]
   - Family: Cyclone III

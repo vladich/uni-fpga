@@ -403,13 +403,6 @@ Boards:
   Part: GW1NR-LV9QN88PC6/I5
   GowinDeviceArgs: "GW1NR-LV9QN88PC6/I5 -name GW1NR-9 -device_version C"
 
-- Id: marsohod_mcy112
-  BoardName: Marsohod MCY112
-  BoardProducer: Marsohod
-  PartProducer: Altera (Intel)
-  PartFamily: Cyclone
-  Part: EP1C12Q240C8
-
 - Id: marsohod_mcy316
   BoardName: Marsohod MCY316
   BoardProducer: Marsohod

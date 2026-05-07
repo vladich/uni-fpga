@@ -113,10 +113,6 @@ Boards:
     representative: marsohod3gw2
     variants:
       - marsohod3gw2
-  - id: marsohod_mcy112
-    representative: marsohod_mcy112
-    variants:
-      - marsohod_mcy112
   - id: marsohod_mcy316
     representative: marsohod_mcy316
     variants:
