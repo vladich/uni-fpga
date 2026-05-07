@@ -40,6 +40,10 @@ PRJXRAY_DB = SNAP_OPENXC7 + "/external/prjxray-db"
 BBAEXPORT = SNAP_OPENXC7 + "/python/bbaexport.py"
 CHIPDB_CACHE = os.path.expanduser("~/.cache/openxc7")
 
+# Snap-bundled bitstream tools.
+FASM2FRAMES = "openxc7.fasm2frames"
+XC7FRAMES2BIT = "openxc7.xc7frames2bit"
+
 # Map Xilinx part prefixes to prjxray-db family directory names.
 _PART_TO_FAMILY = [
     ("xc7a", "artix7"),
@@ -305,12 +309,65 @@ def synthesize(*, dir, configuration, board, board_pinmap, toolchain, peripheral
         log.error("nextpnr-xilinx exited with code %d (see %s)", rc, nextpnr_log)
         return rc
 
-    log.info("FASM ready: %s (run xc7frames2bit to produce a .bit)", fasm_path)
+    if step == "pnr":
+        log.info("[pnr] FASM ready: %s (skipping bitstream packing)", fasm_path)
+        return 0
+
+    # ---- fasm2frames + xc7frames2bit (bitstream) ----
+    fasm2frames = _resolve_bin(FASM2FRAMES)
+    xc7frames2bit = _resolve_bin(XC7FRAMES2BIT)
+    if fasm2frames is None or xc7frames2bit is None:
+        log.error("openxc7 bitstream tools missing (need %s + %s).",
+                  FASM2FRAMES, XC7FRAMES2BIT)
+        return 1
+    family = _family_for(part) or "artix7"
+    db_root = os.path.join(PRJXRAY_DB, family)
+    part_yaml = os.path.join(db_root, part, "part.yaml")
+    if not os.path.exists(part_yaml):
+        log.error("Missing part.yaml: %s", part_yaml)
+        return 1
+
+    frames_path = os.path.join(output, PROJECT_NAME + ".frames")
+    bit_path = os.path.join(output, PROJECT_NAME + ".bit")
+
+    log.info("Invoking fasm2frames")
+    rc = subprocess.run(
+        [fasm2frames, "--db-root", db_root, "--part", part, fasm_path, frames_path],
+        cwd=output).returncode
+    if rc != 0:
+        log.error("fasm2frames exited with code %d", rc)
+        return rc
+
+    log.info("Invoking xc7frames2bit")
+    rc = subprocess.run(
+        [xc7frames2bit, "--part_file", part_yaml, "--part_name", part,
+         "--frm_file", frames_path, "--output_file", bit_path],
+        cwd=output).returncode
+    if rc != 0:
+        log.error("xc7frames2bit exited with code %d", rc)
+        return rc
+
+    log.info("Bitstream ready: %s", bit_path)
     return 0
 
 
 def program(*, board, board_pinmap=None, toolchain, output, **_):
-    """openxc7 produces FASM, not a .bit by default. Programming the board
-    requires xc7frames2bit + openFPGALoader. Stub for now."""
-    log.info("[openxc7 program] not implemented yet (need xc7frames2bit + openFPGALoader)")
-    return 1
+    """Download the .bit to the connected board via openFPGALoader."""
+    bit = os.path.join(output, PROJECT_NAME + ".bit")
+    if not os.path.exists(bit) and not os.environ.get("UNIFPGA_DRY_RUN"):
+        log.error("Bitstream not found: %s — run synthesis first", bit)
+        return 1
+    if os.environ.get("UNIFPGA_DRY_RUN"):
+        log.info("[dry run] Would program %s", bit)
+        return 0
+    pgm = (_resolve_bin("openFPGALoader")
+           or shutil.which(os.path.expanduser("~/oss-cad-suite/bin/openFPGALoader")))
+    if pgm is None:
+        log.error("Could not find openFPGALoader on $PATH (try ~/oss-cad-suite/).")
+        return 1
+    cmd = [pgm, bit]
+    log.info("Programming via: %s", " ".join(cmd))
+    rc = subprocess.run(cmd, cwd=output).returncode
+    if rc != 0:
+        log.error("Programming failed (exit %d). Is the board connected?", rc)
+    return rc
