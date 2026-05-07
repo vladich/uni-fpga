@@ -21,14 +21,13 @@ Toolchains:
     Version: "23.1std"
     InstallDir: "/home/vladimir/intelFPGA_lite/23.1std/quartus/"
 
-  - Id: quartus2    # older Altera parts (Cyclone II/III, MAX II/V, EP1C)
+  - Id: quartus2    # older Altera parts (Cyclone II/III, MAX II/V)
     Name: Quartus2
-    # Modern Quartus Prime 23.1std still supports MAX II — pointing here lets
-    # the omdazz_epm570 boards build. The other 6 quartus2 configs (de0/de1/
-    # de2/dk_dev_3c120n/marsohod_*) need a Quartus II 13.0sp1 install — change
-    # this to e.g. /home/<user>/altera/13.0sp1/quartus/ once you have it.
-    Version: "23.1std"
-    InstallDir: "/home/vladimir/intelFPGA_lite/23.1std/quartus/"
+    # Quartus II 13.0sp1 is the last version that supports Cyclone II/III
+    # (used by DE0/DE1/DE2/dk_dev_3c120n/marsohod_mcy316). Cyclone IV/V/MAX 10
+    # still go through quartus_prime.
+    Version: "13.0sp1"
+    InstallDir: "/home/vladimir/altera/13.0sp1/quartus/"
 
   - Id: libero_soc  # Microchip parts 
     Name: LiberoSoC
