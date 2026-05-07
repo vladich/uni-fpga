@@ -190,9 +190,17 @@ def synthesize(*, dir, configuration, board, board_pinmap, toolchain, peripheral
     # `-D __ICARUS__`: BGM labs use `\`ifdef __ICARUS__` to gate older Verilog
     # syntax against SV-2009 `'{ … }` array-init that yosys still rejects.
     read_cmds = ['read_verilog -sv -D __ICARUS__ "{}"'.format(sv) for sv in sv_files]
+    # `setundef -zero`: nextpnr-mistral refuses any IO whose output port is
+    # tied to a constant — including `1'x`. Labs that drive only some bits
+    # of a wider output (e.g. led[1:0] on a 10-LED board) leave the rest
+    # undriven, which yosys propagates as 1'x. Tying undriven bits to zero
+    # before write_json keeps the IO buffers as real registered outputs.
     yosys_script = "; ".join(
         read_cmds
-        + ['synth_intel_alm -family cyclonev -top top',
+        + ['hierarchy -top top',
+           'proc',
+           'setundef -undriven -zero',
+           'synth_intel_alm -family cyclonev -top top',
            'write_json "{}"'.format(json_path)]
     )
     cmd = [yosys, "-q", "-l", yosys_log, "-p", yosys_script]
