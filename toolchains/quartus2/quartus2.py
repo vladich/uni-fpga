@@ -16,7 +16,7 @@ Setup:
      download-center.html → archive). Linux 64-bit installer.
   2. Install (typically to ~/altera/13.0sp1/quartus/).
   3. Set toolchain.InstallDir for quartus2 in config/toolchains.yml,
-     e.g. `InstallDir: "/home/vladimir/altera/13.0sp1/quartus/"`.
+     e.g. `InstallDir: "~/altera/13.0sp1/quartus/"` (~ is expanded).
 """
 
 # All synth/program logic lives in quartus_prime and is reused verbatim.

@@ -30,7 +30,7 @@ PROJECT_NAME = "unifpga_top"
 
 
 def _resolve_quartus_bin(toolchain, name):
-    install_dir = (toolchain.get("InstallDir") or "").rstrip("/")
+    install_dir = os.path.expanduser(toolchain.get("InstallDir") or "").rstrip("/")
     if install_dir:
         candidate = os.path.join(install_dir, "bin", name)
         if os.path.exists(candidate):
@@ -254,9 +254,21 @@ def synthesize(*, dir, configuration, board, board_pinmap, toolchain, peripheral
 
     log.info("Invoking Quartus: %s", " ".join(cmd))
     log_path = os.path.join(output, "quartus.log")
+    # Force the 64-bit binary on Quartus II 13.x (the bin/ wrapper defaults to
+    # the 32-bit one, which is markedly slower on big designs). Modern Quartus
+    # Prime (20.1+) is 64-bit-only and ignores this env var. The 64-bit Q13
+    # binary needs linux64/ on LD_LIBRARY_PATH for libaxerces-c.so.26 etc.;
+    # the wrapper only sets it for a subset of subcommands, so do it here too.
+    env = dict(os.environ)
+    env["QUARTUS_64BIT"] = "1"
+    install_dir = os.path.expanduser(toolchain.get("InstallDir") or "").rstrip("/")
+    lib64 = os.path.join(install_dir, "linux64")
+    if os.path.isdir(lib64):
+        env["LD_LIBRARY_PATH"] = lib64 + ":" + env.get("LD_LIBRARY_PATH", "")
     with open(log_path, "w") as logf:
         try:
-            rc = subprocess.run(cmd, cwd=output, stdout=logf, stderr=subprocess.STDOUT).returncode
+            rc = subprocess.run(cmd, cwd=output, env=env,
+                                stdout=logf, stderr=subprocess.STDOUT).returncode
         except FileNotFoundError as exc:
             log.error("Quartus invocation failed: %s", exc)
             return 1

@@ -1,25 +1,30 @@
 ---
-# List of all supported toolchains
-
+# List of all supported toolchains.
+#
+# `InstallDir` is expanded with `~` and `$VAR` at read time, so paths can
+# reference $HOME without committing user-specific absolutes. Each entry
+# below shows the install layout we expect; if your install lives elsewhere,
+# override these in a local `settings.yml` (gitignored) or set the relevant
+# tool on $PATH and leave InstallDir empty.
 
 Toolchains:
-# 
+#
 #  ----------------- Proprietary toolchains ------------------
 #
   - Id: vivado    # Xilinx 7/Ultrascale(+)/Versal
     Name: Vivado
     Version: "2023.2"
-    InstallDir: "/home/vladimir/Xilinx/Vivado/2023.2/"
+    InstallDir: "~/Xilinx/Vivado/2023.2/"
 
   - Id: ise       # older Xilinx parts
     Name: XilinxISE
-    Version: 
+    Version:
     InstallDir:
 
   - Id: quartus_prime   # newer Altera parts
     Name: QuartusPrime
     Version: "23.1std"
-    InstallDir: "/home/vladimir/intelFPGA_lite/23.1std/quartus/"
+    InstallDir: "~/intelFPGA_lite/23.1std/quartus/"
 
   - Id: quartus2    # older Altera parts (Cyclone II/III, MAX II/V)
     Name: Quartus2
@@ -27,7 +32,7 @@ Toolchains:
     # (used by DE0/DE1/DE2/dk_dev_3c120n/marsohod_mcy316). Cyclone IV/V/MAX 10
     # still go through quartus_prime.
     Version: "13.0sp1"
-    InstallDir: "/home/vladimir/altera/13.0sp1/quartus/"
+    InstallDir: "~/altera/13.0sp1/quartus/"
 
   - Id: libero_soc  # Microchip parts 
     Name: LiberoSoC
@@ -47,7 +52,7 @@ Toolchains:
   - Id: gowin_eda   # Gowin parts
     Name: GowinEDA
     Version: "1.9.11.03.Educational"
-    InstallDir: "/home/vladimir/Gowin/1.9.11.03.Educational/"
+    InstallDir: "~/Gowin/1.9.11.03.Educational/"
 
   - Id: pango_ds    # Pango parts
     Name: PangoDS

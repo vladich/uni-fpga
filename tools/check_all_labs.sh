@@ -5,7 +5,9 @@
 # Usage:  bash tools/check_all_labs.sh
 
 set -u
-cd /home/vladimir/Projects/fpga-my/uni-fpga
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO="$(cd "$SCRIPT_DIR/.." && pwd)"
+cd "$REPO"
 export PYTHONPATH=.
 unset UNIFPGA_DRY_RUN
 

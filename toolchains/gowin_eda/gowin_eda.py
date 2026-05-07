@@ -35,7 +35,7 @@ PROJECT_NAME = "unifpga_top"
 
 
 def _resolve_gowin_bin(toolchain, name, sub="IDE/bin"):
-    install_dir = (toolchain.get("InstallDir") or "").rstrip("/")
+    install_dir = os.path.expanduser(toolchain.get("InstallDir") or "").rstrip("/")
     if install_dir:
         candidate = os.path.join(install_dir, sub, name)
         if os.path.exists(candidate):
@@ -231,7 +231,7 @@ def synthesize(*, dir, configuration, board, board_pinmap, toolchain, peripheral
         log.info("[dry run] gw_sh not invoked. Artifacts in %s", output)
         return 0
 
-    install_dir = (toolchain.get("InstallDir") or "").rstrip("/")
+    install_dir = os.path.expanduser(toolchain.get("InstallDir") or "").rstrip("/")
     gw_sh = _resolve_gowin_bin(toolchain, "gw_sh")
     if gw_sh is None:
         log.error("Could not locate gw_sh. Set toolchain.InstallDir in "
@@ -276,7 +276,7 @@ def program(*, board, board_pinmap=None, toolchain, output, **_):
         log.error("Could not locate programmer_cli.")
         return 1
 
-    install_dir = (toolchain.get("InstallDir") or "").rstrip("/")
+    install_dir = os.path.expanduser(toolchain.get("InstallDir") or "").rstrip("/")
     env = _gowin_env(install_dir)
     cmd = [pgm, "--device", "GW1N-9", "--operation_index", "2", "--fsFile", bit]
     log.info("Programming via: %s", " ".join(cmd))

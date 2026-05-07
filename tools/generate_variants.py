@@ -36,7 +36,12 @@ from tools import import_constraints
 
 
 REPO = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
-BGM_BOARDS = "/home/vladimir/Projects/fpga-my/basics-graphics-music/boards"
+# basics-graphics-music is expected to live as a sibling of this repo.
+# Override with $UNIFPGA_BGM_DIR for a non-default layout.
+_BGM_DIR = os.environ.get(
+    "UNIFPGA_BGM_DIR",
+    os.path.normpath(os.path.join(REPO, "..", "basics-graphics-music")))
+BGM_BOARDS = os.path.join(_BGM_DIR, "boards")
 OUT_DIR = os.path.join(REPO, "config", "configurations")
 
 

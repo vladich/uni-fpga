@@ -29,7 +29,12 @@ from collections import defaultdict
 
 
 REPO = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
-BGM_LABS = "/home/vladimir/Projects/fpga-my/basics-graphics-music/labs"
+# basics-graphics-music is expected to live as a sibling of this repo.
+# Override with $UNIFPGA_BGM_DIR for a non-default layout.
+BGM_DIR = os.environ.get(
+    "UNIFPGA_BGM_DIR",
+    os.path.normpath(os.path.join(REPO, "..", "basics-graphics-music")))
+BGM_LABS = os.path.join(BGM_DIR, "labs")
 LABS_OUT = os.path.join(REPO, "labs")
 
 SKIP_SECTIONS = {"8_unfinished", "99_experimental"}

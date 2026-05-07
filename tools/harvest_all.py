@@ -13,8 +13,13 @@ from tools import board_manifest
 from tools import import_constraints
 
 
-BGM_BOARDS = "/home/vladimir/Projects/fpga-my/basics-graphics-music/boards"
 REPO = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
+# basics-graphics-music is expected to live as a sibling of this repo.
+# Override with $UNIFPGA_BGM_DIR for a non-default layout.
+_BGM_DIR = os.environ.get(
+    "UNIFPGA_BGM_DIR",
+    os.path.normpath(os.path.join(REPO, "..", "basics-graphics-music")))
+BGM_BOARDS = os.path.join(_BGM_DIR, "boards")
 RAW_DIR = os.path.join(REPO, "config", "boards", "_raw")
 MANIFEST_PATH = os.path.join(REPO, "config", "_manifest.yml")
 

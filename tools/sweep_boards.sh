@@ -7,7 +7,10 @@
 #   LABS="06_binary_counter 1_01_*" bash tools/sweep_boards.sh <board>...
 
 set -u
-cd /home/vladimir/Projects/fpga-my/uni-fpga
+# Resolve repo root from the location of this script (tools/sweep_boards.sh).
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO="$(cd "$SCRIPT_DIR/.." && pwd)"
+cd "$REPO"
 export PYTHONPATH=.
 unset UNIFPGA_DRY_RUN
 
