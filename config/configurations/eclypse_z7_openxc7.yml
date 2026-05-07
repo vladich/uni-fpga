@@ -1,0 +1,34 @@
+# eclypse_z7_openxc7 retargeted to nextpnr_openxc7 (open-source flow).
+# Mirrors eclypse_z7 — only the toolchain differs.
+
+Configuration:
+  id: eclypse_z7_openxc7
+  board: eclypse_z7
+  toolchain: nextpnr_openxc7
+  attach:
+  - peripheral: clock_input
+    bind:
+      clk: clk
+  - peripheral: button_array
+    params:
+      width: 2
+    bind:
+      btn: onboard_buttons
+  - peripheral: rgb_led
+    bind:
+      r: onboard_rgb_led_0.r
+      g: onboard_rgb_led_0.g
+      b: onboard_rgb_led_0.b
+  - peripheral: rgb_led
+    bind:
+      r: onboard_rgb_led_1.r
+      g: onboard_rgb_led_1.g
+      b: onboard_rgb_led_1.b
+  - peripheral: pmod_12pin
+    bind:
+      io: pmod_jb
+  - peripheral: tm1638_led_key
+    bind:
+      dio: pmod_jb[5]
+      clk: pmod_jb[6]
+      stb: pmod_jb[4]

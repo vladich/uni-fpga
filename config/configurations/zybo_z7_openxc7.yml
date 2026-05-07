@@ -1,0 +1,45 @@
+# zybo_z7_openxc7 retargeted to nextpnr_openxc7 (open-source flow).
+# Mirrors zybo_z7 — only the toolchain differs.
+
+Configuration:
+  id: zybo_z7_openxc7
+  board: zybo_z7
+  toolchain: nextpnr_openxc7
+  attach:
+  - peripheral: clock_input
+    params:
+      frequency_mhz: 125
+    bind:
+      clk: clk125mhz
+  - peripheral: sw_bank
+    params:
+      width: 4
+    bind:
+      sw: onboard_switches
+  - peripheral: button_array
+    params:
+      width: 4
+    bind:
+      btn: onboard_buttons
+  - peripheral: led_bank
+    params:
+      width: 4
+    bind:
+      led: onboard_leds
+  - peripheral: pmod_12pin
+    bind:
+      io: pmod_jb
+  - peripheral: pmod_12pin
+    bind:
+      io: pmod_jc
+  - peripheral: pmod_12pin
+    bind:
+      io: pmod_jd
+  - peripheral: pmod_12pin
+    bind:
+      io: pmod_je
+  - peripheral: tm1638_led_key
+    bind:
+      clk: pmod_je[1]
+      stb: pmod_je[0]
+      dio: pmod_je[2]

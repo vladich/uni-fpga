@@ -1,0 +1,83 @@
+# nexys4_openxc7 retargeted to nextpnr_openxc7 (open-source flow).
+# Mirrors nexys4 — only the toolchain differs.
+
+Configuration:
+  id: nexys4_openxc7
+  board: nexys4
+  toolchain: nextpnr_openxc7
+  attach:
+  - peripheral: clock_input
+    bind:
+      clk: clk
+  - peripheral: sw_bank
+    params:
+      width: 16
+    bind:
+      sw: onboard_switches
+  - peripheral: led_bank
+    params:
+      width: 16
+    bind:
+      led: onboard_leds
+  - peripheral: rgb_led
+    bind:
+      r: onboard_rgb_led_1.r
+      g: onboard_rgb_led_1.g
+      b: onboard_rgb_led_1.b
+  - peripheral: rgb_led
+    bind:
+      r: onboard_rgb_led_2.r
+      g: onboard_rgb_led_2.g
+      b: onboard_rgb_led_2.b
+  - peripheral: seven_segment_8digit_shared
+    bind:
+      segments:
+      - onboard_7seg.ca
+      - onboard_7seg.cb
+      - onboard_7seg.cc
+      - onboard_7seg.cd
+      - onboard_7seg.ce
+      - onboard_7seg.cf
+      - onboard_7seg.cg
+      dp: onboard_7seg.dp
+      digits: onboard_7seg.anodes
+  - peripheral: reset_button
+    bind:
+      rst: cpu_resetn
+  - peripheral: button_array
+    params:
+      width: 5
+    bind:
+      btn: onboard_buttons
+  - peripheral: pmod_12pin
+    bind:
+      io: pmod_ja
+  - peripheral: pmod_12pin
+    bind:
+      io: pmod_jb
+  - peripheral: pmod_12pin
+    bind:
+      io: pmod_jc
+  - peripheral: pmod_12pin
+    bind:
+      io: pmod_jd
+  - peripheral: vga_4bit
+    bind:
+      r: onboard_vga.r
+      g: onboard_vga.g
+      b: onboard_vga.b
+      hs: onboard_vga.hs
+      vs: onboard_vga.vs
+  - peripheral: pdm_mic
+    bind:
+      clk: onboard_mic.clk
+      data: onboard_mic.data
+      lrsel: onboard_mic.lrsel
+  - peripheral: pwm_amp
+    bind:
+      pwm: onboard_pwm_amp.pwm
+      sd: onboard_pwm_amp.sd
+  - peripheral: uart_2wire
+    bind:
+      tx: onboard_uart.tx
+      rx: onboard_uart.rx

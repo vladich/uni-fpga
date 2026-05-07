@@ -1,0 +1,36 @@
+# qmtech_kintex_7_openxc7 retargeted to nextpnr_openxc7 (open-source flow).
+# Mirrors qmtech_kintex_7 — only the toolchain differs.
+
+Configuration:
+  id: qmtech_kintex_7_openxc7
+  board: qmtech_kintex_7
+  toolchain: nextpnr_openxc7
+  attach:
+  - peripheral: clock_input
+    bind:
+      clk: clk
+  - peripheral: reset_button
+    bind:
+      rst: cpu_resetn
+  - peripheral: led_bank
+    params:
+      width: 6
+    bind:
+      led: onboard_leds
+  - peripheral: seven_segment_8digit_shared
+    bind:
+      segments:
+      - onboard_7seg.ca
+      - onboard_7seg.cb
+      - onboard_7seg.cc
+      - onboard_7seg.cd
+      - onboard_7seg.ce
+      - onboard_7seg.cf
+      - onboard_7seg.cg
+      dp: onboard_7seg.dp
+      digits: onboard_7seg.anodes
+  - peripheral: button_array
+    params:
+      width: 5
+    bind:
+      btn: onboard_buttons
