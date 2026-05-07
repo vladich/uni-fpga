@@ -835,6 +835,79 @@ def _xdc_line(pin, port_expr, iostd):
     )
 
 
+def emit_xdc_simple(resolved):
+    """Like emit_xdc(), but emits the simple 4-arg `set_property NAME VAL
+    [get_ports …]` form that nextpnr-xilinx (openxc7) accepts. Vivado's
+    `-dict { … }` shorthand isn't supported by the open flow."""
+    cfg = resolved["configuration"]
+    pinmap = resolved["board_pinmap"]
+    default_iostd = (pinmap.get("defaults") or {}).get("iostandard") or "LVCMOS33"
+
+    out = []
+    out.append("# =============================================================================")
+    out.append("# Auto-generated XDC constraints (simple form, openxc7) — DO NOT EDIT")
+    out.append("# Configuration: {}".format(cfg["id"]))
+    out.append("# =============================================================================")
+    out.append("")
+
+    referenced = collect_referenced_banks(resolved)
+    plans = build_capability_plans(resolved)
+
+    def emit(pin, port, iostd):
+        if "," in str(pin):
+            out.append("# WARNING: pin '{}' for port '{}' is a differential pair (skipped)".format(pin, port))
+            return
+        out.append("set_property PACKAGE_PIN {} [get_ports {{{}}}]".format(pin, port))
+        out.append("set_property IOSTANDARD {} [get_ports {{{}}}]".format(iostd, port))
+
+    for bank_name in referenced:
+        bank = (pinmap.get("pinBanks") or {}).get(bank_name)
+        if bank is None:
+            continue
+        pins = bank.get("pins")
+        overrides = bank.get("overrides") or {}
+        bank_iostd = bank.get("iostandard") or default_iostd
+        if isinstance(pins, str):
+            emit(pins, bank_name, _pin_iostd(pins, overrides, bank_iostd))
+        elif isinstance(pins, list):
+            for i, p in enumerate(pins):
+                if p is None:
+                    continue
+                emit(p, "{}[{}]".format(bank_name, i), _pin_iostd(p, overrides, bank_iostd))
+        elif isinstance(pins, dict):
+            for sub, val in pins.items():
+                pname = "{}_{}".format(bank_name, sub)
+                if isinstance(val, list):
+                    for i, p in enumerate(val):
+                        if p is None:
+                            continue
+                        emit(p, "{}[{}]".format(pname, i), _pin_iostd(p, overrides, bank_iostd))
+                elif isinstance(val, str):
+                    emit(val, pname, _pin_iostd(val, overrides, bank_iostd))
+
+    # Clock create_clock entries
+    out.append("")
+    for pidx, perif, params in plans["clock"].providers:
+        attach = resolved["peripherals"][pidx]
+        clk_bank = (attach.get("bind") or {}).get("clk")
+        if clk_bank is None:
+            continue
+        port = _bank_port_name(clk_bank)
+        freq = (params or {}).get("frequency_mhz")
+        if freq is None:
+            m = re.search(r"(\d+)mhz", str(clk_bank).lower())
+            if m:
+                freq = int(m.group(1))
+        if freq is None:
+            continue
+        period_ns = 1000.0 / float(freq)
+        out.append("create_clock -name sys_clk_{f}mhz -period {p:.3f} [get_ports {{{port}}}]".format(
+            f=int(freq), p=period_ns, port=port))
+
+    out.append("")
+    return "\n".join(out)
+
+
 def _pin_iostd(pin, overrides, default):
     return overrides.get(pin) or default
 

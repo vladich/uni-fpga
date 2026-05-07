@@ -1,0 +1,64 @@
+# Basys 3 retargeted to nextpnr_openxc7 (open-source flow).
+# Same pinmap/peripherals as basys3.yml; only the toolchain changes.
+
+Configuration:
+  id: basys3_openxc7
+  board: basys3
+  toolchain: nextpnr_openxc7
+  attach:
+  - peripheral: clock_input
+    bind:
+      clk: clk
+  - peripheral: sw_bank
+    params:
+      width: 16
+    bind:
+      sw: onboard_switches
+  - peripheral: led_bank
+    params:
+      width: 16
+    bind:
+      led: onboard_leds
+  - peripheral: seven_segment_8digit_shared
+    bind:
+      segments:
+      - onboard_7seg.ca
+      - onboard_7seg.cb
+      - onboard_7seg.cc
+      - onboard_7seg.cd
+      - onboard_7seg.ce
+      - onboard_7seg.cf
+      - onboard_7seg.cg
+      dp: onboard_7seg.dp
+      digits: onboard_7seg.anodes
+  - peripheral: button_array
+    params:
+      width: 5
+    bind:
+      btn: onboard_buttons
+  - peripheral: pmod_12pin
+    bind:
+      io: pmod_ja
+  - peripheral: pmod_12pin
+    bind:
+      io: pmod_jb
+  - peripheral: pmod_12pin
+    bind:
+      io: pmod_jc
+  - peripheral: vga_4bit
+    bind:
+      r: onboard_vga.r
+      g: onboard_vga.g
+      b: onboard_vga.b
+      hs: onboard_vga.hs
+      vs: onboard_vga.vs
+  - peripheral: uart_2wire
+    bind:
+      tx: onboard_uart.tx
+      rx: onboard_uart.rx
+  - peripheral: inmp441_i2s_mic
+    bind:
+      lr: pmod_ja[6]
+      ws: pmod_ja[5]
+      sck: pmod_ja[3]
+      sd: pmod_ja[0]
