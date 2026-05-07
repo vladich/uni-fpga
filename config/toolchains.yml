@@ -46,8 +46,8 @@ Toolchains:
 
   - Id: efinity     # Efinix parts
     Name: Efinity
-    Version: 
-    InstallDir:
+    Version: "2023.2"
+    InstallDir: "~/efinity/2023.2/"
 
   - Id: gowin_eda   # Gowin parts
     Name: GowinEDA

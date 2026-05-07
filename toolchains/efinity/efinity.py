@@ -1,29 +1,237 @@
 """
-Stub toolchain module. Synthesis isn't actually wired up yet — this just
-logs what would have been built and returns. Replace `synthesize()` with a
-real driver (subprocess to the vendor tool, or yosys/nextpnr invocation)
-when implementing the toolchain.
+Efinity (Efinix) toolchain driver.
+
+Pipeline:
+    efx_run.py -f map        # synthesis (this is the "elaborate" stage)
+    efx_run.py -f full       # synth + place + route + bitstream
+
+The Efinity tools are Python-driven via efx_run.py. Two modes:
+  - direct: pass --device, --family, -v <sources>
+  - project: pass --prj <project.xml> (ingests our codegen-emitted XML)
+
+We use direct mode for `--step elaborate` (faster — no peri.xml processing
+needed for synth-only) and project-XML mode for `--step full` (so the
+peri.xml pin assignments are honoured).
+
+Artifacts:
+    <output>/top.sv               — codegen-produced top module
+    <output>/unifpga_top.peri.xml — codegen-produced peripheral XML
+    <output>/unifpga_top.sdc      — codegen-produced timing constraints
+    <output>/unifpga_top.xml      — codegen-produced Efinity project XML
+    <output>/efx_run.log          — efx_run / map / pnr / pgm log
+    <output>/outflow/             — Efinity's own output dir (.bit + reports)
+
+Set $UNIFPGA_DRY_RUN=1 to generate every artifact without invoking the tools.
 """
 
 import logging
+import os
+import shutil
+import subprocess
+
+from tools import codegen
+
 
 log = logging.getLogger(__name__)
+REPO = os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
+
+PROJECT_NAME = "unifpga_top"
 
 
-def synthesize(*, dir, configuration, board, board_pinmap, toolchain,
-               peripherals, top, include, output, step="full", **_):
-    """Entry point invoked by synthesize.py. Kwargs-only to keep the signature
-    extensible without breaking call sites."""
-    log.info(
-        "[stub %s] would synthesize configuration=%s, board=%s, top=%s, "
-        "step=%s, output=%s, peripherals=%d",
-        toolchain["Id"], configuration["id"], board["Id"], top, step, output,
-        len(peripherals),
-    )
+def _resolve_install_dir(toolchain):
+    return os.path.expanduser(toolchain.get("InstallDir") or "").rstrip("/")
+
+
+def _resolve_bin(toolchain, name, sub="bin"):
+    install_dir = _resolve_install_dir(toolchain)
+    if install_dir:
+        candidate = os.path.join(install_dir, sub, name)
+        if os.path.exists(candidate):
+            return candidate
+    return shutil.which(name)
+
+
+def _efx_run_script(toolchain):
+    install_dir = _resolve_install_dir(toolchain)
+    if install_dir:
+        candidate = os.path.join(install_dir, "scripts", "efx_run.py")
+        if os.path.exists(candidate):
+            return candidate
+    return None
+
+
+def _collect_sv_sources(repo, peripherals, user_lab_top, generated_top):
+    """Mirrors the Vivado/Quartus drivers — keep symmetrical."""
+    files = [generated_top, os.path.abspath(user_lab_top)]
+    seen = {os.path.abspath(p) for p in files}
+
+    lab_dir = os.path.dirname(os.path.abspath(user_lab_top))
+    if os.path.isdir(lab_dir):
+        for root, _dirs, names in os.walk(lab_dir):
+            for name in sorted(names):
+                if not (name.endswith(".sv") or name.endswith(".v")):
+                    continue
+                if name in ("lab_top.sv", "tb.sv"):
+                    continue
+                full = os.path.join(root, name)
+                if full not in seen:
+                    files.append(full)
+                    seen.add(full)
+
+    for attach in peripherals:
+        drv = (attach.get("peripheral") or {}).get("driver") or {}
+        f = drv.get("file")
+        if f:
+            full = os.path.join(repo, f)
+            if os.path.exists(full) and full not in seen:
+                files.append(full)
+                seen.add(full)
+
+    for helper in ("tm1638_registers.sv", "slow_clk_gen.sv",
+                   "imitate_reset_on_power_up.sv"):
+        full = os.path.join(repo, "peripherals", helper)
+        if os.path.exists(full) and full not in seen:
+            files.append(full)
+            seen.add(full)
+
+    labs_common_dir = os.path.join(repo, "peripherals", "labs_common")
+    if os.path.isdir(labs_common_dir):
+        for name in sorted(os.listdir(labs_common_dir)):
+            if not name.endswith(".sv"):
+                continue
+            full = os.path.join(labs_common_dir, name)
+            if full not in seen:
+                files.append(full)
+                seen.add(full)
+
+    # Xilinx-primitive stubs (BUFG etc.) for labs that target Vivado directly.
+    compat_dir = os.path.join(repo, "peripherals", "_quartus_compat")
+    if os.path.isdir(compat_dir):
+        for name in sorted(os.listdir(compat_dir)):
+            if not name.endswith(".sv"):
+                continue
+            full = os.path.join(compat_dir, name)
+            if full not in seen:
+                files.append(full)
+                seen.add(full)
+
+    return files
+
+
+def synthesize(*, dir, configuration, board, board_pinmap, toolchain, peripherals,
+               top, generated_top=None, include=None, output, step="full", **_):
+    """Synthesize through Efinity's efx_run.py. Returns 0 on success."""
+    resolved = {
+        "configuration": configuration,
+        "board":         board,
+        "board_pinmap":  board_pinmap,
+        "toolchain":     toolchain,
+        "peripherals":   peripherals,
+    }
+
+    if generated_top is None:
+        generated_top = os.path.join(output, "top.sv")
+        with open(generated_top, "w") as f:
+            f.write(codegen.emit_top_sv(resolved))
+
+    device = (board.get("Part") or "").strip()
+    family = (board.get("PartFamily") or "Trion").strip()
+    if not device:
+        log.error("Board %s has no 'Part' field — cannot drive Efinity.", board["Id"])
+        return 1
+
+    sv_files = _collect_sv_sources(REPO, peripherals, top, generated_top)
+    sdc_path = os.path.join(output, PROJECT_NAME + ".sdc")
+    peri_path = os.path.join(output, PROJECT_NAME + ".peri.xml")
+    project_path = os.path.join(output, PROJECT_NAME + ".xml")
+    log_path = os.path.join(output, "efx_run.log")
+
+    with open(sdc_path, "w") as f:
+        f.write(codegen.emit_sdc(resolved))
+    log.info("Wrote %s", sdc_path)
+
+    with open(peri_path, "w") as f:
+        f.write(codegen.emit_peri_xml(resolved, device))
+    log.info("Wrote %s", peri_path)
+
+    with open(project_path, "w") as f:
+        f.write(codegen.emit_efx_project_xml(resolved, device, sv_files,
+                                              os.path.basename(sdc_path),
+                                              os.path.basename(peri_path),
+                                              project_name=PROJECT_NAME))
+    log.info("Wrote %s", project_path)
+
+    log.info("Source files (%d):", len(sv_files))
+    for sv in sv_files:
+        log.info("  - %s", os.path.relpath(sv, REPO) if sv.startswith(REPO) else sv)
+
+    if os.environ.get("UNIFPGA_DRY_RUN"):
+        log.info("[dry run] Efinity not invoked. Artifacts in %s", output)
+        return 0
+
+    efx_run = _efx_run_script(toolchain)
+    if efx_run is None:
+        log.error("Could not locate efx_run.py. Set toolchain.InstallDir in "
+                  "config/toolchains.yml (e.g. ~/efinity/2023.2/).")
+        return 1
+    install_dir = _resolve_install_dir(toolchain)
+
+    # `-v file1 file2 …` confuses argparse — its nargs='+' consumes the
+    # `design` positional too. Use `--flist <text-file>` instead.
+    flist_path = os.path.join(output, "sources.flist")
+    with open(flist_path, "w") as f:
+        f.write("\n".join(sv_files) + "\n")
+
+    flow = "map" if step == "elaborate" else "full"
+    cmd = ["python3", efx_run,
+           "-f", flow,
+           "--family", family,
+           "-d", device,
+           "--output_dir", output,
+           "--work_dir", os.path.join(output, "work_pnr"),
+           "--flist", flist_path,
+           PROJECT_NAME]
+
+    env = dict(os.environ)
+    env["EFINITY_HOME"] = install_dir
+    env["EFXPT_HOME"] = install_dir
+
+    log.info("Invoking efx_run.py -f %s --family %s -d %s", flow, family, device)
+    with open(log_path, "w") as logf:
+        try:
+            rc = subprocess.run(cmd, cwd=output, env=env,
+                                stdout=logf, stderr=subprocess.STDOUT).returncode
+        except FileNotFoundError as exc:
+            log.error("efx_run invocation failed: %s", exc)
+            return 1
+
+    if rc != 0:
+        log.error("efx_run exited with code %d (see %s)", rc, log_path)
+        return rc
+
+    if step != "elaborate":
+        bit = os.path.join(output, "outflow", PROJECT_NAME + ".bit")
+        if os.path.exists(bit):
+            log.info("Bitstream ready: %s", bit)
     return 0
 
 
-def program(**kwargs):
-    """Placeholder for board programming/loading."""
-    log.info("[stub program] not implemented")
-    return 0
+def program(*, board, board_pinmap=None, toolchain, output, **_):
+    """Download the .bit via Efinity's efx_pgm or openFPGALoader."""
+    bit = os.path.join(output, "outflow", PROJECT_NAME + ".bit")
+    if not os.path.exists(bit) and not os.environ.get("UNIFPGA_DRY_RUN"):
+        log.error("Bitstream not found: %s — run synthesis first", bit)
+        return 1
+    if os.environ.get("UNIFPGA_DRY_RUN"):
+        log.info("[dry run] Would program %s", bit)
+        return 0
+    pgm = _resolve_bin(toolchain, "efx_pgm") or shutil.which("openFPGALoader")
+    if pgm is None:
+        log.error("Could not find efx_pgm or openFPGALoader on $PATH.")
+        return 1
+    cmd = [pgm, bit]
+    log.info("Programming via: %s", " ".join(cmd))
+    rc = subprocess.run(cmd, cwd=output).returncode
+    if rc != 0:
+        log.error("Programming failed (exit %d). Is the board connected?", rc)
+    return rc
