@@ -33,7 +33,16 @@ REPO = os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__
 PROJECT_NAME = "unifpga_top"
 
 
+_OSS_CAD = os.path.expanduser("~/oss-cad-suite/bin")
+
+
 def _resolve_bin(name):
+    """Prefer ~/oss-cad-suite/bin (newer yosys 0.41+ which accepts SV-2009
+    multi-dim packed arrays — fixes most of our SV-feature gap fails)
+    before falling back to $PATH."""
+    cand = os.path.join(_OSS_CAD, name)
+    if os.path.exists(cand) and os.access(cand, os.X_OK):
+        return cand
     return shutil.which(name)
 
 
@@ -221,7 +230,10 @@ def synthesize(*, dir, configuration, board, board_pinmap, toolchain, peripheral
         return 1
 
     # ---- yosys synth ----
-    read_cmds = ['read_verilog -sv "{}"'.format(sv) for sv in sv_files]
+    # `-D __ICARUS__`: BGM labs use `\`ifdef __ICARUS__` to gate older Verilog
+    # syntax against SV-2009 `'{ … }` array-init that yosys still rejects.
+    # Telling yosys it's "Icarus" picks the older-syntax branch.
+    read_cmds = ['read_verilog -sv -D __ICARUS__ "{}"'.format(sv) for sv in sv_files]
     synth_cmd = _yosys_synth_family(part)
     yosys_script = "; ".join(
         read_cmds

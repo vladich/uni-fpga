@@ -53,7 +53,16 @@ _PART_TO_FAMILY = [
 ]
 
 
+_OSS_CAD = os.path.expanduser("~/oss-cad-suite/bin")
+
+
 def _resolve_bin(name):
+    """Prefer ~/oss-cad-suite/bin (newer yosys 0.41+ which accepts SV-2009
+    multi-dim packed arrays). Falls back to $PATH so snap-bundled tools
+    (openxc7.fasm2frames, openxc7.xc7frames2bit) still resolve."""
+    cand = os.path.join(_OSS_CAD, name)
+    if os.path.exists(cand) and os.access(cand, os.X_OK):
+        return cand
     return shutil.which(name)
 
 
@@ -274,7 +283,9 @@ def synthesize(*, dir, configuration, board, board_pinmap, toolchain, peripheral
         return 1
 
     # ---- yosys synth_xilinx ----
-    read_cmds = ['read_verilog -sv "{}"'.format(sv) for sv in sv_files]
+    # `-D __ICARUS__`: BGM labs use `\`ifdef __ICARUS__` to gate older Verilog
+    # syntax against SV-2009 `'{ … }` array-init that yosys still rejects.
+    read_cmds = ['read_verilog -sv -D __ICARUS__ "{}"'.format(sv) for sv in sv_files]
     # synth_xilinx in yosys 0.36 doesn't take -json; emit via write_json.
     yosys_script = "; ".join(
         read_cmds
@@ -360,8 +371,7 @@ def program(*, board, board_pinmap=None, toolchain, output, **_):
     if os.environ.get("UNIFPGA_DRY_RUN"):
         log.info("[dry run] Would program %s", bit)
         return 0
-    pgm = (_resolve_bin("openFPGALoader")
-           or shutil.which(os.path.expanduser("~/oss-cad-suite/bin/openFPGALoader")))
+    pgm = _resolve_bin("openFPGALoader")
     if pgm is None:
         log.error("Could not find openFPGALoader on $PATH (try ~/oss-cad-suite/).")
         return 1
