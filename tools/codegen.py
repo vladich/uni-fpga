@@ -868,6 +868,8 @@ _QUARTUS_FAMILY = {
     "Cyclone":        "Cyclone",
     "MAX V":          "MAX V",
     "MAX II":         "MAX II",
+    "MAX II CPLD":    "MAX II",
+    "MAX V CPLD":     "MAX V",
 }
 
 
