@@ -1,0 +1,31 @@
+# Configuration for variant 'fireant'.
+# Hand-curated; not produced by tools/generate_variants.py because the BGM
+# fireant directory uses XML configs (efinity), not the QSF/CST/etc.
+# patterns the variant generator scans for.
+
+Configuration:
+  id: fireant
+  board: fireant
+  toolchain: efinity
+
+  attach:
+    - peripheral: clock_input
+      params:
+        frequency_mhz: 50
+      bind:
+        clk: clk
+    - peripheral: button_array
+      params:
+        width: 2
+      bind:
+        btn: onboard_buttons
+    - peripheral: led_bank
+      params:
+        width: 4
+        active: low
+      bind:
+        led: onboard_leds
+    - peripheral: uart_2wire
+      bind:
+        rx: onboard_uart.rx
+        tx: onboard_uart.tx

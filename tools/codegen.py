@@ -1153,6 +1153,205 @@ def _lpf_lines(pin, port_expr, iotype, iotype_map):
 
 
 # ---------------------------------------------------------------------------
+# Efinity peri.xml + project.xml emission (Efinix Trion / Titanium)
+# ---------------------------------------------------------------------------
+
+def _xml_attr(s):
+    """Minimal XML-attribute escape."""
+    return (str(s).replace("&", "&amp;").replace('"', "&quot;")
+                  .replace("<", "&lt;").replace(">", "&gt;"))
+
+
+def emit_peri_xml(resolved, device_def):
+    """Emit Efinity's peripheral XML — one <efxpt:gpio> per top-level port,
+    plus iobank/bus declarations and oscillator info for any virtual clock.
+    Pin numbers are GPIOR_NN strings (Efinity-specific def names), not
+    physical ball/pad numbers.
+
+    `device_def`: e.g. "T8F81" — same string used in board.fpga.part."""
+    cfg = resolved["configuration"]
+    pinmap = resolved["board_pinmap"]
+    default_iostd = (pinmap.get("defaults") or {}).get("iostandard") or "3.3 V LVTTL / LVCMOS"
+
+    out = []
+    out.append('<?xml version="1.0" encoding="UTF-8"?>')
+    out.append(
+        '<efxpt:design_db name="{name}" device_def="{dev}" '
+        'version="2023.2.307" db_version="20232999" '
+        'xmlns:efxpt="http://www.efinixinc.com/peri_design_db" '
+        'xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" '
+        'xsi:schemaLocation="http://www.efinixinc.com/peri_design_db peri_design_db.xsd">'
+        .format(name=_xml_attr(cfg["id"]), dev=_xml_attr(device_def))
+    )
+
+    # ---- iobank info (collected across all referenced banks) ----
+    out.append("    <efxpt:device_info>")
+    out.append("        <efxpt:iobank_info>")
+    # T8F81 standard banks. Should match what BGM uses; if a board needs
+    # something else, override via board_pinmap.iobanks.
+    iobanks = (pinmap.get("iobanks") or {
+        "1A": "3.3 V LVTTL / LVCMOS",
+        "1B": "3.3 V LVTTL / LVCMOS",
+        "1C": "1.1 V",
+        "2A": "3.3 V LVTTL / LVCMOS",
+        "2B": "3.3 V LVTTL / LVCMOS",
+    })
+    for name, iostd in iobanks.items():
+        out.append('            <efxpt:iobank name="{}" iostd="{}"/>'.format(_xml_attr(name), _xml_attr(iostd)))
+    out.append("        </efxpt:iobank_info>")
+    out.append("    </efxpt:device_info>")
+
+    # ---- gpio info ----
+    referenced = collect_referenced_banks(resolved)
+    plans = build_capability_plans(resolved)
+    osc_clocks = []   # (osc-driven port_name, frequency_mhz) for the osc_info block
+
+    out.append('    <efxpt:gpio_info device_def="{}">'.format(_xml_attr(device_def)))
+    buses = []   # (bus_name, mode, msb, lsb)
+
+    for bank_name in referenced:
+        bank = (pinmap.get("pinBanks") or {}).get(bank_name)
+        if bank is None:
+            continue
+        # Virtual oscillator-sourced clock — record it in osc_clocks
+        # and skip the gpio entry.
+        if bank.get("virtual"):
+            if bank.get("source") == "osc":
+                osc_clocks.append((bank_name, bank.get("frequency_mhz", 50)))
+            continue
+
+        pins = bank.get("pins")
+        bank_iostd = bank.get("iostandard") or default_iostd
+        direction = _infer_pin_direction(resolved, bank_name,
+                                         None if not isinstance(pins, dict) else next(iter(pins)))
+        mode = direction if direction in ("input", "output", "inout") else "input"
+
+        if isinstance(pins, str):
+            out.extend(_efxpt_gpio(bank_name, pins, mode, "", bank_iostd))
+        elif isinstance(pins, list):
+            buses.append((bank_name, mode, len(pins) - 1, 0))
+            for i, p in enumerate(pins):
+                if p is None:
+                    continue
+                portname = "{}[{}]".format(bank_name, i)
+                out.extend(_efxpt_gpio(portname, p, mode, bank_name, bank_iostd))
+        elif isinstance(pins, dict):
+            for sub, val in pins.items():
+                pname = "{}_{}".format(bank_name, sub)
+                d = _infer_pin_direction(resolved, bank_name, sub)
+                m = d if d in ("input", "output", "inout") else "input"
+                if isinstance(val, list):
+                    buses.append((pname, m, len(val) - 1, 0))
+                    for i, p in enumerate(val):
+                        if p is None:
+                            continue
+                        portname = "{}[{}]".format(pname, i)
+                        out.extend(_efxpt_gpio(portname, p, m, pname, bank_iostd))
+                elif isinstance(val, str):
+                    out.extend(_efxpt_gpio(pname, val, m, "", bank_iostd))
+
+    # Default unused-pin policy (same as BGM)
+    out.append('        <efxpt:global_unused_config state="input with weak pullup"/>')
+
+    for name, mode, msb, lsb in buses:
+        out.append('        <efxpt:bus name="{}" mode="{}" msb="{}" lsb="{}"/>'
+                   .format(_xml_attr(name), _xml_attr(mode), msb, lsb))
+    out.append("    </efxpt:gpio_info>")
+
+    # ---- oscillator info for virtual clocks ----
+    out.append("    <efxpt:pll_info/>")
+    if osc_clocks:
+        out.append("    <efxpt:osc_info>")
+        for clock_port, _freq in osc_clocks:
+            out.append('        <efxpt:osc name="osc_inst1" osc_def="OSC_0" clock_name="{}"/>'
+                       .format(_xml_attr(clock_port)))
+        out.append("    </efxpt:osc_info>")
+    else:
+        out.append("    <efxpt:osc_info/>")
+    out.append("    <efxpt:jtag_info/>")
+    out.append("</efxpt:design_db>")
+    return "\n".join(out) + "\n"
+
+
+def _efxpt_gpio(port_name, gpio_def, mode, bus_name, iostd):
+    """Render one <efxpt:gpio> element with its nested input_config /
+    output_config / inout_config child."""
+    lines = ['        <efxpt:gpio name="{}" gpio_def="{}" mode="{}" bus_name="{}" '
+             'is_lvds_gpio="false" io_standard="{}">'.format(
+                _xml_attr(port_name), _xml_attr(gpio_def), _xml_attr(mode),
+                _xml_attr(bus_name), _xml_attr(iostd))]
+    if mode == "input":
+        lines.append('            <efxpt:input_config name="{}" name_ddio_lo="" '
+                     'conn_type="normal" is_register="false" clock_name="" '
+                     'is_clock_inverted="false" pull_option="weak pullup" '
+                     'is_schmitt_trigger="false" ddio_type="none"/>'.format(_xml_attr(port_name)))
+    elif mode == "output":
+        lines.append('            <efxpt:output_config name="{}" name_ddio_lo="" '
+                     'register_option="none" clock_name="" is_clock_inverted="false" '
+                     'is_slew_rate="false" tied_option="none" ddio_type="none" '
+                     'drive_strength="1"/>'.format(_xml_attr(port_name)))
+    else:  # inout
+        lines.append('            <efxpt:inout_config name="{}" name_ddio_lo="" '
+                     'conn_type="normal" pull_option="weak pullup"/>'
+                     .format(_xml_attr(port_name)))
+    lines.append("        </efxpt:gpio>")
+    return lines
+
+
+def emit_efx_project_xml(resolved, device_def, sv_files, sdc_path, peri_path,
+                         project_name="unifpga_top"):
+    """Emit Efinity's project XML wrapper. Lists every SV/V source, plus the
+    SDC and peri XML, and the standard synth/pnr/bitstream parameters."""
+    cfg = resolved["configuration"]
+    family = (resolved["board"].get("PartFamily") or "Trion").strip()
+    out = []
+    out.append('<?xml version="1.0" encoding="UTF-8"?>')
+    out.append(
+        '<efx:project xmlns:efx="http://www.efinixinc.com/enf_proj" '
+        'xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" '
+        'name="{name}" description="{name}" sw_version="2023.2.307" '
+        'xsi:schemaLocation="http://www.efinixinc.com/enf_proj enf_proj.xsd">'
+        .format(name=_xml_attr(project_name))
+    )
+    out.append("    <efx:device_info>")
+    out.append('        <efx:family name="{}"/>'.format(_xml_attr(family)))
+    out.append('        <efx:device name="{}"/>'.format(_xml_attr(device_def)))
+    out.append('        <efx:timing_model name="C2"/>')
+    out.append("    </efx:device_info>")
+    out.append('    <efx:design_info def_veri_version="sv_09" def_vhdl_version="vhdl_2008">')
+    out.append('        <efx:top_module name="top"/>')
+    for sv in sv_files:
+        ext = "system_verilog" if sv.endswith((".sv", ".svh")) else "verilog"
+        out.append('        <efx:design_file name="{}" version="{}" library="default"/>'.format(
+            _xml_attr(sv), ext))
+    out.append('        <efx:top_vhdl_arch name=""/>')
+    out.append("    </efx:design_info>")
+    out.append("    <efx:constraint_info>")
+    out.append('        <efx:sdc_file name="{}"/>'.format(_xml_attr(sdc_path)))
+    out.append('        <efx:inter_file name=""/>')
+    out.append("    </efx:constraint_info>")
+    out.append("    <efx:sim_info/>")
+    out.append("    <efx:misc_info/>")
+    out.append('    <efx:synthesis tool_name="efx_map">')
+    out.append('        <efx:param name="write_efx_verilog" value="on" value_type="e_bool"/>')
+    out.append('        <efx:param name="opt_mode" value="speed" value_type="e_option"/>')
+    out.append("    </efx:synthesis>")
+    out.append('    <efx:place_and_route tool_name="efx_pnr">')
+    out.append('        <efx:param name="verbose" value="off" value_type="e_bool"/>')
+    out.append('        <efx:param name="load_delaym" value="on" value_type="e_bool"/>')
+    out.append("    </efx:place_and_route>")
+    out.append('    <efx:bitstream_generation tool_name="efx_pgm">')
+    out.append('        <efx:param name="mode" value="active" value_type="e_option"/>')
+    out.append('        <efx:param name="width" value="1" value_type="e_option"/>')
+    out.append('        <efx:param name="oscillator_clock_divider" value="DIV8" value_type="e_option"/>')
+    out.append('        <efx:param name="enable_roms" value="on" value_type="e_option"/>')
+    out.append('        <efx:param name="io_weak_pullup" value="on" value_type="e_bool"/>')
+    out.append("    </efx:bitstream_generation>")
+    out.append("</efx:project>")
+    return "\n".join(out) + "\n"
+
+
+# ---------------------------------------------------------------------------
 # PCF constraint emission (nextpnr-icestorm — Lattice iCE40)
 # ---------------------------------------------------------------------------
 
