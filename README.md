@@ -39,8 +39,7 @@ real reason cleanly.
 
 This project is a re-architecture of, and tightly coupled to, the
 [basics-graphics-music](https://github.com/yuri-panchul/basics-graphics-music)
-(BGM) repo. uni-fpga consumes BGM as a source of truth for board pinmaps and
-example designs:
+(BGM) repo. uni-fpga consumes BGM as a source of truth for example designs:
 
 - **Designs** in `labs/<name>/` are mechanically adapted from
   `basics-graphics-music/labs/.../<name>/lab_top.sv` by `tools/adapt_labs.py`.
