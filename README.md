@@ -1,10 +1,12 @@
 # uni-fpga
 
 A multi-vendor FPGA build abstraction. One design, written against a fixed
-virtual-device interface, synthesizes against any of 90+ board configurations
-across six toolchains (Vivado, Quartus Prime, Quartus II, Gowin EDA, and the
-yosys+nextpnr open flows for iCE40 / ECP5 / Gowin) — without changing the
-design.
+virtual-device interface, synthesizes against any of 130 board configurations
+across **eleven toolchains** — five vendor (Vivado, Quartus Prime, Quartus II
+13.x, Gowin EDA, Efinity) and six open-source yosys+nextpnr flows
+(openxc7 for Xilinx 7-series, icestorm for iCE40, trellis for ECP5,
+apicula for Gowin, mistral for Cyclone V, himbaechel-gatemate for
+Cologne Chip GateMate) — without changing the design.
 
 ## Why it exists
 
@@ -22,8 +24,9 @@ and build scripts. uni-fpga decouples the three concerns:
    peripherals (`led_bank`, `vga_4bit`, `tm1638_led_key`, `inmp441_i2s_mic`,
    …) to specific pin banks.
 3. **The toolchain** lives in `toolchains/<id>/<id>.py` and knows how to
-   drive its vendor tool in batch mode (Vivado XDC, Quartus QSF/SDC, Gowin
-   CST, iCE40 PCF, ECP5 LPF).
+   drive its vendor / open-source tool in batch mode (Vivado XDC, Quartus
+   QSF/SDC, Gowin CST, Efinity peri.xml + project.xml, iCE40 PCF, ECP5 LPF,
+   GateMate CCF, openxc7 simple-form XDC, mistral QSF re-use).
 
 `synthesize.py` glues them together: it codegens a `top.sv` wrapper that
 maps physical pins to the design's virtual capability ports, emits the right
@@ -42,14 +45,14 @@ This project is a re-architecture of, and tightly coupled to, the
 (BGM) repo. uni-fpga consumes BGM as a source of truth for example designs:
 
 - **Designs** in `designs/<name>/` are mechanically adapted from
-  `basics-graphics-music/designs/.../<name>/design_top.sv` by `tools/adapt_designs.py`.
+  `basics-graphics-music/labs/.../<name>/lab_top.sv` by `tools/adapt_designs.py`.
   The adapter retargets each design to uni-fpga's canonical port list (e.g.
   `key` → `btn`, `mic` → `mic_sample`/`mic_valid`), strips per-board includes
   that codegen replaces, infers `// requires:` blocks from access patterns,
   and applies a small per-toolchain compatibility pass (move package imports
   out of ANSI port lists, strip `<param>'(expr)` size casts, etc.).
 - **Board pinmaps** in `config/boards/<id>.yml` are auto-curated from BGM's
-  `boards/<id>/board_specific.{xdc,qsf,cst,pcf,lpf}` files by
+  `boards/<id>/board_specific.{xdc,qsf,cst,pcf,lpf,peri.xml}` files by
   `tools/curate_board.py`. Each pin bank we name (`onboard_leds`,
   `onboard_7seg.anodes`, `pmod_jc`, `gpio_0`, …) maps directly to the rows
   of those BGM constraint files.
@@ -71,19 +74,14 @@ some-parent/
 You don't need to modify BGM — uni-fpga consumes it and writes adapted
 artifacts into `designs/`, `config/boards/`, and `config/configurations/`.
 
-> **Note on naming.** The `designs/` directory and `design_top.sv` filename are
-> holdovers from BGM's vocabulary. uni-fpga is a general FPGA abstraction;
-> these names will be normalized in a future cleanup.
-
 ## What's in the box
 
 | Path | What it holds |
 |---|---|
 | `synthesize.py` | Top-level entry point. Resolves a configuration, codegens `top.sv`, dispatches to the toolchain. |
-| `program.py` | Downloads the resulting bitstream to the connected board (per-toolchain JTAG/USB programmer). |
-| `config/boards/<id>.yml` | Board pinmaps (49 boards). |
-| `config/boards.yml` | Board metadata (chip family, package, programmer info). |
-| `config/configurations/<id>.yml` | Board × add-ons combinations (90+ configurations). |
+| `config/boards/<id>.yml` | Board pinmaps (50 boards). |
+| `config/boards.yml` | Board metadata (chip family, package, programmer info — 62 entries; some legacy boards harvested but not yet wired up). |
+| `config/configurations/<id>.yml` | Board × add-on combinations (130 configurations). |
 | `config/peripherals/*.yml` | 32 peripheral definitions (`led_bank`, `vga_4bit`, `pmod_12pin`, `tm1638_led_key`, `inmp441_i2s_mic`, …). |
 | `config/capabilities/*.yml` | 12 abstract user-facing capabilities (`leds`, `screen`, `gpio`, `audio_in`, …) with aggregation rules. |
 | `peripherals/*.sv` | Driver SV modules for hardware peripherals (TM1638 controller, VGA, I²S mic, etc.). |
@@ -100,13 +98,36 @@ artifacts into `designs/`, `config/boards/`, and `config/configurations/`.
 
 | Toolchain | Configs | Sample boards | Status |
 |---|---|---|---|
-| `vivado` | 10 | Nexys 4 DDR, Basys 3, Arty A7, Zybo Z7 | Validated end-to-end |
-| `quartus_prime` | 24 | DE10-Lite, DE10-Nano, DE0-CV, DE2-115 | Validated end-to-end |
-| `quartus2` | 8 | DE0, DE1, DE2, omdazz, marsohod | MAX II works in 23.1std; Cyclone II/III need Quartus II 13.0sp1 |
-| `gowin_eda` | 37 | Tang Nano 9K/20K, Tang Primer 20K/25K | Validated end-to-end (3 high-end boards need Gowin EDA Standard license) |
-| `nextpnr_icestorm` | 8 | iCEBreaker, iCE40-HX8K-EVB | Validated (yosys 0.36 SV-feature gaps for ~17 designs) |
-| `nextpnr_trellis` | 3 | Colorlight 5A-75B, OrangeCrab, Karnix | Validated (same yosys SV gaps) |
-| `nextpnr_apicula` | 8 | Tang Nano 9K (open flow) | Validated (same yosys SV gaps) |
+| **Proprietary** | | | |
+| `vivado` | 17 | Nexys 4 DDR, Basys 3, Arty A7 (35/100), Zybo Z7, Eclypse Z7, Nexys A7, qmtech Kintex 7 | Validated end-to-end (Vivado 2023.2) |
+| `quartus_prime` | 24 | DE0-CV, DE10-Lite, DE10-Nano, DE2-115, c5gx, atlas_soc | Validated end-to-end (Quartus Prime 23.1std) |
+| `quartus2` | 7 | DE0, DE1, DE2, omdazz, marsohod | Validated (Quartus II 13.0sp1 for legacy Cyclone II/III/MAX II/V) |
+| `gowin_eda` | 37 | Tang Nano 4K/9K/20K, Tang Primer 20K/25K, Tang Mega 138K (Pro), marsohod3gw2, orangepi_msoc | Validated (Educational license; Standard license needed for some GW5* boards — see Gowin Standard section) |
+| `efinity` | 1 | FireAnt (Trion T8) | Validated end-to-end (Efinity 2023.2) |
+| **Open-source (yosys + nextpnr)** | | | |
+| `nextpnr_openxc7` | 17 | Same as `vivado` (open-flow alternative) | 1135/1564 OK on full sweep — uses yosys 0.41+ from oss-cad-suite |
+| `nextpnr_icestorm` | 8 | iCEBreaker, iCE40HX8K-EVB, OrangeBoard, MyStorm | Validated |
+| `nextpnr_trellis` | 3 | Colorlight 5A-75B, OrangeCrab, Karnix | Validated |
+| `nextpnr_apicula` | 8 | Tang Nano 9K, Tang Primer 20K Dock (open-flow) | Validated |
+| `nextpnr_mistral` | 7 | DE0-CV, DE0-Nano-SoC (vga666 + vga_pmod), DE1-SoC, DE10-Nano, c5gx, terasic_sockit | Validated (327/644 OK; needs locally-built nextpnr-mistral against mistral commit `d6bd02c`) |
+| `nextpnr_gatemate` | 1 | gatemate_evb_a1 (Cologne Chip CCGM1A1) | Smoke-tested (placeholder pinmap; needs verified pads for hardware target) |
+
+The remaining failures on yosys-based flows cluster around a small set of
+designs using SystemVerilog 2009 features yosys still doesn't fully accept
+(multi-dim packed arrays, certain `'{...}` array-init forms) — these are
+the same designs across every nextpnr-based toolchain, not flaky failures.
+
+### Open-flow build prerequisites
+
+Several open-source flows depend on locally-built tooling beyond
+oss-cad-suite (which ships yosys 0.41+ and nextpnr-{ice40,ecp5,gowin,nexus}):
+
+| Toolchain | Needs |
+|---|---|
+| `nextpnr_openxc7` | yosys synth_xilinx (in oss-cad-suite) + `prjxray` python tools at `~/Projects/prjxray/` for the FASM→bit step |
+| `nextpnr_mistral` | `nextpnr-mistral` built from `~/Projects/nextpnr` against `~/Projects/mistral` at commit `d6bd02c` (last with both `pos_t` and `rnode_t` typedefs) |
+| `nextpnr_gatemate` | `nextpnr-himbaechel` (gatemate uarch) built from `~/Projects/nextpnr` with `-DARCH=himbaechel -DHIMBAECHEL_UARCH=gatemate -DHIMBAECHEL_PEPPERCORN_PATH=~/Projects/prjpeppercorn`; `gmpack` from `~/Projects/prjpeppercorn/libgm` |
+| programming | `openFPGALoader` from `~/oss-cad-suite/bin` works for most boards |
 
 ## Quick start
 
@@ -118,7 +139,13 @@ PYTHONPATH=. python3 synthesize.py \
     -o build/ \
     --step elaborate     # or --step full to produce a bitstream
 
-# Program the connected board:
+# Same design, different toolchain (open-flow alternative):
+PYTHONPATH=. python3 synthesize.py \
+    -c basys3_openxc7 \
+    --top designs/2_9_pong/design_top.sv \
+    -o build/
+
+# Program the connected board (after --step full):
 PYTHONPATH=. python3 synthesize.py \
     -c basys3 \
     --top designs/2_9_pong/design_top.sv \
@@ -141,6 +168,46 @@ intended SKIP, not a failure.
   `python3 tools/curate_board.py` then `python3 tools/generate_variants.py`.
   Hand-edit the configuration's peripheral `attach:` list as needed.
 - **A new toolchain**: add `toolchains/<id>/<id>.py` exposing `synthesize`
-  and `program`, plus a `config/toolchains.yml` entry. The seven drivers
-  already in the tree are good templates — `vivado.py` for vendor TCL flows,
-  `nextpnr_icestorm.py` for yosys/nextpnr open flows.
+  and `program`, plus a `config/toolchains.yml` entry. The eleven existing
+  drivers are good templates — `vivado.py` for vendor TCL flows,
+  `nextpnr_icestorm.py` for yosys/nextpnr open flows, `nextpnr_gatemate.py`
+  for himbaechel-uarch flows.
+
+## Repository layout
+
+```
+.
+├── synthesize.py
+├── config/
+│   ├── boards.yml             # board metadata
+│   ├── boards/<id>.yml        # per-board pin maps (50 boards)
+│   ├── configurations/<id>.yml # per-config peripheral attachments (130 configs)
+│   ├── peripherals/*.yml      # 32 peripheral definitions
+│   ├── capabilities/*.yml     # 12 abstract capabilities
+│   └── parts.yml              # vendor → toolchain mapping
+├── designs/<name>/design_top.sv  # 92 designs (BGM-derived)
+├── peripherals/                  # SV peripheral drivers
+│   ├── designs_common/           # reusable helpers
+│   └── design_top_interface.sv   # canonical user-design interface
+├── toolchains/                   # 11 driver modules
+│   ├── vivado/
+│   ├── quartus_prime/
+│   ├── quartus2/
+│   ├── gowin_eda/
+│   ├── efinity/
+│   ├── nextpnr_openxc7/
+│   ├── nextpnr_icestorm/
+│   ├── nextpnr_trellis/
+│   ├── nextpnr_apicula/
+│   ├── nextpnr_mistral/
+│   └── nextpnr_gatemate/
+├── tools/
+│   ├── codegen.py             # top.sv + constraint emitters
+│   ├── adapt_designs.py       # BGM → uni-fpga design adapter
+│   ├── curate_board.py        # BGM → board pinmap
+│   ├── generate_variants.py   # BGM → configuration bootstrap
+│   ├── design_requirements.py # // requires: parser
+│   ├── sweep_boards.sh        # board × design grid run
+│   └── check_all_designs.sh   # smoke-check every design
+└── tests/test_config_consistency.py
+```
