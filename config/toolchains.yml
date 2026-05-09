@@ -92,7 +92,12 @@ Toolchains:
     Version:
     InstallDir:
 
-  - Id: nextpnr_oxide    # yosys/nextpnr: Lattice Nexus
+  - Id: nextpnr_nexus    # yosys/nextpnr-nexus: Lattice CrossLink-NX, Certus-NX, CertusPro-NX
+    Name: Nexus
+    Version:
+    InstallDir:
+
+  - Id: nextpnr_oxide    # yosys/nextpnr alias: Lattice Nexus (legacy stub — kept for compat)
     Name: Oxide
     Version:
     InstallDir:

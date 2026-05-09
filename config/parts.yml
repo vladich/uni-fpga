@@ -102,8 +102,9 @@ Parts:
   Families:
   - Family: Avant
   - Family: Certus-NX
-    Toolchains: [nextpnr_oxide]
+    Toolchains: [nextpnr_nexus]
   - Family: CertusPro-NX
+    Toolchains: [nextpnr_nexus]
   - Family: ICE40
     Toolchains: [nextpnr_icestorm]
   - Family: ECP5

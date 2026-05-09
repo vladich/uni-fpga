@@ -1495,6 +1495,85 @@ def emit_pcf(resolved):
     return "\n".join(out)
 
 
+def emit_pdc(resolved):
+    """Emit a PDC (Physical Design Constraints) file for nextpnr-nexus.
+
+    nextpnr-nexus's PDC parser accepts a TCL-flavoured subset of Lattice
+    Diamond / Radiant constraints:
+
+        ldc_set_location -site "<pad>" [get_ports <port>]
+        ldc_set_port -iobuf {IO_TYPE=<std>} [get_ports <port>]
+        create_clock -period <ns> [get_ports <clk_port>]
+
+    Indexed bus elements use the same `port[idx]` convention as XDC/QSF.
+    """
+    cfg = resolved["configuration"]
+    pinmap = resolved["board_pinmap"]
+    board = resolved.get("board") or {}
+    iostd = (pinmap.get("defaults") or {}).get("iostandard", "LVCMOS33")
+    plans = build_capability_plans(resolved)
+
+    out = []
+    out.append("# =============================================================================")
+    out.append("# Auto-generated PDC constraints — DO NOT EDIT")
+    out.append("# Configuration: {}".format(cfg["id"]))
+    out.append("# Board:         {}".format(board.get("BoardName", "")))
+    out.append("# =============================================================================")
+    out.append("")
+
+    referenced = collect_referenced_banks(resolved)
+
+    def _emit(port, pad):
+        out.append('ldc_set_location -site "{pad}" [get_ports {port}]'.format(pad=pad, port=port))
+        out.append('ldc_set_port -iobuf {{IO_TYPE={s}}} [get_ports {port}]'.format(s=iostd, port=port))
+
+    for bank_name in referenced:
+        bank = (pinmap.get("pinBanks") or {}).get(bank_name)
+        if bank is None:
+            out.append("# WARNING: bank '{}' referenced but not in pinBanks".format(bank_name))
+            continue
+        pins = bank.get("pins")
+
+        if isinstance(pins, str):
+            _emit(bank_name, pins)
+        elif isinstance(pins, list):
+            for i, p in enumerate(pins):
+                if p is None:
+                    continue
+                _emit("{{{}[{}]}}".format(bank_name, i), p)
+        elif isinstance(pins, dict):
+            for sub, val in pins.items():
+                pname = "{}_{}".format(bank_name, sub)
+                if isinstance(val, list):
+                    for i, p in enumerate(val):
+                        if p is None:
+                            continue
+                        _emit("{{{}[{}]}}".format(pname, i), p)
+                elif isinstance(val, str):
+                    _emit(pname, val)
+
+    # Clock period(s) — the parser also accepts create_clock, which keeps the
+    # timing analyser honest.
+    out.append("")
+    for pidx, perif, params in plans["clock"].providers:
+        attach = resolved["peripherals"][pidx]
+        clk_bank = (attach.get("bind") or {}).get("clk")
+        if clk_bank is None:
+            continue
+        port = _bank_port_name(clk_bank)
+        freq = (params or {}).get("frequency_mhz")
+        if freq is None:
+            continue
+        period_ns = 1000.0 / float(freq)
+        out.append(
+            'create_clock -period {p:.3f} -name sys_clk_{f}mhz [get_ports {{{port}}}]'
+            .format(f=int(freq), p=period_ns, port=port)
+        )
+
+    out.append("")
+    return "\n".join(out)
+
+
 def emit_ccf(resolved):
     """Emit a CCF (Cologne Chip Constraints File) for nextpnr-himbaechel
     with the gatemate uarch. Format per the himbaechel ccf.cc parser:

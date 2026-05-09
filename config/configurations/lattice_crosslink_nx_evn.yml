@@ -1,0 +1,36 @@
+# lattice_crosslink_nx_evn — CrossLink-NX EVN (LIFCL-40-9BG400C)
+# via the open-source flow: yosys synth_nexus → nextpnr-nexus → prjoxide pack.
+
+Configuration:
+  id: lattice_crosslink_nx_evn
+  board: lattice_crosslink_nx_evn
+  toolchain: nextpnr_nexus
+
+  attach:
+    - peripheral: clock_input
+      params:
+        frequency_mhz: 12
+      bind:
+        clk: clk
+    - peripheral: reset_button
+      bind:
+        rst: onboard_reset
+    - peripheral: button_array
+      params:
+        width: 2
+      bind:
+        btn: onboard_buttons
+    - peripheral: sw_bank
+      params:
+        width: 8
+      bind:
+        sw: onboard_switches
+    - peripheral: led_bank
+      params:
+        width: 14
+      bind:
+        led: onboard_leds
+    - peripheral: uart_2wire
+      bind:
+        rx: onboard_uart.rx
+        tx: onboard_uart.tx

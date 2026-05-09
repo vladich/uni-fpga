@@ -153,6 +153,13 @@ Boards:
   PartFamily: GateMate
   Part: CCGM1A1
 
+- Id: lattice_crosslink_nx_evn
+  BoardName: CrossLink-NX Evaluation Board
+  BoardProducer: Lattice
+  PartProducer: Lattice
+  PartFamily: Certus-NX
+  Part: LIFCL-40-9BG400C
+
 - Id: ice40hx8k_evb
   BoardName: iCE40HX8K-EVB  
   BoardProducer: Olimex
