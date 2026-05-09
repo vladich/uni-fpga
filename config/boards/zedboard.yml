@@ -1,0 +1,15 @@
+# zedboard pin map.
+#
+# Source: Digilent Zedboard-Master.xdc (github.com/Digilent/digilent-xdc, MIT-licensed)
+# Imported via tools/verify_pinmap_against_vendor.py.
+
+Board:
+  id: zedboard
+  fpga:
+    producer: Xilinx
+    family: Zynq 7000
+    part: XC7Z020CLG484-1
+  defaults:
+    iostandard: LVCMOS33
+
+  pinBanks:

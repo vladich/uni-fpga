@@ -1,0 +1,28 @@
+# nexys_video pin map.
+#
+# Source: Digilent Nexys-Video-Master.xdc (github.com/Digilent/digilent-xdc, MIT-licensed)
+# Imported via tools/verify_pinmap_against_vendor.py.
+
+Board:
+  id: nexys_video
+  fpga:
+    producer: Xilinx
+    family: Artix 7
+    part: XC7A200T-1SBG484C
+  defaults:
+    iostandard: LVCMOS33
+
+  pinBanks:
+    cpu_resetn: { pins: "G4" }
+    onboard_buttons:
+      pins: ["B22", "D22", "C22", "D14", "F15"]
+    onboard_leds:
+      pins: ["T14", "T15", "T16", "U16", "V15", "W16", "W15", "Y13"]
+    onboard_switches:
+      pins: ["E22", "F21", "G21", "G22", "H17", "J16", "K13", "M17"]
+    pmod_ja:
+      pins: ["AB22", "AB21", "AB20", "AB18", "Y21", "AA21", "AA20", "AA18"]
+    pmod_jb:
+      pins: ["V9", "V8", "V7", "W7", "W9", "Y9", "Y8", "Y7"]
+    pmod_jc:
+      pins: ["Y6", "AA6", "AA8", "AB8", "R6", "T6", "AB7", "AB6"]

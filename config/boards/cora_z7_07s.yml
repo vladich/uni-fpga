@@ -1,0 +1,31 @@
+# cora_z7_07s pin map.
+#
+# Source: Digilent Cora-Z7-07S-Master.xdc (github.com/Digilent/digilent-xdc, MIT-licensed)
+# Imported via tools/verify_pinmap_against_vendor.py.
+
+Board:
+  id: cora_z7_07s
+  fpga:
+    producer: Xilinx
+    family: Zynq 7000
+    part: XC7Z007SCLG400-1
+  defaults:
+    iostandard: LVCMOS33
+
+  pinBanks:
+    onboard_buttons:
+      pins: ["D20", "D19"]
+    onboard_rgb_led_0:
+      pins:
+        b: "L15"
+        g: "G17"
+        r: "N15"
+    onboard_rgb_led_1:
+      pins:
+        b: "G14"
+        g: "L14"
+        r: "M15"
+    pmod_ja:
+      pins: ["Y18", "Y19", "Y16", "Y17", "U18", "U19", "W18", "W19"]
+    pmod_jb:
+      pins: ["W14", "Y14", "T11", "T10", "V16", "W16", "V12", "W13"]

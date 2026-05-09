@@ -160,6 +160,78 @@ Boards:
   PartFamily: Certus-NX
   Part: LIFCL-40-9BG400C
 
+# ---------- Digilent boards imported via tools/verify_pinmap_against_vendor.py ----------
+
+- Id: arty_s7_25
+  BoardName: Arty S7-25
+  BoardProducer: Digilent
+  PartProducer: Xilinx (AMD)
+  PartFamily: Spartan 7
+  Part: XC7S25CSGA324-1
+
+- Id: arty_s7_50
+  BoardName: Arty S7-50
+  BoardProducer: Digilent
+  PartProducer: Xilinx (AMD)
+  PartFamily: Spartan 7
+  Part: XC7S50CSGA324-1
+
+- Id: arty_z7_10
+  BoardName: Arty Z7-10
+  BoardProducer: Digilent
+  PartProducer: Xilinx (AMD)
+  PartFamily: Zynq 7000
+  Part: XC7Z010-1CLG400C
+
+- Id: arty_z7_20
+  BoardName: Arty Z7-20
+  BoardProducer: Digilent
+  PartProducer: Xilinx (AMD)
+  PartFamily: Zynq 7000
+  Part: XC7Z020-1CLG400C
+
+- Id: cora_z7_07s
+  BoardName: Cora Z7-07S
+  BoardProducer: Digilent
+  PartProducer: Xilinx (AMD)
+  PartFamily: Zynq 7000
+  Part: XC7Z007SCLG400-1
+
+- Id: cora_z7_10
+  BoardName: Cora Z7-10
+  BoardProducer: Digilent
+  PartProducer: Xilinx (AMD)
+  PartFamily: Zynq 7000
+  Part: XC7Z010CLG400-1
+
+- Id: genesys_2
+  BoardName: Genesys 2
+  BoardProducer: Digilent
+  PartProducer: Xilinx (AMD)
+  PartFamily: Kintex 7
+  Part: XC7K325TFFG900-2
+
+- Id: nexys_video
+  BoardName: Nexys Video
+  BoardProducer: Digilent
+  PartProducer: Xilinx (AMD)
+  PartFamily: Artix 7
+  Part: XC7A200T-1SBG484C
+
+- Id: usb104_a7_100t
+  BoardName: USB104 A7-100T
+  BoardProducer: Digilent
+  PartProducer: Xilinx (AMD)
+  PartFamily: Artix 7
+  Part: XC7A100T-1FTG256C
+
+- Id: zedboard
+  BoardName: ZedBoard
+  BoardProducer: Avnet/Digilent
+  PartProducer: Xilinx (AMD)
+  PartFamily: Zynq 7000
+  Part: XC7Z020CLG484-1
+
 - Id: ice40hx8k_evb
   BoardName: iCE40HX8K-EVB  
   BoardProducer: Olimex

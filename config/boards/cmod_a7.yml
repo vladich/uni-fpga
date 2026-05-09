@@ -1,0 +1,31 @@
+# cmod_a7 pin map.
+#
+# Source: Digilent Cmod-A7-Master.xdc (github.com/Digilent/digilent-xdc, MIT-licensed)
+# Imported via tools/verify_pinmap_against_vendor.py.
+
+Board:
+  id: cmod_a7
+  fpga:
+    producer: Xilinx
+    family: Artix 7
+    part: XC7A35TCPG236-1
+  defaults:
+    iostandard: LVCMOS33
+
+  pinBanks:
+    clk: { pins: "L17" }
+    onboard_buttons:
+      pins: ["A18", "B18"]
+    onboard_leds:
+      pins: ["A17", "C16"]
+    onboard_rgb_led_0:
+      pins:
+        b: "B17"
+        g: "B16"
+        r: "C17"
+    onboard_uart:
+      pins:
+        rx: "J17"
+        tx: "J18"
+    pmod_ja:
+      pins: ["G17", "G19", "N18", "L18", "H17", "H19", "J19", "K18"]

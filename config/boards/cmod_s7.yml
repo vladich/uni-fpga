@@ -1,0 +1,26 @@
+# cmod_s7 pin map.
+#
+# Source: Digilent Cmod-S7-25-Master.xdc (github.com/Digilent/digilent-xdc, MIT-licensed)
+# Imported via tools/verify_pinmap_against_vendor.py.
+
+Board:
+  id: cmod_s7
+  fpga:
+    producer: Xilinx
+    family: Spartan 7
+    part: XC7S25CSGA225-1
+  defaults:
+    iostandard: LVCMOS33
+
+  pinBanks:
+    onboard_buttons:
+      pins: ["D2", "D1"]
+    onboard_leds:
+      pins: ["E2", "K1", "J1", "E1"]
+    onboard_rgb_led_0:
+      pins:
+        b: "F1"
+        g: "D3"
+        r: "F2"
+    pmod_ja:
+      pins: ["J2", "H2", "H4", "F3", "H3", "H1", "G1", "F4"]
