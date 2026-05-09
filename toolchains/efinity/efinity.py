@@ -60,18 +60,18 @@ def _efx_run_script(toolchain):
     return None
 
 
-def _collect_sv_sources(repo, peripherals, user_lab_top, generated_top):
+def _collect_sv_sources(repo, peripherals, user_design_top, generated_top):
     """Mirrors the Vivado/Quartus drivers — keep symmetrical."""
-    files = [generated_top, os.path.abspath(user_lab_top)]
+    files = [generated_top, os.path.abspath(user_design_top)]
     seen = {os.path.abspath(p) for p in files}
 
-    lab_dir = os.path.dirname(os.path.abspath(user_lab_top))
-    if os.path.isdir(lab_dir):
-        for root, _dirs, names in os.walk(lab_dir):
+    design_dir = os.path.dirname(os.path.abspath(user_design_top))
+    if os.path.isdir(design_dir):
+        for root, _dirs, names in os.walk(design_dir):
             for name in sorted(names):
                 if not (name.endswith(".sv") or name.endswith(".v")):
                     continue
-                if name in ("lab_top.sv", "tb.sv"):
+                if name in ("design_top.sv", "tb.sv"):
                     continue
                 full = os.path.join(root, name)
                 if full not in seen:
@@ -94,12 +94,12 @@ def _collect_sv_sources(repo, peripherals, user_lab_top, generated_top):
             files.append(full)
             seen.add(full)
 
-    labs_common_dir = os.path.join(repo, "peripherals", "labs_common")
-    if os.path.isdir(labs_common_dir):
-        for name in sorted(os.listdir(labs_common_dir)):
+    designs_common_dir = os.path.join(repo, "peripherals", "designs_common")
+    if os.path.isdir(designs_common_dir):
+        for name in sorted(os.listdir(designs_common_dir)):
             if not name.endswith(".sv"):
                 continue
-            full = os.path.join(labs_common_dir, name)
+            full = os.path.join(designs_common_dir, name)
             if full not in seen:
                 files.append(full)
                 seen.add(full)
@@ -161,11 +161,11 @@ def synthesize(*, dir, configuration, board, board_pinmap, toolchain, peripheral
     # Copy data files (.hex, .mem) referenced by `$readmemh` from the design
     # dir into the work dir — Efinity runs efx_map.py from work_pnr/ and
     # resolves relative paths against that, not the source location.
-    lab_dir = os.path.dirname(os.path.abspath(top))
-    if os.path.isdir(lab_dir):
-        for name in os.listdir(lab_dir):
+    design_dir = os.path.dirname(os.path.abspath(top))
+    if os.path.isdir(design_dir):
+        for name in os.listdir(design_dir):
             if name.endswith((".hex", ".mem")):
-                shutil.copy(os.path.join(lab_dir, name), output)
+                shutil.copy(os.path.join(design_dir, name), output)
 
     if os.environ.get("UNIFPGA_DRY_RUN"):
         log.info("[dry run] Efinity not invoked. Artifacts in %s", output)

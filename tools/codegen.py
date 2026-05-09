@@ -8,7 +8,7 @@ The generated module:
   - declares one bus per capability, sized by the sum of provider widths;
   - for each attached peripheral, either wires it through directly (passthrough)
     or instantiates its driver SV module with port_map + pin_assigns;
-  - instantiates `lab_top` at the bottom with parameter values and capability
+  - instantiates `design_top` at the bottom with parameter values and capability
     buses wired to its ports.
 
 Phases:
@@ -322,7 +322,7 @@ def emit_top_sv(resolved):
         out.extend(_emit_attachment(resolved, idx, attach, plans))
         out.append("")
 
-    # ---- lab_top instantiation ----
+    # ---- design_top instantiation ----
     out.extend(_emit_lab_top(resolved, plans))
     out.append("")
     out.append("endmodule")
@@ -653,10 +653,10 @@ def _resolve_ref(ref, attach, plans, bind, lhs_context=False, slice_for_idx=None
     return invert + s + idx_suffix
 
 
-# ---- lab_top instantiation -----------------------------------------------
+# ---- design_top instantiation -----------------------------------------------
 
 def _emit_lab_top(resolved, plans):
-    lines = ["    // ---- User logic (lab_top) ----"]
+    lines = ["    // ---- User logic (design_top) ----"]
 
     cap_widths = {
         "switches":      plans["switches"].params.get("width", 0)      if plans["switches"].providers else 0,
@@ -704,9 +704,9 @@ def _emit_lab_top(resolved, plans):
         ("w_gpio",        cap_widths["gpio"]),
     ]
     param_block = ",\n".join("        .{}({})".format(n, v) for n, v in params)
-    lines.append("    lab_top # (")
+    lines.append("    design_top # (")
     lines.append(param_block)
-    lines.append("    ) i_lab_top (")
+    lines.append("    ) i_design_top (")
 
     port_lines = [
         "        .clk(clk)",

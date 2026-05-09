@@ -43,18 +43,18 @@ def _resolve_bin(name):
     return shutil.which(name)
 
 
-def _collect_sv_sources(repo, peripherals, user_lab_top, generated_top):
+def _collect_sv_sources(repo, peripherals, user_design_top, generated_top):
     """Same module-name-gating pattern as the icestorm/trellis drivers."""
-    files = [generated_top, os.path.abspath(user_lab_top)]
+    files = [generated_top, os.path.abspath(user_design_top)]
     seen = {os.path.abspath(p) for p in files}
 
-    lab_dir = os.path.dirname(os.path.abspath(user_lab_top))
-    if os.path.isdir(lab_dir):
-        for root, _dirs, names in os.walk(lab_dir):
+    design_dir = os.path.dirname(os.path.abspath(user_design_top))
+    if os.path.isdir(design_dir):
+        for root, _dirs, names in os.walk(design_dir):
             for name in sorted(names):
                 if not (name.endswith(".sv") or name.endswith(".v")):
                     continue
-                if name in ("lab_top.sv", "tb.sv"):
+                if name in ("design_top.sv", "tb.sv"):
                     continue
                 full = os.path.join(root, name)
                 if full not in seen:
@@ -97,15 +97,15 @@ def _collect_sv_sources(repo, peripherals, user_lab_top, generated_top):
         except Exception:
             pass
 
-    labs_common_dir = os.path.join(repo, "peripherals", "labs_common")
-    if os.path.isdir(labs_common_dir):
-        for name in sorted(os.listdir(labs_common_dir)):
+    designs_common_dir = os.path.join(repo, "peripherals", "designs_common")
+    if os.path.isdir(designs_common_dir):
+        for name in sorted(os.listdir(designs_common_dir)):
             if not name.endswith(".sv"):
                 continue
             module_name = name[:-3]
             if module_name not in sibling_text:
                 continue
-            full = os.path.join(labs_common_dir, name)
+            full = os.path.join(designs_common_dir, name)
             if full not in seen:
                 files.append(full)
                 seen.add(full)

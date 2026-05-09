@@ -1,5 +1,5 @@
 // =============================================================================
-// Stubs for Xilinx-specific synthesis primitives, used by labs that target
+// Stubs for Xilinx-specific synthesis primitives, used by designs that target
 // 7-series boards directly (e.g. 5_4_yrv_plus references BUFG).
 // These are pass-through modules so non-Xilinx toolchains can still elaborate
 // and synthesize the design — Vivado uses its own unisim library and never

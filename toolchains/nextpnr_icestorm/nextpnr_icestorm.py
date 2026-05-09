@@ -46,19 +46,19 @@ def _resolve_bin(name):
     return shutil.which(name)
 
 
-def _collect_sv_sources(repo, peripherals, user_lab_top, generated_top):
+def _collect_sv_sources(repo, peripherals, user_design_top, generated_top):
     """Same logic as the other drivers — keep symmetrical."""
-    files = [generated_top, os.path.abspath(user_lab_top)]
+    files = [generated_top, os.path.abspath(user_design_top)]
     seen = {os.path.abspath(p) for p in files}
 
-    lab_dir = os.path.dirname(os.path.abspath(user_lab_top))
-    if os.path.isdir(lab_dir):
-        for root, _dirs, names in os.walk(lab_dir):
+    design_dir = os.path.dirname(os.path.abspath(user_design_top))
+    if os.path.isdir(design_dir):
+        for root, _dirs, names in os.walk(design_dir):
             for name in sorted(names):
                 # Exclude .vh/.svh — included via `\`include`, not compiled standalone.
                 if not (name.endswith(".sv") or name.endswith(".v")):
                     continue
-                if name in ("lab_top.sv", "tb.sv"):
+                if name in ("design_top.sv", "tb.sv"):
                     continue
                 full = os.path.join(root, name)
                 if full not in seen:
@@ -77,7 +77,7 @@ def _collect_sv_sources(repo, peripherals, user_lab_top, generated_top):
     # Helpers — include only when the generated top.sv references the
     # module name. yosys 0.36 doesn't accept SV-2009 multi-dim packed
     # arrays in port declarations (e.g. tm1638_registers.sv), so always
-    # adding them breaks every lab on iCE40 even when unused.
+    # adding them breaks every design on iCE40 even when unused.
     try:
         with open(generated_top) as f:
             top_text = f.read()
@@ -96,10 +96,10 @@ def _collect_sv_sources(repo, peripherals, user_lab_top, generated_top):
             files.append(full)
             seen.add(full)
 
-    # labs_common helpers — same gating as above. Include only files whose
-    # module name appears in top.sv or in any sibling SV the lab pulls in.
+    # designs_common helpers — same gating as above. Include only files whose
+    # module name appears in top.sv or in any sibling SV the design pulls in.
     # Some helpers use SV-2009 features yosys 0.36 rejects (multi-dim packed
-    # arrays), so unconditionally adding them breaks unrelated labs.
+    # arrays), so unconditionally adding them breaks unrelated designs.
     sibling_text = top_text
     for f in list(files):
         try:
@@ -107,15 +107,15 @@ def _collect_sv_sources(repo, peripherals, user_lab_top, generated_top):
                 sibling_text += "\n" + fh.read()
         except Exception:
             pass
-    labs_common_dir = os.path.join(repo, "peripherals", "labs_common")
-    if os.path.isdir(labs_common_dir):
-        for name in sorted(os.listdir(labs_common_dir)):
+    designs_common_dir = os.path.join(repo, "peripherals", "designs_common")
+    if os.path.isdir(designs_common_dir):
+        for name in sorted(os.listdir(designs_common_dir)):
             if not name.endswith(".sv"):
                 continue
             module_name = name[:-3]   # strip .sv
             if module_name not in sibling_text:
                 continue
-            full = os.path.join(labs_common_dir, name)
+            full = os.path.join(designs_common_dir, name)
             if full not in seen:
                 files.append(full)
                 seen.add(full)

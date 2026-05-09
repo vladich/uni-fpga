@@ -11,7 +11,7 @@
 //
 // TODO: tune `DECIMATION` and add a CIC + low-pass FIR for production use.
 // The current single-stage running sum is intelligible but noisy; usable for
-// labs that demonstrate spectrum/recognition concepts without quality bars.
+// designs that demonstrate spectrum/recognition concepts without quality bars.
 // =============================================================================
 
 module pdm_mic_decoder

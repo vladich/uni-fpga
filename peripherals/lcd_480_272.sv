@@ -11,7 +11,7 @@ module lcd_480_272
 
     // Modified for basic-graphics-music: Removed LCD_RGB ports.
     // These output signals are assigned in the top module code
-    // using input from lab_top module.
+    // using input from design_top module.
 
     /*
     output [4:0] LCD_B,
@@ -74,7 +74,7 @@ module lcd_480_272
 
     // Modified for basic-graphics-music: Removed LCD_RGB port assignments.
     // These output signals are assigned in the top module code
-    // using input from lab_top module.
+    // using input from design_top module.
 
     `ifdef COMMENTED_OUT
 

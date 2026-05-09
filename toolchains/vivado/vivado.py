@@ -1,7 +1,7 @@
 """
 Vivado toolchain driver.
 
-Given a resolved configuration + a user lab_top, drive Vivado in batch mode
+Given a resolved configuration + a user design_top, drive Vivado in batch mode
 through synthesis -> place-and-route -> bitstream generation. Artifacts:
 
     <output>/top.sv             — codegen-produced top module
@@ -35,22 +35,22 @@ def _resolve_vivado_bin(toolchain):
     return shutil.which("vivado")
 
 
-def _collect_sv_sources(repo, peripherals, user_lab_top, generated_top):
+def _collect_sv_sources(repo, peripherals, user_design_top, generated_top):
     """Build the ordered SV file list Vivado will read."""
-    files = [generated_top, os.path.abspath(user_lab_top)]
+    files = [generated_top, os.path.abspath(user_design_top)]
     seen = {os.path.abspath(p) for p in files}
 
-    # Sibling SV/SVH files in the lab's directory (helper modules,
-    # configuration includes). When an adapted lab brings its own helpers,
-    # they live next to lab_top.sv. Walk recursively so labs with `cpu/`
+    # Sibling SV/SVH files in the design's directory (helper modules,
+    # configuration includes). When an adapted design brings its own helpers,
+    # they live next to design_top.sv. Walk recursively so designs with `cpu/`
     # or other subdirectories (yrv_plus, schoolriscv, picorv32) get picked up.
-    lab_dir = os.path.dirname(os.path.abspath(user_lab_top))
-    if os.path.isdir(lab_dir):
-        for root, _dirs, names in os.walk(lab_dir):
+    design_dir = os.path.dirname(os.path.abspath(user_design_top))
+    if os.path.isdir(design_dir):
+        for root, _dirs, names in os.walk(design_dir):
             for name in sorted(names):
                 if not (name.endswith(".sv") or name.endswith(".svh") or name.endswith(".v")):
                     continue
-                if name in ("lab_top.sv", "tb.sv"):
+                if name in ("design_top.sv", "tb.sv"):
                     continue
                 full = os.path.join(root, name)
                 if full not in seen:
@@ -74,13 +74,13 @@ def _collect_sv_sources(repo, peripherals, user_lab_top, generated_top):
             seen.add(full)
 
     # Lab-common helpers (seven_segment_display, shift_reg, counter_with_enable,
-    # strobe_gen, convert, led_strip_combo). Many adapted labs reference these.
-    labs_common_dir = os.path.join(repo, "peripherals", "labs_common")
-    if os.path.isdir(labs_common_dir):
-        for name in sorted(os.listdir(labs_common_dir)):
+    # strobe_gen, convert, led_strip_combo). Many adapted designs reference these.
+    designs_common_dir = os.path.join(repo, "peripherals", "designs_common")
+    if os.path.isdir(designs_common_dir):
+        for name in sorted(os.listdir(designs_common_dir)):
             if not name.endswith(".sv"):
                 continue
-            full = os.path.join(labs_common_dir, name)
+            full = os.path.join(designs_common_dir, name)
             if full not in seen:
                 files.append(full)
                 seen.add(full)

@@ -65,21 +65,21 @@ def _gowin_env(install_dir):
     return env
 
 
-def _collect_sv_sources(repo, peripherals, user_lab_top, generated_top):
+def _collect_sv_sources(repo, peripherals, user_design_top, generated_top):
     """Same shape as the Vivado / Quartus drivers — keep symmetrical."""
-    files = [generated_top, os.path.abspath(user_lab_top)]
+    files = [generated_top, os.path.abspath(user_design_top)]
     seen = {os.path.abspath(p) for p in files}
 
-    lab_dir = os.path.dirname(os.path.abspath(user_lab_top))
-    if os.path.isdir(lab_dir):
-        for root, _dirs, names in os.walk(lab_dir):
+    design_dir = os.path.dirname(os.path.abspath(user_design_top))
+    if os.path.isdir(design_dir):
+        for root, _dirs, names in os.walk(design_dir):
             for name in sorted(names):
                 # Exclude .vh/.svh — Gowin auto-discovers modules in
                 # SEARCH_PATH like Quartus does, causing duplicate
                 # declarations. Headers come in via `\`include`.
                 if not (name.endswith(".sv") or name.endswith(".v")):
                     continue
-                if name in ("lab_top.sv", "tb.sv"):
+                if name in ("design_top.sv", "tb.sv"):
                     continue
                 full = os.path.join(root, name)
                 if full not in seen:
@@ -102,18 +102,18 @@ def _collect_sv_sources(repo, peripherals, user_lab_top, generated_top):
             files.append(full)
             seen.add(full)
 
-    labs_common_dir = os.path.join(repo, "peripherals", "labs_common")
-    if os.path.isdir(labs_common_dir):
-        for name in sorted(os.listdir(labs_common_dir)):
+    designs_common_dir = os.path.join(repo, "peripherals", "designs_common")
+    if os.path.isdir(designs_common_dir):
+        for name in sorted(os.listdir(designs_common_dir)):
             if not name.endswith(".sv"):
                 continue
-            full = os.path.join(labs_common_dir, name)
+            full = os.path.join(designs_common_dir, name)
             if full not in seen:
                 files.append(full)
                 seen.add(full)
 
     # Same Xilinx-primitive stubs as the Quartus driver: BUFG / IBUFG /
-    # BUFGCE pass-through. Some labs (5_4_yrv_plus) instantiate BUFG
+    # BUFGCE pass-through. Some designs (5_4_yrv_plus) instantiate BUFG
     # directly, which Gowin doesn't have a primitive for.
     compat_dir = os.path.join(repo, "peripherals", "_quartus_compat")
     if os.path.isdir(compat_dir):

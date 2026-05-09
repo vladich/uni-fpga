@@ -10,6 +10,6 @@ Peripheral:
     - { name: n, type: bus, width: 4, direction: inout, comment: "Negative lines (N1..N4)" }
   # Differential pairs aren't directly usable as plain GPIO at the user level;
   # this header is exposed as raw pins for board-specific use, with no
-  # capability mapped at the lab_top tier.
+  # capability mapped at the design_top tier.
   provides: []
   driver: null

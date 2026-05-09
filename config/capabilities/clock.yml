@@ -1,8 +1,8 @@
 # A free-running synchronous clock visible to user code as `clk`.
 #
 # Direction in `signals`:
-#   hw_to_user - this is an input on the user's lab_top
-#   user_to_hw - this is an output on the user's lab_top
+#   hw_to_user - this is an input on the user's design_top
+#   user_to_hw - this is an output on the user's design_top
 #   inout      - bidirectional (only used for gpio)
 
 Capability:

@@ -2,7 +2,7 @@
 # emits the current (x, y) raster position; the user computes RGB for that
 # coordinate combinationally (or through registered colour memories).
 # Color-channel widths are negotiated: the screen reports its native depth,
-# the user's lab_top picks compatible w_red/w_green/w_blue.
+# the user's design_top picks compatible w_red/w_green/w_blue.
 
 Capability:
   id: screen

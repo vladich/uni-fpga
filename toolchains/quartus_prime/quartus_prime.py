@@ -1,7 +1,7 @@
 """
 Quartus Prime toolchain driver.
 
-Given a resolved configuration + a user lab_top, drive Quartus Prime in batch
+Given a resolved configuration + a user design_top, drive Quartus Prime in batch
 mode through analyze/synth/place/route/asm. Artifacts:
 
     <output>/top.sv             — codegen-produced top module
@@ -38,23 +38,23 @@ def _resolve_quartus_bin(toolchain, name):
     return shutil.which(name)
 
 
-def _collect_sv_sources(repo, peripherals, user_lab_top, generated_top):
+def _collect_sv_sources(repo, peripherals, user_design_top, generated_top):
     """Source-collection logic. Differs from Vivado in one key way: Quartus
     treats every file in the project as a top-level compilation unit, so
     `.svh` headers (which are pulled in by `\`include`) must NOT be added
     explicitly — otherwise modules declared inside them get compiled twice
     and Quartus errors with 'cannot be declared more than once'."""
-    files = [generated_top, os.path.abspath(user_lab_top)]
+    files = [generated_top, os.path.abspath(user_design_top)]
     seen = {os.path.abspath(p) for p in files}
 
-    lab_dir = os.path.dirname(os.path.abspath(user_lab_top))
-    if os.path.isdir(lab_dir):
-        for root, _dirs, names in os.walk(lab_dir):
+    design_dir = os.path.dirname(os.path.abspath(user_design_top))
+    if os.path.isdir(design_dir):
+        for root, _dirs, names in os.walk(design_dir):
             for name in sorted(names):
                 # Exclude .svh — included via `\`include`, never compiled standalone.
                 if not (name.endswith(".sv") or name.endswith(".v")):
                     continue
-                if name in ("lab_top.sv", "tb.sv"):
+                if name in ("design_top.sv", "tb.sv"):
                     continue
                 full = os.path.join(root, name)
                 if full not in seen:
@@ -77,18 +77,18 @@ def _collect_sv_sources(repo, peripherals, user_lab_top, generated_top):
             files.append(full)
             seen.add(full)
 
-    labs_common_dir = os.path.join(repo, "peripherals", "labs_common")
-    if os.path.isdir(labs_common_dir):
-        for name in sorted(os.listdir(labs_common_dir)):
+    designs_common_dir = os.path.join(repo, "peripherals", "designs_common")
+    if os.path.isdir(designs_common_dir):
+        for name in sorted(os.listdir(designs_common_dir)):
             if not name.endswith(".sv"):
                 continue
-            full = os.path.join(labs_common_dir, name)
+            full = os.path.join(designs_common_dir, name)
             if full not in seen:
                 files.append(full)
                 seen.add(full)
 
     # Quartus-only compat stubs for Xilinx primitives (BUFG etc.) referenced
-    # by a few labs targeting 7-series boards directly. Vivado has these in
+    # by a few designs targeting 7-series boards directly. Vivado has these in
     # its unisim library; non-Xilinx toolchains need pass-through stubs.
     compat_dir = os.path.join(repo, "peripherals", "_quartus_compat")
     if os.path.isdir(compat_dir):
@@ -115,10 +115,10 @@ def _emit_qpf(version):
     )
 
 
-def _qsf_file_lines(sv_files, lab_top):
+def _qsf_file_lines(sv_files, design_top):
     """SYSTEMVERILOG_FILE / VERILOG_FILE assignments to append to the QSF.
     Plus VERILOG_INCLUDE_FILE entries for every `.vh` / `.svh` header found
-    under the lab directory (recursively). Marking them as include-only
+    under the design directory (recursively). Marking them as include-only
     prevents Quartus's auto-discovery from compiling them standalone, which
     would cause double-declaration errors when the same `.vh` is also pulled
     in via `\\`include`."""
@@ -129,9 +129,9 @@ def _qsf_file_lines(sv_files, lab_top):
         elif sv.endswith(".v"):
             lines.append("set_global_assignment -name VERILOG_FILE {}".format(sv))
 
-    lab_dir = os.path.dirname(os.path.abspath(lab_top))
-    if os.path.isdir(lab_dir):
-        for root, _dirs, names in os.walk(lab_dir):
+    design_dir = os.path.dirname(os.path.abspath(design_top))
+    if os.path.isdir(design_dir):
+        for root, _dirs, names in os.walk(design_dir):
             for name in sorted(names):
                 if name.endswith(".vh") or name.endswith(".svh"):
                     full = os.path.join(root, name)
@@ -139,19 +139,19 @@ def _qsf_file_lines(sv_files, lab_top):
     return lines
 
 
-def _qsf_search_path_lines(lab_top, output_dir):
+def _qsf_search_path_lines(design_top, output_dir):
     """SEARCH_PATH entries for `\\`include` and `$readmemh()` resolution.
-    Only the lab dir, output dir, and shared peripherals dirs — NOT
+    Only the design dir, output dir, and shared peripherals dirs — NOT
     subdirectories. Auto-discovery in Quartus rescans every file in
     SEARCH_PATH for module declarations, which causes duplicate-declaration
     errors when sibling .vh files are also included via `\\`include` from a
     parent source file. Quartus already resolves `\\`include "name.vh"` relative
     to the including file's directory, so cpu/ subdirs don't need explicit
     paths."""
-    lab_dir = os.path.dirname(os.path.abspath(lab_top))
-    paths = [lab_dir, os.path.abspath(output_dir),
+    design_dir = os.path.dirname(os.path.abspath(design_top))
+    paths = [design_dir, os.path.abspath(output_dir),
              os.path.join(REPO, "peripherals"),
-             os.path.join(REPO, "peripherals", "labs_common")]
+             os.path.join(REPO, "peripherals", "designs_common")]
     seen = set()
     out = []
     for p in paths:

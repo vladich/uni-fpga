@@ -377,15 +377,15 @@ def test_codegen_runs_for_every_configuration():
             raise AssertionError("codegen failed for {c}: {e}".format(c=cfg_id, e=exc))
         assert "module top" in text, "codegen for {c}: no 'module top'".format(c=cfg_id)
         assert "endmodule" in text, "codegen for {c}: no 'endmodule'".format(c=cfg_id)
-        assert "lab_top" in text, "codegen for {c}: no lab_top instantiation".format(c=cfg_id)
+        assert "design_top" in text, "codegen for {c}: no design_top instantiation".format(c=cfg_id)
 
 
 # ---------------------------------------------------------------------------
 # Capability-requirements parser
 # ---------------------------------------------------------------------------
 
-def test_lab_requirements_parser():
-    from tools import lab_requirements
+def test_design_requirements_parser():
+    from tools import design_requirements
     import tempfile
     sample = """\
 // Some preamble
@@ -397,7 +397,7 @@ def test_lab_requirements_parser():
 //   audio_in
 //   serial_console
 
-module lab_top (
+module design_top (
     input clk
 );
 endmodule
@@ -406,7 +406,7 @@ endmodule
         f.write(sample)
         p = f.name
     try:
-        reqs = lab_requirements.parse(p)
+        reqs = design_requirements.parse(p)
     finally:
         os.unlink(p)
     assert "switches" in reqs and reqs["switches"] == {"min_width": 4}, reqs
@@ -417,8 +417,8 @@ endmodule
     assert "serial_console" in reqs and reqs["serial_console"] == {}, reqs
 
 
-def test_lab_requirements_check_passes_when_satisfied():
-    from tools import lab_requirements
+def test_design_requirements_check_passes_when_satisfied():
+    from tools import design_requirements
     resolved = config_init.resolve_configuration("nexys4_ddr_default")
     reqs = {
         "switches": {"min_width": 8},
@@ -426,25 +426,25 @@ def test_lab_requirements_check_passes_when_satisfied():
         "buttons":  {"min_width": 3},
         "audio_in": {},
     }
-    errs = lab_requirements.check(resolved, reqs)
+    errs = design_requirements.check(resolved, reqs)
     assert errs == [], errs
 
 
-def test_lab_requirements_check_fails_when_under_provisioned():
-    from tools import lab_requirements
+def test_design_requirements_check_fails_when_under_provisioned():
+    from tools import design_requirements
     resolved = config_init.resolve_configuration("nexys4_ddr_default")
     # Nexys 4 DDR has 16 switches; 32 should fail.
     reqs = {"switches": {"min_width": 32}}
-    errs = lab_requirements.check(resolved, reqs)
+    errs = design_requirements.check(resolved, reqs)
     assert len(errs) == 1 and "switches" in errs[0], errs
 
 
-def test_lab_requirements_check_fails_when_capability_missing():
-    from tools import lab_requirements
+def test_design_requirements_check_fails_when_capability_missing():
+    from tools import design_requirements
     # de10_lite has no audio_out (no PWM amp on board).
     resolved = config_init.resolve_configuration("de10_lite")
     reqs = {"audio_out": {}}
-    errs = lab_requirements.check(resolved, reqs)
+    errs = design_requirements.check(resolved, reqs)
     assert len(errs) == 1 and "audio_out" in errs[0], errs
 
 

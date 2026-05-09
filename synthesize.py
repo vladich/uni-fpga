@@ -81,19 +81,19 @@ def main(argv=None):
         delete_output = False
         os.makedirs(output_folder, exist_ok=True)
 
-    # Validate the lab_top's declared capability requirements against the
+    # Validate the design_top's declared capability requirements against the
     # chosen configuration. Fail fast with a clear error if anything's missing.
-    from tools import lab_requirements
-    requirements = lab_requirements.parse(args.top)
+    from tools import design_requirements
+    requirements = design_requirements.parse(args.top)
     if requirements:
-        errors = lab_requirements.check(resolved, requirements)
+        errors = design_requirements.check(resolved, requirements)
         if errors:
-            log.error("lab_top capability requirements not met by configuration '%s':",
+            log.error("design_top capability requirements not met by configuration '%s':",
                       cfg["id"])
             for e in errors:
                 log.error("  - %s", e)
             return 2
-        log.info("All %d lab_top capability requirements satisfied", len(requirements))
+        log.info("All %d design_top capability requirements satisfied", len(requirements))
 
     try:
         # Generate the top-level Verilog wrapper from the configuration.
