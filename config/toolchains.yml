@@ -101,3 +101,8 @@ Toolchains:
     Name: Apicula
     Version:
     InstallDir:
+
+  - Id: nextpnr_gatemate  # yosys/nextpnr-himbaechel: Cologne Chip GateMate
+    Name: Gatemate
+    Version:
+    InstallDir:

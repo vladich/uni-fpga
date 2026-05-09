@@ -1,0 +1,31 @@
+# gatemate_evb_a1 — Cologne Chip EVB-A1 (CCGM1A1) via the open-source flow.
+# yosys synth_gatemate → nextpnr-himbaechel (gatemate uarch) → gmpack.
+
+Configuration:
+  id: gatemate_evb_a1
+  board: gatemate_evb_a1
+  toolchain: nextpnr_gatemate
+
+  attach:
+    - peripheral: clock_input
+      params:
+        frequency_mhz: 10
+      bind:
+        clk: clk
+    - peripheral: reset_button
+      bind:
+        rst: onboard_reset
+    - peripheral: button_array
+      params:
+        width: 4
+      bind:
+        btn: onboard_buttons
+    - peripheral: led_bank
+      params:
+        width: 8
+      bind:
+        led: onboard_leds
+    - peripheral: uart_2wire
+      bind:
+        rx: onboard_uart.rx
+        tx: onboard_uart.tx

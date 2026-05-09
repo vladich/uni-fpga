@@ -1,0 +1,38 @@
+# gatemate_evb_a1 pin map.
+#
+# **Placeholder pinmap** — the GateMate Evaluation Board A1 (Cologne Chip's
+# reference dev board) hosts a CCGM1A1 in BGA324, with 8 user LEDs, 4 push
+# buttons, and dual UART/JTAG over an FT2232. The pad assignments below come
+# from valid CCGM1A1 LOC names but have NOT been cross-checked against the
+# official Cologne Chip schematic — they're enough to round-trip the
+# toolchain (yosys synth → nextpnr-himbaechel → gmpack), but a real bitstream
+# for a physical board needs the actual schematic-derived pinout.
+#
+# TODO: replace with verified pinmap from Cologne Chip's official EVB-A1
+# user guide / schematic when targeting hardware.
+#
+# Pad name format (from chipdb-CCGM1A1.bin):
+#   IO_<NSEW><AB>_<AB><0..8>     # bank + side + index
+# e.g. IO_SB_A8 = South-B bank, A side, pin 8.
+
+Board:
+  id: gatemate_evb_a1
+  fpga:
+    producer: Cologne Chip
+    family: GateMate
+    part: CCGM1A1
+  defaults:
+    iostandard: "LVCMOS33"
+
+  pinBanks:
+    clk:              { pins: "IO_SB_A8" }    # 10 MHz / 100 MHz onboard osc
+    onboard_reset:    { pins: "IO_NB_A0" }    # SW0 reset button
+    onboard_buttons:                          # 4 user push buttons
+      pins: ["IO_NB_A1", "IO_NB_A2", "IO_NB_A3", "IO_NB_A4"]
+    onboard_leds:                             # 8 user LEDs (active-high)
+      pins: ["IO_EB_B0", "IO_EB_B1", "IO_EB_B2", "IO_EB_B3",
+             "IO_EB_B4", "IO_EB_B5", "IO_EB_B6", "IO_EB_B7"]
+    onboard_uart:
+      pins:
+        rx: "IO_WB_A0"
+        tx: "IO_WB_A1"

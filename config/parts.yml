@@ -149,3 +149,4 @@ Parts:
 - Producer: Cologne Chip
   Families:
   - Family: GateMate
+    Toolchains: [nextpnr_gatemate]

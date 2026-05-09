@@ -146,6 +146,13 @@ Boards:
   PartFamily: Trion
   Part: T8F81
 
+- Id: gatemate_evb_a1
+  BoardName: GateMate Evaluation Board A1
+  BoardProducer: Cologne Chip
+  PartProducer: Cologne Chip
+  PartFamily: GateMate
+  Part: CCGM1A1
+
 - Id: ice40hx8k_evb
   BoardName: iCE40HX8K-EVB  
   BoardProducer: Olimex

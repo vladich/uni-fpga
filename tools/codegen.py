@@ -1490,6 +1490,68 @@ def emit_pcf(resolved):
     return "\n".join(out)
 
 
+def emit_ccf(resolved):
+    """Emit a CCF (Cologne Chip Constraints File) for nextpnr-himbaechel
+    with the gatemate uarch. Format per the himbaechel ccf.cc parser:
+
+        Pin_in   "<port>" LOC=<pad>;
+        Pin_out  "<port>" LOC=<pad>;
+        Pin_inout "<port>" LOC=<pad>;
+        NET      "<port>" LOC=<pad>;     # equivalent to Pin_*
+
+    Both `//` and `#` are comment markers. Lines must end with `;`. We
+    keep the directive `Pin_*` (unlike the more generic NET) because the
+    parser uses it for direction sanity-checking.
+    """
+    cfg = resolved["configuration"]
+    pinmap = resolved["board_pinmap"]
+
+    out = []
+    out.append("# =============================================================================")
+    out.append("# Auto-generated CCF constraints — DO NOT EDIT")
+    out.append("# Configuration: {}".format(cfg["id"]))
+    out.append("# Board:         {}".format((resolved.get("board") or {}).get("BoardName", "")))
+    out.append("# =============================================================================")
+    out.append("")
+
+    referenced = collect_referenced_banks(resolved)
+
+    def _emit(port, pad):
+        # Pin_in vs Pin_out gets resolved by nextpnr from the netlist; the
+        # generic `NET` directive matches whichever direction the cell has,
+        # which is simplest to emit from a codegen that doesn't track
+        # direction per port.
+        out.append('NET "{port}" LOC={pad};'.format(port=port, pad=pad))
+
+    for bank_name in referenced:
+        bank = (pinmap.get("pinBanks") or {}).get(bank_name)
+        if bank is None:
+            out.append("# WARNING: bank '{}' referenced but not in pinBanks".format(bank_name))
+            continue
+        pins = bank.get("pins")
+
+        if isinstance(pins, str):
+            _emit(bank_name, pins)
+        elif isinstance(pins, list):
+            for i, p in enumerate(pins):
+                if p is None:
+                    continue
+                _emit("{}[{}]".format(bank_name, i), p)
+        elif isinstance(pins, dict):
+            for sub, val in pins.items():
+                pname = "{}_{}".format(bank_name, sub)
+                if isinstance(val, list):
+                    for i, p in enumerate(val):
+                        if p is None:
+                            continue
+                        _emit("{}[{}]".format(pname, i), p)
+                elif isinstance(val, str):
+                    _emit(pname, val)
+
+    out.append("")
+    return "\n".join(out)
+
+
 # ---------------------------------------------------------------------------
 # Driver
 # ---------------------------------------------------------------------------
