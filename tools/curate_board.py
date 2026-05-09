@@ -1505,6 +1505,57 @@ def load_fpga_info(board_id):
 # Driver
 # ---------------------------------------------------------------------------
 
+def _normalize_pmod_numbering(signals):
+    """Detect Pmod numbering convention per header and rewrite signal names
+    to a single canonical 1-based-with-gaps form so `_PMOD_INDEX` always
+    applies cleanly.
+
+    Two BGM-XDC conventions in the wild:
+      - 0-based contiguous   `JA[0..7]`     — Arty A7, Zybo Z7, Eclypse Z7
+      - 1-based with gaps    `JA[1..4,7..10]`  — Nexys 4 / DDR / A7, Basys 3
+
+    Without normalization, `classify()` collides them (`JA[0]` → idx 0,
+    `JA[1]` → idx 0 via _PMOD_INDEX) and the later signal silently wins,
+    dropping a Pmod pin.
+
+    This pre-pass detects the convention by looking for the tell-tale
+    presence of `JA[0]` (only 0-based has it) and rewrites 0-based names
+    `JA[i]` → `JA[<1-based-equiv>]` so downstream classification picks one
+    branch unambiguously.
+    """
+    # 0-based-equiv → 1-based silkscreen index. Inverse of _PMOD_INDEX.
+    zero_to_one = {0: 1, 1: 2, 2: 3, 3: 4, 4: 7, 5: 8, 6: 9, 7: 10}
+
+    # Group by Pmod header (JA, JB, JC, JD, JE).
+    pmod_groups = {}  # header_name → set of indices
+    for sig in signals:
+        m = re.match(r"^(J[A-E])\[(\d+)\]$", sig.upper())
+        if m:
+            pmod_groups.setdefault(m.group(1), set()).add(int(m.group(2)))
+
+    rewrites = {}  # old name → new name
+    for header, indices in pmod_groups.items():
+        is_zero_based = 0 in indices  # only 0-based ever has [0]
+        if not is_zero_based:
+            continue
+        for idx in indices:
+            if idx in zero_to_one:
+                old = "{}[{}]".format(header, idx)
+                new = "{}[{}]".format(header, zero_to_one[idx])
+                # Find original-case key in signals.
+                for sig in signals:
+                    if sig.upper() == old:
+                        rewrites[sig] = new
+                        break
+
+    if not rewrites:
+        return signals
+    out = OrderedDict()
+    for sig, info in signals.items():
+        out[rewrites.get(sig, sig)] = info
+    return out
+
+
 def curate(board_id):
     raw_path = os.path.join(RAW_DIR, board_id + ".yml")
     if not os.path.exists(raw_path):
@@ -1513,6 +1564,7 @@ def curate(board_id):
         raw = yaml.safe_load(f)
 
     signals = raw.get("signals") or {}
+    signals = _normalize_pmod_numbering(signals)
     sources = [s.strip() for s in raw.get("source", "").split(",") if s.strip()]
 
     iostd_counts = Counter(info["iostandard"] for info in signals.values() if "iostandard" in info)

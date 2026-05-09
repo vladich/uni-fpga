@@ -15,7 +15,7 @@ Board:
   pinBanks:
     cpu_resetn: { pins: "R19" }
     onboard_buttons:
-      pins: ["E18", "M19", "M20", "C19", "B19"]
+      pins: ["E18", "B19", "M20", "C19", "M19"]
     onboard_leds:
       pins: ["T28", "V19", "U30", "U29", "V20", "V26", "W24", "W23"]
     onboard_switches:

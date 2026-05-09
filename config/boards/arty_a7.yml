@@ -43,13 +43,13 @@ Board:
     onboard_buttons:
       pins: [D9, C9, B9, B8]
     pmod_ja:
-      pins: [B11, A11, D12, D13, K16, B18, A18]
+      pins: [G13, B11, A11, D12, D13, B18, A18, K16]
     pmod_jb:
-      pins: [E16, D15, C15, J17, J15, J18, K15]
+      pins: [E15, E16, D15, C15, J17, J18, K15, J15]
     pmod_jc:
-      pins: [V12, V10, V11, U14, U13, V14, T13]
+      pins: [U12, V12, V10, V11, U14, V14, T13, U13]
     pmod_jd:
-      pins: [D3, F4, F3, E2, G2, D2, H2]
+      pins: [D4, D3, F4, F3, E2, D2, H2, G2]
     onboard_uart:
       pins:
         tx: D10

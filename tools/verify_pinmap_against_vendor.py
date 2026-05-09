@@ -79,11 +79,13 @@ DIGILENT_PORT_MAP = {
     # Switches / LEDs / buttons / reset.
     "SW":         "onboard_switches",     # bus
     "LED":        "onboard_leds",
+    # Button order matches tools/curate_board.py:_named_button — C-U-L-R-D
+    # (center, up, left, right, down — clockwise from up). NOT alphabetical.
     "BTNC":       ("onboard_buttons", 0),
-    "BTND":       ("onboard_buttons", 1),
+    "BTNU":       ("onboard_buttons", 1),
     "BTNL":       ("onboard_buttons", 2),
     "BTNR":       ("onboard_buttons", 3),
-    "BTNU":       ("onboard_buttons", 4),
+    "BTND":       ("onboard_buttons", 4),
     "BTN":        "onboard_buttons",      # bus form (Arty/Cmod use BTN[N])
     "CPU_RESETN": "cpu_resetn",
 
@@ -241,12 +243,19 @@ def load_yaml_pins(board_id):
 # Port-name mapping: Digilent → our token form
 # ----------------------------------------------------------------------------
 
-def map_digilent_port(port, idx):
+def map_digilent_port(port, idx, pmod_zero_based=False):
     """Return the our-format token for a Digilent (port, idx) tuple, or None
     if we have no canonical mapping (caller can decide to keep, drop, or
     flag). Match is case-insensitive — Digilent uses both lowercase
     (Arty: `led`, `sw`, `btn`) and uppercase (Nexys 4: `LED`, `SW`, `BTN`)
-    in different XDCs."""
+    in different XDCs.
+
+    Pmod numbering: tools/curate_board.py normalises both 0-based-contiguous
+    (Arty/Zybo: ja[0..7]) and 1-based-with-gaps (Nexys/Basys: JA[1..4,7..10])
+    onto a single 0-based-contiguous form. To match, we re-apply that
+    normalisation here when comparing — the caller passes `pmod_zero_based`
+    after pre-scanning the XDC for any `JA[0]` appearance.
+    """
     mapping = DIGILENT_PORT_MAP.get(port.upper())
     if mapping is None:
         return None
@@ -254,6 +263,17 @@ def map_digilent_port(port, idx):
     if isinstance(mapping, str):
         if idx is None:
             return mapping
+        # Pmod silkscreen → our 0-based contiguous index.
+        if mapping.startswith("pmod_") and idx is not None:
+            if pmod_zero_based:
+                normalised = idx
+            else:
+                # 1-based silkscreen with GND/VCC at 5,6.
+                _PMOD_INDEX = {1: 0, 2: 1, 3: 2, 4: 3, 7: 4, 8: 5, 9: 6, 10: 7}
+                if idx not in _PMOD_INDEX:
+                    return None  # GND / VCC pin, not user-visible
+                normalised = _PMOD_INDEX[idx]
+            return "{}[{}]".format(mapping, normalised)
         return "{}[{}]".format(mapping, idx)
     bank, subkey = mapping
     if isinstance(subkey, int):
@@ -282,10 +302,18 @@ def check_one(board_id, xdc_path, verbose=False):
         return None
     vendor_tuples = parse_digilent_xdc(xdc_path)
 
+    # Pre-scan: a JA[0] / JB[0] etc. anywhere in the file means this XDC uses
+    # 0-based-contiguous Pmod numbering (Arty / Zybo / Eclypse). Otherwise it
+    # uses 1-based-with-gaps (Nexys / Basys / Genesys).
+    pmod_zero_based = any(
+        idx == 0 and re.match(r"^J[A-E]$", port.upper())
+        for port, idx, _, _ in vendor_tuples
+    )
+
     vendor_map = {}                # our-format-token → pin
     unmapped = []                  # Digilent ports that don't fit DIGILENT_PORT_MAP
     for port, idx, pin, _ in vendor_tuples:
-        token = map_digilent_port(port, idx)
+        token = map_digilent_port(port, idx, pmod_zero_based=pmod_zero_based)
         if token is None:
             unmapped.append((port, idx, pin))
             continue
@@ -319,11 +347,17 @@ def import_xdc_as(xdc_path, board_id, family, part, producer="Xilinx"):
     """
     tuples = parse_digilent_xdc(xdc_path)
 
+    # Same Pmod normalisation as --check: detect 0-based vs 1-based per file.
+    pmod_zero_based = any(
+        idx == 0 and re.match(r"^J[A-E]$", port.upper())
+        for port, idx, _, _ in tuples
+    )
+
     # Collect: token → pin. Then re-bin into pinBanks structure.
     flat = {}
     iostd = "LVCMOS33"
     for port, idx, pin, std in tuples:
-        token = map_digilent_port(port, idx)
+        token = map_digilent_port(port, idx, pmod_zero_based=pmod_zero_based)
         if token is None:
             continue
         flat[token] = pin

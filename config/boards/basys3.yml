@@ -8,7 +8,7 @@ Board:
   fpga:
     producer: "Xilinx (AMD)"
     family: "Artix 7"
-    part: XC7A35T-1CPG236C
+    part: xc7a35tcpg236-1
   defaults:
     iostandard: LVCMOS33
 
@@ -26,11 +26,11 @@ Board:
     onboard_buttons:
       pins: [U18, T18, W19, T17, U17]
     pmod_ja:
-      pins: [L2, J2, G2, H1, G3, K2, H2]
+      pins: [J1, L2, J2, G2, H1, K2, H2, G3]
     pmod_jb:
-      pins: [A16, B15, B16, A15, C16, A17, C15]
+      pins: [A14, A16, B15, B16, A15, A17, C15, C16]
     pmod_jc:
-      pins: [M18, N17, P18, L17, R18, M19, P17]
+      pins: [K17, M18, N17, P18, L17, M19, P17, R18]
     onboard_vga:
       pins:
         r: [G19, H19, J19, N19]

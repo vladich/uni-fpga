@@ -8,7 +8,7 @@ Board:
   fpga:
     producer: "Xilinx (AMD)"
     family: "Zynq 7000"
-    part: XC7Z020CLG484-1
+    part: xc7z020clg484-1
   defaults:
     iostandard: LVCMOS33
 
@@ -27,4 +27,4 @@ Board:
         g: A18
         r: A19
     pmod_jb:
-      pins: [D16, D17, E18, F18, H17, G17, H18]
+      pins: [G15, D16, D17, E18, F18, G17, H18, H17]
