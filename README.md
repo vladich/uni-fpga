@@ -2,10 +2,10 @@
 
 A multi-vendor FPGA build abstraction. One design, written against a fixed
 virtual-device interface, synthesizes against any of 130 board configurations
-across **eleven toolchains** — five vendor (Vivado, Quartus Prime, Quartus II
-13.x, Gowin EDA, Efinity) and six open-source yosys+nextpnr flows
-(openxc7 for Xilinx 7-series, icestorm for iCE40, trellis for ECP5,
-apicula for Gowin, mistral for Cyclone V, himbaechel-gatemate for
+across **twelve toolchains** — six vendor (Vivado, Quartus Prime, Quartus II
+13.x, Gowin EDA Educational, Gowin EDA Standard, Efinity) and six open-source
+yosys+nextpnr flows (openxc7 for Xilinx 7-series, icestorm for iCE40, trellis
+for ECP5, apicula for Gowin, mistral for Cyclone V, himbaechel-gatemate for
 Cologne Chip GateMate) — without changing the design.
 
 ## Why it exists
@@ -102,7 +102,8 @@ artifacts into `designs/`, `config/boards/`, and `config/configurations/`.
 | `vivado` | 17 | Nexys 4 DDR, Basys 3, Arty A7 (35/100), Zybo Z7, Eclypse Z7, Nexys A7, qmtech Kintex 7 | Validated end-to-end (Vivado 2023.2) |
 | `quartus_prime` | 24 | DE0-CV, DE10-Lite, DE10-Nano, DE2-115, c5gx, atlas_soc | Validated end-to-end (Quartus Prime 23.1std) |
 | `quartus2` | 7 | DE0, DE1, DE2, omdazz, marsohod | Validated (Quartus II 13.0sp1 for legacy Cyclone II/III/MAX II/V) |
-| `gowin_eda` | 37 | Tang Nano 4K/9K/20K, Tang Primer 20K/25K, Tang Mega 138K (Pro), marsohod3gw2, orangepi_msoc | Validated (Educational license; Standard license needed for some GW5* boards — see Gowin Standard section) |
+| `gowin_eda` | 29 | Tang Nano 4K/9K/20K, Tang Primer 20K Dock/Lite, marsohod3gw2 | Validated (Gowin EDA 1.9.11.03.Educational — covers GW1N* / GW2A* parts) |
+| `gowin_standard` | 8 | Tang Primer 25K (×4), Tang Mega 138K, Tang Mega 138K Pro, orangepi_msoc | Validated (Gowin EDA 1.9.9.02 + NODELOCK license — required for AroraV/GW5* parts which Educational doesn't unlock) |
 | `efinity` | 1 | FireAnt (Trion T8) | Validated end-to-end (Efinity 2023.2) |
 | **Open-source (yosys + nextpnr)** | | | |
 | `nextpnr_openxc7` | 17 | Same as `vivado` (open-flow alternative) | 1135/1564 OK on full sweep — uses yosys 0.41+ from oss-cad-suite |
@@ -117,16 +118,17 @@ designs using SystemVerilog 2009 features yosys still doesn't fully accept
 (multi-dim packed arrays, certain `'{...}` array-init forms) — these are
 the same designs across every nextpnr-based toolchain, not flaky failures.
 
-### Open-flow build prerequisites
+### Build / install prerequisites beyond oss-cad-suite
 
-Several open-source flows depend on locally-built tooling beyond
-oss-cad-suite (which ships yosys 0.41+ and nextpnr-{ice40,ecp5,gowin,nexus}):
+oss-cad-suite ships yosys 0.41+ and nextpnr-{ice40,ecp5,gowin,nexus,machxo2,
+generic} out of the box. Several flows still need extra setup:
 
 | Toolchain | Needs |
 |---|---|
-| `nextpnr_openxc7` | yosys synth_xilinx (in oss-cad-suite) + `prjxray` python tools at `~/Projects/prjxray/` for the FASM→bit step |
-| `nextpnr_mistral` | `nextpnr-mistral` built from `~/Projects/nextpnr` against `~/Projects/mistral` at commit `d6bd02c` (last with both `pos_t` and `rnode_t` typedefs) |
+| `nextpnr_openxc7` | `prjxray` python tools at `~/Projects/prjxray/` for the FASM→bit step |
+| `nextpnr_mistral` | `nextpnr-mistral` built from `~/Projects/nextpnr` against `~/Projects/mistral` at commit `d6bd02c` (last commit with both `pos_t` and `rnode_t` typedefs — newer mistral renamed them and breaks nextpnr-mistral) |
 | `nextpnr_gatemate` | `nextpnr-himbaechel` (gatemate uarch) built from `~/Projects/nextpnr` with `-DARCH=himbaechel -DHIMBAECHEL_UARCH=gatemate -DHIMBAECHEL_PEPPERCORN_PATH=~/Projects/prjpeppercorn`; `gmpack` from `~/Projects/prjpeppercorn/libgm` |
+| `gowin_standard` | Gowin EDA 1.9.9.02 at `~/Gowin/1.9.9.02/`; NODELOCK license at `~/Gowin/gowin_E_<HOST_ID>.lic` (HOST_ID must be one of the machine's MACs); `~/Gowin/1.9.9.02/IDE/bin/gwlicense.ini` line `lic="<absolute path to .lic>"` |
 | programming | `openFPGALoader` from `~/oss-cad-suite/bin` works for most boards |
 
 ## Quick start
@@ -168,10 +170,11 @@ intended SKIP, not a failure.
   `python3 tools/curate_board.py` then `python3 tools/generate_variants.py`.
   Hand-edit the configuration's peripheral `attach:` list as needed.
 - **A new toolchain**: add `toolchains/<id>/<id>.py` exposing `synthesize`
-  and `program`, plus a `config/toolchains.yml` entry. The eleven existing
+  and `program`, plus a `config/toolchains.yml` entry. The twelve existing
   drivers are good templates — `vivado.py` for vendor TCL flows,
   `nextpnr_icestorm.py` for yosys/nextpnr open flows, `nextpnr_gatemate.py`
-  for himbaechel-uarch flows.
+  for himbaechel-uarch flows, `quartus2.py` / `gowin_standard.py` for thin
+  re-exports of an adjacent driver with a different InstallDir.
 
 ## Repository layout
 
@@ -189,18 +192,19 @@ intended SKIP, not a failure.
 ├── peripherals/                  # SV peripheral drivers
 │   ├── designs_common/           # reusable helpers
 │   └── design_top_interface.sv   # canonical user-design interface
-├── toolchains/                   # 11 driver modules
-│   ├── vivado/
-│   ├── quartus_prime/
-│   ├── quartus2/
-│   ├── gowin_eda/
-│   ├── efinity/
-│   ├── nextpnr_openxc7/
-│   ├── nextpnr_icestorm/
-│   ├── nextpnr_trellis/
-│   ├── nextpnr_apicula/
-│   ├── nextpnr_mistral/
-│   └── nextpnr_gatemate/
+├── toolchains/                   # 12 driver modules
+│   ├── vivado/                   #  Xilinx 7-series / Ultrascale / Versal
+│   ├── quartus_prime/            #  Cyclone IV / V / 10, MAX 10, Arria, Stratix
+│   ├── quartus2/                 #  Cyclone II / III, MAX II / V (Q13.0sp1)
+│   ├── gowin_eda/                #  GW1N* / GW2A* (Educational license)
+│   ├── gowin_standard/           #  GW5* (NODELOCK Standard license)
+│   ├── efinity/                  #  Efinix Trion / Titanium
+│   ├── nextpnr_openxc7/          #  Xilinx 7-series open flow
+│   ├── nextpnr_icestorm/         #  iCE40
+│   ├── nextpnr_trellis/          #  ECP5 / MachXO2
+│   ├── nextpnr_apicula/          #  Gowin LittleBee open flow
+│   ├── nextpnr_mistral/          #  Cyclone V open flow
+│   └── nextpnr_gatemate/         #  Cologne Chip GateMate (himbaechel uarch)
 ├── tools/
 │   ├── codegen.py             # top.sv + constraint emitters
 │   ├── adapt_designs.py       # BGM → uni-fpga design adapter
