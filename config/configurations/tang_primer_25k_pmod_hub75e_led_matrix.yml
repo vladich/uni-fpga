@@ -6,7 +6,7 @@
 Configuration:
   id: tang_primer_25k_pmod_hub75e_led_matrix
   board: tang_primer_25k
-  toolchain: gowin_eda
+  toolchain: gowin_standard
 
   attach:
     - peripheral: clock_input

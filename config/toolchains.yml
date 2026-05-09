@@ -49,10 +49,15 @@ Toolchains:
     Version: "2023.2"
     InstallDir: "~/efinity/2023.2/"
 
-  - Id: gowin_eda   # Gowin parts
+  - Id: gowin_eda   # Gowin parts (Educational license)
     Name: GowinEDA
     Version: "1.9.11.03.Educational"
     InstallDir: "~/Gowin/1.9.11.03.Educational/"
+
+  - Id: gowin_standard  # Gowin parts requiring Standard license (GW5*)
+    Name: GowinStandard
+    Version: "1.9.9.02"
+    InstallDir: "~/Gowin/1.9.9.02/"
 
   - Id: pango_ds    # Pango parts
     Name: PangoDS

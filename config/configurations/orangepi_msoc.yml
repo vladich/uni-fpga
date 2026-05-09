@@ -6,7 +6,7 @@
 Configuration:
   id: orangepi_msoc
   board: orangepi_msoc
-  toolchain: gowin_eda
+  toolchain: gowin_standard
 
   attach:
     - peripheral: clock_input

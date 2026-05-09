@@ -1031,8 +1031,12 @@ def _qsf_lines(pin, port_expr, iostd):
 
 def emit_sdc(resolved):
     """Emit an SDC timing constraints file. Currently just create_clock entries
-    for each clock-providing peripheral. Used by both Quartus and Gowin EDA."""
+    for each clock-providing peripheral. Used by Quartus, Gowin EDA, and
+    Efinity. The trailing `derive_pll_clocks` / `derive_clock_uncertainty`
+    are Quartus-specific Tcl commands the others reject — gated on the
+    toolchain id."""
     cfg = resolved["configuration"]
+    toolchain_id = (resolved.get("toolchain") or {}).get("Id", "")
     plans = build_capability_plans(resolved)
 
     out = []
@@ -1061,8 +1065,9 @@ def emit_sdc(resolved):
             "[get_ports {{{port}}}]".format(f=int(freq), p=period_ns, port=port)
         )
 
-    out.append("derive_pll_clocks -create_base_clocks")
-    out.append("derive_clock_uncertainty")
+    if toolchain_id.startswith("quartus"):
+        out.append("derive_pll_clocks -create_base_clocks")
+        out.append("derive_clock_uncertainty")
     out.append("")
     return "\n".join(out)
 

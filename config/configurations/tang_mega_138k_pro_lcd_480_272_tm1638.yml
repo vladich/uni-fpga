@@ -6,7 +6,7 @@
 Configuration:
   id: tang_mega_138k_pro_lcd_480_272_tm1638
   board: tang_mega_138k_pro
-  toolchain: gowin_eda
+  toolchain: gowin_standard
 
   attach:
     - peripheral: clock_input
