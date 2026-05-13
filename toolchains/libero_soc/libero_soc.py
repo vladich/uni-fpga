@@ -1,29 +1,313 @@
 """
-Stub toolchain module. Synthesis isn't actually wired up yet — this just
-logs what would have been built and returns. Replace `synthesize()` with a
-real driver (subprocess to the vendor tool, or yosys/nextpnr invocation)
-when implementing the toolchain.
+Microchip Libero SoC toolchain driver.
+
+Drives Libero's TCL batch interface (`libero SCRIPT:file.tcl`) to:
+  1. new_project — create a project for the target part
+  2. import_files — add SV/V sources, IO PDC, SDC
+  3. set_root — pick top module
+  4. organize_tool_files — tell Libero which constraints feed P&R / synth
+  5. run_tool — SYNTHESIZE, PLACEROUTE, GENERATEPROGRAMMINGFILE
+
+Artifacts:
+    <output>/top.sv               — codegen-produced top module
+    <output>/unifpga_top.pdc      — IO PDC (set_io with -pinname)
+    <output>/unifpga_top.sdc      — SDC timing
+    <output>/build.tcl            — Libero batch script
+    <output>/libero.log           — Libero log
+    <output>/libero_project/      — Libero working tree
+    <output>/libero_project/designer/<top>/<top>.{stp,pdb} — programming files
+
+Prerequisites:
+  - Libero SoC installed under config/toolchains.yml's InstallDir.
+  - A FlexLM license daemon running. Fresh-install drill:
+      1. `~/Libero/License.dat` from Microchip's free Silver license portal,
+         with `<put.hostname.here>` and `PATH/<daemon>` placeholders
+         hand-edited to real values.
+      2. `lmgrd -c ~/Libero/License.dat -l /tmp/lmgrd.log &` running.
+      3. `LM_LICENSE_FILE=1702@$(hostname)` exported (driver does this).
+  - On Ubuntu 24.04 (which Libero's installer flags "unsupported"), create
+    `/lib64/ld-lsb-x86-64.so.3 -> /lib64/ld-linux-x86-64.so.2` so the
+    LSB-linked daemons (actlmgrd, saltd) can exec.
+
+Set $UNIFPGA_DRY_RUN=1 to generate every artifact without invoking libero.
+
+Known issue
+-----------
+The Silver license that Microchip currently issues is dated 2026.03+; the
+Synplify Pro binary that ships with Libero 2024.1 is V-2023.09M (Jan 2024).
+At synthesis time the Synopsys vendor daemon (snpslmd) rejects checkout
+with FlexNet error -53,234 ("vendor-defined feature filter"). Fixes:
+  - Install a newer Libero (≥ 2025.1) that ships with the matching Synplify.
+  - Or request a date-matched older Silver license. Microchip's portal
+    issues current-version licenses by default; for an old binary you'd
+    need to file a support ticket.
+The full Libero project (HDL + constraints + organize_tool_files) builds
+cleanly up to that point — once a version-compatible Synplify is in
+place, `run_tool SYNTHESIZE/PLACEROUTE/GENERATEPROGRAMMINGFILE` should
+complete end-to-end without further driver changes.
 """
 
 import logging
+import os
+import shutil
+import subprocess
+
+from tools import codegen
+
 
 log = logging.getLogger(__name__)
+REPO = os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
+
+PROJECT_NAME = "unifpga_top"
 
 
-def synthesize(*, dir, configuration, board, board_pinmap, toolchain,
-               peripherals, top, include, output, step="full", **_):
-    """Entry point invoked by synthesize.py. Kwargs-only to keep the signature
-    extensible without breaking call sites."""
-    log.info(
-        "[stub %s] would synthesize configuration=%s, board=%s, top=%s, "
-        "step=%s, output=%s, peripherals=%d",
-        toolchain["Id"], configuration["id"], board["Id"], top, step, output,
-        len(peripherals),
-    )
+def _resolve_libero_bin(toolchain):
+    install_dir = os.path.expanduser((toolchain.get("InstallDir") or "").rstrip("/"))
+    for cand in (os.path.join(install_dir, "bin64", "libero"),
+                 os.path.join(install_dir, "bin", "libero")):
+        if os.path.exists(cand) and os.access(cand, os.X_OK):
+            return cand, install_dir
+    return shutil.which("libero"), install_dir
+
+
+def _libero_env(install_dir):
+    env = dict(os.environ)
+    env.setdefault("LM_LICENSE_FILE", "1702@" + (os.uname().nodename or "localhost"))
+    env["ACTEL_SW_DIR"] = install_dir
+    existing_ld = env.get("LD_LIBRARY_PATH", "")
+    libpath = os.path.join(install_dir, "lib64")
+    env["LD_LIBRARY_PATH"] = libpath + (":" + existing_ld if existing_ld else "")
+    return env
+
+
+def _collect_sv_sources(repo, peripherals, user_design_top, generated_top):
+    files = [generated_top, os.path.abspath(user_design_top)]
+    seen = {os.path.abspath(p) for p in files}
+
+    design_dir = os.path.dirname(os.path.abspath(user_design_top))
+    if os.path.isdir(design_dir):
+        for root, _dirs, names in os.walk(design_dir):
+            for name in sorted(names):
+                if not (name.endswith(".sv") or name.endswith(".v")):
+                    continue
+                if name in ("design_top.sv", "tb.sv"):
+                    continue
+                full = os.path.join(root, name)
+                if full not in seen:
+                    files.append(full)
+                    seen.add(full)
+
+    for attach in peripherals:
+        drv = (attach.get("peripheral") or {}).get("driver") or {}
+        f = drv.get("file")
+        if f:
+            full = os.path.join(repo, f)
+            if os.path.exists(full) and full not in seen:
+                files.append(full)
+                seen.add(full)
+
+    try:
+        with open(generated_top) as f:
+            top_text = f.read()
+    except Exception:
+        top_text = ""
+
+    helper_modules = {
+        "tm1638_registers.sv":          ("tm1638_registers", "tm1638_board_controller"),
+        "slow_clk_gen.sv":              ("slow_clk_gen",),
+        "imitate_reset_on_power_up.sv": ("imitate_reset_on_power_up",),
+    }
+    for helper, modules in helper_modules.items():
+        full = os.path.join(repo, "peripherals", helper)
+        if not os.path.exists(full) or full in seen:
+            continue
+        if any(m in top_text for m in modules):
+            files.append(full)
+            seen.add(full)
+
+    sibling_text = top_text
+    for f in list(files):
+        try:
+            with open(f) as fh:
+                sibling_text += "\n" + fh.read()
+        except Exception:
+            pass
+
+    designs_common_dir = os.path.join(repo, "peripherals", "designs_common")
+    if os.path.isdir(designs_common_dir):
+        for name in sorted(os.listdir(designs_common_dir)):
+            if not name.endswith(".sv"):
+                continue
+            module_name = name[:-3]
+            if module_name not in sibling_text:
+                continue
+            full = os.path.join(designs_common_dir, name)
+            if full not in seen:
+                files.append(full)
+                seen.add(full)
+
+    return files
+
+
+# Map our boards.yml board id → Libero target spec.
+_BOARD_TO_LIBERO = {
+    "m2s025_starter": {
+        # SmartFusion2 Starter Kit (Future Electronics). M2S025T is the
+        # largest SmartFusion2 die covered by Libero Silver — handy for
+        # smoke-testing the toolchain without paying for Gold.
+        # Package names embed a space and must match Libero's exact form.
+        "family":     "SmartFusion2",
+        "die":        "M2S025T",
+        "package":    "325 FCSBGA",
+        "speed":      "STD",
+        "part_range": "COM",
+        "iostd":      "LVCMOS25",
+    },
+    "polarfire_soc_icicle": {
+        "family":     "PolarFireSoC",
+        "die":        "MPFS250T_ES",
+        "package":    "FCVG484",
+        "speed":      "STD",
+        "part_range": "EXT",
+        "iostd":      "LVCMOS33",
+    },
+}
+
+
+def _select_target(board, configuration):
+    bid = board.get("Id") or ""
+    return _BOARD_TO_LIBERO.get(bid)
+
+
+def _emit_tcl(target, project_dir, sv_files, top_module, pdc_path, sdc_path):
+    lines = []
+    lines.append("# Auto-generated by toolchains/libero_soc — do not edit.")
+    lines.append("")
+    lines.append('new_project -location "{}" -name "{}" -project_description "" \\'
+                 .format(project_dir, top_module))
+    lines.append('    -block_mode 0 -standalone_peripheral_initialization 0 \\')
+    lines.append('    -instantiate_in_smartdesign 1 -ondemand_build_dh 0 \\')
+    lines.append('    -hdl "VERILOG" \\')
+    lines.append('    -family "{family}" -die "{die}" -package "{package}" -speed "{speed}" \\'
+                 .format(**target))
+    lines.append('    -die_voltage "1.2" -part_range "{part_range}" \\'.format(**target))
+    lines.append('    -adv_options "IO_DEFT_STD:{iostd}" \\'.format(**target))
+    lines.append('    -adv_options "RESERVEMIGRATIONPINS:1" \\')
+    lines.append('    -adv_options "TEMPR:{part_range}" \\'.format(**target))
+    lines.append('    -adv_options "VOLTR:{part_range}"'.format(**target))
+    lines.append("")
+    for sv in sv_files:
+        lines.append('import_files -hdl_source "{}"'.format(sv))
+    lines.append("")
+    lines.append('build_design_hierarchy')
+    lines.append('set_root -module {}::work'.format(top_module))
+    lines.append("")
+    lines.append('import_files -io_pdc "{}"'.format(pdc_path))
+    if sdc_path and os.path.exists(sdc_path):
+        lines.append('import_files -sdc "{}"'.format(sdc_path))
+    lines.append("")
+    # Libero copies imported constraints into the project tree at well-known
+    # locations; organize_tool_files needs those project-internal paths.
+    pdc_name = os.path.basename(pdc_path)
+    sdc_name = os.path.basename(sdc_path) if sdc_path else None
+    pdc_in_project = "{}/constraint/io/{}".format(project_dir, pdc_name)
+    sdc_in_project = "{}/constraint/{}".format(project_dir, sdc_name) if sdc_name else None
+    lines.append('organize_tool_files -tool PLACEROUTE \\')
+    lines.append('    -file "{}" \\'.format(pdc_in_project))
+    if sdc_in_project:
+        lines.append('    -file "{}" \\'.format(sdc_in_project))
+    lines.append('    -module {} -input_type constraint'.format(top_module))
+    if sdc_in_project:
+        lines.append('organize_tool_files -tool SYNTHESIZE \\')
+        lines.append('    -file "{}" \\'.format(sdc_in_project))
+        lines.append('    -module {} -input_type constraint'.format(top_module))
+    lines.append("")
+    lines.append('run_tool -name SYNTHESIZE')
+    lines.append('run_tool -name PLACEROUTE')
+    lines.append('run_tool -name GENERATEPROGRAMMINGFILE')
+    lines.append("")
+    lines.append('save_project')
+    lines.append('close_project')
+    return "\n".join(lines) + "\n"
+
+
+def synthesize(*, dir, configuration, board, board_pinmap, toolchain, peripherals,
+               top, generated_top=None, include=None, output, step="full", **_):
+    """Synthesize through Libero SoC. Returns 0 on success."""
+    resolved = {
+        "configuration": configuration,
+        "board":         board,
+        "board_pinmap":  board_pinmap,
+        "toolchain":     toolchain,
+        "peripherals":   peripherals,
+    }
+
+    if generated_top is None:
+        generated_top = os.path.join(output, "top.sv")
+        with open(generated_top, "w") as f:
+            f.write(codegen.emit_top_sv(resolved))
+
+    target = _select_target(board, configuration)
+    if target is None:
+        log.error("Unrecognized Microchip board %r — extend _BOARD_TO_LIBERO.",
+                  board.get("Id"))
+        return 1
+
+    sv_files = _collect_sv_sources(REPO, peripherals, top, generated_top)
+    pdc_path = os.path.join(output, PROJECT_NAME + ".pdc")
+    sdc_path = os.path.join(output, PROJECT_NAME + ".sdc")
+    tcl_path = os.path.join(output, "build.tcl")
+    project_dir = os.path.join(output, "libero_project")
+
+    with open(pdc_path, "w") as f:
+        f.write(codegen.emit_microchip_pdc(resolved))
+    log.info("Wrote %s", pdc_path)
+    with open(sdc_path, "w") as f:
+        f.write(codegen.emit_sdc(resolved))
+    log.info("Wrote %s", sdc_path)
+    with open(tcl_path, "w") as f:
+        f.write(_emit_tcl(target, project_dir, sv_files, "top", pdc_path, sdc_path))
+    log.info("Wrote %s", tcl_path)
+
+    log.info("Source files (%d):", len(sv_files))
+    for sv in sv_files:
+        log.info("  - %s", os.path.relpath(sv, REPO) if sv.startswith(REPO) else sv)
+
+    if os.environ.get("UNIFPGA_DRY_RUN"):
+        log.info("[dry run] libero not invoked. Artifacts in %s", output)
+        return 0
+
+    libero, install_dir = _resolve_libero_bin(toolchain)
+    if libero is None:
+        log.error("Could not locate libero. Set toolchain.InstallDir in "
+                  "config/toolchains.yml or put libero on $PATH.")
+        return 1
+
+    env = _libero_env(install_dir)
+    log_path = os.path.join(output, "libero.log")
+    cmd = [libero, "SCRIPT:" + tcl_path, "LOGFILE:" + log_path]
+    log.info("Invoking libero: %s", " ".join(cmd))
+    try:
+        rc = subprocess.run(cmd, cwd=output, env=env).returncode
+    except FileNotFoundError as exc:
+        log.error("libero invocation failed: %s", exc)
+        return 1
+    if rc != 0:
+        log.error("libero exited with code %d (see %s)", rc, log_path)
+        return rc
+
+    log.info("Libero project built: %s", project_dir)
     return 0
 
 
-def program(**kwargs):
-    """Placeholder for board programming/loading."""
-    log.info("[stub program] not implemented")
+def program(*, board, board_pinmap=None, toolchain, output, **_):
+    """Programming via Libero's FlashPro/FlashProExpress is a separate step
+    (.stp/.pdb generation + JTAG). Surface the artifact path rather than
+    drive the programmer headless."""
+    project_dir = os.path.join(output, "libero_project")
+    if not os.path.isdir(project_dir):
+        log.error("No Libero project at %s — run synthesis first", project_dir)
+        return 1
+    log.info("Libero bitstream is at %s/designer/<top>/<top>.{stp,pdb}.", project_dir)
+    log.info("Use Libero's FlashPro GUI or `fpexpress` headless to load it.")
     return 0

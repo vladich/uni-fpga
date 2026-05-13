@@ -34,10 +34,10 @@ Toolchains:
     Version: "13.0sp1"
     InstallDir: "~/altera/13.0sp1/quartus/"
 
-  - Id: libero_soc  # Microchip parts 
+  - Id: libero_soc  # Microchip parts (SmartFusion2, IGLOO2, PolarFire, RTG4)
     Name: LiberoSoC
-    Version: 
-    InstallDir:
+    Version: "2024.1"
+    InstallDir: "/usr/local/microchip/Libero_SoC_v2024.1/Libero/"
 
   - Id: libero_ide  # smaller / older Microchip parts
     Name: LiberoIDE

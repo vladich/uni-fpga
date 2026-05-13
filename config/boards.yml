@@ -160,6 +160,13 @@ Boards:
   PartFamily: Certus-NX
   Part: LIFCL-40-9BG400C
 
+- Id: m2s025_starter
+  BoardName: SmartFusion2 Starter Kit (M2S025T)
+  BoardProducer: Microchip
+  PartProducer: Microchip (Actel)
+  PartFamily: SmartFusion2
+  Part: M2S025T-FCSG325-1
+
 # ---------- Digilent boards imported via tools/verify_pinmap_against_vendor.py ----------
 
 - Id: arty_s7_25

@@ -91,12 +91,21 @@ Parts:
 - Producer: Microchip (Actel)
   Families:
   - Family: PolarFire
+    Toolchains: [libero_soc]
   - Family: PolarFire SoC
+    Toolchains: [libero_soc]
   - Family: IGLOO
+    Toolchains: [libero_soc]
   - Family: IGLOO2
+    Toolchains: [libero_soc]
   - Family: SmartFusion
+    Toolchains: [libero_soc]
   - Family: SmartFusion2
+    Toolchains: [libero_soc]
   - Family: ProASIC3
+    Toolchains: [libero_soc]
+  - Family: RTG4
+    Toolchains: [libero_soc]
 
 - Producer: Lattice
   Families:

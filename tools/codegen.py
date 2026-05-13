@@ -1495,6 +1495,77 @@ def emit_pcf(resolved):
     return "\n".join(out)
 
 
+def emit_microchip_pdc(resolved):
+    """Emit a Microchip Libero IO PDC file (set_io syntax).
+
+    Libero's IO PDC uses TCL `set_io` commands with `-pinname`, `-direction`,
+    and `-fixed yes` to lock placement:
+
+        set_io {port}    -pinname AB12  -fixed yes  -direction Input
+        set_io {led[0]}  -pinname C5    -fixed yes  -direction Output
+
+    Distinct from the *other* PDC dialect (`ldc_set_location` for Lattice
+    Nexus) — Microchip Libero rejects ldc_set_location and Lattice nextpnr
+    rejects this dialect. Each vendor has its own constraint flavour even
+    when the file extension is the same.
+    """
+    cfg = resolved["configuration"]
+    pinmap = resolved["board_pinmap"]
+    board = resolved.get("board") or {}
+
+    out = []
+    out.append("# =============================================================================")
+    out.append("# Auto-generated Microchip Libero IO PDC — DO NOT EDIT")
+    out.append("# Configuration: {}".format(cfg["id"]))
+    out.append("# Board:         {}".format(board.get("BoardName", "")))
+    out.append("# =============================================================================")
+    out.append("")
+
+    referenced = collect_referenced_banks(resolved)
+
+    _LIBERO_DIR = {"input": "Input", "output": "Output", "inout": "Inout"}
+
+    def _dir(bank_name, subkey):
+        d = _infer_pin_direction(resolved, bank_name, subkey)
+        if d is None:
+            d = "input" if "clk" in bank_name.lower() else "output"
+        return _LIBERO_DIR.get(d, "Output")
+
+    def _emit(port, pad, direction):
+        out.append('set_io {{{port}}} -pinname {pad} -fixed yes -direction {dir}'
+                   .format(port=port, pad=pad, dir=direction))
+
+    for bank_name in referenced:
+        bank = (pinmap.get("pinBanks") or {}).get(bank_name)
+        if bank is None:
+            out.append("# WARNING: bank '{}' referenced but not in pinBanks".format(bank_name))
+            continue
+        pins = bank.get("pins")
+
+        if isinstance(pins, str):
+            _emit(bank_name, pins, _dir(bank_name, None))
+        elif isinstance(pins, list):
+            d = _dir(bank_name, None)
+            for i, p in enumerate(pins):
+                if p is None:
+                    continue
+                _emit("{}[{}]".format(bank_name, i), p, d)
+        elif isinstance(pins, dict):
+            for sub, val in pins.items():
+                pname = "{}_{}".format(bank_name, sub)
+                d = _dir(bank_name, sub)
+                if isinstance(val, list):
+                    for i, p in enumerate(val):
+                        if p is None:
+                            continue
+                        _emit("{}[{}]".format(pname, i), p, d)
+                elif isinstance(val, str):
+                    _emit(pname, val, d)
+
+    out.append("")
+    return "\n".join(out)
+
+
 def emit_pdc(resolved):
     """Emit a PDC (Physical Design Constraints) file for nextpnr-nexus.
 

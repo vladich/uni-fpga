@@ -1,0 +1,35 @@
+# m2s025_starter pin map.
+#
+# **Placeholder pinmap** — the SmartFusion2 Advanced Development Kit
+# (M2S025T-EVAL, M2S025T-FCSG325-1) has user-accessible LEDs/switches/buttons,
+# but their exact ball numbers come from Microchip's "M2S025T-EVAL Kit
+# User Guide" (UG-0557 or similar). Until verified against that document,
+# the pins below are placeholders chosen from the FG484 ball grid — they're
+# valid LOC names that Libero accepts, but they're NOT guaranteed to match
+# the schematic.
+#
+# TODO: replace with verified pinmap from Microchip's official EVAL kit
+# user guide when targeting hardware.
+#
+# Part: M2S025T-FCSG325-1 (SmartFusion2, 90K gates, 484 FBGA, speed -1, COM).
+
+Board:
+  id: m2s025_starter
+  fpga:
+    producer: "Microchip (Actel)"
+    family: SmartFusion2
+    part: M2S025T-FCSG325-1
+  defaults:
+    iostandard: LVCMOS25
+
+  pinBanks:
+    clk:              { pins: "H17" }    # placeholder; 50 MHz osc
+    onboard_reset:    { pins: "F20" }    # placeholder
+    onboard_buttons:                      # placeholder; 2 user buttons
+      pins: ["F19", "G19"]
+    onboard_switches:                     # placeholder; 3 DIP switches
+      pins: ["E20", "E19", "E18"]
+    onboard_leds:                         # placeholder; 8 user LEDs (active-low)
+      pins: ["B5", "B6", "C5", "C6",
+             "D5", "D6", "E5", "E6"]
+      active: low
