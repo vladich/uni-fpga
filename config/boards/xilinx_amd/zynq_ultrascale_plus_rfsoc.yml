@@ -454,3 +454,25 @@ Boards:
     BoardURL: https://coderobin.com/products/alinx-axw49-xilinx-zynq-ultrascale-rfsoc-xczu49dr-fpga-development-board
     Status: active
     Notes: "ZU49DR SDR; -E extended-grade speed -2 part."
+  - Id: alinx_axw23
+    BoardName: "Alinx AXW23"
+    BoardProducer: alinx
+    Chip: XCZU47DR-2FFVE1156I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - qspi_flash
+      - emmc_flash
+      - eeprom_chip
+      - ethernet_phy_gigabit
+      - qsfp_cage
+      - microsd_socket
+      - fmc_lpc
+      - user_leds
+      - clock_generator
+      - usb_uart_bridge
+      - jtag_header
+    BoardURL: https://www.en.alinx.com
+    Status: active

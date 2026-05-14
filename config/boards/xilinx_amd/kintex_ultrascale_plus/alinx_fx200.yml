@@ -1,0 +1,18 @@
+# alinx_fx200 pin map.
+# Sources (local Alinx docs):
+#   ~/Alinx/FX200/FX200.zip → FX200/2 FX200-管脚约束/FX200_Board.xdc
+
+Board:
+  id: alinx_fx200
+  pinBanks:
+    sys_clk:
+      pins: C4
+      frequency_mhz: 50
+    status_led_rgb:
+      pins: [F13, E11, F11]
+    lmk_spi:
+      pins:
+        sclk: K11
+        mosi: L11
+        cs: L12
+        sync: M10

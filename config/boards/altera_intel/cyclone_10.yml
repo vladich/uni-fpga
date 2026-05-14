@@ -124,3 +124,45 @@ Boards:
       - jtag
     Programmer: quartus_pgm
     BoardURL: https://qmtech.aliexpress.com/store/1199788
+  - Id: alinx_ax1006
+    BoardName: "Alinx AX1006"
+    BoardProducer: alinx
+    Chip: 10CL006YU256C8G
+    Bridges:
+      - jtag
+    Programmer: quartus_pgm
+    Features:
+      - user_leds
+      - user_buttons
+      - jtag_header
+      - usb_powered
+    BoardURL: https://www.en.alinx.com
+    Status: active
+  - Id: alinx_ax1016
+    BoardName: "Alinx AX1016"
+    BoardProducer: alinx
+    Chip: 10CL016YU256C8G
+    Bridges:
+      - jtag
+    Programmer: quartus_pgm
+    Features:
+      - user_leds
+      - user_buttons
+      - jtag_header
+      - usb_powered
+    BoardURL: https://www.en.alinx.com
+    Status: active
+  - Id: alinx_ax1025
+    BoardName: "Alinx AX1025"
+    BoardProducer: alinx
+    Chip: 10CL025YU256C8G
+    Bridges:
+      - jtag
+    Programmer: quartus_pgm
+    Features:
+      - user_leds
+      - user_buttons
+      - jtag_header
+      - usb_powered
+    BoardURL: https://www.en.alinx.com
+    Status: active

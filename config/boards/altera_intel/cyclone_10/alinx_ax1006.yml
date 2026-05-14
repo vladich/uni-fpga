@@ -1,0 +1,14 @@
+# alinx_ax1006 pin map.
+# Sources (local Alinx docs):
+#   ~/Alinx/AX1006/AX1006_CD_20190809.zip CD/01_学习教程之例程篇/demo/01_led_test/led_test.qsf
+
+Board:
+  id: alinx_ax1006
+  pinBanks:
+    sys_clk:
+      pins: PIN_E1
+      frequency_mhz: 50
+    cpu_resetn:
+      pins: PIN_M15
+    onboard_leds:
+      pins: [PIN_R16, PIN_P16, PIN_N15, PIN_N16]

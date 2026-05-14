@@ -1,0 +1,14 @@
+# alinx_ax7z100b pin map.
+# Sources (local Alinx docs):
+#   ~/Alinx/AX7Z100B/AX7Z100B_2023.1/course_s1_fpga/01_led/auto_create_project/src/constraints/led.xdc
+
+Board:
+  id: alinx_ax7z100b
+  pinBanks:
+    sys_clk_p:
+      pins: F9
+      frequency_mhz: 200
+    cpu_resetn:
+      pins: AF18
+    onboard_leds:
+      pins: [AJ16, AK16, AE16, AE15]

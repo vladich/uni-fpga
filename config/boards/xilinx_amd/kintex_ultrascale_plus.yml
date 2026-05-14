@@ -160,3 +160,20 @@ Boards:
     BoardURL: https://coderobin.com/products/alinx-acku15-xilinx-kintex-ultrascale-xcku15p-fpga-som
     Status: active
     Notes: "Industrial XCKU15P-2FFVE1517I per product page; closest registry XCKU15P-2FFVE1760E (different package — needs verification)."
+  - Id: alinx_fx200
+    BoardName: "Alinx FX200 Accelerator Card"
+    BoardProducer: alinx
+    Chip: XCKU15P-2FFVE1517I-CIV
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - qspi_flash
+      - qsfp_cage
+      - pcie_edge_connector
+      - rgb_leds
+      - clock_generator
+      - jtag_header
+    BoardURL: https://www.en.alinx.com
+    Status: active

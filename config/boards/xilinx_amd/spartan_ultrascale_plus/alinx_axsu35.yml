@@ -1,0 +1,16 @@
+# alinx_axsu35 pin map.
+# Sources (local Alinx docs):
+#   ~/Alinx/AXSU35/AXSU35_2025.1/02_Demo/01_Verilog/03_key_debounce/auto_create_project/src/constraints/key_debounce.xdc
+
+Board:
+  id: alinx_axsu35
+  pinBanks:
+    sys_clk_p:
+      pins: F23
+      frequency_mhz: 200
+    cpu_resetn:
+      pins: P21
+    onboard_buttons:
+      pins: [U20]
+    onboard_leds:
+      pins: [V22, V21, R1, P1]

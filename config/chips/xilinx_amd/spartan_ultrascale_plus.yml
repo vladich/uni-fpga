@@ -1,0 +1,11 @@
+# Xilinx (AMD) / Spartan UltraScale+ — chip registry
+# 16 nm cost-optimised UltraScale+ logic (no DSP / no SerDes vs Kintex US+).
+# Vivado >= 2024.1 only.
+
+Producer: Xilinx (AMD)
+Family: Spartan UltraScale+
+Description: 16 nm cost-optimised UltraScale+. Vivado 2024.1+.
+DefaultToolchains:
+  - vivado[2024.1+]
+Chips:
+  - Id: XCSU35P-2SBVB625I
