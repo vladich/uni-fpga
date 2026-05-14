@@ -1,0 +1,27 @@
+# alinx_axu15eg pin map.
+# Source type: github_xdc
+#   https://github.com/alinxalinx/AXU9EG_AXU15EG/blob/master/vivado/auto_create_project/src/constraints/gpio.xdc
+#   https://github.com/alinxalinx/AXU9EG_AXU15EG/blob/master/vivado/auto_create_project/src/constraints/system.xdc
+#   https://github.com/alinxalinx/AXU9EG_AXU15EG/blob/master/vivado/auto_create_project/src/constraints/uart.xdc
+
+Board:
+  id: alinx_axu15eg
+  pinBanks:
+    sys_clk_diff:
+      pins:
+        p: AL8
+        n: AL7
+      frequency_mhz: 200
+    onboard_leds:
+      pins:
+      - AM13
+      - AP12
+    onboard_buttons:
+      pins:
+      - AN12
+    onboard_uart:
+      pins:
+        tx: D10
+        rx: D11
+    fan_pwm:
+      pins: J10

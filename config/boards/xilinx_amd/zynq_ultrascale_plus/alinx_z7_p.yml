@@ -1,0 +1,20 @@
+# alinx_z7_p pin map.
+# Source type: github_xdc
+#   https://github.com/alinxalinx/Z7_P/blob/master/vivado/auto_create_project/src/constraints/gpio.xdc
+#   https://github.com/alinxalinx/Z7_P/blob/master/vivado/auto_create_project/src/constraints/uart.xdc
+
+Board:
+  id: alinx_z7_p
+  pinBanks:
+    onboard_leds:
+      pins:
+      - M9
+      - K8
+      - L8
+    onboard_buttons:
+      pins:
+      - J9
+    onboard_uart:
+      pins:
+        tx: N9
+        rx: N8

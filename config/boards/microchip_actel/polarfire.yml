@@ -1,0 +1,62 @@
+# Microchip (Actel) / PolarFire
+# 28 nm flash FPGA (current). Libero SoC.
+
+Producer: Microchip (Actel)
+Family: PolarFire
+Description: 28 nm flash FPGA (current). Libero SoC.
+Boards:
+  - Id: adiuvo_galaxia_space_dev_board
+    BoardName: Galaxia Space Development Board
+    BoardProducer: adiuvo
+    Chip: MPF300T-FCG484E
+    Bridges:
+      - jtag
+    Programmer: libero_fpexpress
+    Features:
+      - qspi_flash
+      - jtag_header
+    BoardURL: https://www.adiuvoengineering.com/product-page/galaxia-space-development-board
+    Status: active
+  - Id: adiuvo_galaxia_space_tile
+    BoardName: Galaxia Space Tile
+    BoardProducer: adiuvo
+    Chip: MPF300T-FCG484E
+    Bridges:
+      - jtag
+    Programmer: libero_fpexpress
+    Features:
+      - jtag_header
+    BoardURL: https://www.adiuvoengineering.com/product-page/galaxia-space-tile
+    Status: active
+  - Id: microchip_polarfire_evalkit
+    BoardName: PolarFire Evaluation Kit
+    BoardProducer: microchip
+    Chip: MPF300TS-FCG1152I
+    Bridges:
+      - jtag
+    Programmer: libero_fpexpress
+    BoardURL: https://www.microchip.com/en-us/development-tool/MPF300-EVAL-KIT
+  - Id: microchip_polarfire_splash
+    BoardName: PolarFire Splash Kit
+    BoardProducer: microchip
+    Chip: MPF300TS-1FCG1152I
+    Bridges:
+      - jtag
+    Programmer: libero_fpexpress
+    BoardURL: https://www.microchip.com/en-us/development-tool/MPF300-VIDEO-KIT
+  - Id: microchip_polarfire_video
+    BoardName: PolarFire Video Kit
+    BoardProducer: microchip
+    Chip: MPF300TS-1FCG1152I
+    Bridges:
+      - jtag
+    Programmer: libero_fpexpress
+    BoardURL: https://www.microchip.com/en-us/development-tool/MPF300-VIDEO-KIT
+  - Id: sifive_hifive_unleashed_expansion
+    BoardName: HiFive Unleashed Expansion Board
+    BoardProducer: sifive
+    Chip: MPF300TS-FCG1152I
+    Bridges:
+      - jtag
+    Programmer: libero_fpexpress
+    BoardURL: https://www.microchip.com/en-us/development-tool/MPF300-EVAL-KIT

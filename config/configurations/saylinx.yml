@@ -6,7 +6,7 @@
 Configuration:
   id: saylinx
   board: saylinx
-  toolchain: quartus_prime
+  toolchain: quartus_prime_lite
 
   attach:
     - peripheral: clock_input

@@ -1,0 +1,53 @@
+# pangomicro_pangu_25k_devkit pin map.
+# Source type: github_fdc
+#   https://raw.githubusercontent.com/chili-chips-ba/tango-with-pango/main/0.Doc/DevKit/ExampleRTL--25G/10_flow_led/prj/flow_led.fdc
+#   https://raw.githubusercontent.com/chili-chips-ba/tango-with-pango/main/0.Doc/DevKit/ExampleRTL--25G/11_key_led/prj/key_led.fdc
+#   https://raw.githubusercontent.com/chili-chips-ba/tango-with-pango/main/0.Doc/DevKit/ExampleRTL--25G/19_uart_loopback/prj/uart_loopback.fdc
+#   https://raw.githubusercontent.com/chili-chips-ba/tango-with-pango/main/0.Doc/DevKit/ExampleRTL--25G/45_spi_flash_rw_test/prj/spi_flash_rw_test.fdc
+#   https://raw.githubusercontent.com/chili-chips-ba/tango-with-pango/main/0.Doc/DevKit/ExampleRTL--25G/46_sd_rw/prj/top_sd_rw.fdc
+#   https://raw.githubusercontent.com/chili-chips-ba/tango-with-pango/main/0.Doc/DevKit/ExampleRTL--25G/49_mdio_rw_test/prj/mdio_rw_test.fdc
+#   https://github.com/chili-chips-ba/tango-with-pango/blob/main/0.Doc/DevKit/DFPGL25G_DevKit--UserManual.CHINESE-v1.0.pdf
+
+Board:
+  id: pangomicro_pangu_25k_devkit
+  pinBanks:
+    clk:
+      pins: V9
+      frequency_mhz: 50
+    onboard_leds:
+      pins:
+      - M14
+      - L14
+      - P15
+      - P16
+    onboard_buttons:
+      pins:
+      - N5
+      - P6
+      - R7
+      - T7
+    onboard_reset:
+      pins: C4
+    onboard_uart:
+      pins:
+        tx: C1
+        rx: C2
+    microsd:
+      pins:
+        clk: N10
+        cs: N9
+        mosi: P11
+        miso: M8
+    spi_flash:
+      pins:
+        clk: R15
+        cs: V3
+        mosi: T13
+        miso: R13
+    ethernet_mdio:
+      pins:
+        mdio: B9
+        mdc: A9
+        rst_n: B6
+    touch_key:
+      pins: D9

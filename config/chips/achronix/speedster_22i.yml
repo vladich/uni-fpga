@@ -1,0 +1,10 @@
+# Achronix / Speedster 22i — chip registry
+# Intel 22 nm Achronix FPGA. ACE.
+
+Producer: Achronix
+Family: Speedster 22i
+Description: Intel 22 nm Achronix FPGA. ACE.
+DefaultToolchains:
+  - ace[*]
+Chips:
+  - Id: AC22iHD1000

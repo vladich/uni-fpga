@@ -1,0 +1,11 @@
+# Xilinx (AMD) / Virtex 7 — chip registry
+# 28 nm Virtex (2011). Vivado.
+
+Producer: Xilinx (AMD)
+Family: Virtex 7
+Description: 28 nm Virtex (2011). Vivado.
+DefaultToolchains:
+  - vivado[*]
+Chips:
+  - Id: XC7VX485T-2FFG1761C
+  - Id: XC7VX690T-2FFG1761C

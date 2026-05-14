@@ -6,7 +6,7 @@
 Configuration:
   id: alinx_ax4010
   board: alinx_ax4010
-  toolchain: quartus_prime
+  toolchain: quartus_prime_lite
 
   attach:
     - peripheral: clock_input

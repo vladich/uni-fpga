@@ -18,7 +18,7 @@ Peripheral:
         color_depth: 888
   driver:
     module: dvi_top
-    file: peripherals/dvi.sv
+    file: rtl/peripherals/dvi.sv
     port_map:
       pixel_clk_i: context.clk        # codegen must supply matching clock domain
       serial_clk_i: context.clk       # 5x or 10x pixel — TODO: PLL in codegen

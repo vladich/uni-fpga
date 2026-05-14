@@ -1,0 +1,747 @@
+# Xilinx (AMD) / Artix 7
+# 28 nm mainstream 7-series. Vivado, openXC7 also covers most parts.
+
+Producer: Xilinx (AMD)
+Family: Artix 7
+Description: 28 nm mainstream 7-series. Vivado, openXC7 also covers most parts.
+Boards:
+  - Id: a7_lite_35t
+    BoardName: A7-Lite 35T
+    BoardProducer: sipeed
+    Chip: xc7a35tfgg484-1
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+  - Id: alchitry_au
+    BoardName: Alchitry Au
+    BoardProducer: alchitry
+    Chip: XC7A35T-1FTG256C
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://alchitry.com/boards/au
+  - Id: alchitry_au_plus
+    BoardName: Alchitry Au+
+    BoardProducer: alchitry
+    Chip: XC7A100T-1FTG256C
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://alchitry.com/boards/au-plus
+  - Id: alchitry_pt
+    BoardName: Alchitry Pt V2
+    BoardProducer: alchitry
+    Chip: XC7A100T-2FGG484I
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    ExtraProgrammers:
+      - openFPGALoader[*]
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - usb_jtag_bridge
+      - usb_uart_bridge
+      - user_leds
+      - user_buttons
+      - usb_powered
+    BoardURL: https://shop.alchitry.com/products/alchitry-pt
+    Status: active
+  - Id: alinx_ax7035b
+    BoardName: Alinx AX7035B
+    BoardProducer: alinx
+    Chip: xc7a35tfgg484-2
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+  - Id: alinx_ax7102
+    BoardName: Alinx AX7102
+    BoardProducer: alinx
+    Chip: XC7A100T-2FGG484I
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - ethernet_phy_gigabit
+      - vga_output
+      - usb_uart_bridge
+      - user_leds
+      - user_buttons
+    BoardURL: https://www.en.alinx.com/Product/FPGA-Development-Boards/Artix-7/AX7102.html
+    Status: active
+  - Id: alinx_ax7103
+    BoardName: Alinx AX7103
+    BoardProducer: alinx
+    Chip: XC7A100T-2FGG484I
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - ethernet_phy_gigabit
+      - hdmi_output
+      - pcie_endpoint
+      - usb_uart_bridge
+      - user_leds
+      - user_buttons
+    BoardURL: https://www.en.alinx.com/Product/FPGA-Development-Boards/Artix-7/AX7103.html
+    Status: active
+  - Id: alinx_ax7202
+    BoardName: Alinx AX7202
+    BoardProducer: alinx
+    Chip: XC7A200T-2FBG484I
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - ethernet_phy_gigabit
+      - vga_output
+      - usb_uart_bridge
+      - user_leds
+      - user_buttons
+    BoardURL: https://www.en.alinx.com/Product/FPGA-Development-Boards/Artix-7/AX7202.html
+    Status: active
+  - Id: alinx_ax7a035
+    BoardName: AX7A035
+    BoardProducer: alinx
+    Chip: XC7A35T-2FGG484I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://alinx.com/en/detail/9
+  - Id: arty_a7
+    BoardName: Arty A7
+    Devices:
+      - micron_n25q128a
+      - micron_mt41k128m16
+      - ti_dp83848j
+      - ftdi_ft2232h
+      - digilent_hs2
+      - pushbutton_smd_generic
+      - dip_switch_generic
+      - led_discrete_generic
+      - rgb_led_common_anode
+    BoardProducer: digilent
+    Chips:
+      - Id: xc7a35ticsg324-1l
+        Name: 35t
+      - Id: xc7a100tcsg324-1
+        Name: 100t
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://digilent.com/reference/programmable-logic/arty-a7/start
+  - Id: basys3
+    BoardName: Basys 3
+    Devices:
+      - ftdi_ft2232h
+      - pushbutton_smd_generic
+      - dip_switch_generic
+      - led_discrete_generic
+      - seven_seg_module_shared
+      - vga666_resistor_dac
+      - cypress_s25fl032
+      - microchip_pic24fj128_usb_host
+    BoardProducer: digilent
+    Chip: xc7a35tcpg236-1
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://digilent.com/reference/programmable-logic/basys-3/start
+  - Id: bunnie_netv2
+    BoardName: NeTV2
+    BoardProducer: bunnie_studios
+    Chip: XC7A35T-1CSG324C
+    Bridges:
+      - pcie-jtag
+    Programmer: vivado_hw
+    ExtraProgrammers:
+      - openFPGALoader[*]
+    Features:
+      - pcie_endpoint
+      - hdmi_input
+      - hdmi_output
+      - ddr3_memory
+      - raspi_hat_header
+    BoardURL: https://www.crowdsupply.com/alphamax/netv2
+    Status: eol
+  - Id: cmod_a7
+    BoardName: CMOD A7
+    Devices:
+      - ftdi_ft2232h
+      - pushbutton_smd_generic
+      - led_discrete_generic
+      - rgb_led_common_anode
+      - micron_n25q032a
+      - issi_is61wv5128bll
+    BoardProducer: digilent
+    Chips:
+      - Id: XC7A15T-CPG236I
+        Name: 15t
+      - Id: XC7A35T-CPG236I
+        Name: 35t
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://digilent.com/reference/programmable-logic/cmod-a7/start
+  - Id: colorlight_i9_plus
+    BoardName: ColorLight i9+
+    BoardProducer: colorlight
+    Chip: XC7A50T-2FGG484I
+    Bridges:
+      - ft2232h-jtag
+    Programmer: openFPGALoader
+    Features:
+      - ethernet_phy_gigabit
+      - sdr_sdram
+      - qspi_flash
+      - jtag_header
+    BoardURL: https://github.com/wuxx/Colorlight-FPGA-Projects
+    Status: active
+  - Id: digilent_usb104_a7
+    BoardName: USB104 A7
+    Devices:
+      - cypress_s25fl128s
+      - micron_mt41k256m16
+      - ftdi_ft2232h
+      - microsd_socket_generic
+      - pushbutton_smd_generic
+      - led_discrete_generic
+    BoardProducer: digilent
+    Chip: xc7a100tfgg484-2
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://digilent.com/reference/programmable-logic/usb104-a7/start
+  - Id: edge_artix_7
+    BoardName: EDGE Artix 7 (35T)
+    BoardProducer: invent_logics
+    Chip: XC7A35T-1CSG324C
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - hdmi_output
+      - vga_output
+      - microsd_socket
+      - usb_uart_bridge
+      - usb_jtag_bridge
+      - qspi_flash
+      - audio_codec
+      - seven_segment_display
+      - user_leds
+      - user_buttons
+      - dip_switches
+      - usb_powered
+    BoardURL: https://allaboutfpga.com/product/edge-artix-7-fpga-development-board/
+    Status: active
+  - Id: edge_artix_7_200t
+    BoardName: EDGE Artix 7 200T
+    BoardProducer: invent_logics
+    Chip: XC7A200T-1FBG484C
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - hdmi_output
+      - vga_output
+      - microsd_socket
+      - usb_uart_bridge
+      - usb_jtag_bridge
+      - qspi_flash
+      - audio_codec
+      - seven_segment_display
+      - user_leds
+      - user_buttons
+      - dip_switches
+      - usb_powered
+    BoardURL: https://allaboutfpga.com/product/edge-artix-7-fpga-development-board/
+    Status: active
+  - Id: enclustra_mars_mx2
+    BoardName: Mars MX2
+    BoardProducer: enclustra
+    Chip: XC7A200T-2FBG484I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://www.enclustra.com/en/products/fpga-modules/mars-mx2/
+  - Id: nexys4
+    BoardName: Nexys 4
+    Devices:
+      - cypress_s25fl128s
+      - ftdi_ft2232h
+      - microchip_lan8720a
+      - microsd_socket_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+      - led_discrete_generic
+      - rgb_led_common_anode
+      - seven_seg_module_shared
+      - vga666_resistor_dac
+      - pwm_audio_inline
+      - micron_mt45w8mw16
+      - adi_adxl362
+      - adi_admp421
+      - adi_adt7420
+    BoardProducer: digilent
+    Chip: xc7a100tcsg324-1
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://digilent.com/reference/programmable-logic/nexys-4/start
+  - Id: nexys4_ddr
+    BoardName: Nexys 4 DDR
+    Devices:
+      - cypress_s25fl128s
+      - ftdi_ft2232h
+      - microchip_lan8720a
+      - microsd_socket_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+      - led_discrete_generic
+      - rgb_led_common_anode
+      - seven_seg_module_shared
+      - vga666_resistor_dac
+      - pwm_audio_inline
+      - micron_mt47h64m16
+      - adi_adxl362
+      - adi_admp421
+      - adi_adt7420
+    BoardProducer: digilent
+    Chip: xc7a100tcsg324-1
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://digilent.com/reference/programmable-logic/nexys-4-ddr/start
+  - Id: nexys_a7
+    BoardName: Nexys A7
+    Devices:
+      - cypress_s25fl128s
+      - ftdi_ft2232h
+      - microchip_lan8720a
+      - microsd_socket_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+      - led_discrete_generic
+      - rgb_led_common_anode
+      - seven_seg_module_shared
+      - vga666_resistor_dac
+      - pwm_audio_inline
+      - micron_mt47h64m16
+      - adi_adxl362
+      - adi_admp421
+      - adi_adt7420
+    BoardProducer: digilent
+    Chips:
+      - Id: xc7a50ticsg324-1L
+        Name: 50t
+      - Id: xc7a100tcsg324-1
+        Name: 100t
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://digilent.com/reference/programmable-logic/nexys-a7/start
+  - Id: nexys_video
+    BoardName: Nexys Video
+    Devices:
+      - micron_mt41k256m16
+      - realtek_rtl8211e
+      - ftdi_ft232r
+      - ftdi_ft2232h
+      - microsd_socket_generic
+      - tmds_direct
+      - pushbutton_smd_generic
+      - dip_switch_generic
+      - led_discrete_generic
+      - spansion_s25fl256s
+      - ti_tmds141
+      - adi_ad8195
+      - adi_adau1761
+      - univision_ug2832hsweg04
+      - microchip_pic24fj128_usb_host
+    BoardProducer: digilent
+    Chip: XC7A200T-1SBG484C
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://digilent.com/reference/programmable-logic/nexys-video/start
+  - Id: nitefury_2
+    BoardName: Nitefury II
+    BoardProducer: rhs_research
+    Chip: xc7a200tfbg484-2
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+  - Id: numato_mimas_a7
+    BoardName: Mimas A7
+    BoardProducer: numato_lab
+    Chip: XC7A50T-1CSG324C
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://numato.com/product/mimas-a7-artix-7-fpga-development-board/
+  - Id: numato_mimas_a7_mini
+    BoardName: Numato Mimas A7 Mini Artix-7 FPGA Development Board
+    BoardProducer: numato_lab
+    Chip: XC7A35T-1CPG236C
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - usb_jtag_bridge
+      - usb_uart_bridge
+      - qspi_flash
+      - user_leds
+      - user_buttons
+      - usb_powered
+    BoardURL: https://numato.com/product/mimas-a7-mini-artix-7-fpga-development-board/
+    Status: active
+  - Id: numato_neso_artix7
+    BoardName: Neso Artix 7
+    BoardProducer: numato_lab
+    Chip: XC7A100T-1CSG324C
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://numato.com/product/neso-artix-7-fpga-development-board/
+  - Id: numato_picoevb
+    BoardName: Numato PicoEVB Artix-7 M.2 PCIe Module
+    BoardProducer: numato_lab
+    Chip: XC7A50T-2CSG325C
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - pcie_endpoint
+      - qspi_flash
+      - user_leds
+      - jtag_header
+    BoardURL: https://numato.com/product/picoevb-artix-7-fpga-board/
+    Status: active
+  - Id: numato_vesnin
+    BoardName: Numato Vesnin Artix-7 FPGA Development Board
+    BoardProducer: numato_lab
+    Chip: XC7A200T-2FBG484C
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - usb_jtag_bridge
+      - usb_uart_bridge
+      - ddr3_memory
+      - qspi_flash
+      - pcie_endpoint
+      - user_leds
+      - user_buttons
+    BoardURL: https://numato.com/product/vesnin-artix-7-fpga-development-board/
+    Status: active
+  - Id: opalkelly_xem7310_a200
+    BoardName: XEM7310-A200
+    BoardProducer: opal_kelly
+    Chip: XC7A200T-1
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    ExtraProgrammers:
+      - openFPGALoader[*]
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - usb_3_host
+      - usb_powered
+      - user_leds
+    BoardURL: https://opalkelly.com/products/fpga-integration/XEM7310
+    Status: active
+  - Id: opalkelly_xem7320_a75t
+    BoardName: XEM7320-A75T
+    BoardProducer: opal_kelly
+    Chip: XC7A75T-1
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    ExtraProgrammers:
+      - openFPGALoader[*]
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - usb_3_host
+      - syzygy_standard
+      - syzygy_txr4
+      - usb_powered
+      - user_leds
+    BoardURL: https://opalkelly.com/products/fpga-integration/XEM7320
+    Status: active
+  - Id: qmtech_artix7_100t_core
+    BoardName: Artix-7 100T Core Board
+    BoardProducer: qmtech
+    Chip: XC7A100T-1FGG484C
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://qmtech.aliexpress.com/store/1199788
+  - Id: qmtech_artix7_200t_core
+    BoardName: Artix-7 200T Core Board
+    BoardProducer: qmtech
+    Chip: XC7A200T-1FBG484C
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://qmtech.aliexpress.com/store/1199788
+  - Id: qmtech_artix7_35t_core
+    BoardName: Artix-7 35T Core Board
+    BoardProducer: qmtech
+    Chip: XC7A35T-1FGG484C
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://qmtech.aliexpress.com/store/1199788
+  - Id: qmtech_artix7_wukong
+    BoardName: QMtech Artix-7 Wukong Board
+    BoardProducer: qmtech
+    Chip: XC7A100T-1FGG676C
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - ethernet_phy_gigabit
+      - hdmi_output
+      - microsd_socket
+      - usb_uart_bridge
+      - user_leds
+      - user_buttons
+    BoardURL: https://qmtech.aliexpress.com/store/1199788
+    Status: active
+  - Id: trenz_te0710
+    BoardName: TE0710 Artix-7 Dual Fast Ethernet SoM
+    Devices:
+      - micron_mt41k128m16
+      - micron_n25q128a
+    BoardProducer: trenz_electronic
+    Chip: XC7A35T-2CSG324C
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - ethernet_phy_10_100
+      - jtag_header
+    BoardURL: https://www.trenz-electronic.de/en/Dual-fast-Ethernet-FPGA-Module-with-AMD-Artix-7A35T-2C-512-MB-DDR3L-4-x-5-cm/TE0710-03-42C21-A
+    Status: active
+  - Id: trenz_te0711
+    BoardName: TE0711 Artix-7 100T Dual Fast Ethernet SoM
+    Devices:
+      - micron_mt41k128m16
+      - micron_n25q128a
+    BoardProducer: trenz_electronic
+    Chip: XC7A100T-2CSG324I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - ethernet_phy_10_100
+      - jtag_header
+    BoardURL: https://www.trenz-electronic.de/en/Products/Trenz-Electronic/TE07XX-Artix-7/
+    Status: active
+  - Id: trenz_te0712
+    BoardName: TE0712 Artix-7 100T 1GB SoM
+    Devices:
+      - micron_mt41k256m16
+      - micron_n25q128a
+    BoardProducer: trenz_electronic
+    Chip: XC7A100T-2FGG484C
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - jtag_header
+    BoardURL: https://www.trenz-electronic.de/en/FPGA-Module-with-AMD-Artix-7A100T-2C-1-GByte-DDR3L-4-x-5-cm-low-profile/TE0712-03-72C36-L
+    Status: active
+  - Id: trenz_te0713
+    BoardName: TE0713 Artix-7 100T SoM
+    Devices:
+      - micron_mt41k256m16
+      - micron_n25q128a
+    BoardProducer: trenz_electronic
+    Chip: XC7A100T-2FGG484C
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - jtag_header
+    BoardURL: https://www.trenz-electronic.de/en/FPGA-Module-with-AMD-Artix-7-100T-2C-1-GByte-DDR3L-32-MByte-Flash-4-x-5-cm/TE0713-03-72C46-A
+    Status: active
+  - Id: trenz_te0714
+    BoardName: TE0714 Artix-7 35T Micro SoM
+    Devices:
+      - micron_mt41k256m16
+      - micron_n25q128a
+    BoardProducer: trenz_electronic
+    Chip: XC7A35T-2CSG325I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - qspi_flash
+      - jtag_header
+    BoardURL: https://www.trenz-electronic.de/en/FPGA-Module-with-AMD-Artix-7A35T-2I-16-MByte-Flash-3-3V-Config.-3-x-4-cm/TE0714-04-42I-7-B
+    Status: active
+  - Id: trenz_te0725
+    BoardName: TE0725
+    Devices:
+      - micron_mt41k128m16
+      - micron_n25q128a
+    BoardProducer: trenz_electronic
+    Chip: XC7A100T-2FGG484I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://shop.trenz-electronic.de/en/Products/Trenz-Electronic/TE07XX-Artix-FPGA/
+  - Id: trenz_te0790
+    BoardName: TE0790
+    Devices:
+      - ftdi_ft2232h
+    BoardProducer: trenz_electronic
+    Chip: XC7A35T-2CSG324I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://shop.trenz-electronic.de/en/Products/Trenz-Electronic/TE07XX-Artix-FPGA/
+  - Id: usb104_a7_100t
+    BoardName: USB104 A7-100T
+    Devices:
+      - cypress_s25fl128s
+      - micron_mt41k256m16
+      - ftdi_ft2232h
+      - microsd_socket_generic
+      - pushbutton_smd_generic
+      - led_discrete_generic
+    BoardProducer: digilent
+    Chip: XC7A100T-1FTG256C
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+  - Id: xilinx_ac701
+    BoardName: AC701
+    Devices:
+      - micron_mt41k256m16
+      - micron_n25q256a
+      - marvell_88e1116r
+      - silabs_cp2103
+      - ftdi_ft2232h
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+    BoardProducer: xilinx_amd
+    Chip: XC7A200T-2FBG676C
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://www.xilinx.com/products/boards-and-kits/ek-a7-ac701-g.html
+  - Id: alinx_ax7101
+    BoardName: "Alinx AX7101"
+    BoardProducer: alinx
+    Chip: XC7A100T-2FGG484I
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - sd_card_socket
+      - usb_uart_bridge
+      - user_leds
+      - user_buttons
+    BoardURL: https://coderobin.com/products/alinx-ax7101-xilinx-artix-7-xc7a100t-fpga-development-board
+    Status: active
+    Notes: "Companion of AX7102/AX7103 — minimum-feature variant. XDC for LED/KEY/UART from vendor GitHub."
+  - Id: alinx_ax7201
+    BoardName: "Alinx AX7201"
+    BoardProducer: alinx
+    Chip: XC7A200T-2FBG484I
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - sd_card_socket
+      - usb_uart_bridge
+      - user_leds
+      - user_buttons
+    BoardURL: https://coderobin.com/products/alinx-ax7201-xilinx-artix-7-xc7a200t-fpga-development-board
+    Status: active
+    Notes: "Companion of AX7202/AX7203 — minimum-feature variant. Same chip family as AC7200 SOM."
+  - Id: alinx_ax7a200
+    BoardName: "Alinx AX7A200"
+    BoardProducer: alinx
+    Chip: XC7A200T-2FBG484I
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - sd_card_socket
+      - sfp_cage
+      - hdmi_output
+      - hdmi_input
+      - ethernet_phy_gigabit
+      - pcie_endpoint
+      - usb_uart_bridge
+      - user_leds
+      - user_buttons
+    BoardURL: https://coderobin.com/products/alinx-ax7a200-xilinx-artix-7-xc7a200t-fpga-development-board
+    Status: active
+    Notes: "Single-board (non-SOM) AX7A200 — pairs with AX7A035 (already in catalog)."
+  - Id: alinx_ac7a035
+    BoardName: "Alinx AC7A035 SOM"
+    BoardProducer: alinx
+    Chip: XC7A35T-2FGG484I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr3_memory
+      - qspi_flash
+    BoardURL: https://coderobin.com/products/alinx-ac7a035-xilinx-artix-7-xc7a35t-fpga-som
+    Status: active
+  - Id: alinx_ac7a200
+    BoardName: "Alinx AC7A200 SOM"
+    BoardProducer: alinx
+    Chip: XC7A200T-2FBG484I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr3_memory
+      - qspi_flash
+    BoardURL: https://coderobin.com/products/alinx-ac7a200-xilinx-artix-7-xc7a200t-fpga-som
+    Status: active
+  - Id: alinx_ac7100b
+    BoardName: "Alinx AC7100B SOM"
+    BoardProducer: alinx
+    Chip: XC7A100T-2FGG484I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr3_memory
+      - qspi_flash
+    BoardURL: https://coderobin.com/products/alinx-ac7100b-xilinx-artix-7-xc7a100t-som
+    Status: active
+    Notes: "Used in the Facebook Open Compute Time Card."

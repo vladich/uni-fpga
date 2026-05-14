@@ -1,29 +1,16 @@
 """
-Stub toolchain module. Synthesis isn't actually wired up yet — this just
-logs what would have been built and returns. Replace `synthesize()` with a
-real driver (subprocess to the vendor tool, or yosys/nextpnr invocation)
-when implementing the toolchain.
+nextpnr-oxide toolchain driver.
+
+"Oxide" is the older name for the Lattice Nexus open flow (yosys +
+nextpnr-nexus + prjoxide pack). The bitstream database was originally
+released as `prjnexus` then renamed to `prjoxide`, and some downstream
+docs still refer to the toolchain by the `oxide` name. The actual binaries
+shipped in oss-cad-suite are `nextpnr-nexus` and `prjoxide`.
+
+This driver is therefore a thin re-export of the nextpnr_nexus module —
+identical flow, identical binaries, only the toolchain id differs so a
+configuration can opt into the historical name.
 """
 
-import logging
-
-log = logging.getLogger(__name__)
-
-
-def synthesize(*, dir, configuration, board, board_pinmap, toolchain,
-               peripherals, top, include, output, step="full", **_):
-    """Entry point invoked by synthesize.py. Kwargs-only to keep the signature
-    extensible without breaking call sites."""
-    log.info(
-        "[stub %s] would synthesize configuration=%s, board=%s, top=%s, "
-        "step=%s, output=%s, peripherals=%d",
-        toolchain["Id"], configuration["id"], board["Id"], top, step, output,
-        len(peripherals),
-    )
-    return 0
-
-
-def program(**kwargs):
-    """Placeholder for board programming/loading."""
-    log.info("[stub program] not implemented")
-    return 0
+# All synth/program logic lives in nextpnr_nexus and is reused verbatim.
+from toolchains.nextpnr_nexus.nextpnr_nexus import synthesize, program  # noqa: F401

@@ -1,0 +1,1515 @@
+# Xilinx (AMD) / Zynq 7000
+# 28 nm ARM Cortex-A9 dual-core + Artix-7 PL. Vivado + Vitis.
+
+Producer: Xilinx (AMD)
+Family: Zynq 7000
+Description: 28 nm ARM Cortex-A9 dual-core + Artix-7 PL. Vivado + Vitis.
+Boards:
+  - Id: alinx_ax7010
+    BoardName: AX7010
+    BoardProducer: alinx
+    Chip: XC7Z010-1CLG400C
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://alinx.com/en/detail/3
+  - Id: alinx_ax7020
+    BoardName: AX7020
+    BoardProducer: alinx
+    Chip: XC7Z020-2CLG400I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://alinx.com/en/detail/4
+  - Id: alinx_ax7035
+    BoardName: AX7035
+    BoardProducer: alinx
+    Chip: XC7Z035-2FFG676I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://alinx.com/en/detail/5
+  - Id: alinx_ax7100
+    BoardName: AX7100
+    BoardProducer: alinx
+    Chip: XC7Z100-2FFG900I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://alinx.com/en/detail/7
+  - Id: alinx_ax7z015
+    BoardName: Alinx AX7Z015
+    BoardProducer: alinx
+    Chip: XC7Z015-2CLG485I
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - emmc_flash
+      - ethernet_phy_gigabit
+      - hdmi_output
+      - pcie_endpoint
+      - usb_uart_bridge
+      - microsd_socket
+    BoardURL: https://www.en.alinx.com/Product/SoC-development-Boards/Zynq-7000-SoC/AX7Z015.html
+    Status: active
+  - Id: alinx_ax7z030
+    BoardName: Alinx AX7Z030
+    BoardProducer: alinx
+    Chip: XC7Z030-2FBG676I
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - emmc_flash
+      - ethernet_phy_gigabit
+      - hdmi_output
+      - pcie_endpoint
+      - usb_uart_bridge
+      - microsd_socket
+    BoardURL: https://www.en.alinx.com/Product/SoC-development-Boards/Zynq-7000-SoC.html
+    Status: active
+  - Id: alinx_ax7z035
+    BoardName: Alinx AX7Z035
+    BoardProducer: alinx
+    Chip: XC7Z035-2FFG676I
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - emmc_flash
+      - ethernet_phy_gigabit
+      - hdmi_output
+      - pcie_endpoint
+      - sata_host
+      - usb_uart_bridge
+      - microsd_socket
+      - fmc_lpc
+    BoardURL: https://www.en.alinx.com/Product/SoC-development-Boards/Zynq-7000-SoC/AX7Z035B.html
+    Status: active
+  - Id: alinx_ax7z045
+    BoardName: Alinx AX7Z045
+    BoardProducer: alinx
+    Chip: XC7Z045-2FFG900I
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - emmc_flash
+      - ethernet_phy_gigabit
+      - hdmi_output
+      - pcie_endpoint
+      - usb_uart_bridge
+      - microsd_socket
+      - fmc_hpc
+    BoardURL: https://www.en.alinx.com/detail/835
+    Status: active
+  - Id: alinx_zx1
+    BoardName: ZX1
+    BoardProducer: alinx
+    Chip: XC7Z010-1CLG400C
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://alinx.com/en/detail/15
+  - Id: alinx_zx2
+    BoardName: ZX2
+    BoardProducer: alinx
+    Chip: XC7Z020-1CLG400C
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://alinx.com/en/detail/16
+  - Id: arty_z7_10
+    BoardName: Arty Z7-10
+    Devices:
+      - cypress_s25fl128s
+      - ftdi_ft2232h
+      - realtek_rtl8211e
+      - microchip_usb3343
+      - microsd_socket_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+      - led_discrete_generic
+      - rgb_led_common_anode
+      - tmds_direct
+      - pwm_audio_inline
+      - issi_is43tr16256a
+      - ti_txs02612
+    BoardProducer: digilent
+    Chip: XC7Z010-1CLG400C
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+  - Id: arty_z7_20
+    BoardName: Arty Z7-20
+    Devices:
+      - cypress_s25fl128s
+      - ftdi_ft2232h
+      - realtek_rtl8211e
+      - microchip_usb3343
+      - microsd_socket_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+      - led_discrete_generic
+      - rgb_led_common_anode
+      - tmds_direct
+      - pwm_audio_inline
+      - issi_is43tr16256a
+      - ti_txs02612
+    BoardProducer: digilent
+    Chip: XC7Z020-1CLG400C
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+  - Id: avnet_microzed_7010
+    BoardName: MicroZed 7010
+    BoardProducer: avnet
+    Chip: XC7Z010-1CLG400C
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/microzed/
+  - Id: avnet_microzed_7010_sbc
+    BoardName: MicroZed 7010 SBC
+    BoardProducer: avnet
+    Chip: XC7Z010-1CLG400C
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - ethernet_phy_gigabit
+      - usb_2_otg
+      - usb_uart_bridge
+      - usb_jtag_bridge
+      - microsd_socket
+      - pmod_connector
+    BoardURL: https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/microzed/
+    Status: active
+  - Id: avnet_microzed_7020
+    BoardName: MicroZed 7020
+    BoardProducer: avnet
+    Chip: XC7Z020-1CLG400C
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/microzed/
+  - Id: avnet_microzed_7020_sbc
+    BoardName: MicroZed 7020 SBC
+    BoardProducer: avnet
+    Chip: XC7Z020-1CLG400C
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - ethernet_phy_gigabit
+      - usb_2_otg
+      - usb_uart_bridge
+      - usb_jtag_bridge
+      - microsd_socket
+      - pmod_connector
+    BoardURL: https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/microzed/
+    Status: active
+  - Id: avnet_microzed_fmc_cc
+    BoardName: MicroZed FMC Carrier Card Kit
+    BoardProducer: avnet
+    Chip: XC7Z020-1CLG400C
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - ethernet_phy_gigabit
+      - usb_uart_bridge
+      - usb_jtag_bridge
+      - microsd_socket
+      - pmod_connector
+      - fmc_lpc
+      - user_leds
+      - user_buttons
+      - barrel_jack_input
+    BoardURL: https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/microzed/
+    Status: active
+  - Id: avnet_minized
+    BoardName: MiniZed
+    BoardProducer: avnet
+    Chip: XC7Z007S-1CLG225C
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/minized/
+  - Id: avnet_picozed_7015
+    BoardName: PicoZed 7015
+    BoardProducer: avnet
+    Chip: XC7Z015-1CLG485C
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/picozed/
+  - Id: avnet_picozed_7030
+    BoardName: PicoZed 7030
+    BoardProducer: avnet
+    Chip: XC7Z030-1FBG485C
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/picozed/
+  - Id: avnet_picozed_fmc_cc_v2
+    BoardName: PicoZed FMC Carrier Card V2
+    BoardProducer: avnet
+    Chip: XC7Z030-1FBG484C
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - ethernet_phy_gigabit
+      - usb_uart_bridge
+      - usb_jtag_bridge
+      - microsd_socket
+      - hdmi_output
+      - sfp_cage
+      - pcie_endpoint
+      - pmod_connector
+      - fmc_lpc
+      - barrel_jack_input
+    BoardURL: https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/picozed/
+    Status: active
+  - Id: cora_z7_07s
+    BoardName: Cora Z7-07S
+    Devices:
+      - micron_mt41k256m16
+      - ftdi_ft2232h
+      - realtek_rtl8211e
+      - microchip_usb3343
+      - microsd_socket_generic
+      - pushbutton_smd_generic
+      - led_discrete_generic
+      - rgb_led_common_anode
+      - ti_txs02612
+    BoardProducer: digilent
+    Chip: XC7Z007SCLG400-1
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+  - Id: cora_z7_10
+    BoardName: Cora Z7-10
+    Devices:
+      - micron_mt41k256m16
+      - ftdi_ft2232h
+      - realtek_rtl8211e
+      - microchip_usb3343
+      - microsd_socket_generic
+      - pushbutton_smd_generic
+      - led_discrete_generic
+      - rgb_led_common_anode
+      - ti_txs02612
+    BoardProducer: digilent
+    Chip: XC7Z010CLG400-1
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+  - Id: digilent_arty_z7
+    BoardName: Arty Z7
+    BoardProducer: digilent
+    Chips:
+      - Id: xc7z010-1clg400c
+        Name: 10
+      - Id: xc7z020-1clg400c
+        Name: 20
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://digilent.com/reference/programmable-logic/arty-z7/start
+  - Id: digilent_cora_z7
+    BoardName: Cora Z7
+    BoardProducer: digilent
+    Chips:
+      - Id: xc7z007sclg400-1
+        Name: 07s
+      - Id: xc7z010-1clg400c
+        Name: 10
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://digilent.com/reference/programmable-logic/cora-z7/start
+  - Id: digilent_pynq_z1
+    BoardName: PYNQ-Z1
+    Devices:
+      - micron_mt41k256m16
+      - cypress_s25fl128s
+      - ftdi_ft2232h
+      - realtek_rtl8211fd
+      - microchip_usb3343
+      - microsd_socket_generic
+      - adi_ssm2603
+      - tmds_direct
+      - pushbutton_smd_generic
+      - dip_switch_generic
+      - led_discrete_generic
+      - rgb_led_common_anode
+      - ti_txs02612
+    BoardProducer: digilent
+    Chip: xc7z020-1clg400c
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://digilent.com/reference/programmable-logic/pynq-z1/start
+  - Id: digilent_pynq_z2
+    BoardName: PYNQ-Z2
+    Devices:
+      - micron_mt41k256m16
+      - cypress_s25fl128s
+      - ftdi_ft2232h
+      - realtek_rtl8211e
+      - microchip_usb3343
+      - microsd_socket_generic
+      - ti_tlv320aic23b
+      - tmds_direct
+      - pushbutton_smd_generic
+      - dip_switch_generic
+      - led_discrete_generic
+      - rgb_led_common_anode
+      - ti_txs02612
+    BoardProducer: digilent
+    Chip: xc7z020-1clg400c
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://digilent.com/reference/programmable-logic/pynq-z2/start
+  - Id: digilent_zedboard
+    BoardName: ZedBoard
+    Devices:
+      - cypress_s25fl128s
+      - microchip_ksz9031rnx
+      - adi_adv7511
+      - adi_ssm2603
+      - microchip_usb3343
+      - microsd_socket_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+      - led_discrete_generic
+      - micron_mt41k128m16
+    BoardProducer: digilent
+    Chip: XC7Z020-CLG484-1
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - hdmi_output
+      - vga_output
+      - audio_codec
+      - ethernet_phy_gigabit
+      - usb_2_otg
+      - usb_uart_bridge
+      - usb_jtag_bridge
+      - pmod_connector
+      - user_leds
+      - user_buttons
+      - dip_switches
+      - fmc_lpc
+      - barrel_jack_input
+    BoardURL: https://digilent.com/shop/zedboard-zynq-7000-arm-fpga-soc-development-board/
+    Status: active
+  - Id: digilent_zybo
+    BoardName: Zybo
+    Devices:
+      - cypress_s25fl128s
+      - realtek_rtl8211e
+      - adi_ssm2603
+      - microchip_usb3343
+      - microsd_socket_generic
+      - tmds_direct
+      - ftdi_ft2232h
+      - pushbutton_smd_generic
+      - dip_switch_generic
+      - led_discrete_generic
+      - vga666_resistor_dac
+      - micron_mt41k128m16
+    BoardProducer: digilent
+    Chip: xc7z010-1clg400c
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://digilent.com/reference/programmable-logic/zybo/start
+  - Id: eclypse_z7
+    BoardName: Eclypse Z7
+    Devices:
+      - cypress_s25fl128s
+      - ftdi_ft2232h
+      - realtek_rtl8211e
+      - microchip_usb3343
+      - microsd_socket_generic
+      - pushbutton_smd_generic
+      - led_discrete_generic
+      - rgb_led_common_anode
+      - issi_is43tr16256a
+      - ti_txs02612
+    BoardProducer: digilent
+    Chip: xc7z020clg484-1
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://digilent.com/reference/programmable-logic/eclypse-z7/start
+  - Id: edge_zynq_soc
+    BoardName: EDGE Zynq SoC (7010/7020)
+    BoardProducer: invent_logics
+    Chip: XC7Z020-1CLG484C
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr3_memory
+      - hdmi_output
+      - ethernet_phy_gigabit
+      - usb_2_otg
+      - microsd_socket
+      - usb_uart_bridge
+      - usb_jtag_bridge
+      - qspi_flash
+      - seven_segment_display
+      - user_leds
+      - user_buttons
+      - dip_switches
+      - usb_powered
+    BoardURL: https://allaboutfpga.com/product/edge-zynq-soc-fpga-development-board/
+    Status: active
+  - Id: enclustra_mars_zx2
+    BoardName: Mars ZX2
+    BoardProducer: enclustra
+    Chip: XC7Z020-2CLG400I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - ethernet_phy_gigabit
+      - usb_2_otg
+      - jtag_header
+    BoardURL: https://www.enclustra.com/en/products/system-on-chip-modules/mars-zx2/
+    Status: active
+  - Id: enclustra_mars_zx3
+    BoardName: Mars ZX3
+    BoardProducer: enclustra
+    Chip: XC7Z020-2CLG484I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://www.enclustra.com/en/products/fpga-modules/mars-zx3/
+  - Id: enclustra_mercury_plus_zx1
+    BoardName: Mercury+ ZX1
+    BoardProducer: enclustra
+    Chip: XC7Z030-2FBG676I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://www.enclustra.com/en/products/fpga-modules/mercury-zx1/
+  - Id: enclustra_mercury_plus_zx5
+    BoardName: Mercury+ ZX5
+    BoardProducer: enclustra
+    Chip: XC7Z045-2FFG900I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://www.enclustra.com/en/products/fpga-modules/mercury-zx5/
+  - Id: imperix_bboard_pro
+    BoardName: B-Board PRO
+    BoardProducer: imperix
+    Chip: XC7Z030-1FBG484C
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ethernet_phy_gigabit
+      - usb_uart_bridge
+      - jtag_header
+    BoardURL: https://imperix.com/products/control/inverter-control-board/
+    Status: active
+  - Id: imperix_bbox_micro
+    BoardName: B-Box Micro
+    BoardProducer: imperix
+    Chip: XC7Z020-1CLG484C
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ethernet_phy_gigabit
+      - usb_uart_bridge
+      - jtag_header
+      - barrel_jack_input
+    BoardURL: https://imperix.com/products/control/power-inverter-controller/
+    Status: active
+  - Id: imperix_bbox_rcp3
+    BoardName: B-Box RCP 3.0
+    BoardProducer: imperix
+    Chip: XC7Z030-1FBG484C
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ethernet_phy_gigabit
+      - usb_uart_bridge
+      - jtag_header
+      - barrel_jack_input
+    BoardURL: https://imperix.com/products/control/rapid-prototyping-controller/
+    Status: active
+  - Id: iwave_rainbow_g28d
+    BoardName: iW-RainboW-G28D Zynq-7000 SODIMM Dev Kit
+    BoardProducer: iwave
+    Chip: XC7Z020-1CLG484C
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    ExtraProgrammers:
+      - openFPGALoader[*]
+    Features:
+      - ddr3_memory
+      - emmc_flash
+      - qspi_flash
+      - ethernet_phy_gigabit
+      - usb_2_otg
+      - usb_uart_bridge
+      - microsd_socket
+      - wifi_radio
+      - bluetooth_le_radio
+      - jtag_header
+    BoardURL: https://iwave-global.com/product/zynq-7000-soc-sodimm-system-on-module/
+    Status: active
+  - Id: krtkl_snickerdoodle_black
+    BoardName: Snickerdoodle black
+    BoardProducer: krtkl
+    Chip: XC7Z020-1CLG400C
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    ExtraProgrammers:
+      - openFPGALoader[*]
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - microsd_socket
+      - wifi_radio
+      - bluetooth_le_radio
+      - usb_uart_bridge
+      - jtag_header
+    BoardURL: https://krtkl.com/snickerdoodle/
+    Status: active
+  - Id: krtkl_snickerdoodle_one
+    BoardName: Snickerdoodle one
+    BoardProducer: krtkl
+    Chip: XC7Z010-1CLG400C
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    ExtraProgrammers:
+      - openFPGALoader[*]
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - microsd_socket
+      - wifi_radio
+      - bluetooth_le_radio
+      - usb_uart_bridge
+      - jtag_header
+    BoardURL: https://krtkl.com/snickerdoodle/
+    Status: active
+  - Id: myir_myc_c7z015
+    BoardName: MYIR MYC-C7Z015 Zynq-7015 CPU Module
+    BoardProducer: myir
+    Chip: XC7Z015-2CLG485I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - emmc_flash
+      - ethernet_phy_gigabit
+      - usb_2_otg
+    BoardURL: https://www.myirtech.com/list.asp?id=552
+    Status: active
+  - Id: myir_myd_c7z010_v2
+    BoardName: MYIR MYD-C7Z010/20-V2 Zynq Dev Board
+    BoardProducer: myir
+    Chip: XC7Z020-2CLG400I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - emmc_flash
+      - ethernet_phy_gigabit
+      - usb_2_otg
+      - usb_uart_bridge
+      - microsd_socket
+      - user_leds
+    BoardURL: https://www.myirtech.com/list.asp?id=698
+    Status: active
+  - Id: myir_myd_c7z015
+    BoardName: MYIR MYD-C7Z015 Zynq-7015 Dev Board
+    BoardProducer: myir
+    Chip: XC7Z015-2CLG485I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - emmc_flash
+      - ethernet_phy_gigabit
+      - usb_2_otg
+      - usb_uart_bridge
+      - hdmi_output
+      - microsd_socket
+      - user_leds
+      - user_buttons
+    BoardURL: https://www.myirtech.com/list.asp?id=553
+    Status: active
+  - Id: myir_myd_y7z010_v2
+    BoardName: MYIR MYD-Y7Z010/20-V2 Zynq Dev Board
+    BoardProducer: myir
+    Chip: XC7Z020-2CLG400I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - emmc_flash
+      - ethernet_phy_gigabit
+      - usb_2_otg
+      - usb_uart_bridge
+      - hdmi_output
+      - microsd_socket
+      - user_leds
+    BoardURL: https://www.myirtech.com/list.asp?id=681
+    Status: active
+  - Id: myir_zturn_7010
+    BoardName: MYIR Z-turn Board (XC7Z010)
+    BoardProducer: myir
+    Chip: XC7Z010-1CLG400C
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    ExtraProgrammers:
+      - openFPGALoader[*]
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - microsd_socket
+      - ethernet_phy_gigabit
+      - usb_2_otg
+      - usb_uart_bridge
+      - hdmi_output
+      - can_transceiver
+      - user_buttons
+      - user_leds
+      - jtag_header
+    BoardURL: https://www.myirtech.com/list.asp?id=502
+    Status: active
+  - Id: myir_zturn_7020
+    BoardName: MYIR Z-turn Board (XC7Z020)
+    BoardProducer: myir
+    Chip: XC7Z020-1CLG400C
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    ExtraProgrammers:
+      - openFPGALoader[*]
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - microsd_socket
+      - ethernet_phy_gigabit
+      - usb_2_otg
+      - usb_uart_bridge
+      - hdmi_output
+      - can_transceiver
+      - user_buttons
+      - user_leds
+      - jtag_header
+    BoardURL: https://www.myirtech.com/list.asp?id=502
+    Status: active
+  - Id: myir_zturn_lite_7010
+    BoardName: MYIR Z-turn Lite (XC7Z010)
+    BoardProducer: myir
+    Chip: XC7Z010-1CLG400C
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    ExtraProgrammers:
+      - openFPGALoader[*]
+    Features:
+      - ddr3_memory
+      - emmc_flash
+      - microsd_socket
+      - ethernet_phy_gigabit
+      - usb_2_otg
+      - usb_uart_bridge
+      - user_leds
+      - jtag_header
+    BoardURL: https://www.myirtech.com/list.asp?id=565
+    Status: active
+  - Id: myir_zturn_v2_7020
+    BoardName: MYIR Z-turn Board V2 (XC7Z020)
+    BoardProducer: myir
+    Chip: XC7Z020-1CLG400C
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    ExtraProgrammers:
+      - openFPGALoader[*]
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - microsd_socket
+      - ethernet_phy_gigabit
+      - usb_2_otg
+      - usb_uart_bridge
+      - hdmi_output
+      - can_transceiver
+      - user_buttons
+      - user_leds
+      - jtag_header
+    BoardURL: https://www.myirtech.com/list.asp?id=708
+    Status: active
+  - Id: numato_styx
+    BoardName: Numato Styx Zynq-7020 Module
+    BoardProducer: numato_lab
+    Chip: XC7Z020-1CLG484C
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - usb_jtag_bridge
+      - usb_uart_bridge
+      - ddr3_memory
+      - qspi_flash
+      - microsd_socket
+      - ethernet_phy_gigabit
+      - user_leds
+    BoardURL: https://numato.com/product/styx-zynq-7020-usb-fpga-module/
+    Status: active
+  - Id: numato_tarak
+    BoardName: Tarak
+    BoardProducer: numato_lab
+    Chip: XC7Z020-1CLG484C
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://numato.com/product/tarak-zynq-7000-soc-fpga-development-board/
+  - Id: qmtech_zynq_7010_core
+    BoardName: Zynq 7010 Core Board
+    BoardProducer: qmtech
+    Chip: XC7Z010-1CLG400C
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://qmtech.aliexpress.com/store/1199788
+  - Id: qmtech_zynq_7020_core
+    BoardName: Zynq 7020 Core Board
+    BoardProducer: qmtech
+    Chip: XC7Z020-1CLG400C
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://qmtech.aliexpress.com/store/1199788
+  - Id: qmtech_zynq_7100_core
+    BoardName: Zynq 7100 Core Board
+    BoardProducer: qmtech
+    Chip: XC7Z100-2FFG900I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://qmtech.aliexpress.com/store/1199788
+  - Id: realdigital_blackboard
+    BoardName: Blackboard
+    BoardProducer: real_digital
+    Chip: XC7Z007S-1CLG400C
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    ExtraProgrammers:
+      - openFPGALoader[*]
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - usb_2_otg
+      - usb_uart_bridge
+      - usb_powered
+      - hdmi_output
+      - user_leds
+      - rgb_leds
+      - user_buttons
+      - pmod_connector
+    BoardURL: https://www.realdigital.org/hardware/blackboard
+    Status: active
+  - Id: redpitaya_signallab_250_12
+    BoardName: SIGNALlab 250-12
+    BoardProducer: redpitaya
+    Chip: XC7Z020-1CLG400C
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    ExtraProgrammers:
+      - openFPGALoader[*]
+    Features:
+      - ddr3_memory
+      - microsd_socket
+      - ethernet_phy_gigabit
+      - usb_2_otg
+      - usb_powered
+      - sma_io_pair
+      - adc_chip
+      - dac_chip
+    BoardURL: https://redpitaya.com/signallab-250-12/
+    Status: active
+  - Id: redpitaya_stemlab_125_14
+    BoardName: STEMlab 125-14
+    BoardProducer: redpitaya
+    Chip: XC7Z010-1CLG400C
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    ExtraProgrammers:
+      - openFPGALoader[*]
+    Features:
+      - ddr3_memory
+      - microsd_socket
+      - ethernet_phy_gigabit
+      - usb_2_otg
+      - usb_powered
+      - sma_io_pair
+      - adc_chip
+      - dac_chip
+    BoardURL: https://redpitaya.com/stemlab-125-14/
+    Status: active
+  - Id: redpitaya_stemlab_125_14_gen2
+    BoardName: STEMlab 125-14 Gen 2
+    BoardProducer: redpitaya
+    Chip: XC7Z010-1CLG400C
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    ExtraProgrammers:
+      - openFPGALoader[*]
+    Features:
+      - ddr3_memory
+      - microsd_socket
+      - ethernet_phy_gigabit
+      - usb_2_otg
+      - usb_powered
+      - can_transceiver
+      - sma_io_pair
+      - adc_chip
+      - dac_chip
+    BoardURL: https://redpitaya.com/stemlab-125-14-gen2/
+    Status: active
+  - Id: redpitaya_stemlab_125_14_pro_gen2
+    BoardName: STEMlab 125-14 PRO Gen 2
+    BoardProducer: redpitaya
+    Chip: XC7Z010-1CLG400C
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    ExtraProgrammers:
+      - openFPGALoader[*]
+    Features:
+      - ddr3_memory
+      - microsd_socket
+      - emmc_flash
+      - qspi_flash
+      - ethernet_phy_gigabit
+      - usb_2_otg
+      - usb_powered
+      - can_transceiver
+      - sma_io_pair
+      - adc_chip
+      - dac_chip
+    BoardURL: https://redpitaya.com/product/stemlab-125-14-pro-starter-kit/
+    Status: active
+  - Id: redpitaya_stemlab_125_14_z7020_pro_gen2
+    BoardName: STEMlab 125-14 PRO Z7020 Gen 2
+    BoardProducer: redpitaya
+    Chip: XC7Z020-1CLG400C
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    ExtraProgrammers:
+      - openFPGALoader[*]
+    Features:
+      - ddr3_memory
+      - microsd_socket
+      - emmc_flash
+      - qspi_flash
+      - ethernet_phy_gigabit
+      - usb_2_otg
+      - usb_powered
+      - can_transceiver
+      - sma_io_pair
+      - adc_chip
+      - dac_chip
+    BoardURL: https://redpitaya.com/product/stemlab-125-14-pro-z7020-gen-2-starter-kit/
+    Status: active
+  - Id: sundance_emc2_dp
+    BoardName: EMC2-DP
+    BoardProducer: sundance
+    Chip: XC7Z030-1FBG484C
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://www.sundance.com/emc2-dp/
+  - Id: trenz_te0700
+    BoardName: TE0700
+    Devices:
+      - micron_mt41k128m16
+      - micron_n25q128a
+    BoardProducer: trenz_electronic
+    Chip: XC7Z020-1CLG484C
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://shop.trenz-electronic.de/en/Products/Trenz-Electronic/TE07XX-Zynq-SoC/
+  - Id: trenz_te0715
+    BoardName: TE0715
+    Devices:
+      - micron_mt41k256m16
+      - micron_n25q128a
+      - realtek_rtl8211e
+    BoardProducer: trenz_electronic
+    Chip: XC7Z015-1CLG485I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://shop.trenz-electronic.de/en/Products/Trenz-Electronic/TE07XX-Zynq-SoC/
+  - Id: trenz_te0716
+    BoardName: TE0716 Zynq-7020 GigE SoM
+    Devices:
+      - micron_mt41k256m16
+      - micron_n25q128a
+    BoardProducer: trenz_electronic
+    Chip: XC7Z020-1CLG484C
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - ethernet_phy_gigabit
+      - usb_2_otg
+      - jtag_header
+    BoardURL: https://www.trenz-electronic.de/en/Products/Trenz-Electronic/TE07XX-Zynq-SoC/TE0716-Zynq-SoC/
+    Status: active
+  - Id: trenz_te0720
+    BoardName: TE0720
+    Devices:
+      - micron_mt41k256m16
+      - micron_n25q128a
+      - realtek_rtl8211e
+    BoardProducer: trenz_electronic
+    Chip: XC7Z020-1CLG484C
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://shop.trenz-electronic.de/en/Products/Trenz-Electronic/TE07XX-Zynq-SoC/
+  - Id: trenz_te0722
+    BoardName: TE0722 DIPFORTy1 Soft Propeller Zynq-7010
+    Devices:
+      - micron_n25q128a
+    BoardProducer: trenz_electronic
+    Chip: XC7Z010-1CLG225I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - qspi_flash
+      - jtag_header
+    BoardURL: https://www.trenz-electronic.de/en/Products/Trenz-Electronic/TE07XX-Zynq-SoC/TE0722-Zynq-SoC
+    Status: active
+  - Id: trenz_te0723
+    BoardName: TE0723 Zynq-7010 Mini SoM
+    Devices:
+      - micron_mt41k128m16
+      - micron_n25q128a
+    BoardProducer: trenz_electronic
+    Chip: XC7Z010-1CLG225C
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - jtag_header
+    BoardURL: https://www.trenz-electronic.de/en/Products/Trenz-Electronic/TE07XX-Zynq-SoC/TE0723-Zynq-SoC/
+    Status: active
+  - Id: trenz_te0724
+    BoardName: TE0724 Zynq-7010 1GB SoM
+    Devices:
+      - micron_mt41k256m16
+      - micron_n25q128a
+    BoardProducer: trenz_electronic
+    Chip: XC7Z010-1CLG400I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - jtag_header
+    BoardURL: https://www.trenz-electronic.de/en/Products/Trenz-Electronic/TE07XX-Zynq-SoC/TE0724-Zynq-SoC/
+    Status: active
+  - Id: trenz_te0726_zynqberry
+    BoardName: TE0726 ZynqBerry
+    Devices:
+      - micron_mt41k256m16
+      - micron_n25q128a
+      - microchip_lan8720a
+      - microchip_usb3343
+    BoardProducer: trenz_electronic
+    Chip: XC7Z010-1CLG225C
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://shop.trenz-electronic.de/en/TE0726-03M-ZynqBerry-Module-with-Xilinx-Zynq-7010-in-Raspberry-Pi-Form-Factor
+  - Id: trenz_te0727
+    BoardName: TE0727 Zynq-7010 Pi-Zero Form Factor
+    Devices:
+      - micron_mt41k256m16
+      - micron_n25q128a
+    BoardProducer: trenz_electronic
+    Chip: XC7Z010-1CLG225C
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - hdmi_output
+      - usb_2_otg
+      - jtag_header
+    BoardURL: https://www.trenz-electronic.de/en/Products/Trenz-Electronic/TE07XX-Zynq-SoC/TE0727-Zynq-SoC/
+    Status: active
+  - Id: trenz_te0728
+    BoardName: TE0728 Zynq-7020 Automotive SoM
+    Devices:
+      - micron_mt41k256m16
+      - micron_n25q128a
+    BoardProducer: trenz_electronic
+    Chip: XA7Z020-1CLG484Q
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - ethernet_phy_10_100
+      - jtag_header
+    BoardURL: https://www.trenz-electronic.de/en/Products/Trenz-Electronic/TE07XX-Zynq-SoC/TE0728-Zynq-SoC/
+    Status: active
+  - Id: trenz_te0729
+    BoardName: TE0729 Zynq-7020 Triple Ethernet SoM
+    Devices:
+      - micron_mt41k128m16
+      - micron_n25q128a
+    BoardProducer: trenz_electronic
+    Chip: XC7Z020-2CLG484I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - emmc_flash
+      - ethernet_phy_gigabit
+      - ethernet_phy_10_100
+      - jtag_header
+    BoardURL: https://www.trenz-electronic.de/en/Products/Trenz-Electronic/TE07XX-Zynq-SoC/TE0729-Zynq-SoC/
+    Status: active
+  - Id: trenz_te0750
+    BoardName: TE0750
+    Devices:
+      - micron_mt41k256m16
+      - micron_n25q256a
+    BoardProducer: trenz_electronic
+    Chip: XC7Z045-2FFG900I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://shop.trenz-electronic.de/en/Products/Trenz-Electronic/TE07XX-Zynq-SoC/
+  - Id: trenz_te0782
+    BoardName: TE0782 Zynq-7045/7100 High-End SoM
+    Devices:
+      - micron_mt41k256m16
+      - cypress_s25fl128s
+    BoardProducer: trenz_electronic
+    Chip: XC7Z045-2FFG900I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - emmc_flash
+      - ethernet_phy_gigabit
+      - jtag_header
+    BoardURL: https://www.trenz-electronic.de/en/Products/Trenz-Electronic/TE07XX-Zynq-SoC/TE0782-Zynq-SoC/
+    Status: active
+  - Id: tria_minized
+    BoardName: Tria MiniZed
+    BoardProducer: tria_technologies
+    Chip: XC7Z007S-1CLG400C
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - usb_2_otg
+      - usb_uart_bridge
+      - usb_jtag_bridge
+      - wifi_radio
+      - bluetooth_le_radio
+      - pmod_connector
+      - arduino_shield_header
+      - user_leds
+      - user_buttons
+      - usb_powered
+    BoardURL: https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/minized/
+    Status: active
+  - Id: tul_pynq_z2
+    BoardName: TUL PYNQ-Z2
+    BoardProducer: tul
+    Chip: XC7Z020-1CLG400C
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - microsd_socket
+      - ethernet_phy_gigabit
+      - usb_2_otg
+      - usb_uart_bridge
+      - usb_jtag_bridge
+      - hdmi_output
+      - audio_codec
+      - pmod_connector
+      - arduino_shield_header
+      - raspi_hat_header
+      - user_leds
+      - rgb_leds
+      - user_buttons
+      - dip_switches
+    BoardURL: https://www.tulembedded.com/fpga/ProductsPYNQ-Z2.html
+    Status: active
+  - Id: xilinx_zc702
+    BoardName: ZC702
+    Devices:
+      - micron_mt41k128m16
+      - micron_n25q128a
+      - marvell_88e1116r
+      - adi_adv7511
+      - silabs_cp2103
+      - ftdi_ft232h
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+    BoardProducer: xilinx_amd
+    Chip: XC7Z020-1CLG484C
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://www.xilinx.com/products/boards-and-kits/ek-z7-zc702-g.html
+  - Id: xilinx_zc706
+    BoardName: ZC706
+    Devices:
+      - micron_n25q256a
+      - marvell_88e1116r
+      - adi_adv7511
+      - silabs_cp2103
+      - ftdi_ft232h
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+      - ddr3_sodimm_socket
+      - silabs_si5324
+      - silabs_si570
+    BoardProducer: xilinx_amd
+    Chip: XC7Z045-2FFG900C
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://www.xilinx.com/products/boards-and-kits/ek-z7-zc706-g.html
+  - Id: zedboard
+    BoardName: ZedBoard
+    BoardProducer: avnet
+    Chip: XC7Z020CLG484-1
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/zedboard/
+  - Id: zybo_z7
+    BoardName: Zybo Z7
+    Devices:
+      - cypress_s25fl128s
+      - micron_mt41k256m16
+      - ftdi_ft2232h
+      - realtek_rtl8211e
+      - adi_ssm2603
+      - microchip_usb3343
+      - microsd_socket_generic
+      - tmds_direct
+      - pushbutton_smd_generic
+      - dip_switch_generic
+      - led_discrete_generic
+      - rgb_led_common_anode
+      - ti_txs02612
+    BoardProducer: digilent
+    Chip: xc7z020clg400-1
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://digilent.com/reference/programmable-logic/zybo-z7/start
+  - Id: alinx_ax7015
+    BoardName: "Alinx AX7015"
+    BoardProducer: alinx
+    Chip: XC7Z015-2CLG485I
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - sd_card_socket
+      - hdmi_output
+      - ethernet_phy_gigabit
+      - usb_uart_bridge
+      - user_leds
+      - user_buttons
+    BoardURL: https://coderobin.com/products/alinx-ax7015-xilinx-zynq-7000-xc7z015-fpga-development-board
+    Status: active
+    Notes: "Variant alongside AX7Z015 (already in catalog) — pairs SoM+carrier."
+  - Id: alinx_ax7021
+    BoardName: "Alinx AX7021"
+    BoardProducer: alinx
+    Chip: XC7Z020-2CLG484I
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - sd_card_socket
+      - hdmi_output
+      - ethernet_phy_gigabit
+      - usb_uart_bridge
+      - user_leds
+      - user_buttons
+    BoardURL: https://coderobin.com/products/alinx-ax7021-xilinx-zynq-7000-xc7z020-fpga-development-board
+    Status: active
+    Notes: "484-pin variant of AX7020 (which uses CLG400 package)."
+  - Id: alinx_ax7z010
+    BoardName: "Alinx AX7Z010"
+    BoardProducer: alinx
+    Chip: XC7Z010-1CLG400I
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - sd_card_socket
+      - hdmi_output
+      - ethernet_phy_gigabit
+      - can_transceiver
+      - rs485_transceiver
+      - usb_uart_bridge
+      - user_leds
+      - user_buttons
+    BoardURL: https://coderobin.com/products/alinx-ax7z010-xilinx-zynq-7000-xc7z010-fpga-development-board
+    Status: active
+    Notes: "B revision; pairs with AC7Z010 SOM (also new). 5V input."
+  - Id: alinx_ax7z020
+    BoardName: "Alinx AX7Z020"
+    BoardProducer: alinx
+    Chip: XC7Z020-2CLG400I
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - sd_card_socket
+      - hdmi_output
+      - ethernet_phy_gigabit
+      - can_transceiver
+      - rs485_transceiver
+      - mipi_csi2_input
+      - usb_uart_bridge
+      - user_leds
+      - user_buttons
+    BoardURL: https://coderobin.com/products/alinx-ax7z020-xilinx-zynq-7000-xc7z020-fpga-development-board
+    Status: active
+    Notes: "B revision; variant with MIPI."
+  - Id: alinx_ax7350
+    BoardName: "Alinx AX7350"
+    BoardProducer: alinx
+    Chip: XC7Z035-2FFG676I
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - sd_card_socket
+      - sfp_cage
+      - pcie_endpoint
+      - hdmi_output
+      - ethernet_phy_gigabit
+      - usb_uart_bridge
+      - user_leds
+      - user_buttons
+    BoardURL: https://coderobin.com/products/alinx-ax7350-xilinx-zynq-7000-xc7z035-fpga-development-board
+    Status: active
+    Notes: "B revision of older AX7Z035 (in catalog) — distinct PCB."
+  - Id: alinx_ax7450
+    BoardName: "Alinx AX7450"
+    BoardProducer: alinx
+    Chip: XC7Z100-2FFG900I
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - sd_card_socket
+      - sfp_cage
+      - pcie_endpoint
+      - hdmi_output
+      - ethernet_phy_gigabit
+      - usb_uart_bridge
+      - user_leds
+      - user_buttons
+    BoardURL: https://coderobin.com/products/alinx-ax7450-xilinx-zynq-7000-xc7z100-fpga-development-board
+    Status: active
+    Notes: "B revision XC7Z100 SoM+carrier; distinct from existing AX7100 entry."
+  - Id: alinx_ac7010
+    BoardName: "Alinx AC7010 SOM"
+    BoardProducer: alinx
+    Chip: XC7Z010-1CLG400I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr3_memory
+      - qspi_flash
+    BoardURL: https://coderobin.com/products/alinx-ac7010-xilinx-zynq-7000-xc7z010-fpga-som
+    Status: active
+    Notes: "Mid-range Z7010 SOM (size larger than AC7Z010). Carrier-board-agnostic; no pin map."
+  - Id: alinx_ac7z010
+    BoardName: "Alinx AC7Z010 SOM"
+    BoardProducer: alinx
+    Chip: XC7Z010-1CLG400I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr3_memory
+      - qspi_flash
+    BoardURL: https://coderobin.com/products/alinx-ac7Z010-xilinx-zynq-7000-xc7z010-fpga-som
+    Status: active
+    Notes: 'Bare-minimum Z7010 SOM, 1.38"x1.65". No pin map (SOM).'
+  - Id: alinx_ac7020
+    BoardName: "Alinx AC7020 SOM"
+    BoardProducer: alinx
+    Chip: XC7Z020-2CLG400I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr3_memory
+      - qspi_flash
+    BoardURL: https://coderobin.com/products/alinx-ac7020-xilinx-zynq-7000-xc7z020-fpga-som
+    Status: active
+    Notes: "Mid-range Z7020 SOM (full-feature)."
+  - Id: alinx_ac7z020
+    BoardName: "Alinx AC7Z020 SOM"
+    BoardProducer: alinx
+    Chip: XC7Z020-2CLG400I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr3_memory
+      - qspi_flash
+    BoardURL: https://coderobin.com/products/alinx-ac7Z020-xilinx-zynq-7000-xc7z020-fpga-som
+    Status: active
+    Notes: "Bare-minimum Z7020 SOM, compact."
+  - Id: alinx_ac7015b
+    BoardName: "Alinx AC7015B SOM"
+    BoardProducer: alinx
+    Chip: XC7Z015-2CLG485I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr3_memory
+      - qspi_flash
+    BoardURL: https://coderobin.com/products/alinx-ac7015b-xilinx-zynq-7000-xc7z015-fpga-som
+    Status: active
+  - Id: alinx_ac7021b
+    BoardName: "Alinx AC7021B SOM"
+    BoardProducer: alinx
+    Chip: XC7Z020-2CLG484I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr3_memory
+      - qspi_flash
+    BoardURL: https://coderobin.com/products/alinx-ac7021b-xilinx-zynq-7000-xc7z020-fpga-som
+    Status: active
+  - Id: alinx_ac7z035
+    BoardName: "Alinx AC7Z035 SOM"
+    BoardProducer: alinx
+    Chip: XC7Z035-2FFG676I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr3_memory
+      - qspi_flash
+    BoardURL: https://coderobin.com/products/alinx-ac7Z035-xilinx-zynq-7000-xc7z035-fpga-som
+    Status: active
+  - Id: alinx_ac7z100
+    BoardName: "Alinx AC7Z100 SOM"
+    BoardProducer: alinx
+    Chip: XC7Z100-2FFG900I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr3_memory
+      - qspi_flash
+    BoardURL: https://coderobin.com/products/alinx-ac7Z100-xilinx-zynq-7000-xc7z100-fpga-som
+    Status: active

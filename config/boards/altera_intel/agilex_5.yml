@@ -1,0 +1,176 @@
+# Altera (Intel) / Agilex 5
+# Mid-range Agilex. Quartus Prime Pro.
+
+Producer: Altera (Intel)
+Family: Agilex 5
+Description: Mid-range Agilex. Quartus Prime Pro.
+Boards:
+  - Id: intel_agilex5_d029_compact_devkit
+    BoardName: Agilex 5 D-Series 029 Compact Development Kit
+    Devices:
+      - ddr4_sodimm_socket
+      - micron_n25q256a
+      - microchip_ksz9031rnx
+      - usb_blaster_ii_built_in
+      - silabs_cp2102
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+    BoardProducer: intel_altera
+    Chip: A5D029BB32AE6SR0
+    Bridges:
+      - usb-jtag
+    Programmer: quartus_pgm
+    Features:
+      - lpddr4_memory
+      - qspi_flash
+      - usb_jtag_bridge
+      - usb_uart_bridge
+      - microsd_socket
+      - ethernet_phy_gigabit
+      - pcie_endpoint
+    BoardURL: https://www.altera.com/products/boards-and-kits/dev-kits/altera/agilex-5-d-series-029-compact-development-kit.html
+    Status: active
+  - Id: intel_agilex5_devkit
+    BoardName: Agilex 5 FPGA Development Kit
+    Devices:
+      - ddr4_sodimm_socket
+      - micron_n25q256a
+      - microchip_ksz9031rnx
+      - usb_blaster_ii_built_in
+      - silabs_cp2102
+      - microsd_socket_generic
+      - emmc_chip_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+    BoardProducer: intel_altera
+    Chip: A5ED065BB32AE6SR0
+    Bridges:
+      - jtag
+    Programmer: quartus_pgm
+    BoardURL: https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/agilex/5.html
+  - Id: iwave_rainbow_g58m
+    BoardName: iW-RainboW-G58M Intel Agilex 5 FPGA SoM
+    BoardProducer: iwave
+    Chip: A5ED065BB32AE6SR0
+    Bridges:
+      - jtag
+    Programmer: quartus_pgm
+    Features:
+      - lpddr4_memory
+      - qspi_flash
+      - emmc_flash
+      - ethernet_phy_gigabit
+      - usb_2_otg
+      - usb_jtag_bridge
+    BoardURL: https://www.iwavesystems.com/press-release/agilex-5-system-on-module-ai-optimized-fpga-for-edge-ai-applications/
+    Status: active
+  - Id: terasic_agilex5_e065b_modular
+    BoardName: Agilex 5 FPGA E-Series 065B Modular Development Kit
+    Devices:
+      - ddr4_sodimm_socket
+      - microsd_socket_generic
+      - usb_blaster_ii_built_in
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+      - ti_sn75dp159
+    BoardProducer: terasic
+    Chip: A5ED065BB32AE6SR0
+    Bridges:
+      - usb-jtag
+    Programmer: quartus_pgm
+    Features:
+      - ddr4_memory
+      - sfp_cage
+      - hdmi_output
+      - displayport_output
+      - mipi_csi2_input
+      - pcie_endpoint
+      - fmc_plus
+      - microsd_socket
+      - usb_jtag_bridge
+    BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&CategoryNo=123&No=1382
+    Status: active
+  - Id: terasic_atum_a5
+    BoardName: Atum A5 Development Kit
+    Devices:
+      - ddr4_sodimm_socket
+      - microsd_socket_generic
+      - usb_blaster_ii_built_in
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+      - ti_sn75dp159
+    BoardProducer: terasic
+    Chip: A5ED065BB32AE6SR0
+    Bridges:
+      - usb-jtag
+    Programmer: quartus_pgm
+    Features:
+      - ddr4_memory
+      - qsfp_cage
+      - hdmi_output
+      - mipi_csi2_input
+      - pcie_endpoint
+      - fmc_plus
+      - ethernet_phy_gigabit
+      - usb_jtag_bridge
+    BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&No=1342
+    Status: active
+  - Id: terasic_de25_nano
+    BoardName: DE25-Nano Development and Education Board
+    Devices:
+      - ddr4_sodimm_socket
+      - microchip_ksz9031rnx
+      - microsd_socket_generic
+      - usb_blaster_ii_built_in
+      - led_discrete_generic
+      - pushbutton_smd_generic
+    BoardProducer: terasic
+    Chip: A5ED014BB32AE6SR0
+    Bridges:
+      - usb-jtag
+    Programmer: quartus_pgm
+    Features:
+      - lpddr4_memory
+      - hdmi_output
+      - ethernet_phy_gigabit
+      - microsd_socket
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
+    BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&No=1384
+    Status: active
+  - Id: terasic_de25_standard
+    BoardName: DE25-Standard Development and Education Kit
+    Devices:
+      - ddr4_sodimm_socket
+      - adi_adv7513
+      - microchip_ksz9031rnx
+      - microsd_socket_generic
+      - usb_blaster_ii_built_in
+      - adi_adxl345
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+      - seven_seg_module_shared
+    BoardProducer: terasic
+    Chip: A5ED014BB32AE6SR0
+    Bridges:
+      - usb-jtag
+    Programmer: quartus_pgm
+    Features:
+      - ddr4_memory
+      - hdmi_output
+      - mipi_csi2_input
+      - audio_codec
+      - ethernet_phy_gigabit
+      - usb_jtag_bridge
+      - user_buttons
+      - dip_switches
+      - seven_segment_display
+    BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&No=1354
+    Status: active

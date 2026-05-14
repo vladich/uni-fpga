@@ -25,7 +25,7 @@ Peripheral:
         color_depth: 565
   driver:
     module: lcd_480_272
-    file: peripherals/lcd_480_272.sv
+    file: rtl/peripherals/lcd_480_272.sv
     port_map:
       PixelClk:  context.clk
       nRST:      context.rst_n   # active-low reset

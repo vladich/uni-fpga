@@ -1,0 +1,300 @@
+# Altera (Intel) / Stratix 10
+# 14 nm high-end with eASIC tile options. Quartus Prime Pro.
+
+Producer: Altera (Intel)
+Family: Stratix 10
+Description: 14 nm high-end with eASIC tile options. Quartus Prime Pro.
+Boards:
+  - Id: intel_stratix10_gx_devkit
+    BoardName: Stratix 10 GX FPGA Development Kit
+    Devices:
+      - ddr4_sodimm_socket
+      - micron_n25q256a
+      - microchip_ksz9031rnx
+      - usb_blaster_ii_built_in
+      - silabs_cp2102
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+    BoardProducer: intel_altera
+    Chip: 1SG280HU2F50E2VG
+    Bridges:
+      - jtag
+    Programmer: quartus_pgm
+    BoardURL: https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/stratix/10-gx.html
+  - Id: intel_stratix10_gx_etile_si_devkit
+    BoardName: Stratix 10 GX E-Tile Transceiver Signal Integrity Development Kit
+    Devices:
+      - ddr4_sodimm_socket
+      - micron_n25q256a
+      - usb_blaster_ii_built_in
+      - silabs_cp2102
+      - led_discrete_generic
+      - pushbutton_smd_generic
+    BoardProducer: intel_altera
+    Chip: 1ST280EY2F55E2VG
+    Bridges:
+      - usb-jtag
+    Programmer: quartus_pgm
+    Features:
+      - usb_jtag_bridge
+      - usb_uart_bridge
+      - qsfp_cage
+      - pcie_endpoint
+      - ddr4_memory
+      - qspi_flash
+    BoardURL: https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/stratix/10-gx-signal-integrity-etile.html
+    Status: active
+  - Id: intel_stratix10_gx_htile_si_devkit
+    BoardName: Stratix 10 GX H-Tile Transceiver Signal Integrity Development Kit
+    Devices:
+      - ddr4_sodimm_socket
+      - micron_n25q256a
+      - usb_blaster_ii_built_in
+      - silabs_cp2102
+      - led_discrete_generic
+      - pushbutton_smd_generic
+    BoardProducer: intel_altera
+    Chip: 1SG280HU2F50E2VG
+    Bridges:
+      - usb-jtag
+    Programmer: quartus_pgm
+    Features:
+      - usb_jtag_bridge
+      - usb_uart_bridge
+      - qsfp_cage
+      - pcie_endpoint
+      - ddr4_memory
+      - qspi_flash
+    BoardURL: https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/stratix/10-gx-signal-integrity-htile.html
+    Status: active
+  - Id: intel_stratix10_mx_devkit
+    BoardName: Stratix 10 MX FPGA Development Kit
+    Devices:
+      - ddr4_sodimm_socket
+      - micron_n25q256a
+      - microchip_ksz9031rnx
+      - usb_blaster_ii_built_in
+      - silabs_cp2102
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+    BoardProducer: intel_altera
+    Chip: 1SM21BHU2F53E1VG
+    Bridges:
+      - jtag
+    Programmer: quartus_pgm
+    BoardURL: https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/stratix/10-mx.html
+  - Id: intel_stratix10_nx_devkit
+    BoardName: Stratix 10 NX FPGA Development Kit
+    Devices:
+      - ddr4_sodimm_socket
+      - micron_n25q256a
+      - microchip_ksz9031rnx
+      - usb_blaster_ii_built_in
+      - silabs_cp2102
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+    BoardProducer: intel_altera
+    Chip: 1SN165BBU2F53A1VG
+    Bridges:
+      - jtag
+    Programmer: quartus_pgm
+    BoardURL: https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/stratix/10-nx.html
+  - Id: intel_stratix10_sx_devkit
+    BoardName: Stratix 10 SX SoC Development Kit
+    Devices:
+      - ddr4_sodimm_socket
+      - micron_mt40a256m16
+      - micron_n25q256a
+      - microchip_ksz9031rnx
+      - usb_blaster_ii_built_in
+      - silabs_cp2102
+      - microsd_socket_generic
+      - emmc_chip_generic
+      - microchip_usb2514b
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+    BoardProducer: intel_altera
+    Chip: 1SX280LU2F50E2VG
+    Bridges:
+      - jtag
+    Programmer: quartus_pgm
+    BoardURL: https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/stratix/10-sx.html
+  - Id: intel_stratix10_tx_devkit
+    BoardName: Stratix 10 TX FPGA Development Kit
+    Devices:
+      - ddr4_sodimm_socket
+      - micron_n25q256a
+      - microchip_ksz9031rnx
+      - usb_blaster_ii_built_in
+      - silabs_cp2102
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+    BoardProducer: intel_altera
+    Chip: 1ST280EY2F55E2VG
+    Bridges:
+      - jtag
+    Programmer: quartus_pgm
+    BoardURL: https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/stratix/10-tx.html
+  - Id: iwave_rainbow_g45m
+    BoardName: iW-RainboW-G45M Intel Stratix 10 SoC SoM
+    BoardProducer: iwave
+    Chip: 1SX085HN3F43E2VG
+    Bridges:
+      - jtag
+    Programmer: quartus_pgm
+    Features:
+      - ddr4_memory
+      - qspi_flash
+      - emmc_flash
+      - ethernet_phy_gigabit
+      - usb_jtag_bridge
+    BoardURL: https://www.iwavesystems.com/product-category/system-on-modules/fpga-som/
+    Status: active
+  - Id: terasic_apollo_s10_som
+    BoardName: Apollo S10 SoM
+    Devices:
+      - usb_blaster_ii_built_in
+      - microsd_socket_generic
+      - microchip_ksz9031rnx
+      - microchip_usb3343
+      - led_discrete_generic
+      - pushbutton_smd_generic
+    BoardProducer: terasic
+    Chip: 1SX280HU2F50E1VG
+    Bridges:
+      - usb-jtag
+    Programmer: quartus_pgm
+    Features:
+      - ddr4_memory
+      - fmc_plus
+      - usb_jtag_bridge
+    BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&No=1229
+    Status: active
+  - Id: terasic_de10_pro
+    BoardName: DE10-Pro
+    Devices:
+      - ddr4_sodimm_socket
+      - cypress_s25fl128s
+      - usb_blaster_ii_built_in
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+    BoardProducer: terasic
+    Chip: 1SG280HU2F50E2VG
+    Bridges:
+      - jtag
+    Programmer: quartus_pgm
+    BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&No=1144
+  - Id: terasic_de10_pro_stratix10_gx
+    BoardName: DE10-Pro Stratix 10 GX Development and Education Kit
+    Devices:
+      - ddr4_sodimm_socket
+      - usb_blaster_ii_built_in
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+    BoardProducer: terasic
+    Chip: 1SG280HU2F50E2VG
+    Bridges:
+      - usb-jtag
+    Programmer: quartus_pgm
+    Features:
+      - ddr4_memory
+      - qsfp_cage
+      - sfp_cage
+      - pcie_endpoint
+      - usb_jtag_bridge
+    BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&CategoryNo=248&No=1144&PartNo=4
+    Status: active
+  - Id: terasic_stratix10_dx_devkit
+    BoardName: Altera Stratix 10 DX FPGA Development Kit
+    Devices:
+      - ddr4_sodimm_socket
+      - usb_blaster_ii_built_in
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+    BoardProducer: terasic
+    Chip: 1SD110PT2F55E1VG
+    Bridges:
+      - usb-jtag
+    Programmer: quartus_pgm
+    Features:
+      - ddr4_memory
+      - qsfp_cage
+      - pcie_endpoint
+      - fmc_plus
+      - usb_jtag_bridge
+    BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&CategoryNo=248&No=1258
+    Status: active
+  - Id: terasic_stratix10_gx
+    BoardName: Stratix 10 GX Dev Kit (Terasic)
+    Devices:
+      - ddr4_sodimm_socket
+      - cypress_s25fl128s
+      - usb_blaster_ii_built_in
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+    BoardProducer: terasic
+    Chip: 1SG280HU2F50E2VG
+    Bridges:
+      - jtag
+    Programmer: quartus_pgm
+    BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&No=1232
+  - Id: terasic_stratix10_mx_devkit
+    BoardName: Stratix 10 MX FPGA Development Kit
+    Devices:
+      - ddr4_sodimm_socket
+      - usb_blaster_ii_built_in
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+    BoardProducer: terasic
+    Chip: 1SM21BHU2F53E2VG
+    Bridges:
+      - usb-jtag
+    Programmer: quartus_pgm
+    Features:
+      - ddr4_memory
+      - qsfp_cage
+      - pcie_endpoint
+      - fmc_plus
+      - usb_jtag_bridge
+    BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&CategoryNo=248&No=1205
+    Status: active
+  - Id: terasic_stratix10_sx_soc_devkit
+    BoardName: Stratix 10 SX SoC Development Kit
+    Devices:
+      - ddr4_sodimm_socket
+      - microchip_ksz9031rnx
+      - microsd_socket_generic
+      - usb_blaster_ii_built_in
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+    BoardProducer: terasic
+    Chip: 1SX280HU2F50E1VG
+    Bridges:
+      - usb-jtag
+    Programmer: quartus_pgm
+    Features:
+      - ddr4_memory
+      - qsfp_cage
+      - pcie_endpoint
+      - fmc_plus
+      - emmc_flash
+      - microsd_socket
+      - usb_jtag_bridge
+    BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&CategoryNo=248&No=1199
+    Status: active

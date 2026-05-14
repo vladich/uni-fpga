@@ -6,7 +6,7 @@
 Configuration:
   id: c5gx
   board: c5gx
-  toolchain: quartus_prime
+  toolchain: quartus_prime_lite
 
   attach:
     - peripheral: clock_input

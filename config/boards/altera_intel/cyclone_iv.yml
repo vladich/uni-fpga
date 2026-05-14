@@ -1,0 +1,291 @@
+# Altera (Intel) / Cyclone IV
+# 60 nm Cyclone (2009). Quartus Prime Lite.
+
+Producer: Altera (Intel)
+Family: Cyclone IV
+Description: 60 nm Cyclone (2009). Quartus Prime Lite.
+Boards:
+  - Id: alinx_av4075
+    BoardName: Alinx AV4075
+    BoardProducer: alinx
+    Chip: EP4CE75F23C8N
+    Bridges:
+      - usb-jtag
+    Programmer: quartus_pgm
+    Features:
+      - hdmi_output
+      - vga_output
+      - ethernet_phy_gigabit
+      - usb_uart_bridge
+      - microsd_socket
+      - user_leds
+      - user_buttons
+    BoardURL: https://www.en.alinx.com/
+    Status: active
+  - Id: alinx_ax301
+    BoardName: Alinx AX301
+    BoardProducer: alinx
+    Chip: EP4CE6F17C8
+    Bridges:
+      - jtag
+    Programmer: quartus_pgm
+    BoardURL: https://alinx.com/en/detail/40
+  - Id: alinx_ax4010
+    BoardName: Alinx AX4010
+    BoardProducer: alinx
+    Chip: EP4CE10F17C8
+    Bridges:
+      - jtag
+    Programmer: quartus_pgm
+    BoardURL: https://alinx.com/en/detail/42
+  - Id: de0_nano
+    BoardName: DE0-Nano
+    Devices:
+      - winbond_w9825g6kh
+      - micron_n25q128a
+      - usb_blaster_ii_built_in
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+      - adi_adxl345
+      - ti_adc128s022
+    BoardProducer: terasic
+    Chip: EP4CE22F17C6N
+    Bridges:
+      - jtag
+    Programmer: quartus_pgm
+    BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&CategoryNo=139&No=593
+  - Id: de2_115
+    BoardName: DE2-115
+    Devices:
+      - winbond_w9825g6kh
+      - wolfson_wm8731
+      - adi_adv7123
+      - adi_adv7611
+      - marvell_88e1111
+      - usb_blaster_ii_built_in
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+      - seven_seg_module_shared
+      - adi_adv7180
+    BoardProducer: terasic
+    Chip: EP4CE115F29C7
+    Bridges:
+      - jtag
+    Programmer: quartus_pgm
+    BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&CategoryNo=139&No=502
+  - Id: emooc_cc
+    BoardName: EPI-MiniCY4 Cyclone IV board (EP4CE6)
+    BoardProducer: emoocc
+    Chip: EP4CE6F17C8
+    Bridges:
+      - jtag
+    Programmer: quartus_pgm
+  - Id: intel_cycloneiv_e_devkit
+    BoardName: Cyclone IV E FPGA Development Kit
+    Devices:
+      - usb_blaster_ii_built_in
+      - silabs_cp2102
+      - marvell_88e1116r
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+    BoardProducer: intel_altera
+    Chip: EP4CE115F29C7N
+    Bridges:
+      - jtag
+    Programmer: quartus_pgm
+    BoardURL: https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/cyclone/iv-e.html
+  - Id: intel_cycloneiv_gx_starter
+    BoardName: Cyclone IV GX FPGA Starter Kit
+    Devices:
+      - usb_blaster_ii_built_in
+      - silabs_cp2102
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+    BoardProducer: intel_altera
+    Chip: EP4CGX150DF31C7N
+    Bridges:
+      - usb-jtag
+    Programmer: quartus_pgm
+    Features:
+      - ddr3_memory
+      - usb_jtag_bridge
+      - usb_uart_bridge
+      - hdmi_output
+      - ethernet_phy_gigabit
+      - user_leds
+      - user_buttons
+      - dip_switches
+      - pcie_endpoint
+      - fmc_hpc
+    BoardURL: https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/cyclone/iv-gx.html
+    Status: active
+  - Id: marsohod3
+    BoardName: Marsohod3
+    BoardProducer: marsohod
+    Chip: EP4CE10E22C8N
+    Bridges:
+      - jtag
+    Programmer: quartus_pgm
+    BoardURL: https://marsohod.org/projects-mars3
+  - Id: omdazz
+    BoardName: Omdazz Cyclone IV
+    BoardProducer: omdazz
+    Chip: EP4CE6E22C8
+    Bridges:
+      - jtag
+    Programmer: quartus_pgm
+    BoardURL: https://www.aliexpress.com/wholesale?SearchText=omdazz+fpga
+  - Id: omdazz_ep4ce10
+    BoardName: Omdazz Cyclone IV (EP4CE10)
+    BoardProducer: omdazz
+    Chip: EP4CE6E22C8
+    Bridges:
+      - jtag
+    Programmer: quartus_pgm
+  - Id: omdazz_ep4ce6
+    BoardName: Omdazz Cyclone IV (EP4CE6)
+    BoardProducer: omdazz
+    Chip: EP4CE6E22C8
+    Bridges:
+      - jtag
+    Programmer: quartus_pgm
+  - Id: piswords6
+    BoardName: Altera FPGA Core Board (EP4CE6)
+    BoardProducer: piswords
+    Chip: EP4CE6E22C8
+    Bridges:
+      - jtag
+    Programmer: quartus_pgm
+  - Id: piswords_cyc4
+    BoardName: Piswords Cyclone IV
+    BoardProducer: piswords
+    Chip: EP4CE15F23C8N
+    Bridges:
+      - jtag
+    Programmer: quartus_pgm
+    BoardURL: https://piswords.aliexpress.com/store
+  - Id: qmtech_c4_starter
+    BoardName: Cyclone IV Starter Kit (EP4CE15)
+    BoardProducer: qmtech
+    Chip: EP4CE15F23C8
+    Bridges:
+      - jtag
+    Programmer: quartus_pgm
+  - Id: qmtech_cyclone_ep4cgx150_core
+    BoardName: QMtech Cyclone IV GX EP4CGX150 Core Board
+    BoardProducer: qmtech
+    Chip: EP4CGX150DF27C7N
+    Bridges:
+      - usb-jtag
+    Programmer: quartus_pgm
+    Features:
+      - qspi_flash
+      - user_leds
+      - user_buttons
+    BoardURL: https://qmtech.aliexpress.com/store/1199788
+    Status: active
+  - Id: qmtech_cycloneiv_ep4ce15_core
+    BoardName: QMtech Cyclone IV EP4CE15 Core Board
+    BoardProducer: qmtech
+    Chip: EP4CE15F23C8N
+    Bridges:
+      - usb-jtag
+    Programmer: quartus_pgm
+    Features:
+      - qspi_flash
+      - user_leds
+      - user_buttons
+    BoardURL: https://qmtech.aliexpress.com/store/1199788
+    Status: active
+  - Id: qmtech_cycloneiv_ep4ce55_core
+    BoardName: QMtech Cyclone IV EP4CE55 Core Board
+    BoardProducer: qmtech
+    Chip: EP4CE55F23C8N
+    Bridges:
+      - usb-jtag
+    Programmer: quartus_pgm
+    Features:
+      - qspi_flash
+      - user_leds
+      - user_buttons
+    BoardURL: https://qmtech.aliexpress.com/store/1199788
+    Status: active
+  - Id: qmtech_cycloneiv_starter
+    BoardName: Cyclone IV Starter Board
+    BoardProducer: qmtech
+    Chip: EP4CE15F23C8N
+    Bridges:
+      - jtag
+    Programmer: quartus_pgm
+    BoardURL: https://qmtech.aliexpress.com/store/1199788
+  - Id: rzrd
+    BoardName: Core Development Board (EP4CE6)
+    BoardProducer: rzrd
+    Chip: EP4CE6E22C8
+    Bridges:
+      - jtag
+    Programmer: quartus_pgm
+  - Id: saylinx
+    BoardName: Cyclone IV Development Board (EP4CE6)
+    BoardProducer: saylinx
+    Chip: EP4CE6F17C8
+    Bridges:
+      - jtag
+    Programmer: quartus_pgm
+  - Id: terasic_p0530
+    BoardName: P0530 (Cyclone IV)
+    Devices:
+      - cypress_s25fl128s
+      - microsd_socket_generic
+      - usb_blaster_ii_built_in
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+      - seven_seg_module_shared
+    BoardProducer: terasic
+    Chip: EP4CGX22CF19C6N
+    Bridges:
+      - jtag
+    Programmer: quartus_pgm
+    BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&No=830
+  - Id: zeowaa
+    BoardName: Zeowaa A-C4E6
+    BoardProducer: zeowaa
+    Chip: EP4CE6E22C8
+    Bridges:
+      - jtag
+    Programmer: quartus_pgm
+  - Id: zeowaa_a4
+    BoardName: Zeowaa A4
+    BoardProducer: zeowaa
+    Chip: EP4CE15F23C8N
+    Bridges:
+      - jtag
+    Programmer: quartus_pgm
+    BoardURL: https://zeowaa.aliexpress.com/store
+  - Id: alinx_ax515
+    BoardName: "Alinx AX515"
+    BoardProducer: alinx
+    Chip: EP4CE15F23C8
+    Bridges:
+      - usb-blaster
+    Programmer: quartus_pgm
+    Features:
+      - ddr2_memory
+      - qspi_flash
+      - sd_card_socket
+      - vga_output
+      - seven_segment_display
+      - audio_codec
+      - ethernet_phy_gigabit
+      - usb_2_device
+      - usb_uart_bridge
+      - user_leds
+      - user_buttons
+    BoardURL: https://coderobin.com/products/alinx-ax515-intel-altera-cyclone-iv-ep4ce15f-fpga-development-board
+    Status: active
+    Notes: "Cyclone IV EP4CE15F23C8. Board also has battery-backed RTC (DS1302) but no `rtc_*` feature exists in features.yml — omitted."

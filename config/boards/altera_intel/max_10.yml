@@ -1,0 +1,122 @@
+# Altera (Intel) / MAX 10
+# Single-chip non-volatile FPGA (sold as CPLD replacement). Quartus Prime.
+
+Producer: Altera (Intel)
+Family: MAX 10
+Description: Single-chip non-volatile FPGA (sold as CPLD replacement). Quartus Prime.
+Boards:
+  - Id: de10_lite
+    BoardName: DE10-Lite
+    Devices:
+      - winbond_w9825g6kh
+      - vga666_resistor_dac
+      - usb_blaster_ii_built_in
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+      - seven_seg_module_shared
+      - adi_adxl345
+    BoardProducer: terasic
+    Chip: 10M50DAF484C7G
+    Bridges:
+      - jtag
+    Programmer: quartus_pgm
+    BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&CategoryNo=218&No=1021
+  - Id: intel_max10_devkit
+    BoardName: MAX 10 FPGA Development Kit
+    Devices:
+      - usb_blaster_ii_built_in
+      - silabs_cp2102
+      - adi_adv7513
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+      - seven_seg_module_shared
+    BoardProducer: intel_altera
+    Chip: 10M50DAF484C6GES
+    Bridges:
+      - jtag
+    Programmer: quartus_pgm
+    BoardURL: https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/max/10-fpga.html
+  - Id: intel_max10_evalkit
+    BoardName: MAX 10 FPGA Evaluation Kit
+    Devices:
+      - usb_blaster_ii_built_in
+      - silabs_cp2102
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+      - seven_seg_module_shared
+    BoardProducer: intel_altera
+    Chip: 10M08SAE144C8G
+    Bridges:
+      - jtag
+    Programmer: quartus_pgm
+    BoardURL: https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/max/10-evaluation.html
+  - Id: qmtech_max10_core
+    BoardName: MAX 10 Core Board
+    BoardProducer: qmtech
+    Chip: 10M16SAU169C8G
+    Bridges:
+      - jtag
+    Programmer: quartus_pgm
+    BoardURL: https://qmtech.aliexpress.com/store/1199788
+  - Id: step_max10
+    BoardName: STEP-MAX10
+    BoardProducer: stepfpga
+    Chip: 10M08SCM153C8G
+    Bridges:
+      - jtag
+    Programmer: quartus_pgm
+  - Id: terasic_max10_deca
+    BoardName: MAX 10 DECA
+    Devices:
+      - micron_mt41k128m16
+      - adi_adv7513
+      - microchip_lan8742a
+      - microchip_usb3343
+      - microsd_socket_generic
+      - usb_blaster_ii_built_in
+      - adi_adxl345
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+      - ti_tlv320aic3254
+      - lt_ltc2308
+    BoardProducer: terasic
+    Chip: 10M50DAF484C6GES
+    Bridges:
+      - jtag
+    Programmer: quartus_pgm
+    BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&No=1021
+  - Id: terasic_max10_nanoboard
+    BoardName: MAX 10 NanoBoard
+    Devices:
+      - winbond_w9825g6kh
+      - usb_blaster_ii_built_in
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+      - seven_seg_module_shared
+    BoardProducer: terasic
+    Chip: 10M02SCU169C8G
+    Bridges:
+      - jtag
+    Programmer: quartus_pgm
+    BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&No=1018
+  - Id: terasic_max10_neek
+    BoardName: MAX 10 NEEK
+    Devices:
+      - adi_adv7611
+      - microchip_ksz9031rnx
+      - microsd_socket_generic
+      - usb_blaster_ii_built_in
+      - ftdi_ft232r
+      - led_discrete_generic
+      - pushbutton_smd_generic
+    BoardProducer: terasic
+    Chip: 10M50DAF484C6G
+    Bridges:
+      - jtag
+    Programmer: quartus_pgm
+    BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&No=1101

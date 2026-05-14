@@ -1,0 +1,12 @@
+# Lattice / Certus-NX — chip registry
+# Industrial Nexus FPGA. Radiant + nextpnr-nexus.
+
+Producer: Lattice
+Family: Certus-NX
+Description: Industrial Nexus FPGA. Radiant + nextpnr-nexus.
+DefaultToolchains:
+  - nextpnr_nexus[*]
+  - nextpnr_oxide[*]
+  - lattice_radiant[*]
+Chips:
+  - Id: LFD2NX-40-7BBG196C

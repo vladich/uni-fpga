@@ -1,0 +1,12 @@
+# Lattice / CrossLink-NX — chip registry
+
+Producer: Lattice
+Family: CrossLink-NX
+Description: Video bridge family on the Nexus platform. Radiant + nextpnr-nexus.
+DefaultToolchains:
+  - nextpnr_nexus[*]
+  - nextpnr_oxide[*]
+  - lattice_radiant[*]
+Chips:
+  - Id: LIFCL-40-9BG400C
+  - Id: LIFCLU-33-9BG400I

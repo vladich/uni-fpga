@@ -1,0 +1,15 @@
+# Pangomicro / Logos — chip registry
+
+Producer: Pangomicro
+Family: Logos
+Description: ""
+DefaultToolchains:
+  - pango_ds[*]
+Chips:
+  - Id: PGL12G-6MBG324
+  - Id: PGL22G-MBG324
+  - Id: PGL22G-6MBG324
+  - Id: PGL22G-6CMBG324
+  - Id: PGL25G2-6CMBG324
+  - Id: PGL50G-6IFBG484
+  - Id: PGL50H-6IFBG484

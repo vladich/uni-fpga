@@ -1,0 +1,113 @@
+# Altera (Intel) / Stratix V
+# 28 nm high-end. Quartus Prime Std.
+
+Producer: Altera (Intel)
+Family: Stratix V
+Description: 28 nm high-end. Quartus Prime Std.
+Boards:
+  - Id: intel_stratixv_advanced_systems_devkit
+    BoardName: Stratix V Advanced Systems Development Kit
+    Devices:
+      - ddr3_sodimm_socket
+      - micron_mt41k256m16
+      - usb_blaster_ii_built_in
+      - silabs_cp2102
+      - marvell_88e1116r
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+    BoardProducer: intel_altera
+    Chip: 5SGXEABK2H40C2
+    Bridges:
+      - usb-jtag
+    Programmer: quartus_pgm
+    Features:
+      - ddr3_memory
+      - usb_jtag_bridge
+      - usb_uart_bridge
+      - pcie_endpoint
+      - fmc_hpc
+      - qsfp_cage
+      - sfp_cage
+      - ethernet_10gbe_sfp
+    BoardURL: https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/stratix/v-advanced-systems.html
+    Status: active
+  - Id: intel_stratixv_gs_devkit
+    BoardName: Stratix V GS FPGA Development Kit
+    Devices:
+      - ddr3_sodimm_socket
+      - micron_mt41k256m16
+      - usb_blaster_ii_built_in
+      - silabs_cp2102
+      - marvell_88e1116r
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+    BoardProducer: intel_altera
+    Chip: 5SGSMD5K2F40C2N
+    Bridges:
+      - jtag
+    Programmer: quartus_pgm
+    BoardURL: https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/stratix/v-gs.html
+  - Id: intel_stratixv_gt_devkit
+    BoardName: Stratix V GT FPGA Development Kit
+    Devices:
+      - ddr3_sodimm_socket
+      - micron_mt41k256m16
+      - usb_blaster_ii_built_in
+      - silabs_cp2102
+      - marvell_88e1116r
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+    BoardProducer: intel_altera
+    Chip: 5SGTMC7K3F40C2N
+    Bridges:
+      - jtag
+    Programmer: quartus_pgm
+    BoardURL: https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/stratix/v-gt.html
+  - Id: intel_stratixv_gx_devkit
+    BoardName: Stratix V GX FPGA Development Kit
+    Devices:
+      - ddr3_sodimm_socket
+      - micron_mt41k256m16
+      - usb_blaster_ii_built_in
+      - silabs_cp2102
+      - marvell_88e1116r
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+    BoardProducer: intel_altera
+    Chip: 5SGXEA7K2F40C2N
+    Bridges:
+      - jtag
+    Programmer: quartus_pgm
+    BoardURL: https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/stratix/v-gx.html
+  - Id: terasic_de5_net
+    BoardName: DE5-Net
+    Devices:
+      - ddr3_sodimm_socket
+      - usb_blaster_ii_built_in
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+    BoardProducer: terasic
+    Chip: 5SGXEA7N2F45C2N
+    Bridges:
+      - jtag
+    Programmer: quartus_pgm
+    BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&CategoryNo=158&No=727
+  - Id: terasic_tr5
+    BoardName: TR5
+    Devices:
+      - ddr3_sodimm_socket
+      - usb_blaster_ii_built_in
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+    BoardProducer: terasic
+    Chip: 5SGXEA7N2F45C2N
+    Bridges:
+      - jtag
+    Programmer: quartus_pgm
+    BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&No=727

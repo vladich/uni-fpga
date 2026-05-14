@@ -26,7 +26,7 @@ Peripheral:
   # shared-segments + digit-select model is preserved at the user level.
   driver:
     module: seven_seg_shared_to_per_digit
-    file: peripherals/seven_seg_shared_to_per_digit.sv
+    file: rtl/peripherals/seven_seg_shared_to_per_digit.sv
     parameters:
       digits: $digits
     port_map:

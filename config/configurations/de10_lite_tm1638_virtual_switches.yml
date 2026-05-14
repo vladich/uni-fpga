@@ -6,7 +6,7 @@
 Configuration:
   id: de10_lite_tm1638_virtual_switches
   board: de10_lite
-  toolchain: quartus_prime
+  toolchain: quartus_prime_lite
 
   attach:
     - peripheral: clock_input

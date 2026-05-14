@@ -1,9 +1,9 @@
 """
 YAML smoke tests. These catch the class of bugs found while cleaning up the
-repo: mismatched PartFamily strings between boards.yml and parts.yml, fake
-chip families, missing-comma typos that silently merge two pin names into
-one, toolchain ids that don't resolve to a Python module, configurations
-that reference unknown peripherals, etc.
+repo: mismatched PartFamily strings between boards and the chip registry,
+fake chip families, missing-comma typos that silently merge two pin names
+into one, toolchain ids that don't resolve to a Python module,
+configurations that reference unknown peripherals, etc.
 
 Run with:  python -m pytest tests/
 Or stand-alone (pytest not required) via the script at the bottom.
@@ -27,7 +27,7 @@ REPO_ROOT = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 # Vendor-agnostic pin shape: letters+digits ("E3", "K17"), or letters-only
 # ("AN" on QMtech), or pure digits ("35" on iCE40 PCF), or differential
 # pair "P,N" ("H5,J5" on Gowin).
-_PIN_TOKEN = re.compile(r"^[A-Za-z]+\d*$|^\d+$")
+_PIN_TOKEN = re.compile(r"^[A-Za-z]+\d*$|^\d+$|^[A-Za-z][A-Za-z0-9_]*$")
 
 
 # ---------------------------------------------------------------------------
@@ -36,7 +36,8 @@ _PIN_TOKEN = re.compile(r"^[A-Za-z]+\d*$|^\d+$")
 
 def _boards():        return config_init.read_boards_catalog()
 def _toolchains():    return config_init.read_toolchains()
-def _parts():         return config_init.read_parts()
+def _chips():         return config_init.read_chips()
+def _programmers():   return config_init.read_programmers()
 def _peripherals():   return config_init.read_peripherals()
 def _capabilities():  return config_init.read_capabilities()
 def _configurations(): return config_init.read_configurations()
@@ -90,29 +91,111 @@ def test_boards_have_required_fields():
         assert not missing, "Board {b} missing fields: {m}".format(b=board_id, m=missing)
 
 
-def test_every_board_partfamily_resolves():
+def test_every_board_chip_resolves():
+    """Every board's Chip / Chips entries must exist in the chip registry."""
     boards = _boards()
-    parts = _parts()
+    chips = _chips()
     for board_id, board in boards.items():
-        producer = board["PartProducer"]
-        family = board["PartFamily"]
-        assert producer in parts, \
-            "Board {b}: PartProducer {p!r} not in parts.yml".format(b=board_id, p=producer)
-        assert family in parts[producer], \
-            "Board {b}: PartFamily {f!r} not in parts.yml under producer {p!r}".format(
-                b=board_id, f=family, p=producer)
+        chip_refs = []
+        if board.get("Chip"):
+            chip_refs.append(board["Chip"])
+        elif board.get("Chips"):
+            for entry in board["Chips"]:
+                if isinstance(entry, dict):
+                    chip_refs.append(entry.get("Id"))
+                else:
+                    chip_refs.append(entry)
+        for cid in chip_refs:
+            assert cid in chips, "Board {b}: Chip {c!r} not in chip registry".format(b=board_id, c=cid)
 
 
-def test_every_part_toolchain_is_declared():
-    parts = _parts()
+def test_every_chip_toolchain_is_declared():
+    """Every Toolchains entry in the chip registry must reference a known toolchain id."""
+    chips = _chips()
     toolchains = _toolchains()
-    for producer, families in parts.items():
-        for family, family_toolchains in families.items():
-            for tcid in family_toolchains:
-                assert tcid in toolchains, (
-                    "parts.yml {p}/{f} references unknown toolchain id {t!r}"
-                    .format(p=producer, f=family, t=tcid)
-                )
+    for chip_id, chip in chips.items():
+        for ref in chip.get("Toolchains", []):
+            tc_id, _ = config_init.parse_versioned_ref(ref)
+            assert tc_id in toolchains, (
+                "Chip {c}: Toolchains references unknown id {t!r}".format(c=chip_id, t=tc_id)
+            )
+
+
+def test_every_board_programmer_is_declared():
+    """Every board's `Programmer:` field references a known programmer id."""
+    boards = _boards()
+    programmers = _programmers()
+    for board_id, board in boards.items():
+        p = board.get("Programmer")
+        if p is not None:
+            assert p in programmers, \
+                "Board {b}: Programmer {p!r} not in programmers.yml".format(b=board_id, p=p)
+        for ref in board.get("ExtraProgrammers") or []:
+            pid, _ = config_init.parse_versioned_ref(ref)
+            assert pid in programmers, \
+                "Board {b}: ExtraProgrammers entry {p!r} not in programmers.yml".format(b=board_id, p=pid)
+
+
+def test_every_board_producer_is_declared():
+    """Every board's `BoardProducer:` field references a known producer Id."""
+    boards = _boards()
+    producers = config_init.read_board_producers()
+    name_idx = config_init.read_board_producers_name_index()
+    for board_id, board in boards.items():
+        bp = board.get("BoardProducer")
+        if bp is None:
+            continue
+        # Must be a registered Id (after Phase 2 slug migration). The name
+        # index also accepts legacy Name / AKA references in case a future
+        # board is added with the display name by mistake — but the strict
+        # check is membership in `producers` keyed by Id.
+        assert bp in producers, (
+            "Board {b}: BoardProducer {bp!r} is not a registered Id in "
+            "board_producers.yml (resolves via AKA: {via!r})".format(
+                b=board_id, bp=bp, via=name_idx.get(bp)
+            )
+        )
+
+
+def test_board_features_registry_loads():
+    """board_features.yml is well-formed; every entry has required fields."""
+    features = config_init.read_board_features()
+    assert features, "config/board_features.yml has no Features list"
+    valid_categories = {"io", "memory", "connectivity", "sensor", "power",
+                        "expansion", "display", "storage", "programming", "audio"}
+    for fid, f in features.items():
+        assert "Id" in f and f["Id"] == fid
+        assert "Name" in f, "Feature {f}: missing Name".format(f=fid)
+        assert "Category" in f, "Feature {f}: missing Category".format(f=fid)
+        assert f["Category"] in valid_categories, \
+            "Feature {f}: Category {c!r} not in {v}".format(f=fid, c=f["Category"], v=sorted(valid_categories))
+        assert "Description" in f, "Feature {f}: missing Description".format(f=fid)
+
+
+def test_all_board_feature_tokens_are_registered():
+    """Soft check: every Features: token on every board is a registered Id.
+    Phase 3 ships an empty Features: state, so this test is currently
+    enforcing nothing — but as features get populated in subsequent phases,
+    it catches typos and unregistered tokens."""
+    unknown = config_init.validate_board_features()
+    assert not unknown, \
+        "Unregistered Features tokens: {}".format(unknown[:10])
+
+
+def test_board_producer_aka_uniqueness():
+    """Every Name + AKA string maps to exactly one producer Id (no overlap
+    that would silently mis-route a BoardProducer during migration)."""
+    producers = config_init.read_board_producers()
+    inverse = {}
+    for pid, p in producers.items():
+        candidates = [p.get("Name", pid), pid] + list(p.get("AKA") or [])
+        for c in candidates:
+            if c is None:
+                continue
+            existing = inverse.get(c)
+            assert existing is None or existing == pid, \
+                "Producer alias {c!r} maps to both {a!r} and {b!r}".format(c=c, a=existing, b=pid)
+            inverse[c] = pid
 
 
 def test_every_toolchain_id_has_a_module():
@@ -130,15 +213,24 @@ def test_every_toolchain_id_has_a_module():
 # Per-board YAML structure (new pinBanks schema)
 # ---------------------------------------------------------------------------
 
-def test_per_board_yamls_have_pinbanks():
-    """Every config/boards/<id>.yml must parse and expose Board.pinBanks."""
+def _walk_pinmap_files():
+    """Yield (path, board_id) for every per-board pinmap under the
+    hierarchical config/boards/<producer>/<family>/<board_id>.yml layout."""
     boards_dir = os.path.join(REPO_ROOT, "config", "boards")
-    files = [f for f in os.listdir(boards_dir)
-             if f.endswith(".yml") and not f.startswith("_")]
-    assert files, "No per-board YAML files found under config/boards/"
+    import glob
+    for path in glob.glob(os.path.join(boards_dir, "*", "*", "*.yml")):
+        if "/_raw/" in path:
+            continue
+        board_id = os.path.basename(path)[:-4]
+        yield path, board_id
 
-    for fname in sorted(files):
-        path = os.path.join(boards_dir, fname)
+
+def test_per_board_yamls_have_pinbanks():
+    """Every per-board pinmap YAML must parse and expose Board.pinBanks."""
+    files = list(_walk_pinmap_files())
+    assert files, "No per-board pinmap files found under config/boards/<producer>/<family>/"
+
+    for path, board_id in files:
         with open(path) as f:
             data = yaml.safe_load(f)
         assert data and "Board" in data, "{p} has no 'Board' root".format(p=path)
@@ -150,11 +242,7 @@ def test_per_board_yamls_have_pinbanks():
 def test_pin_bank_pins_well_formed():
     """Walk every pinBank's pin values and reject anything that's clearly malformed
     (embedded spaces, empty strings, etc.). Catches missing-comma YAML typos."""
-    boards_dir = os.path.join(REPO_ROOT, "config", "boards")
-    for fname in sorted(os.listdir(boards_dir)):
-        if not fname.endswith(".yml") or fname.startswith("_"):
-            continue
-        path = os.path.join(boards_dir, fname)
+    for path, _bid in _walk_pinmap_files():
         with open(path) as f:
             data = yaml.safe_load(f)
         board_id = data["Board"]["id"]

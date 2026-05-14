@@ -1,0 +1,21 @@
+# alinx_z19_p pin map.
+# Source type: github_xdc
+#   https://github.com/alinxalinx/Z19_P/blob/master/vivado/auto_create_project/src/constraints/system.xdc
+
+Board:
+  id: alinx_z19_p
+  pinBanks:
+    sys_clk_diff:
+      pins:
+        p: H21
+      frequency_mhz: 200
+    onboard_leds:
+      pins:
+      - E10
+      - E11
+    onboard_uart:
+      pins:
+        tx: M12
+        rx: M11
+    fan_pwm:
+      pins: F4

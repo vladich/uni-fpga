@@ -1,0 +1,12 @@
+# Renesas / ForgeFPGA — chip registry
+# ~1k LUT mini-FPGA (SLG47004/47010). Go Configure Hub + ForgeFPGA Workshop.
+
+Producer: Renesas
+Family: ForgeFPGA
+Description: ~1k LUT mini-FPGA (SLG47004/47010). Go Configure Hub + ForgeFPGA Workshop.
+DefaultToolchains:
+  - forge_fpga[*]
+Chips:
+  - Id: SLG47004V
+  - Id: SLG47010V
+  - Id: SLG47910V

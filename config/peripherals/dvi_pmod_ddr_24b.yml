@@ -18,7 +18,7 @@ Peripheral:
         color_depth: 888
   driver:
     module: dvi_pmod_ddr_24b
-    file: peripherals/dvi_pmod_ddr_24b.sv
+    file: rtl/peripherals/dvi_pmod_ddr_24b.sv
     parameters:
       clk_mhz:   context.clk_mhz
       pixel_mhz: 25

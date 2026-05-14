@@ -10,7 +10,7 @@ Peripheral:
     - capability: audio_out
   driver:
     module: audio_pwm
-    file: peripherals/audio_pwm.sv
+    file: rtl/peripherals/audio_pwm.sv
     parameters:
       data_w: 16
     port_map:

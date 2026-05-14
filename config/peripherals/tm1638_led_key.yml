@@ -22,7 +22,7 @@ Peripheral:
       params: { digits: 8 }
   driver:
     module: tm1638_board_controller
-    file: peripherals/tm1638_board_controller.sv
+    file: rtl/peripherals/tm1638_board_controller.sv
     parameters:
       clk_mhz: context.clk_mhz
       w_digit: 8

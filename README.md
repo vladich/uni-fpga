@@ -16,7 +16,7 @@ Moving to a different board means rewriting top-level wiring, constraints,
 and build scripts. uni-fpga decouples the three concerns:
 
 1. **The design** is plain SystemVerilog written against a fixed virtual-device
-   interface (see `peripherals/design_top_interface.sv`). It refers to abstract
+   interface (see `rtl/peripherals/design_top_interface.sv`). It refers to abstract
    capabilities — `led`, `btn`, `sw`, `abcdefgh`/`digit`, `red`/`green`/`blue`
    pixel out, `mic_sample` — never to physical pins.
 2. **The board** is described by a YAML pinmap in `config/boards/<id>.yml`
@@ -79,14 +79,19 @@ artifacts into `designs/`, `config/boards/`, and `config/configurations/`.
 | Path | What it holds |
 |---|---|
 | `synthesize.py` | Top-level entry point. Resolves a configuration, codegens `top.sv`, dispatches to the toolchain. |
-| `config/boards/<id>.yml` | Board pinmaps (50 boards). |
-| `config/boards.yml` | Board metadata (chip family, package, programmer info — 62 entries; some legacy boards harvested but not yet wired up). |
-| `config/configurations/<id>.yml` | Board × add-on combinations (130 configurations). |
+| `config/boards/<producer>/<family>.yml` | Family-level board catalog: list of boards on that chip family + family description. |
+| `config/boards/<producer>/<family>/<id>.yml` | Per-board pinmap (when available). |
+| `config/chips/<producer>/<family>.yml` | Chip registry per family — each chip lists eligible toolchains (with optional `[version]` constraints). Boards reference these chips by Id. |
+| `config/toolchains.yml` | Registry of synthesis toolchains (33 entries, vendor + open-flow). |
+| `config/programmers.yml` | Registry of bitstream loaders (27 entries: bundled vendor programmers + third-party + board-specific). |
+| `config/board_producers.yml` | Registry of board makers (75 entries: Digilent, Terasic, Sipeed, Trenz, BittWare, …) with URL, country, founding year, categories, description. Each board's `BoardProducer:` references one of these by Id. |
+| `config/board_features.yml` | Vocabulary of board-feature tokens (91 entries across `memory`, `connectivity`, `display`, etc.). Boards may list `Features: [ethernet_1gbe, hdmi_out, pmod_x4, …]` for filtering / display. |
+| `config/configurations/<id>.yml` | Board × toolchain × peripheral attachments (134 configurations). |
 | `config/peripherals/*.yml` | 32 peripheral definitions (`led_bank`, `vga_4bit`, `pmod_12pin`, `tm1638_led_key`, `inmp441_i2s_mic`, …). |
 | `config/capabilities/*.yml` | 12 abstract user-facing capabilities (`leds`, `screen`, `gpio`, `audio_in`, …) with aggregation rules. |
-| `peripherals/*.sv` | Driver SV modules for hardware peripherals (TM1638 controller, VGA, I²S mic, etc.). |
-| `peripherals/designs_common/*.sv` | Reusable helpers (`seven_segment_display`, `shift_reg`, `strobe_gen`, …). |
-| `peripherals/design_top_interface.sv` | Canonical `design_top` port list — copy and add your logic. |
+| `rtl/peripherals/*.sv` | Driver SV modules for hardware peripherals (TM1638 controller, VGA, I²S mic, etc.). |
+| `rtl/peripherals/designs_common/*.sv` | Reusable helpers (`seven_segment_display`, `shift_reg`, `strobe_gen`, …). |
+| `rtl/peripherals/design_top_interface.sv` | Canonical `design_top` port list — copy and add your logic. |
 | `designs/<name>/design_top.sv` | 92 designs adapted from BGM. |
 | `tools/codegen.py` | Generates `top.sv` and per-toolchain constraint files from a resolved configuration. |
 | `tools/adapt_designs.py` | Mechanically rewrites BGM designs into uni-fpga form. |
@@ -105,11 +110,14 @@ artifacts into `designs/`, `config/boards/`, and `config/configurations/`.
 | `gowin_eda` | 29 | Tang Nano 4K/9K/20K, Tang Primer 20K Dock/Lite, marsohod3gw2 | Validated (Gowin EDA 1.9.11.03.Educational — covers GW1N* / GW2A* parts) |
 | `gowin_standard` | 8 | Tang Primer 25K (×4), Tang Mega 138K, Tang Mega 138K Pro, orangepi_msoc | Validated (Gowin EDA 1.9.9.02 + NODELOCK license — required for AroraV/GW5* parts which Educational doesn't unlock) |
 | `efinity` | 1 | FireAnt (Trion T8) | Validated end-to-end (Efinity 2023.2) |
+| `libero_soc` | 1 | M2S025T Starter Kit (SmartFusion2) | Smoke-tested (Libero SoC 2024.1) |
 | **Open-source (yosys + nextpnr)** | | | |
 | `nextpnr_openxc7` | 17 | Same as `vivado` (open-flow alternative) | 1135/1564 OK on full sweep — uses yosys 0.41+ from oss-cad-suite |
 | `nextpnr_icestorm` | 8 | iCEBreaker, iCE40HX8K-EVB, OrangeBoard, MyStorm | Validated |
 | `nextpnr_trellis` | 3 | Colorlight 5A-75B, OrangeCrab, Karnix | Validated |
 | `nextpnr_apicula` | 8 | Tang Nano 9K, Tang Primer 20K Dock (open-flow) | Validated |
+| `nextpnr_nexus` | 1 | Lattice CrossLink-NX EVN (LIFCL-40) | Smoke-tested (yosys synth_nexus → nextpnr-nexus → prjoxide pack) |
+| `nextpnr_oxide` | 1 | Same as `nextpnr_nexus` (historical alias) | Thin re-export of `nextpnr_nexus` — kept for compat with downstream docs |
 | `nextpnr_mistral` | 7 | DE0-CV, DE0-Nano-SoC (vga666 + vga_pmod), DE1-SoC, DE10-Nano, c5gx, terasic_sockit | Validated (327/644 OK; needs locally-built nextpnr-mistral against mistral commit `d6bd02c`) |
 | `nextpnr_gatemate` | 1 | gatemate_evb_a1 (Cologne Chip CCGM1A1) | Smoke-tested (placeholder pinmap; needs verified pads for hardware target) |
 
@@ -162,7 +170,7 @@ intended SKIP, not a failure.
 
 ## Adding things
 
-- **A new design**: copy `peripherals/design_top_interface.sv` to
+- **A new design**: copy `rtl/peripherals/design_top_interface.sv` to
   `designs/<your_design>/design_top.sv`, add your logic in the body, optionally
   add a `// requires:` block.
 - **A new board**: drop the BGM-style constraint file under
@@ -182,16 +190,25 @@ intended SKIP, not a failure.
 .
 ├── synthesize.py
 ├── config/
-│   ├── boards.yml             # board metadata
-│   ├── boards/<id>.yml        # per-board pin maps (50 boards)
-│   ├── configurations/<id>.yml # per-config peripheral attachments (130 configs)
+│   ├── toolchains.yml         # registry of synthesis toolchains (33)
+│   ├── programmers.yml        # registry of bitstream loaders (27)
+│   ├── chips/                 # chip registry, per-family
+│   │   ├── xilinx_amd/<family>.yml   # chips + DefaultToolchains[version_constraint]
+│   │   ├── altera_intel/<family>.yml
+│   │   └── ...                # 76 family files, 274 chips referenced by boards
+│   ├── boards/                # board catalogs + pinmaps
+│   │   ├── xilinx_amd/        # producer dirs
+│   │   │   ├── artix_7.yml    # family catalog: boards reference chips by Id
+│   │   │   └── artix_7/<id>.yml  # per-board pinmaps
+│   │   └── ...                # 76 family catalogs, 65 pinmaps
+│   ├── configurations/<id>.yml # per-config peripheral attachments (134 configs)
 │   ├── peripherals/*.yml      # 32 peripheral definitions
-│   ├── capabilities/*.yml     # 12 abstract capabilities
-│   └── parts.yml              # vendor → toolchain mapping
+│   └── capabilities/*.yml     # 12 abstract capabilities
 ├── designs/<name>/design_top.sv  # 92 designs (BGM-derived)
-├── peripherals/                  # SV peripheral drivers
-│   ├── designs_common/           # reusable helpers
-│   └── design_top_interface.sv   # canonical user-design interface
+├── rtl/
+│   └── peripherals/              # SV peripheral drivers
+│       ├── designs_common/       # reusable helpers
+│       └── design_top_interface.sv  # canonical user-design interface
 ├── toolchains/                   # 12 driver modules
 │   ├── vivado/                   #  Xilinx 7-series / Ultrascale / Versal
 │   ├── quartus_prime/            #  Cyclone IV / V / 10, MAX 10, Arria, Stratix

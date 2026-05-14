@@ -1,0 +1,16 @@
+# Pangomicro / Compa — chip registry
+
+Producer: Pangomicro
+Family: Compa
+Description: ""
+DefaultToolchains:
+  - pango_ds[*]
+Chips:
+  - Id: PGC1KG-LPG100
+  - Id: PGC2KG-LPG100
+  - Id: PGC2KG-6IMBG256
+  - Id: PGC2K-MBG256
+  - Id: PGC4KD-6IMBG256
+  - Id: PGC7KD-6IMBG256
+  - Id: PGC4KLS-6CSBG81
+  - Id: PGC4KLS-6CUWG81

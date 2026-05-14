@@ -6,7 +6,7 @@
 Configuration:
   id: emooc_cc
   board: emooc_cc
-  toolchain: quartus_prime
+  toolchain: quartus_prime_lite
 
   attach:
     - peripheral: clock_input

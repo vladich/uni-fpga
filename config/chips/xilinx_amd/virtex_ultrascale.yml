@@ -1,0 +1,11 @@
+# Xilinx (AMD) / Virtex Ultrascale — chip registry
+# 20 nm. Vivado.
+
+Producer: Xilinx (AMD)
+Family: Virtex Ultrascale
+Description: 20 nm. Vivado.
+DefaultToolchains:
+  - vivado[*]
+Chips:
+  - Id: XCVU095-2FFVA2104E
+  - Id: XCVU190-2FLGC2104E

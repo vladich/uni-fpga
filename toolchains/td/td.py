@@ -1,0 +1,33 @@
+"""
+Anlogic Tang Dynasty (TD) toolchain driver — STUB.
+
+TD is Anlogic Microelectronics' proprietary IDE for their FPGA families:
+Eagle EG4 (4S/4D/4M), Elf 2 (EF2), Phoenix EF3, Salt, Salomon. Despite
+the name, it has no relation to Sipeed's "Tang" boards (those use Gowin
+parts). Anlogic publishes TD only in Chinese-localised builds; an
+English UI exists but documentation is sparse outside CN sources.
+
+Stub module. Synthesis isn't wired up yet — this just logs what would
+have been built and returns 0. Replace `synthesize()` with a real driver
+when implementing.
+"""
+
+import logging
+
+log = logging.getLogger(__name__)
+
+
+def synthesize(*, dir, configuration, board, board_pinmap, toolchain,
+               peripherals, top, include, output, step="full", **_):
+    log.info(
+        "[stub %s] would synthesize configuration=%s, board=%s, top=%s, "
+        "step=%s, output=%s, peripherals=%d",
+        toolchain["Id"], configuration["id"], board["Id"], top, step, output,
+        len(peripherals),
+    )
+    return 0
+
+
+def program(**kwargs):
+    log.info("[stub program] not implemented")
+    return 0

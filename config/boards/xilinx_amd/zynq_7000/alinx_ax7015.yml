@@ -1,0 +1,16 @@
+# alinx_ax7015 pin map.
+# Source type: github_xdc
+#   https://github.com/alinxalinx/AX7015B_2023.1/blob/master/course_s1_fpga/01_led/auto_create_project/src/constraints/led.xdc
+
+Board:
+  id: alinx_ax7015
+  pinBanks:
+    sys_clk:
+      pins: Y14
+      frequency_mhz: 50
+    onboard_leds:
+      pins:
+      - A5
+      - A7
+      - A6
+      - B8

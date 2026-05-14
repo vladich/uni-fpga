@@ -1,0 +1,22 @@
+# alinx_ax7450 pin map.
+# Source type: github_xdc
+#   https://github.com/alinxalinx/AX7450B_2023.1/blob/master/course_s1_fpga/01_led/auto_create_project/src/constraints/led.xdc
+#   https://github.com/alinxalinx/AX7450B_2023.1/blob/master/course_s1_fpga/14_linux_base/Vivado/auto_create_project/src/constraints/emio.xdc
+
+Board:
+  id: alinx_ax7450
+  pinBanks:
+    sys_clk:
+      pins: AB19
+      frequency_mhz: 50
+    cpu_resetn:
+      pins: AC12
+    onboard_leds:
+      pins:
+      - AC16
+      - AB17
+      - AB16
+      - AA17
+    onboard_buttons:
+      pins:
+      - AC12

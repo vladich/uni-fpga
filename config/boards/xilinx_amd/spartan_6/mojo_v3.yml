@@ -1,0 +1,34 @@
+# mojo_v3 pin map.
+# Hand-curated from the Mojo v3 schematic (Embedded Micro, later sold as
+# Alchitry-rebadged). The Mojo has a Spartan-6 XC6SLX9 (TQ144 package),
+# 50 MHz clock, 8 LEDs, and one dedicated RST line to the AVR. There are
+# no user push-buttons on the board itself — the design has to handle
+# `btn` via a shield, so we only expose what the bare board has.
+#
+# Pin map source: Embedded Micro Mojo v3 schematic + user manual.
+
+Board:
+  id: mojo_v3
+  fpga:
+    producer: Xilinx (AMD)
+    family: Spartan 6
+    part: XC6SLX9-2TQG144C
+
+  defaults:
+    iostandard: LVCMOS33
+
+  pinBanks:
+    clk50mhz: { pins: P56 }
+    # RST is wired to the AVR — active-low during AVR-driven config, released
+    # high once the FPGA is up. reset_button peripheral has active: low by
+    # default, so codegen will invert this for the rst port inside the design.
+    onboard_reset: { pins: P38 }
+    # Eight user LEDs (LED0 ... LED7). LED0 is closest to the AVR side.
+    onboard_leds:
+      pins: [P134, P133, P132, P131, P127, P126, P125, P124]
+    # AVR ↔ FPGA UART (FPGA-side TX/RX naming — i.e. FPGA transmits on tx,
+    # AVR receives on AVR_RX which is wired to FPGA tx).
+    onboard_uart:
+      pins:
+        rx: P59
+        tx: P55

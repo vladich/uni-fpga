@@ -1,0 +1,27 @@
+# Xilinx (AMD) / Kintex 7 — chip registry
+# 28 nm mid-range 7-series. Vivado + partial openXC7.
+
+Producer: Xilinx (AMD)
+Family: Kintex 7
+Description: 28 nm mid-range 7-series. Vivado + partial openXC7.
+DefaultToolchains:
+  - vivado[*]
+  - nextpnr_openxc7[*]
+Chips:
+  - Id: XC7K160T-1
+  - Id: XC7K160T-2FBG676I
+  - Id: XC7K160T-2FFG676C
+  - Id: XC7K160T-2FFG676I
+  - Id: XC7K325T-2FBG676I
+  - Id: XC7K325T-2FFG676I
+  - Id: XC7K325T-2FFG900
+  - Id: XC7K325T-2FFG900C
+  - Id: XC7K325T-2FFG900I
+  - Id: XC7K325TFFG900-2
+  - Id: XC7K410T-2FBG676I
+  - Id: XC7K410T-2FFG676I
+  - Id: XC7K410T-2FFG900
+  - Id: XC7K410T-2FFG900C
+  - Id: XC7K480T-2FFG901C
+  - Id: XC7K70T-2FBG676C
+  - Id: xc7k325tffg676-3

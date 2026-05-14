@@ -1,0 +1,35 @@
+# Altera (Intel) / MAX II CPLD
+# Smaller flash CPLD. Quartus II.
+
+Producer: Altera (Intel)
+Family: MAX II CPLD
+Description: Smaller flash CPLD. Quartus II.
+Boards:
+  - Id: intel_maxv_cpld_evalkit
+    BoardName: MAX V CPLD Development Kit
+    Devices:
+      - usb_blaster_ii_built_in
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+      - seven_seg_module_shared
+    BoardProducer: intel_altera
+    Chip: 5M2210ZF256C4N
+    Bridges:
+      - usb-jtag
+    Programmer: quartus_pgm
+    Features:
+      - usb_jtag_bridge
+      - usb_powered
+      - user_leds
+      - user_buttons
+      - seven_segment_display
+    BoardURL: https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/max/v-cpld.html
+    Status: active
+  - Id: omdazz_epm570
+    BoardName: Omdazz EPM570
+    BoardProducer: omdazz
+    Chip: EPM570T100C5
+    Bridges:
+      - jtag
+    Programmer: quartus2_pgm

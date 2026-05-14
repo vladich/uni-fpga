@@ -1,0 +1,87 @@
+# Microchip (Actel) / PolarFire SoC
+# PolarFire + RISC-V quad-core. Libero SoC + SoftConsole.
+
+Producer: Microchip (Actel)
+Family: PolarFire SoC
+Description: PolarFire + RISC-V quad-core. Libero SoC + SoftConsole.
+Boards:
+  - Id: beagleboard_beaglev_fire
+    BoardName: BeagleV-Fire
+    BoardProducer: beagleboard
+    Chip: MPFS025T-FCSG325E
+    Bridges:
+      - jtag
+    Programmer: libero_fpexpress
+    BoardURL: https://www.beagleboard.org/boards/beaglev-fire
+  - Id: enclustra_mars_ma3
+    BoardName: Mars MA3
+    BoardProducer: enclustra
+    Chip: MPFS250T-FCVG484E
+    Bridges:
+      - jtag
+    Programmer: libero_fpexpress
+    BoardURL: https://www.enclustra.com/en/products/fpga-modules/mars-ma3/
+  - Id: microchip_beaglev_fire
+    BoardName: BeagleV-Fire
+    BoardProducer: microchip
+    Chip: MPFS025T-1FCVG484E
+    Bridges:
+      - jtag
+    Programmer: libero_fpexpress
+    Features:
+      - microsd_socket
+      - emmc_flash
+      - qspi_flash
+      - ethernet_phy_gigabit
+      - usb_uart_bridge
+      - user_leds
+      - user_buttons
+      - usb_jtag_bridge
+      - usb_powered
+    BoardURL: https://www.microchip.com/en-us/development-tool/beaglev-fire
+    Status: active
+  - Id: microchip_iglooicicle
+    BoardName: PolarFire SoC Icicle Kit
+    BoardProducer: microchip
+    Chip: MPFS250T-FCVG484EES
+    Bridges:
+      - jtag
+    Programmer: libero_fpexpress
+    BoardURL: https://www.microchip.com/en-us/development-tool/MPFS-ICICLE-KIT-ES
+  - Id: microchip_iglooicicle_disco
+    BoardName: PolarFire SoC Discovery Kit
+    BoardProducer: microchip
+    Chip: MPFS095T-1FCSG325E
+    Bridges:
+      - jtag
+    Programmer: libero_fpexpress
+    BoardURL: https://www.microchip.com/en-us/development-tool/MPFS-DISCO-KIT
+  - Id: microchip_polarfiresoc_disco
+    BoardName: PolarFire SoC Discovery Kit
+    BoardProducer: microchip
+    Chip: MPFS095T-1FCSG325E
+    Bridges:
+      - jtag
+    Programmer: libero_fpexpress
+    Features:
+      - microsd_socket
+      - qspi_flash
+      - ethernet_phy_gigabit
+      - usb_uart_bridge
+      - mipi_csi2_input
+      - raspi_hat_header
+      - mikrobus_socket
+      - user_leds
+      - user_buttons
+      - usb_jtag_bridge
+      - usb_powered
+    BoardURL: https://www.microchip.com/en-us/development-tool/mpfs-disco-kit
+    Status: active
+  - Id: microchip_polarfiresoc_video
+    BoardName: PolarFire SoC Video Kit
+    BoardProducer: microchip
+    Chip: MPFS250T-FCG1152EES
+    Bridges:
+      - jtag
+    Programmer: libero_fpexpress
+    BoardURL: https://www.microchip.com/en-us/development-tool/MPFS-VIDEO-KIT

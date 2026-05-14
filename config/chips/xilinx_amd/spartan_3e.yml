@@ -1,0 +1,13 @@
+# Xilinx (AMD) / Spartan 3E — chip registry
+# 90 nm Spartan 3 derivative with more SRAM (2005). ISE.
+
+Producer: Xilinx (AMD)
+Family: Spartan 3E
+Description: 90 nm Spartan 3 derivative with more SRAM (2005). ISE.
+DefaultToolchains:
+  - ise[*]
+Chips:
+  - Id: XC3S1200E-FG320
+  - Id: XC3S250E-CP132
+  - Id: XC3S500E-FG320
+  - Id: XC3S500E-VQ100

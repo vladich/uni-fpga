@@ -1,0 +1,15 @@
+# Altera (Intel) / Cyclone 10 — chip registry
+# Refresh of Cyclone family. Cyclone 10 LP = Lite; Cyclone 10 GX = Prime Pro.
+
+Producer: Altera (Intel)
+Family: Cyclone 10
+Description: Refresh of Cyclone family. Cyclone 10 LP = Lite; Cyclone 10 GX = Prime Pro.
+DefaultToolchains:
+  - quartus_prime_lite[*]
+Chips:
+  - Id: 10CL025YU256C8G
+  - Id: 10CL025YU256I7G
+  - Id: 10CL055YU484C8G
+  - Id: 10CL080YU484C8G
+  - Id: 10CL120YF484C8G
+  - Id: 10CX220YF780E5G

@@ -908,6 +908,91 @@ def emit_xdc_simple(resolved):
     return "\n".join(out)
 
 
+def emit_ucf(resolved):
+    """Emit an ISE UCF (User Constraints File) for legacy Xilinx parts.
+
+    UCF differs from XDC in three ways:
+      1. `NET "name" LOC = "pin";` syntax instead of `set_property PACKAGE_PIN …`.
+      2. Bus signals use `name<N>` (angle brackets) rather than `name[N]`.
+      3. Clocks use `TIMESPEC TS_<id> = PERIOD "<net>" <ns> ns HIGH 50%;`
+         paired with `NET "<net>" TNM_NET = "<id>";`.
+
+    Targets ISE 14.7 — Spartan 3 / 6 and Virtex 4 / 5 / 6."""
+    cfg = resolved["configuration"]
+    pinmap = resolved["board_pinmap"]
+    default_iostd = (pinmap.get("defaults") or {}).get("iostandard") or "LVCMOS33"
+
+    out = []
+    out.append("# =============================================================================")
+    out.append("# Auto-generated UCF (ISE) constraints — DO NOT EDIT")
+    out.append("# Configuration: {}".format(cfg["id"]))
+    out.append("# Board:         {}".format(resolved["board"].get("BoardName", resolved["board"]["Id"])))
+    out.append("# =============================================================================")
+    out.append("")
+
+    referenced = collect_referenced_banks(resolved)
+    plans = build_capability_plans(resolved)
+
+    def emit(pin, port, iostd):
+        if "," in str(pin):
+            out.append('# WARNING: pin "{}" for port "{}" is a differential pair (skipped)'.format(pin, port))
+            return
+        # UCF uses <N> for bus indices. Translate `name[N]` → `name<N>`.
+        ucf_port = port.replace("[", "<").replace("]", ">")
+        out.append('NET "{port}" LOC = "{pin}";'.format(port=ucf_port, pin=pin))
+        out.append('NET "{port}" IOSTANDARD = "{iostd}";'.format(port=ucf_port, iostd=iostd))
+
+    for bank_name in referenced:
+        bank = (pinmap.get("pinBanks") or {}).get(bank_name)
+        if bank is None:
+            continue
+        pins = bank.get("pins")
+        overrides = bank.get("overrides") or {}
+        bank_iostd = bank.get("iostandard") or default_iostd
+        if isinstance(pins, str):
+            emit(pins, bank_name, _pin_iostd(pins, overrides, bank_iostd))
+        elif isinstance(pins, list):
+            for i, p in enumerate(pins):
+                if p is None:
+                    continue
+                emit(p, "{}[{}]".format(bank_name, i), _pin_iostd(p, overrides, bank_iostd))
+        elif isinstance(pins, dict):
+            for sub, val in pins.items():
+                pname = "{}_{}".format(bank_name, sub)
+                if isinstance(val, list):
+                    for i, p in enumerate(val):
+                        if p is None:
+                            continue
+                        emit(p, "{}[{}]".format(pname, i), _pin_iostd(p, overrides, bank_iostd))
+                elif isinstance(val, str):
+                    emit(val, pname, _pin_iostd(val, overrides, bank_iostd))
+
+    # ---- Clock period constraints ----
+    out.append("")
+    out.append("# ---- Clock definitions ----")
+    for pidx, perif, params in plans["clock"].providers:
+        attach = resolved["peripherals"][pidx]
+        clk_bank = (attach.get("bind") or {}).get("clk")
+        if clk_bank is None:
+            continue
+        port = _bank_port_name(clk_bank)
+        port_ucf = port.replace("[", "<").replace("]", ">")
+        freq = (params or {}).get("frequency_mhz")
+        if freq is None:
+            m = re.search(r"(\d+)mhz", str(clk_bank).lower())
+            if m:
+                freq = int(m.group(1))
+        if freq is None:
+            continue
+        period_ns = 1000.0 / float(freq)
+        tnm = "sys_clk_{}mhz".format(int(freq))
+        out.append('NET "{port}" TNM_NET = "{tnm}";'.format(port=port_ucf, tnm=tnm))
+        out.append('TIMESPEC TS_{tnm} = PERIOD "{tnm}" {p:.3f} ns HIGH 50%;'.format(tnm=tnm, p=period_ns))
+
+    out.append("")
+    return "\n".join(out)
+
+
 def _pin_iostd(pin, overrides, default):
     return overrides.get(pin) or default
 

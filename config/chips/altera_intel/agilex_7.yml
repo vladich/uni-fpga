@@ -1,0 +1,21 @@
+# Altera (Intel) / Agilex 7 — chip registry
+# Mainstream Agilex high-perf. Quartus Prime Pro.
+
+Producer: Altera (Intel)
+Family: Agilex 7
+Description: Mainstream Agilex high-perf. Quartus Prime Pro.
+DefaultToolchains:
+  - quartus_prime_pro[*]
+Chips:
+  - Id: AGFB014R24A2E2V
+  - Id: AGFB014R24A2E2VR0
+  - Id: AGFB014R24B2E2V
+  - Id: AGFB023R25A2E2VR0
+  - Id: AGFB027R24C2E2VR2
+  - Id: AGFB027R25A2E2V
+  - Id: AGIB023R29B1E1V
+  - Id: AGIB027R29A1E2VR0
+  - Id: AGIB027R29A1E2VR3
+  - Id: AGIB041R29A1E2VR0
+  - Id: AGMF039R47A1E2VR0
+  - Id: AGMF039R47A2E1V

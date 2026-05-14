@@ -1,0 +1,78 @@
+# Xilinx (AMD) / Virtex 7
+# 28 nm Virtex (2011). Vivado.
+
+Producer: Xilinx (AMD)
+Family: Virtex 7
+Description: 28 nm Virtex (2011). Vivado.
+Boards:
+  - Id: htg_700
+    BoardName: HTG-700 Virtex-7 V2000T/X690T PCIe Dev Board
+    BoardProducer: hitech_global
+    Chip: XC7VX690T-2FFG1761C
+    Bridges:
+      - pcie-jtag
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr3_memory
+      - pcie_endpoint
+      - fmc_hpc
+      - usb_uart_bridge
+      - usb_jtag_bridge
+    BoardURL: https://www.hitechglobal.com/boards/virtex7_v2000t.htm
+    Status: active
+  - Id: htg_703
+    BoardName: HTG-703 Virtex-7 PCIe Gen3 X690T
+    BoardProducer: hitech_global
+    Chip: XC7VX690T-2FFG1761C
+    Bridges:
+      - pcie-jtag
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr3_memory
+      - pcie_endpoint
+      - fmc_hpc
+      - usb_uart_bridge
+      - usb_jtag_bridge
+    BoardURL: https://www.hitechglobal.com/Boards/Virtex7_PCIE_Gen3.htm
+    Status: active
+  - Id: xilinx_vc707
+    BoardName: VC707
+    Devices:
+      - micron_n25q256a
+      - silabs_cp2103
+      - ftdi_ft2232h
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+      - ddr3_sodimm_socket
+      - marvell_88e1111
+      - silabs_si5324
+      - silabs_si570
+    BoardProducer: xilinx_amd
+    Chip: XC7VX485T-2FFG1761C
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://www.xilinx.com/products/boards-and-kits/ek-v7-vc707-g.html
+  - Id: xilinx_vc709
+    BoardName: VC709
+    Devices:
+      - micron_n25q256a
+      - silabs_cp2103
+      - ftdi_ft2232h
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+      - ddr3_sodimm_socket
+      - silabs_si5324
+      - silabs_si570
+    BoardProducer: xilinx_amd
+    Chip: XC7VX690T-2FFG1761C
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://www.xilinx.com/products/boards-and-kits/dk-v7-vc709-g.html

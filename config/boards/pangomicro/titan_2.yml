@@ -1,0 +1,119 @@
+# Pangomicro / Titan-2
+# 28 nm Titan II. PDS.
+
+Producer: Pangomicro
+Family: Titan-2
+Description: 28 nm Titan II. PDS.
+Boards:
+  - Id: pango_titan2_evb
+    BoardName: Pango Titan-2 Development Kit
+    BoardProducer: pangomicro
+    Chip: PGT2L100H-6FBG676
+    Bridges:
+      - usb-jtag
+    Programmer: pango_pgm
+    Features:
+      - usb_jtag_bridge
+      - ddr4_memory
+      - qspi_flash
+      - ethernet_phy_gigabit
+      - pcie_endpoint
+      - fmc_hpc
+      - user_leds
+    BoardURL: https://www.pangomicro.com/en/list_77/192.html
+    Status: active
+  - Id: pangomicro_pg2t560h_devkit
+    BoardName: PG2T560H Development Kit
+    BoardProducer: pangomicro
+    Chip: PG2T560HFBG676
+    Bridges:
+      - jtag
+    Programmer: pango_pgm
+    BoardURL: https://www.pangomicro.com/en/Page/index/cid/4.html
+  - Id: pangomicro_alinx_axp390
+    BoardName: "ALINX AXP390 Development Board"
+    BoardProducer: pangomicro
+    Chip: PG2T390H-6IFFBG900
+    Bridges:
+      - usb-jtag
+    Programmer: pango_pgm
+    Features:
+      - ddr4_memory
+      - ddr3_memory
+      - qspi_flash
+      - sfp_cage
+      - qsfp_cage
+      - pcie_endpoint
+      - fmc_lpc
+      - usb_jtag_bridge
+      - user_leds
+      - user_buttons
+    BoardURL: https://www.pangomicro.com/open/4308.html
+    Status: active
+    Notes: "4x 10G SFP+; 8 GB DDR4 + 2 GB DDR3; PCIe x8."
+  - Id: pangomicro_alinx_axp391
+    BoardName: "ALINX AXP391 Development Board"
+    BoardProducer: pangomicro
+    Chip: PG2T390H-6IFFBG900
+    Bridges:
+      - usb-jtag
+    Programmer: pango_pgm
+    Features:
+      - ddr4_memory
+      - qspi_flash
+      - sfp_cage
+      - pcie_endpoint
+      - fmc_lpc
+    BoardURL: https://www.pangomicro.com/open/4307.html
+    Status: active
+  - Id: pangomicro_alinx_axp392
+    BoardName: "ALINX AXP392 Development Board"
+    BoardProducer: pangomicro
+    Chip: PG2T390H-6IFFBG900
+    Bridges:
+      - usb-jtag
+    Programmer: pango_pgm
+    Features:
+      - ddr4_memory
+      - qspi_flash
+      - sfp_cage
+      - pcie_endpoint
+      - fmc_lpc
+    BoardURL: https://www.pangomicro.com/open/4306.html
+    Status: active
+    Notes: "Industrial-grade variant; 13.125 Gbps HSSTHP transceivers; 4x SDI."
+  - Id: pangomicro_sa_pg2t390h_evka2
+    BoardName: "SA_PG2T390H_EVKA2 Evaluation Kit"
+    BoardProducer: pangomicro
+    Chip: PG2T390H-6IFFBG900
+    Bridges:
+      - jtag
+    Programmer: pango_pgm
+    Features:
+      - ddr4_memory
+      - adc_chip
+      - power_monitor_i2c
+    BoardURL: https://www.pangomicro.com/open/4309.html
+    Status: active
+    Notes: "Smartseason; PG2T390H + PGC7KD-6IMBG256 CPLD companion."
+  - Id: pangomicro_pg2t390h_ffbg900_demo
+    BoardName: "PG2T390H-FFBG900 DEMO Board"
+    BoardProducer: pangomicro
+    Chip: PG2T390H-6IFFBG900
+    Bridges:
+      - jtag
+    Programmer: pango_pgm
+    Features:
+      - ddr4_memory
+      - ethernet_phy_gigabit
+      - sfp_cage
+      - pcie_endpoint
+      - fmc_lpc
+      - usb_uart_bridge
+      - user_leds
+      - user_buttons
+      - dip_switches
+      - clock_generator
+    BoardURL: https://www.pangomicro.com/open/2428.html
+    Status: active
+    Notes: "Pango first-party DEMO; PCIe x8; 4x SFP+; 64-bit DDR4; PGC7KD-MBG400 cfg-mgr CPLD."

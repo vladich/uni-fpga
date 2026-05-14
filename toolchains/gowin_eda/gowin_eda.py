@@ -97,12 +97,12 @@ def _collect_sv_sources(repo, peripherals, user_design_top, generated_top):
 
     for helper in ("tm1638_registers.sv", "slow_clk_gen.sv",
                    "imitate_reset_on_power_up.sv"):
-        full = os.path.join(repo, "peripherals", helper)
+        full = os.path.join(repo, "rtl", "peripherals", helper)
         if os.path.exists(full) and full not in seen:
             files.append(full)
             seen.add(full)
 
-    designs_common_dir = os.path.join(repo, "peripherals", "designs_common")
+    designs_common_dir = os.path.join(repo, "rtl", "peripherals", "designs_common")
     if os.path.isdir(designs_common_dir):
         for name in sorted(os.listdir(designs_common_dir)):
             if not name.endswith(".sv"):
@@ -115,7 +115,7 @@ def _collect_sv_sources(repo, peripherals, user_design_top, generated_top):
     # Same Xilinx-primitive stubs as the Quartus driver: BUFG / IBUFG /
     # BUFGCE pass-through. Some designs (5_4_yrv_plus) instantiate BUFG
     # directly, which Gowin doesn't have a primitive for.
-    compat_dir = os.path.join(repo, "peripherals", "_quartus_compat")
+    compat_dir = os.path.join(repo, "rtl", "peripherals", "_quartus_compat")
     if os.path.isdir(compat_dir):
         for name in sorted(os.listdir(compat_dir)):
             if not name.endswith(".sv"):

@@ -1,0 +1,23 @@
+# Altera (Intel) / Cyclone IV — chip registry
+# 60 nm Cyclone (2009). Quartus Prime Lite.
+
+Producer: Altera (Intel)
+Family: Cyclone IV
+Description: 60 nm Cyclone (2009). Quartus Prime Lite.
+DefaultToolchains:
+  - quartus_prime_lite[*]
+Chips:
+  - Id: EP4CE10E22C8N
+  - Id: EP4CE10F17C8
+  - Id: EP4CE115F29C7
+  - Id: EP4CE115F29C7N
+  - Id: EP4CE15F23C8
+  - Id: EP4CE15F23C8N
+  - Id: EP4CE22F17C6N
+  - Id: EP4CE55F23C8N
+  - Id: EP4CE6E22C8
+  - Id: EP4CE6F17C8
+  - Id: EP4CE75F23C8N
+  - Id: EP4CGX150DF27C7N
+  - Id: EP4CGX150DF31C7N
+  - Id: EP4CGX22CF19C6N

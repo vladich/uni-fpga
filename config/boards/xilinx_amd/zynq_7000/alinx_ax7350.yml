@@ -1,0 +1,25 @@
+# alinx_ax7350 pin map.
+# Source type: github_xdc
+#   https://github.com/alinxalinx/AX7350B_2023.1/blob/master/course_s1_fpga/01_led/auto_create_project/src/constraints/led.xdc
+#   https://github.com/alinxalinx/AX7350B_2023.1/blob/master/course_s1_fpga/15_linux_base/Vivado/auto_create_project/src/constraints/ax7350.xdc
+
+Board:
+  id: alinx_ax7350
+  pinBanks:
+    sys_clk:
+      pins: J14
+      frequency_mhz: 50
+    onboard_leds:
+      pins:
+      - F5
+      - E5
+      - G5
+      - G6
+    onboard_buttons:
+      pins:
+      - H6
+      - H7
+      - H8
+      - J8
+    fan_pwm:
+      pins: E6

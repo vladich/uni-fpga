@@ -1,0 +1,41 @@
+# Gowin / LittleBee/GW1NSR
+# GW1NS with embedded SDRAM.
+
+Producer: Gowin
+Family: LittleBee/GW1NSR
+Description: GW1NS with embedded SDRAM.
+Boards:
+  - Id: gowin_gw1nsr_lv4c_devkit
+    BoardName: GW1NSR-LV4C Dev Kit
+    BoardProducer: gowin_semi
+    Chip: GW1NSR-LV4CQN48PC7/I6
+    Bridges:
+      - jtag
+    Programmer: openFPGALoader
+    BoardURL: https://www.gowinsemi.com/en/support/devkits_detail/30/
+  - Id: gowin_gw1nsr_lv4c_g_devkit
+    BoardName: GW1NSR-LV4C Dev Kit (G-variant)
+    BoardProducer: gowin_semi
+    Chip: GW1NSR-LV4CQN48GC7/I6
+    Bridges:
+      - usb-jtag
+    Programmer: gowin_pgm
+    ExtraProgrammers:
+      - openFPGALoader[*]
+    Features:
+      - usb_2_otg
+      - usb_uart_bridge
+      - user_leds
+      - user_buttons
+      - usb_jtag_bridge
+      - jtag_header
+    BoardURL: https://www.gowinsemi.com/en/support/devkits_detail/41/
+    Status: active
+  - Id: tang_nano_4k
+    BoardName: Tang Nano 4k
+    BoardProducer: sipeed
+    Chip: GW1NSR-LV4CQN48PC6/I5
+    Bridges:
+      - jtag
+    Programmer: openFPGALoader
+    BoardURL: https://wiki.sipeed.com/hardware/en/tang/tang-nano-4k/nano-4k.html

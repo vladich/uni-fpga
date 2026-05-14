@@ -1,0 +1,12 @@
+# QuickLogic / EOS S3 — chip registry
+# Cortex-M4 + eFPGA. qorc-sdk + ql-symbiflow (open, vendor-endorsed).
+
+Producer: QuickLogic
+Family: EOS S3
+Description: Cortex-M4 + eFPGA. qorc-sdk + ql-symbiflow (open, vendor-endorsed).
+DefaultToolchains:
+  - qorc_sdk[*]
+Chips:
+  - Id: EOS-S3
+  - Id: QLES3CSDC1
+  - Id: QLES3SDC1

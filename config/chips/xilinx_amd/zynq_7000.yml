@@ -1,0 +1,40 @@
+# Xilinx (AMD) / Zynq 7000 — chip registry
+# 28 nm ARM Cortex-A9 dual-core + Artix-7 PL. Vivado + Vitis.
+
+Producer: Xilinx (AMD)
+Family: Zynq 7000
+Description: 28 nm ARM Cortex-A9 dual-core + Artix-7 PL. Vivado + Vitis.
+DefaultToolchains:
+  - vivado[*]
+  - nextpnr_openxc7[*]
+Chips:
+  - Id: XA7Z020-1CLG484Q
+  - Id: XC7Z007S-1CLG225C
+  - Id: XC7Z007S-1CLG400C
+  - Id: XC7Z007SCLG400-1
+  - Id: XC7Z010-1CLG225C
+  - Id: XC7Z010-1CLG225I
+  - Id: XC7Z010-1CLG400C
+  - Id: XC7Z010-1CLG400I
+  - Id: XC7Z010CLG400-1
+  - Id: XC7Z015-1CLG485C
+  - Id: XC7Z015-1CLG485I
+  - Id: XC7Z015-2CLG485I
+  - Id: XC7Z020-1CLG400C
+  - Id: XC7Z020-1CLG484C
+  - Id: XC7Z020-2CLG400I
+  - Id: XC7Z020-2CLG484I
+  - Id: XC7Z020-CLG484-1
+  - Id: XC7Z020CLG484-1
+  - Id: XC7Z030-1FBG484C
+  - Id: XC7Z030-1FBG485C
+  - Id: XC7Z030-2FBG676I
+  - Id: XC7Z035-2FFG676I
+  - Id: XC7Z045-2FFG900C
+  - Id: XC7Z045-2FFG900I
+  - Id: XC7Z100-2FFG900I
+  - Id: xc7z007sclg400-1
+  - Id: xc7z010-1clg400c
+  - Id: xc7z020-1clg400c
+  - Id: xc7z020clg400-1
+  - Id: xc7z020clg484-1

@@ -1,0 +1,25 @@
+# alinx_z19 pin map.
+# Source type: github_xdc
+#   https://github.com/alinxalinx/Z19/blob/master/vivado/auto_create_project/src/constraints/gpio.xdc
+#   https://github.com/alinxalinx/Z19/blob/master/vivado/auto_create_project/src/constraints/system.xdc
+#   https://github.com/alinxalinx/Z19/blob/master/vivado/auto_create_project/src/constraints/uart.xdc
+
+Board:
+  id: alinx_z19
+  pinBanks:
+    sys_clk_diff:
+      pins:
+        p: H24
+      frequency_mhz: 200
+    onboard_leds:
+      pins:
+      - B3
+    onboard_buttons:
+      pins:
+      - D4
+    onboard_uart:
+      pins:
+        tx: C3
+        rx: C6
+    fan_pwm:
+      pins: C5

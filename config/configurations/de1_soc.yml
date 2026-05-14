@@ -6,7 +6,7 @@
 Configuration:
   id: de1_soc
   board: de1_soc
-  toolchain: quartus_prime
+  toolchain: quartus_prime_lite
 
   attach:
     - peripheral: clock_input

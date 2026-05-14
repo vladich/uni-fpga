@@ -1,0 +1,20 @@
+# alinx_vd100 pin map.
+# Source type: github_xdc
+#   https://github.com/alinxalinx/VD100_2023.2/blob/master/Demo/course_s1/01_led/auto_create_project/src/constraints/led.xdc
+#   https://github.com/alinxalinx/VD100_2023.2/blob/master/Demo/course_s2/vivado/auto_create_project/src/constraints/gpio.xdc
+
+Board:
+  id: alinx_vd100
+  pinBanks:
+    sys_clk_diff:
+      pins:
+        p: AB23
+      frequency_mhz: 200
+    cpu_resetn:
+      pins: F21
+    onboard_leds:
+      pins:
+      - E20
+    onboard_buttons:
+      pins:
+      - F21

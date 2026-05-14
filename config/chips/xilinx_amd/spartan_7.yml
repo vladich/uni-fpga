@@ -1,0 +1,23 @@
+# Xilinx (AMD) / Spartan 7 — chip registry
+# 28 nm low-cost 7-series replacement for Spartan 6. Vivado.
+
+Producer: Xilinx (AMD)
+Family: Spartan 7
+Description: 28 nm low-cost 7-series replacement for Spartan 6. Vivado.
+DefaultToolchains:
+  - vivado[*]
+  - nextpnr_openxc7[*]
+Chips:
+  - Id: XC7S100-2FGGA676C
+  - Id: XC7S25-1CSGA225C
+  - Id: XC7S25CSGA324-1
+  - Id: XC7S50
+  - Id: XC7S50-1
+  - Id: XC7S50-1CSGA324C
+  - Id: XC7S50-1LCSGA324I
+  - Id: XC7S50CSGA324-1
+  - Id: XC7S50FGGA484
+  - Id: XC7S6-1FTGB196C
+  - Id: xc7s25csga225-1
+  - Id: xc7s25csga324-1
+  - Id: xc7s50csga324-1

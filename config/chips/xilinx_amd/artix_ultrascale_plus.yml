@@ -1,0 +1,10 @@
+# Xilinx (AMD) / Artix Ultrascale+ — chip registry
+
+Producer: Xilinx (AMD)
+Family: Artix Ultrascale+
+Description: Artix Ultrascale+ (added during Phase 4 catalog expansion).
+DefaultToolchains:
+  - vivado[*]
+Chips:
+  - Id: XCAU15P-2FFVB676E
+  - Id: XCAU25P-2E

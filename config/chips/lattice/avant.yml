@@ -1,0 +1,13 @@
+# Lattice / Avant — chip registry
+# 16 nm mid-range Lattice (2023+). Radiant Avant.
+
+Producer: Lattice
+Family: Avant
+Description: 16 nm mid-range Lattice (2023+). Radiant Avant.
+DefaultToolchains:
+  - lattice_radiant[*]
+Chips:
+  - Id: LAV-AT-E70-2LFG1156C
+  - Id: LAV-AT-E70BG676C
+  - Id: LAV-AT-G70-3LFG1156C
+  - Id: LAV-AT-X70-3LFE1156C

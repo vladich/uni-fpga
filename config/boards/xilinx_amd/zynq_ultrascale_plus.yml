@@ -1,0 +1,1489 @@
+# Xilinx (AMD) / Zynq Ultrascale+
+# 16 nm A53 quad + R5 + UltraScale+ PL MPSoC. Vivado.
+
+Producer: Xilinx (AMD)
+Family: Zynq Ultrascale+
+Description: 16 nm A53 quad + R5 + UltraScale+ PL MPSoC. Vivado.
+Boards:
+  - Id: alinx_axu15eg
+    BoardName: Alinx AXU15EG
+    BoardProducer: alinx
+    Chip: XCZU15EG-2FFVB1156I
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - qspi_flash
+      - emmc_flash
+      - ethernet_phy_gigabit
+      - pcie_endpoint
+      - sata_host
+      - usb_3_host
+      - fmc_hpc
+      - microsd_socket
+    BoardURL: https://www.en.alinx.com/detail/261
+    Status: active
+  - Id: alinx_axu2cga
+    BoardName: AXU2CGA
+    BoardProducer: alinx
+    Chip: XCZU2CG-1SFVC784E
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://alinx.com/en/detail/11
+  - Id: alinx_axu3eg
+    BoardName: AXU3EG
+    BoardProducer: alinx
+    Chip: XCZU3EG-2SFVC784E
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://alinx.com/en/detail/12
+  - Id: alinx_axu4ev
+    BoardName: AXU4EV
+    BoardProducer: alinx
+    Chip: XCZU4EV-2SFVC784I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://alinx.com/en/detail/13
+  - Id: alinx_axu5ev
+    BoardName: AXU5EV
+    BoardProducer: alinx
+    Chip: XCZU5EV-2SFVC784I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://alinx.com/en/detail/14
+  - Id: alinx_axu9eg
+    BoardName: Alinx AXU9EG
+    BoardProducer: alinx
+    Chip: XCZU9EG-2FFVB1156I
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - qspi_flash
+      - emmc_flash
+      - ethernet_phy_gigabit
+      - pcie_endpoint
+      - sata_host
+      - usb_3_host
+      - fmc_hpc
+      - microsd_socket
+    BoardURL: https://www.en.alinx.com/Product/SoC-Development-Boards/Zynq-UltraScale-plus-MPSoC/AXU9EGB.html
+    Status: active
+  - Id: avnet_aes_ultra96
+    BoardName: AES-ULTRA96
+    BoardProducer: avnet
+    Chip: XCZU3EG-1SBVA484E
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/ultra96-v2/
+  - Id: avnet_k24_io_dk
+    BoardName: K24 I/O Development Kit
+    BoardProducer: avnet
+    Chip: XCK24-SFVC784
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - lpddr4_memory
+      - qspi_flash
+      - emmc_flash
+      - ethernet_phy_gigabit
+      - usb_2_otg
+      - usb_uart_bridge
+      - usb_jtag_bridge
+      - pmod_connector
+      - mikrobus_socket
+    BoardURL: https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/k24-development-kit/
+    Status: active
+  - Id: avnet_maaxboard
+    BoardName: MaaXBoard
+    BoardProducer: avnet
+    Chip: XCZU3EG-SFVC784
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/maaxboard/
+  - Id: avnet_ultra96_v1
+    BoardName: Ultra96
+    BoardProducer: avnet
+    Chip: XCZU3EG-1SBVA484E
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/ultra96-v1/
+  - Id: avnet_ultra96_v2
+    BoardName: Ultra96-V2
+    BoardProducer: avnet
+    Chip: XCZU3EG-1SBVA484E
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/ultra96-v2/
+  - Id: avnet_ultrazed_3eg_pcie
+    BoardName: UltraZed-EG PCIe Carrier
+    BoardProducer: avnet
+    Chip: XCZU3EG-1SFVA625I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/ultrazed-eg/
+  - Id: avnet_ultrazed_eg_sk
+    BoardName: UltraZed-EG Starter Kit (IO Carrier)
+    BoardProducer: avnet
+    Chip: XCZU3EG-1SFVA625I
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - qspi_flash
+      - emmc_flash
+      - ethernet_phy_gigabit
+      - usb_2_otg
+      - usb_uart_bridge
+      - usb_jtag_bridge
+      - pmod_connector
+      - arduino_shield_header
+      - microsd_socket
+      - barrel_jack_input
+    BoardURL: https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/ultrazed/ultrazed-eg/
+    Status: active
+  - Id: avnet_ultrazed_ev
+    BoardName: UltraZed-EV PCIe Carrier
+    BoardProducer: avnet
+    Chip: XCZU7EV-1FBVB900I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/ultrazed-ev/
+  - Id: avnet_ultrazed_ev_sk
+    BoardName: UltraZed-EV Starter Kit (Carrier Card)
+    BoardProducer: avnet
+    Chip: XCZU7EV-1FBVB900I
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - qspi_flash
+      - ethernet_phy_gigabit
+      - usb_2_otg
+      - usb_3_host
+      - usb_uart_bridge
+      - usb_jtag_bridge
+      - microsd_socket
+      - displayport_output
+      - sfp_cage
+      - pcie_endpoint
+      - pmod_connector
+      - barrel_jack_input
+    BoardURL: https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/ultrazed-ev/
+    Status: active
+  - Id: bittware_250_soc
+    BoardName: BittWare 250-SoC
+    BoardProducer: bittware
+    Chip: XCZU19EG-2FFVD1760E
+    Bridges:
+      - pcie-jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - pcie_endpoint
+      - qsfp_cage
+      - ethernet_phy_gigabit
+      - usb_uart_bridge
+    BoardURL: https://www.bittware.com/products/250-soc/
+    Status: active
+  - Id: digilent_genesys_zu_3eg
+    BoardName: Genesys ZU-3EG
+    Devices:
+      - ftdi_ft2232h
+      - microsd_socket_generic
+      - emmc_chip_generic
+      - tmds_direct
+      - pushbutton_smd_generic
+      - dip_switch_generic
+      - led_discrete_generic
+      - adi_adau1761
+      - ddr4_sodimm_socket
+      - silabs_si5342
+    BoardProducer: digilent
+    Chip: xczu3eg-1sfvc784e
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://digilent.com/reference/programmable-logic/genesys-zu/start
+  - Id: digilent_genesys_zu_5ev
+    BoardName: Genesys ZU-5EV
+    Devices:
+      - ftdi_ft2232h
+      - microsd_socket_generic
+      - emmc_chip_generic
+      - tmds_direct
+      - pushbutton_smd_generic
+      - dip_switch_generic
+      - led_discrete_generic
+      - adi_adau1761
+      - ddr4_sodimm_socket
+      - silabs_si5342
+    BoardProducer: digilent
+    Chip: xczu5ev-2sfvc784i
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://digilent.com/reference/programmable-logic/genesys-zu/start
+  - Id: enclustra_andromeda_xzu65
+    BoardName: Andromeda XZU65
+    BoardProducer: enclustra
+    Chip: XCZU11EG-2FFVC1156I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - emmc_flash
+      - qspi_flash
+      - ethernet_phy_gigabit
+      - usb_3_host
+      - jtag_header
+    BoardURL: https://www.enclustra.com/en/products/system-on-chip-modules/andromeda-xzu65/
+    Status: active
+  - Id: enclustra_andromeda_xzu70
+    BoardName: Andromeda XZU70
+    BoardProducer: enclustra
+    Chip: XCZU11EG-2FFVF1517I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - emmc_flash
+      - qspi_flash
+      - ethernet_phy_gigabit
+      - usb_3_host
+      - jtag_header
+    BoardURL: https://www.enclustra.com/en/products/system-on-chip-modules/andromeda-xzu70/
+    Status: active
+  - Id: enclustra_andromeda_xzu80
+    BoardName: Andromeda XZU80
+    BoardProducer: enclustra
+    Chip: XCZU19EG-2FFVB1517I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - emmc_flash
+      - qspi_flash
+      - ethernet_phy_gigabit
+      - usb_3_host
+      - jtag_header
+    BoardURL: https://www.enclustra.com/en/products/system-on-chip-modules/andromeda-xzu80/
+    Status: active
+  - Id: enclustra_andromeda_xzu90
+    BoardName: Andromeda XZU90
+    BoardProducer: enclustra
+    Chip: XCZU19EG-2FFVD1760I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - emmc_flash
+      - qspi_flash
+      - ethernet_phy_gigabit
+      - usb_3_host
+      - jtag_header
+    BoardURL: https://www.enclustra.com/en/products/system-on-chip-modules/andromeda-xzu90/
+    Status: active
+  - Id: enclustra_mars_xu3
+    BoardName: Mars XU3
+    BoardProducer: enclustra
+    Chip: XCZU3EG-2SBVA484I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - emmc_flash
+      - qspi_flash
+      - ethernet_phy_gigabit
+      - usb_2_otg
+      - jtag_header
+    BoardURL: https://www.enclustra.com/en/products/system-on-chip-modules/mars-xu3/
+    Status: active
+  - Id: enclustra_mercury_plus_xu1
+    BoardName: Mercury+ XU1
+    BoardProducer: enclustra
+    Chip: XCZU2EG-1SFVC784I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://www.enclustra.com/en/products/fpga-modules/mercury-xu1/
+  - Id: enclustra_mercury_plus_xu5
+    BoardName: Mercury+ XU5
+    BoardProducer: enclustra
+    Chip: XCZU5EV-1SFVC784I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://www.enclustra.com/en/products/fpga-modules/mercury-xu5/
+  - Id: enclustra_mercury_plus_xu6
+    BoardName: Mercury+ XU6
+    BoardProducer: enclustra
+    Chip: XCZU4EV-1SFVC784I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - emmc_flash
+      - qspi_flash
+      - ethernet_phy_gigabit
+      - usb_3_host
+      - jtag_header
+    BoardURL: https://www.enclustra.com/en/products/system-on-chip-modules/mercury-plus-xu6/
+    Status: active
+  - Id: enclustra_mercury_plus_xu61
+    BoardName: Mercury+ XU61
+    BoardProducer: enclustra
+    Chip: XCZU2EG-L1SFVC784I4524
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - lpddr4_memory
+      - emmc_flash
+      - qspi_flash
+      - ethernet_phy_gigabit
+      - usb_3_host
+      - jtag_header
+    BoardURL: https://www.enclustra.com/en/products/system-on-chip-modules/mercury-plus-xu61/
+    Status: active
+  - Id: enclustra_mercury_plus_xu7
+    BoardName: Mercury+ XU7
+    BoardProducer: enclustra
+    Chip: XCZU7EV-1FFVC1156I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://www.enclustra.com/en/products/fpga-modules/mercury-xu7/
+  - Id: enclustra_mercury_plus_xu8
+    BoardName: Mercury+ XU8
+    BoardProducer: enclustra
+    Chip: XCZU15EG-1FFVC900I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://www.enclustra.com/en/products/fpga-modules/mercury-xu8/
+  - Id: enclustra_mercury_plus_xu9
+    BoardName: Mercury+ XU9
+    BoardProducer: enclustra
+    Chip: XCZU7EV-2FBVB900I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - emmc_flash
+      - qspi_flash
+      - ethernet_phy_gigabit
+      - usb_3_host
+      - jtag_header
+    BoardURL: https://www.enclustra.com/en/products/system-on-chip-modules/mercury-plus-xu9/
+    Status: active
+  - Id: htg_z920
+    BoardName: HTG-Z920 Zynq UltraScale+ MPSoC PCIe Development Platform
+    BoardProducer: hitech_global
+    Chip: XCZU19EG-2FFVD1760E
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - pcie_endpoint
+      - fmc_plus
+      - ddr4_memory
+      - qspi_flash
+      - usb_uart_bridge
+      - jtag_header
+    BoardURL: https://www.hitechglobal.com/Boards/MPSOC_UltraScale+.htm
+    Status: active
+  - Id: htg_z922
+    BoardName: HTG-Z922 Zynq UltraScale+ MPSoC PCIe ZU17EG
+    BoardProducer: hitech_global
+    Chip: XCZU17EG-2FFVD1760E
+    Bridges:
+      - pcie-jtag
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - pcie_endpoint
+      - fmc_plus
+      - usb_uart_bridge
+      - usb_jtag_bridge
+    BoardURL: https://www.hitechglobal.com/Boards/Zynq_UltraScale+_PCIe.htm
+    Status: active
+  - Id: iwave_rainbow_g30d
+    BoardName: iW-RainboW-G30D Zynq UltraScale+ MPSoC (ZU7/ZU5/ZU4) Dev Kit
+    BoardProducer: iwave
+    Chip: XCZU4EV-1SFVC784I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    ExtraProgrammers:
+      - openFPGALoader[*]
+    Features:
+      - ddr4_memory
+      - emmc_flash
+      - qspi_flash
+      - ethernet_phy_gigabit
+      - usb_3_host
+      - usb_uart_bridge
+      - microsd_socket
+      - hdmi_output
+      - displayport_output
+      - pcie_endpoint
+      - sata_host
+      - fmc_hpc
+      - jtag_header
+    BoardURL: https://www.iwavesystems.com/product/zynq-ultrascale-mpsoc-system-on-module/
+    Status: active
+  - Id: iwave_rainbow_g35d
+    BoardName: iW-RainboW-G35D Zynq UltraScale+ MPSoC (ZU19/17/11EG) UHS Dev Kit
+    BoardProducer: iwave
+    Chip: XCZU19EG-2FFVC1760I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    ExtraProgrammers:
+      - openFPGALoader[*]
+    Features:
+      - ddr4_memory
+      - emmc_flash
+      - qspi_flash
+      - ethernet_phy_gigabit
+      - usb_3_host
+      - usb_uart_bridge
+      - microsd_socket
+      - displayport_output
+      - pcie_endpoint
+      - sata_host
+      - fmc_hpc
+      - qsfp_cage
+      - jtag_header
+    BoardURL: https://www.iwavesystems.com/product/zynq-ultrascale-mpsoc-zu19-zu17-zu11-eg-system-on-module/
+    Status: active
+  - Id: iwave_rainbow_g36d
+    BoardName: iW-RainboW-G36D Zynq UltraScale+ MPSoC (ZU5/4/3T/3/2/1) Dev Kit
+    BoardProducer: iwave
+    Chip: XCZU3EG-1SFVC784I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    ExtraProgrammers:
+      - openFPGALoader[*]
+    Features:
+      - ddr4_memory
+      - emmc_flash
+      - qspi_flash
+      - ethernet_phy_gigabit
+      - usb_3_host
+      - usb_uart_bridge
+      - microsd_socket
+      - displayport_output
+      - pcie_endpoint
+      - fmc_lpc
+      - jtag_header
+    BoardURL: https://iwave-global.com/product/zynq-ultrascale-mpsoc-zu5-zu4-zu3t-zu3-zu2-zu1-system-on-module/
+    Status: active
+  - Id: myir_fz3_card
+    BoardName: MYIR FZ3 Card Deep-Learning Accelerator (ZU3EG)
+    BoardProducer: myir
+    Chip: XCZU3EG-1SFVC784I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - qspi_flash
+      - emmc_flash
+      - ethernet_phy_gigabit
+      - usb_2_otg
+      - usb_3_host
+      - displayport_output
+      - mipi_csi2_input
+      - pcie_endpoint
+      - microsd_socket
+    BoardURL: https://www.myirtech.com/list.asp?id=630
+    Status: active
+  - Id: myir_fz5_card
+    BoardName: MYIR FZ5 Card AI Accelerator (ZU5EV)
+    BoardProducer: myir
+    Chip: XCZU5EV-2SFVC784I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - qspi_flash
+      - emmc_flash
+      - ethernet_phy_gigabit
+      - usb_3_host
+      - displayport_output
+      - hdmi_output
+      - microsd_socket
+    BoardURL: https://www.myirtech.com/list.asp?id=638
+    Status: active
+  - Id: myir_myd_czu3eg_v3
+    BoardName: MYIR MYD-CZU3EG-V3 Dev Board (MYC-CZU3EG SoM)
+    BoardProducer: myir
+    Chip: XCZU3EG-1SFVC784I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    ExtraProgrammers:
+      - openFPGALoader[*]
+    Features:
+      - ddr4_memory
+      - emmc_flash
+      - qspi_flash
+      - microsd_socket
+      - ethernet_phy_gigabit
+      - usb_3_host
+      - usb_uart_bridge
+      - hdmi_output
+      - displayport_output
+      - pcie_endpoint
+      - sata_host
+      - mipi_csi2_input
+      - jtag_header
+    BoardURL: https://www.myirtech.com/list.asp?id=838
+    Status: active
+  - Id: myir_myd_czu4ev_v2
+    BoardName: MYIR MYD-CZU4EV-V2 Dev Board (MYC-CZU4EV SoM)
+    BoardProducer: myir
+    Chip: XCZU4EV-1SFVC784I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    ExtraProgrammers:
+      - openFPGALoader[*]
+    Features:
+      - ddr4_memory
+      - emmc_flash
+      - qspi_flash
+      - microsd_socket
+      - ethernet_phy_gigabit
+      - usb_3_host
+      - usb_uart_bridge
+      - hdmi_output
+      - displayport_output
+      - pcie_endpoint
+      - sata_host
+      - mipi_csi2_input
+      - jtag_header
+    BoardURL: https://www.myirtech.com/list.asp?id=713
+    Status: active
+  - Id: myir_myd_czu5ev_v2
+    BoardName: MYIR MYD-CZU5EV-V2 Dev Board (MYC-CZU5EV SoM)
+    BoardProducer: myir
+    Chip: XCZU5EV-2SFVC784I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    ExtraProgrammers:
+      - openFPGALoader[*]
+    Features:
+      - ddr4_memory
+      - emmc_flash
+      - qspi_flash
+      - microsd_socket
+      - ethernet_phy_gigabit
+      - usb_3_host
+      - usb_uart_bridge
+      - hdmi_output
+      - displayport_output
+      - pcie_endpoint
+      - sata_host
+      - mipi_csi2_input
+      - jtag_header
+    BoardURL: https://www.myirtech.com/list.asp?id=713
+    Status: active
+  - Id: realdigital_aup_zu3
+    BoardName: AUP-ZU3
+    BoardProducer: real_digital
+    Chip: XCZU3EG
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    ExtraProgrammers:
+      - openFPGALoader[*]
+    Features:
+      - ddr4_memory
+      - microsd_socket
+      - usb_3_host
+      - usb_uart_bridge
+      - ethernet_phy_gigabit
+      - hdmi_output
+      - user_leds
+      - user_buttons
+      - pmod_connector
+    BoardURL: https://www.realdigital.org/hardware/aup-zu3
+    Status: active
+  - Id: techway_pfp_zuplus_11eg
+    BoardName: Techway PFP-ZU+_11 (ZU11EG)
+    BoardProducer: techway
+    Chip: XCZU11EG-2FFVC1156E
+    Bridges:
+      - pcie-jtag
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - pcie_endpoint
+      - fmc_plus
+      - usb_uart_bridge
+      - usb_jtag_bridge
+    BoardURL: https://www.techway.com/p/zynq-board-pcie-with-fmc/
+    Status: active
+  - Id: techway_pfp_zuplus_7cg
+    BoardName: Techway PFP-ZU+_07 (ZU7CG)
+    BoardProducer: techway
+    Chip: XCZU7CG-2FFVC1156E
+    Bridges:
+      - pcie-jtag
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - pcie_endpoint
+      - fmc_plus
+      - usb_uart_bridge
+      - usb_jtag_bridge
+    BoardURL: https://www.techway.com/p/zynq-board-pcie-with-fmc/
+    Status: active
+  - Id: techway_pfp_zuplus_7ev
+    BoardName: PFP-ZU+ 07V (ZU7EV)
+    BoardProducer: techway
+    Chip: XCZU7EV-2FFVC1156E
+    Bridges:
+      - jtag
+      - pcie-jtag
+    Programmer: vivado_hw
+    ExtraProgrammers:
+      - openFPGALoader[*]
+    Features:
+      - ddr4_memory
+      - qspi_flash
+      - pcie_endpoint
+      - fmc_plus
+      - jtag_header
+      - hdmi_output
+    BoardURL: https://www.techway.com/p/zynq-board-pcie-avec-fmc/
+    Status: active
+  - Id: trenz_te0803
+    BoardName: TE0803 Zynq UltraScale+ MPSoC SoM
+    Devices:
+      - micron_mt40a256m16
+      - macronix_mx25l25645g
+    BoardProducer: trenz_electronic
+    Chip: XCZU4EV-1SFVC784E
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - qspi_flash
+      - jtag_header
+    BoardURL: https://www.trenz-electronic.de/en/Products/Trenz-Electronic/TE08XX-Zynq-UltraScale/TE0803-Zynq-UltraScale/
+    Status: active
+  - Id: trenz_te0807
+    BoardName: TE0807 Zynq UltraScale+ MPSoC SoM
+    Devices:
+      - micron_mt40a256m16
+      - macronix_mx25l25645g
+    BoardProducer: trenz_electronic
+    Chip: XCZU7EV-1FFVF1517E
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - qspi_flash
+      - jtag_header
+    BoardURL: https://www.trenz-electronic.de/en/Products/Trenz-Electronic/TE08XX-Zynq-UltraScale/TE0807-Zynq-UltraScale/
+    Status: active
+  - Id: trenz_te0808
+    BoardName: TE0808
+    Devices:
+      - micron_mt40a256m16
+      - macronix_mx25l25645g
+    BoardProducer: trenz_electronic
+    Chip: XCZU9EG-1FFVC900I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://shop.trenz-electronic.de/en/Products/Trenz-Electronic/TE08XX-Zynq-UltraScale/
+  - Id: trenz_te0813
+    BoardName: TE0813 Zynq UltraScale+ MPSoC SoM (4GB)
+    Devices:
+      - micron_mt40a256m16
+      - macronix_mx25l25645g
+    BoardProducer: trenz_electronic
+    Chip: XCZU4EV-1SFVC784E
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - qspi_flash
+      - jtag_header
+    BoardURL: https://www.trenz-electronic.de/en/Products/Trenz-Electronic/TE08XX-Zynq-UltraScale/TE0813-Zynq-UltraScale/
+    Status: active
+  - Id: trenz_te0817
+    BoardName: TE0817 Zynq UltraScale+ MPSoC SoM
+    Devices:
+      - micron_mt40a256m16
+      - macronix_mx25l25645g
+    BoardProducer: trenz_electronic
+    Chip: XCZU7EV-1FFVC1156E
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - qspi_flash
+      - jtag_header
+    BoardURL: https://www.trenz-electronic.de/en/Products/Trenz-Electronic/TE08XX-Zynq-UltraScale/TE0817-Zynq-UltraScale/
+    Status: active
+  - Id: trenz_te0818
+    BoardName: TE0818 Zynq UltraScale+ MPSoC High-Density SoM
+    Devices:
+      - micron_mt40a256m16
+      - macronix_mx25l25645g
+    BoardProducer: trenz_electronic
+    Chip: XCZU9EG-2FFVC900I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - qspi_flash
+      - jtag_header
+    BoardURL: https://www.trenz-electronic.de/en/Products/Trenz-Electronic/TE08XX-Zynq-UltraScale/TE0818-Zynq-UltraScale/
+    Status: active
+  - Id: trenz_te0820
+    BoardName: TE0820
+    Devices:
+      - micron_mt40a256m16
+      - macronix_mx25l25645g
+    BoardProducer: trenz_electronic
+    Chip: XCZU3EG-1SFVA625I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://shop.trenz-electronic.de/en/Products/Trenz-Electronic/TE08XX-Zynq-UltraScale/
+  - Id: trenz_te0821
+    BoardName: TE0821 Zynq UltraScale+ MPSoC Compact SoM
+    Devices:
+      - micron_mt53d512m32
+      - macronix_mx25l25645g
+    BoardProducer: trenz_electronic
+    Chip: XCZU3EG-1SFVC784E
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - qspi_flash
+      - emmc_flash
+      - jtag_header
+    BoardURL: https://www.trenz-electronic.de/en/Products/Trenz-Electronic/TE08XX-Zynq-UltraScale/TE0821-Zynq-UltraScale/
+    Status: active
+  - Id: trenz_te0823
+    BoardName: TE0823 Zynq UltraScale+ Low-Power SoM
+    Devices:
+      - micron_mt40a256m16
+      - macronix_mx25l25645g
+    BoardProducer: trenz_electronic
+    Chip: XCZU3CG-L1SFVC784I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - lpddr4_memory
+      - qspi_flash
+      - jtag_header
+    BoardURL: https://www.trenz-electronic.de/en/Products/Trenz-Electronic/TE08XX-Zynq-UltraScale/TE0823-Zynq-UltraScale/
+    Status: active
+  - Id: trenz_te0827
+    BoardName: TE0827
+    Devices:
+      - micron_mt40a256m16
+      - macronix_mx25l25645g
+    BoardProducer: trenz_electronic
+    Chip: XCZU4EV-1SFVC784I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://shop.trenz-electronic.de/en/Products/Trenz-Electronic/TE08XX-Zynq-UltraScale/
+  - Id: trenz_te0865
+    BoardName: TE0865 Zynq UltraScale+ ZU17EG High-End SoM
+    Devices:
+      - micron_mt40a256m16
+      - macronix_mx25l25645g
+    BoardProducer: trenz_electronic
+    Chip: XCZU17EG-2FFVC1760I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - qspi_flash
+      - jtag_header
+    BoardURL: https://www.trenz-electronic.de/en/Products/Trenz-Electronic/TE08XX-Zynq-UltraScale/TE0865-Zynq-UltraScale/
+    Status: active
+  - Id: tria_ultrazed_eg
+    BoardName: Tria UltraZed-EG SOM
+    BoardProducer: tria_technologies
+    Chip: XCZU3EG-1SFVA625
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - qspi_flash
+      - emmc_flash
+      - ethernet_phy_gigabit
+      - usb_2_otg
+      - jtag_header
+    BoardURL: https://www.tria-technologies.com/product/ultrazed-eg/
+    Status: active
+  - Id: tria_ultrazed_ev
+    BoardName: Tria UltraZed-EV SOM
+    BoardProducer: tria_technologies
+    Chip: XCZU7EV-FBVB900
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - qspi_flash
+      - emmc_flash
+      - ethernet_phy_gigabit
+      - usb_2_otg
+      - jtag_header
+    BoardURL: https://www.tria-technologies.com/product/ultrazed-ev/
+    Status: active
+  - Id: tria_zuboard_1cg
+    BoardName: Tria ZUBoard 1CG
+    BoardProducer: tria_technologies
+    Chip: XCZU1CG-1SBVA484
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - lpddr4_memory
+      - qspi_flash
+      - microsd_socket
+      - ethernet_phy_gigabit
+      - usb_2_otg
+      - usb_uart_bridge
+      - usb_jtag_bridge
+      - usb_powered
+      - user_leds
+      - user_buttons
+      - dip_switches
+    BoardURL: https://www.tria-technologies.com/product/zuboard-1cg/
+    Status: active
+  - Id: tul_pynq_zu
+    BoardName: TUL PYNQ-ZU
+    BoardProducer: tul
+    Chip: XCZU5EG-1SFVC784
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - microsd_socket
+      - usb_3_host
+      - usb_uart_bridge
+      - usb_jtag_bridge
+      - hdmi_output
+      - displayport_output
+      - fmc_lpc
+      - pmod_connector
+      - raspi_hat_header
+    BoardURL: https://www.tulembedded.com/FPGA/ProductsPYNQ-ZU.html
+    Status: active
+  - Id: xilinx_alveo_u25
+    BoardName: Alveo U25
+    Devices:
+      - ddr4_sodimm_socket
+    BoardProducer: xilinx_amd
+    Chip: XCU25
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://www.xilinx.com/products/boards-and-kits/alveo/u25.html
+  - Id: xilinx_alveo_u30
+    BoardName: Alveo U30
+    Devices:
+    BoardProducer: xilinx_amd
+    Chip: XCZU7EV
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://www.xilinx.com/products/boards-and-kits/alveo/u30.html
+  - Id: xilinx_kr260
+    BoardName: AMD Kria KR260 Robotics Starter Kit
+    Devices:
+      - microsd_socket_generic
+    BoardProducer: xilinx_amd
+    Chip: XCK26-SFVC784
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - sfp_cage
+      - ethernet_phy_gigabit
+      - usb_3_host
+      - usb_uart_bridge
+      - microsd_socket
+      - pmod_connector
+      - user_leds
+      - jtag_header
+    BoardURL: https://www.amd.com/en/products/system-on-modules/kria/k26/kr260-robotics-starter-kit.html
+    Status: active
+  - Id: xilinx_kv260
+    BoardName: AMD Kria KV260 Vision AI Starter Kit
+    Devices:
+      - microsd_socket_generic
+    BoardProducer: xilinx_amd
+    Chip: XCK26-SFVC784
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - mipi_csi2_input
+      - raspi_hat_header
+      - hdmi_output
+      - displayport_output
+      - ethernet_phy_gigabit
+      - usb_3_host
+      - usb_uart_bridge
+      - microsd_socket
+      - user_leds
+      - jtag_header
+    BoardURL: https://www.amd.com/en/products/system-on-modules/kria/k26/kv260-vision-starter-kit.html
+    Status: active
+  - Id: xilinx_zcu100
+    BoardName: ZCU100 (UltraZed-EG)
+    Devices:
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
+    BoardProducer: xilinx_amd
+    Chip: XCZU3EG-1SFVA625I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://www.xilinx.com/products/boards-and-kits/zcu100.html
+  - Id: xilinx_zcu102
+    BoardName: ZCU102
+    Devices:
+      - micron_mt40a256m16
+      - ddr4_sodimm_socket
+      - adi_adv7511
+      - microchip_usb3343
+      - microchip_usb2514b
+      - silabs_cp2108
+      - ftdi_ft4232h
+      - microsd_socket_generic
+      - emmc_chip_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+      - marvell_88e1512
+      - silabs_si570
+      - spansion_s25fl256s
+    BoardProducer: xilinx_amd
+    Chip: XCZU9EG-2FFVB1156E
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://www.xilinx.com/products/boards-and-kits/ek-u1-zcu102-g.html
+  - Id: xilinx_zcu104
+    BoardName: ZCU104
+    Devices:
+      - micron_mt40a256m16
+      - adi_adv7511
+      - microchip_usb3343
+      - microchip_usb2514b
+      - silabs_cp2108
+      - ftdi_ft4232h
+      - microsd_socket_generic
+      - emmc_chip_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+      - marvell_88e1512
+      - spansion_s25fl256s
+    BoardProducer: xilinx_amd
+    Chip: XCZU7EV-2FFVC1156E
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://www.xilinx.com/products/boards-and-kits/zcu104.html
+  - Id: xilinx_zcu106
+    BoardName: ZCU106
+    Devices:
+      - micron_mt40a256m16
+      - ddr4_sodimm_socket
+      - adi_adv7511
+      - microchip_usb3343
+      - microchip_usb2514b
+      - silabs_cp2108
+      - ftdi_ft4232h
+      - microsd_socket_generic
+      - emmc_chip_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+      - marvell_88e1512
+      - spansion_s25fl256s
+    BoardProducer: xilinx_amd
+    Chip: XCZU7EV-2FFVC1156E
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://www.xilinx.com/products/boards-and-kits/zcu106.html
+  - Id: zuboard_1cg
+    BoardName: ZUBoard 1CG
+    BoardProducer: avnet
+    Chip: xczu1cgsbva484-1
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/zuboard-1cg/
+  - Id: alinx_axu2cgb
+    BoardName: "Alinx AXU2CGB"
+    BoardProducer: alinx
+    Chip: XCZU2CG-1SFVC784E
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - qspi_flash
+      - emmc_flash
+      - sd_card_socket
+      - usb_3_host
+      - pcie_endpoint
+      - displayport_output
+      - mipi_csi2_input
+      - ethernet_phy_gigabit
+      - usb_uart_bridge
+      - user_leds
+      - user_buttons
+    BoardURL: https://coderobin.com/products/alinx-axu2cgb-xilinx-zynq-ultrascale-mpsoc-xczu2cg-fpga-development-board
+    Status: active
+    Notes: "AXU2CGA in catalog; AXU2CGB is the rev-B / industrial variant."
+  - Id: alinx_axu2cg_e
+    BoardName: "Alinx AXU2CG-E"
+    BoardProducer: alinx
+    Chip: XCZU2CG-1SFVC784E
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - qspi_flash
+      - emmc_flash
+      - sd_card_socket
+      - usb_3_host
+      - displayport_output
+      - ethernet_phy_gigabit
+      - usb_uart_bridge
+      - user_leds
+      - user_buttons
+    BoardURL: https://coderobin.com/products/alinx-axu2cg-e-xilinx-zynq-ultrascale-mpsoc-zu2cg-fpga-development-board
+    Status: active
+    Notes: "-E suffix denotes economical / E-grade carrier variant."
+  - Id: alinx_axu4ev_e
+    BoardName: "Alinx AXU4EV-E"
+    BoardProducer: alinx
+    Chip: XCZU4EV-1SFVC784I
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - qspi_flash
+      - emmc_flash
+      - sd_card_socket
+      - usb_3_host
+      - displayport_output
+      - hdmi_input
+      - hdmi_output
+      - ethernet_phy_gigabit
+      - usb_uart_bridge
+      - user_leds
+      - user_buttons
+    BoardURL: https://coderobin.com/products/alinx-axu4ev-e-xilinx-zynq-ultrascale-mpsoc-zu4ev-fpga-development-board
+    Status: active
+    Notes: "-E (economy) sibling of AXU4EV-P."
+  - Id: alinx_axu4ev_p
+    BoardName: "Alinx AXU4EV-P"
+    BoardProducer: alinx
+    Chip: XCZU4EV-1SFVC784I
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - qspi_flash
+      - emmc_flash
+      - sd_card_socket
+      - usb_3_host
+      - pcie_endpoint
+      - displayport_output
+      - hdmi_input
+      - hdmi_output
+      - sfp_cage
+      - fmc_lpc
+      - ethernet_phy_gigabit
+      - mipi_csi2_input
+      - usb_uart_bridge
+      - user_leds
+      - user_buttons
+    BoardURL: https://coderobin.com/products/alinx-axu4ev-p-xilinx-zynq-ultrascale-mpsoc-xczu4ev-fpga-development-board
+    Status: active
+    Notes: "-P (premium) variant with full PCIe/FMC/SFP+."
+  - Id: alinx_axu5ev_e
+    BoardName: "Alinx AXU5EV-E"
+    BoardProducer: alinx
+    Chip: XCZU5EV-2SFVC784I
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - qspi_flash
+      - emmc_flash
+      - sd_card_socket
+      - usb_3_host
+      - displayport_output
+      - hdmi_input
+      - hdmi_output
+      - ethernet_phy_gigabit
+      - usb_uart_bridge
+      - user_leds
+      - user_buttons
+    BoardURL: https://coderobin.com/products/alinx-axu5ev-e-xilinx-zynq-ultrascale-mpsoc-xczu5ev-fpga-development-board
+    Status: active
+    Notes: "-E sibling of AXU5EV-P; based on same chip as AXU5EV in catalog."
+  - Id: alinx_axu5ev_p
+    BoardName: "Alinx AXU5EV-P"
+    BoardProducer: alinx
+    Chip: XCZU5EV-2SFVC784I
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - qspi_flash
+      - emmc_flash
+      - sd_card_socket
+      - usb_3_host
+      - pcie_endpoint
+      - displayport_output
+      - hdmi_input
+      - hdmi_output
+      - sfp_cage
+      - fmc_lpc
+      - ethernet_phy_gigabit
+      - mipi_csi2_input
+      - usb_uart_bridge
+      - user_leds
+      - user_buttons
+    BoardURL: https://coderobin.com/products/alinx-axu5ev-p-xilinx-zynq-ultrascale-mpsoc-xczu5ev-fpga-development-board
+    Status: active
+    Notes: "-P variant with PCIe/FMC."
+  - Id: alinx_axu7ev
+    BoardName: "Alinx AXU7EV"
+    BoardProducer: alinx
+    Chip: XCZU7EV-2FFVC1156I
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - qspi_flash
+      - emmc_flash
+      - sd_card_socket
+      - usb_3_host
+      - pcie_endpoint
+      - displayport_output
+      - hdmi_input
+      - hdmi_output
+      - ethernet_10gbe_sfp
+      - fmc_lpc
+      - ethernet_phy_gigabit
+      - nvme_socket
+      - usb_uart_bridge
+      - user_leds
+      - user_buttons
+    BoardURL: https://coderobin.com/products/alinx-axu7ev-xilinx-zynq-ultrascale-mpsoc-xczu7ev-fpga-development-board
+    Status: active
+    Notes: "ZU7EV with H.264/H.265 VCU."
+  - Id: alinx_z7_p
+    BoardName: "Alinx Z7-P"
+    BoardProducer: alinx
+    Chip: XCZU7EV-2FFVC1156I
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - qspi_flash
+      - emmc_flash
+      - sd_card_socket
+      - usb_3_host
+      - pcie_endpoint
+      - displayport_output
+      - fmc_hpc
+      - ethernet_phy_gigabit
+      - usb_uart_bridge
+      - user_leds
+      - user_buttons
+    BoardURL: https://coderobin.com/products/alinx-z7-p-xilinx-zynq-ultrascale-mpsoc-xczu7ev-fpga-development-board
+    Status: active
+    Notes: "Premium top-tier ZU7EV with full HPC FMC and dual gigE."
+  - Id: alinx_z11_p
+    BoardName: "Alinx Z11-P"
+    BoardProducer: alinx
+    Chip: XCZU11EG-2FFVC1156I
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - qspi_flash
+      - emmc_flash
+      - sd_card_socket
+      - usb_3_host
+      - pcie_endpoint
+      - displayport_output
+      - fmc_hpc
+      - ethernet_phy_gigabit
+      - usb_uart_bridge
+      - user_leds
+      - user_buttons
+    BoardURL: https://coderobin.com/products/alinx-z11-p-xilinx-zynq-ultrascale-mpsoc-xczu11eg-fpga-development-board
+    Status: active
+    Notes: "ZU11EG carrier; sibling of Z19 family."
+  - Id: alinx_z19
+    BoardName: "Alinx Z19"
+    BoardProducer: alinx
+    Chip: XCZU19EG-2FFVC1760I
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - qspi_flash
+      - emmc_flash
+      - sd_card_socket
+      - usb_3_host
+      - pcie_endpoint
+      - displayport_output
+      - qsfp_cage
+      - fmc_hpc
+      - ethernet_phy_gigabit
+      - sata_host
+      - nvme_socket
+      - usb_uart_bridge
+      - user_leds
+      - user_buttons
+    BoardURL: https://coderobin.com/products/alinx-z19-xilinx-zynq-ultrascale-mpsoc-xczu19eg-fpga-development-board
+    Status: active
+    Notes: "ZU19EG with 4x 100G QSFP28 and 2x HPC FMC."
+  - Id: alinx_z19_p
+    BoardName: "Alinx Z19-P"
+    BoardProducer: alinx
+    Chip: XCZU19EG-2FFVC1760I
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - qspi_flash
+      - emmc_flash
+      - sd_card_socket
+      - usb_3_host
+      - pcie_endpoint
+      - displayport_output
+      - qsfp_cage
+      - qsfp_dd_cage
+      - fmc_hpc
+      - ethernet_phy_gigabit
+      - usb_uart_bridge
+      - user_leds
+      - user_buttons
+    BoardURL: https://coderobin.com/products/alinx-z19-p-xilinx-zynq-ultrascale-mpsoc-xczu19eg-fpga-development-board
+    Status: active
+    Notes: "Premium ZU19EG variant — PCIe Gen3 x16 + 16x GTY 32.75 Gb/s."
+  - Id: alinx_z19_m
+    BoardName: "Alinx Z19-M"
+    BoardProducer: alinx
+    Chip: XCZU19EG-2FFVC1760I
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - qspi_flash
+      - emmc_flash
+      - sd_card_socket
+      - usb_3_host
+      - pcie_endpoint
+      - displayport_output
+      - qsfp_cage
+      - hdmi_input
+      - hdmi_output
+      - fmc_hpc
+      - ethernet_phy_gigabit
+      - usb_uart_bridge
+      - user_leds
+      - user_buttons
+    BoardURL: https://coderobin.com/products/alinx-z19-m-xilinx-zynq-ultrascale-mpsoc-xczu19eg-fpga-heterogeneous-computing-development-board
+    Status: active
+    Notes: "ZU19EG heterogeneous board with NVIDIA Jetson Orin NX module integration."
+  - Id: alinx_acu2cg
+    BoardName: "Alinx ACU2CG SOM"
+    BoardProducer: alinx
+    Chip: XCZU2CG-1SFVC784E
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - qspi_flash
+      - emmc_flash
+    BoardURL: https://coderobin.com/products/alinx-acu2cg-xilinx-zynq-ultrascale-mpsoc-xczu2cg-fpga-som
+    Status: active
+  - Id: alinx_acu3eg
+    BoardName: "Alinx ACU3EG SOM"
+    BoardProducer: alinx
+    Chip: XCZU3EG-1SFVC784I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - qspi_flash
+      - emmc_flash
+    BoardURL: https://coderobin.com/products/alinx-acu3eg-xilinx-zynq-ultrascale-mpsoc-xczu3eg-fpga-som
+    Status: active
+  - Id: alinx_acu4ev
+    BoardName: "Alinx ACU4EV SOM"
+    BoardProducer: alinx
+    Chip: XCZU4EV-1SFVC784I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - qspi_flash
+      - emmc_flash
+    BoardURL: https://coderobin.com/products/alinx-acu4ev-xilinx-zynq-ultrascale-mpsoc-xczu4ev-fpga-som
+    Status: active
+  - Id: alinx_acu5ev
+    BoardName: "Alinx ACU5EV SOM"
+    BoardProducer: alinx
+    Chip: XCZU5EV-2SFVC784I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - qspi_flash
+      - emmc_flash
+    BoardURL: https://coderobin.com/products/alinx-acu5ev-xilinx-zynq-ultrascale-mpsoc-xczu5ev-fpga-som
+    Status: active
+  - Id: alinx_acu7ev
+    BoardName: "Alinx ACU7EV SOM"
+    BoardProducer: alinx
+    Chip: XCZU7EV-2FFVC1156I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - qspi_flash
+      - emmc_flash
+    BoardURL: https://coderobin.com/products/alinx-acu7ev-xilinx-zynq-ultrascale-mpsoc-xczu7ev-fpga-som
+    Status: active
+  - Id: alinx_acu9eg
+    BoardName: "Alinx ACU9EG SOM"
+    BoardProducer: alinx
+    Chip: XCZU9EG-2FFVB1156I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - qspi_flash
+      - emmc_flash
+    BoardURL: https://coderobin.com/products/alinx-acu9eg-xilinx-zynq-ultrascale-mpsoc-xczu9eg-fpga-som
+    Status: active
+  - Id: alinx_acu11eg
+    BoardName: "Alinx ACU11EG SOM"
+    BoardProducer: alinx
+    Chip: XCZU11EG-2FFVC1156I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - qspi_flash
+      - emmc_flash
+    BoardURL: https://coderobin.com/products/alinx-acu11eg-xilinx-zynq-ultrascale-mpsoc-xczu11eg-fpga-som
+    Status: active
+  - Id: alinx_acu15eg
+    BoardName: "Alinx ACU15EG SOM"
+    BoardProducer: alinx
+    Chip: XCZU15EG-2FFVB1156I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - qspi_flash
+      - emmc_flash
+    BoardURL: https://coderobin.com/products/alinx-acu15eg-xilinx-zynq-ultrascale-mpsoc-xczu15eg-fpga-som
+    Status: active
+  - Id: alinx_acu19eg
+    BoardName: "Alinx ACU19EG SOM"
+    BoardProducer: alinx
+    Chip: XCZU19EG-2FFVC1760I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - qspi_flash
+      - emmc_flash
+    BoardURL: https://coderobin.com/products/alinx-acu19eg-xilinx-zynq-ultrascale-mpsoc-xczu19eg-fpga-som
+    Status: active

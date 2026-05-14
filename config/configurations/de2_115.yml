@@ -6,7 +6,7 @@
 Configuration:
   id: de2_115
   board: de2_115
-  toolchain: quartus_prime
+  toolchain: quartus_prime_lite
 
   attach:
     - peripheral: clock_input

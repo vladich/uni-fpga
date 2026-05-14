@@ -1,0 +1,23 @@
+# Xilinx (AMD) / Spartan 6 — chip registry
+# 45 nm low-cost FPGA (2009). Vivado dropped it; ISE 14.7 last.
+
+Producer: Xilinx (AMD)
+Family: Spartan 6
+Description: 45 nm low-cost FPGA (2009). Vivado dropped it; ISE 14.7 last.
+DefaultToolchains:
+  - ise[*]
+  - nextpnr_openxc7[*]
+Chips:
+  - Id: XC6SLX150-2CSG484C
+  - Id: XC6SLX150-2FGG484C
+  - Id: XC6SLX150-3FGG484I
+  - Id: XC6SLX16-2CSG324C
+  - Id: XC6SLX16-2FTG256C
+  - Id: XC6SLX16-CSG324
+  - Id: XC6SLX25-2FTG256C
+  - Id: XC6SLX45-2CSG324C
+  - Id: XC6SLX45-2FGG484C
+  - Id: XC6SLX45-3CSG324C
+  - Id: XC6SLX45T-3FGG484C
+  - Id: XC6SLX9-2TQG144C
+  - Id: XC6SLX9-TQG144

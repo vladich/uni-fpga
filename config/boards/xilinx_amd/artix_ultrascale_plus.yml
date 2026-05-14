@@ -1,0 +1,111 @@
+# Xilinx (AMD) / Artix Ultrascale+
+
+Producer: Xilinx (AMD)
+Family: Artix Ultrascale+
+Description: (generated)
+Boards:
+  - Id: avnet_auboard_15p
+    BoardName: AUBoard 15P
+    BoardProducer: avnet
+    Chip: XCAU15P-2FFVB676E
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - qspi_flash
+      - ethernet_phy_10_100
+      - hdmi_output
+      - sfp_cage
+      - pcie_endpoint
+      - fmc_lpc
+      - mikrobus_socket
+      - usb_uart_bridge
+      - usb_jtag_bridge
+      - barrel_jack_input
+    BoardURL: https://www.avnet.com/americas/products/avnet-boards/avnet-board-families/auboard-15p-fpga-development-kit/
+    Status: active
+  - Id: opalkelly_xem8320_au25p
+    BoardName: XEM8320-AU25P
+    BoardProducer: opal_kelly
+    Chip: XCAU25P-2E
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    ExtraProgrammers:
+      - openFPGALoader[*]
+    Features:
+      - ddr4_memory
+      - qspi_flash
+      - usb_3_host
+      - syzygy_standard
+      - syzygy_txr4
+      - sfp_cage
+      - usb_powered
+      - user_leds
+    BoardURL: https://opalkelly.com/products/fpga-integration/XEM8320
+    Status: active
+  - Id: alinx_axau15
+    BoardName: "Alinx AXAU15"
+    BoardProducer: alinx
+    Chip: XCAU15P-2FFVB676E
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - qspi_flash
+      - sd_card_socket
+      - pcie_endpoint
+      - fmc_hpc
+      - ethernet_phy_gigabit
+      - usb_uart_bridge
+      - user_leds
+      - user_buttons
+    BoardURL: https://coderobin.com/products/alinx-axau15-xilinx-artix-ultrascale-xcau15p-fpga-development-board
+    Status: active
+    Notes: "Top-end Artix UltraScale+ SoM+carrier kit. Industrial-grade equivalent XCAU15P-2FFVB676I noted on product page; mapped to existing XCAU15P-2FFVB676E in registry."
+  - Id: alinx_axau25
+    BoardName: "Alinx AXAU25"
+    BoardProducer: alinx
+    Chip: XCAU25P-2E
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - qspi_flash
+      - sd_card_socket
+      - pcie_endpoint
+      - fmc_hpc
+      - ethernet_phy_gigabit
+      - usb_uart_bridge
+      - user_leds
+      - user_buttons
+    BoardURL: https://coderobin.com/products/alinx-axau25-xilinx-artix-ultrascale-xcau25p-fpga-development-board
+    Status: active
+    Notes: "ACAU25 SOM + carrier. Industrial XCAU25P-2FFVB676I per product page; mapped to registry XCAU25P-2E."
+  - Id: alinx_acau15
+    BoardName: "Alinx ACAU15 SOM"
+    BoardProducer: alinx
+    Chip: XCAU15P-2FFVB676E
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - qspi_flash
+    BoardURL: https://coderobin.com/products/alinx-acau15-xilinx-artix-ultrascale-xcau15p-fpga-som
+    Status: active
+  - Id: alinx_acau25
+    BoardName: "Alinx ACAU25 SOM"
+    BoardProducer: alinx
+    Chip: XCAU25P-2E
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - qspi_flash
+    BoardURL: https://coderobin.com/products/alinx-acau25-xilinx-artix-ultrascale-xcau25p-fpga-som
+    Status: active

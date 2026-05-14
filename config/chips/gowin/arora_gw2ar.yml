@@ -1,0 +1,11 @@
+# Gowin / Arora/GW2AR — chip registry
+# GW2A with embedded SDRAM.
+
+Producer: Gowin
+Family: Arora/GW2AR
+Description: GW2A with embedded SDRAM.
+DefaultToolchains:
+  - gowin_eda[*]
+  - nextpnr_apicula[*]
+Chips:
+  - Id: GW2AR-LV18QN88C8/I7

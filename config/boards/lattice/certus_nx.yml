@@ -1,0 +1,23 @@
+# Lattice / Certus-NX
+# Industrial Nexus FPGA. Radiant + nextpnr-nexus.
+
+Producer: Lattice
+Family: Certus-NX
+Description: Industrial Nexus FPGA. Radiant + nextpnr-nexus.
+Boards:
+  - Id: lattice_certusnx_versa
+    BoardName: Certus-NX Versa Eval Board
+    BoardProducer: lattice
+    Chip: LFD2NX-40-7BBG196C
+    Bridges:
+      - jtag
+    Programmer: openFPGALoader
+    BoardURL: https://www.latticesemi.com/products/developmentboardsandkits/certus-nx-versa-eval-board
+  - Id: lattice_crosslink_nx_evn
+    BoardName: CrossLink-NX Evaluation Board
+    BoardProducer: lattice
+    Chip: LIFCL-40-9BG400C
+    Bridges:
+      - jtag
+    Programmer: openFPGALoader
+    BoardURL: https://www.latticesemi.com/products/developmentboardsandkits/crosslink-nx-evaluation-board

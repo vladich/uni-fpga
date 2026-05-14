@@ -1,0 +1,59 @@
+# Altera (Intel) / Cyclone II
+# 90 nm low-cost FPGA (2004). Quartus II 13.0sp1 last.
+
+Producer: Altera (Intel)
+Family: Cyclone II
+Description: 90 nm low-cost FPGA (2004). Quartus II 13.0sp1 last.
+Boards:
+  - Id: de1
+    BoardName: DE1
+    Devices:
+      - hynix_hy57v641620
+      - wolfson_wm8731
+      - adi_adv7123
+      - usb_blaster_ii_built_in
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+      - seven_seg_module_shared
+    BoardProducer: terasic
+    Chip: EP2C20F484C7
+    Bridges:
+      - jtag
+    Programmer: quartus_pgm
+    BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&CategoryNo=53&No=83
+  - Id: de2
+    BoardName: DE2
+    Devices:
+      - hynix_hy57v641620
+      - wolfson_wm8731
+      - adi_adv7123
+      - usb_blaster_ii_built_in
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+      - seven_seg_module_shared
+    BoardProducer: terasic
+    Chip: EP2C35F672C6
+    Bridges:
+      - jtag
+    Programmer: quartus_pgm
+    BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&CategoryNo=53&No=30
+  - Id: terasic_de2_70
+    BoardName: DE2-70
+    Devices:
+      - hynix_hy57v641620
+      - wolfson_wm8731
+      - adi_adv7123
+      - usb_blaster_ii_built_in
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+      - seven_seg_module_shared
+      - adi_adv7180
+    BoardProducer: terasic
+    Chip: EP2C70F896C6N
+    Bridges:
+      - jtag
+    Programmer: quartus_pgm
+    BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&CategoryNo=53&No=226

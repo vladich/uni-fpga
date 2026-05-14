@@ -1,0 +1,11 @@
+# Altera (Intel) / Agilex 3 — chip registry
+# Newest low-cost Agilex (2024). Quartus Prime Pro.
+
+Producer: Altera (Intel)
+Family: Agilex 3
+Description: Newest low-cost Agilex (2024). Quartus Prime Pro.
+DefaultToolchains:
+  - quartus_prime_pro[*]
+Chips:
+  - Id: A3CZ100BB18AE6SR0
+  - Id: A3XD025BB18AE3VR0

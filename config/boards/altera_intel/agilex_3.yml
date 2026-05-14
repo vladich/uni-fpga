@@ -1,0 +1,49 @@
+# Altera (Intel) / Agilex 3
+# Newest low-cost Agilex (2024). Quartus Prime Pro.
+
+Producer: Altera (Intel)
+Family: Agilex 3
+Description: Newest low-cost Agilex (2024). Quartus Prime Pro.
+Boards:
+  - Id: intel_agilex3_devkit
+    BoardName: Agilex 3 FPGA Development Kit
+    Devices:
+      - micron_mt40a256m16
+      - micron_n25q256a
+      - microchip_ksz9031rnx
+      - usb_blaster_ii_built_in
+      - silabs_cp2102
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+    BoardProducer: intel_altera
+    Chip: A3CZ100BB18AE6SR0
+    Bridges:
+      - jtag
+    Programmer: quartus_pgm
+    BoardURL: https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/agilex/3.html
+  - Id: terasic_de23_lite
+    BoardName: DE23-Lite Development Kit
+    Devices:
+      - winbond_w9825g6kh
+      - usb_blaster_ii_built_in
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+      - seven_seg_module_shared
+      - ti_adc128s022
+    BoardProducer: terasic
+    Chip: A3XD025BB18AE3VR0
+    Bridges:
+      - usb-jtag
+    Programmer: quartus_pgm
+    Features:
+      - hdmi_output
+      - usb_jtag_bridge
+      - user_buttons
+      - dip_switches
+      - seven_segment_display
+      - user_leds
+    BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&No=1383
+    Status: active

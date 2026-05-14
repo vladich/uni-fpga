@@ -1,0 +1,23 @@
+# alinx_ax7z010 pin map.
+# Source type: github_xdc
+#   https://github.com/alinxalinx/AX7Z010B_2023.1/blob/master/course_s1_fpga/11_linux_base/Vivado/auto_create_project/src/constraints/led.xdc
+#   https://github.com/alinxalinx/AX7Z010B_2023.1/blob/master/course_s1_fpga/11_linux_base/Vivado/auto_create_project/src/constraints/key.xdc
+
+Board:
+  id: alinx_ax7z010
+  pinBanks:
+    sys_clk:
+      pins: U18
+      frequency_mhz: 50
+    onboard_leds:
+      pins:
+      - J14
+      - K14
+      - J18
+      - H18
+    onboard_buttons:
+      pins:
+      - M15
+      - M14
+      - L17
+      - L16

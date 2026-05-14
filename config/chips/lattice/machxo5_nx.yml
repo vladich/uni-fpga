@@ -1,0 +1,11 @@
+# Lattice / MachXO5-NX — chip registry
+# Nexus-based MachXO5. Radiant.
+
+Producer: Lattice
+Family: MachXO5-NX
+Description: Nexus-based MachXO5. Radiant.
+DefaultToolchains:
+  - lattice_radiant[*]
+  - nextpnr_nexus[*]
+Chips:
+  - Id: LFMXO5-100T-9MG400I

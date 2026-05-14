@@ -64,6 +64,10 @@ output_files/
 *.qws
 
 # IDE
+.idea/
 .idea/workspace.xml
 .vscode/
 *.swp
+
+# Claude Code runtime state
+.claude/

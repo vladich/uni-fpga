@@ -1,0 +1,25 @@
+# alinx_axu2cgb pin map.
+# Source type: github_xdc
+#   https://github.com/alinxalinx/AXU2CGA_AXU2CGB/blob/master/vivado/auto_create_project/src/constraints/gpio.xdc
+#   https://github.com/alinxalinx/AXU2CGA_AXU2CGB/blob/master/vivado/auto_create_project/src/constraints/system.xdc
+
+Board:
+  id: alinx_axu2cgb
+  pinBanks:
+    sys_clk:
+      pins: AB11
+      frequency_mhz: 25
+    onboard_leds:
+      pins:
+      - W13
+      - Y12
+      - AA12
+      - AB13
+    onboard_buttons:
+      pins:
+      - AA13
+      - AE14
+      - AE15
+      - AG14
+    fan_pwm:
+      pins: W12

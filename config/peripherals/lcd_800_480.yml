@@ -25,7 +25,7 @@ Peripheral:
         color_depth: 888
   driver:
     module: lcd_800_480
-    file: peripherals/lcd_800_480.sv
+    file: rtl/peripherals/lcd_800_480.sv
     port_map:
       PixelClk:  context.clk
       nRST:      context.rst_n

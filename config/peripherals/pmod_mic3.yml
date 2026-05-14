@@ -12,7 +12,7 @@ Peripheral:
     - capability: audio_in
   driver:
     module: digilent_pmod_mic3_spi_receiver
-    file: peripherals/digilent_pmod_mic3_spi_receiver.sv
+    file: rtl/peripherals/digilent_pmod_mic3_spi_receiver.sv
     parameters:
       clk_mhz: context.clk_mhz
     port_map:

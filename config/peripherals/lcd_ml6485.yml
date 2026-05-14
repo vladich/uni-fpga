@@ -17,7 +17,7 @@ Peripheral:
         color_depth: 565
   driver:
     module: lcd_480_272_ml6485
-    file: peripherals/lcd_480_272_ml6485.sv
+    file: rtl/peripherals/lcd_480_272_ml6485.sv
     port_map:
       PixelClk:  context.clk
       nRST:      context.rst_n

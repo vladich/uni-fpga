@@ -1,0 +1,30 @@
+# alinx_ax7010 pin map.
+# Source type: github_xdc
+#   https://github.com/alinxalinx/AX7010_2023.1/blob/master/course_s1_fpga/01_led/auto_create_project/src/constraints/led.xdc
+#   https://github.com/alinxalinx/AX7010_2023.1/blob/master/course_s1_fpga/06_key/auto_create_project/src/constraints/key.xdc
+#   https://github.com/alinxalinx/AX7010_2023.1/blob/master/course_s1_fpga/10_rs232/auto_create_project/src/constraints/rs232.xdc
+
+Board:
+  id: alinx_ax7010
+  pinBanks:
+    sys_clk:
+      pins: U18
+      frequency_mhz: 50
+    cpu_resetn:
+      pins: N15
+    onboard_leds:
+      pins:
+      - M14
+      - M15
+      - K16
+      - J16
+    onboard_buttons:
+      pins:
+      - N15
+      - N16
+      - T17
+      - R17
+    onboard_uart:
+      pins:
+        tx: K19
+        rx: J19

@@ -1,0 +1,109 @@
+# Lattice / ICE40 UltraPlus
+# UP5K/UWG30. Both iCEcube2 and Radiant cover this on vendor side.
+
+Producer: Lattice
+Family: ICE40 UltraPlus
+Description: UP5K/UWG30. Both iCEcube2 and Radiant cover this on vendor side.
+Boards:
+  - Id: blackice_mx
+    BoardName: BlackIce MX
+    BoardProducer: folknology
+    Chip: iCE40UP5K-SG48
+    Bridges:
+      - stm32-bridge
+    Programmer: iceprog
+    BoardURL: https://github.com/folknology/BlackIceMX
+  - Id: bunnie_precursor_ec
+    BoardName: Precursor EC (iCE40UP5K co-controller)
+    BoardProducer: bunnie_studios
+    Chip: iCE40UP5K-SG48
+    Bridges:
+      - jtag
+    Programmer: iceprog
+    ExtraProgrammers:
+      - openFPGALoader[*]
+    Features:
+      - spi_flash
+    BoardURL: https://www.crowdsupply.com/sutajio-kosagi/precursor
+    Status: active
+  - Id: fomu_pvt
+    BoardName: Fomu PVT
+    BoardProducer: foosn
+    Chip: iCE40UP5K-UWG30
+    Bridges:
+      - jtag
+    Programmer: dfu_util
+    BoardURL: https://www.crowdsupply.com/sutajio-kosagi/fomu
+  - Id: greatscott_glasgow_revc
+    BoardName: Glasgow Interface Explorer Rev C
+    BoardProducer: great_scott_gadgets
+    Chip: ICE40HX8K-BG121
+    Bridges:
+      - jtag
+    Programmer: iceprog
+    BoardURL: https://www.crowdsupply.com/1bitsquared/glasgow
+  - Id: icebreaker
+    BoardName: iCEBreaker
+    BoardProducer: onebitsquared
+    Chip: iCE40UP5K-SG48
+    Bridges:
+      - ft2232h-spi
+      - jtag
+    Programmer: iceprog
+    BoardURL: https://1bitsquared.com/products/icebreaker
+  - Id: lattice_ice40_up5k_mdp
+    BoardName: iCE40 UltraPlus MDP
+    BoardProducer: lattice
+    Chip: iCE40UP5K-SG48
+    Bridges:
+      - jtag
+    Programmer: iceprog
+    BoardURL: https://www.latticesemi.com/products/developmentboardsandkits/ice40ultraplusmobiledevplatform
+  - Id: lattice_ice40up_evalkit
+    BoardName: iCE40 UltraPlus Evaluation Kit
+    BoardProducer: lattice
+    Chip: iCE40UP5K-B-EVN
+    Bridges:
+      - jtag
+    Programmer: iceprog
+    BoardURL: https://www.latticesemi.com/products/developmentboardsandkits/ice40ultraplusbreakoutboard
+  - Id: olimex_iceblock
+    BoardName: iCEblock
+    BoardProducer: olimex
+    Chip: iCE40UP5K-SG48
+    Bridges:
+      - jtag
+    Programmer: iceprog
+    BoardURL: https://www.olimex.com/Products/FPGA/iCE40/iCEblock/
+  - Id: onebitsquared_icebreaker_bitsy
+    BoardName: iCEBreaker Bitsy
+    BoardProducer: onebitsquared
+    Chip: iCE40UP5K-SG48
+    Bridges:
+      - jtag
+    Programmer: dfu_util
+    BoardURL: https://1bitsquared.com/products/icebreaker-bitsy
+  - Id: tinyfpga_bx
+    BoardName: TinyFPGA BX
+    BoardProducer: tinyfpga
+    Chip: iCE40LP8K-CM81
+    Bridges: []
+    Bootloader: usb-dfu
+    Programmer: dfu_util
+    BoardURL: https://tinyfpga.com/bx/guide.html
+  - Id: upduino_v3
+    BoardName: Upduino v3.0
+    BoardProducer: tinyvision_ai
+    Chip: iCE40UP5K-SG48
+    Bridges:
+      - ft232h-spi
+    Programmer: iceprog
+    BoardURL: https://tinyvision.ai/products/upduino-v3-0
+  - Id: upduino_v3_1
+    BoardName: Upduino v3.1
+    BoardProducer: tinyvision_ai
+    Chip: iCE40UP5K-SG48
+    Bridges:
+      - jtag
+    Programmer: iceprog
+    BoardURL: https://tinyvision.ai/products/upduino-v3-1

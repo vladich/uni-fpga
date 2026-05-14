@@ -5,7 +5,7 @@ virtual-device interface.
 For each design:
   1. Read basics-graphics-music/designs/<section>/<design>/design_top.sv.
   2. Replace its module header (parameters + ports) with the uni-fpga
-     canonical signature (matches peripherals/design_top_interface.sv).
+     canonical signature (matches rtl/peripherals/design_top_interface.sv).
   3. Inside the preserved body:
        - rename `key` -> `btn`, `w_key` -> `w_btn`
        - rename `mic` (24-bit) -> `mic_sample`; drop or tie off `mic_valid`

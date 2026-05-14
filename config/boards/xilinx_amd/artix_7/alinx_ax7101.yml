@@ -1,0 +1,26 @@
+# alinx_ax7101 pin map.
+# Source type: github_xdc
+#   https://github.com/alinxalinx/AX7101/blob/master/SRC/01_led_test/led_test/led_test.srcs/constrs_1/new/led.xdc
+#   https://github.com/alinxalinx/AX7101/blob/master/SRC/02_key_test/key_test/constrs_1/new/key.xdc
+#   https://github.com/alinxalinx/AX7101/blob/master/SRC/04_uart_test/uart_test/uart_test.srcs/constrs_1/new/uart_test.xdc
+
+Board:
+  id: alinx_ax7101
+  pinBanks:
+    sys_clk:
+      pins: R4
+      frequency_mhz: 200
+    cpu_resetn:
+      pins: T6
+    onboard_leds:
+      pins:
+      - E17
+      - F16
+    onboard_buttons:
+      pins:
+      - D16
+      - E16
+    onboard_uart:
+      pins:
+        tx: AB15
+        rx: AA15

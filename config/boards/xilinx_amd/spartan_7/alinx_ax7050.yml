@@ -1,0 +1,31 @@
+# alinx_ax7050 pin map.
+# Source type: pdf_user_manual
+#   https://www.manualslib.com/manual/2238745/Alinx-Ax7050.html?page=15
+#   https://www.manualslib.com/manual/2238745/Alinx-Ax7050.html?page=41
+#   https://www.manualslib.com/manual/2238745/Alinx-Ax7050.html?page=49
+#   https://www.manualslib.com/manual/2238745/Alinx-Ax7050.html?page=50
+
+Board:
+  id: alinx_ax7050
+  pinBanks:
+    sys_clk_diff:
+      pins:
+        p: AA6
+        n: AB6
+      frequency_mhz: 200
+    onboard_leds:
+      pins:
+      - H16
+      - G16
+      - K15
+      - J15
+    onboard_buttons:
+      pins:
+      - M15
+      - L15
+      - AB19
+      - AA21
+    onboard_uart:
+      pins:
+        tx: D11
+        rx: B16

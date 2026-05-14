@@ -1,0 +1,30 @@
+# alinx_ax7z035 pin map.
+# Source type: github_xdc
+#   https://github.com/alinxalinx/AX7Z035B_2023.1/blob/master/course_s1_fpga/01_led/auto_create_project/src/constraints/led.xdc
+#   https://github.com/alinxalinx/AX7Z035B_2023.1/blob/master/course_s1_fpga/06_key/auto_create_project/src/constraints/key.xdc
+#   https://github.com/alinxalinx/AX7Z035B_2023.1/blob/master/course_s1_fpga/09_rs232/auto_create_project/src/constraints/rs232.xdc
+
+Board:
+  id: alinx_ax7z035
+  pinBanks:
+    sys_clk:
+      pins: C8
+      frequency_mhz: 200
+    cpu_resetn:
+      pins: AF15
+    onboard_leds:
+      pins:
+      - AB15
+      - AB14
+      - AF13
+      - AE13
+    onboard_buttons:
+      pins:
+      - AF15
+      - AF14
+      - AD14
+      - AC14
+    onboard_uart:
+      pins:
+        tx: AA15
+        rx: AA14

@@ -1,0 +1,10 @@
+# NanoXplore / NG-LARGE — chip registry
+# Rad-hard European FPGA, larger. NanoXmap.
+
+Producer: NanoXplore
+Family: NG-LARGE
+Description: Rad-hard European FPGA, larger. NanoXmap.
+DefaultToolchains:
+  - nanoxmap[*]
+Chips:
+  - Id: NG-LARGE-CG484

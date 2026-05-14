@@ -1,0 +1,402 @@
+# Xilinx (AMD) / Kintex 7
+# 28 nm mid-range 7-series. Vivado + partial openXC7.
+
+Producer: Xilinx (AMD)
+Family: Kintex 7
+Description: 28 nm mid-range 7-series. Vivado + partial openXC7.
+Boards:
+  - Id: alinx_ax7203
+    BoardName: AX7203
+    BoardProducer: alinx
+    Chip: XC7K325T-2FFG676I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://alinx.com/en/detail/8
+  - Id: alinx_ax7k325
+    BoardName: AX7K325
+    BoardProducer: alinx
+    Chip: XC7K325T-2FFG676I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://alinx.com/en/detail/10
+  - Id: edge_kintex_7
+    BoardName: EDGE Kintex 7 (160T)
+    BoardProducer: invent_logics
+    Chip: XC7K160T-2FFG676C
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr3_memory
+      - usb_3_host
+      - usb_uart_bridge
+      - usb_jtag_bridge
+      - qspi_flash
+      - user_leds
+      - user_buttons
+      - dip_switches
+      - barrel_jack_input
+    BoardURL: https://allaboutfpga.com/product/edge-kintex-7-fpga-development-board/
+    Status: active
+  - Id: enclustra_mars_kx2
+    BoardName: Mars KX2
+    BoardProducer: enclustra
+    Chip: XC7K160T-2FFG676I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://www.enclustra.com/en/products/fpga-modules/mars-kx2/
+  - Id: enclustra_mercury_kx1
+    BoardName: Mercury KX1
+    BoardProducer: enclustra
+    Chip: XC7K160T-2FFG676I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://www.enclustra.com/en/products/fpga-modules/mercury-kx1/
+  - Id: enclustra_mercury_kx2
+    BoardName: Mercury KX2
+    BoardProducer: enclustra
+    Chip: XC7K325T-2FFG900I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://www.enclustra.com/en/products/fpga-modules/mercury-kx2/
+  - Id: genesys_2
+    BoardName: Genesys 2
+    Devices:
+      - ftdi_ft2232h
+      - ftdi_ft232r
+      - realtek_rtl8211e
+      - microsd_socket_generic
+      - tmds_direct
+      - pushbutton_smd_generic
+      - dip_switch_generic
+      - led_discrete_generic
+      - vga666_resistor_dac
+      - micron_mt41j256m16
+      - spansion_s25fl256s
+      - ti_tusb1210
+      - ti_tmds141
+      - adi_adau1761
+      - univision_ug2832hsweg04
+      - microchip_pic24fj128_usb_host
+    BoardProducer: digilent
+    Chip: XC7K325TFFG900-2
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://digilent.com/reference/programmable-logic/genesys-2/start
+  - Id: htg_k325
+    BoardName: HTG-K325 Kintex-7 PCIe Development Board
+    BoardProducer: hitech_global
+    Chip: XC7K325T-2FFG900C
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - pcie_endpoint
+      - fmc_hpc
+      - ddr3_memory
+      - qspi_flash
+      - usb_uart_bridge
+      - jtag_header
+    BoardURL: https://www.hitechglobal.com/Boards/Kintex7_PCIExpress.htm
+    Status: active
+  - Id: htg_k700
+    BoardName: HTG-K700 Kintex-7 PCIe Dev Board K410T
+    BoardProducer: hitech_global
+    Chip: XC7K410T-2FFG900C
+    Bridges:
+      - pcie-jtag
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr3_memory
+      - pcie_endpoint
+      - fmc_lpc
+      - usb_uart_bridge
+      - usb_jtag_bridge
+    BoardURL: https://www.hitechglobal.com/Boards/Kintex-7_PCIE.htm
+    Status: active
+  - Id: numato_telesto
+    BoardName: Numato Telesto Kintex-7 FPGA Development Board
+    BoardProducer: numato_lab
+    Chip: XC7K160T-2FFG676C
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - usb_jtag_bridge
+      - usb_uart_bridge
+      - ddr3_memory
+      - qspi_flash
+      - pcie_endpoint
+      - fmc_lpc
+      - user_leds
+    BoardURL: https://numato.com/product/telesto-kintex-7-fpga-development-board/
+    Status: active
+  - Id: opalkelly_xem7360_k160t
+    BoardName: XEM7360-K160T
+    BoardProducer: opal_kelly
+    Chip: XC7K160T-1
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    ExtraProgrammers:
+      - openFPGALoader[*]
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - usb_3_host
+      - usb_powered
+      - user_leds
+    BoardURL: https://opalkelly.com/products/fpga-integration/XEM7360
+    Status: active
+  - Id: qmtech_kintex7_325t_core
+    BoardName: Kintex-7 325T Core Board
+    BoardProducer: qmtech
+    Chip: XC7K325T-2FFG676I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://qmtech.aliexpress.com/store/1199788
+  - Id: qmtech_kintex7_410t_core
+    BoardName: Kintex-7 410T Core Board
+    BoardProducer: qmtech
+    Chip: XC7K410T-2FFG676I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://qmtech.aliexpress.com/store/1199788
+  - Id: qmtech_kintex_7
+    BoardName: QMtech Kintex 7
+    BoardProducer: qmtech
+    Chip: xc7k325tffg676-3
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+  - Id: techway_pfp_kx7_plus_325
+    BoardName: PFP-KX7+ 325T (Eclypse-K7 variant)
+    BoardProducer: techway
+    Chip: XC7K325T-2FFG900
+    Bridges:
+      - jtag
+      - pcie-jtag
+    Programmer: vivado_hw
+    ExtraProgrammers:
+      - openFPGALoader[*]
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - pcie_endpoint
+      - fmc_plus
+      - jtag_header
+    BoardURL: https://www.techway.com/p/fpga-board-pcie-with-fmc-slot/
+    Status: active
+  - Id: techway_pfp_kx7_plus_410
+    BoardName: PFP-KX7+ 410T
+    BoardProducer: techway
+    Chip: XC7K410T-2FFG900
+    Bridges:
+      - jtag
+      - pcie-jtag
+    Programmer: vivado_hw
+    ExtraProgrammers:
+      - openFPGALoader[*]
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - pcie_endpoint
+      - fmc_plus
+      - jtag_header
+    BoardURL: https://www.techway.com/p/fpga-board-pcie-with-fmc-slot/
+    Status: active
+  - Id: trenz_te0741
+    BoardName: TE0741
+    Devices:
+      - micron_mt41k256m16
+      - micron_n25q256a
+    BoardProducer: trenz_electronic
+    Chip: XC7K160T-2FFG676I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://shop.trenz-electronic.de/en/Products/Trenz-Electronic/TE07XX-Kintex-FPGA/
+  - Id: trenz_te0741_k160t
+    BoardName: TE0741 Kintex-7 160T SoM
+    Devices:
+      - micron_mt41k256m16
+      - micron_n25q256a
+    BoardProducer: trenz_electronic
+    Chip: XC7K160T-2FBG676I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - qspi_flash
+      - jtag_header
+    BoardURL: https://www.trenz-electronic.de/en/Products/Trenz-Electronic/TE0741-Kintex-7/
+    Status: active
+  - Id: trenz_te0741_k325t
+    BoardName: TE0741 Kintex-7 325T SoM
+    Devices:
+      - micron_mt41k256m16
+      - micron_n25q256a
+    BoardProducer: trenz_electronic
+    Chip: XC7K325T-2FBG676I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - qspi_flash
+      - jtag_header
+    BoardURL: https://www.trenz-electronic.de/en/Products/Trenz-Electronic/TE0741-Kintex-7/
+    Status: active
+  - Id: trenz_te0741_k410t
+    BoardName: TE0741 Kintex-7 410T SoM
+    Devices:
+      - micron_mt41k256m16
+      - micron_n25q256a
+    BoardProducer: trenz_electronic
+    Chip: XC7K410T-2FBG676I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - qspi_flash
+      - jtag_header
+    BoardURL: https://www.trenz-electronic.de/en/Products/Trenz-Electronic/TE0741-Kintex-7/
+    Status: active
+  - Id: trenz_te0741_k70t
+    BoardName: TE0741 Kintex-7 70T SoM
+    Devices:
+      - micron_mt41k256m16
+      - micron_n25q256a
+    BoardProducer: trenz_electronic
+    Chip: XC7K70T-2FBG676C
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - qspi_flash
+      - jtag_header
+    BoardURL: https://www.trenz-electronic.de/en/Products/Trenz-Electronic/TE0741-Kintex-7/
+    Status: active
+  - Id: trenz_te0745
+    BoardName: TE0745
+    Devices:
+      - micron_mt41k256m16
+      - micron_n25q256a
+    BoardProducer: trenz_electronic
+    Chip: XC7K325T-2FFG676I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://shop.trenz-electronic.de/en/Products/Trenz-Electronic/TE07XX-Kintex-FPGA/
+  - Id: xilinx_kc705
+    BoardName: KC705
+    Devices:
+      - marvell_88e1111
+      - silabs_cp2103
+      - ftdi_ft2232h
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+      - silabs_si5324
+      - micron_n25q128a
+    BoardProducer: xilinx_amd
+    Chip: XC7K325T-2FFG900C
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://www.xilinx.com/products/boards-and-kits/ek-k7-kc705-g.html
+  - Id: xilinx_kc724
+    BoardName: KC724
+    Devices:
+    BoardProducer: xilinx_amd
+    Chip: XC7K480T-2FFG901C
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: https://www.xilinx.com/products/boards-and-kits.html
+  - Id: alinx_ax7325
+    BoardName: "Alinx AX7325"
+    BoardProducer: alinx
+    Chip: XC7K325T-2FFG900I
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - sd_card_socket
+      - sfp_cage
+      - pcie_endpoint
+      - fmc_hpc
+      - ethernet_phy_gigabit
+      - usb_uart_bridge
+      - user_leds
+      - user_buttons
+    BoardURL: https://coderobin.com/products/alinx-ax7325-xilinx-kintex-7-xc7k325-fpga-development-board
+    Status: active
+    Notes: "Companion of AX7203 (already in catalog) — distinct board with FFG900 package."
+  - Id: alinx_av7k300
+    BoardName: "Alinx AV7K300"
+    BoardProducer: alinx
+    Chip: XC7K325T-2FFG900I
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - sd_card_socket
+      - sfp_cage
+      - pcie_endpoint
+      - fmc_hpc
+      - hdmi_input
+      - hdmi_output
+      - ethernet_phy_gigabit
+      - usb_uart_bridge
+      - user_leds
+      - user_buttons
+    BoardURL: https://coderobin.com/products/alinx-av7k300-xilinx-kintex-7-xc7k325-fpga-development-board
+    Status: active
+    Notes: "AV-series carrier; older PCIe ref-design board."
+  - Id: alinx_av7k325
+    BoardName: "Alinx AV7K325"
+    BoardProducer: alinx
+    Chip: XC7K325T-2FFG900I
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - sd_card_socket
+      - sfp_cage
+      - pcie_endpoint
+      - fmc_hpc
+      - ethernet_phy_gigabit
+      - usb_uart_bridge
+      - user_leds
+      - user_buttons
+    BoardURL: https://coderobin.com/products/alinx-av7k325-xilinx-kintex-7-xc7k325-fpga-development-board
+    Status: active
+    Notes: "AV-series carrier; revision of AV7K300."
+  - Id: alinx_ac7k325b
+    BoardName: "Alinx AC7K325B SOM"
+    BoardProducer: alinx
+    Chip: XC7K325T-2FFG900I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr3_memory
+      - qspi_flash
+    BoardURL: https://coderobin.com/products/alinx-ac7K325b-xilinx-kintex-7-xc7k325t-fpga-som
+    Status: active

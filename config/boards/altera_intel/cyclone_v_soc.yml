@@ -1,0 +1,178 @@
+# Altera (Intel) / Cyclone V SoC
+# Cyclone V with hard ARM A9 dual-core (HPS). Quartus Prime.
+
+Producer: Altera (Intel)
+Family: Cyclone V SoC
+Description: Cyclone V with hard ARM A9 dual-core (HPS). Quartus Prime.
+Boards:
+  - Id: alinx_ax545
+    BoardName: AX545
+    BoardProducer: alinx
+    Chip: 5CSEMA5F31C6N
+    Bridges:
+      - jtag
+    Programmer: quartus_pgm
+    BoardURL: https://alinx.com/en/detail/44
+  - Id: de0_nano_soc
+    BoardName: DE0-Nano-SoC
+    Devices:
+      - micron_mt41k256m16
+      - microsd_socket_generic
+      - microchip_ksz9031rnx
+      - usb_blaster_ii_built_in
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+      - adi_adxl345
+      - ti_adc128s022
+    BoardProducer: terasic
+    Chip: 5CSEMA4U23C6N
+    Bridges:
+      - jtag
+    Programmer: quartus_pgm
+    BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&CategoryNo=165&No=941
+  - Id: de10_nano
+    BoardName: DE10-Nano
+    Devices:
+      - micron_mt41k256m16
+      - microchip_ksz9031rnx
+      - adi_adv7513
+      - microsd_socket_generic
+      - usb_blaster_ii_built_in
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+      - ti_adc128s022
+    BoardProducer: terasic
+    Chip: 5CSEBA6U23I7
+    Bridges:
+      - jtag
+    Programmer: quartus_pgm
+    BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&CategoryNo=167&No=1046
+  - Id: de1_soc
+    BoardName: DE1-SoC
+    Devices:
+      - micron_mt41k128m16
+      - winbond_w9825g6kh
+      - wolfson_wm8731
+      - adi_adv7123
+      - microchip_ksz9031rnx
+      - microsd_socket_generic
+      - usb_blaster_ii_built_in
+      - adi_adxl345
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+      - seven_seg_module_shared
+      - ti_adc128s022
+    BoardProducer: terasic
+    Chip: 5CSEMA5F31C6N
+    Bridges:
+      - jtag
+    Programmer: quartus_pgm
+    BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&CategoryNo=165&No=836
+  - Id: intel_cyclonev_soc_devkit
+    BoardName: Cyclone V SoC Development Kit
+    Devices:
+      - micron_mt41k256m16
+      - micron_n25q128a
+      - adi_ssm2603
+      - microchip_ksz9031rnx
+      - usb_blaster_ii_built_in
+      - silabs_cp2102
+      - microsd_socket_generic
+      - emmc_chip_generic
+      - microchip_usb2514b
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+      - lcd_char_16x2
+    BoardProducer: intel_altera
+    Chip: 5CSXFC6D6F31C6N
+    Bridges:
+      - jtag
+    Programmer: quartus_pgm
+    BoardURL: https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/cyclone/v-soc.html
+  - Id: mister_de10nano
+    BoardName: MiSTer (DE10-Nano based)
+    BoardProducer: mister
+    Chip: 5CSEBA6U23I7
+    Bridges:
+      - jtag
+    Programmer: quartus_pgm
+    BoardURL: https://github.com/MiSTer-devel/Wiki_MiSTer
+  - Id: qmtech_cyclonev_soc_5cse_core
+    BoardName: QMtech Cyclone V SoC 5CSEMA6 Core Board
+    BoardProducer: qmtech
+    Chip: 5CSEMA6U23A7N
+    Bridges:
+      - usb-jtag
+    Programmer: quartus_pgm
+    Features:
+      - ddr3_memory
+      - microsd_socket
+      - hdmi_output
+      - ethernet_phy_gigabit
+      - usb_uart_bridge
+    BoardURL: https://qmtech.aliexpress.com/store/1199788
+    Status: active
+  - Id: terasic_atlas_soc
+    BoardName: Atlas-SoC Kit
+    Devices:
+      - micron_mt41k256m16
+      - microsd_socket_generic
+      - microchip_ksz9031rnx
+      - usb_blaster_ii_built_in
+      - adi_adxl345
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+    BoardProducer: terasic
+    Chip: 5CSXFC6D6F31C6N
+    Bridges:
+      - jtag
+    Programmer: quartus_pgm
+    BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&CategoryNo=205&No=941
+  - Id: terasic_de10_standard
+    BoardName: DE10-Standard
+    Devices:
+      - micron_mt41k256m16
+      - winbond_w9825g6kh
+      - adi_ssm2603
+      - adi_adv7123
+      - microchip_ksz9031rnx
+      - microsd_socket_generic
+      - usb_blaster_ii_built_in
+      - adi_adxl345
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+      - seven_seg_module_shared
+      - ti_adc128s022
+    BoardProducer: terasic
+    Chip: 5CSXFC6D6F31C6N
+    Bridges:
+      - jtag
+    Programmer: quartus_pgm
+    BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&No=1081
+  - Id: terasic_sockit
+    BoardName: Terasic SoCKit
+    Devices:
+      - micron_mt41k256m16
+      - adi_ssm2603
+      - adi_adv7123
+      - microchip_ksz9031rnx
+      - microsd_socket_generic
+      - usb_blaster_ii_built_in
+      - adi_adxl345
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+      - seven_seg_module_shared
+      - lt_ltc2308
+    BoardProducer: terasic
+    Chip: 5CSXFC6D6F31C6
+    Bridges:
+      - jtag
+    Programmer: quartus_pgm
+    BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&No=816

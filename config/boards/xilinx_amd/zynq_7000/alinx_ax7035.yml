@@ -1,0 +1,31 @@
+# alinx_ax7035 pin map.
+# Source type: pdf_user_manual
+#   https://www.manualslib.com/manual/2994570/Alinx-Ax7035.html?page=11
+#   https://www.manualslib.com/manual/2994570/Alinx-Ax7035.html?page=29
+#   https://www.manualslib.com/manual/2994570/Alinx-Ax7035.html?page=41
+#   https://www.manualslib.com/manual/2994570/Alinx-Ax7035.html?page=42
+
+Board:
+  id: alinx_ax7035
+  pinBanks:
+    sys_clk:
+      pins: Y18
+      frequency_mhz: 50
+    cpu_resetn:
+      pins: F20
+    onboard_leds:
+      pins:
+      - F19
+      - E21
+      - D20
+      - C20
+    onboard_buttons:
+      pins:
+      - M13
+      - K14
+      - K13
+      - L13
+    onboard_uart:
+      pins:
+        tx: G16
+        rx: G15

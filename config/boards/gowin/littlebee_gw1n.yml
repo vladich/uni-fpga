@@ -1,0 +1,73 @@
+# Gowin / LittleBee/GW1N
+# Small, low-cost Chinese FPGAs (LittleBee series). Gowin EDA + apicula (open).
+
+Producer: Gowin
+Family: LittleBee/GW1N
+Description: Small, low-cost Chinese FPGAs (LittleBee series). Gowin EDA + apicula (open).
+Boards:
+  - Id: gowin_gw1n4_devkit
+    BoardName: GW1N-4 Starter Kit
+    BoardProducer: gowin_semi
+    Chip: GW1N-LV4LQ144C6/I5
+    Bridges:
+      - usb-jtag
+    Programmer: gowin_pgm
+    ExtraProgrammers:
+      - openFPGALoader[*]
+    Features:
+      - user_leds
+      - user_buttons
+      - usb_jtag_bridge
+      - jtag_header
+    BoardURL: https://www.gowinsemi.com/en/support/devkits_detail/1/
+    Status: active
+  - Id: gowin_gw1n9_devkit
+    BoardName: GW1N-9 Starter Kit
+    BoardProducer: gowin_semi
+    Chip: GW1N-LV9EQ144C6/I5
+    Bridges:
+      - usb-jtag
+    Programmer: gowin_pgm
+    ExtraProgrammers:
+      - openFPGALoader[*]
+    Features:
+      - mipi_csi2_input
+      - user_leds
+      - user_buttons
+      - usb_jtag_bridge
+      - jtag_header
+    BoardURL: https://www.gowinsemi.com/en/support/devkits_detail/5/
+    Status: active
+  - Id: gowin_honeycomb_sandbox
+    BoardName: Honeycomb Sandbox
+    BoardProducer: gowin_semi
+    Chip: GW1N-LV4LQ144C6/I5
+    Bridges:
+      - jtag
+    Programmer: openFPGALoader
+    BoardURL: https://www.gowinsemi.com/en/support/devkits_detail/53/
+  - Id: sipeed_tang_nano
+    BoardName: Sipeed Tang Nano
+    BoardProducer: sipeed
+    Chip: GW1N-LV1QN48C6/I5
+    Bridges:
+      - usb-jtag
+    Programmer: gowin_pgm
+    ExtraProgrammers:
+      - openFPGALoader[*]
+    Features:
+      - hyperram
+      - user_leds
+      - user_buttons
+      - usb_uart_bridge
+      - usb_jtag_bridge
+      - usb_powered
+    BoardURL: https://wiki.sipeed.com/hardware/en/tang/Tang-Nano/Nano.html
+    Status: active
+  - Id: tang_nano_1k
+    BoardName: Tang Nano
+    BoardProducer: sipeed
+    Chip: GW1N-1-LV
+    Bridges:
+      - jtag
+    Programmer: openFPGALoader

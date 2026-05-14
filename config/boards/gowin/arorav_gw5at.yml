@@ -1,0 +1,61 @@
+# Gowin / AroraV/GW5AT
+# GW5A with hard RISC-V core.
+
+Producer: Gowin
+Family: AroraV/GW5AT
+Description: GW5A with hard RISC-V core.
+Boards:
+  - Id: gowin_gw5at60_devkit
+    BoardName: GW5AT-60 Video Dev Kit
+    BoardProducer: gowin_semi
+    Chip: GW5AT-LV60PG484AC1/I0
+    Bridges:
+      - usb-jtag
+    Programmer: gowin_pgm_standard
+    ExtraProgrammers:
+      - openFPGALoader[*]
+    Features:
+      - ddr3_memory
+      - hdmi_output
+      - mipi_csi2_input
+      - ethernet_phy_gigabit
+      - user_leds
+      - user_buttons
+      - usb_jtag_bridge
+      - jtag_header
+    BoardURL: https://www.gowinsemi.com/en/support/devkits_detail/73/
+    Status: active
+  - Id: orangepi_msoc
+    BoardName: Orange Pi MSOC
+    BoardProducer: orange_pi
+    Chip: GW5AT-LV138PG484AC1/I0
+    Bridges:
+      - jtag
+    Programmer: openFPGALoader
+  - Id: sipeed_tang_mega_60k
+    BoardName: Sipeed Tang Mega 60K Dock
+    BoardProducer: sipeed
+    Chip: GW5AT-LV60PG484AC1/I0
+    Bridges:
+      - usb-jtag
+    Programmer: gowin_pgm_standard
+    ExtraProgrammers:
+      - openFPGALoader[*]
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - microsd_socket
+      - hdmi_output
+      - mipi_csi2_input
+      - mipi_dsi_output
+      - audio_codec
+      - ethernet_phy_gigabit
+      - usb_3_host
+      - usb_uart_bridge
+      - usb_jtag_bridge
+      - pmod_connector
+      - user_leds
+      - rgb_leds
+      - user_buttons
+    BoardURL: https://wiki.sipeed.com/hardware/en/tang/tang-mega-60k/mega-60k.html
+    Status: active

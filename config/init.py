@@ -68,16 +68,231 @@ def read_toolchains():
     return {t["Id"]: t for t in items}
 
 
-def read_boards_catalog():
-    """Read the master board catalog (config/boards.yml).
+def read_programmers():
+    """Read the registry of programmers from programmers.yml.
 
-    Returns {board_id: catalog_entry} where each catalog_entry has BoardName,
-    BoardProducer, PartProducer, PartFamily, Part. This is the index used for
-    toolchain compatibility checks; the per-board pin map lives in
-    config/boards/<id>.yml.
+    A programmer is a tool that loads a bitstream onto a physical board
+    (over JTAG, USB-DFU, SPI, or board-specific bootloader). It is
+    orthogonal to the toolchain — the same bitstream can often be loaded
+    by either a vendor-bundled programmer or a third-party tool like
+    `openFPGALoader`. See programmers.yml for the full schema."""
+    items = _load_yaml(os.path.join(dir_path, "programmers.yml"), "Programmers")
+    return {p["Id"]: p for p in items}
+
+
+def read_board_producers():
+    """Read the registry of board producers from board_producers.yml.
+
+    A board producer is the manufacturer / maker of a physical dev board
+    (Digilent, Trenz Electronic, Sipeed, …). It is orthogonal to the
+    chip producer (the silicon vendor — AMD/Xilinx, Intel/Altera, etc.).
+    Each board's `BoardProducer:` field references an `Id:` from this
+    registry; `read_board_producers_name_index()` builds a lookup that
+    accepts the canonical Name plus any AKA aliases for migration / legacy
+    references."""
+    items = _load_yaml(os.path.join(dir_path, "board_producers.yml"), "Producers")
+    return {p["Id"]: p for p in items}
+
+
+def read_board_producers_name_index():
+    """Map every known display-name / AKA string to its registry Id.
+
+    Used during the BoardProducer-string-to-Id migration to resolve
+    freeform display strings (e.g. "Xilinx (AMD)", "QMtech", "1BitSquared")
+    back to canonical slug ids. Keys are case-sensitive — call sites
+    should normalize as needed."""
+    producers = read_board_producers()
+    idx = {}
+    for pid, p in producers.items():
+        idx[p.get("Name", pid)] = pid
+        idx[pid] = pid
+        for aka in (p.get("AKA") or []):
+            idx[aka] = pid
+    return idx
+
+
+def validate_board_producers(catalog=None, producers=None):
+    """Verify every board's `BoardProducer:` field references a known
+    producer Id (or, transitionally, a Name / AKA that resolves to one).
+
+    Returns the list of unresolved BoardProducer references — empty list
+    means clean. Useful as a CI gate after editing board catalogs."""
+    if catalog is None:
+        catalog = read_boards_catalog()
+    if producers is None:
+        producers = read_board_producers()
+    idx = read_board_producers_name_index()
+    unresolved = []
+    for bid, b in catalog.items():
+        bp = b.get("BoardProducer")
+        if bp is None:
+            continue
+        if bp not in idx:
+            unresolved.append((bid, bp))
+    return unresolved
+
+
+def read_features():
+    """Read the abstract feature-family registry from features.yml.
+
+    A feature is an abstract family of hardware (e.g. "audio_codec",
+    "ethernet_phy_gigabit", "seven_segment_display") that a board may
+    declare. Each feature optionally maps to one or more Capabilities
+    (config/capabilities/*.yml) that a device of that family could
+    provide to a design.
+
+    Returns {feature_id: feature_info}."""
+    items = _load_yaml(os.path.join(dir_path, "features.yml"), "Features")
+    return {f["Id"]: f for f in items}
+
+
+# Back-compat alias for callers still using the old name.
+def read_board_features():
+    return read_features()
+
+
+def read_peripheral_devices():
+    """Read the specific peripheral devices registry from peripheral_devices.yml.
+
+    A device is a specific physical chip/module (e.g. "TI TLV320AIC23B"
+    audio codec, "Realtek RTL8211FD" Ethernet PHY). Each device tags itself
+    with one Feature (the abstract family it belongs to) and optionally
+    links to one or more PeripheralDrivers in config/peripherals/.
+
+    Returns {device_id: device_info}."""
+    items = _load_yaml(os.path.join(dir_path, "peripheral_devices.yml"), "Devices")
+    return {d["Id"]: d for d in items}
+
+
+def validate_board_features(catalog=None, features=None):
+    """Warn when a board's `Features:` references an unknown feature Id.
+
+    Returns a list of (board_id, unknown_feature) tuples. Empty list
+    means clean. Features are optional on boards; this validator only
+    flags tokens that aren't registered in features.yml."""
+    if catalog is None:
+        catalog = read_boards_catalog()
+    if features is None:
+        features = read_features()
+    unknown = []
+    for bid, b in catalog.items():
+        for tok in (b.get("Features") or []):
+            if tok not in features:
+                unknown.append((bid, tok))
+    return unknown
+
+
+def validate_peripheral_devices(devices=None, features=None, peripherals=None):
+    """Validate every device entry has a valid Feature reference and that
+    each PeripheralDrivers entry resolves.
+
+    Returns a dict with two keys:
+      - "unknown_features": [(device_id, feature_ref), ...]
+      - "unknown_peripherals": [(device_id, peripheral_ref), ...]
     """
-    items = _load_yaml(os.path.join(dir_path, "boards.yml"), "Boards")
-    return {b["Id"]: b for b in items}
+    if devices is None:
+        devices = read_peripheral_devices()
+    if features is None:
+        features = read_features()
+    if peripherals is None:
+        peripherals = read_peripherals()
+    bad_feat = []
+    bad_perif = []
+    for did, d in devices.items():
+        f = d.get("Feature")
+        if f and f not in features:
+            bad_feat.append((did, f))
+        for pref in (d.get("PeripheralDrivers") or []):
+            if pref not in peripherals:
+                bad_perif.append((did, pref))
+    return {"unknown_features": bad_feat, "unknown_peripherals": bad_perif}
+
+
+def validate_board_devices(catalog=None, devices=None):
+    """Verify every Devices entry on every board resolves to a known device Id.
+
+    Returns a list of (board_id, unknown_device_id) tuples; empty list
+    means clean. Devices are optional on boards (population is a slow,
+    research-driven process); this validator only flags entries that
+    reference unknown ids."""
+    if catalog is None:
+        catalog = read_boards_catalog()
+    if devices is None:
+        devices = read_peripheral_devices()
+    unresolved = []
+    for bid, b in catalog.items():
+        for ref in (b.get("Devices") or []):
+            # Devices entries can be plain strings or dicts with {Id, ...}
+            if isinstance(ref, dict):
+                ref_id = ref.get("Id")
+            else:
+                ref_id = ref
+            if ref_id and ref_id not in devices:
+                unresolved.append((bid, ref_id))
+    return unresolved
+
+
+def _walk_board_catalog_files():
+    """Yield (catalog_yml_path, producer_dir_name, family_yml_basename) for
+    every family-catalog file under config/boards/<producer>/<family>.yml.
+
+    Skips files in deeper subdirectories (those are per-board pinmaps) and
+    skips directories whose name starts with `_` (e.g. `_raw/`, used for
+    imported raw constraints)."""
+    base = os.path.join(dir_path, "boards")
+    if not os.path.isdir(base):
+        return
+    for prod_name in sorted(os.listdir(base)):
+        if prod_name.startswith("_"):
+            continue
+        prod_dir = os.path.join(base, prod_name)
+        if not os.path.isdir(prod_dir):
+            continue
+        for fname in sorted(os.listdir(prod_dir)):
+            if not fname.endswith(".yml"):
+                continue
+            fam_path = os.path.join(prod_dir, fname)
+            if not os.path.isfile(fam_path):
+                continue
+            yield fam_path, prod_name, fname[:-4]
+
+
+def read_boards_catalog():
+    """Read every family-catalog file under config/boards/<producer>/<family>.yml
+    and return {board_id: catalog_entry}.
+
+    Each catalog_entry has BoardName, BoardProducer, PartProducer, PartFamily,
+    and Part (or Parts list), optionally Programmer and BoardURL. The
+    PartProducer and PartFamily fields are *injected* from the enclosing
+    family-catalog file's `Producer:` and `Family:` headers — they don't
+    have to be duplicated on every board entry.
+
+    Per-board pinmaps live alongside the catalog file at
+    config/boards/<producer>/<family>/<board_id>.yml."""
+    out = {}
+    for fam_path, prod_name, fam_slug in _walk_board_catalog_files():
+        try:
+            with open(fam_path) as f:
+                data = yaml.safe_load(f)
+        except yaml.YAMLError as exc:
+            raise ConfigError("YAML parse error in {p}: {e}".format(p=fam_path, e=exc))
+        if not data:
+            continue
+        producer = data.get("Producer")
+        family = data.get("Family")
+        boards = data.get("Boards") or []
+        for b in boards:
+            if "Id" not in b:
+                log.warning("Skipping board with no Id in %s", fam_path)
+                continue
+            entry = dict(b)
+            entry.setdefault("PartProducer", producer)
+            entry.setdefault("PartFamily", family)
+            entry["_catalog_path"] = fam_path  # for pinmap lookup
+            entry["_producer_dir"] = prod_name
+            entry["_family_dir"] = fam_slug
+            out[b["Id"]] = entry
+    return out
 
 
 # Back-compat alias.
@@ -85,12 +300,23 @@ read_boards = read_boards_catalog
 
 
 def read_board_pinmap(board_id):
-    """Load the per-board pin-map YAML (config/boards/<id>.yml).
+    """Load the per-board pin-map YAML for `board_id`.
 
-    Returns the inner Board dict (with id, fpga, defaults, pinBanks) or None
-    when the file is missing.
-    """
-    path = os.path.join(dir_path, "boards", board_id + ".yml")
+    Pinmaps live at config/boards/<producer>/<family>/<board_id>.yml in
+    the hierarchical layout. We consult the catalog to learn the
+    producer/family directory for the given board, then look up the file.
+
+    Returns the inner Board dict (with id, fpga, defaults, pinBanks) or
+    None when no pinmap file exists for this board."""
+    catalog = read_boards_catalog()
+    entry = catalog.get(board_id)
+    if entry is None:
+        return None
+    prod_dir = entry.get("_producer_dir")
+    fam_dir = entry.get("_family_dir")
+    if not prod_dir or not fam_dir:
+        return None
+    path = os.path.join(dir_path, "boards", prod_dir, fam_dir, board_id + ".yml")
     if not os.path.exists(path):
         return None
     try:
@@ -101,17 +327,177 @@ def read_board_pinmap(board_id):
     return (data or {}).get("Board")
 
 
-def read_parts():
-    """Read the list of families and parts from parts.yml."""
-    items = _load_yaml(os.path.join(dir_path, "parts.yml"), "Parts")
-    parts_map = {}
-    for part in items:
-        family_map = {}
-        for family in part.get("Families", []):
-            if "Toolchains" in family:
-                family_map[family["Family"]] = family["Toolchains"]
-        parts_map[part["Producer"]] = family_map
-    return parts_map
+def _walk_chip_registry_files():
+    """Yield (path, producer_dir, family_yml_basename) for every chip
+    registry file under config/chips/<producer>/<family>.yml."""
+    base = os.path.join(dir_path, "chips")
+    if not os.path.isdir(base):
+        return
+    for prod_name in sorted(os.listdir(base)):
+        if prod_name.startswith("_"):
+            continue
+        prod_dir = os.path.join(base, prod_name)
+        if not os.path.isdir(prod_dir):
+            continue
+        for fname in sorted(os.listdir(prod_dir)):
+            if not fname.endswith(".yml"):
+                continue
+            yield os.path.join(prod_dir, fname), prod_name, fname[:-4]
+
+
+def read_chips():
+    """Read every chip registry file under config/chips/<producer>/<family>.yml
+    and return {chip_id: chip_info}.
+
+    Each chip_info has PartProducer, PartFamily, Toolchains (chip-level
+    overrides, parsed as [{id, version_constraint}, ...]), and any other
+    metadata from the chip entry. Chips inherit DefaultToolchains from
+    their family file when they don't declare their own."""
+    out = {}
+    for fam_path, prod_dir, fam_slug in _walk_chip_registry_files():
+        try:
+            with open(fam_path) as f:
+                data = yaml.safe_load(f)
+        except yaml.YAMLError as exc:
+            raise ConfigError("YAML parse error in {p}: {e}".format(p=fam_path, e=exc))
+        if not data:
+            continue
+        producer = data.get("Producer")
+        family = data.get("Family")
+        default_tcs = data.get("DefaultToolchains") or []
+        for chip in data.get("Chips") or []:
+            cid = chip.get("Id")
+            if cid is None:
+                log.warning("Skipping chip with no Id in %s", fam_path)
+                continue
+            entry = dict(chip)
+            entry["PartProducer"] = producer
+            entry["PartFamily"] = family
+            # Chip's Toolchains override the family DefaultToolchains
+            if "Toolchains" not in entry or not entry["Toolchains"]:
+                entry["Toolchains"] = list(default_tcs)
+            entry["_registry_path"] = fam_path
+            out[cid] = entry
+    return out
+
+
+def parse_versioned_ref(ref):
+    """Parse a versioned reference like `vivado[2017.4+]`, `iceprog[*]`, or
+    `mojoload`. Returns (id, version_constraint_string_or_None).
+
+    Used for toolchain and programmer references in chip / board entries.
+    The version constraint is returned verbatim — the caller decides how
+    to interpret it (matching, ordering, etc.).
+    """
+    import re as _re
+    m = _re.match(r"^([A-Za-z_][A-Za-z0-9_]*)(?:\[([^\]]+)\])?$", str(ref))
+    if not m:
+        raise ConfigError("Malformed versioned reference: {r!r}".format(r=ref))
+    return m.group(1), m.group(2)
+
+
+def programmers_for_board(board_id, *, catalog=None, chips=None, programmers=None):
+    """Compute the set of programmers usable on the given board.
+
+    Resolution rules (additive):
+      1. **Bundled / chip-tied via toolchain:** any programmer whose
+         `Bundled:` toolchain id appears in the board's chip's
+         `Toolchains` list.
+      2. **Third-party with explicit chip-family support:** any programmer
+         whose `SupportedFamilies:` includes (chip.PartProducer, chip.PartFamily)
+         AND whose `RequiresBridge:` is satisfied by the board's `Bridges:`
+         (or which has no bridge requirement).
+      3. **Bootloader-tied:** any programmer whose `RequiresBootloader:`
+         matches the board's `Bootloader:` (if set).
+      4. **Board-explicit:** every entry in the board's `ExtraProgrammers:`
+         list (parsed for version constraints).
+
+    Returns a list of programmer entries (full dicts from programmers.yml)
+    in roughly resolution-rule order. Callers that want a single "preferred"
+    programmer can pick the first entry, or honor the board's `Programmer:`
+    field as the explicit default.
+    """
+    if catalog is None: catalog = read_boards_catalog()
+    if chips is None: chips = read_chips()
+    if programmers is None: programmers = read_programmers()
+
+    board = catalog.get(board_id)
+    if board is None:
+        raise ConfigError("Unknown board: {b}".format(b=board_id))
+
+    # Resolve the board's chip(s). Single-Chip or multi-Chips (variants).
+    chip_ids = []
+    if board.get("Chip"):
+        chip_ids.append(board["Chip"])
+    elif board.get("Chips"):
+        for entry in board["Chips"]:
+            if isinstance(entry, dict):
+                if entry.get("Id"):
+                    chip_ids.append(entry["Id"])
+            else:
+                chip_ids.append(entry)
+    bridges = set(board.get("Bridges") or [])
+    bootloader = board.get("Bootloader")
+
+    # Collect the union of toolchain ids supported by ANY of the board's chips.
+    chip_toolchain_ids = set()
+    chip_pp = None
+    chip_pf = None
+    for cid in chip_ids:
+        chip = chips.get(cid)
+        if chip is None:
+            log.warning("Board %s references unknown chip %s", board_id, cid)
+            continue
+        chip_pp = chip.get("PartProducer")
+        chip_pf = chip.get("PartFamily")
+        for ref in chip.get("Toolchains", []):
+            tc_id, _ = parse_versioned_ref(ref)
+            chip_toolchain_ids.add(tc_id)
+
+    result = []
+    seen = set()
+    def add(p):
+        if p["Id"] not in seen:
+            result.append(p)
+            seen.add(p["Id"])
+
+    # Rule 1: bundled vendor programmers via toolchain match
+    for pid, p in programmers.items():
+        if p.get("Bundled") and p["Bundled"] in chip_toolchain_ids:
+            # If the programmer requires a specific bridge, check it
+            req = p.get("RequiresBridge")
+            if req and req not in bridges:
+                continue
+            add(p)
+    # Rule 2: third-party with explicit family support
+    for pid, p in programmers.items():
+        if p.get("Bundled"):
+            continue
+        sf = p.get("SupportedFamilies") or []
+        match = any(
+            (entry.get("Producer") == chip_pp and entry.get("Family") == chip_pf)
+            for entry in sf
+        )
+        if not match:
+            continue
+        req = p.get("RequiresBridge")
+        if req and req not in bridges:
+            continue
+        add(p)
+    # Rule 3: bootloader-tied
+    if bootloader:
+        for pid, p in programmers.items():
+            if p.get("RequiresBootloader") == bootloader:
+                add(p)
+    # Rule 4: board-explicit ExtraProgrammers
+    for ref in board.get("ExtraProgrammers") or []:
+        pid, _ = parse_versioned_ref(ref)
+        if pid in programmers:
+            add(programmers[pid])
+        else:
+            log.warning("Board %s references unknown programmer %s", board_id, pid)
+
+    return result
 
 
 def read_peripherals():
@@ -129,26 +515,42 @@ def read_configurations():
     return _load_yaml_dir("configurations", "Configuration", "id")
 
 
-def is_compatible(boards, parts, board_id, toolchain_id):
+def is_compatible(boards, chips, board_id, toolchain_id):
     """
     Check if toolchain_id can synthesize for board_id.
-    Returns True/False; raises ConfigError when the inputs themselves are invalid.
+
+    The board's chip (or any of its chip variants) must list toolchain_id
+    in its Toolchains. (Chip toolchains are inherited from the family's
+    DefaultToolchains when the chip doesn't override.)
     """
     if board_id not in boards:
-        raise ConfigError("Board {b} was not found in boards.yml".format(b=board_id))
+        raise ConfigError("Board {b} was not found in the catalog".format(b=board_id))
     board = boards[board_id]
-    producer = board["PartProducer"]
-    family = board["PartFamily"]
-    if producer not in parts or family not in parts[producer]:
+    chip_ids = []
+    if board.get("Chip"):
+        chip_ids.append(board["Chip"])
+    elif board.get("Chips"):
+        for entry in board["Chips"]:
+            if isinstance(entry, dict) and entry.get("Id"):
+                chip_ids.append(entry["Id"])
+            elif isinstance(entry, str):
+                chip_ids.append(entry)
+    if not chip_ids:
         raise ConfigError(
-            "PartFamily '{f}' under producer '{p}' (board '{b}') is not declared in parts.yml"
-            .format(f=family, p=producer, b=board_id)
-        )
-    board_toolchains = parts[producer][family]
-    if toolchain_id not in board_toolchains:
-        log.error("Toolchain %s is not compatible with board %s", toolchain_id, board_id)
-        return False
-    return True
+            "Board {b} has no Chip / Chips field — can't determine toolchain support"
+            .format(b=board_id))
+
+    for cid in chip_ids:
+        chip = chips.get(cid)
+        if chip is None:
+            log.warning("Board %s references unknown chip %s", board_id, cid)
+            continue
+        for ref in chip.get("Toolchains", []):
+            tc_id, _ = parse_versioned_ref(ref)
+            if tc_id == toolchain_id:
+                return True
+    log.error("Toolchain %s is not compatible with board %s", toolchain_id, board_id)
+    return False
 
 
 def resolve_configuration(configuration_id):
@@ -177,7 +579,7 @@ def resolve_configuration(configuration_id):
 
     boards = read_boards_catalog()
     toolchains = read_toolchains()
-    parts = read_parts()
+    chips = read_chips()
     peripherals = read_peripherals()
 
     board_id = cfg.get("board")
@@ -190,9 +592,38 @@ def resolve_configuration(configuration_id):
     if toolchain_id not in toolchains:
         raise ConfigError("Configuration '{c}' references unknown toolchain '{t}'"
                           .format(c=configuration_id, t=toolchain_id))
-    if not is_compatible(boards, parts, board_id, toolchain_id):
+    if not is_compatible(boards, chips, board_id, toolchain_id):
         raise ConfigError("Configuration '{c}': toolchain '{t}' is not compatible with board '{b}'"
                           .format(c=configuration_id, t=toolchain_id, b=board_id))
+
+    # Resolve the chip part number — toolchain drivers expect `board["Part"]`
+    # (or `board["Parts"]` for multi-variant boards). We inject these by
+    # looking up the chip(s) the board references.
+    board_resolved = dict(boards[board_id])
+    if board_resolved.get("Chip"):
+        cid = board_resolved["Chip"]
+        chip = chips.get(cid)
+        if chip is None:
+            raise ConfigError("Board '{b}' references unknown chip '{c}'"
+                              .format(b=board_id, c=cid))
+        board_resolved["Part"] = chip.get("Part") or cid
+    elif board_resolved.get("Chips"):
+        parts_list = []
+        for entry in board_resolved["Chips"]:
+            if isinstance(entry, dict):
+                cid = entry.get("Id")
+                name = entry.get("Name")
+            else:
+                cid, name = entry, None
+            chip = chips.get(cid)
+            if chip is None:
+                raise ConfigError("Board '{b}' references unknown chip '{c}'"
+                                  .format(b=board_id, c=cid))
+            p = {"Part": chip.get("Part") or cid}
+            if name:
+                p["Name"] = name
+            parts_list.append(p)
+        board_resolved["Parts"] = parts_list
 
     board_pinmap = read_board_pinmap(board_id)
     if board_pinmap is None:
@@ -217,7 +648,7 @@ def resolve_configuration(configuration_id):
 
     return {
         "configuration": cfg,
-        "board":         boards[board_id],
+        "board":         board_resolved,
         "board_pinmap":  board_pinmap,
         "toolchain":     toolchains[toolchain_id],
         "peripherals":   attached,

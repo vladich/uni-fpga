@@ -6,7 +6,7 @@
 Configuration:
   id: zeowaa_wo_dig_0
   board: zeowaa
-  toolchain: quartus_prime
+  toolchain: quartus_prime_lite
 
   attach:
     - peripheral: clock_input

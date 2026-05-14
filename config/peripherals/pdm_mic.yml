@@ -12,7 +12,7 @@ Peripheral:
     - capability: audio_in
   driver:
     module: pdm_mic_decoder
-    file: peripherals/pdm_mic_decoder.sv
+    file: rtl/peripherals/pdm_mic_decoder.sv
     parameters:
       clk_mhz: context.clk_mhz
     port_map:

@@ -6,7 +6,7 @@
 Configuration:
   id: piswords6
   board: piswords6
-  toolchain: quartus_prime
+  toolchain: quartus_prime_lite
 
   attach:
     - peripheral: clock_input

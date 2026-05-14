@@ -1,0 +1,79 @@
+# Gowin / AroraV/GW5A
+# 22 nm high-end Gowin (Arora V). gowin_standard.
+
+Producer: Gowin
+Family: AroraV/GW5A
+Description: 22 nm high-end Gowin (Arora V). gowin_standard.
+Boards:
+  - Id: gowin_gw5a25_devkit
+    BoardName: GW5A-25 Dev Kit
+    BoardProducer: gowin_semi
+    Chip: GW5A-LV25MG121NC1/I0
+    Bridges:
+      - jtag
+    Programmer: openFPGALoader
+    BoardURL: https://www.gowinsemi.com/en/support/devkits_detail/82/
+  - Id: gowin_gw5a25_ug324_devkit
+    BoardName: GW5A-25 UG324 Dev Kit
+    BoardProducer: gowin_semi
+    Chip: GW5A-LV25UG324C1/I0
+    Bridges:
+      - usb-jtag
+    Programmer: gowin_pgm_standard
+    ExtraProgrammers:
+      - openFPGALoader[*]
+    Features:
+      - ddr3_memory
+      - hdmi_output
+      - mipi_csi2_input
+      - usb_2_otg
+      - user_leds
+      - user_buttons
+      - usb_jtag_bridge
+      - jtag_header
+    BoardURL: https://www.gowinsemi.com/en/support/devkits_detail/57/
+    Status: active
+  - Id: sipeed_tang_primer_15k
+    BoardName: Sipeed Tang Primer 15K
+    BoardProducer: sipeed
+    Chip: GW5AR-LV15MG132PC1/I0
+    Bridges:
+      - usb-jtag
+    Programmer: gowin_pgm_standard
+    ExtraProgrammers:
+      - openFPGALoader[*]
+    Features:
+      - hyperram
+      - qspi_flash
+      - usb_uart_bridge
+      - usb_jtag_bridge
+      - usb_powered
+    BoardURL: https://wiki.sipeed.com/hardware/en/tang/tang-primer-15k/primer-15k.html
+    Status: active
+  - Id: sipeed_tang_primer_25k_dock
+    BoardName: Sipeed Tang Primer 25K Dock
+    BoardProducer: sipeed
+    Chip: GW5A-LV25MG121NES
+    Bridges:
+      - usb-jtag
+    Programmer: gowin_pgm_standard
+    ExtraProgrammers:
+      - openFPGALoader[*]
+    Features:
+      - qspi_flash
+      - pmod_connector
+      - user_buttons
+      - usb_uart_bridge
+      - usb_jtag_bridge
+      - usb_2_otg
+      - usb_powered
+    BoardURL: https://wiki.sipeed.com/hardware/en/tang/tang-primer-25k/primer-25k.html
+    Status: active
+  - Id: tang_primer_25k
+    BoardName: Tang Primer 25k
+    BoardProducer: sipeed
+    Chip: GW5A-LV25MG121NC1/I0
+    Bridges:
+      - jtag
+    Programmer: openFPGALoader
+    BoardURL: https://wiki.sipeed.com/hardware/en/tang/tang-primer-25k/primer-25k.html

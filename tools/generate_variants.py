@@ -756,22 +756,20 @@ def main():
     os.makedirs(OUT_DIR, exist_ok=True)
 
     v2b = variant_to_board()
-    boards_yml = os.path.join(REPO, "config", "boards.yml")
-    with open(boards_yml) as f:
-        boards_data = yaml.safe_load(f) or {}
-    fpga_family = {b["Id"]: b["PartFamily"] for b in boards_data.get("Boards", []) if "PartFamily" in b}
+    # Load the board catalog via config.init, which knows about the
+    # hierarchical layout (config/boards/<producer>/<family>.yml).
+    sys.path.insert(0, REPO)
+    from config import init as _ci
+    _catalog = _ci.read_boards_catalog()
+    fpga_family = {bid: b["PartFamily"] for bid, b in _catalog.items() if "PartFamily" in b}
 
-    # Cache board pinBanks for fast lookups.
+    # Cache board pinBanks for fast lookups (delegates to read_board_pinmap
+    # which resolves the new <producer>/<family>/<board>.yml path).
     board_pin_banks_cache = {}
     def _board_pin_banks(board_id):
         if board_id not in board_pin_banks_cache:
-            p = os.path.join(REPO, "config", "boards", board_id + ".yml")
-            if os.path.exists(p):
-                with open(p) as f:
-                    d = yaml.safe_load(f)
-                board_pin_banks_cache[board_id] = (d.get("Board") or {}).get("pinBanks") or {}
-            else:
-                board_pin_banks_cache[board_id] = {}
+            pm = _ci.read_board_pinmap(board_id)
+            board_pin_banks_cache[board_id] = (pm or {}).get("pinBanks") or {}
         return board_pin_banks_cache[board_id]
 
     successes = []

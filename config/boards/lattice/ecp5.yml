@@ -1,0 +1,264 @@
+# Lattice / ECP5
+# 40 nm cost-optimized Lattice. Diamond + nextpnr-ecp5 (open).
+
+Producer: Lattice
+Family: ECP5
+Description: 40 nm cost-optimized Lattice. Diamond + nextpnr-ecp5 (open).
+Boards:
+  - Id: colorlight75b
+    BoardName: Colorlight 5A-75B
+    BoardProducer: colorlight
+    Chip: LFE5U-25F-6BG381
+    Bridges:
+      - ft2232h-jtag
+    Programmer: ecpprog
+    BoardURL: https://www.colorlightinside.com/Product/Receiver-card
+  - Id: colorlight_5a_75b_v7
+    BoardName: Colorlight 5A-75B v7.0/v8.x
+    BoardProducer: colorlight
+    Chip: LFE5U-25F-6BG256C
+    Bridges:
+      - ft2232h-jtag
+    Programmer: ecpprog
+    ExtraProgrammers:
+      - openFPGALoader[*]
+    Features:
+      - ethernet_phy_gigabit
+      - sdr_sdram
+      - qspi_flash
+      - jtag_header
+    BoardURL: https://github.com/q3k/chubby75/tree/master/5a-75b
+    Status: active
+  - Id: colorlight_5a_75e
+    BoardName: ColorLight 5A-75E
+    BoardProducer: colorlight
+    Chip: LFE5U-25F-6BG256C
+    Bridges:
+      - ft2232h-jtag
+    Programmer: ecpprog
+    BoardURL: https://www.colorlightinside.com/Product/Receiver-card
+  - Id: colorlight_i5
+    BoardName: ColorLight i5
+    BoardProducer: colorlight
+    Chip: LFE5U-25F-6BG381C
+    Bridges:
+      - ft2232h-jtag
+    Programmer: ecpprog
+    BoardURL: https://www.colorlightinside.com/Product/Receiver-card
+  - Id: colorlight_i9
+    BoardName: ColorLight i9
+    BoardProducer: colorlight
+    Chip: LFE5U-45F-6BG381C
+    Bridges:
+      - ft2232h-jtag
+    Programmer: ecpprog
+    BoardURL: https://www.colorlightinside.com/Product/Receiver-card
+  - Id: karnix_ecp5
+    BoardName: Karnix ASB-254
+    BoardProducer: fabmicro
+    Chip: LFE5UM-25F
+    Bridges:
+      - ft2232h-jtag
+    Programmer: ecpprog
+    BoardURL: https://github.com/Karnix-fpga/karnix-base
+  - Id: lattice_ecp5_evn
+    BoardName: ECP5 Evaluation Board
+    BoardProducer: lattice
+    Chip: LFE5UM5G-85F-8BG381C
+    Bridges:
+      - jtag
+    Programmer: ecpprog
+    BoardURL: https://www.latticesemi.com/products/developmentboardsandkits/ecp5evaluationboard
+  - Id: lattice_ecp5_versa_5g
+    BoardName: ECP5 Versa-5G
+    BoardProducer: lattice
+    Chip: LFE5UM-45F-8BG381C
+    Bridges:
+      - jtag
+    Programmer: ecpprog
+    BoardURL: https://www.latticesemi.com/products/developmentboardsandkits/ecp5versadevelopmentkit
+  - Id: orangecrab_ecp5
+    BoardName: OrangeCrab
+    BoardProducer: onebitsquared
+    Chips:
+      - Id: LFE5U-25F-8MG285C
+        Name: 25F
+      - Id: LFE5U-85F-8MG285C
+        Name: 85F
+    Bridges:
+      - ft2232h-jtag
+    Bootloader: usb-dfu
+    Programmer: dfu_util
+    BoardURL: https://1bitsquared.com/products/orangecrab
+  - Id: radiona_ulx3s_12f
+    BoardName: ULX3S 12F
+    BoardProducer: radiona
+    Chip: LFE5U-12F-6BG381C
+    Bridges:
+      - jtag
+    Programmer: openFPGALoader
+    BoardURL: https://radiona.org/ulx3s/
+  - Id: radiona_ulx3s_25f
+    BoardName: ULX3S 25F
+    BoardProducer: radiona
+    Chip: LFE5U-25F-6BG381C
+    Bridges:
+      - jtag
+    Programmer: openFPGALoader
+    BoardURL: https://radiona.org/ulx3s/
+  - Id: radiona_ulx3s_45f
+    BoardName: ULX3S 45F
+    BoardProducer: radiona
+    Chip: LFE5U-45F-6BG381C
+    Bridges:
+      - jtag
+    Programmer: openFPGALoader
+    BoardURL: https://radiona.org/ulx3s/
+  - Id: radiona_ulx3s_85f
+    BoardName: ULX3S 85F
+    BoardProducer: radiona
+    Chip: LFE5U-85F-6BG381C
+    Bridges:
+      - jtag
+    Programmer: openFPGALoader
+    BoardURL: https://radiona.org/ulx3s/
+  - Id: tinyfpga_ex
+    BoardName: TinyFPGA EX
+    BoardProducer: tinyfpga
+    Chip: LFE5U-85F-8MG285C
+    Bridges:
+      - ft2232h-jtag
+    Bootloader: usb-dfu
+    Programmer: dfu_util
+    BoardURL: https://tinyfpga.com/
+  - Id: ulx3s_12f
+    BoardName: ULX3S (12F)
+    BoardProducer: intergalaktik
+    Chip: LFE5U-12F-6BG381C
+    Bridges:
+      - jtag
+    Programmer: openFPGALoader
+    ExtraProgrammers:
+      - ecpprog[*]
+    Features:
+      - hdmi_output
+      - audio_codec
+      - microsd_socket
+      - usb_uart_bridge
+      - usb_jtag_bridge
+      - qspi_flash
+      - user_leds
+      - user_buttons
+      - pmod_connector
+      - usb_powered
+    BoardURL: https://www.intergalaktik.eu/projects/ulx3s
+    Status: active
+  - Id: ulx3s_25f
+    BoardName: ULX3S (25F)
+    BoardProducer: intergalaktik
+    Chip: LFE5U-25F-6BG381C
+    Bridges:
+      - jtag
+    Programmer: openFPGALoader
+    ExtraProgrammers:
+      - ecpprog[*]
+    Features:
+      - hdmi_output
+      - audio_codec
+      - microsd_socket
+      - usb_uart_bridge
+      - usb_jtag_bridge
+      - qspi_flash
+      - user_leds
+      - user_buttons
+      - pmod_connector
+      - usb_powered
+    BoardURL: https://www.intergalaktik.eu/projects/ulx3s
+    Status: active
+  - Id: ulx3s_45f
+    BoardName: ULX3S (45F)
+    BoardProducer: intergalaktik
+    Chip: LFE5U-45F-6BG381C
+    Bridges:
+      - jtag
+    Programmer: openFPGALoader
+    ExtraProgrammers:
+      - ecpprog[*]
+    Features:
+      - hdmi_output
+      - audio_codec
+      - microsd_socket
+      - usb_uart_bridge
+      - usb_jtag_bridge
+      - qspi_flash
+      - user_leds
+      - user_buttons
+      - pmod_connector
+      - usb_powered
+    BoardURL: https://www.intergalaktik.eu/projects/ulx3s
+    Status: active
+  - Id: ulx3s_85f
+    BoardName: ULX3S (85F)
+    BoardProducer: intergalaktik
+    Chip: LFE5U-85F-6BG381C
+    Bridges:
+      - jtag
+    Programmer: openFPGALoader
+    ExtraProgrammers:
+      - ecpprog[*]
+    Features:
+      - hdmi_output
+      - audio_codec
+      - microsd_socket
+      - usb_uart_bridge
+      - usb_jtag_bridge
+      - qspi_flash
+      - user_leds
+      - user_buttons
+      - pmod_connector
+      - usb_powered
+    BoardURL: https://www.intergalaktik.eu/projects/ulx3s
+    Status: active
+  - Id: ulx4m_ld
+    BoardName: ULX4M-LD (DDR3, CM4-compatible)
+    BoardProducer: intergalaktik
+    Chip: LFE5U-85F-6BG381C
+    Bridges:
+      - jtag
+    Programmer: openFPGALoader
+    ExtraProgrammers:
+      - ecpprog[*]
+    Features:
+      - ddr3_memory
+      - ethernet_phy_gigabit
+      - microsd_socket
+      - usb_uart_bridge
+      - usb_jtag_bridge
+      - qspi_flash
+      - hdmi_output
+      - user_leds
+      - user_buttons
+      - usb_powered
+    BoardURL: https://www.crowdsupply.com/intergalaktik/ulx4m
+    Status: active
+  - Id: ulx4m_ls
+    BoardName: ULX4M-LS (Lattice SDRAM, CM4-compatible)
+    BoardProducer: intergalaktik
+    Chip: LFE5U-85F-6BG381C
+    Bridges:
+      - jtag
+    Programmer: openFPGALoader
+    ExtraProgrammers:
+      - ecpprog[*]
+    Features:
+      - ethernet_phy_gigabit
+      - microsd_socket
+      - usb_uart_bridge
+      - usb_jtag_bridge
+      - qspi_flash
+      - hdmi_output
+      - user_leds
+      - user_buttons
+      - usb_powered
+    BoardURL: https://intergalaktik.eu/projects/ulx4m-ls
+    Status: active

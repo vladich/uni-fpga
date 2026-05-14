@@ -89,7 +89,7 @@ def _collect_sv_sources(repo, peripherals, user_design_top, generated_top):
         "imitate_reset_on_power_up.sv": ("imitate_reset_on_power_up",),
     }
     for helper, modules in helper_modules.items():
-        full = os.path.join(repo, "peripherals", helper)
+        full = os.path.join(repo, "rtl", "peripherals", helper)
         if not os.path.exists(full) or full in seen:
             continue
         if any(m in top_text for m in modules):
@@ -107,7 +107,7 @@ def _collect_sv_sources(repo, peripherals, user_design_top, generated_top):
                 sibling_text += "\n" + fh.read()
         except Exception:
             pass
-    designs_common_dir = os.path.join(repo, "peripherals", "designs_common")
+    designs_common_dir = os.path.join(repo, "rtl", "peripherals", "designs_common")
     if os.path.isdir(designs_common_dir):
         for name in sorted(os.listdir(designs_common_dir)):
             if not name.endswith(".sv"):
@@ -121,7 +121,7 @@ def _collect_sv_sources(repo, peripherals, user_design_top, generated_top):
                 seen.add(full)
 
     # iCE40 doesn't have BUFG; provide stubs as the Quartus driver does.
-    compat_dir = os.path.join(repo, "peripherals", "_quartus_compat")
+    compat_dir = os.path.join(repo, "rtl", "peripherals", "_quartus_compat")
     if os.path.isdir(compat_dir):
         for name in sorted(os.listdir(compat_dir)):
             if not name.endswith(".sv"):

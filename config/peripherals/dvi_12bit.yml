@@ -19,7 +19,7 @@ Peripheral:
         color_depth: 444
   driver:
     module: vga
-    file: peripherals/vga.sv
+    file: rtl/peripherals/vga.sv
     parameters:
       CLK_MHZ:   context.clk_mhz
       PIXEL_MHZ: 25

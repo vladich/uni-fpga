@@ -1,0 +1,38 @@
+# Microchip (Actel) / SmartFusion2
+# Cortex-M3 + IGLOO2 fabric. Libero SoC.
+
+Producer: Microchip (Actel)
+Family: SmartFusion2
+Description: Cortex-M3 + IGLOO2 fabric. Libero SoC.
+Boards:
+  - Id: m2s025_starter
+    BoardName: SmartFusion2 Starter Kit (M2S025T)
+    BoardProducer: microchip
+    Chip: M2S025T-FCSG325-1
+    Bridges:
+      - jtag
+    Programmer: libero_fpexpress
+  - Id: microchip_sf2_advkit
+    BoardName: SmartFusion2 Advanced Development Kit
+    BoardProducer: microchip
+    Chip: M2S150-FCG1152I
+    Bridges:
+      - jtag
+    Programmer: libero_fpexpress
+    BoardURL: https://www.microchip.com/en-us/development-tool/M2S150-ADV-DEV-KIT
+  - Id: microchip_sf2_devkit
+    BoardName: SmartFusion2 Development Kit
+    BoardProducer: microchip
+    Chip: M2S090TS-FGG484
+    Bridges:
+      - jtag
+    Programmer: libero_fpexpress
+    BoardURL: https://www.microchip.com/en-us/development-tool/M2S090-DEV-KIT
+  - Id: microchip_sf2_starter
+    BoardName: SmartFusion2 Starter Kit
+    BoardProducer: microchip
+    Chip: M2S025-FG484
+    Bridges:
+      - jtag
+    Programmer: libero_fpexpress
+    BoardURL: https://www.microchip.com/en-us/development-tool/M2S025-FG484-STARTER

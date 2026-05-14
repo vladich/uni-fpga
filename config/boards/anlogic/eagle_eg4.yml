@@ -1,0 +1,23 @@
+# Anlogic / Eagle EG4
+# Anlogic Eagle FPGA. TD (Tang Dynasty).
+
+Producer: Anlogic
+Family: Eagle EG4
+Description: Anlogic Eagle FPGA. TD (Tang Dynasty).
+Boards:
+  - Id: anlogic_eg4s20_ref
+    BoardName: EG4S20-BG256 Reference Board
+    BoardProducer: anlogic
+    Chip: EG4S20BG256
+    Bridges:
+      - jtag
+    Programmer: td_pgm
+    BoardURL: https://www.anlogic.com/eng/prod/53.html
+  - Id: sipeed_lichee_tang
+    BoardName: Sipeed Lichee Tang
+    BoardProducer: sipeed
+    Chip: EG4S20BG256
+    Bridges:
+      - jtag
+    Programmer: td_pgm
+    BoardURL: https://wiki.sipeed.com/hardware/en/tang/Lichee-Tang/Lichee-Tang.html

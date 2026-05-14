@@ -6,7 +6,7 @@
 Configuration:
   id: omdazz
   board: omdazz
-  toolchain: quartus_prime
+  toolchain: quartus_prime_lite
 
   attach:
     - peripheral: clock_input

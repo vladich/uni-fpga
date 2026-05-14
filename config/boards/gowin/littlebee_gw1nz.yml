@@ -1,0 +1,31 @@
+# Gowin / LittleBee/GW1NZ
+# Low-power variant.
+
+Producer: Gowin
+Family: LittleBee/GW1NZ
+Description: Low-power variant.
+Boards:
+  - Id: gowin_gw1nz1_devkit
+    BoardName: GW1NZ-1 Starter Kit
+    BoardProducer: gowin_semi
+    Chip: GW1NZ-LV1FN32C6/I5
+    Bridges:
+      - usb-jtag
+    Programmer: gowin_pgm
+    ExtraProgrammers:
+      - openFPGALoader[*]
+    Features:
+      - user_leds
+      - user_buttons
+      - usb_jtag_bridge
+      - usb_powered
+    BoardURL: https://www.gowinsemi.com/en/support/devkits_detail/27/
+    Status: active
+  - Id: sipeed_tang_nano_1k
+    BoardName: Tang Nano 1K
+    BoardProducer: sipeed
+    Chip: GW1NZ-LV1QN48C6/I5
+    Bridges:
+      - jtag
+    Programmer: openFPGALoader
+    BoardURL: https://wiki.sipeed.com/hardware/en/tang/tang-nano-1k/nano-1k.html

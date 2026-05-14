@@ -6,7 +6,7 @@
 Configuration:
   id: de10_nano
   board: de10_nano
-  toolchain: quartus_prime
+  toolchain: quartus_prime_lite
 
   attach:
     - peripheral: clock_input

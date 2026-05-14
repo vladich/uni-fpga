@@ -1,0 +1,26 @@
+# alinx_axu5ev_p pin map.
+# Source type: github_xdc
+#   https://github.com/alinxalinx/AXU4EV-P_AXU5EV-P/blob/master/vivado/auto_create_project/src/constraints/gpio.xdc
+#   https://github.com/alinxalinx/AXU4EV-P_AXU5EV-P/blob/master/vivado/auto_create_project/src/constraints/system.xdc
+#   https://github.com/alinxalinx/AXU4EV-P_AXU5EV-P/blob/master/vivado/auto_create_project/src/constraints/uart.xdc
+
+Board:
+  id: alinx_axu5ev_p
+  pinBanks:
+    sys_clk_diff:
+      pins:
+        p: AE5
+        n: AF5
+      frequency_mhz: 200
+    onboard_leds:
+      pins:
+      - AE15
+    onboard_buttons:
+      pins:
+      - AE14
+    onboard_uart:
+      pins:
+        tx: AA11
+        rx: AA10
+    fan_pwm:
+      pins: AG14

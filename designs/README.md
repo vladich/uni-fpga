@@ -2,7 +2,7 @@
 
 Adapted from `basics-graphics-music/designs/`. Each design is a self-contained
 `design_top.sv` that targets the canonical uni-fpga virtual-device interface
-(see `peripherals/design_top_interface.sv`).
+(see `rtl/peripherals/design_top_interface.sv`).
 
 To build a design on a particular board:
 

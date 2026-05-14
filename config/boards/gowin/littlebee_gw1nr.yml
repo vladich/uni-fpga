@@ -1,0 +1,83 @@
+# Gowin / LittleBee/GW1NR
+# GW1N with embedded SDRAM.
+
+Producer: Gowin
+Family: LittleBee/GW1NR
+Description: GW1N with embedded SDRAM.
+Boards:
+  - Id: brisbane_silicon_brs_100_gw1nr9
+    BoardName: BRS-100-GW1NR9
+    BoardProducer: brisbane_silicon
+    Chip: GW1NR-LV9QN88PC6/I5
+    Bridges:
+      - usb-jtag
+    Programmer: gowin_pgm
+    ExtraProgrammers:
+      - openFPGALoader[*]
+    Features:
+      - hyperram
+      - qspi_flash
+      - user_leds
+      - user_buttons
+      - usb_jtag_bridge
+      - usb_powered
+    BoardURL: https://brisbanesilicon.com.au/brs-100-gw1nr9/
+    Status: active
+  - Id: brisbane_silicon_elm11_feather
+    BoardName: ELM11-Feather
+    BoardProducer: brisbane_silicon
+    Chip: GW1NR-LV9QN88PC6/I5
+    Bridges:
+      - usb-jtag
+    Programmer: gowin_pgm
+    ExtraProgrammers:
+      - openFPGALoader[*]
+    Features:
+      - hyperram
+      - qspi_flash
+      - user_leds
+      - user_buttons
+      - usb_jtag_bridge
+      - usb_powered
+    BoardURL: https://www.crowdsupply.com/brisbanesilicon/elm11-feather
+    Status: preview
+  - Id: gowin_gw1nr9_devkit
+    BoardName: GW1NR-9 Dev Kit
+    BoardProducer: gowin_semi
+    Chip: GW1NR-LV9QN88PC6/I5
+    Bridges:
+      - jtag
+    Programmer: openFPGALoader
+    BoardURL: https://www.gowinsemi.com/en/support/devkits_detail/29/
+  - Id: gowin_gw1nr9_lv_devkit
+    BoardName: GW1NR-9 Starter Kit
+    BoardProducer: gowin_semi
+    Chip: GW1NR-LV9LQ144PC6/I5
+    Bridges:
+      - usb-jtag
+    Programmer: gowin_pgm
+    ExtraProgrammers:
+      - openFPGALoader[*]
+    Features:
+      - mipi_csi2_input
+      - user_leds
+      - user_buttons
+      - usb_jtag_bridge
+      - jtag_header
+    BoardURL: https://www.gowinsemi.com/en/support/devkits_detail/16/
+    Status: active
+  - Id: marsohod3gw2
+    BoardName: Marsohod3 GW
+    BoardProducer: marsohod
+    Chip: GW1NR-LV9QN88PC6/I5
+    Bridges:
+      - jtag
+    Programmer: openFPGALoader
+  - Id: tang_nano_9k
+    BoardName: Tang Nano 9k
+    BoardProducer: sipeed
+    Chip: GW1NR-LV9QN88PC6/I5
+    Bridges:
+      - jtag
+    Programmer: openFPGALoader
+    BoardURL: https://wiki.sipeed.com/hardware/en/tang/tang-nano-9k/nano-9k.html

@@ -6,7 +6,7 @@
 Configuration:
   id: de0_nano_soc_vga_pmod
   board: de0_nano_soc
-  toolchain: quartus_prime
+  toolchain: quartus_prime_lite
 
   attach:
     - peripheral: button_array

@@ -72,12 +72,12 @@ def _collect_sv_sources(repo, peripherals, user_design_top, generated_top):
 
     for helper in ("tm1638_registers.sv", "slow_clk_gen.sv",
                    "imitate_reset_on_power_up.sv"):
-        full = os.path.join(repo, "peripherals", helper)
+        full = os.path.join(repo, "rtl", "peripherals", helper)
         if os.path.exists(full) and full not in seen:
             files.append(full)
             seen.add(full)
 
-    designs_common_dir = os.path.join(repo, "peripherals", "designs_common")
+    designs_common_dir = os.path.join(repo, "rtl", "peripherals", "designs_common")
     if os.path.isdir(designs_common_dir):
         for name in sorted(os.listdir(designs_common_dir)):
             if not name.endswith(".sv"):
@@ -90,7 +90,7 @@ def _collect_sv_sources(repo, peripherals, user_design_top, generated_top):
     # Quartus-only compat stubs for Xilinx primitives (BUFG etc.) referenced
     # by a few designs targeting 7-series boards directly. Vivado has these in
     # its unisim library; non-Xilinx toolchains need pass-through stubs.
-    compat_dir = os.path.join(repo, "peripherals", "_quartus_compat")
+    compat_dir = os.path.join(repo, "rtl", "peripherals", "_quartus_compat")
     if os.path.isdir(compat_dir):
         for name in sorted(os.listdir(compat_dir)):
             if not name.endswith(".sv"):
@@ -150,8 +150,8 @@ def _qsf_search_path_lines(design_top, output_dir):
     paths."""
     design_dir = os.path.dirname(os.path.abspath(design_top))
     paths = [design_dir, os.path.abspath(output_dir),
-             os.path.join(REPO, "peripherals"),
-             os.path.join(REPO, "peripherals", "designs_common")]
+             os.path.join(REPO, "rtl", "peripherals"),
+             os.path.join(REPO, "rtl", "peripherals", "designs_common")]
     seen = set()
     out = []
     for p in paths:

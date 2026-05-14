@@ -1,0 +1,43 @@
+# Achronix / Speedster 7t
+# TSMC 7 nm Achronix with hard MLP blocks for ML. ACE.
+
+Producer: Achronix
+Family: Speedster 7t
+Description: TSMC 7 nm Achronix with hard MLP blocks for ML. ACE.
+Boards:
+  - Id: achronix_s7t_vg6
+    BoardName: Achronix S7t-VG6 Speedster 7t PCIe Accelerator Card
+    BoardProducer: achronix
+    Chip: AC7t1500ES0
+    Bridges:
+      - usb-jtag
+    Programmer: ace_pgm
+    Features:
+      - pcie_endpoint
+      - ddr4_memory
+      - qspi_flash
+      - usb_jtag_bridge
+    BoardURL: https://www.achronix.com/product/vectorpath-accelerator-card
+    Status: active
+  - Id: achronix_vectorpath
+    BoardName: VectorPath S7t-VG6 Accelerator Card
+    BoardProducer: achronix
+    Chip: AC7t1500
+    Bridges:
+      - jtag
+    Programmer: ace_pgm
+    BoardURL: https://www.achronix.com/product/vectorpath-accelerator-card
+  - Id: bittware_vp815
+    BoardName: BittWare VectorPath VP815 Achronix Speedster7t
+    BoardProducer: bittware
+    Chip: AC7t1500ES0
+    Bridges:
+      - pcie-jtag
+    Programmer: ace_pgm
+    Features:
+      - ddr4_memory
+      - pcie_endpoint
+      - qsfp_cage
+      - usb_uart_bridge
+    BoardURL: https://www.bittware.com/products/vp815/
+    Status: active

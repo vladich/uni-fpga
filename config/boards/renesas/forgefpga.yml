@@ -1,0 +1,58 @@
+# Renesas / ForgeFPGA
+# ~1k LUT mini-FPGA (SLG47004/47010). Go Configure Hub + ForgeFPGA Workshop.
+
+Producer: Renesas
+Family: ForgeFPGA
+Description: ~1k LUT mini-FPGA (SLG47004/47010). Go Configure Hub + ForgeFPGA Workshop.
+Boards:
+  - Id: renesas_forgefpga_workshop
+    BoardName: ForgeFPGA Workshop Board
+    BoardProducer: renesas
+    Chip: SLG47004V
+    Bridges:
+      - jtag
+    Programmer: renesas_go_pgm
+    BoardURL: https://www.renesas.com/us/en/products/programmable-mixed-signal-asic-ip-products/forgefpga-low-density-fpga-family
+  - Id: renesas_slg47004_eval
+    BoardName: SLG47004 ForgeFPGA Eval Kit
+    BoardProducer: renesas
+    Chip: SLG47004V
+    Bridges:
+      - jtag
+    Programmer: renesas_go_pgm
+    BoardURL: https://www.renesas.com/us/en/products/programmable-mixed-signal-asic-ip-products/forgefpga-low-density-fpga-family/slg47004
+  - Id: renesas_slg47010_eval
+    BoardName: SLG47010 ForgeFPGA Eval Kit
+    BoardProducer: renesas
+    Chip: SLG47010V
+    Bridges:
+      - jtag
+    Programmer: renesas_go_pgm
+    BoardURL: https://www.renesas.com/us/en/products/programmable-mixed-signal-asic-ip-products/forgefpga-low-density-fpga-family/slg47010
+  - Id: vicharak_shrike
+    BoardName: Vicharak Shrike
+    BoardProducer: vicharak
+    Chip: SLG47910V
+    Bridges:
+      - usb-jtag
+    Programmer: openFPGALoader
+    Features:
+      - pmod_connector
+      - user_leds
+      - usb_powered
+      - usb_uart_bridge
+    BoardURL: https://www.crowdsupply.com/vicharak/shrike
+    Status: active
+  - Id: vicharak_shrike_lite
+    BoardName: Vicharak Shrike-Lite
+    BoardProducer: vicharak
+    Chip: SLG47910V
+    Bridges:
+      - usb-jtag
+    Programmer: openFPGALoader
+    Features:
+      - pmod_connector
+      - user_leds
+      - usb_powered
+    BoardURL: https://store.vicharak.in/?product=shrike
+    Status: active
