@@ -1,0 +1,36 @@
+# alinx_ax7325 pin map.
+# Sources (local Alinx docs):
+#   ~/Alinx/AX7325B/ (aggregated XDC files; 578 unique signals)
+
+Board:
+  id: alinx_ax7325
+  pinBanks:
+    sys_clk_p:
+      pins: AE10
+    sys_clk_n:
+      pins: T4
+    cpu_resetn:
+      pins: AG27
+    onboard_buttons:
+      pins: [AG28]
+    onboard_leds:
+      pins: [A22, C19, B19, E18]
+    onboard_uart:
+      pins:
+        rx: AJ26
+        tx: AK26
+    microsd:
+      pins:
+        dclk: AH21
+        ncs: AH20
+        mosi: AJ21
+        miso: AJ22
+    hdmi_clk:
+      pins: AC30
+    hdmi_data_p:
+      pins: [W29, AA30, AB30, Y30, AB29, AD28, AC29, AD27, AA28, AE29, AF30, AD29, AE30, AB28, AH30, AJ29, AG30, AA27, AJ28, AK30, AK28, AK29, AJ27, AE28]
+    hdmi_i2c:
+      pins:
+        scl: Y26
+        sda: AA26
+        hpd: AF28

@@ -1,30 +1,46 @@
 # alinx_ax7z035 pin map.
-# Source type: github_xdc
-#   https://github.com/alinxalinx/AX7Z035B_2023.1/blob/master/course_s1_fpga/01_led/auto_create_project/src/constraints/led.xdc
-#   https://github.com/alinxalinx/AX7Z035B_2023.1/blob/master/course_s1_fpga/06_key/auto_create_project/src/constraints/key.xdc
-#   https://github.com/alinxalinx/AX7Z035B_2023.1/blob/master/course_s1_fpga/09_rs232/auto_create_project/src/constraints/rs232.xdc
+# Sources (local Alinx docs):
+#   ~/Alinx/AX7Z035B/ (aggregated XDC files; 565 unique signals)
 
 Board:
   id: alinx_ax7z035
   pinBanks:
-    sys_clk:
+    sys_clk_p:
       pins: C8
-      frequency_mhz: 200
+    sys_clk_n:
+      pins: C7
     cpu_resetn:
       pins: AF15
-    onboard_leds:
-      pins:
-      - AB15
-      - AB14
-      - AF13
-      - AE13
     onboard_buttons:
-      pins:
-      - AF15
-      - AF14
-      - AD14
-      - AC14
+      pins: [AF15, AF14, AD14, AC14]
+    onboard_leds:
+      pins: [AB15, AB14, AF13, AE13]
     onboard_uart:
       pins:
-        tx: AA15
         rx: AA14
+        tx: AA15
+    hdmi_clk:
+      pins: K15
+    hdmi_data_p:
+      pins: [H13, E11, D11, G11, G12, K13, J13, J14, H14, J15, E12, F12, B15, B16, B14, C14, G15, G16, D14, D15, D16, E16, C17, C16]
+    hdmi_i2c:
+      pins:
+        scl: B17
+        sda: A17
+    ethernet_mdio:
+      pins:
+        mdc: C13
+    ethernet_rgmii:
+      pins:
+        rxc: G14
+        rx_ctl: F14
+        rd[0]: A13
+        rd[1]: A12
+        rd[2]: B12
+        rd[3]: C12
+        txc: C11
+        tx_ctl: B11
+        td[0]: E10
+        td[1]: D10
+        td[2]: F13
+        td[3]: E13

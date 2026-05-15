@@ -1,38 +1,30 @@
 # alinx_ax7z020 pin map.
-# Source type: github_xdc
-#   https://github.com/alinxalinx/AX7Z020B_2023.1/blob/master/course_s1_fpga/01_led/auto_create_project/src/constraints/led.xdc
-#   https://github.com/alinxalinx/AX7Z020B_2023.1/blob/master/course_s1_fpga/11_linux_base/Vivado/auto_create_project/src/constraints/key.xdc
-#   https://github.com/alinxalinx/AX7Z020B_2023.1/blob/master/course_s1_fpga/11_linux_base/Vivado/auto_create_project/src/constraints/hdmi_out.xdc
+# Sources (local Alinx docs):
+#   ~/Alinx/AX7Z020B/ (aggregated XDC files; 255 unique signals)
 
 Board:
   id: alinx_ax7z020
   pinBanks:
     sys_clk:
       pins: U18
-      frequency_mhz: 50
     cpu_resetn:
       pins: M15
     onboard_leds:
+      pins: [J14, K14, J18, H18]
+    ethernet_mdio:
       pins:
-      - J14
-      - K14
-      - J18
-      - H18
-    onboard_buttons:
+        mdc: J17
+    ethernet_rgmii:
       pins:
-      - M15
-      - M14
-      - L17
-      - L16
-    hdmi_clk:
-      pins:
-        p: U13
-    hdmi_data_p:
-      pins:
-      - W14
-      - Y18
-      - Y16
-    hdmi_i2c:
-      pins:
-        scl: V18
-        sda: V17
+        rxc: K19
+        rx_ctl: K20
+        rd[0]: J18
+        rd[1]: K18
+        rd[2]: J15
+        rd[3]: K15
+        txc: R21
+        tx_ctl: R20
+        td[0]: N17
+        td[1]: N18
+        td[2]: N19
+        td[3]: N20

@@ -1,25 +1,38 @@
 # alinx_ax7350 pin map.
-# Source type: github_xdc
-#   https://github.com/alinxalinx/AX7350B_2023.1/blob/master/course_s1_fpga/01_led/auto_create_project/src/constraints/led.xdc
-#   https://github.com/alinxalinx/AX7350B_2023.1/blob/master/course_s1_fpga/15_linux_base/Vivado/auto_create_project/src/constraints/ax7350.xdc
+# Sources (local Alinx docs):
+#   ~/Alinx/AX7350B/ (aggregated XDC files; 117 unique signals)
 
 Board:
   id: alinx_ax7350
   pinBanks:
     sys_clk:
       pins: J14
-      frequency_mhz: 50
+    cpu_resetn:
+      pins: AF15
     onboard_leds:
+      pins: [F5, E5, G5, G6]
+    hdmi_clk:
+      pins: K13
+    hdmi_data_p:
+      pins: [G16, E16, J15, E15, F15, G15, F14, H14, J13, K12, B11, C12, D13, A12, C13, A13, D14, D15, A14, B14, A15, B15, D16, B16]
+    hdmi_i2c:
       pins:
-      - F5
-      - E5
-      - G5
-      - G6
-    onboard_buttons:
+        scl: A17
+        sda: C16
+    ethernet_mdio:
       pins:
-      - H6
-      - H7
-      - H8
-      - J8
-    fan_pwm:
-      pins: E6
+        mdc: H16
+    ethernet_rgmii:
+      pins:
+        rxc: G14
+        rx_ctl: E13
+        rd[0]: F13
+        rd[1]: F12
+        rd[2]: E12
+        rd[3]: G11
+        txc: D11
+        tx_ctl: E11
+        td[0]: F10
+        td[1]: G10
+        td[2]: D10
+        td[3]: E10

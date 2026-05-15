@@ -1,20 +1,32 @@
 # alinx_vd100 pin map.
-# Source type: github_xdc
-#   https://github.com/alinxalinx/VD100_2023.2/blob/master/Demo/course_s1/01_led/auto_create_project/src/constraints/led.xdc
-#   https://github.com/alinxalinx/VD100_2023.2/blob/master/Demo/course_s2/vivado/auto_create_project/src/constraints/gpio.xdc
+# Sources (local Alinx docs):
+#   ~/Alinx/VD100/ (aggregated XDC files; 187 unique signals)
 
 Board:
   id: alinx_vd100
   pinBanks:
-    sys_clk_diff:
-      pins:
-        p: AB23
-      frequency_mhz: 200
+    sys_clk_p:
+      pins: AB23
+    sys_clk_n:
+      pins: AC23
     cpu_resetn:
       pins: F21
     onboard_leds:
+      pins: [E20]
+    ethernet_mdio:
       pins:
-      - E20
-    onboard_buttons:
+        mdc: C13
+    ethernet_rgmii:
       pins:
-      - F21
+        rxc: D10
+        rx_ctl: C10
+        rd[0]: C12
+        rd[1]: D11
+        rd[2]: A14
+        rd[3]: B13
+        txc: A13
+        tx_ctl: B12
+        td[0]: A11
+        td[1]: B11
+        td[2]: A10
+        td[3]: B10

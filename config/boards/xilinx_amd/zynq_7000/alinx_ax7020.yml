@@ -1,30 +1,36 @@
 # alinx_ax7020 pin map.
-# Source type: github_xdc
-#   https://github.com/alinxalinx/AX7020_2023.1/blob/master/course_s1_fpga/01_led/auto_create_project/src/constraints/led.xdc
-#   https://github.com/alinxalinx/AX7020_2023.1/blob/master/course_s1_fpga/06_key/auto_create_project/src/constraints/key.xdc
-#   https://github.com/alinxalinx/AX7020_2023.1/blob/master/course_s1_fpga/10_rs232/auto_create_project/src/constraints/rs232.xdc
+# Sources (local Alinx docs):
+#   ~/Alinx/AX7020/ (aggregated XDC files; 380 unique signals)
 
 Board:
   id: alinx_ax7020
   pinBanks:
     sys_clk:
       pins: U18
-      frequency_mhz: 50
     cpu_resetn:
       pins: N15
-    onboard_leds:
-      pins:
-      - M14
-      - M15
-      - K16
-      - J16
     onboard_buttons:
-      pins:
-      - N15
-      - N16
-      - T17
-      - R17
+      pins: [N16, N16, T17, R17]
+    onboard_leds:
+      pins: [M14, M15, K16, J16]
     onboard_uart:
       pins:
-        tx: K19
         rx: J19
+        tx: K19
+    ethernet_mdio:
+      pins:
+        mdc: J17
+    ethernet_rgmii:
+      pins:
+        rxc: K19
+        rx_ctl: K20
+        rd[0]: J18
+        rd[1]: K18
+        rd[2]: J15
+        rd[3]: K15
+        txc: R21
+        tx_ctl: R20
+        td[0]: N17
+        td[1]: N18
+        td[2]: N19
+        td[3]: N20

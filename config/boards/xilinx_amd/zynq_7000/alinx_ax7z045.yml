@@ -1,32 +1,14 @@
-# alinx_ax7z100b pin map.
+# alinx_ax7z045 pin map.
 # Sources (local Alinx docs):
-#   ~/Alinx/AX7Z100B/ (aggregated XDC files; 532 unique signals)
+#   ~/Alinx/AX7Z045/ (aggregated XDC files; 184 unique signals)
 
 Board:
-  id: alinx_ax7z100b
+  id: alinx_ax7z045
   pinBanks:
-    sys_clk_p:
-      pins: F9
-    sys_clk_n:
-      pins: E8
-    cpu_resetn:
-      pins: AF18
-    onboard_buttons:
-      pins: [AF17, AF17, AH17, AH16]
-    onboard_leds:
-      pins: [AJ16, AK16, AE16, AE15]
-    onboard_uart:
-      pins:
-        rx: AJ13
-        tx: AJ14
     hdmi_clk:
       pins: H14
     hdmi_data_p:
       pins: [F12, B11, C11, B12, C12, C13, C14, A12, A13, J14, L14, L15, C16, D16, A17, B17, E17, F17, G16, G17, H16, J16, C17, B16]
-    hdmi_i2c:
-      pins:
-        scl: E15
-        sda: E16
     ethernet_mdio:
       pins:
         mdc: B14

@@ -1,16 +1,36 @@
 # alinx_ax7015 pin map.
-# Source type: github_xdc
-#   https://github.com/alinxalinx/AX7015B_2023.1/blob/master/course_s1_fpga/01_led/auto_create_project/src/constraints/led.xdc
+# Sources (local Alinx docs):
+#   ~/Alinx/AX7015B/ (aggregated XDC files; 363 unique signals)
 
 Board:
   id: alinx_ax7015
   pinBanks:
     sys_clk:
       pins: Y14
-      frequency_mhz: 50
     onboard_leds:
+      pins: [A5, A7, A6, B8]
+    hdmi_clk:
+      pins: H1
+    hdmi_data_p:
+      pins: [G3, H3, H4, G7, G8, G1, H5, H6, G4, F4, F5, E5, G6, F6, E7, F7, D3, C3, C4, D5, C5, C6, E8, D8]
+    hdmi_i2c:
       pins:
-      - A5
-      - A7
-      - A6
-      - B8
+        scl: J8
+        sda: K8
+    ethernet_mdio:
+      pins:
+        mdc: C8
+    ethernet_rgmii:
+      pins:
+        rxc: B4
+        rx_ctl: B3
+        rd[0]: A2
+        rd[1]: A1
+        rd[2]: B2
+        rd[3]: B1
+        txc: D1
+        tx_ctl: C1
+        td[0]: F2
+        td[1]: F1
+        td[2]: E2
+        td[3]: D2

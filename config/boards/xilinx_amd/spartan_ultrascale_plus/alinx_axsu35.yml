@@ -1,16 +1,60 @@
 # alinx_axsu35 pin map.
 # Sources (local Alinx docs):
-#   ~/Alinx/AXSU35/AXSU35_2025.1/02_Demo/01_Verilog/03_key_debounce/auto_create_project/src/constraints/key_debounce.xdc
+#   ~/Alinx/AXSU35/ (aggregated XDC files; 317 unique signals)
 
 Board:
   id: alinx_axsu35
   pinBanks:
     sys_clk_p:
       pins: F23
-      frequency_mhz: 200
+    sys_clk_n:
+      pins: E23
     cpu_resetn:
       pins: P21
     onboard_buttons:
       pins: [U20]
     onboard_leds:
       pins: [V22, V21, R1, P1]
+    onboard_uart:
+      pins:
+        rx: V3
+        tx: W3
+    microsd:
+      pins:
+        dclk: AE23
+        ncs: AD24
+        mosi: AE22
+        miso: V24
+        clk: AE23
+        cmd: AE22
+        d[0]: V24
+        d[1]: V25
+        d[2]: AE24
+        d[3]: AD24
+    usb_2_otg:
+      pins:
+        slcs: F1
+        sloe: N5
+        slrd: U6
+        slwr: U5
+        flaga: J3
+        flagb: H3
+        flagc: G3
+        fifoaddr[0]: M5
+        fifoaddr[1]: J4
+        fd[0]: N3
+        fd[1]: M6
+        fd[2]: L6
+        fd[3]: K6
+        fd[4]: J6
+        fd[5]: L1
+        fd[6]: K1
+        fd[7]: K3
+        fd[8]: G1
+        fd[9]: M4
+        fd[10]: L4
+        fd[11]: H2
+        fd[12]: J2
+        fd[13]: H1
+        fd[14]: J1
+        fd[15]: P5
