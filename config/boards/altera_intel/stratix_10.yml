@@ -146,6 +146,11 @@ Boards:
     BoardURL: https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/stratix/10-tx.html
   - Id: iwave_rainbow_g45m
     BoardName: iW-RainboW-G45M Intel Stratix 10 SoC SoM
+    Devices:
+      - ftdi_ft4232h
+      - micron_mt40a256m16
+      - macronix_mx25l25645g
+      - microsd_socket_generic
     BoardProducer: iwave
     Chip: 1SX085HN3F43E2VG
     Bridges:
@@ -297,4 +302,39 @@ Boards:
       - microsd_socket
       - usb_jtag_bridge
     BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&CategoryNo=248&No=1199
+    Status: active
+  - Id: bittware_520n
+    BoardName: "BittWare 520N Stratix 10 GX PCIe Card"
+    BoardProducer: bittware
+    Chip: 1SG280HU2F50E2VG
+    Bridges:
+      - pcie-jtag
+    Programmer: quartus_pgm
+    Features:
+      - pcie_endpoint
+      - qsfp_cage
+      - ddr4_memory
+      - usb_uart_bridge
+    Devices:
+      - ftdi_ft4232h
+      - silabs_si5342
+      - ddr4_sodimm_socket
+    BoardURL: "https://www.bittware.com/products/520n/"
+    Status: active
+  - Id: bittware_520n_mx
+    BoardName: "BittWare 520N-MX Stratix 10 MX PCIe Card (HBM2)"
+    BoardProducer: bittware
+    Chip: 1SM21BHU2F53E2VG
+    Bridges:
+      - pcie-jtag
+    Programmer: quartus_pgm
+    Features:
+      - pcie_endpoint
+      - qsfp_cage
+      - hbm2e_in_package
+      - usb_uart_bridge
+    Devices:
+      - ftdi_ft4232h
+      - silabs_si5342
+    BoardURL: "https://www.bittware.com/products/520n-mx/"
     Status: active

@@ -51,6 +51,10 @@ Boards:
     BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&CategoryNo=183&No=921
   - Id: enclustra_mars_pm3
     BoardName: Mars PM3
+    Devices:
+      - micron_mt41k256m16
+      - macronix_mx25l25645g
+      - marvell_88e1512
     BoardProducer: enclustra
     Chip: 5CGXFC5C6F23C7N
     Bridges:
@@ -126,3 +130,41 @@ Boards:
       - jtag
     Programmer: quartus_pgm
     BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&CategoryNo=167&No=830
+  - Id: enclustra_mercury_sa1
+    BoardName: "Enclustra Mercury SA1 Cyclone V SoC SoM"
+    BoardProducer: enclustra
+    Chip: 5CSEBA6U23I7N
+    Bridges:
+      - jtag
+    Programmer: quartus_pgm
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - emmc_flash
+      - ethernet_phy_gigabit
+    Devices:
+      - micron_mt41k256m16
+      - macronix_mx25l25645g
+      - marvell_88e1512
+      - emmc_chip_generic
+    BoardURL: "https://www.enclustra.com/en/products/fpga-modules/mercury-sa1/"
+    Status: active
+  - Id: enclustra_mercury_sa2
+    BoardName: "Enclustra Mercury SA2 Cyclone V SoC SoM (HPS+FPGA)"
+    BoardProducer: enclustra
+    Chip: 5CSXFC6D6F31I7N
+    Bridges:
+      - jtag
+    Programmer: quartus_pgm
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - emmc_flash
+      - ethernet_phy_gigabit
+    Devices:
+      - micron_mt41k256m16
+      - macronix_mx25l25645g
+      - marvell_88e1512
+      - emmc_chip_generic
+    BoardURL: "https://www.enclustra.com/en/products/fpga-modules/mercury-sa2/"
+    Status: active

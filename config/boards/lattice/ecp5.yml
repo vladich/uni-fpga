@@ -63,6 +63,11 @@ Boards:
     BoardURL: https://github.com/Karnix-fpga/karnix-base
   - Id: lattice_ecp5_evn
     BoardName: ECP5 Evaluation Board
+    Devices:
+      - ftdi_ft2232h
+      - micron_n25q128a
+      - silabs_si5342
+      - microsd_socket_generic
     BoardProducer: lattice
     Chip: LFE5UM5G-85F-8BG381C
     Bridges:
@@ -71,6 +76,12 @@ Boards:
     BoardURL: https://www.latticesemi.com/products/developmentboardsandkits/ecp5evaluationboard
   - Id: lattice_ecp5_versa_5g
     BoardName: ECP5 Versa-5G
+    Devices:
+      - ftdi_ft2232h
+      - micron_mt41k128m16
+      - marvell_88e1512
+      - spansion_s25fl256s
+      - microsd_socket_generic
     BoardProducer: lattice
     Chip: LFE5UM-45F-8BG381C
     Bridges:

@@ -34,6 +34,8 @@ Boards:
     Programmer: openFPGALoader
   - Id: sipeed_tang_mega_60k
     BoardName: Sipeed Tang Mega 60K Dock
+    Devices:
+      - microsd_socket_generic
     BoardProducer: sipeed
     Chip: GW5AT-LV60PG484AC1/I0
     Bridges:

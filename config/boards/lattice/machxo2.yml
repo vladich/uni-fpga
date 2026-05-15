@@ -7,6 +7,8 @@ Description: Small, low-power flash-based CPLD-like FPGA. Diamond + nextpnr-mach
 Boards:
   - Id: lattice_machxo2_breakout
     BoardName: MachXO2 Breakout Board
+    Devices:
+      - ftdi_ft2232h
     BoardProducer: lattice
     Chip: LCMXO2-7000HE-4TG144C
     Bridges:

@@ -8,3 +8,4 @@ DefaultToolchains:
   - ise[*]
 Chips:
   - Id: XC3S1500-4FG320C
+  - Id: XC3S50A-4TQG144C

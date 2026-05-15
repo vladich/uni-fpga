@@ -1,0 +1,9 @@
+# Efinix / Topaz - chip registry
+
+Producer: Efinix
+Family: Topaz
+Description: ""
+DefaultToolchains:
+  - efinity[*]
+Chips:
+  - Id: Tz170J484C4

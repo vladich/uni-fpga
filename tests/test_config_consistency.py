@@ -182,6 +182,16 @@ def test_all_board_feature_tokens_are_registered():
         "Unregistered Features tokens: {}".format(unknown[:10])
 
 
+def test_mezzanines_registry_validates():
+    """Every entry in config/mezzanines/* resolves cleanly: known producer,
+    valid Type (mezzanine | som | piggyback), registered Features/Devices,
+    SoM Chip resolves against the chip registry, CompatibleBoards exist."""
+    result = config_init.validate_mezzanines()
+    failures = {k: v for k, v in result.items() if v}
+    assert not failures, "Mezzanine validation failures: {}".format(
+        {k: items[:5] for k, items in failures.items()})
+
+
 def test_board_producer_aka_uniqueness():
     """Every Name + AKA string maps to exactly one producer Id (no overlap
     that would silently mis-route a BoardProducer during migration)."""

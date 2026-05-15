@@ -232,6 +232,111 @@ def validate_board_devices(catalog=None, devices=None):
     return unresolved
 
 
+def _walk_mezzanine_catalog_files():
+    """Yield (catalog_yml_path, producer_dir, family_basename) for every
+    config/mezzanines/<producer>/<family>.yml file."""
+    base = os.path.join(dir_path, "mezzanines")
+    if not os.path.isdir(base):
+        return
+    for prod_name in sorted(os.listdir(base)):
+        if prod_name.startswith("_"):
+            continue
+        prod_dir = os.path.join(base, prod_name)
+        if not os.path.isdir(prod_dir):
+            continue
+        for fname in sorted(os.listdir(prod_dir)):
+            if not fname.endswith(".yml"):
+                continue
+            fam_path = os.path.join(prod_dir, fname)
+            if os.path.isfile(fam_path):
+                yield fam_path, prod_name, fname[:-4]
+
+
+def read_mezzanines_catalog():
+    """Read every config/mezzanines/<producer>/<family>.yml — the registry
+    for mezzanine cards, SoMs, and piggyback boards. Returns {id: entry}.
+
+    Each entry has at minimum: Id, Name, Producer, Type
+    (one of: mezzanine | som | piggyback), Connector (slug describing the
+    physical interface to a host board). SoMs additionally have a Chip
+    (the FPGA part on the module). Mezzanines have no Chip but list
+    Devices (the peripheral chips populating the card).
+    """
+    catalog = {}
+    for fam_path, prod_name, fam_name in _walk_mezzanine_catalog_files():
+        try:
+            with open(fam_path, "r", encoding="utf-8") as f:
+                data = yaml.safe_load(f)
+        except yaml.YAMLError as exc:
+            raise ConfigError(
+                "YAML parse error in {p}: {e}".format(p=fam_path, e=exc))
+        for entry in (data.get("Mezzanines") or []):
+            entry["_registry_path"] = fam_path
+            entry["_producer_dir"]  = prod_name
+            entry["_family_dir"]    = fam_name
+            mid = entry.get("Id")
+            if not mid:
+                raise ConfigError("Mezzanine in {p} missing Id".format(p=fam_path))
+            if mid in catalog:
+                raise ConfigError(
+                    "Duplicate mezzanine Id {i!r} (in {a} and {b})".format(
+                        i=mid, a=catalog[mid]["_registry_path"], b=fam_path))
+            catalog[mid] = entry
+    return catalog
+
+
+def validate_mezzanines(catalog=None, devices=None, features=None,
+                        chips=None, board_catalog=None, producers=None):
+    """Check every mezzanine entry resolves cleanly.
+
+    Returns a dict:
+      unknown_devices:    [(mid, dev_id), ...]
+      unknown_features:   [(mid, feat_id), ...]
+      unknown_chips:      [(mid, chip_id), ...]   (SoMs only)
+      unknown_producers:  [(mid, prod_slug), ...]
+      unknown_compatible: [(mid, board_id), ...]
+      missing_required:   [(mid, field), ...]
+      bad_type:           [(mid, type), ...]
+    """
+    if catalog        is None: catalog        = read_mezzanines_catalog()
+    if devices        is None: devices        = read_peripheral_devices()
+    if features       is None: features       = read_features()
+    if chips          is None: chips          = read_chips()
+    if board_catalog  is None: board_catalog  = read_boards_catalog()
+    if producers      is None: producers      = read_board_producers()
+
+    valid_types = {"mezzanine", "som", "piggyback"}
+    out = {k: [] for k in ("unknown_devices", "unknown_features",
+                            "unknown_chips", "unknown_producers",
+                            "unknown_compatible", "missing_required",
+                            "bad_type")}
+    for mid, m in catalog.items():
+        for req in ("Name", "Producer", "Type", "Connector"):
+            if not m.get(req):
+                out["missing_required"].append((mid, req))
+        mtype = m.get("Type")
+        if mtype and mtype not in valid_types:
+            out["bad_type"].append((mid, mtype))
+        prod = m.get("Producer")
+        if prod and prod not in producers:
+            out["unknown_producers"].append((mid, prod))
+        # SoMs must have a Chip; mezzanines/piggybacks shouldn't
+        chip = m.get("Chip")
+        if chip and chip not in chips:
+            out["unknown_chips"].append((mid, chip))
+        for dev in (m.get("Devices") or []):
+            ref = dev["Id"] if isinstance(dev, dict) else dev
+            if ref and ref not in devices:
+                out["unknown_devices"].append((mid, ref))
+        for f in (m.get("Features") or []):
+            if f not in features:
+                out["unknown_features"].append((mid, f))
+        for bref in (m.get("CompatibleBoards") or []):
+            if bref and bref not in board_catalog:
+                out["unknown_compatible"].append((mid, bref))
+    return out
+
+
 def _walk_board_catalog_files():
     """Yield (catalog_yml_path, producer_dir_name, family_yml_basename) for
     every family-catalog file under config/boards/<producer>/<family>.yml.

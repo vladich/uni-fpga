@@ -7,6 +7,8 @@ Description: MachXO3 LF/L successor to MachXO2. Diamond.
 Boards:
   - Id: lattice_machxo3l_breakout
     BoardName: MachXO3L Breakout Board
+    Devices:
+      - ftdi_ft2232h
     BoardProducer: lattice
     Chip: LCMXO3LF-6900C-5BG256C
     Bridges:
@@ -21,6 +23,8 @@ Boards:
     Status: active
   - Id: lattice_machxo3lf_9400
     BoardName: MachXO3LF Starter Kit
+    Devices:
+      - ftdi_ft2232h
     BoardProducer: lattice
     Chip: LCMXO3LF-9400C-5BG400C
     Bridges:

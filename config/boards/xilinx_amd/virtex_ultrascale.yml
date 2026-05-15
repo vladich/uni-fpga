@@ -7,6 +7,14 @@ Description: 20 nm. Vivado.
 Boards:
   - Id: htg_830
     BoardName: HTG-830 Virtex UltraScale Dev Platform
+    Devices:
+      - ftdi_ft4232h
+      - silabs_si5342
+      - silabs_si570
+      - micron_n25q256a
+      - ddr4_sodimm_socket
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: hitech_global
     Chip: XCVU190-2FLGC2104E
     Bridges:
@@ -70,3 +78,26 @@ Boards:
       - jtag_header
     BoardURL: https://www.amd.com/en/products/adaptive-socs-and-fpgas/evaluation-boards/dk-u1-vcu110-g.html
     Status: eol
+  - Id: htg_811
+    BoardName: "HTG-811 Virtex UltraScale FPGA Development Platform (VU190/VU440)"
+    BoardProducer: hitech_global
+    Chip: XCVU190-2FLGC2104E
+    Bridges:
+      - pcie-jtag
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - pcie_endpoint
+      - ddr4_memory
+      - qsfp_cage
+      - fmc_hpc
+      - usb_uart_bridge
+      - usb_jtag_bridge
+    Devices:
+      - ftdi_ft4232h
+      - silabs_si5342
+      - silabs_si570
+      - micron_n25q256a
+      - ddr4_sodimm_socket
+    BoardURL: "https://www.hitechglobal.com/Boards/UltraScale_PCIe.htm"
+    Status: active

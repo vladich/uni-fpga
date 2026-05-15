@@ -7,6 +7,11 @@ Description: Mainstream Agilex high-perf. Quartus Prime Pro.
 Boards:
   - Id: bittware_ia_420f
     BoardName: IA-420f
+    Devices:
+      - ftdi_ft4232h
+      - silabs_si5342
+      - micron_n25q256a
+      - ddr4_sodimm_socket
     BoardProducer: bittware
     Chip: AGFB014R24A2E2V
     Bridges:
@@ -21,6 +26,11 @@ Boards:
     Status: active
   - Id: bittware_ia_440i
     BoardName: IA-440i
+    Devices:
+      - ftdi_ft4232h
+      - silabs_si5342
+      - micron_n25q256a
+      - ddr4_sodimm_socket
     BoardProducer: bittware
     Chip: AGIB023R29B1E1V
     Bridges:
@@ -35,6 +45,11 @@ Boards:
     Status: active
   - Id: bittware_ia_441i
     BoardName: BittWare IA-441i Agilex 7 I-Series
+    Devices:
+      - ftdi_ft4232h
+      - silabs_si5342
+      - micron_n25q256a
+      - ddr4_sodimm_socket
     BoardProducer: bittware
     Chip: AGIB041R29A1E2VR0
     Bridges:
@@ -49,6 +64,11 @@ Boards:
     Status: active
   - Id: bittware_ia_720i
     BoardName: BittWare IA-720i Agilex 7 I-Series
+    Devices:
+      - ftdi_ft4232h
+      - silabs_si5342
+      - micron_n25q256a
+      - ddr4_sodimm_socket
     BoardProducer: bittware
     Chip: AGIB027R29A1E2VR0
     Bridges:
@@ -63,6 +83,11 @@ Boards:
     Status: active
   - Id: bittware_ia_780i
     BoardName: IA-780i
+    Devices:
+      - ftdi_ft4232h
+      - silabs_si5342
+      - micron_n25q256a
+      - ddr4_sodimm_socket
     BoardProducer: bittware
     Chip: AGIB023R29B1E1V
     Bridges:
@@ -77,6 +102,11 @@ Boards:
     Status: active
   - Id: bittware_ia_840f
     BoardName: IA-840f
+    Devices:
+      - ftdi_ft4232h
+      - silabs_si5342
+      - micron_n25q256a
+      - ddr4_sodimm_socket
     BoardProducer: bittware
     Chip: AGFB027R25A2E2V
     Bridges:
@@ -91,6 +121,10 @@ Boards:
     Status: active
   - Id: bittware_ia_860m
     BoardName: IA-860m
+    Devices:
+      - ftdi_ft4232h
+      - silabs_si5342
+      - micron_n25q256a
     BoardProducer: bittware
     Chip: AGMF039R47A2E1V
     Bridges:

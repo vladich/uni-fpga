@@ -71,3 +71,17 @@ Boards:
     Bridges:
       - jtag
     Programmer: openFPGALoader
+  - Id: gowin_dk_uac2_gw1n9
+    BoardName: "GW1N-9 Audio (UAC2) Dev Kit (DK_UAC2_GW1N-LV9LQ144C7I6)"
+    BoardProducer: gowin_semi
+    Chip: GW1N-LV9LQ144C7/I6
+    Bridges:
+      - jtag
+    Programmer: gowin_pgm
+    Features:
+      - jtag_header
+      - audio_codec
+      - usb_2_device
+      - user_leds
+    BoardURL: "https://www.gowinsemi.com/en/support/devkits/37/"
+    Status: active

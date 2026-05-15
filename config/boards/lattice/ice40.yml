@@ -32,6 +32,8 @@ Boards:
     BoardURL: https://www.olimex.com/Products/FPGA/iCE40/iCE40HX8K-EVB/
   - Id: lattice_ice40_hx1k_evb
     BoardName: iCE40-HX1K Evaluation Kit
+    Devices:
+      - ftdi_ft2232h
     BoardProducer: lattice
     Chip: iCE40HX1K-VQ100
     Bridges:
@@ -40,6 +42,8 @@ Boards:
     BoardURL: https://www.latticesemi.com/products/developmentboardsandkits/ice40hx1kevaluationkit
   - Id: lattice_ice40_hx8k_breakout
     BoardName: iCE40-HX8K Breakout Board
+    Devices:
+      - ftdi_ft2232h
     BoardProducer: lattice
     Chip: iCE40HX8K-CT256
     Bridges:
@@ -48,6 +52,8 @@ Boards:
     BoardURL: https://www.latticesemi.com/products/developmentboardsandkits/ice40hx8kbreakoutboard
   - Id: lattice_ice40_stick
     BoardName: iCEstick Evaluation Kit
+    Devices:
+      - ftdi_ft2232h
     BoardProducer: lattice
     Chip: iCE40HX1K-TQ144
     Bridges:
@@ -86,3 +92,31 @@ Boards:
       - jtag
     Programmer: iceprog
     BoardURL: https://tinyfpga.com/b-series-guide.html
+  - Id: lattice_ice40lp1k_evalkit
+    BoardName: "iCE40LP1K Evaluation Kit"
+    BoardProducer: lattice
+    Chip: iCE40LP1K-CM36
+    Bridges:
+      - jtag
+    Programmer: icecube2_pgm
+    Features:
+      - user_leds
+      - usb_powered
+    BoardURL: "https://www.latticesemi.com/en/Products/DevelopmentBoardsAndKits/iCE40LP1KEvaluationKit"
+    Status: active
+  - Id: lattice_ice40_ultra_breakout
+    BoardName: "iCE40 Ultra Breakout Board"
+    BoardProducer: lattice
+    Chip: iCE5LP4K-SG48
+    Bridges:
+      - jtag
+    Programmer: icecube2_pgm
+    Features:
+      - user_leds
+      - user_buttons
+      - usb_jtag_bridge
+      - usb_powered
+    Devices:
+      - ftdi_ft2232h
+    BoardURL: "https://www.latticesemi.com/Products/DevelopmentBoardsAndKits/iCE40UltraBreakoutBoard.aspx"
+    Status: active

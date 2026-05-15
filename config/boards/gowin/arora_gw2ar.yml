@@ -15,6 +15,10 @@ Boards:
     BoardURL: https://www.gowinsemi.com/en/support/devkits_detail/33/
   - Id: tang_nano_20k
     BoardName: Tang Nano 20k
+    Devices:
+      - maxim_max98357
+      - ws2812_led_chain
+      - microsd_socket_generic
     BoardProducer: sipeed
     Chip: GW2AR-LV18QN88C8/I7
     Bridges:

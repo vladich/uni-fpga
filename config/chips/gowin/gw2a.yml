@@ -1,0 +1,9 @@
+# Auto-generated chip registry
+
+Producer: Gowin
+Family: Gw2A
+Description: ""
+DefaultToolchains:
+  - gowin_eda[*]
+Chips:
+  - Id: GW2AR-LV18QN88PC8/I7

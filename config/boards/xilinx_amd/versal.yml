@@ -7,6 +7,11 @@ Description: 7 nm ACAP — AI Engines + scalar + PL. Vivado + Vitis.
 Boards:
   - Id: avnet_ve2302_dk
     BoardName: Versal VE2302 Development Kit
+    Devices:
+      - realtek_rtl8211fd
+      - silabs_cp2108
+      - emmc_chip_generic
+      - microsd_socket_generic
     BoardProducer: avnet
     Chip: XCVE2302-1LSESFVA784
     Bridges:
@@ -25,6 +30,8 @@ Boards:
     Status: active
   - Id: avnet_ve2302_som
     BoardName: Versal VE2302 SOM
+    Devices:
+      - emmc_chip_generic
     BoardProducer: avnet
     Chip: XCVE2302-1LSESFVA784
     Bridges:
@@ -38,6 +45,11 @@ Boards:
     Status: active
   - Id: bittware_av_811p
     BoardName: BittWare AV-811p Versal Premium
+    Devices:
+      - ftdi_ft4232h
+      - silabs_si5342
+      - micron_n25q256a
+      - ddr4_sodimm_socket
     BoardProducer: bittware
     Chip: XCVP1502-2MSEVSVA2197
     Bridges:
@@ -52,6 +64,11 @@ Boards:
     Status: active
   - Id: htg_vsl1
     BoardName: HTG-VSL1 Versal AI Core PCIe Gen4
+    Devices:
+      - ftdi_ft4232h
+      - silabs_si5342
+      - micron_n25q256a
+      - ddr4_sodimm_socket
     BoardProducer: hitech_global
     Chip: XCVC1902-2MSEVSVA2197
     Bridges:
@@ -68,6 +85,11 @@ Boards:
     Status: active
   - Id: htg_vsl300
     BoardName: HTG-VSL300 Versal Prime/AI Platform
+    Devices:
+      - ftdi_ft4232h
+      - silabs_si5342
+      - micron_n25q256a
+      - ddr4_sodimm_socket
     BoardProducer: hitech_global
     Chip: XCVM1802-2MSEVSVH1760
     Bridges:
@@ -84,6 +106,11 @@ Boards:
     Status: active
   - Id: htg_vsl5
     BoardName: HTG-VSL5 Versal Premium PCIe Gen5
+    Devices:
+      - ftdi_ft4232h
+      - silabs_si5342
+      - micron_n25q256a
+      - ddr4_sodimm_socket
     BoardProducer: hitech_global
     Chip: XCVP1502-2MSEVSVA2197
     Bridges:
@@ -100,6 +127,11 @@ Boards:
     Status: active
   - Id: iwave_rainbow_g57m
     BoardName: iW-RainboW-G57M Versal AI Edge SoM
+    Devices:
+      - ftdi_ft4232h
+      - micron_mt40a256m16
+      - macronix_mx25l25645g
+      - microsd_socket_generic
     BoardProducer: iwave
     Chip: XCVE2002-1LSESFVA784
     Bridges:
@@ -116,6 +148,10 @@ Boards:
     Status: active
   - Id: iwave_rainbow_g63m
     BoardName: iW-RainboW-G63M Versal Premium SoM
+    Devices:
+      - ftdi_ft4232h
+      - micron_mt40a256m16
+      - macronix_mx25l25645g
     BoardProducer: iwave
     Chip: XCVP1502-1MSEVSVA2197
     Bridges:
@@ -132,6 +168,10 @@ Boards:
     Status: active
   - Id: iwave_rainbow_g83m
     BoardName: iW-RainboW-G83M Versal AI Core SoM
+    Devices:
+      - ftdi_ft4232h
+      - micron_mt40a256m16
+      - macronix_mx25l25645g
     BoardProducer: iwave
     Chip: XCVC1902-2MSEVSVA2197
     Bridges:
@@ -362,3 +402,61 @@ Boards:
     BoardURL: https://coderobin.com/products/alinx-vd100-xilinx-versal-ai-edge-ve2302-fpga-development-board
     Status: active
     Notes: "Versal AI Edge VE2302; PCIe x4 card with V100 SoM. Chip on board is XCVE2302-SFVA784-1LP-E-S (low-power -1 variant) — maps to registry entry XCVE2302-1LSESFVA784."
+  - Id: avnet_versal_vmk180_eval_kit
+    BoardName: "Avnet VMK180 Versal Premium Eval Kit"
+    BoardProducer: avnet
+    Chip: XCVM1802-2MSEVSVA2197
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - qsfp_dd_cage
+      - pcie_edge_connector
+      - fmc_plus
+      - ethernet_phy_gigabit
+      - usb_uart_bridge
+      - microsd_socket
+    Devices:
+      - micron_mt40a256m16
+      - silabs_si5342
+      - marvell_88e1512
+      - ftdi_ft4232h
+    BoardURL: "https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/versal-evaluation-platforms/"
+    Status: preview
+  - Id: htg_vsl15
+    BoardName: "HTG-VSL15 Versal AI Core VC1502 PCIe Dev Platform"
+    BoardProducer: hitech_global
+    Chip: XCVC1502-2MSEVSVA2197
+    Bridges:
+      - pcie-jtag
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - pcie_endpoint
+      - ddr4_memory
+      - qsfp_dd_cage
+      - usb_uart_bridge
+      - usb_jtag_bridge
+    Devices:
+      - ftdi_ft4232h
+      - silabs_si5342
+      - micron_n25q256a
+      - ddr4_sodimm_socket
+    BoardURL: "https://www.hitechglobal.com/Boards/Versal_VSL15.htm"
+    Status: active
+  - Id: iwave_rainbow_g46m
+    BoardName: "iW-RainboW-G46M Versal HBM VHK158 SoM"
+    BoardProducer: iwave
+    Chip: XCVH1582-2MSEVSVA3697
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - hbm2e_in_package
+      - qsfp_dd_cage
+    Devices:
+      - ftdi_ft4232h
+    BoardURL: "https://www.iwavesystems.com/product/versal-hbm-system-on-module/"
+    Status: active

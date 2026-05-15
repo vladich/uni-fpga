@@ -53,6 +53,11 @@ Boards:
     BoardURL: https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/agilex/5.html
   - Id: iwave_rainbow_g58m
     BoardName: iW-RainboW-G58M Intel Agilex 5 FPGA SoM
+    Devices:
+      - ftdi_ft4232h
+      - micron_mt40a256m16
+      - macronix_mx25l25645g
+      - microsd_socket_generic
     BoardProducer: iwave
     Chip: A5ED065BB32AE6SR0
     Bridges:

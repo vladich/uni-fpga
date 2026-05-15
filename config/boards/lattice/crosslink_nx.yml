@@ -6,6 +6,8 @@ Description: (generated)
 Boards:
   - Id: lattice_crosslinku_nx_evn
     BoardName: CrossLinkU-NX Evaluation Board
+    Devices:
+      - ftdi_ft2232h
     BoardProducer: lattice
     Chip: LIFCLU-33-9BG400I
     Bridges:

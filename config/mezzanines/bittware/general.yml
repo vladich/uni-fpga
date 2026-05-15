@@ -1,0 +1,16 @@
+# bittware / general - mezzanines, SoMs, piggyback boards
+
+Producer: bittware
+Mezzanines:
+  - Id: bittware_qsfp_dd_riser
+    Name: "BittWare QSFP-DD Riser Daughter Card (for IA-840f / VVH)"
+    Producer: bittware
+    Type: mezzanine
+    Connector: qsfp_dd_cage
+    Features:
+      - qsfp_dd_cage
+    BoardURL: "https://www.bittware.com/products/"
+    Status: active
+    CompatibleBoards:
+      - bittware_ia_840f
+      - bittware_xup_vv8

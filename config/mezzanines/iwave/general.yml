@@ -1,0 +1,107 @@
+# iwave / general - mezzanines, SoMs, piggyback boards
+
+Producer: iwave
+Mezzanines:
+  - Id: iwave_g30m_som
+    Name: "iW-RainboW-G30M Zynq UltraScale+ SoM (ZU7/ZU5/ZU4/ZU3)"
+    Producer: iwave
+    Type: som
+    Connector: b2b_custom_iwave
+    Chip: XCZU4EV-1SFVC784I
+    Features:
+      - ddr4_memory
+      - emmc_flash
+      - qspi_flash
+      - ethernet_phy_gigabit
+    Devices:
+      - micron_mt40a256m16
+      - macronix_mx25l25645g
+      - marvell_88e1512
+    BoardURL: "https://www.iwavesystems.com/product/zynq-ultrascale-mpsoc-system-on-module/"
+    Status: active
+    DefaultCarrier: iwave_rainbow_g30d
+  - Id: iwave_g35m_som
+    Name: "iW-RainboW-G35M Zynq UltraScale+ UHS SoM (ZU19/17/11EG)"
+    Producer: iwave
+    Type: som
+    Connector: b2b_custom_iwave
+    Chip: XCZU19EG-2FFVC1760I
+    Features:
+      - ddr4_memory
+      - emmc_flash
+      - qspi_flash
+      - ethernet_phy_gigabit
+    Devices:
+      - micron_mt40a256m16
+      - macronix_mx25l25645g
+      - marvell_88e1512
+    BoardURL: "https://www.iwavesystems.com/product/zynq-ultrascale-mpsoc-uhs-som/"
+    Status: active
+    DefaultCarrier: iwave_rainbow_g35d
+  - Id: iwave_g36m_som
+    Name: "iW-RainboW-G36M Zynq UltraScale+ SoM (ZU5/4/3T/3/2/1)"
+    Producer: iwave
+    Type: som
+    Connector: b2b_custom_iwave
+    Chip: XCZU3EG-1SFVC784I
+    Features:
+      - ddr4_memory
+      - emmc_flash
+      - qspi_flash
+      - ethernet_phy_gigabit
+    Devices:
+      - micron_mt40a256m16
+      - macronix_mx25l25645g
+    BoardURL: "https://www.iwavesystems.com/product/zynq-ultrascale-mpsoc-zu5-zu4-zu3t-zu3-zu2-zu1-system-on-module/"
+    Status: active
+    DefaultCarrier: iwave_rainbow_g36d
+  - Id: iwave_g42m_som
+    Name: "iW-RainboW-G42M Zynq UltraScale+ RFSoC SoM (ZU49DR)"
+    Producer: iwave
+    Type: som
+    Connector: b2b_custom_iwave
+    Chip: XCZU49DR-2FFVF1760I
+    Features:
+      - ddr4_memory
+      - emmc_flash
+      - qspi_flash
+      - rf_adc_dac_high_speed
+    Devices:
+      - micron_mt40a256m16
+      - macronix_mx25l25645g
+    BoardURL: "https://www.iwavesystems.com/product/zynq-ultrascale-rfsoc-system-on-module/"
+    Status: active
+    DefaultCarrier: iwave_rainbow_g42p
+  - Id: iwave_g45m_som
+    Name: "iW-RainboW-G45M Intel Stratix 10 SoC SoM"
+    Producer: iwave
+    Type: som
+    Connector: b2b_custom_iwave
+    Chip: 1SX085HN3F43E2VG
+    Features:
+      - ddr4_memory
+      - emmc_flash
+      - qspi_flash
+      - ethernet_phy_gigabit
+    Devices:
+      - micron_mt40a256m16
+      - macronix_mx25l25645g
+    BoardURL: "https://www.iwavesystems.com/product/intel-stratix-10-soc-system-on-module/"
+    Status: active
+    DefaultCarrier: iwave_rainbow_g45m
+  - Id: iwave_g57m_som
+    Name: "iW-RainboW-G57M Versal AI Edge SoM"
+    Producer: iwave
+    Type: som
+    Connector: b2b_custom_iwave
+    Chip: XCVE2002-1LSESFVA784
+    Features:
+      - ddr4_memory
+      - emmc_flash
+      - qspi_flash
+    Devices:
+      - micron_mt40a256m16
+      - macronix_mx25l25645g
+    BoardURL: "https://www.iwavesystems.com/product/versal-ai-edge-system-on-module/"
+    Status: active
+    DefaultCarrier: iwave_rainbow_g57m

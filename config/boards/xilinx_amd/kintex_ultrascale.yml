@@ -53,6 +53,11 @@ Boards:
     Status: active
   - Id: avnet_aes_ku040_db
     BoardName: Kintex UltraScale KU040 Development Board
+    Devices:
+      - micron_mt40a256m16
+      - ddr4_sodimm_socket
+      - silabs_si570
+      - ftdi_ft2232h
     BoardProducer: avnet
     Chip: XCKU040-1FBVA676C
     Bridges:
@@ -73,6 +78,14 @@ Boards:
     Status: active
   - Id: htg_k800
     BoardName: HTG-K800 Kintex UltraScale PCIe Development Platform
+    Devices:
+      - ftdi_ft4232h
+      - silabs_si5342
+      - silabs_si570
+      - micron_n25q256a
+      - ddr4_sodimm_socket
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: hitech_global
     Chip: XCKU115-2FLVA1517E
     Bridges:
@@ -89,6 +102,14 @@ Boards:
     Status: active
   - Id: htg_k816
     BoardName: HTG-K816 Kintex UltraScale Half-Size PCIe
+    Devices:
+      - ftdi_ft4232h
+      - silabs_si5342
+      - silabs_si570
+      - micron_n25q256a
+      - ddr4_sodimm_socket
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: hitech_global
     Chip: XCKU060-2FFVA1156E
     Bridges:
@@ -104,6 +125,12 @@ Boards:
     Status: active
   - Id: numato_aller
     BoardName: Aller
+    Devices:
+      - ftdi_ft2232h
+      - micron_n25q128a
+      - ddr3_sodimm_socket
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: numato_lab
     Chip: XCKU040-1FBVA676C
     Bridges:
@@ -112,6 +139,12 @@ Boards:
     BoardURL: https://numato.com/product/aller-artix-7-fpga-development-board-with-m-2-interface/
   - Id: numato_skoll
     BoardName: Skoll
+    Devices:
+      - ftdi_ft2232h
+      - micron_n25q256a
+      - ddr4_sodimm_socket
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: numato_lab
     Chip: XCKU040-2FFVA1156I
     Bridges:

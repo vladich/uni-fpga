@@ -77,6 +77,10 @@ Boards:
     Status: active
   - Id: avnet_aes_ultra96
     BoardName: AES-ULTRA96
+    Devices:
+      - ti_tlv320aic3104
+      - ftdi_ft4232h
+      - microsd_socket_generic
     BoardProducer: avnet
     Chip: XCZU3EG-1SBVA484E
     Bridges:
@@ -85,6 +89,12 @@ Boards:
     BoardURL: https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/ultra96-v2/
   - Id: avnet_k24_io_dk
     BoardName: K24 I/O Development Kit
+    Devices:
+      - realtek_rtl8211fd
+      - silabs_cp2108
+      - ti_tmds141
+      - microsd_socket_generic
+      - emmc_chip_generic
     BoardProducer: avnet
     Chip: XCK24-SFVC784
     Bridges:
@@ -104,6 +114,12 @@ Boards:
     Status: active
   - Id: avnet_maaxboard
     BoardName: MaaXBoard
+    Devices:
+      - marvell_88e1512
+      - murata_lbee5kl1dx
+      - ftdi_ft4232h
+      - emmc_chip_generic
+      - microsd_socket_generic
     BoardProducer: avnet
     Chip: XCZU3EG-SFVC784
     Bridges:
@@ -112,6 +128,10 @@ Boards:
     BoardURL: https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/maaxboard/
   - Id: avnet_ultra96_v1
     BoardName: Ultra96
+    Devices:
+      - ti_tlv320aic3104
+      - ftdi_ft4232h
+      - microsd_socket_generic
     BoardProducer: avnet
     Chip: XCZU3EG-1SBVA484E
     Bridges:
@@ -120,6 +140,10 @@ Boards:
     BoardURL: https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/ultra96-v1/
   - Id: avnet_ultra96_v2
     BoardName: Ultra96-V2
+    Devices:
+      - ti_tlv320aic3104
+      - ftdi_ft4232h
+      - microsd_socket_generic
     BoardProducer: avnet
     Chip: XCZU3EG-1SBVA484E
     Bridges:
@@ -128,6 +152,13 @@ Boards:
     BoardURL: https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/ultra96-v2/
   - Id: avnet_ultrazed_3eg_pcie
     BoardName: UltraZed-EG PCIe Carrier
+    Devices:
+      - micron_mt40a256m16
+      - marvell_88e1512
+      - microchip_usb3343
+      - ftdi_ft4232h
+      - emmc_chip_generic
+      - microsd_socket_generic
     BoardProducer: avnet
     Chip: XCZU3EG-1SFVA625I
     Bridges:
@@ -136,6 +167,13 @@ Boards:
     BoardURL: https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/ultrazed-eg/
   - Id: avnet_ultrazed_eg_sk
     BoardName: UltraZed-EG Starter Kit (IO Carrier)
+    Devices:
+      - micron_mt40a256m16
+      - marvell_88e1512
+      - adi_adv7511
+      - ftdi_ft4232h
+      - emmc_chip_generic
+      - microsd_socket_generic
     BoardProducer: avnet
     Chip: XCZU3EG-1SFVA625I
     Bridges:
@@ -157,6 +195,15 @@ Boards:
     Status: active
   - Id: avnet_ultrazed_ev
     BoardName: UltraZed-EV PCIe Carrier
+    Devices:
+      - micron_mt40a256m16
+      - marvell_88e1512
+      - adi_adv7611
+      - adi_adv7511
+      - ti_tmds141
+      - ftdi_ft4232h
+      - emmc_chip_generic
+      - microsd_socket_generic
     BoardProducer: avnet
     Chip: XCZU7EV-1FBVB900I
     Bridges:
@@ -165,6 +212,15 @@ Boards:
     BoardURL: https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/ultrazed-ev/
   - Id: avnet_ultrazed_ev_sk
     BoardName: UltraZed-EV Starter Kit (Carrier Card)
+    Devices:
+      - micron_mt40a256m16
+      - marvell_88e1512
+      - adi_adv7611
+      - adi_adv7511
+      - ti_tmds141
+      - ftdi_ft4232h
+      - emmc_chip_generic
+      - microsd_socket_generic
     BoardProducer: avnet
     Chip: XCZU7EV-1FBVB900I
     Bridges:
@@ -188,6 +244,14 @@ Boards:
     Status: active
   - Id: bittware_250_soc
     BoardName: BittWare 250-SoC
+    Devices:
+      - ftdi_ft4232h
+      - silabs_si5342
+      - silabs_si570
+      - micron_n25q256a
+      - ddr4_sodimm_socket
+      - microsd_socket_generic
+      - marvell_88e1512
     BoardProducer: bittware
     Chip: XCZU19EG-2FFVD1760E
     Bridges:
@@ -241,6 +305,12 @@ Boards:
     BoardURL: https://digilent.com/reference/programmable-logic/genesys-zu/start
   - Id: enclustra_andromeda_xzu65
     BoardName: Andromeda XZU65
+    Devices:
+      - micron_mt40a256m16
+      - silabs_si5342
+      - marvell_88e1512
+      - ftdi_ft4232h
+      - emmc_chip_generic
     BoardProducer: enclustra
     Chip: XCZU11EG-2FFVC1156I
     Bridges:
@@ -257,6 +327,12 @@ Boards:
     Status: active
   - Id: enclustra_andromeda_xzu70
     BoardName: Andromeda XZU70
+    Devices:
+      - micron_mt40a256m16
+      - silabs_si5342
+      - marvell_88e1512
+      - ftdi_ft4232h
+      - emmc_chip_generic
     BoardProducer: enclustra
     Chip: XCZU11EG-2FFVF1517I
     Bridges:
@@ -273,6 +349,12 @@ Boards:
     Status: active
   - Id: enclustra_andromeda_xzu80
     BoardName: Andromeda XZU80
+    Devices:
+      - micron_mt40a256m16
+      - silabs_si5342
+      - marvell_88e1512
+      - ftdi_ft4232h
+      - emmc_chip_generic
     BoardProducer: enclustra
     Chip: XCZU19EG-2FFVB1517I
     Bridges:
@@ -289,6 +371,12 @@ Boards:
     Status: active
   - Id: enclustra_andromeda_xzu90
     BoardName: Andromeda XZU90
+    Devices:
+      - micron_mt40a256m16
+      - silabs_si5342
+      - marvell_88e1512
+      - ftdi_ft4232h
+      - emmc_chip_generic
     BoardProducer: enclustra
     Chip: XCZU19EG-2FFVD1760I
     Bridges:
@@ -305,6 +393,10 @@ Boards:
     Status: active
   - Id: enclustra_mars_xu3
     BoardName: Mars XU3
+    Devices:
+      - micron_mt40a256m16
+      - marvell_88e1512
+      - emmc_chip_generic
     BoardProducer: enclustra
     Chip: XCZU3EG-2SBVA484I
     Bridges:
@@ -321,6 +413,12 @@ Boards:
     Status: active
   - Id: enclustra_mercury_plus_xu1
     BoardName: Mercury+ XU1
+    Devices:
+      - micron_mt40a256m16
+      - macronix_mx25l25645g
+      - marvell_88e1512
+      - microchip_usb3343
+      - emmc_chip_generic
     BoardProducer: enclustra
     Chip: XCZU2EG-1SFVC784I
     Bridges:
@@ -329,6 +427,12 @@ Boards:
     BoardURL: https://www.enclustra.com/en/products/fpga-modules/mercury-xu1/
   - Id: enclustra_mercury_plus_xu5
     BoardName: Mercury+ XU5
+    Devices:
+      - micron_mt40a256m16
+      - macronix_mx25l25645g
+      - marvell_88e1512
+      - microchip_usb3343
+      - emmc_chip_generic
     BoardProducer: enclustra
     Chip: XCZU5EV-1SFVC784I
     Bridges:
@@ -337,6 +441,12 @@ Boards:
     BoardURL: https://www.enclustra.com/en/products/fpga-modules/mercury-xu5/
   - Id: enclustra_mercury_plus_xu6
     BoardName: Mercury+ XU6
+    Devices:
+      - micron_mt40a256m16
+      - macronix_mx25l25645g
+      - marvell_88e1512
+      - microchip_usb3343
+      - emmc_chip_generic
     BoardProducer: enclustra
     Chip: XCZU4EV-1SFVC784I
     Bridges:
@@ -353,6 +463,12 @@ Boards:
     Status: active
   - Id: enclustra_mercury_plus_xu61
     BoardName: Mercury+ XU61
+    Devices:
+      - micron_mt40a256m16
+      - macronix_mx25l25645g
+      - marvell_88e1512
+      - microchip_usb3343
+      - emmc_chip_generic
     BoardProducer: enclustra
     Chip: XCZU2EG-L1SFVC784I4524
     Bridges:
@@ -369,6 +485,12 @@ Boards:
     Status: active
   - Id: enclustra_mercury_plus_xu7
     BoardName: Mercury+ XU7
+    Devices:
+      - micron_mt40a256m16
+      - macronix_mx25l25645g
+      - marvell_88e1512
+      - microchip_usb3343
+      - emmc_chip_generic
     BoardProducer: enclustra
     Chip: XCZU7EV-1FFVC1156I
     Bridges:
@@ -377,6 +499,12 @@ Boards:
     BoardURL: https://www.enclustra.com/en/products/fpga-modules/mercury-xu7/
   - Id: enclustra_mercury_plus_xu8
     BoardName: Mercury+ XU8
+    Devices:
+      - micron_mt40a256m16
+      - macronix_mx25l25645g
+      - marvell_88e1512
+      - microchip_usb3343
+      - emmc_chip_generic
     BoardProducer: enclustra
     Chip: XCZU15EG-1FFVC900I
     Bridges:
@@ -385,6 +513,12 @@ Boards:
     BoardURL: https://www.enclustra.com/en/products/fpga-modules/mercury-xu8/
   - Id: enclustra_mercury_plus_xu9
     BoardName: Mercury+ XU9
+    Devices:
+      - micron_mt40a256m16
+      - macronix_mx25l25645g
+      - marvell_88e1512
+      - microchip_usb3343
+      - emmc_chip_generic
     BoardProducer: enclustra
     Chip: XCZU7EV-2FBVB900I
     Bridges:
@@ -401,6 +535,14 @@ Boards:
     Status: active
   - Id: htg_z920
     BoardName: HTG-Z920 Zynq UltraScale+ MPSoC PCIe Development Platform
+    Devices:
+      - ftdi_ft4232h
+      - silabs_si5342
+      - silabs_si570
+      - micron_n25q256a
+      - ddr4_sodimm_socket
+      - marvell_88e1512
+      - microsd_socket_generic
     BoardProducer: hitech_global
     Chip: XCZU19EG-2FFVD1760E
     Bridges:
@@ -417,6 +559,14 @@ Boards:
     Status: active
   - Id: htg_z922
     BoardName: HTG-Z922 Zynq UltraScale+ MPSoC PCIe ZU17EG
+    Devices:
+      - ftdi_ft4232h
+      - silabs_si5342
+      - silabs_si570
+      - micron_n25q256a
+      - ddr4_sodimm_socket
+      - marvell_88e1512
+      - microsd_socket_generic
     BoardProducer: hitech_global
     Chip: XCZU17EG-2FFVD1760E
     Bridges:
@@ -433,6 +583,14 @@ Boards:
     Status: active
   - Id: iwave_rainbow_g30d
     BoardName: iW-RainboW-G30D Zynq UltraScale+ MPSoC (ZU7/ZU5/ZU4) Dev Kit
+    Devices:
+      - ftdi_ft2232h
+      - micron_mt40a256m16
+      - macronix_mx25l25645g
+      - marvell_88e1512
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: iwave
     Chip: XCZU4EV-1SFVC784I
     Bridges:
@@ -458,6 +616,14 @@ Boards:
     Status: active
   - Id: iwave_rainbow_g35d
     BoardName: iW-RainboW-G35D Zynq UltraScale+ MPSoC (ZU19/17/11EG) UHS Dev Kit
+    Devices:
+      - ftdi_ft4232h
+      - micron_mt40a256m16
+      - macronix_mx25l25645g
+      - marvell_88e1512
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: iwave
     Chip: XCZU19EG-2FFVC1760I
     Bridges:
@@ -483,6 +649,14 @@ Boards:
     Status: active
   - Id: iwave_rainbow_g36d
     BoardName: iW-RainboW-G36D Zynq UltraScale+ MPSoC (ZU5/4/3T/3/2/1) Dev Kit
+    Devices:
+      - ftdi_ft4232h
+      - micron_mt40a256m16
+      - macronix_mx25l25645g
+      - marvell_88e1512
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: iwave
     Chip: XCZU3EG-1SFVC784I
     Bridges:
@@ -506,6 +680,13 @@ Boards:
     Status: active
   - Id: myir_fz3_card
     BoardName: MYIR FZ3 Card Deep-Learning Accelerator (ZU3EG)
+    Devices:
+      - ftdi_ft2232h
+      - micron_mt40a256m16
+      - macronix_mx25l25645g
+      - realtek_rtl8211e
+      - microsd_socket_generic
+      - led_discrete_generic
     BoardProducer: myir
     Chip: XCZU3EG-1SFVC784I
     Bridges:
@@ -526,6 +707,13 @@ Boards:
     Status: active
   - Id: myir_fz5_card
     BoardName: MYIR FZ5 Card AI Accelerator (ZU5EV)
+    Devices:
+      - ftdi_ft2232h
+      - micron_mt40a256m16
+      - macronix_mx25l25645g
+      - realtek_rtl8211e
+      - microsd_socket_generic
+      - led_discrete_generic
     BoardProducer: myir
     Chip: XCZU5EV-2SFVC784I
     Bridges:
@@ -544,6 +732,14 @@ Boards:
     Status: active
   - Id: myir_myd_czu3eg_v3
     BoardName: MYIR MYD-CZU3EG-V3 Dev Board (MYC-CZU3EG SoM)
+    Devices:
+      - silabs_cp2102
+      - micron_mt40a256m16
+      - macronix_mx25l25645g
+      - realtek_rtl8211fd
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: myir
     Chip: XCZU3EG-1SFVC784I
     Bridges:
@@ -569,6 +765,14 @@ Boards:
     Status: active
   - Id: myir_myd_czu4ev_v2
     BoardName: MYIR MYD-CZU4EV-V2 Dev Board (MYC-CZU4EV SoM)
+    Devices:
+      - silabs_cp2102
+      - micron_mt40a256m16
+      - macronix_mx25l25645g
+      - realtek_rtl8211fd
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: myir
     Chip: XCZU4EV-1SFVC784I
     Bridges:
@@ -594,6 +798,14 @@ Boards:
     Status: active
   - Id: myir_myd_czu5ev_v2
     BoardName: MYIR MYD-CZU5EV-V2 Dev Board (MYC-CZU5EV SoM)
+    Devices:
+      - silabs_cp2102
+      - micron_mt40a256m16
+      - macronix_mx25l25645g
+      - realtek_rtl8211fd
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: myir
     Chip: XCZU5EV-2SFVC784I
     Bridges:
@@ -1070,6 +1282,13 @@ Boards:
     BoardURL: https://www.xilinx.com/products/boards-and-kits/zcu106.html
   - Id: zuboard_1cg
     BoardName: ZUBoard 1CG
+    Devices:
+      - marvell_88e1512
+      - murata_lbee5kl1dx
+      - cirrus_cs4344
+      - ftdi_ft4232h
+      - emmc_chip_generic
+      - microsd_socket_generic
     BoardProducer: avnet
     Chip: xczu1cgsbva484-1
     Bridges:
@@ -1486,4 +1705,278 @@ Boards:
       - qspi_flash
       - emmc_flash
     BoardURL: https://coderobin.com/products/alinx-acu19eg-xilinx-zynq-ultrascale-mpsoc-xczu19eg-fpga-som
+    Status: active
+  - Id: avnet_ultrazed_7ev_sk_pcie
+    BoardName: "UltraZed-EV (ZU7EV) PCIe Carrier Card Kit"
+    BoardProducer: avnet
+    Chip: XCZU7EV-1FBVB900I
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - qspi_flash
+      - emmc_flash
+      - pcie_endpoint
+      - sata_host
+      - hdmi_input
+      - hdmi_output
+      - sfp_cage
+      - fmc_hpc
+      - ethernet_phy_gigabit
+      - usb_3_host
+      - usb_uart_bridge
+      - microsd_socket
+    Devices:
+      - micron_mt40a256m16
+      - marvell_88e1512
+      - adi_adv7611
+      - adi_adv7511
+      - ti_tmds141
+      - ftdi_ft4232h
+      - emmc_chip_generic
+      - microsd_socket_generic
+    BoardURL: "https://www.avnet.com/shop/us/products/avnet-engineering-services/aes-zu7ev-1-sk-g-3074457345635522751/"
+    Status: active
+  - Id: avnet_ultrazed_eg_iocc
+    BoardName: "UltraZed-EG IO Carrier Card (IOCC) Starter Kit"
+    BoardProducer: avnet
+    Chip: XCZU3EG-1SFVA625I
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - qspi_flash
+      - emmc_flash
+      - microsd_socket
+      - ethernet_phy_gigabit
+      - usb_2_host
+      - usb_uart_bridge
+      - hdmi_output
+      - pmod_connector
+      - arduino_shield_header
+      - user_buttons
+      - user_leds
+      - dip_switches
+    Devices:
+      - micron_mt40a256m16
+      - marvell_88e1512
+      - adi_adv7511
+      - ftdi_ft4232h
+      - emmc_chip_generic
+      - microsd_socket_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+      - led_discrete_generic
+    BoardURL: "https://www.avnet.com/shop/us/products/avnet-engineering-services/aes-zu3eg-1-iocc-g-3074457345629735030/"
+    Status: active
+  - Id: avnet_k26_starter
+    BoardName: "Avnet Kria K26 Starter Kit"
+    BoardProducer: avnet
+    Chip: XCK26-SFVC784-2LV-C
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - qspi_flash
+      - emmc_flash
+      - microsd_socket
+      - ethernet_phy_gigabit
+      - hdmi_output
+      - displayport_output
+      - usb_3_host
+      - usb_uart_bridge
+      - pmod_connector
+      - mipi_csi2_input
+      - user_buttons
+      - user_leds
+    Devices:
+      - realtek_rtl8211fd
+      - ti_tmds141
+      - silabs_cp2108
+      - microsd_socket_generic
+      - emmc_chip_generic
+    BoardURL: "https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/kria-kr260/"
+    Status: active
+  - Id: enclustra_mercury_plus_pe1
+    BoardName: "Enclustra Mercury+ PE1 PCIe Base Board"
+    BoardProducer: enclustra
+    Chip: XCZU7EV-1FFVC1156I
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - pcie_edge_connector
+      - sata_host
+      - sfp_cage
+      - ethernet_phy_gigabit
+      - usb_3_host
+      - usb_uart_bridge
+      - hdmi_output
+      - displayport_output
+      - microsd_socket
+      - fmc_lpc
+    Devices:
+      - marvell_88e1512
+      - adi_adv7511
+      - ftdi_ft4232h
+      - microsd_socket_generic
+    BoardURL: "https://www.enclustra.com/en/products/base-boards/mercury-pe1/"
+    Status: active
+  - Id: enclustra_mercury_plus_pe3
+    BoardName: "Enclustra Mercury+ PE3 PCIe Base Board"
+    BoardProducer: enclustra
+    Chip: XCZU15EG-1FFVC900I
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - pcie_edge_connector
+      - sata_host
+      - sfp_cage
+      - qsfp_cage
+      - ethernet_phy_gigabit
+      - usb_3_host
+      - usb_uart_bridge
+      - fmc_hpc
+      - microsd_socket
+    Devices:
+      - marvell_88e1512
+      - silabs_si5342
+      - ftdi_ft4232h
+      - microsd_socket_generic
+    BoardURL: "https://www.enclustra.com/en/products/base-boards/mercury-pe3/"
+    Status: active
+  - Id: enclustra_mercury_xu5
+    BoardName: "Enclustra Mercury XU5 SoM (legacy, pre-Mercury+)"
+    BoardProducer: enclustra
+    Chip: XCZU5EV-2SFVC784I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - qspi_flash
+      - emmc_flash
+      - ethernet_phy_gigabit
+    Devices:
+      - micron_mt40a256m16
+      - macronix_mx25l25645g
+      - marvell_88e1512
+      - emmc_chip_generic
+    BoardURL: "https://www.enclustra.com/en/products/fpga-modules/mercury-xu5/"
+    Status: eol
+  - Id: enclustra_mercury_xu7
+    BoardName: "Enclustra Mercury XU7 SoM (legacy, pre-Mercury+)"
+    BoardProducer: enclustra
+    Chip: XCZU7EV-2FFVC1156I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - qspi_flash
+      - emmc_flash
+      - ethernet_phy_gigabit
+    Devices:
+      - micron_mt40a256m16
+      - macronix_mx25l25645g
+      - marvell_88e1512
+      - emmc_chip_generic
+    BoardURL: "https://www.enclustra.com/en/products/fpga-modules/mercury-xu7/"
+    Status: eol
+  - Id: enclustra_mercury_xu8
+    BoardName: "Enclustra Mercury XU8 SoM (legacy, pre-Mercury+)"
+    BoardProducer: enclustra
+    Chip: XCZU15EG-2FFVC900I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - qspi_flash
+      - emmc_flash
+      - ethernet_phy_gigabit
+    Devices:
+      - micron_mt40a256m16
+      - macronix_mx25l25645g
+      - marvell_88e1512
+      - emmc_chip_generic
+    BoardURL: "https://www.enclustra.com/en/products/fpga-modules/mercury-xu8/"
+    Status: eol
+  - Id: htg_z930
+    BoardName: "HTG-Z930 Zynq UltraScale+ MPSoC ZU11EG PCIe Dev Platform"
+    BoardProducer: hitech_global
+    Chip: XCZU11EG-2FFVC1156E
+    Bridges:
+      - pcie-jtag
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - pcie_endpoint
+      - ddr4_memory
+      - qsfp_cage
+      - fmc_hpc
+      - usb_uart_bridge
+      - usb_jtag_bridge
+      - microsd_socket
+    Devices:
+      - ftdi_ft4232h
+      - silabs_si5342
+      - micron_n25q256a
+      - ddr4_sodimm_socket
+      - microsd_socket_generic
+    BoardURL: "https://www.hitechglobal.com/Boards/Zynq_UltraScale_PCIe.htm"
+    Status: active
+  - Id: myir_myd_kr260_kv260_clone
+    BoardName: "MyIR MYC-CZU7EV / MYD-CZU7EV Industrial AI Edge Kit"
+    BoardProducer: myir
+    Chip: XCZU7EV-1FFVC1156I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - emmc_flash
+      - qspi_flash
+      - microsd_socket
+      - ethernet_phy_gigabit
+      - usb_3_host
+      - displayport_output
+      - hdmi_output
+      - mipi_csi2_input
+      - pcie_endpoint
+    Devices:
+      - silabs_cp2102
+      - micron_mt40a256m16
+      - macronix_mx25l25645g
+      - realtek_rtl8211fd
+      - microsd_socket_generic
+    BoardURL: "https://www.myirtech.com/list.asp?id=841"
+    Status: active
+  - Id: myir_myd_czu9eg
+    BoardName: "MyIR MYD-CZU9EG Industrial AI Kit (ZU9EG)"
+    BoardProducer: myir
+    Chip: XCZU9EG-1FFVC900I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr4_memory
+      - emmc_flash
+      - qspi_flash
+      - microsd_socket
+      - ethernet_phy_gigabit
+      - usb_3_host
+      - displayport_output
+      - mipi_csi2_input
+    Devices:
+      - silabs_cp2102
+      - micron_mt40a256m16
+      - macronix_mx25l25645g
+      - realtek_rtl8211fd
+      - microsd_socket_generic
+    BoardURL: "https://www.myirtech.com/list.asp?id=842"
     Status: active

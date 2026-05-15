@@ -30,6 +30,14 @@ Boards:
     Status: active
   - Id: microchip_polarfire_evalkit
     BoardName: PolarFire Evaluation Kit
+    Devices:
+      - ftdi_ft4232h
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+      - winbond_w25q128
+      - microchip_ksz9031rnx
     BoardProducer: microchip
     Chip: MPF300TS-FCG1152I
     Bridges:
@@ -38,6 +46,12 @@ Boards:
     BoardURL: https://www.microchip.com/en-us/development-tool/MPF300-EVAL-KIT
   - Id: microchip_polarfire_splash
     BoardName: PolarFire Splash Kit
+    Devices:
+      - ftdi_ft4232h
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - winbond_w25q128
     BoardProducer: microchip
     Chip: MPF300TS-1FCG1152I
     Bridges:
@@ -46,6 +60,12 @@ Boards:
     BoardURL: https://www.microchip.com/en-us/development-tool/MPF300-VIDEO-KIT
   - Id: microchip_polarfire_video
     BoardName: PolarFire Video Kit
+    Devices:
+      - ftdi_ft4232h
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - winbond_w25q128
     BoardProducer: microchip
     Chip: MPF300TS-1FCG1152I
     Bridges:
@@ -60,3 +80,41 @@ Boards:
       - jtag
     Programmer: libero_fpexpress
     BoardURL: https://www.microchip.com/en-us/development-tool/MPF300-EVAL-KIT
+  - Id: microchip_pf_avalanche
+    BoardName: "PolarFire Avalanche Board (MPF200T)"
+    BoardProducer: microchip
+    Chip: MPF200TS-FCG484I
+    Bridges:
+      - jtag
+    Programmer: libero_fpexpress
+    Features:
+      - usb_uart_bridge
+      - pcie_endpoint
+      - ddr4_memory
+      - microsd_socket
+    Devices:
+      - ftdi_ft4232h
+      - microsd_socket_generic
+      - winbond_w25q128
+    BoardURL: "https://www.microchip.com/en-us/development-tool/MPF200-AVALANCHE-KIT"
+    Status: active
+  - Id: microchip_pf_video_kit_300t
+    BoardName: "PolarFire FPGA Video Kit (MPF300T-1FCG1152I)"
+    BoardProducer: microchip
+    Chip: MPF300TS-1FCG1152I
+    Bridges:
+      - jtag
+    Programmer: libero_fpexpress
+    Features:
+      - hdmi_input
+      - hdmi_output
+      - mipi_csi2_input
+      - ddr4_memory
+      - microsd_socket
+      - usb_uart_bridge
+    Devices:
+      - ftdi_ft4232h
+      - microsd_socket_generic
+      - winbond_w25q128
+    BoardURL: "https://www.microchip.com/en-us/development-tool/MPF300-VIDEO-KIT"
+    Status: active

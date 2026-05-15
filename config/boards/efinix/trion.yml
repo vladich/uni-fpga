@@ -80,6 +80,8 @@ Boards:
     BoardURL: https://www.efinixinc.com/products-devkits-triont35.html
   - Id: efinix_t8_bga81_devkit
     BoardName: Trion T8 BGA81 Development Kit
+    Devices:
+      - ftdi_ft2232h
     BoardProducer: efinix
     Chip: T8F81C2
     Bridges:
@@ -97,6 +99,8 @@ Boards:
     Status: active
   - Id: efinix_xyloni
     BoardName: Xyloni Dev Kit
+    Devices:
+      - microsd_socket_generic
     BoardProducer: efinix
     Chip: T8Q144C3
     Bridges:

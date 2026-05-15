@@ -117,6 +117,11 @@ Boards:
     BoardURL: https://alchitry.com/mojo
   - Id: numato_galatea
     BoardName: Numato Galatea Spartan-6 FPGA Module
+    Devices:
+      - ftdi_ft2232h
+      - micron_n25q032a
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: numato_lab
     Chip: XC6SLX9-2TQG144C
     Bridges:
@@ -132,6 +137,13 @@ Boards:
     Status: active
   - Id: numato_mimas_v2
     BoardName: Mimas V2
+    Devices:
+      - silabs_cp2102
+      - micron_n25q032a
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+      - seven_seg_module_shared
     BoardProducer: numato_lab
     Chip: XC6SLX9-2TQG144C
     Bridges:
@@ -140,6 +152,11 @@ Boards:
     BoardURL: https://numato.com/product/mimas-v2-spartan-6-fpga-development-board-with-ddr-sdram/
   - Id: numato_saturn_x
     BoardName: Saturn-X
+    Devices:
+      - ftdi_ft2232h
+      - micron_n25q032a
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: numato_lab
     Chip: XC6SLX25-2FTG256C
     Bridges:

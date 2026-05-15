@@ -42,6 +42,10 @@ Boards:
     Status: active
   - Id: enclustra_mars_kx2
     BoardName: Mars KX2
+    Devices:
+      - micron_mt41k256m16
+      - macronix_mx25l25645g
+      - marvell_88e1512
     BoardProducer: enclustra
     Chip: XC7K160T-2FFG676I
     Bridges:
@@ -50,6 +54,10 @@ Boards:
     BoardURL: https://www.enclustra.com/en/products/fpga-modules/mars-kx2/
   - Id: enclustra_mercury_kx1
     BoardName: Mercury KX1
+    Devices:
+      - micron_mt41k256m16
+      - macronix_mx25l25645g
+      - marvell_88e1512
     BoardProducer: enclustra
     Chip: XC7K160T-2FFG676I
     Bridges:
@@ -58,6 +66,10 @@ Boards:
     BoardURL: https://www.enclustra.com/en/products/fpga-modules/mercury-kx1/
   - Id: enclustra_mercury_kx2
     BoardName: Mercury KX2
+    Devices:
+      - micron_mt41k256m16
+      - macronix_mx25l25645g
+      - marvell_88e1512
     BoardProducer: enclustra
     Chip: XC7K325T-2FFG900I
     Bridges:
@@ -91,6 +103,15 @@ Boards:
     BoardURL: https://digilent.com/reference/programmable-logic/genesys-2/start
   - Id: htg_k325
     BoardName: HTG-K325 Kintex-7 PCIe Development Board
+    Devices:
+      - ftdi_ft2232h
+      - silabs_si570
+      - micron_n25q256a
+      - ddr3_sodimm_socket
+      - marvell_88e1512
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
     BoardProducer: hitech_global
     Chip: XC7K325T-2FFG900C
     Bridges:
@@ -107,6 +128,14 @@ Boards:
     Status: active
   - Id: htg_k700
     BoardName: HTG-K700 Kintex-7 PCIe Dev Board K410T
+    Devices:
+      - ftdi_ft2232h
+      - silabs_si570
+      - micron_n25q256a
+      - ddr3_sodimm_socket
+      - marvell_88e1512
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: hitech_global
     Chip: XC7K410T-2FFG900C
     Bridges:
@@ -123,6 +152,12 @@ Boards:
     Status: active
   - Id: numato_telesto
     BoardName: Numato Telesto Kintex-7 FPGA Development Board
+    Devices:
+      - ftdi_ft2232h
+      - micron_n25q128a
+      - micron_mt41k256m16
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: numato_lab
     Chip: XC7K160T-2FFG676C
     Bridges:
@@ -399,4 +434,25 @@ Boards:
       - ddr3_memory
       - qspi_flash
     BoardURL: https://coderobin.com/products/alinx-ac7K325b-xilinx-kintex-7-xc7k325t-fpga-som
+    Status: active
+  - Id: numato_nereid
+    BoardName: "Numato Nereid Kintex-7 PCIe Development Board"
+    BoardProducer: numato_lab
+    Chip: XC7K160T-2FFG676C
+    Bridges:
+      - jtag
+      - pcie-jtag
+    Programmer: vivado_hw
+    Features:
+      - pcie_endpoint
+      - ddr3_memory
+      - usb_uart_bridge
+      - microsd_socket
+    Devices:
+      - ftdi_ft2232h
+      - micron_n25q128a
+      - micron_mt41k256m16
+      - microsd_socket_generic
+      - led_discrete_generic
+    BoardURL: "https://numato.com/product/nereid-kintex-7-pci-express-fpga-development-board/"
     Status: active

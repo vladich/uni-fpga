@@ -29,6 +29,11 @@ Boards:
     BoardURL: https://www.achronix.com/product/vectorpath-accelerator-card
   - Id: bittware_vp815
     BoardName: BittWare VectorPath VP815 Achronix Speedster7t
+    Devices:
+      - ftdi_ft4232h
+      - silabs_si5342
+      - micron_n25q256a
+      - ddr4_sodimm_socket
     BoardProducer: bittware
     Chip: AC7t1500ES0
     Bridges:

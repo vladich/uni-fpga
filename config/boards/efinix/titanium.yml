@@ -15,6 +15,8 @@ Boards:
     BoardURL: https://www.efinixinc.com/products-devkits-titaniumti120.html
   - Id: efinix_ti180_devkit
     BoardName: Titanium Ti180 Development Kit
+    Devices:
+      - microsd_socket_generic
     BoardProducer: efinix
     Chip: Ti180M484C4
     Bridges:
@@ -31,6 +33,9 @@ Boards:
     BoardURL: https://www.efinixinc.com/products-devkits-titaniumti35.html
   - Id: efinix_ti375_devkit
     BoardName: Titanium Ti375 Development Kit
+    Devices:
+      - microsd_socket_generic
+      - emmc_chip_generic
     BoardProducer: efinix
     Chip: Ti375C529C4
     Bridges:
@@ -39,6 +44,9 @@ Boards:
     BoardURL: https://www.efinixinc.com/products-devkits-titaniumti375.html
   - Id: efinix_ti375_n1156_devkit
     BoardName: Titanium Ti375 N1156 Development Kit
+    Devices:
+      - microsd_socket_generic
+      - emmc_chip_generic
     BoardProducer: efinix
     Chip: Ti375N1156C4
     Bridges:
@@ -63,6 +71,8 @@ Boards:
     Status: active
   - Id: efinix_ti60_devkit
     BoardName: Titanium Ti60 F225 Development Kit
+    Devices:
+      - microsd_socket_generic
     BoardProducer: efinix
     Chip: Ti60F225C4
     Bridges:

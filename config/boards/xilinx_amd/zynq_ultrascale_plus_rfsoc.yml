@@ -24,6 +24,12 @@ Boards:
     Status: active
   - Id: avnet_xrf16_gen3_som
     BoardName: XRF16 Gen3 RFSoC SOM with Carrier
+    Devices:
+      - micron_mt40a256m16
+      - silabs_si5342
+      - marvell_88e1512
+      - ftdi_ft4232h
+      - emmc_chip_generic
     BoardProducer: avnet
     Chip: XCZU49DR-2FFVF1760I
     Bridges:
@@ -45,6 +51,12 @@ Boards:
     Status: active
   - Id: avnet_xrf8_gen3_som
     BoardName: XRF8 Gen3 RFSoC SOM with Carrier
+    Devices:
+      - micron_mt40a256m16
+      - silabs_si5342
+      - marvell_88e1512
+      - ftdi_ft4232h
+      - emmc_chip_generic
     BoardProducer: avnet
     Chip: XCZU47DR-2FFVG1517I
     Bridges:
@@ -66,6 +78,11 @@ Boards:
     Status: active
   - Id: bittware_rfx_770
     BoardName: BittWare RFX 770
+    Devices:
+      - ftdi_ft4232h
+      - silabs_si5342
+      - micron_n25q256a
+      - ddr4_sodimm_socket
     BoardProducer: bittware
     Chip: XCZU47DR-2FFVE1156E
     Bridges:
@@ -80,6 +97,11 @@ Boards:
     Status: active
   - Id: bittware_rfx_880
     BoardName: BittWare RFX 880
+    Devices:
+      - ftdi_ft4232h
+      - silabs_si5342
+      - micron_n25q256a
+      - ddr4_sodimm_socket
     BoardProducer: bittware
     Chip: XCZU67DR-2FFVG1517E
     Bridges:
@@ -94,6 +116,12 @@ Boards:
     Status: active
   - Id: enclustra_andromeda_xru30
     BoardName: Andromeda XRU30 RFSoC
+    Devices:
+      - micron_mt40a256m16
+      - silabs_si5342
+      - marvell_88e1512
+      - ftdi_ft4232h
+      - emmc_chip_generic
     BoardProducer: enclustra
     Chip: XCZU47DR-2FSVE1156I
     Bridges:
@@ -110,6 +138,12 @@ Boards:
     Status: active
   - Id: enclustra_andromeda_xru50
     BoardName: Andromeda XRU50 RFSoC
+    Devices:
+      - micron_mt40a256m16
+      - silabs_si5342
+      - marvell_88e1512
+      - ftdi_ft4232h
+      - emmc_chip_generic
     BoardProducer: enclustra
     Chip: XCZU48DR-2FFVG1517I
     Bridges:
@@ -126,6 +160,13 @@ Boards:
     Status: active
   - Id: htg_zrf16
     BoardName: HTG-ZRF16 RFSoC 16ADC/16DAC ZU29DR
+    Devices:
+      - ftdi_ft4232h
+      - silabs_si5342
+      - micron_n25q256a
+      - ddr4_sodimm_socket
+      - marvell_88e1512
+      - microsd_socket_generic
     BoardProducer: hitech_global
     Chip: XCZU29DR-2FFVF1760E
     Bridges:
@@ -141,6 +182,13 @@ Boards:
     Status: active
   - Id: htg_zrf8
     BoardName: HTG-ZRF8 Zynq UltraScale+ RFSoC PCIe Development Platform
+    Devices:
+      - ftdi_ft4232h
+      - silabs_si5342
+      - micron_n25q256a
+      - ddr4_sodimm_socket
+      - marvell_88e1512
+      - microsd_socket_generic
     BoardProducer: hitech_global
     Chip: XCZU48DR-2FFVG1517E
     Bridges:
@@ -158,6 +206,13 @@ Boards:
     Status: active
   - Id: htg_zrf_em
     BoardName: HTG-ZRF-EM Zynq RFSoC Extended Memory ZU49DR
+    Devices:
+      - ftdi_ft4232h
+      - silabs_si5342
+      - micron_n25q256a
+      - ddr4_sodimm_socket
+      - marvell_88e1512
+      - microsd_socket_generic
     BoardProducer: hitech_global
     Chip: XCZU49DR-2FFVF1760E
     Bridges:
@@ -174,6 +229,11 @@ Boards:
     Status: active
   - Id: iwave_rainbow_g42p
     BoardName: iW-RainboW-G42P Zynq UltraScale+ RFSoC PCIe Dev Kit
+    Devices:
+      - ftdi_ft4232h
+      - micron_mt40a256m16
+      - macronix_mx25l25645g
+      - microsd_socket_generic
     BoardProducer: iwave
     Chip: XCZU49DR-2FFVF1760I
     Bridges:
@@ -195,6 +255,10 @@ Boards:
     Status: active
   - Id: iwave_rainbow_g79m
     BoardName: iW-RainboW-G79M Zynq UltraScale+ RFSoC DFE SoM
+    Devices:
+      - ftdi_ft4232h
+      - micron_mt40a256m16
+      - macronix_mx25l25645g
     BoardProducer: iwave
     Chip: XCZU67DR-2FFVE1156I
     Bridges:
@@ -475,4 +539,26 @@ Boards:
       - usb_uart_bridge
       - jtag_header
     BoardURL: https://www.en.alinx.com
+    Status: active
+  - Id: htg_zrf_dc
+    BoardName: "HTG-ZRF-DC Zynq UltraScale+ RFSoC ZU47DR Dev Card"
+    BoardProducer: hitech_global
+    Chip: XCZU47DR-2FFVE1156E
+    Bridges:
+      - pcie-jtag
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - pcie_endpoint
+      - ddr4_memory
+      - qsfp_cage
+      - rf_adc_dac_high_speed
+      - usb_uart_bridge
+      - usb_jtag_bridge
+    Devices:
+      - ftdi_ft4232h
+      - silabs_si5342
+      - micron_n25q256a
+      - ddr4_sodimm_socket
+    BoardURL: "https://www.hitechglobal.com/Boards/ZRF_DC.htm"
     Status: active

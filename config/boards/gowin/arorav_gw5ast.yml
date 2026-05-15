@@ -15,6 +15,8 @@ Boards:
     BoardURL: https://www.gowinsemi.com/en/support/devkits_detail/81/
   - Id: sipeed_tang_mega_138k_dock
     BoardName: Sipeed Tang Mega 138K Dock
+    Devices:
+      - microsd_socket_generic
     BoardProducer: sipeed
     Chip: GW5AST-LV138PG484AC1/I0
     Bridges:
@@ -40,6 +42,8 @@ Boards:
     Status: active
   - Id: tang_mega_138k
     BoardName: Tang Mega 138k
+    Devices:
+      - microsd_socket_generic
     BoardProducer: sipeed
     Chip: GW5AST-LV138PG484AC1/I0
     Bridges:
@@ -48,6 +52,8 @@ Boards:
     BoardURL: https://wiki.sipeed.com/hardware/en/tang/tang-mega-138k/mega-138k.html
   - Id: tang_mega_138k_pro
     BoardName: Tang Mega 138k Pro
+    Devices:
+      - microsd_socket_generic
     BoardProducer: sipeed
     Chip: GW5AST-LV138FPG676AES
     Bridges:
@@ -56,6 +62,8 @@ Boards:
     BoardURL: https://wiki.sipeed.com/hardware/en/tang/tang-mega-138k-pro/mega-138k-pro.html
   - Id: tang_mega_138k_pro_dock
     BoardName: Tang Mega 138k Pro Dock
+    Devices:
+      - microsd_socket_generic
     BoardProducer: sipeed
     Chip: GW5AST-LV138FPG676AES
     Bridges:

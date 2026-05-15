@@ -6,6 +6,12 @@ Description: (generated)
 Boards:
   - Id: avnet_auboard_15p
     BoardName: AUBoard 15P
+    Devices:
+      - micron_mt40a256m16
+      - micron_n25q256a
+      - marvell_88e1512
+      - ftdi_ft2232h
+      - microsd_socket_generic
     BoardProducer: avnet
     Chip: XCAU15P-2FFVB676E
     Bridges:

@@ -7,6 +7,9 @@ Description: MachXO3 with security blocks (hardware root of trust). Diamond-only
 Boards:
   - Id: lattice_machxo3d_9400
     BoardName: MachXO3D-9400 Evaluation Kit
+    Devices:
+      - ftdi_ft2232h
+      - microsd_socket_generic
     BoardProducer: lattice
     Chip: LCMXO3D-9400HC-5BG400I
     Bridges:
@@ -15,6 +18,8 @@ Boards:
     BoardURL: https://www.latticesemi.com/products/developmentboardsandkits/machxo3devaluationboard
   - Id: lattice_machxo3d_breakout
     BoardName: MachXO3D Breakout Board
+    Devices:
+      - ftdi_ft2232h
     BoardProducer: lattice
     Chip: LCMXO3D-9400HC-1BG256C
     Bridges:

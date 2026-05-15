@@ -289,3 +289,19 @@ Boards:
     BoardURL: https://coderobin.com/products/alinx-ax515-intel-altera-cyclone-iv-ep4ce15f-fpga-development-board
     Status: active
     Notes: "Cyclone IV EP4CE15F23C8. Board also has battery-backed RTC (DS1302) but no `rtc_*` feature exists in features.yml — omitted."
+  - Id: enclustra_mercury_ca1
+    BoardName: "Enclustra Mercury CA1 Cyclone IV SoM"
+    BoardProducer: enclustra
+    Chip: EP4CGX150DF27I7N
+    Bridges:
+      - jtag
+    Programmer: quartus_pgm
+    Features:
+      - ddr2_memory
+      - qspi_flash
+      - ethernet_phy_gigabit
+    Devices:
+      - macronix_mx25l25645g
+      - marvell_88e1512
+    BoardURL: "https://www.enclustra.com/en/products/fpga-modules/mercury-ca1/"
+    Status: eol

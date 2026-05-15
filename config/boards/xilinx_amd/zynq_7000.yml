@@ -172,6 +172,11 @@ Boards:
     Programmer: vivado_hw
   - Id: avnet_microzed_7010
     BoardName: MicroZed 7010
+    Devices:
+      - micron_mt41k256m16
+      - cypress_s25fl128s
+      - microchip_lan8710a
+      - silabs_cp2104
     BoardProducer: avnet
     Chip: XC7Z010-1CLG400C
     Bridges:
@@ -180,6 +185,14 @@ Boards:
     BoardURL: https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/microzed/
   - Id: avnet_microzed_7010_sbc
     BoardName: MicroZed 7010 SBC
+    Devices:
+      - micron_mt41k256m16
+      - cypress_s25fl128s
+      - microchip_lan8710a
+      - silabs_cp2104
+      - microsd_socket_generic
+      - pushbutton_smd_generic
+      - led_discrete_generic
     BoardProducer: avnet
     Chip: XC7Z010-1CLG400C
     Bridges:
@@ -198,6 +211,11 @@ Boards:
     Status: active
   - Id: avnet_microzed_7020
     BoardName: MicroZed 7020
+    Devices:
+      - micron_mt41k256m16
+      - cypress_s25fl128s
+      - microchip_lan8710a
+      - silabs_cp2104
     BoardProducer: avnet
     Chip: XC7Z020-1CLG400C
     Bridges:
@@ -206,6 +224,14 @@ Boards:
     BoardURL: https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/microzed/
   - Id: avnet_microzed_7020_sbc
     BoardName: MicroZed 7020 SBC
+    Devices:
+      - micron_mt41k256m16
+      - cypress_s25fl128s
+      - microchip_lan8710a
+      - silabs_cp2104
+      - microsd_socket_generic
+      - pushbutton_smd_generic
+      - led_discrete_generic
     BoardProducer: avnet
     Chip: XC7Z020-1CLG400C
     Bridges:
@@ -224,6 +250,16 @@ Boards:
     Status: active
   - Id: avnet_microzed_fmc_cc
     BoardName: MicroZed FMC Carrier Card Kit
+    Devices:
+      - micron_mt41k256m16
+      - cypress_s25fl128s
+      - microchip_lan8710a
+      - silabs_cp2104
+      - adi_adv7611
+      - adi_adv7511
+      - marvell_88e1512
+      - nsc_lm4550_ac97
+      - microsd_socket_generic
     BoardProducer: avnet
     Chip: XC7Z020-1CLG400C
     Bridges:
@@ -245,6 +281,14 @@ Boards:
     Status: active
   - Id: avnet_minized
     BoardName: MiniZed
+    Devices:
+      - micron_mt41k256m16
+      - micron_n25q128a
+      - murata_lbee5kl1dx
+      - bosch_bno055
+      - adi_adau1761
+      - ftdi_ft2232h
+      - microsd_socket_generic
     BoardProducer: avnet
     Chip: XC7Z007S-1CLG225C
     Bridges:
@@ -253,6 +297,11 @@ Boards:
     BoardURL: https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/minized/
   - Id: avnet_picozed_7015
     BoardName: PicoZed 7015
+    Devices:
+      - micron_mt41k256m16
+      - micron_n25q256a
+      - marvell_88e1512
+      - emmc_chip_generic
     BoardProducer: avnet
     Chip: XC7Z015-1CLG485C
     Bridges:
@@ -261,6 +310,11 @@ Boards:
     BoardURL: https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/picozed/
   - Id: avnet_picozed_7030
     BoardName: PicoZed 7030
+    Devices:
+      - micron_mt41k256m16
+      - micron_n25q256a
+      - marvell_88e1512
+      - emmc_chip_generic
     BoardProducer: avnet
     Chip: XC7Z030-1FBG485C
     Bridges:
@@ -269,6 +323,14 @@ Boards:
     BoardURL: https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/picozed/
   - Id: avnet_picozed_fmc_cc_v2
     BoardName: PicoZed FMC Carrier Card V2
+    Devices:
+      - micron_mt41k256m16
+      - micron_n25q256a
+      - marvell_88e1512
+      - emmc_chip_generic
+      - adi_adv7511
+      - silabs_cp2104
+      - microsd_socket_generic
     BoardProducer: avnet
     Chip: XC7Z030-1FBG484C
     Bridges:
@@ -492,6 +554,10 @@ Boards:
     Status: active
   - Id: enclustra_mars_zx2
     BoardName: Mars ZX2
+    Devices:
+      - micron_mt41k256m16
+      - macronix_mx25l25645g
+      - marvell_88e1512
     BoardProducer: enclustra
     Chip: XC7Z020-2CLG400I
     Bridges:
@@ -507,6 +573,10 @@ Boards:
     Status: active
   - Id: enclustra_mars_zx3
     BoardName: Mars ZX3
+    Devices:
+      - micron_mt41k256m16
+      - macronix_mx25l25645g
+      - marvell_88e1512
     BoardProducer: enclustra
     Chip: XC7Z020-2CLG484I
     Bridges:
@@ -515,6 +585,10 @@ Boards:
     BoardURL: https://www.enclustra.com/en/products/fpga-modules/mars-zx3/
   - Id: enclustra_mercury_plus_zx1
     BoardName: Mercury+ ZX1
+    Devices:
+      - micron_mt41k256m16
+      - macronix_mx25l25645g
+      - marvell_88e1512
     BoardProducer: enclustra
     Chip: XC7Z030-2FBG676I
     Bridges:
@@ -523,6 +597,11 @@ Boards:
     BoardURL: https://www.enclustra.com/en/products/fpga-modules/mercury-zx1/
   - Id: enclustra_mercury_plus_zx5
     BoardName: Mercury+ ZX5
+    Devices:
+      - micron_mt41k256m16
+      - macronix_mx25l25645g
+      - marvell_88e1512
+      - emmc_chip_generic
     BoardProducer: enclustra
     Chip: XC7Z045-2FFG900I
     Bridges:
@@ -572,6 +651,14 @@ Boards:
     Status: active
   - Id: iwave_rainbow_g28d
     BoardName: iW-RainboW-G28D Zynq-7000 SODIMM Dev Kit
+    Devices:
+      - ftdi_ft2232h
+      - micron_mt41k256m16
+      - macronix_mx25l25645g
+      - marvell_88e1512
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: iwave
     Chip: XC7Z020-1CLG484C
     Bridges:
@@ -632,6 +719,11 @@ Boards:
     Status: active
   - Id: myir_myc_c7z015
     BoardName: MYIR MYC-C7Z015 Zynq-7015 CPU Module
+    Devices:
+      - silabs_cp2102
+      - micron_mt41k256m16
+      - macronix_mx25l25645g
+      - realtek_rtl8211e
     BoardProducer: myir
     Chip: XC7Z015-2CLG485I
     Bridges:
@@ -647,6 +739,14 @@ Boards:
     Status: active
   - Id: myir_myd_c7z010_v2
     BoardName: MYIR MYD-C7Z010/20-V2 Zynq Dev Board
+    Devices:
+      - silabs_cp2102
+      - micron_mt41k128m16
+      - macronix_mx25l25645g
+      - realtek_rtl8211e
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: myir
     Chip: XC7Z020-2CLG400I
     Bridges:
@@ -665,6 +765,14 @@ Boards:
     Status: active
   - Id: myir_myd_c7z015
     BoardName: MYIR MYD-C7Z015 Zynq-7015 Dev Board
+    Devices:
+      - silabs_cp2102
+      - micron_mt41k256m16
+      - macronix_mx25l25645g
+      - realtek_rtl8211e
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: myir
     Chip: XC7Z015-2CLG485I
     Bridges:
@@ -685,6 +793,14 @@ Boards:
     Status: active
   - Id: myir_myd_y7z010_v2
     BoardName: MYIR MYD-Y7Z010/20-V2 Zynq Dev Board
+    Devices:
+      - silabs_cp2102
+      - micron_mt41k128m16
+      - macronix_mx25l25645g
+      - realtek_rtl8211e
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: myir
     Chip: XC7Z020-2CLG400I
     Bridges:
@@ -704,6 +820,14 @@ Boards:
     Status: active
   - Id: myir_zturn_7010
     BoardName: MYIR Z-turn Board (XC7Z010)
+    Devices:
+      - silabs_cp2102
+      - micron_mt41k128m16
+      - macronix_mx25l25645g
+      - realtek_rtl8211e
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: myir
     Chip: XC7Z010-1CLG400C
     Bridges:
@@ -727,6 +851,14 @@ Boards:
     Status: active
   - Id: myir_zturn_7020
     BoardName: MYIR Z-turn Board (XC7Z020)
+    Devices:
+      - silabs_cp2102
+      - micron_mt41k128m16
+      - macronix_mx25l25645g
+      - realtek_rtl8211e
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: myir
     Chip: XC7Z020-1CLG400C
     Bridges:
@@ -750,6 +882,14 @@ Boards:
     Status: active
   - Id: myir_zturn_lite_7010
     BoardName: MYIR Z-turn Lite (XC7Z010)
+    Devices:
+      - silabs_cp2102
+      - micron_mt41k128m16
+      - macronix_mx25l25645g
+      - realtek_rtl8211e
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: myir
     Chip: XC7Z010-1CLG400C
     Bridges:
@@ -770,6 +910,14 @@ Boards:
     Status: active
   - Id: myir_zturn_v2_7020
     BoardName: MYIR Z-turn Board V2 (XC7Z020)
+    Devices:
+      - silabs_cp2102
+      - micron_mt41k128m16
+      - macronix_mx25l25645g
+      - realtek_rtl8211e
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: myir
     Chip: XC7Z020-1CLG400C
     Bridges:
@@ -793,6 +941,12 @@ Boards:
     Status: active
   - Id: numato_styx
     BoardName: Numato Styx Zynq-7020 Module
+    Devices:
+      - silabs_cp2102
+      - micron_n25q128a
+      - micron_mt41k256m16
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: numato_lab
     Chip: XC7Z020-1CLG484C
     Bridges:
@@ -810,6 +964,11 @@ Boards:
     Status: active
   - Id: numato_tarak
     BoardName: Tarak
+    Devices:
+      - silabs_cp2102
+      - micron_n25q128a
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: numato_lab
     Chip: XC7Z020-1CLG484C
     Bridges:
@@ -1262,6 +1421,19 @@ Boards:
     BoardURL: https://www.xilinx.com/products/boards-and-kits/ek-z7-zc706-g.html
   - Id: zedboard
     BoardName: ZedBoard
+    Devices:
+      - micron_mt41k128m16
+      - spansion_s25fl256s
+      - microchip_ksz9031rnx
+      - adi_adv7511
+      - adi_ssm2603
+      - microchip_usb3343
+      - cypress_cy7c1061dv33
+      - vga666_resistor_dac
+      - microsd_socket_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+      - led_discrete_generic
     BoardProducer: avnet
     Chip: XC7Z020CLG484-1
     Bridges:
@@ -1536,4 +1708,275 @@ Boards:
       - usb_uart_bridge
       - fmc_lpc
     BoardURL: https://www.en.alinx.com/Product/SoC-development-Boards/Zynq-7000-SoC/AX7Z100B.html
+    Status: active
+  - Id: avnet_minized_v2
+    BoardName: "MiniZed v2 (AES-MINIZED-7Z007S-G rev D)"
+    BoardProducer: avnet
+    Chip: XC7Z007S-1CLG225C
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - wifi_radio
+      - bluetooth_le_radio
+      - audio_codec
+      - imu_chip
+      - usb_uart_bridge
+      - usb_jtag_bridge
+      - microsd_socket
+      - pmod_connector
+      - arduino_shield_header
+      - mikrobus_socket
+      - user_buttons
+      - user_leds
+    Devices:
+      - micron_mt41k256m16
+      - micron_n25q128a
+      - murata_lbee5kl1dx
+      - bosch_bno055
+      - adi_adau1761
+      - ftdi_ft2232h
+      - microsd_socket_generic
+      - pushbutton_smd_generic
+      - led_discrete_generic
+    BoardURL: "https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/minized/"
+    Status: active
+  - Id: avnet_zedboard_revd
+    BoardName: "ZedBoard rev D (Avnet AES-Z7EV-7Z020-G)"
+    BoardProducer: avnet
+    Chip: XC7Z020-CLG484-1
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - sram
+      - hdmi_output
+      - vga_output
+      - audio_codec
+      - ethernet_phy_gigabit
+      - usb_2_otg
+      - usb_uart_bridge
+      - usb_jtag_bridge
+      - pmod_connector
+      - user_leds
+      - user_buttons
+      - dip_switches
+      - fmc_lpc
+      - microsd_socket
+      - barrel_jack_input
+    Devices:
+      - micron_mt41k128m16
+      - spansion_s25fl256s
+      - microchip_ksz9031rnx
+      - adi_adv7511
+      - adi_ssm2603
+      - microchip_usb3343
+      - cypress_cy7c1061dv33
+      - vga666_resistor_dac
+      - microsd_socket_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+      - led_discrete_generic
+    BoardURL: "https://www.avnet.com/shop/us/products/avnet-engineering-services/aes-z7ev-7z020-g-3074457345635221829/"
+    Status: active
+  - Id: avnet_picozed_7010
+    BoardName: "Avnet PicoZed 7010 SoM (SoM + breakout)"
+    BoardProducer: avnet
+    Chip: XC7Z010-1CLG485C
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - emmc_flash
+      - ethernet_phy_gigabit
+    Devices:
+      - micron_mt41k256m16
+      - micron_n25q256a
+      - marvell_88e1512
+      - emmc_chip_generic
+    BoardURL: "https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/picozed/"
+    Status: active
+  - Id: avnet_picozed_7020
+    BoardName: "Avnet PicoZed 7020 SoM"
+    BoardProducer: avnet
+    Chip: XC7Z020-1CLG485C
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - emmc_flash
+      - ethernet_phy_gigabit
+    Devices:
+      - micron_mt41k256m16
+      - micron_n25q256a
+      - marvell_88e1512
+      - emmc_chip_generic
+    BoardURL: "https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/picozed/"
+    Status: active
+  - Id: avnet_microzed_iocc
+    BoardName: "MicroZed IOCC Carrier Card (standalone)"
+    BoardProducer: avnet
+    Chip: XC7Z020-1CLG400C
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - microsd_socket
+      - pmod_connector
+      - arduino_shield_header
+      - barrel_jack_input
+      - user_buttons
+      - user_leds
+    Devices:
+      - microsd_socket_generic
+      - pushbutton_smd_generic
+      - led_discrete_generic
+    BoardURL: "https://www.avnet.com/shop/us/products/avnet-engineering-services/aes-mbcc-iocc-g-3074457345628965181/"
+    Status: active
+  - Id: enclustra_mercury_plus_st1
+    BoardName: "Enclustra Mercury+ ST1 Base Board"
+    BoardProducer: enclustra
+    Chip: XC7Z030-2FBG676I
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - microsd_socket
+      - ethernet_phy_gigabit
+      - usb_uart_bridge
+      - usb_2_host
+      - displayport_output
+      - hdmi_output
+      - audio_codec
+      - rs232_transceiver
+      - can_transceiver
+      - pmod_connector
+      - fmc_lpc
+      - user_buttons
+      - user_leds
+    Devices:
+      - marvell_88e1512
+      - adi_adv7511
+      - ftdi_ft4232h
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
+    BoardURL: "https://www.enclustra.com/en/products/base-boards/mercury-st1/"
+    Status: active
+  - Id: enclustra_mars_eb1
+    BoardName: "Enclustra Mars EB1 SoDIMM Base Board (EB1)"
+    BoardProducer: enclustra
+    Chip: XC7Z020-2CLG484I
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - microsd_socket
+      - ethernet_phy_gigabit
+      - usb_uart_bridge
+      - usb_2_host
+      - hdmi_output
+      - audio_codec
+      - pmod_connector
+      - user_buttons
+      - user_leds
+    Devices:
+      - marvell_88e1512
+      - adi_adv7511
+      - ftdi_ft4232h
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
+    BoardURL: "https://www.enclustra.com/en/products/base-boards/mars-eb1/"
+    Status: active
+  - Id: enclustra_mars_pe1
+    BoardName: "Enclustra Mars PE1 PCIe Base Board (Mars SoDIMM)"
+    BoardProducer: enclustra
+    Chip: XC7Z020-2CLG484I
+    Bridges:
+      - usb-jtag
+    Programmer: vivado_hw
+    Features:
+      - pcie_edge_connector
+      - sata_host
+      - microsd_socket
+      - ethernet_phy_gigabit
+      - usb_uart_bridge
+      - sfp_cage
+    Devices:
+      - marvell_88e1512
+      - ftdi_ft4232h
+      - microsd_socket_generic
+    BoardURL: "https://www.enclustra.com/en/products/base-boards/mars-pe1/"
+    Status: active
+  - Id: iwave_rainbow_g26m
+    BoardName: "iW-RainboW-G26M Zynq-7045 SoM"
+    BoardProducer: iwave
+    Chip: XC7Z045-2FFG900I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - ethernet_phy_gigabit
+      - usb_2_host
+    Devices:
+      - ftdi_ft2232h
+      - micron_mt41k256m16
+      - macronix_mx25l25645g
+      - marvell_88e1512
+    BoardURL: "https://www.iwavesystems.com/product/zynq-7045-system-on-module/"
+    Status: active
+  - Id: numato_styx_zynq_z2_dev
+    BoardName: "Numato Styx Zynq Development Board (carrier)"
+    BoardProducer: numato_lab
+    Chip: XC7Z020-1CLG484C
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - usb_uart_bridge
+      - ethernet_phy_gigabit
+      - microsd_socket
+      - hdmi_output
+      - user_leds
+      - user_buttons
+    Devices:
+      - silabs_cp2102
+      - micron_mt41k256m16
+      - micron_n25q128a
+      - microsd_socket_generic
+      - realtek_rtl8211e
+    BoardURL: "https://numato.com/product/styx-zynq-z7020-development-board/"
+    Status: active
+  - Id: myir_zybo_y7_v4
+    BoardName: "MyIR MYS-7Z010 / MYS-7Z020 Y-Series Zynq-7000 Single Board"
+    BoardProducer: myir
+    Chip: XC7Z020-1CLG400C
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - microsd_socket
+      - ddr3_memory
+      - usb_uart_bridge
+      - hdmi_output
+      - ethernet_phy_gigabit
+      - user_leds
+    Devices:
+      - silabs_cp2102
+      - micron_mt41k128m16
+      - macronix_mx25l25645g
+      - realtek_rtl8211e
+      - microsd_socket_generic
+    BoardURL: "https://www.myirtech.com/list.asp?id=518"
     Status: active

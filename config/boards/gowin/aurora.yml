@@ -1,0 +1,20 @@
+# gowin / aurora
+
+Producer: gowin
+Family: aurora
+Description: ""
+Boards:
+  - Id: gowin_gw3a20_devkit
+    BoardName: "GW3A-20 Starter Kit (DK_START_GW3A-LV20LQ144)"
+    BoardProducer: gowin_semi
+    Chip: GW3A-LV20LQ144C6/I5
+    Bridges:
+      - jtag
+    Programmer: gowin_pgm
+    Features:
+      - jtag_header
+      - user_leds
+      - user_buttons
+      - gpio_header_generic
+    BoardURL: "https://www.gowinsemi.com/en/support/devkits/37/"
+    Status: active

@@ -239,3 +239,20 @@ Boards:
       - jtag
     Programmer: vivado_hw
     BoardURL: https://www.xilinx.com/products/boards-and-kits/ek-s7-sp701-g.html
+  - Id: numato_narvi
+    BoardName: "Numato Narvi Spartan 7 FPGA Module"
+    BoardProducer: numato_lab
+    Chip: XC7S50-2CSGA324C
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - usb_uart_bridge
+      - nor_flash
+      - user_leds
+    Devices:
+      - ftdi_ft2232h
+      - micron_n25q032a
+      - led_discrete_generic
+    BoardURL: "https://numato.com/product/narvi-spartan-7-fpga-module/"
+    Status: active

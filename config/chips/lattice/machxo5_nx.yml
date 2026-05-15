@@ -9,3 +9,5 @@ DefaultToolchains:
   - nextpnr_nexus[*]
 Chips:
   - Id: LFMXO5-100T-9MG400I
+  - Id: LFMXO5-15D-9MG324I
+  - Id: LFMXO5-25-9MG324I

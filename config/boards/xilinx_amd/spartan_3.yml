@@ -13,3 +13,25 @@ Boards:
       - jtag
     Programmer: openocd
     BoardURL: https://www.olimex.com/Products/FPGA/XILINX-Spartan-3/
+  - Id: numato_elbert_v2
+    BoardName: "Numato Elbert V2 Spartan-3A FPGA Development Board"
+    BoardProducer: numato_lab
+    Chip: XC3S50A-4TQG144C
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    Features:
+      - usb_uart_bridge
+      - user_leds
+      - user_buttons
+      - seven_segment_display
+      - dip_switches
+      - vga_output
+    Devices:
+      - silabs_cp2102
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+      - seven_seg_module_shared
+    BoardURL: "https://numato.com/product/elbert-v2-spartan-3a-fpga-development-board/"
+    Status: active

@@ -7,6 +7,9 @@ Description: Larger Nexus FPGA. Radiant + nextpnr-nexus.
 Boards:
   - Id: lattice_certuspro_nx_evn
     BoardName: CertusPro-NX Evaluation Board
+    Devices:
+      - ftdi_ft2232h
+      - microsd_socket_generic
     BoardProducer: lattice
     Chip: LFCPNX-100-9LFG672C
     Bridges:
@@ -15,6 +18,8 @@ Boards:
     BoardURL: https://www.latticesemi.com/products/developmentboardsandkits/certuspro-nx-evaluation-board
   - Id: lattice_certuspro_nx_pcieb
     BoardName: CertusPro-NX PCIe Bridge Board
+    Devices:
+      - ftdi_ft2232h
     BoardProducer: lattice
     Chip: LFCPNX-100-9LFG672I
     Bridges:
@@ -32,6 +37,8 @@ Boards:
     Status: active
   - Id: lattice_certuspro_nx_vvml
     BoardName: CertusPro-NX Voice & Vision Machine Learning Board
+    Devices:
+      - ftdi_ft2232h
     BoardProducer: lattice
     Chip: LFCPNX-100-9LFG672I
     Bridges:

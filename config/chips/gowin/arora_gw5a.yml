@@ -1,0 +1,11 @@
+# Gowin / Arora - chip registry
+
+Producer: Gowin
+Family: Arora
+Description: ""
+DefaultToolchains:
+  - gowin_eda[*]
+Chips:
+  - Id: GW5AR-LV25UG256PC2/I1
+  - Id: GW5AR-LV25LQ144PC2/I1
+  - Id: GW5AT-LV60UG225C1/I0

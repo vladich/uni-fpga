@@ -7,6 +7,11 @@ Description: Cortex-M3 + IGLOO2 fabric. Libero SoC.
 Boards:
   - Id: m2s025_starter
     BoardName: SmartFusion2 Starter Kit (M2S025T)
+    Devices:
+      - ftdi_ft2232h
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
     BoardProducer: microchip
     Chip: M2S025T-FCSG325-1
     Bridges:
@@ -14,6 +19,13 @@ Boards:
     Programmer: libero_fpexpress
   - Id: microchip_sf2_advkit
     BoardName: SmartFusion2 Advanced Development Kit
+    Devices:
+      - ftdi_ft4232h
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+      - winbond_w25q128
+      - microchip_lan8710a
     BoardProducer: microchip
     Chip: M2S150-FCG1152I
     Bridges:
@@ -22,6 +34,13 @@ Boards:
     BoardURL: https://www.microchip.com/en-us/development-tool/M2S150-ADV-DEV-KIT
   - Id: microchip_sf2_devkit
     BoardName: SmartFusion2 Development Kit
+    Devices:
+      - ftdi_ft2232h
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
+      - winbond_w25q128
+      - microchip_lan8710a
     BoardProducer: microchip
     Chip: M2S090TS-FGG484
     Bridges:
@@ -30,9 +49,35 @@ Boards:
     BoardURL: https://www.microchip.com/en-us/development-tool/M2S090-DEV-KIT
   - Id: microchip_sf2_starter
     BoardName: SmartFusion2 Starter Kit
+    Devices:
+      - ftdi_ft2232h
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
     BoardProducer: microchip
     Chip: M2S025-FG484
     Bridges:
       - jtag
     Programmer: libero_fpexpress
     BoardURL: https://www.microchip.com/en-us/development-tool/M2S025-FG484-STARTER
+  - Id: microchip_smartfusion2_security_evalkit
+    BoardName: "SmartFusion2 Security Evaluation Kit (M2S090TS-FGG484)"
+    BoardProducer: microchip
+    Chip: M2S090TS-FGG484
+    Bridges:
+      - jtag
+    Programmer: libero_fpexpress
+    Features:
+      - usb_uart_bridge
+      - ethernet_phy_gigabit
+      - user_leds
+      - user_buttons
+      - dip_switches
+    Devices:
+      - ftdi_ft2232h
+      - winbond_w25q128
+      - microchip_lan8710a
+      - led_discrete_generic
+      - pushbutton_smd_generic
+    BoardURL: "https://www.microchip.com/en-us/development-tool/M2S090TS-EVAL-KIT"
+    Status: active
