@@ -1,0 +1,14 @@
+# alinx_axau15 pin map.
+# Source (local Alinx docs):
+#   ~/Alinx/AXAU15/AXAU15/01_学习教程之例程篇.zip -> 01_╤з╧░╜╠│╠╓о└¤│╠╞к/demo/01_led/led.srcs/constrs_1/new/led.xdc
+
+Board:
+  id: alinx_axau15
+  pinBanks:
+    sys_clk_p:
+      pins: T24
+      frequency_mhz: 200
+    cpu_resetn:
+      pins: N26
+    onboard_leds:
+      pins: [AC16, W21]

@@ -1,0 +1,14 @@
+# alinx_ax515 pin map.
+# Source (local Alinx docs):
+#   ~/Alinx/AX515/led_test.qsf
+
+Board:
+  id: alinx_ax515
+  pinBanks:
+    sys_clk:
+      pins: PIN_T21
+      frequency_mhz: 50
+    cpu_resetn:
+      pins: PIN_B19
+    onboard_leds:
+      pins: [PIN_D15, PIN_G13, PIN_C15, PIN_E12]

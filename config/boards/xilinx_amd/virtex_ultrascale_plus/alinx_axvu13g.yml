@@ -1,0 +1,14 @@
+# alinx_axvu13g pin map.
+# Source (local Alinx docs):
+#   ~/Alinx/AXVU13G/01_demo_document/demo.rar -> demo/01_led_test/led_test.srcs/constrs_1/new/led_test.xdc
+
+Board:
+  id: alinx_axvu13g
+  pinBanks:
+    sys_clk_p:
+      pins: AD33
+      frequency_mhz: 200
+    cpu_resetn:
+      pins: BF29
+    onboard_leds:
+      pins: [AR27, AV28]

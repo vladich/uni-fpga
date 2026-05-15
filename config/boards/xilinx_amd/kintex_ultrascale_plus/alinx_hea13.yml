@@ -1,0 +1,14 @@
+# alinx_hea13 pin map.
+# Source (local Alinx docs):
+#   ~/Alinx/HEA13/02_Demo/demo.rar -> demo/01_led_test/led_test.srcs/constrs_1/new/led_test.xdc
+
+Board:
+  id: alinx_hea13
+  pinBanks:
+    sys_clk_p:
+      pins: AD33
+      frequency_mhz: 200
+    cpu_resetn:
+      pins: P33
+    onboard_leds:
+      pins: [F38, E37]

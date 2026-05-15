@@ -1,0 +1,14 @@
+# alinx_av7k325 pin map.
+# Source (local Alinx docs):
+#   ~/Alinx/AV7K325/CD.zip -> CD/01_╤з╧░╜╠│╠╓о└¤│╠╞к/demo/01_led_test/led_test.srcs/constrs_1/new/led.xdc
+
+Board:
+  id: alinx_av7k325
+  pinBanks:
+    sys_clk_p:
+      pins: AE10
+      frequency_mhz: 200
+    cpu_resetn:
+      pins: AD24
+    onboard_leds:
+      pins: [Y28, AA28]

@@ -1,0 +1,14 @@
+# alinx_av7k300 pin map.
+# Source (local Alinx docs):
+#   ~/Alinx/AV7K300/CD/01_学习教程之例程篇/demo/01_led_test/led_test.srcs/constrs_1/new/led.xdc
+
+Board:
+  id: alinx_av7k300
+  pinBanks:
+    sys_clk_p:
+      pins: AE10
+      frequency_mhz: 200
+    cpu_resetn:
+      pins: AF21
+    onboard_leds:
+      pins: [AF20, AE23, AB23, AC21]
