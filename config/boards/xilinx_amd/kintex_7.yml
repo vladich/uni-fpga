@@ -423,18 +423,6 @@ Boards:
     BoardURL: https://coderobin.com/products/alinx-av7k325-xilinx-kintex-7-xc7k325-fpga-development-board
     Status: active
     Notes: "AV-series carrier; revision of AV7K300."
-  - Id: alinx_ac7k325b
-    BoardName: "Alinx AC7K325B SOM"
-    BoardProducer: alinx
-    Chip: XC7K325T-2FFG900I
-    Bridges:
-      - jtag
-    Programmer: vivado_hw
-    Features:
-      - ddr3_memory
-      - qspi_flash
-    BoardURL: https://coderobin.com/products/alinx-ac7K325b-xilinx-kintex-7-xc7k325t-fpga-som
-    Status: active
   - Id: numato_nereid
     BoardName: "Numato Nereid Kintex-7 PCIe Development Board"
     BoardProducer: numato_lab

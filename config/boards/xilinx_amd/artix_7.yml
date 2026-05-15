@@ -741,43 +741,6 @@ Boards:
     BoardURL: https://coderobin.com/products/alinx-ax7a200-xilinx-artix-7-xc7a200t-fpga-development-board
     Status: active
     Notes: "Single-board (non-SOM) AX7A200 — pairs with AX7A035 (already in catalog)."
-  - Id: alinx_ac7a035
-    BoardName: "Alinx AC7A035 SOM"
-    BoardProducer: alinx
-    Chip: XC7A35T-2FGG484I
-    Bridges:
-      - jtag
-    Programmer: vivado_hw
-    Features:
-      - ddr3_memory
-      - qspi_flash
-    BoardURL: https://coderobin.com/products/alinx-ac7a035-xilinx-artix-7-xc7a35t-fpga-som
-    Status: active
-  - Id: alinx_ac7a200
-    BoardName: "Alinx AC7A200 SOM"
-    BoardProducer: alinx
-    Chip: XC7A200T-2FBG484I
-    Bridges:
-      - jtag
-    Programmer: vivado_hw
-    Features:
-      - ddr3_memory
-      - qspi_flash
-    BoardURL: https://coderobin.com/products/alinx-ac7a200-xilinx-artix-7-xc7a200t-fpga-som
-    Status: active
-  - Id: alinx_ac7100b
-    BoardName: "Alinx AC7100B SOM"
-    BoardProducer: alinx
-    Chip: XC7A100T-2FGG484I
-    Bridges:
-      - jtag
-    Programmer: vivado_hw
-    Features:
-      - ddr3_memory
-      - qspi_flash
-    BoardURL: https://coderobin.com/products/alinx-ac7100b-xilinx-artix-7-xc7a100t-som
-    Status: active
-    Notes: "Used in the Facebook Open Compute Time Card."
   - Id: enclustra_mars_ax3
     BoardName: "Enclustra Mars AX3 (Artix-7 SoM successor to MX2)"
     BoardProducer: enclustra

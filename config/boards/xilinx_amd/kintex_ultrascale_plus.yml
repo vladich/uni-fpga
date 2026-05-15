@@ -121,45 +121,6 @@ Boards:
     BoardURL: https://coderobin.com/products/alinx-axku15-xilinx-kintex-ultrascale-xcku15p-fpga-development-board
     Status: active
     Notes: "Industrial XCKU15P-2FFVE1517I per product page; closest registry entry XCKU15P-2FFVE1760E (verify package pin compat before use)."
-  - Id: alinx_acku3
-    BoardName: "Alinx ACKU3 SOM"
-    BoardProducer: alinx
-    Chip: XCKU3P-2FFVB676I
-    Bridges:
-      - jtag
-    Programmer: vivado_hw
-    Features:
-      - ddr4_memory
-      - qspi_flash
-    BoardURL: https://coderobin.com/products/alinx-acku3-xilinx-kintex-ultrascale-xcku3p-fpga-som
-    Status: active
-    Notes: "Chip XCKU3P-2FFVB676I not in registry — add."
-  - Id: alinx_acku5
-    BoardName: "Alinx ACKU5 SOM"
-    BoardProducer: alinx
-    Chip: XCKU5P-2FFVB676E
-    Bridges:
-      - jtag
-    Programmer: vivado_hw
-    Features:
-      - ddr4_memory
-      - qspi_flash
-    BoardURL: https://coderobin.com/products/alinx-acku5-xilinx-kintex-ultrascale-xcku5p-fpga-som
-    Status: active
-    Notes: "Industrial XCKU5P-2FFVB676I; mapped to existing registry XCKU5P-2FFVB676E."
-  - Id: alinx_acku15
-    BoardName: "Alinx ACKU15 SOM"
-    BoardProducer: alinx
-    Chip: XCKU15P-2FFVE1760E
-    Bridges:
-      - jtag
-    Programmer: vivado_hw
-    Features:
-      - ddr4_memory
-      - qspi_flash
-    BoardURL: https://coderobin.com/products/alinx-acku15-xilinx-kintex-ultrascale-xcku15p-fpga-som
-    Status: active
-    Notes: "Industrial XCKU15P-2FFVE1517I per product page; closest registry XCKU15P-2FFVE1760E (different package — needs verification)."
   - Id: alinx_fx200
     BoardName: "Alinx FX200 Accelerator Card"
     BoardProducer: alinx

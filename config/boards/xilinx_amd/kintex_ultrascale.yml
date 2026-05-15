@@ -271,27 +271,3 @@ Boards:
     BoardURL: https://coderobin.com/products/alinx-axku042-xilinx-kintex-ultrascale-xcku040-fpga-development-board
     Status: active
     Notes: "2nd-gen successor to AXKU040 with same chip; modular carrier."
-  - Id: alinx_acku040
-    BoardName: "Alinx ACKU040 SOM"
-    BoardProducer: alinx
-    Chip: XCKU040-2FFVA1156I
-    Bridges:
-      - jtag
-    Programmer: vivado_hw
-    Features:
-      - ddr4_memory
-      - qspi_flash
-    BoardURL: https://coderobin.com/products/alinx-acku040-xilinx-kintex-ultrascale-xcku040-fpga-som
-    Status: active
-  - Id: alinx_acku060
-    BoardName: "Alinx ACKU060 SOM"
-    BoardProducer: alinx
-    Chip: XCKU060-2FFVA1156I
-    Bridges:
-      - jtag
-    Programmer: vivado_hw
-    Features:
-      - ddr4_memory
-      - qspi_flash
-    BoardURL: https://coderobin.com/products/alinx-acku060-xilinx-kintex-ultrascale-xcku060-fpga-som
-    Status: active

@@ -377,18 +377,6 @@ Boards:
     BoardURL: https://coderobin.com/products/alinx-hea13-xilinx-virtex-ultrascale-xcvu13p-fpga-heterogeneous-computing-development-board
     Status: active
     Notes: "VU13P + NVIDIA Jetson Thor heterogeneous board; LLM/Physical AI/Robotics."
-  - Id: alinx_acvu13
-    BoardName: "Alinx ACVU13 SOM"
-    BoardProducer: alinx
-    Chip: XCVU13P-2FHGB2104E
-    Bridges:
-      - jtag
-    Programmer: vivado_hw
-    Features:
-      - ddr4_memory
-      - qspi_flash
-    BoardURL: https://coderobin.com/products/alinx-acvu13-xilinx-virtex-ultrascale-xcvu13p-fpga-som
-    Status: active
   - Id: htg_840
     BoardName: "HTG-840 Virtex UltraScale+ VU13P PCIe Dev Platform"
     BoardProducer: hitech_global

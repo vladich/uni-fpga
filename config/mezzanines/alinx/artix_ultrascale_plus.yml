@@ -1,0 +1,32 @@
+# alinx / artix_ultrascale_plus - SoM registry (migrated from board catalog)
+#
+# These entries used to be top-level boards under config/boards/.
+# They are SoMs (FPGA on module + DDR + flash + B2B connector) and
+# require a carrier board to be usable. Migrated 2026-05-15.
+
+Producer: alinx
+Mezzanines:
+  - Id: alinx_acau15
+    Name: "Alinx ACAU15 SOM"
+    Producer: alinx
+    Type: som
+    Connector: b2b_custom_alinx
+    Chip: XCAU15P-2FFVB676E
+    Features:
+      - ddr4_memory
+      - qspi_flash
+    BoardURL: "https://coderobin.com/products/alinx-acau15-xilinx-artix-ultrascale-xcau15p-fpga-som"
+    Status: active
+    DefaultCarrier: alinx_axau15
+  - Id: alinx_acau25
+    Name: "Alinx ACAU25 SOM"
+    Producer: alinx
+    Type: som
+    Connector: b2b_custom_alinx
+    Chip: XCAU25P-2E
+    Features:
+      - ddr4_memory
+      - qspi_flash
+    BoardURL: "https://coderobin.com/products/alinx-acau25-xilinx-artix-ultrascale-xcau25p-fpga-som"
+    Status: active
+    DefaultCarrier: alinx_axau25

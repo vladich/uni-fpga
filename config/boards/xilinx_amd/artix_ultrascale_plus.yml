@@ -91,27 +91,3 @@ Boards:
     BoardURL: https://coderobin.com/products/alinx-axau25-xilinx-artix-ultrascale-xcau25p-fpga-development-board
     Status: active
     Notes: "ACAU25 SOM + carrier. Industrial XCAU25P-2FFVB676I per product page; mapped to registry XCAU25P-2E."
-  - Id: alinx_acau15
-    BoardName: "Alinx ACAU15 SOM"
-    BoardProducer: alinx
-    Chip: XCAU15P-2FFVB676E
-    Bridges:
-      - jtag
-    Programmer: vivado_hw
-    Features:
-      - ddr4_memory
-      - qspi_flash
-    BoardURL: https://coderobin.com/products/alinx-acau15-xilinx-artix-ultrascale-xcau15p-fpga-som
-    Status: active
-  - Id: alinx_acau25
-    BoardName: "Alinx ACAU25 SOM"
-    BoardProducer: alinx
-    Chip: XCAU25P-2E
-    Bridges:
-      - jtag
-    Programmer: vivado_hw
-    Features:
-      - ddr4_memory
-      - qspi_flash
-    BoardURL: https://coderobin.com/products/alinx-acau25-xilinx-artix-ultrascale-xcau25p-fpga-som
-    Status: active
