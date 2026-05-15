@@ -1,14 +1,50 @@
 # alinx_axau25 pin map.
-# Source (local Alinx docs):
-#   ~/Alinx/AXAU25/01_demo.zip -> 01_demo/demo/01_led/led.srcs/constrs_1/new/led.xdc
+# Sources (local Alinx docs):
+#   ~/Alinx/.../01_demo.zip (streamed 424 constraint files; 750 signals)
 
 Board:
   id: alinx_axau25
   pinBanks:
     sys_clk_p:
       pins: T24
-      frequency_mhz: 200
+    sys_clk_n:
+      pins: T4
     cpu_resetn:
       pins: N26
+    onboard_buttons:
+      pins: [AA23]
     onboard_leds:
-      pins: [AC16, W21]
+      pins: [AC16, W21, D14, D15]
+    onboard_uart:
+      pins:
+        rx: A12
+        tx: A13
+    microsd:
+      pins:
+        dclk: AA25
+        ncs: W19
+        mosi: AA24
+        miso: Y22
+    hdmi_clk:
+      pins: AF19
+    hdmi_data_p:
+      pins: [AB25, AF25, AD25, AF24, AD24, AE26, AF18, AE25, Y21, AD18, AB22, AC18, AA22, AB20, AA17, AC17, Y17, AA20, AB17, AF22, AF17, AE22, AE17, AC19]
+    hdmi_i2c:
+      pins:
+        scl: J15
+        sda: J14
+        hpd: AD19
+    ethernet_rgmii:
+      pins:
+        rxd[3]: AE23
+        rxd[2]: AD23
+        rxd[1]: AC23
+        rxd[0]: AC22
+        txd[3]: AC24
+        txd[2]: AB24
+        txd[1]: AA18
+        txd[0]: Y18
+        rxc: AD21
+        rxctl: AE21
+        txc: AE16
+        txctl: AD16

@@ -1,56 +1,25 @@
 # alinx_ax309 pin map.
-# Source type: github_xdc
-#   https://github.com/alinxalinx/AX309/blob/master/SCH/ax309.ucf
-#   https://github.com/alinxalinx/AX309/blob/master/SRC/Verilog/04_led_test/led_test.ucf
-#   https://github.com/alinxalinx/AX309/blob/master/SRC/Verilog/05_key_test/key_test.ucf
+# Sources (local Alinx docs):
+#   ~/Alinx/.../01_学习教程之例程篇.rar (streamed 207 constraint files; 252 signals)
 
 Board:
   id: alinx_ax309
   pinBanks:
     sys_clk:
       pins: T8
-      frequency_mhz: 50
     cpu_resetn:
       pins: L3
-    onboard_leds:
-      pins:
-      - P4
-      - N5
-      - P5
-      - M6
     onboard_buttons:
-      pins:
-      - C3
-      - D3
-      - E4
-      - E3
+      pins: [C3, D3, E4, E3]
+    onboard_leds:
+      pins: [P4, N5, P5, M6]
     onboard_uart:
       pins:
-        tx: D12
         rx: C11
-    vga_red:
+        tx: D12
+    microsd:
       pins:
-      - M11
-      - M12
-      - L12
-      - N14
-      - M13
-    vga_green:
-      pins:
-      - M9
-      - N9
-      - P9
-      - L10
-      - M10
-      - P11
-    vga_blue:
-      pins:
-      - P7
-      - M7
-      - P8
-      - N8
-      - L7
-    vga_hs:
-      pins: M14
-    vga_vs:
-      pins: L13
+        dclk: M3
+        ncs: N3
+        miso: L4
+        mosi: L5
