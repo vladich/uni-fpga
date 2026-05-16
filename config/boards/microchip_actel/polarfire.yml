@@ -17,6 +17,7 @@ Boards:
       - jtag_header
     BoardURL: https://www.adiuvoengineering.com/product-page/galaxia-space-development-board
     Status: active
+    Notes: "Catalog Chip MPF300T-FCG484E may be incorrect — Adiuvo product docs (DesignNews/EE Journal) describe Galaxia as Lattice Certus-NX LFD2NX-40 with 128Mb NOR + 256Kb MRAM. Verify before relying on the recorded Chip."
   - Id: adiuvo_galaxia_space_tile
     BoardName: Galaxia Space Tile
     BoardProducer: adiuvo
@@ -28,6 +29,7 @@ Boards:
       - jtag_header
     BoardURL: https://www.adiuvoengineering.com/product-page/galaxia-space-tile
     Status: active
+    Notes: "Catalog Chip MPF300T-FCG484E may be incorrect — Adiuvo product docs (DesignNews/EE Journal) describe Galaxia as Lattice Certus-NX LFD2NX-40 with 128Mb NOR + 256Kb MRAM. Verify before relying on the recorded Chip."
   - Id: microchip_polarfire_evalkit
     BoardName: PolarFire Evaluation Kit
     Features:

@@ -7,6 +7,12 @@ Description: 40 nm Quantum-architecture FPGA. Efinity.
 Boards:
   - Id: efinix_t120_bga324_devkit
     BoardName: Trion T120 BGA324 Development Kit
+    Devices:
+      - ftdi_ft2232h
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
     BoardProducer: efinix
     Chip: T120F324C4
     Bridges:
@@ -15,21 +21,31 @@ Boards:
     ExtraProgrammers:
       - openFPGALoader[*]
     Features:
-      - hdmi_output
-      - mipi_csi2_input
+      - dip_switches
       - ethernet_phy_10_100
       - ethernet_phy_gigabit
+      - hdmi_output
+      - jtag_header
+      - microsd_socket
+      - mipi_csi2_input
       - pmod_connector
       - raspi_hat_header
-      - user_leds
-      - user_buttons
-      - dip_switches
+      - usb_jtag_bridge
       - usb_uart_bridge
-      - jtag_header
+      - user_buttons
+      - user_leds
     BoardURL: https://www.efinixinc.com/products-devkits-triont120bga324.html
     Status: active
   - Id: efinix_t120_bga576_devkit
     BoardName: Trion T120 BGA576 Development Kit
+    Features:
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
+    Devices:
+      - ftdi_ft2232h
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: efinix
     Chip: T120F576C4
     Bridges:
@@ -46,6 +62,14 @@ Boards:
     Status: eol
   - Id: efinix_t20_bga169_devkit
     BoardName: Trion T20 BGA169 Development Kit
+    Features:
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
+    Devices:
+      - ftdi_ft2232h
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: efinix
     Chip: T20F169C3
     Bridges:
@@ -54,6 +78,10 @@ Boards:
     BoardURL: https://www.efinixinc.com/products-devkits-triont20.html
   - Id: efinix_t20_mipi_devkit
     BoardName: Trion T20 MIPI Development Kit
+    Devices:
+      - ftdi_ft2232h
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: efinix
     Chip: T20F169C3
     Bridges:
@@ -111,6 +139,14 @@ Boards:
     BoardURL: https://www.efinixinc.com/products-devkits-xyloni.html
   - Id: fireant
     BoardName: FireAnt
+    Features:
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
+    Devices:
+      - ftdi_ft232h
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: efinix
     Chip: T8F81
     Bridges:

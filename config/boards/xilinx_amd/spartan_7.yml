@@ -35,18 +35,28 @@ Boards:
     Notes: "Alinx revised the AX7050 from Zynq-7000 (legacy) to Spartan-7 XC7S50; this entry reflects the current shipping product."
   - Id: adiuvo_astria_embedded_tile
     BoardName: Astria Embedded System Tile
+    Devices:
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: adiuvo
     Chip: XC7S25-1CSGA225C
     Bridges:
       - jtag
     Programmer: vivado_hw
     Features:
-      - qspi_flash
       - jtag_header
+      - qspi_flash
+      - user_buttons
+      - user_leds
     BoardURL: https://www.adiuvoengineering.com/product-page/astria-embedded-system-tile
     Status: active
   - Id: adiuvo_astria_rpi2040
     BoardName: Astria & RPI 2040
+    Devices:
+      - ftdi_ft232h
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
     BoardProducer: adiuvo
     Chip: XC7S6-1FTGB196C
     Bridges:

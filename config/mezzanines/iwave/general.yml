@@ -88,7 +88,6 @@ Mezzanines:
       - macronix_mx25l25645g
     BoardURL: "https://www.iwavesystems.com/product/stratix-10-soc-fpga/"
     Status: active
-    DefaultCarrier: iwave_rainbow_g45m
   - Id: iwave_g57m_som
     Name: "iW-RainboW-G57M Versal AI Edge SoM"
     Producer: iwave
@@ -104,4 +103,3 @@ Mezzanines:
       - macronix_mx25l25645g
     BoardURL: "https://www.iwavesystems.com/product/versal-ai-edge-system-on-module/"
     Status: active
-    DefaultCarrier: iwave_rainbow_g57m

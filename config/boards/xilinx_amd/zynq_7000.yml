@@ -1189,6 +1189,9 @@ Boards:
     Status: active
   - Id: redpitaya_signallab_250_12
     BoardName: SIGNALlab 250-12
+    Devices:
+      - microsd_socket_generic
+      - led_discrete_generic
     BoardProducer: redpitaya
     Chip: XC7Z020-1CLG400C
     Bridges:
@@ -1197,18 +1200,23 @@ Boards:
     ExtraProgrammers:
       - openFPGALoader[*]
     Features:
-      - ddr3_memory
-      - microsd_socket
-      - ethernet_phy_gigabit
-      - usb_2_otg
-      - usb_powered
-      - sma_io_pair
       - adc_chip
       - dac_chip
+      - ddr3_memory
+      - ethernet_phy_gigabit
+      - microsd_socket
+      - sma_io_pair
+      - usb_2_otg
+      - usb_powered
+      - user_leds
     BoardURL: https://redpitaya.com/signallab-250-12/
     Status: active
   - Id: redpitaya_stemlab_125_14
     BoardName: STEMlab 125-14
+    Devices:
+      - micron_mt41j256m16
+      - microsd_socket_generic
+      - led_discrete_generic
     BoardProducer: redpitaya
     Chip: XC7Z010-1CLG400C
     Bridges:
@@ -1217,18 +1225,22 @@ Boards:
     ExtraProgrammers:
       - openFPGALoader[*]
     Features:
-      - ddr3_memory
-      - microsd_socket
-      - ethernet_phy_gigabit
-      - usb_2_otg
-      - usb_powered
-      - sma_io_pair
       - adc_chip
       - dac_chip
+      - ddr3_memory
+      - ethernet_phy_gigabit
+      - microsd_socket
+      - sma_io_pair
+      - usb_2_otg
+      - usb_powered
+      - user_leds
     BoardURL: https://redpitaya.com/stemlab-125-14/
     Status: active
   - Id: redpitaya_stemlab_125_14_gen2
     BoardName: STEMlab 125-14 Gen 2
+    Devices:
+      - microsd_socket_generic
+      - led_discrete_generic
     BoardProducer: redpitaya
     Chip: XC7Z010-1CLG400C
     Bridges:
@@ -1237,19 +1249,23 @@ Boards:
     ExtraProgrammers:
       - openFPGALoader[*]
     Features:
+      - adc_chip
+      - can_transceiver
+      - dac_chip
       - ddr3_memory
-      - microsd_socket
       - ethernet_phy_gigabit
+      - microsd_socket
+      - sma_io_pair
       - usb_2_otg
       - usb_powered
-      - can_transceiver
-      - sma_io_pair
-      - adc_chip
-      - dac_chip
+      - user_leds
     BoardURL: https://redpitaya.com/stemlab-125-14-gen2/
     Status: active
   - Id: redpitaya_stemlab_125_14_pro_gen2
     BoardName: STEMlab 125-14 PRO Gen 2
+    Devices:
+      - microsd_socket_generic
+      - led_discrete_generic
     BoardProducer: redpitaya
     Chip: XC7Z010-1CLG400C
     Bridges:
@@ -1258,21 +1274,25 @@ Boards:
     ExtraProgrammers:
       - openFPGALoader[*]
     Features:
+      - adc_chip
+      - can_transceiver
+      - dac_chip
       - ddr3_memory
-      - microsd_socket
       - emmc_flash
-      - qspi_flash
       - ethernet_phy_gigabit
+      - microsd_socket
+      - qspi_flash
+      - sma_io_pair
       - usb_2_otg
       - usb_powered
-      - can_transceiver
-      - sma_io_pair
-      - adc_chip
-      - dac_chip
+      - user_leds
     BoardURL: https://redpitaya.com/product/stemlab-125-14-pro-starter-kit/
     Status: active
   - Id: redpitaya_stemlab_125_14_z7020_pro_gen2
     BoardName: STEMlab 125-14 PRO Z7020 Gen 2
+    Devices:
+      - microsd_socket_generic
+      - led_discrete_generic
     BoardProducer: redpitaya
     Chip: XC7Z020-1CLG400C
     Bridges:
@@ -1281,17 +1301,18 @@ Boards:
     ExtraProgrammers:
       - openFPGALoader[*]
     Features:
+      - adc_chip
+      - can_transceiver
+      - dac_chip
       - ddr3_memory
-      - microsd_socket
       - emmc_flash
-      - qspi_flash
       - ethernet_phy_gigabit
+      - microsd_socket
+      - qspi_flash
+      - sma_io_pair
       - usb_2_otg
       - usb_powered
-      - can_transceiver
-      - sma_io_pair
-      - adc_chip
-      - dac_chip
+      - user_leds
     BoardURL: https://redpitaya.com/product/stemlab-125-14-pro-z7020-gen-2-starter-kit/
     Status: active
   - Id: sundance_emc2_dp
