@@ -1,0 +1,37 @@
+# alinx_ax7103 pin map.
+# Aggregated from alinx official GitHub constraints:
+#   https://github.com/alinxalinx/AX7103/blob/master/SRC/02_led_test/led_test.srcs/constrs_1/new/led.xdc
+#   https://github.com/alinxalinx/AX7103/blob/master/SRC/03_key_test/constrs_1/new/key.xdc
+#   https://github.com/alinxalinx/AX7103/blob/master/SRC/04_pll_test/constrs_1/new/pll.xdc
+#   (+17 more constraint files)
+
+Board:
+  id: alinx_ax7103
+  pinBanks:
+    sys_clk_p:
+      pins: R4
+    sys_clk_n:
+      pins: T4
+    cpu_resetn:
+      pins: T6
+    onboard_buttons:
+      pins: [J21, E13, E13]
+    onboard_leds:
+      pins: [B13, C13, D14, D15]
+    onboard_uart:
+      pins:
+        rx: P20
+        tx: N15
+    microsd:
+      pins:
+        clk: AB12
+        cs: AA14
+        datain: AB11
+        dataout: AA13
+    hdmi_clk:
+      pins:
+        p: M13
+    hdmi_i2c:
+      pins:
+        scl: E16
+        sda: F16

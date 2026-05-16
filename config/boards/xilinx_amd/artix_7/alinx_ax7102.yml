@@ -1,0 +1,63 @@
+# alinx_ax7102 pin map.
+# Aggregated from alinx official GitHub constraints:
+#   https://github.com/alinxalinx/AX7102/blob/master/SRC/04_led_test/led_test.srcs/constrs_1/new/led.xdc
+#   https://github.com/alinxalinx/AX7102/blob/master/SRC/05_key_test/key_test/constrs_1/new/key.xdc
+#   https://github.com/alinxalinx/AX7102/blob/master/SRC/06_pll_test/pll_test/constrs_1/new/pll.xdc
+#   (+16 more constraint files)
+
+Board:
+  id: alinx_ax7102
+  pinBanks:
+    sys_clk_p:
+      pins: R4
+    sys_clk_n:
+      pins: T4
+    cpu_resetn:
+      pins: T6
+    onboard_buttons:
+      pins: [B18]
+    onboard_leds:
+      pins: [C17, D17, V20, U20]
+    microsd:
+      pins:
+        clk: C14
+        cs: A13
+        datain: C15
+        dataout: E17
+    usb_2_otg:
+      pins:
+        slcs: P16
+        sloe: N13
+        slrd: P19
+        slwr: R19
+        flaga: R18
+        flagb: R14
+        flagc: P14
+        fifoaddr[0]: N14
+        fifoaddr[1]: N15
+        fd[0]: Y22
+        fd[1]: W20
+        fd[2]: W19
+        fd[3]: Y19
+        fd[4]: Y18
+        fd[5]: V22
+        fd[6]: U22
+        fd[7]: T18
+        fd[8]: R17
+        fd[9]: R16
+        fd[10]: P15
+        fd[11]: N17
+        fd[12]: P17
+        fd[13]: U16
+        fd[14]: T16
+        fd[15]: U17
+    vga_r:
+      pins: [W12, W11, V14, V13, T15, T14, W16, W15]
+    vga_g:
+      pins: [V17, W17, U15, V15, AB21, AB22, AA21, AA20]
+    vga_b:
+      pins: [AA19, AA18, AB18, T20, Y17, W22, W21, T21]
+    vga_sync:
+      pins:
+        hs: AA11
+        vs: AA10
