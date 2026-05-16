@@ -1,0 +1,84 @@
+# digilent_zedboard pin map.
+# Source: Digilent Zedboard-Master.xdc (commented-out menu form;
+#         parser uncommented all assignments to extract the full pin map)
+#   https://raw.githubusercontent.com/Digilent/digilent-xdc/master/Zedboard-Master.xdc
+
+Board:
+  id: digilent_zedboard
+  pinBanks:
+    sys_clk:
+      pins: Y9
+    onboard_buttons:
+      pins: [T18]
+    onboard_switches:
+      pins: [F22, G22, H22, F21, H19, H18, H17, M15]
+    vga_r:
+      pins: [V20, U20, V19, V18]
+    vga_g:
+      pins: [AB22, AA22, AB21, AA21]
+    vga_b:
+      pins: [Y21, Y20, AB20, AB19]
+    vga_sync:
+      pins:
+        hs: AA19
+        vs: Y19
+    hdmi_clk:
+      pins: W18
+    hdmi_d0:
+      pins: Y13
+    hdmi_d1:
+      pins: AA13
+    hdmi_d10:
+      pins: W13
+    hdmi_d11:
+      pins: W15
+    hdmi_d12:
+      pins: V15
+    hdmi_d13:
+      pins: U17
+    hdmi_d14:
+      pins: V14
+    hdmi_d2:
+      pins: AA14
+    hdmi_d3:
+      pins: Y14
+    hdmi_d4:
+      pins: AB15
+    hdmi_d5:
+      pins: AB16
+    hdmi_d6:
+      pins: AA16
+    hdmi_d7:
+      pins: AB17
+    hdmi_d8:
+      pins: AA17
+    hdmi_d9:
+      pins: Y15
+    hdmi_de:
+      pins: U16
+    hdmi_hsync:
+      pins: V17
+    hdmi_int:
+      pins: W16
+    hdmi_scl:
+      pins: AA18
+    hdmi_sda:
+      pins: Y16
+    hdmi_spdif:
+      pins: U15
+    hdmi_spdifo:
+      pins: Y18
+    hdmi_vsync:
+      pins: W17
+    oled_dc:
+      pins: U10
+    oled_res:
+      pins: U9
+    oled_sclk:
+      pins: AB12
+    oled_sdin:
+      pins: AA12
+    oled_vbat:
+      pins: U11
+    oled_vdd:
+      pins: U12
