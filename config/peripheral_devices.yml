@@ -1049,3 +1049,132 @@ Devices:
     Interface: single_wire
     Datasheet: null
     PeripheralDrivers: []
+
+  # ---- Added 2026-05-15 from Wave 1+2 agent flags (parts seen on many boards
+  #      but not yet in registry) ----
+  - Id: microchip_24lc04
+    Name: Microchip 24LC04 4 Kbit I2C EEPROM
+    Manufacturer: Microchip
+    Part: 24LC04B
+    Feature: eeprom_chip
+    Interface: i2c
+    Datasheet: null
+    PeripheralDrivers: []
+    Notes: Common board-ID/MAC EEPROM on Alinx boards.
+  - Id: maxim_ds1302
+    Name: Maxim DS1302 RTC
+    Manufacturer: Maxim / Analog Devices
+    Part: DS1302
+    Feature: clock_generator
+    Interface: spi
+    Datasheet: null
+    PeripheralDrivers: []
+    Notes: Real-time clock with battery backup; common on Chinese educational boards.
+  - Id: micron_m25p16
+    Name: Micron M25P16 16 Mbit SPI Flash
+    Manufacturer: Micron / ST
+    Part: M25P16
+    Feature: spi_flash
+    Interface: spi
+    Datasheet: null
+    PeripheralDrivers: []
+    Notes: Legacy 16 Mbit SPI flash on QMtech Spartan-6 LX16/LX25 core boards.
+  - Id: microchip_usb3320c
+    Name: Microchip USB3320C USB 2.0 PHY
+    Manufacturer: Microchip
+    Part: USB3320C-EZK
+    Feature: usb_2_otg
+    Interface: ulpi
+    Datasheet: null
+    PeripheralDrivers: []
+    Notes: USB 2.0 ULPI PHY on many Alinx Zynq carriers.
+  - Id: jl_jl2121
+    Name: JLSemi JL2121 Gigabit Ethernet PHY
+    Manufacturer: JLSemi
+    Part: JL2121
+    Feature: ethernet_phy_gigabit
+    Interface: rgmii
+    Datasheet: null
+    PeripheralDrivers: []
+    Notes: Chinese-domestic GbE PHY common on Alinx + several QMtech boards.
+  - Id: winbond_w25q64
+    Name: Winbond W25Q64 64 Mbit SPI Flash
+    Manufacturer: Winbond
+    Part: W25Q64
+    Feature: qspi_flash
+    Interface: qspi
+    Datasheet: null
+    PeripheralDrivers: []
+    Notes: Used on QMtech EP4CE15/55/CGX150 core boards and many Gowin GW2A-18/55 starter kits.
+  - Id: winbond_w25q256
+    Name: Winbond W25Q256 256 Mbit QSPI Flash
+    Manufacturer: Winbond
+    Part: W25Q256JV
+    Feature: qspi_flash
+    Interface: qspi
+    Datasheet: null
+    PeripheralDrivers: []
+    Notes: 32 MByte QSPI on QMtech Zynq 7100 + KU040 cores; companion to W25Q128.
+  - Id: macronix_mx25l12835f
+    Name: Macronix MX25L12835F 128 Mbit QSPI Flash
+    Manufacturer: Macronix
+    Part: MX25L12835F
+    Feature: qspi_flash
+    Interface: qspi
+    Datasheet: null
+    PeripheralDrivers: []
+    Notes: Common 128 Mbit SPI flash on Gowin GW5A/GW5AT eval boards.
+  - Id: gigadevice_gd25q127
+    Name: GigaDevice GD25Q127 128 Mbit SPI Flash
+    Manufacturer: GigaDevice
+    Part: GD25Q127C
+    Feature: qspi_flash
+    Interface: qspi
+    Datasheet: null
+    PeripheralDrivers: []
+    Notes: Chinese-market SPI flash; common on Alinx and Sipeed boards.
+  - Id: wch_ch340
+    Name: WCH CH340N USB-UART bridge
+    Manufacturer: WCH (Nanjing Qinheng Microelectronics)
+    Part: CH340N
+    Feature: usb_uart_bridge
+    Interface: usb
+    Datasheet: null
+    PeripheralDrivers: []
+    Notes: Low-cost USB-UART on many Chinese FPGA dev boards (Sipeed, Alinx, QMtech).
+  - Id: hynix_h5tq2g63
+    Name: Hynix H5TQ2G63 2 Gbit DDR3 SDRAM
+    Manufacturer: SK Hynix
+    Part: H5TQ2G63GFR
+    Feature: ddr3_memory
+    Interface: ddr3
+    Datasheet: null
+    PeripheralDrivers: []
+    Notes: 2 Gbit DDR3 chip; alternate to Micron MT41K128M16 on some Alinx boards.
+  - Id: silabs_si5332
+    Name: Silicon Labs Si5332 clock generator
+    Manufacturer: Silicon Labs
+    Part: Si5332
+    Feature: clock_generator
+    Interface: i2c
+    Datasheet: null
+    PeripheralDrivers: []
+    Notes: Programmable clock generator; alternate to Si5345/Si570 on newer carriers.
+  - Id: micron_mt40a512m16
+    Name: Micron MT40A512M16 8 Gbit DDR4 SDRAM
+    Manufacturer: Micron
+    Part: MT40A512M16LY
+    Feature: ddr4_memory
+    Interface: ddr4
+    Datasheet: null
+    PeripheralDrivers: []
+    Notes: 8 Gbit DDR4 chip; common on Zynq UltraScale+ and Versal carriers.
+  - Id: micron_mt40a1g16
+    Name: Micron MT40A1G16 16 Gbit DDR4 SDRAM
+    Manufacturer: Micron
+    Part: MT40A1G16KD
+    Feature: ddr4_memory
+    Interface: ddr4
+    Datasheet: null
+    PeripheralDrivers: []
+    Notes: 16 Gbit DDR4 chip; high-end accelerator cards and RFSoC boards.
