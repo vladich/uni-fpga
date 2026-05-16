@@ -119,8 +119,7 @@ Boards:
       - pcie_endpoint
       - fmc_lpc
       - user_leds
-    BoardURL: https://numato.com/product/telesto-kintex-7-fpga-development-board/
-    Status: active
+    Status: eol
   - Id: opalkelly_xem7360_k160t
     BoardName: XEM7360-K160T
     BoardProducer: opal_kelly

@@ -133,8 +133,7 @@ Boards:
       - qspi_flash
       - user_leds
       - usb_powered
-    BoardURL: https://numato.com/product/galatea-spartan-6-fpga-development-board/
-    Status: active
+    Status: eol
   - Id: numato_mimas_v2
     BoardName: Mimas V2
     Devices:

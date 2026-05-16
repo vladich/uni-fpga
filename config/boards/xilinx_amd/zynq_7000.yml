@@ -880,8 +880,7 @@ Boards:
       - microsd_socket
       - ethernet_phy_gigabit
       - user_leds
-    BoardURL: https://numato.com/product/styx-zynq-7020-usb-fpga-module/
-    Status: active
+    Status: eol
   - Id: numato_tarak
     BoardName: Tarak
     Devices:
@@ -894,7 +893,7 @@ Boards:
     Bridges:
       - jtag
     Programmer: vivado_hw
-    BoardURL: https://numato.com/product/tarak-zynq-7000-soc-fpga-development-board/
+    Status: eol
   - Id: qmtech_zynq_7010_core
     BoardName: Zynq 7010 Core Board
     BoardProducer: qmtech
@@ -1775,8 +1774,7 @@ Boards:
       - micron_n25q128a
       - microsd_socket_generic
       - realtek_rtl8211e
-    BoardURL: "https://numato.com/product/styx-zynq-z7020-development-board/"
-    Status: active
+    Status: eol
   - Id: myir_zybo_y7_v4
     BoardName: "MyIR MYS-7Z010 / MYS-7Z020 Y-Series Zynq-7000 Single Board"
     BoardProducer: myir

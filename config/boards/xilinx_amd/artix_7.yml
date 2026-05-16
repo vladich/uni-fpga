@@ -405,8 +405,7 @@ Boards:
       - user_leds
       - user_buttons
       - usb_powered
-    BoardURL: https://numato.com/product/mimas-a7-mini-artix-7-fpga-development-board/
-    Status: active
+    Status: eol
   - Id: numato_neso_artix7
     BoardName: Neso Artix 7
     Devices:
@@ -437,8 +436,7 @@ Boards:
       - qspi_flash
       - user_leds
       - jtag_header
-    BoardURL: https://numato.com/product/picoevb-artix-7-fpga-board/
-    Status: active
+    Status: eol
   - Id: numato_vesnin
     BoardName: Numato Vesnin Artix-7 FPGA Development Board
     Devices:
@@ -460,8 +458,7 @@ Boards:
       - pcie_endpoint
       - user_leds
       - user_buttons
-    BoardURL: https://numato.com/product/vesnin-artix-7-fpga-development-board/
-    Status: active
+    Status: eol
   - Id: opalkelly_xem7310_a200
     BoardName: XEM7310-A200
     BoardProducer: opal_kelly

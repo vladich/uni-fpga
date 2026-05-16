@@ -136,7 +136,7 @@ Boards:
     Bridges:
       - jtag
     Programmer: vivado_hw
-    BoardURL: https://numato.com/product/aller-artix-7-fpga-development-board-with-m-2-interface/
+    Status: eol
   - Id: numato_skoll
     BoardName: Skoll
     Devices:
@@ -150,7 +150,7 @@ Boards:
     Bridges:
       - jtag
     Programmer: vivado_hw
-    BoardURL: https://numato.com/product/skoll-kintex-ultrascale-pcie-fpga-development-board/
+    Status: eol
   - Id: qmtech_kintex_ultrascale_ku040_core
     BoardName: QMtech Kintex UltraScale XCKU040 Core Board
     BoardProducer: qmtech
