@@ -7,6 +7,10 @@ Description: 16 nm. Vivado.
 Boards:
   - Id: alinx_axvu13p
     BoardName: Alinx AXVU13P
+    Devices:
+      - silabs_cp2102
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: XCVU13P-2FHGB2104E
     Bridges:
@@ -14,9 +18,12 @@ Boards:
     Programmer: vivado_hw
     Features:
       - ddr4_memory
-      - qspi_flash
-      - pcie_endpoint
       - fmc_hpc
+      - pcie_endpoint
+      - qspi_flash
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     BoardURL: https://www.en.alinx.com/Product/FPGA-Development-Boards/Virtex-UltraScale-plus/AXVU13P.html
     Status: active
   - Id: bittware_xup_p3r
@@ -356,6 +363,10 @@ Boards:
     Status: eol
   - Id: alinx_axvu13f
     BoardName: "Alinx AXVU13F"
+    Devices:
+      - silabs_cp2102
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: XCVU13P-2FHGB2104E
     Bridges:
@@ -377,6 +388,10 @@ Boards:
     Notes: "Heterogeneous: VU13P + NVIDIA Jetson Orin NX. Industrial-grade XCVU13P-2FHGB2104I per product page; mapped to existing registry XCVU13P-2FHGB2104E."
   - Id: alinx_axvu13g
     BoardName: "Alinx AXVU13G"
+    Devices:
+      - silabs_cp2102
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: XCVU13P-2FHGB2104E
     Bridges:
@@ -398,6 +413,10 @@ Boards:
     Notes: "VU13P pure-FPGA variant of AXVU13F; 2x QSFP-DD 200G + 7x QSFP28 100G."
   - Id: alinx_hea13
     BoardName: "Alinx HEA13"
+    Devices:
+      - silabs_cp2102
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: XCVU13P-2FHGB2104E
     Bridges:

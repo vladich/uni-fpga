@@ -420,23 +420,29 @@ Boards:
     BoardURL: https://www.xilinx.com/products/boards-and-kits/vpk180.html
   - Id: alinx_vd100
     BoardName: "Alinx VD100"
+    Devices:
+      - silabs_cp2102
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: XCVE2302-1LSESFVA784
     Bridges:
       - usb-jtag
     Programmer: vivado_hw
     Features:
-      - ddr4_memory
-      - qspi_flash
-      - emmc_flash
-      - sd_card_socket
-      - pcie_endpoint
-      - ethernet_10gbe_sfp
-      - mipi_csi2_input
       - can_transceiver
+      - ddr4_memory
+      - emmc_flash
+      - ethernet_10gbe_sfp
+      - microsd_socket
+      - mipi_csi2_input
+      - pcie_endpoint
+      - qspi_flash
+      - sd_card_socket
       - usb_uart_bridge
-      - user_leds
       - user_buttons
+      - user_leds
     BoardURL: https://coderobin.com/products/alinx-vd100-xilinx-versal-ai-edge-ve2302-fpga-development-board
     Status: active
     Notes: "Versal AI Edge VE2302; PCIe x4 card with V100 SoM. Chip on board is XCVE2302-SFVA784-1LP-E-S (low-power -1 variant) — maps to registry entry XCVE2302-1LSESFVA784."

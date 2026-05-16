@@ -7,6 +7,13 @@ Description: GW5A with hard RISC-V core.
 Boards:
   - Id: gowin_gw5at60_devkit
     BoardName: GW5AT-60 Video Dev Kit
+    Devices:
+      - micron_mt41k128m16
+      - tmds_direct
+      - microsd_socket_generic
+      - ftdi_ft2232h
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: gowin_semi
     Chip: GW5AT-LV60PG484AC1/I0
     Bridges:
@@ -16,13 +23,14 @@ Boards:
       - openFPGALoader[*]
     Features:
       - ddr3_memory
-      - hdmi_output
-      - mipi_csi2_input
       - ethernet_phy_gigabit
-      - user_leds
-      - user_buttons
-      - usb_jtag_bridge
+      - hdmi_output
       - jtag_header
+      - microsd_socket
+      - mipi_csi2_input
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
     BoardURL: https://www.gowinsemi.com/en/support/devkits_detail/73/
     Status: active
   - Id: orangepi_msoc

@@ -7,6 +7,11 @@ Description: Small, low-cost Chinese FPGAs (LittleBee series). Gowin EDA + apicu
 Boards:
   - Id: gowin_gw1n4_devkit
     BoardName: GW1N-4 Starter Kit
+    Devices:
+      - ftdi_ft2232h
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
     BoardProducer: gowin_semi
     Chip: GW1N-LV4LQ144C6/I5
     Bridges:
@@ -15,14 +20,20 @@ Boards:
     ExtraProgrammers:
       - openFPGALoader[*]
     Features:
-      - user_leds
-      - user_buttons
-      - usb_jtag_bridge
+      - dip_switches
       - jtag_header
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
     BoardURL: https://www.gowinsemi.com/en/support/devkits_detail/1/
     Status: active
   - Id: gowin_gw1n9_devkit
     BoardName: GW1N-9 Starter Kit
+    Devices:
+      - ftdi_ft2232h
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
     BoardProducer: gowin_semi
     Chip: GW1N-LV9EQ144C6/I5
     Bridges:
@@ -31,15 +42,24 @@ Boards:
     ExtraProgrammers:
       - openFPGALoader[*]
     Features:
-      - mipi_csi2_input
-      - user_leds
-      - user_buttons
-      - usb_jtag_bridge
+      - dip_switches
       - jtag_header
+      - mipi_csi2_input
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
     BoardURL: https://www.gowinsemi.com/en/support/devkits_detail/5/
     Status: active
   - Id: gowin_honeycomb_sandbox
     BoardName: Honeycomb Sandbox
+    Features:
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
+    Devices:
+      - ftdi_ft2232h
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: gowin_semi
     Chip: GW1N-LV4LQ144C6/I5
     Bridges:
@@ -73,15 +93,21 @@ Boards:
     Programmer: openFPGALoader
   - Id: gowin_dk_uac2_gw1n9
     BoardName: "GW1N-9 Audio (UAC2) Dev Kit (DK_UAC2_GW1N-LV9LQ144C7I6)"
+    Devices:
+      - ftdi_ft2232h
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: gowin_semi
     Chip: GW1N-LV9LQ144C7/I6
     Bridges:
       - jtag
     Programmer: gowin_pgm
     Features:
-      - jtag_header
       - audio_codec
+      - jtag_header
       - usb_2_device
+      - usb_jtag_bridge
+      - user_buttons
       - user_leds
     BoardURL: "https://www.gowinsemi.com/en/support/devkits/37/"
     Status: active

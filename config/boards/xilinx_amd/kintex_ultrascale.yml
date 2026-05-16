@@ -7,6 +7,11 @@ Description: 20 nm Kintex follow-on. Vivado.
 Boards:
   - Id: alinx_axku040
     BoardName: Alinx AXKU040
+    Devices:
+      - silabs_cp2102
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: XCKU040-2FFVA1156I
     Bridges:
@@ -14,15 +19,24 @@ Boards:
     Programmer: vivado_hw
     Features:
       - ddr4_memory
-      - qspi_flash
       - ethernet_phy_gigabit
-      - pcie_endpoint
       - fmc_hpc
       - fmc_lpc
+      - microsd_socket
+      - pcie_endpoint
+      - qspi_flash
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     BoardURL: https://www.en.alinx.com/Product/FPGA-Development-Boards/Kintex-UltraScale/AXKU040.html
     Status: active
   - Id: alinx_axku062
     BoardName: Alinx AXKU062
+    Devices:
+      - silabs_cp2102
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: XCKU060-2FFVA1156I
     Bridges:
@@ -30,14 +44,22 @@ Boards:
     Programmer: vivado_hw
     Features:
       - ddr4_memory
-      - qspi_flash
-      - pcie_endpoint
       - fmc_hpc
       - fmc_lpc
+      - microsd_socket
+      - pcie_endpoint
+      - qspi_flash
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     BoardURL: https://www.en.alinx.com/Product/FPGA-Development-Boards/Kintex-UltraScale.html
     Status: active
   - Id: alinx_axku115
     BoardName: Alinx AXKU115
+    Devices:
+      - silabs_cp2102
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: XCKU115-2FLVA1517I
     Bridges:
@@ -45,10 +67,13 @@ Boards:
     Programmer: vivado_hw
     Features:
       - ddr4_memory
-      - qspi_flash
-      - pcie_endpoint
       - fmc_hpc
       - fmc_lpc
+      - pcie_endpoint
+      - qspi_flash
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     BoardURL: https://www.en.alinx.com/Product/FPGA-Development-Boards/Kintex-UltraScale.html
     Status: active
   - Id: avnet_aes_ku040_db
@@ -169,6 +194,11 @@ Boards:
     Status: eol
   - Id: qmtech_kintex_ultrascale_ku040_core
     BoardName: QMtech Kintex UltraScale XCKU040 Core Board
+    Devices:
+      - micron_mt40a256m16
+      - macronix_mx25l25645g
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: qmtech
     Chip: XCKU040-2FFVA1156I
     Bridges:
@@ -176,8 +206,10 @@ Boards:
     Programmer: vivado_hw
     Features:
       - ddr4_memory
-      - qspi_flash
       - pcie_endpoint
+      - qspi_flash
+      - user_buttons
+      - user_leds
     BoardURL: https://qmtech.aliexpress.com/store/1199788
     Status: active
   - Id: trenz_te0841
@@ -258,6 +290,11 @@ Boards:
     Status: eol
   - Id: alinx_axku041
     BoardName: "Alinx AXKU041"
+    Devices:
+      - silabs_cp2102
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: XCKU040-2FFVA1156I
     Bridges:
@@ -265,21 +302,27 @@ Boards:
     Programmer: vivado_hw
     Features:
       - ddr4_memory
-      - qspi_flash
-      - sd_card_socket
       - ethernet_10gbe_sfp
-      - pcie_endpoint
+      - ethernet_phy_gigabit
       - fmc_hpc
       - fmc_lpc
-      - ethernet_phy_gigabit
+      - microsd_socket
+      - pcie_endpoint
+      - qspi_flash
+      - sd_card_socket
       - usb_uart_bridge
-      - user_leds
       - user_buttons
+      - user_leds
     BoardURL: https://coderobin.com/products/alinx-axku041-xilinx-kintex-ultrascale-xcku040-fpga-development-board
     Status: active
     Notes: "Sibling of AXKU040 (in catalog); 1xHPC + 2xLPC FMC carrier."
   - Id: alinx_axku042
     BoardName: "Alinx AXKU042"
+    Devices:
+      - silabs_cp2102
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: XCKU040-2FFVA1156I
     Bridges:
@@ -287,16 +330,17 @@ Boards:
     Programmer: vivado_hw
     Features:
       - ddr4_memory
-      - qspi_flash
-      - sd_card_socket
       - ethernet_10gbe_sfp
-      - pcie_endpoint
+      - ethernet_phy_gigabit
       - fmc_hpc
       - fmc_lpc
-      - ethernet_phy_gigabit
+      - microsd_socket
+      - pcie_endpoint
+      - qspi_flash
+      - sd_card_socket
       - usb_uart_bridge
-      - user_leds
       - user_buttons
+      - user_leds
     BoardURL: https://coderobin.com/products/alinx-axku042-xilinx-kintex-ultrascale-xcku040-fpga-development-board
     Status: active
     Notes: "2nd-gen successor to AXKU040 with same chip; modular carrier."

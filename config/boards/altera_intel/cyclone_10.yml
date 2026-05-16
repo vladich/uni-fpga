@@ -85,6 +85,11 @@ Boards:
     Status: eol
   - Id: qmtech_cyc10lp_10cl025_core
     BoardName: QMtech Cyclone 10 LP 10CL025 Core Board
+    Devices:
+      - winbond_w9825g6kh
+      - winbond_w25q128
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: qmtech
     Chip: 10CL025YU256C8G
     Bridges:
@@ -92,12 +97,19 @@ Boards:
     Programmer: quartus_pgm
     Features:
       - qspi_flash
-      - user_leds
+      - sdr_sdram
+      - spi_flash
       - user_buttons
+      - user_leds
     BoardURL: https://qmtech.aliexpress.com/store/1199788
     Status: active
   - Id: qmtech_cyc10lp_10cl055_core
     BoardName: QMtech Cyclone 10 LP 10CL055 Core Board
+    Devices:
+      - winbond_w9825g6kh
+      - winbond_w25q128
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: qmtech
     Chip: 10CL055YU484C8G
     Bridges:
@@ -105,12 +117,19 @@ Boards:
     Programmer: quartus_pgm
     Features:
       - qspi_flash
-      - user_leds
+      - sdr_sdram
+      - spi_flash
       - user_buttons
+      - user_leds
     BoardURL: https://qmtech.aliexpress.com/store/1199788
     Status: active
   - Id: qmtech_cyc10lp_10cl080_core
     BoardName: QMtech Cyclone 10 LP 10CL080 Core Board
+    Devices:
+      - winbond_w9825g6kh
+      - winbond_w25q128
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: qmtech
     Chip: 10CL080YU484C8G
     Bridges:
@@ -118,12 +137,19 @@ Boards:
     Programmer: quartus_pgm
     Features:
       - qspi_flash
-      - user_leds
+      - sdr_sdram
+      - spi_flash
       - user_buttons
+      - user_leds
     BoardURL: https://qmtech.aliexpress.com/store/1199788
     Status: active
   - Id: qmtech_cyc10lp_10cl120_core
     BoardName: QMtech Cyclone 10 LP 10CL120 Core Board
+    Devices:
+      - winbond_w9825g6kh
+      - winbond_w25q128
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: qmtech
     Chip: 10CL120YF484C8G
     Bridges:
@@ -131,12 +157,24 @@ Boards:
     Programmer: quartus_pgm
     Features:
       - qspi_flash
-      - user_leds
+      - sdr_sdram
+      - spi_flash
       - user_buttons
+      - user_leds
     BoardURL: https://qmtech.aliexpress.com/store/1199788
     Status: active
   - Id: qmtech_cyc10lp_core
     BoardName: Cyclone 10 LP Core Board
+    Features:
+      - sdr_sdram
+      - spi_flash
+      - user_buttons
+      - user_leds
+    Devices:
+      - winbond_w9825g6kh
+      - winbond_w25q128
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: qmtech
     Chip: 10CL025YU256I7G
     Bridges:
@@ -145,43 +183,88 @@ Boards:
     BoardURL: https://qmtech.aliexpress.com/store/1199788
   - Id: alinx_ax1006
     BoardName: "Alinx AX1006"
+    Devices:
+      - usb_blaster_ii_built_in
+      - silabs_cp2102
+      - vga666_resistor_dac
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - seven_seg_module_shared
+      - winbond_w9825g6kh
     BoardProducer: alinx
     Chip: 10CL006YU256C8G
     Bridges:
       - jtag
     Programmer: quartus_pgm
     Features:
-      - user_leds
-      - user_buttons
       - jtag_header
+      - microsd_socket
+      - sdr_sdram
+      - seven_segment_display
+      - usb_jtag_bridge
       - usb_powered
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
+      - vga_output
     BoardURL: https://www.en.alinx.com
     Status: active
   - Id: alinx_ax1016
     BoardName: "Alinx AX1016"
+    Devices:
+      - usb_blaster_ii_built_in
+      - silabs_cp2102
+      - vga666_resistor_dac
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - seven_seg_module_shared
+      - winbond_w9825g6kh
     BoardProducer: alinx
     Chip: 10CL016YU256C8G
     Bridges:
       - jtag
     Programmer: quartus_pgm
     Features:
-      - user_leds
-      - user_buttons
       - jtag_header
+      - microsd_socket
+      - sdr_sdram
+      - seven_segment_display
+      - usb_jtag_bridge
       - usb_powered
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
+      - vga_output
     BoardURL: https://www.en.alinx.com
     Status: active
   - Id: alinx_ax1025
     BoardName: "Alinx AX1025"
+    Devices:
+      - usb_blaster_ii_built_in
+      - silabs_cp2102
+      - vga666_resistor_dac
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - seven_seg_module_shared
+      - winbond_w9825g6kh
     BoardProducer: alinx
     Chip: 10CL025YU256C8G
     Bridges:
       - jtag
     Programmer: quartus_pgm
     Features:
-      - user_leds
-      - user_buttons
       - jtag_header
+      - microsd_socket
+      - sdr_sdram
+      - seven_segment_display
+      - usb_jtag_bridge
       - usb_powered
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
+      - vga_output
     BoardURL: https://www.en.alinx.com
     Status: active

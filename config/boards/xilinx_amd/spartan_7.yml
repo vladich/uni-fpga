@@ -7,17 +7,29 @@ Description: 28 nm low-cost 7-series replacement for Spartan 6. Vivado.
 Boards:
   - Id: alinx_ax7050
     BoardName: AX7050
+    Devices:
+      - realtek_rtl8211e
+      - ftdi_ft232h
+      - silabs_cp2102
+      - microsd_socket_generic
+      - tmds_direct
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: XC7S50FGGA484
     Bridges:
       - jtag
     Programmer: vivado_hw
     Features:
-      - user_leds
-      - user_buttons
-      - usb_uart_bridge
-      - sdr_sdram
+      - ethernet_phy_gigabit
+      - hdmi_output
+      - microsd_socket
       - qspi_flash
+      - sdr_sdram
+      - usb_jtag_bridge
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     BoardURL: https://alinx.com/en/detail/6
     Status: active
     Notes: "Alinx revised the AX7050 from Zynq-7000 (legacy) to Spartan-7 XC7S50; this entry reflects the current shipping product."

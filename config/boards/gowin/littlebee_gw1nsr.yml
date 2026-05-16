@@ -7,6 +7,14 @@ Description: GW1NS with embedded SDRAM.
 Boards:
   - Id: gowin_gw1nsr_lv4c_devkit
     BoardName: GW1NSR-LV4C Dev Kit
+    Features:
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
+    Devices:
+      - ftdi_ft2232h
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: gowin_semi
     Chip: GW1NSR-LV4CQN48PC7/I6
     Bridges:
@@ -15,6 +23,10 @@ Boards:
     BoardURL: https://www.gowinsemi.com/en/support/devkits_detail/30/
   - Id: gowin_gw1nsr_lv4c_g_devkit
     BoardName: GW1NSR-LV4C Dev Kit (G-variant)
+    Devices:
+      - ftdi_ft2232h
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: gowin_semi
     Chip: GW1NSR-LV4CQN48GC7/I6
     Bridges:

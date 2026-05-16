@@ -7,6 +7,10 @@ Description: Low-power variant.
 Boards:
   - Id: gowin_gw1nz1_devkit
     BoardName: GW1NZ-1 Starter Kit
+    Devices:
+      - ftdi_ft2232h
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: gowin_semi
     Chip: GW1NZ-LV1FN32C6/I5
     Bridges:

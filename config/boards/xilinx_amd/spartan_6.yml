@@ -7,24 +7,49 @@ Description: 45 nm low-cost FPGA (2009). Vivado dropped it; ISE 14.7 last.
 Boards:
   - Id: alinx_ax309
     BoardName: AX309
+    Devices:
+      - winbond_w9825g6kh
+      - silabs_cp2102
+      - vga666_resistor_dac
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - seven_seg_module_shared
     BoardProducer: alinx
     Chip: XC6SLX9-2TQG144C
     Bridges:
       - jtag
     Programmer: ise_impact
     Features:
-      - user_leds
-      - user_buttons
       - dip_switches
-      - seven_segment_display
-      - vga_output
-      - usb_uart_bridge
+      - microsd_socket
       - sdr_sdram
+      - seven_segment_display
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
+      - vga_output
     BoardURL: https://alinx.com/en/detail/41
     Status: active
     Notes: "Alinx revised the AX309 from Cyclone IV (legacy) to Spartan-6 XC6SLX9; this entry reflects the current shipping product."
   - Id: alinx_ax516
     BoardName: AX516
+    Features:
+      - microsd_socket
+      - sdr_sdram
+      - seven_segment_display
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
+      - vga_output
+    Devices:
+      - winbond_w9825g6kh
+      - silabs_cp2102
+      - vga666_resistor_dac
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - seven_seg_module_shared
     BoardProducer: alinx
     Chip: XC6SLX16-2CSG324
     Bridges:
@@ -233,6 +258,14 @@ Boards:
     BoardURL: https://papilio.cc/index.php?n=Papilio.PapilioPro
   - Id: qmtech_spartan6_lx16_core
     BoardName: Spartan-6 LX16 Core Board
+    Features:
+      - ddr3_memory
+      - user_buttons
+      - user_leds
+    Devices:
+      - micron_mt41k128m16
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: qmtech
     Chip: XC6SLX16-2FTG256C
     Bridges:
@@ -241,6 +274,14 @@ Boards:
     BoardURL: https://qmtech.aliexpress.com/store/1199788
   - Id: qmtech_spartan6_lx25_core
     BoardName: Spartan-6 LX25 Core Board
+    Features:
+      - ddr3_memory
+      - user_buttons
+      - user_leds
+    Devices:
+      - micron_mt41k128m16
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: qmtech
     Chip: XC6SLX25-2FTG256C
     Bridges:
@@ -249,6 +290,14 @@ Boards:
     BoardURL: https://qmtech.aliexpress.com/store/1199788
   - Id: qmtech_spartan6_lx45_core
     BoardName: Spartan-6 LX45 Core Board
+    Features:
+      - ddr3_memory
+      - user_buttons
+      - user_leds
+    Devices:
+      - micron_mt41k128m16
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: qmtech
     Chip: XC6SLX45-2FGG484C
     Bridges:
@@ -257,6 +306,12 @@ Boards:
     BoardURL: https://qmtech.aliexpress.com/store/1199788
   - Id: qmtech_spartan6_lx9_core
     BoardName: Spartan-6 LX9 Core Board
+    Features:
+      - user_buttons
+      - user_leds
+    Devices:
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: qmtech
     Chip: XC6SLX9-2TQG144C
     Bridges:
@@ -338,6 +393,22 @@ Boards:
     BoardURL: https://www.xilinx.com/products/boards-and-kits/ek-s6-sp605-g.html
   - Id: alinx_ax545
     BoardName: AX545
+    Features:
+      - microsd_socket
+      - sdr_sdram
+      - seven_segment_display
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
+      - vga_output
+    Devices:
+      - winbond_w9825g6kh
+      - silabs_cp2102
+      - vga666_resistor_dac
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - seven_seg_module_shared
     BoardProducer: alinx
     Chip: XC6SLX45-2CSG324C
     Bridges:

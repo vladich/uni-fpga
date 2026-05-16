@@ -7,6 +7,14 @@ Description: 22 nm high-end Gowin (Arora V). gowin_standard.
 Boards:
   - Id: gowin_gw5a25_devkit
     BoardName: GW5A-25 Dev Kit
+    Features:
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
+    Devices:
+      - ftdi_ft2232h
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: gowin_semi
     Chip: GW5A-LV25MG121NC1/I0
     Bridges:
@@ -15,6 +23,11 @@ Boards:
     BoardURL: https://www.gowinsemi.com/en/support/devkits_detail/82/
   - Id: gowin_gw5a25_ug324_devkit
     BoardName: GW5A-25 UG324 Dev Kit
+    Devices:
+      - micron_mt41k128m16
+      - ftdi_ft2232h
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: gowin_semi
     Chip: GW5A-LV25UG324C1/I0
     Bridges:

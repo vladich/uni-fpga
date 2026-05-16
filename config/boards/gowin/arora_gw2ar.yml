@@ -7,6 +7,14 @@ Description: GW2A with embedded SDRAM.
 Boards:
   - Id: gowin_gw2ar18_devkit
     BoardName: GW2AR-18 Dev Kit
+    Features:
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
+    Devices:
+      - ftdi_ft2232h
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: gowin_semi
     Chip: GW2AR-LV18QN88C8/I7
     Bridges:

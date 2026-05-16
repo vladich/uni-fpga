@@ -7,6 +7,11 @@ Description: Zynq UltraScale+ with hard ADC/DAC for RF. Vivado.
 Boards:
   - Id: alinx_axrf47
     BoardName: Alinx AXRF47
+    Devices:
+      - silabs_cp2102
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: XCZU47DR-2FFVE1156I
     Bridges:
@@ -14,12 +19,15 @@ Boards:
     Programmer: vivado_hw
     Features:
       - ddr4_memory
-      - qspi_flash
       - emmc_flash
       - ethernet_phy_gigabit
-      - pcie_endpoint
-      - usb_3_host
       - microsd_socket
+      - pcie_endpoint
+      - qspi_flash
+      - usb_3_host
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     BoardURL: https://www.en.alinx.com/Product/SoC-Development-Boards/Zynq-UltraScale-plus-RFSoC/AXRF47.html
     Status: active
   - Id: avnet_xrf16_gen3_som
@@ -469,6 +477,11 @@ Boards:
     BoardURL: https://www.xilinx.com/products/boards-and-kits/zcu670.html
   - Id: alinx_axrf49
     BoardName: "Alinx AXRF49"
+    Devices:
+      - silabs_cp2102
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: XCZU49DR-2FFVF1760I
     Bridges:
@@ -476,26 +489,32 @@ Boards:
     Programmer: vivado_hw
     Features:
       - ddr4_memory
-      - qspi_flash
-      - emmc_flash
-      - sd_card_socket
-      - usb_3_host
-      - pcie_endpoint
       - displayport_output
-      - qsfp_cage
-      - fmc_plus
-      - sata_host
-      - rf_adc_dac_high_speed
-      - sma_io_pair
+      - emmc_flash
       - ethernet_phy_gigabit
+      - fmc_plus
+      - microsd_socket
+      - pcie_endpoint
+      - qsfp_cage
+      - qspi_flash
+      - rf_adc_dac_high_speed
+      - sata_host
+      - sd_card_socket
+      - sma_io_pair
+      - usb_3_host
       - usb_uart_bridge
-      - user_leds
       - user_buttons
+      - user_leds
     BoardURL: https://coderobin.com/products/alinx-axrf49-xilinx-zynq-ultrascale-rfsoc-xczu49dr-fpga-development-board
     Status: active
     Notes: "ZU49DR — 16 RF-ADCs/DACs, GPS, MCX RF ports."
   - Id: alinx_axrf67
     BoardName: "Alinx AXRF67"
+    Devices:
+      - silabs_cp2102
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: XCZU67DR-2FFVE1156I
     Bridges:
@@ -503,25 +522,30 @@ Boards:
     Programmer: vivado_hw
     Features:
       - ddr4_memory
-      - qspi_flash
-      - emmc_flash
-      - sd_card_socket
-      - usb_3_host
-      - pcie_endpoint
       - displayport_output
-      - qsfp_cage
-      - fmc_plus
-      - rf_adc_dac_high_speed
-      - sma_io_pair
+      - emmc_flash
       - ethernet_phy_gigabit
+      - fmc_plus
+      - microsd_socket
+      - pcie_endpoint
+      - qsfp_cage
+      - qspi_flash
+      - rf_adc_dac_high_speed
+      - sd_card_socket
+      - sma_io_pair
+      - usb_3_host
       - usb_uart_bridge
-      - user_leds
       - user_buttons
+      - user_leds
     BoardURL: https://coderobin.com/products/alinx-axrf67-xilinx-zynq-ultrascale-rfsoc-xczu67dr-fpga-development-board
     Status: active
     Notes: "ZU67DR — 8 RF-ADCs / 8 RF-DACs."
   - Id: alinx_axw22
     BoardName: "Alinx AXW22"
+    Devices:
+      - silabs_cp2102
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: XCZU47DR-2FFVE1156I
     Bridges:
@@ -543,6 +567,10 @@ Boards:
     Notes: "SDR card variant; ZU47DR with 1x QSFP+ / 1x SFP+."
   - Id: alinx_axw47
     BoardName: "Alinx AXW47"
+    Devices:
+      - silabs_cp2102
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: XCZU47DR-2FFVE1156I
     Bridges:
@@ -564,6 +592,10 @@ Boards:
     Notes: "Dual-FPGA card: primary ZU47DR + secondary Kintex UltraScale XCKU115."
   - Id: alinx_axw49
     BoardName: "Alinx AXW49"
+    Devices:
+      - silabs_cp2102
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: XCZU49DR-2FFVF1760E
     Bridges:
@@ -585,24 +617,29 @@ Boards:
     Notes: "ZU49DR SDR; -E extended-grade speed -2 part."
   - Id: alinx_axw23
     BoardName: "Alinx AXW23"
+    Devices:
+      - silabs_cp2102
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: XCZU47DR-2FFVE1156I
     Bridges:
       - jtag
     Programmer: vivado_hw
     Features:
-      - ddr4_memory
-      - qspi_flash
-      - emmc_flash
-      - eeprom_chip
-      - ethernet_phy_gigabit
-      - qsfp_cage
-      - microsd_socket
-      - fmc_lpc
-      - user_leds
       - clock_generator
-      - usb_uart_bridge
+      - ddr4_memory
+      - eeprom_chip
+      - emmc_flash
+      - ethernet_phy_gigabit
+      - fmc_lpc
       - jtag_header
+      - microsd_socket
+      - qsfp_cage
+      - qspi_flash
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     BoardURL: https://www.en.alinx.com
     Status: active
   - Id: htg_zrf_dc

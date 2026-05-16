@@ -7,23 +7,51 @@ Description: 60 nm Cyclone (2009). Quartus Prime Lite.
 Boards:
   - Id: alinx_av4075
     BoardName: Alinx AV4075
+    Devices:
+      - usb_blaster_ii_built_in
+      - silabs_cp2102
+      - vga666_resistor_dac
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - winbond_w9825g6kh
     BoardProducer: alinx
     Chip: EP4CE75F23C8N
     Bridges:
       - usb-jtag
     Programmer: quartus_pgm
     Features:
-      - hdmi_output
-      - vga_output
       - ethernet_phy_gigabit
-      - usb_uart_bridge
+      - hdmi_output
       - microsd_socket
-      - user_leds
+      - sdr_sdram
+      - usb_jtag_bridge
+      - usb_uart_bridge
       - user_buttons
+      - user_leds
+      - vga_output
     BoardURL: https://www.en.alinx.com/
     Status: active
   - Id: alinx_ax301
     BoardName: Alinx AX301
+    Features:
+      - microsd_socket
+      - sdr_sdram
+      - seven_segment_display
+      - usb_jtag_bridge
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
+      - vga_output
+    Devices:
+      - winbond_w9825g6kh
+      - usb_blaster_ii_built_in
+      - silabs_cp2102
+      - vga666_resistor_dac
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - seven_seg_module_shared
     BoardProducer: alinx
     Chip: EP4CE6F17C8
     Bridges:
@@ -32,6 +60,24 @@ Boards:
     BoardURL: https://alinx.com/en/detail/40
   - Id: alinx_ax4010
     BoardName: Alinx AX4010
+    Features:
+      - microsd_socket
+      - sdr_sdram
+      - seven_segment_display
+      - usb_jtag_bridge
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
+      - vga_output
+    Devices:
+      - winbond_w9825g6kh
+      - usb_blaster_ii_built_in
+      - silabs_cp2102
+      - vga666_resistor_dac
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - seven_seg_module_shared
     BoardProducer: alinx
     Chip: EP4CE10F17C8
     Bridges:
@@ -196,6 +242,20 @@ Boards:
     BoardURL: https://piswords.aliexpress.com/store
   - Id: qmtech_c4_starter
     BoardName: Cyclone IV Starter Kit (EP4CE15)
+    Features:
+      - dip_switches
+      - sdr_sdram
+      - seven_segment_display
+      - user_buttons
+      - user_leds
+      - vga_output
+    Devices:
+      - winbond_w9825g6kh
+      - seven_seg_module_shared
+      - vga666_resistor_dac
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
     BoardProducer: qmtech
     Chip: EP4CE15F23C8
     Bridges:
@@ -203,6 +263,10 @@ Boards:
     Programmer: quartus_pgm
   - Id: qmtech_cyclone_ep4cgx150_core
     BoardName: QMtech Cyclone IV GX EP4CGX150 Core Board
+    Devices:
+      - winbond_w9825g6kh
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: qmtech
     Chip: EP4CGX150DF27C7N
     Bridges:
@@ -210,12 +274,17 @@ Boards:
     Programmer: quartus_pgm
     Features:
       - qspi_flash
-      - user_leds
+      - sdr_sdram
       - user_buttons
+      - user_leds
     BoardURL: https://qmtech.aliexpress.com/store/1199788
     Status: active
   - Id: qmtech_cycloneiv_ep4ce15_core
     BoardName: QMtech Cyclone IV EP4CE15 Core Board
+    Devices:
+      - winbond_w9825g6kh
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: qmtech
     Chip: EP4CE15F23C8N
     Bridges:
@@ -223,12 +292,17 @@ Boards:
     Programmer: quartus_pgm
     Features:
       - qspi_flash
-      - user_leds
+      - sdr_sdram
       - user_buttons
+      - user_leds
     BoardURL: https://qmtech.aliexpress.com/store/1199788
     Status: active
   - Id: qmtech_cycloneiv_ep4ce55_core
     BoardName: QMtech Cyclone IV EP4CE55 Core Board
+    Devices:
+      - winbond_w9825g6kh
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: qmtech
     Chip: EP4CE55F23C8N
     Bridges:
@@ -236,12 +310,27 @@ Boards:
     Programmer: quartus_pgm
     Features:
       - qspi_flash
-      - user_leds
+      - sdr_sdram
       - user_buttons
+      - user_leds
     BoardURL: https://qmtech.aliexpress.com/store/1199788
     Status: active
   - Id: qmtech_cycloneiv_starter
     BoardName: Cyclone IV Starter Board
+    Features:
+      - dip_switches
+      - sdr_sdram
+      - seven_segment_display
+      - user_buttons
+      - user_leds
+      - vga_output
+    Devices:
+      - winbond_w9825g6kh
+      - seven_seg_module_shared
+      - vga666_resistor_dac
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
     BoardProducer: qmtech
     Chip: EP4CE15F23C8N
     Bridges:
@@ -303,23 +392,33 @@ Boards:
     BoardURL: https://zeowaa.aliexpress.com/store
   - Id: alinx_ax515
     BoardName: "Alinx AX515"
+    Devices:
+      - usb_blaster_ii_built_in
+      - silabs_cp2102
+      - vga666_resistor_dac
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - seven_seg_module_shared
     BoardProducer: alinx
     Chip: EP4CE15F23C8
     Bridges:
       - usb-blaster
     Programmer: quartus_pgm
     Features:
+      - audio_codec
       - ddr2_memory
+      - ethernet_phy_gigabit
+      - microsd_socket
       - qspi_flash
       - sd_card_socket
-      - vga_output
       - seven_segment_display
-      - audio_codec
-      - ethernet_phy_gigabit
       - usb_2_device
+      - usb_jtag_bridge
       - usb_uart_bridge
-      - user_leds
       - user_buttons
+      - user_leds
+      - vga_output
     BoardURL: https://coderobin.com/products/alinx-ax515-intel-altera-cyclone-iv-ep4ce15f-fpga-development-board
     Status: active
     Notes: "Cyclone IV EP4CE15F23C8. Board also has battery-backed RTC (DS1302) but no `rtc_*` feature exists in features.yml — omitted."
@@ -340,6 +439,24 @@ Boards:
     Status: eol
   - Id: alinx_ax530
     BoardName: AX530
+    Features:
+      - microsd_socket
+      - sdr_sdram
+      - seven_segment_display
+      - usb_jtag_bridge
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
+      - vga_output
+    Devices:
+      - usb_blaster_ii_built_in
+      - silabs_cp2102
+      - vga666_resistor_dac
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - seven_seg_module_shared
+      - winbond_w9825g6kh
     BoardProducer: alinx
     Chip: EP4CE30F23C8
     Bridges:

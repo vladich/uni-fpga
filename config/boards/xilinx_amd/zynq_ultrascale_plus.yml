@@ -7,6 +7,13 @@ Description: 16 nm A53 quad + R5 + UltraScale+ PL MPSoC. Vivado.
 Boards:
   - Id: alinx_axu15eg
     BoardName: Alinx AXU15EG
+    Devices:
+      - realtek_rtl8211fd
+      - silabs_cp2102
+      - microsd_socket_generic
+      - tmds_direct
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: XCZU15EG-2FFVB1156I
     Bridges:
@@ -14,18 +21,34 @@ Boards:
     Programmer: vivado_hw
     Features:
       - ddr4_memory
-      - qspi_flash
       - emmc_flash
       - ethernet_phy_gigabit
+      - fmc_hpc
+      - hdmi_output
+      - microsd_socket
       - pcie_endpoint
+      - qspi_flash
       - sata_host
       - usb_3_host
-      - fmc_hpc
-      - microsd_socket
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     BoardURL: https://www.en.alinx.com/detail/261
     Status: active
   - Id: alinx_axu2cga
     BoardName: AXU2CGA
+    Features:
+      - hdmi_output
+      - microsd_socket
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
+    Devices:
+      - silabs_cp2102
+      - microsd_socket_generic
+      - tmds_direct
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: XCZU2CG-1SFVC784E
     Bridges:
@@ -34,6 +57,18 @@ Boards:
     BoardURL: https://alinx.com/en/detail/11
   - Id: alinx_axu3eg
     BoardName: AXU3EG
+    Features:
+      - hdmi_output
+      - microsd_socket
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
+    Devices:
+      - silabs_cp2102
+      - microsd_socket_generic
+      - tmds_direct
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: XCZU3EG-2SFVC784E
     Bridges:
@@ -42,6 +77,18 @@ Boards:
     BoardURL: https://alinx.com/en/detail/12
   - Id: alinx_axu4ev
     BoardName: AXU4EV
+    Features:
+      - hdmi_output
+      - microsd_socket
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
+    Devices:
+      - silabs_cp2102
+      - microsd_socket_generic
+      - tmds_direct
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: XCZU4EV-2SFVC784I
     Bridges:
@@ -50,6 +97,18 @@ Boards:
     BoardURL: https://alinx.com/en/detail/13
   - Id: alinx_axu5ev
     BoardName: AXU5EV
+    Features:
+      - hdmi_output
+      - microsd_socket
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
+    Devices:
+      - silabs_cp2102
+      - microsd_socket_generic
+      - tmds_direct
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: XCZU5EV-2SFVC784I
     Bridges:
@@ -58,6 +117,12 @@ Boards:
     BoardURL: https://alinx.com/en/detail/14
   - Id: alinx_axu9eg
     BoardName: Alinx AXU9EG
+    Devices:
+      - silabs_cp2102
+      - microsd_socket_generic
+      - tmds_direct
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: XCZU9EG-2FFVB1156I
     Bridges:
@@ -65,14 +130,18 @@ Boards:
     Programmer: vivado_hw
     Features:
       - ddr4_memory
-      - qspi_flash
       - emmc_flash
       - ethernet_phy_gigabit
+      - fmc_hpc
+      - hdmi_output
+      - microsd_socket
       - pcie_endpoint
+      - qspi_flash
       - sata_host
       - usb_3_host
-      - fmc_hpc
-      - microsd_socket
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     BoardURL: https://www.en.alinx.com/Product/SoC-Development-Boards/Zynq-UltraScale-plus-MPSoC/AXU9EGB.html
     Status: active
   - Id: avnet_aes_ultra96
@@ -1377,6 +1446,12 @@ Boards:
     BoardURL: https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/zuboard-1cg/
   - Id: alinx_axu2cgb
     BoardName: "Alinx AXU2CGB"
+    Devices:
+      - silabs_cp2102
+      - microsd_socket_generic
+      - tmds_direct
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: XCZU2CG-1SFVC784E
     Bridges:
@@ -1384,22 +1459,30 @@ Boards:
     Programmer: vivado_hw
     Features:
       - ddr4_memory
-      - qspi_flash
+      - displayport_output
       - emmc_flash
+      - ethernet_phy_gigabit
+      - hdmi_output
+      - microsd_socket
+      - mipi_csi2_input
+      - pcie_endpoint
+      - qspi_flash
       - sd_card_socket
       - usb_3_host
-      - pcie_endpoint
-      - displayport_output
-      - mipi_csi2_input
-      - ethernet_phy_gigabit
       - usb_uart_bridge
-      - user_leds
       - user_buttons
+      - user_leds
     BoardURL: https://coderobin.com/products/alinx-axu2cgb-xilinx-zynq-ultrascale-mpsoc-xczu2cg-fpga-development-board
     Status: active
     Notes: "AXU2CGA in catalog; AXU2CGB is the rev-B / industrial variant."
   - Id: alinx_axu2cg_e
     BoardName: "Alinx AXU2CG-E"
+    Devices:
+      - silabs_cp2102
+      - microsd_socket_generic
+      - tmds_direct
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: XCZU2CG-1SFVC784E
     Bridges:
@@ -1407,20 +1490,28 @@ Boards:
     Programmer: vivado_hw
     Features:
       - ddr4_memory
-      - qspi_flash
+      - displayport_output
       - emmc_flash
+      - ethernet_phy_gigabit
+      - hdmi_output
+      - microsd_socket
+      - qspi_flash
       - sd_card_socket
       - usb_3_host
-      - displayport_output
-      - ethernet_phy_gigabit
       - usb_uart_bridge
-      - user_leds
       - user_buttons
+      - user_leds
     BoardURL: https://coderobin.com/products/alinx-axu2cg-e-xilinx-zynq-ultrascale-mpsoc-zu2cg-fpga-development-board
     Status: active
     Notes: "-E suffix denotes economical / E-grade carrier variant."
   - Id: alinx_axu4ev_e
     BoardName: "Alinx AXU4EV-E"
+    Devices:
+      - silabs_cp2102
+      - microsd_socket_generic
+      - tmds_direct
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: XCZU4EV-1SFVC784I
     Bridges:
@@ -1428,22 +1519,29 @@ Boards:
     Programmer: vivado_hw
     Features:
       - ddr4_memory
-      - qspi_flash
-      - emmc_flash
-      - sd_card_socket
-      - usb_3_host
       - displayport_output
+      - emmc_flash
+      - ethernet_phy_gigabit
       - hdmi_input
       - hdmi_output
-      - ethernet_phy_gigabit
+      - microsd_socket
+      - qspi_flash
+      - sd_card_socket
+      - usb_3_host
       - usb_uart_bridge
-      - user_leds
       - user_buttons
+      - user_leds
     BoardURL: https://coderobin.com/products/alinx-axu4ev-e-xilinx-zynq-ultrascale-mpsoc-zu4ev-fpga-development-board
     Status: active
     Notes: "-E (economy) sibling of AXU4EV-P."
   - Id: alinx_axu4ev_p
     BoardName: "Alinx AXU4EV-P"
+    Devices:
+      - silabs_cp2102
+      - microsd_socket_generic
+      - tmds_direct
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: XCZU4EV-1SFVC784I
     Bridges:
@@ -1451,26 +1549,33 @@ Boards:
     Programmer: vivado_hw
     Features:
       - ddr4_memory
-      - qspi_flash
-      - emmc_flash
-      - sd_card_socket
-      - usb_3_host
-      - pcie_endpoint
       - displayport_output
+      - emmc_flash
+      - ethernet_phy_gigabit
+      - fmc_lpc
       - hdmi_input
       - hdmi_output
-      - sfp_cage
-      - fmc_lpc
-      - ethernet_phy_gigabit
+      - microsd_socket
       - mipi_csi2_input
+      - pcie_endpoint
+      - qspi_flash
+      - sd_card_socket
+      - sfp_cage
+      - usb_3_host
       - usb_uart_bridge
-      - user_leds
       - user_buttons
+      - user_leds
     BoardURL: https://coderobin.com/products/alinx-axu4ev-p-xilinx-zynq-ultrascale-mpsoc-xczu4ev-fpga-development-board
     Status: active
     Notes: "-P (premium) variant with full PCIe/FMC/SFP+."
   - Id: alinx_axu5ev_e
     BoardName: "Alinx AXU5EV-E"
+    Devices:
+      - silabs_cp2102
+      - microsd_socket_generic
+      - tmds_direct
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: XCZU5EV-2SFVC784I
     Bridges:
@@ -1478,22 +1583,29 @@ Boards:
     Programmer: vivado_hw
     Features:
       - ddr4_memory
-      - qspi_flash
-      - emmc_flash
-      - sd_card_socket
-      - usb_3_host
       - displayport_output
+      - emmc_flash
+      - ethernet_phy_gigabit
       - hdmi_input
       - hdmi_output
-      - ethernet_phy_gigabit
+      - microsd_socket
+      - qspi_flash
+      - sd_card_socket
+      - usb_3_host
       - usb_uart_bridge
-      - user_leds
       - user_buttons
+      - user_leds
     BoardURL: https://coderobin.com/products/alinx-axu5ev-e-xilinx-zynq-ultrascale-mpsoc-xczu5ev-fpga-development-board
     Status: active
     Notes: "-E sibling of AXU5EV-P; based on same chip as AXU5EV in catalog."
   - Id: alinx_axu5ev_p
     BoardName: "Alinx AXU5EV-P"
+    Devices:
+      - silabs_cp2102
+      - microsd_socket_generic
+      - tmds_direct
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: XCZU5EV-2SFVC784I
     Bridges:
@@ -1501,26 +1613,33 @@ Boards:
     Programmer: vivado_hw
     Features:
       - ddr4_memory
-      - qspi_flash
-      - emmc_flash
-      - sd_card_socket
-      - usb_3_host
-      - pcie_endpoint
       - displayport_output
+      - emmc_flash
+      - ethernet_phy_gigabit
+      - fmc_lpc
       - hdmi_input
       - hdmi_output
-      - sfp_cage
-      - fmc_lpc
-      - ethernet_phy_gigabit
+      - microsd_socket
       - mipi_csi2_input
+      - pcie_endpoint
+      - qspi_flash
+      - sd_card_socket
+      - sfp_cage
+      - usb_3_host
       - usb_uart_bridge
-      - user_leds
       - user_buttons
+      - user_leds
     BoardURL: https://coderobin.com/products/alinx-axu5ev-p-xilinx-zynq-ultrascale-mpsoc-xczu5ev-fpga-development-board
     Status: active
     Notes: "-P variant with PCIe/FMC."
   - Id: alinx_axu7ev
     BoardName: "Alinx AXU7EV"
+    Devices:
+      - silabs_cp2102
+      - microsd_socket_generic
+      - tmds_direct
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: XCZU7EV-2FFVC1156I
     Bridges:
@@ -1528,25 +1647,31 @@ Boards:
     Programmer: vivado_hw
     Features:
       - ddr4_memory
-      - qspi_flash
-      - emmc_flash
-      - sd_card_socket
-      - usb_3_host
-      - pcie_endpoint
       - displayport_output
+      - emmc_flash
+      - ethernet_10gbe_sfp
+      - ethernet_phy_gigabit
+      - fmc_lpc
       - hdmi_input
       - hdmi_output
-      - ethernet_10gbe_sfp
-      - fmc_lpc
-      - ethernet_phy_gigabit
+      - microsd_socket
       - nvme_socket
+      - pcie_endpoint
+      - qspi_flash
+      - sd_card_socket
+      - usb_3_host
       - usb_uart_bridge
-      - user_leds
       - user_buttons
+      - user_leds
     Status: eol
     Notes: "ZU7EV with H.264/H.265 VCU."
   - Id: alinx_z7_p
     BoardName: "Alinx Z7-P"
+    Devices:
+      - silabs_cp2102
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: XCZU7EV-2FFVC1156I
     Bridges:
@@ -1554,22 +1679,28 @@ Boards:
     Programmer: vivado_hw
     Features:
       - ddr4_memory
-      - qspi_flash
+      - displayport_output
       - emmc_flash
+      - ethernet_phy_gigabit
+      - fmc_hpc
+      - microsd_socket
+      - pcie_endpoint
+      - qspi_flash
       - sd_card_socket
       - usb_3_host
-      - pcie_endpoint
-      - displayport_output
-      - fmc_hpc
-      - ethernet_phy_gigabit
       - usb_uart_bridge
-      - user_leds
       - user_buttons
+      - user_leds
     BoardURL: https://coderobin.com/products/alinx-z7-p-xilinx-zynq-ultrascale-mpsoc-xczu7ev-fpga-development-board
     Status: active
     Notes: "Premium top-tier ZU7EV with full HPC FMC and dual gigE."
   - Id: alinx_z11_p
     BoardName: "Alinx Z11-P"
+    Devices:
+      - silabs_cp2102
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: XCZU11EG-2FFVC1156I
     Bridges:
@@ -1577,22 +1708,28 @@ Boards:
     Programmer: vivado_hw
     Features:
       - ddr4_memory
-      - qspi_flash
+      - displayport_output
       - emmc_flash
+      - ethernet_phy_gigabit
+      - fmc_hpc
+      - microsd_socket
+      - pcie_endpoint
+      - qspi_flash
       - sd_card_socket
       - usb_3_host
-      - pcie_endpoint
-      - displayport_output
-      - fmc_hpc
-      - ethernet_phy_gigabit
       - usb_uart_bridge
-      - user_leds
       - user_buttons
+      - user_leds
     BoardURL: https://coderobin.com/products/alinx-z11-p-xilinx-zynq-ultrascale-mpsoc-xczu11eg-fpga-development-board
     Status: active
     Notes: "ZU11EG carrier; sibling of Z19 family."
   - Id: alinx_z19
     BoardName: "Alinx Z19"
+    Devices:
+      - silabs_cp2102
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: XCZU19EG-2FFVC1760I
     Bridges:
@@ -1600,25 +1737,31 @@ Boards:
     Programmer: vivado_hw
     Features:
       - ddr4_memory
-      - qspi_flash
+      - displayport_output
       - emmc_flash
+      - ethernet_phy_gigabit
+      - fmc_hpc
+      - microsd_socket
+      - nvme_socket
+      - pcie_endpoint
+      - qsfp_cage
+      - qspi_flash
+      - sata_host
       - sd_card_socket
       - usb_3_host
-      - pcie_endpoint
-      - displayport_output
-      - qsfp_cage
-      - fmc_hpc
-      - ethernet_phy_gigabit
-      - sata_host
-      - nvme_socket
       - usb_uart_bridge
-      - user_leds
       - user_buttons
+      - user_leds
     BoardURL: https://coderobin.com/products/alinx-z19-xilinx-zynq-ultrascale-mpsoc-xczu19eg-fpga-development-board
     Status: active
     Notes: "ZU19EG with 4x 100G QSFP28 and 2x HPC FMC."
   - Id: alinx_z19_p
     BoardName: "Alinx Z19-P"
+    Devices:
+      - silabs_cp2102
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: XCZU19EG-2FFVC1760I
     Bridges:
@@ -1626,24 +1769,30 @@ Boards:
     Programmer: vivado_hw
     Features:
       - ddr4_memory
-      - qspi_flash
-      - emmc_flash
-      - sd_card_socket
-      - usb_3_host
-      - pcie_endpoint
       - displayport_output
+      - emmc_flash
+      - ethernet_phy_gigabit
+      - fmc_hpc
+      - microsd_socket
+      - pcie_endpoint
       - qsfp_cage
       - qsfp_dd_cage
-      - fmc_hpc
-      - ethernet_phy_gigabit
+      - qspi_flash
+      - sd_card_socket
+      - usb_3_host
       - usb_uart_bridge
-      - user_leds
       - user_buttons
+      - user_leds
     BoardURL: https://coderobin.com/products/alinx-z19-p-xilinx-zynq-ultrascale-mpsoc-xczu19eg-fpga-development-board
     Status: active
     Notes: "Premium ZU19EG variant — PCIe Gen3 x16 + 16x GTY 32.75 Gb/s."
   - Id: alinx_z19_m
     BoardName: "Alinx Z19-M"
+    Devices:
+      - silabs_cp2102
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: XCZU19EG-2FFVC1760I
     Bridges:
@@ -1651,20 +1800,21 @@ Boards:
     Programmer: vivado_hw
     Features:
       - ddr4_memory
-      - qspi_flash
-      - emmc_flash
-      - sd_card_socket
-      - usb_3_host
-      - pcie_endpoint
       - displayport_output
-      - qsfp_cage
+      - emmc_flash
+      - ethernet_phy_gigabit
+      - fmc_hpc
       - hdmi_input
       - hdmi_output
-      - fmc_hpc
-      - ethernet_phy_gigabit
+      - microsd_socket
+      - pcie_endpoint
+      - qsfp_cage
+      - qspi_flash
+      - sd_card_socket
+      - usb_3_host
       - usb_uart_bridge
-      - user_leds
       - user_buttons
+      - user_leds
     BoardURL: https://coderobin.com/products/alinx-z19-m-xilinx-zynq-ultrascale-mpsoc-xczu19eg-fpga-heterogeneous-computing-development-board
     Status: active
     Notes: "ZU19EG heterogeneous board with NVIDIA Jetson Orin NX module integration."

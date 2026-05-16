@@ -1,0 +1,17 @@
+# digilent_genesys_zu_3eg pin map.
+# Source: official Digilent XDC
+#   https://raw.githubusercontent.com/Digilent/digilent-xdc/master/Genesys-ZU-3EG-Master.xdc
+
+Board:
+  id: digilent_genesys_zu_3eg
+  pinBanks:
+    onboard_buttons:
+      pins: [B10, H12, J12, F12, A12]
+    onboard_switches:
+      pins: [AB14, Y13, W12, AB15]
+    ethernet:
+      pins:
+        tms_ls: F7
+        tdi_ls: F8
+        tck_ls: E8
+        tdo_ls: E9

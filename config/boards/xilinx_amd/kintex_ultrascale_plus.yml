@@ -69,6 +69,10 @@ Boards:
     BoardURL: https://www.xilinx.com/products/boards-and-kits/ek-u1-kcu116-g.html
   - Id: alinx_axku3
     BoardName: "Alinx AXKU3"
+    Devices:
+      - silabs_cp2102
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: XCKU3P-2FFVB676I
     Bridges:
@@ -89,6 +93,10 @@ Boards:
     Notes: "ACKU3 SOM + carrier. Chip needs to be added to registry."
   - Id: alinx_axku5
     BoardName: "Alinx AXKU5"
+    Devices:
+      - silabs_cp2102
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: XCKU5P-2FFVB676E
     Bridges:
@@ -109,6 +117,11 @@ Boards:
     Notes: "Industrial-grade XCKU5P-2FFVB676I per product page; mapped to registry XCKU5P-2FFVB676E."
   - Id: alinx_axku15
     BoardName: "Alinx AXKU15"
+    Devices:
+      - silabs_cp2102
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: XCKU15P-2FFVE1760E
     Bridges:
@@ -116,33 +129,37 @@ Boards:
     Programmer: vivado_hw
     Features:
       - ddr4_memory
-      - qspi_flash
-      - sd_card_socket
-      - qsfp_cage
-      - pcie_endpoint
+      - ethernet_25gbe_sfp28
       - fmc_hpc
       - fmc_plus
-      - ethernet_25gbe_sfp28
+      - microsd_socket
+      - pcie_endpoint
+      - qsfp_cage
+      - qspi_flash
+      - sd_card_socket
       - usb_uart_bridge
-      - user_leds
       - user_buttons
+      - user_leds
     BoardURL: "https://www.en.alinx.com/Product/FPGA-Development-Boards/Kintex-UltraScale-plus/AXKU15-D.html"
     Status: active
     Notes: "Industrial XCKU15P-2FFVE1517I per product page; closest registry entry XCKU15P-2FFVE1760E (verify package pin compat before use)."
   - Id: alinx_fx200
     BoardName: "Alinx FX200 Accelerator Card"
+    Devices:
+      - led_discrete_generic
     BoardProducer: alinx
     Chip: XCKU15P-2FFVE1517I-CIV
     Bridges:
       - jtag
     Programmer: vivado_hw
     Features:
-      - ddr4_memory
-      - qspi_flash
-      - qsfp_cage
-      - pcie_edge_connector
-      - rgb_leds
       - clock_generator
+      - ddr4_memory
       - jtag_header
+      - pcie_edge_connector
+      - qsfp_cage
+      - qspi_flash
+      - rgb_leds
+      - user_leds
     BoardURL: https://www.en.alinx.com
     Status: active

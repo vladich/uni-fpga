@@ -1,0 +1,43 @@
+# digilent_zybo pin map.
+# Source: official Digilent XDC
+#   https://raw.githubusercontent.com/Digilent/digilent-xdc/master/Zybo-Master.xdc
+
+Board:
+  id: digilent_zybo
+  pinBanks:
+    sys_clk:
+      pins: L16
+    onboard_buttons:
+      pins: [R18, P16, V16, Y16]
+    onboard_switches:
+      pins: [G15, P15, W13, T16]
+    onboard_leds:
+      pins: [M14, M15, G14, D18]
+    hdmi_clk:
+      pins:
+        n: H17
+        p: H16
+    hdmi_data_p:
+      pins: [D19, C20, B19]
+    hdmi_data_n:
+      pins: [D20, B20, A20]
+    hdmi_i2c:
+      pins:
+        cec: E19
+        hpd: E18
+        scl: G17
+        sda: G18
+    vga_r:
+      pins: [M19, L20, J20, G20, F19]
+    vga_g:
+      pins: [H18, N20, L19, J19, H20, F20]
+    vga_b:
+      pins: [P20, M20, K19, J18, G19]
+    vga_sync:
+      pins:
+        hs: P19
+        vs: R19
+    ethernet:
+      pins:
+        int_b: F16
+        rst_b: E17

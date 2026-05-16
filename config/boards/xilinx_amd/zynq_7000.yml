@@ -7,6 +7,20 @@ Description: 28 nm ARM Cortex-A9 dual-core + Artix-7 PL. Vivado + Vitis.
 Boards:
   - Id: alinx_ax7010
     BoardName: AX7010
+    Features:
+      - ethernet_phy_gigabit
+      - hdmi_output
+      - microsd_socket
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
+    Devices:
+      - realtek_rtl8211e
+      - silabs_cp2102
+      - microsd_socket_generic
+      - tmds_direct
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: XC7Z010-1CLG400C
     Bridges:
@@ -15,6 +29,20 @@ Boards:
     BoardURL: https://alinx.com/en/detail/3
   - Id: alinx_ax7020
     BoardName: AX7020
+    Features:
+      - ethernet_phy_gigabit
+      - hdmi_output
+      - microsd_socket
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
+    Devices:
+      - realtek_rtl8211e
+      - silabs_cp2102
+      - microsd_socket_generic
+      - tmds_direct
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: XC7Z020-2CLG400I
     Bridges:
@@ -23,6 +51,16 @@ Boards:
     BoardURL: https://alinx.com/en/detail/4
   - Id: alinx_ax7100
     BoardName: AX7100
+    Features:
+      - microsd_socket
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
+    Devices:
+      - silabs_cp2102
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: XC7Z100-2FFG900I
     Bridges:
@@ -31,6 +69,12 @@ Boards:
     BoardURL: "https://www.en.alinx.com/Product/SoC-development-Boards/Zynq-7000-SoC/AX7Z100B.html"
   - Id: alinx_ax7z015
     BoardName: Alinx AX7Z015
+    Devices:
+      - silabs_cp2102
+      - microsd_socket_generic
+      - tmds_direct
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: XC7Z015-2CLG485I
     Bridges:
@@ -38,17 +82,25 @@ Boards:
     Programmer: vivado_hw
     Features:
       - ddr3_memory
-      - qspi_flash
       - emmc_flash
       - ethernet_phy_gigabit
       - hdmi_output
-      - pcie_endpoint
-      - usb_uart_bridge
       - microsd_socket
+      - pcie_endpoint
+      - qspi_flash
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     BoardURL: https://www.en.alinx.com/Product/SoC-development-Boards/Zynq-7000-SoC/AX7Z015.html
     Status: active
   - Id: alinx_ax7z030
     BoardName: Alinx AX7Z030
+    Devices:
+      - silabs_cp2102
+      - microsd_socket_generic
+      - tmds_direct
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: XC7Z030-2FBG676I
     Bridges:
@@ -56,17 +108,25 @@ Boards:
     Programmer: vivado_hw
     Features:
       - ddr3_memory
-      - qspi_flash
       - emmc_flash
       - ethernet_phy_gigabit
       - hdmi_output
-      - pcie_endpoint
-      - usb_uart_bridge
       - microsd_socket
+      - pcie_endpoint
+      - qspi_flash
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     BoardURL: "https://www.en.alinx.com/detail/268"
     Status: active
   - Id: alinx_ax7z035
     BoardName: Alinx AX7Z035
+    Devices:
+      - silabs_cp2102
+      - microsd_socket_generic
+      - tmds_direct
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: XC7Z035-2FFG676I
     Bridges:
@@ -74,19 +134,27 @@ Boards:
     Programmer: vivado_hw
     Features:
       - ddr3_memory
-      - qspi_flash
       - emmc_flash
       - ethernet_phy_gigabit
+      - fmc_lpc
       - hdmi_output
+      - microsd_socket
       - pcie_endpoint
+      - qspi_flash
       - sata_host
       - usb_uart_bridge
-      - microsd_socket
-      - fmc_lpc
+      - user_buttons
+      - user_leds
     BoardURL: https://www.en.alinx.com/Product/SoC-development-Boards/Zynq-7000-SoC/AX7Z035B.html
     Status: active
   - Id: alinx_ax7z045
     BoardName: Alinx AX7Z045
+    Devices:
+      - silabs_cp2102
+      - microsd_socket_generic
+      - tmds_direct
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: XC7Z045-2FFG900I
     Bridges:
@@ -94,14 +162,16 @@ Boards:
     Programmer: vivado_hw
     Features:
       - ddr3_memory
-      - qspi_flash
       - emmc_flash
       - ethernet_phy_gigabit
-      - hdmi_output
-      - pcie_endpoint
-      - usb_uart_bridge
-      - microsd_socket
       - fmc_hpc
+      - hdmi_output
+      - microsd_socket
+      - pcie_endpoint
+      - qspi_flash
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     BoardURL: https://www.en.alinx.com/detail/835
     Status: active
   - Id: arty_z7_10
@@ -1043,6 +1113,16 @@ Boards:
     Status: eol
   - Id: qmtech_zynq_7010_core
     BoardName: Zynq 7010 Core Board
+    Features:
+      - ddr3_memory
+      - ethernet_phy_gigabit
+      - user_buttons
+      - user_leds
+    Devices:
+      - micron_mt41k256m16
+      - realtek_rtl8211e
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: qmtech
     Chip: XC7Z010-1CLG400C
     Bridges:
@@ -1051,6 +1131,18 @@ Boards:
     BoardURL: https://qmtech.aliexpress.com/store/1199788
   - Id: qmtech_zynq_7020_core
     BoardName: Zynq 7020 Core Board
+    Features:
+      - ddr3_memory
+      - ethernet_phy_gigabit
+      - spi_flash
+      - user_buttons
+      - user_leds
+    Devices:
+      - micron_mt41k256m16
+      - winbond_w25q128
+      - realtek_rtl8211e
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: qmtech
     Chip: XC7Z020-1CLG400C
     Bridges:
@@ -1059,6 +1151,14 @@ Boards:
     BoardURL: https://qmtech.aliexpress.com/store/1199788
   - Id: qmtech_zynq_7100_core
     BoardName: Zynq 7100 Core Board
+    Features:
+      - ddr3_memory
+      - user_buttons
+      - user_leds
+    Devices:
+      - micron_mt41k256m16
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: qmtech
     Chip: XC7Z100-2FFG900I
     Bridges:
@@ -1597,6 +1697,13 @@ Boards:
     BoardURL: https://digilent.com/reference/programmable-logic/zybo-z7/start
   - Id: alinx_ax7015
     BoardName: "Alinx AX7015"
+    Devices:
+      - realtek_rtl8211e
+      - silabs_cp2102
+      - microsd_socket_generic
+      - tmds_direct
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: XC7Z015-2CLG485I
     Bridges:
@@ -1604,18 +1711,26 @@ Boards:
     Programmer: vivado_hw
     Features:
       - ddr3_memory
+      - ethernet_phy_gigabit
+      - hdmi_output
+      - microsd_socket
       - qspi_flash
       - sd_card_socket
-      - hdmi_output
-      - ethernet_phy_gigabit
       - usb_uart_bridge
-      - user_leds
       - user_buttons
+      - user_leds
     BoardURL: https://coderobin.com/products/alinx-ax7015-xilinx-zynq-7000-xc7z015-fpga-development-board
     Status: active
     Notes: "Variant alongside AX7Z015 (already in catalog) — pairs SoM+carrier."
   - Id: alinx_ax7021
     BoardName: "Alinx AX7021"
+    Devices:
+      - realtek_rtl8211e
+      - silabs_cp2102
+      - microsd_socket_generic
+      - tmds_direct
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: XC7Z020-2CLG484I
     Bridges:
@@ -1623,61 +1738,84 @@ Boards:
     Programmer: vivado_hw
     Features:
       - ddr3_memory
+      - ethernet_phy_gigabit
+      - hdmi_output
+      - microsd_socket
       - qspi_flash
       - sd_card_socket
-      - hdmi_output
-      - ethernet_phy_gigabit
       - usb_uart_bridge
-      - user_leds
       - user_buttons
+      - user_leds
     BoardURL: https://coderobin.com/products/alinx-ax7021-xilinx-zynq-7000-xc7z020-fpga-development-board
     Status: active
     Notes: "484-pin variant of AX7020 (which uses CLG400 package)."
   - Id: alinx_ax7z010
     BoardName: "Alinx AX7Z010"
+    Devices:
+      - micron_mt41k128m16
+      - silabs_cp2102
+      - microsd_socket_generic
+      - tmds_direct
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: XC7Z010-1CLG400I
     Bridges:
       - usb-jtag
     Programmer: vivado_hw
     Features:
-      - ddr3_memory
-      - qspi_flash
-      - sd_card_socket
-      - hdmi_output
-      - ethernet_phy_gigabit
       - can_transceiver
+      - ddr3_memory
+      - ethernet_phy_gigabit
+      - hdmi_output
+      - microsd_socket
+      - qspi_flash
       - rs485_transceiver
+      - sd_card_socket
       - usb_uart_bridge
-      - user_leds
       - user_buttons
+      - user_leds
     BoardURL: https://coderobin.com/products/alinx-ax7z010-xilinx-zynq-7000-xc7z010-fpga-development-board
     Status: active
     Notes: "B revision; pairs with AC7Z010 SOM (also new). 5V input."
   - Id: alinx_ax7z020
     BoardName: "Alinx AX7Z020"
+    Devices:
+      - micron_mt41k128m16
+      - silabs_cp2102
+      - microsd_socket_generic
+      - tmds_direct
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: XC7Z020-2CLG400I
     Bridges:
       - usb-jtag
     Programmer: vivado_hw
     Features:
-      - ddr3_memory
-      - qspi_flash
-      - sd_card_socket
-      - hdmi_output
-      - ethernet_phy_gigabit
       - can_transceiver
-      - rs485_transceiver
+      - ddr3_memory
+      - ethernet_phy_gigabit
+      - hdmi_output
+      - microsd_socket
       - mipi_csi2_input
+      - qspi_flash
+      - rs485_transceiver
+      - sd_card_socket
       - usb_uart_bridge
-      - user_leds
       - user_buttons
+      - user_leds
     BoardURL: https://coderobin.com/products/alinx-ax7z020-xilinx-zynq-7000-xc7z020-fpga-development-board
     Status: active
     Notes: "B revision; variant with MIPI."
   - Id: alinx_ax7350
     BoardName: "Alinx AX7350"
+    Devices:
+      - silabs_cp2102
+      - microsd_socket_generic
+      - tmds_direct
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: XC7Z035-2FFG676I
     Bridges:
@@ -1685,20 +1823,26 @@ Boards:
     Programmer: vivado_hw
     Features:
       - ddr3_memory
+      - ethernet_phy_gigabit
+      - hdmi_output
+      - microsd_socket
+      - pcie_endpoint
       - qspi_flash
       - sd_card_socket
       - sfp_cage
-      - pcie_endpoint
-      - hdmi_output
-      - ethernet_phy_gigabit
       - usb_uart_bridge
-      - user_leds
       - user_buttons
+      - user_leds
     BoardURL: https://coderobin.com/products/alinx-ax7350-xilinx-zynq-7000-xc7z035-fpga-development-board
     Status: active
     Notes: "B revision of older AX7Z035 (in catalog) — distinct PCB."
   - Id: alinx_ax7450
     BoardName: "Alinx AX7450"
+    Devices:
+      - silabs_cp2102
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: XC7Z100-2FFG900I
     Bridges:
@@ -1706,20 +1850,26 @@ Boards:
     Programmer: vivado_hw
     Features:
       - ddr3_memory
+      - ethernet_phy_gigabit
+      - hdmi_output
+      - microsd_socket
+      - pcie_endpoint
       - qspi_flash
       - sd_card_socket
       - sfp_cage
-      - pcie_endpoint
-      - hdmi_output
-      - ethernet_phy_gigabit
       - usb_uart_bridge
-      - user_leds
       - user_buttons
+      - user_leds
     BoardURL: https://coderobin.com/products/alinx-ax7450-xilinx-zynq-7000-xc7z100-fpga-development-board
     Status: active
     Notes: "B revision XC7Z100 SoM+carrier; distinct from existing AX7100 entry."
   - Id: alinx_ax7z100b
     BoardName: "Alinx AX7Z100B"
+    Devices:
+      - silabs_cp2102
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: XC7Z100-2FFG900
     Bridges:

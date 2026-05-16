@@ -49,6 +49,18 @@ Boards:
     Status: active
   - Id: alinx_ax7035b
     BoardName: Alinx AX7035B
+    Features:
+      - microsd_socket
+      - usb_jtag_bridge
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
+    Devices:
+      - ftdi_ft2232h
+      - silabs_cp2102
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: XC7A35T-2FGG484I
     Bridges:
@@ -57,6 +69,12 @@ Boards:
     BoardURL: "https://www.en.alinx.com/Product/FPGA-Development-Boards/Artix-7/AX7035B.html"
   - Id: alinx_ax7102
     BoardName: Alinx AX7102
+    Devices:
+      - ftdi_ft2232h
+      - silabs_cp2102
+      - vga666_resistor_dac
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: XC7A100T-2FGG484I
     Bridges:
@@ -64,16 +82,23 @@ Boards:
     Programmer: vivado_hw
     Features:
       - ddr3_memory
-      - qspi_flash
       - ethernet_phy_gigabit
-      - vga_output
+      - qspi_flash
+      - usb_jtag_bridge
       - usb_uart_bridge
-      - user_leds
       - user_buttons
+      - user_leds
+      - vga_output
     BoardURL: https://www.en.alinx.com/Product/FPGA-Development-Boards/Artix-7/AX7102.html
     Status: active
   - Id: alinx_ax7103
     BoardName: Alinx AX7103
+    Devices:
+      - ftdi_ft2232h
+      - silabs_cp2102
+      - vga666_resistor_dac
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: XC7A100T-2FGG484I
     Bridges:
@@ -81,17 +106,25 @@ Boards:
     Programmer: vivado_hw
     Features:
       - ddr3_memory
-      - qspi_flash
       - ethernet_phy_gigabit
       - hdmi_output
       - pcie_endpoint
+      - qspi_flash
+      - usb_jtag_bridge
       - usb_uart_bridge
-      - user_leds
       - user_buttons
+      - user_leds
+      - vga_output
     BoardURL: https://www.en.alinx.com/Product/FPGA-Development-Boards/Artix-7/AX7103.html
     Status: active
   - Id: alinx_ax7202
     BoardName: Alinx AX7202
+    Devices:
+      - ftdi_ft2232h
+      - silabs_cp2102
+      - vga666_resistor_dac
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: XC7A200T-2FBG484I
     Bridges:
@@ -99,16 +132,29 @@ Boards:
     Programmer: vivado_hw
     Features:
       - ddr3_memory
-      - qspi_flash
       - ethernet_phy_gigabit
-      - vga_output
+      - qspi_flash
+      - usb_jtag_bridge
       - usb_uart_bridge
-      - user_leds
       - user_buttons
+      - user_leds
+      - vga_output
     BoardURL: https://www.en.alinx.com/Product/FPGA-Development-Boards/Artix-7/AX7202.html
     Status: active
   - Id: alinx_ax7a035
     BoardName: AX7A035
+    Features:
+      - microsd_socket
+      - usb_jtag_bridge
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
+    Devices:
+      - ftdi_ft2232h
+      - silabs_cp2102
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: XC7A35T-2FGG484I
     Bridges:
@@ -607,6 +653,16 @@ Boards:
     Status: active
   - Id: qmtech_artix7_100t_core
     BoardName: Artix-7 100T Core Board
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - user_buttons
+      - user_leds
+    Devices:
+      - micron_mt41k128m16
+      - cypress_s25fl128s
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: qmtech
     Chip: XC7A100T-1FGG484C
     Bridges:
@@ -615,6 +671,16 @@ Boards:
     BoardURL: https://qmtech.aliexpress.com/store/1199788
   - Id: qmtech_artix7_200t_core
     BoardName: Artix-7 200T Core Board
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - user_buttons
+      - user_leds
+    Devices:
+      - micron_mt41k128m16
+      - cypress_s25fl128s
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: qmtech
     Chip: XC7A200T-1FBG484C
     Bridges:
@@ -623,6 +689,16 @@ Boards:
     BoardURL: https://qmtech.aliexpress.com/store/1199788
   - Id: qmtech_artix7_35t_core
     BoardName: Artix-7 35T Core Board
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - user_buttons
+      - user_leds
+    Devices:
+      - micron_mt41k128m16
+      - cypress_s25fl128s
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: qmtech
     Chip: XC7A35T-1FGG484C
     Bridges:
@@ -631,6 +707,15 @@ Boards:
     BoardURL: https://qmtech.aliexpress.com/store/1199788
   - Id: qmtech_artix7_wukong
     BoardName: QMtech Artix-7 Wukong Board
+    Devices:
+      - micron_mt41k128m16
+      - cypress_s25fl128s
+      - realtek_rtl8211e
+      - tmds_direct
+      - microsd_socket_generic
+      - ftdi_ft2232h
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: qmtech
     Chip: XC7A100T-1FGG676C
     Bridges:
@@ -638,13 +723,14 @@ Boards:
     Programmer: vivado_hw
     Features:
       - ddr3_memory
-      - qspi_flash
       - ethernet_phy_gigabit
       - hdmi_output
       - microsd_socket
+      - qspi_flash
+      - usb_jtag_bridge
       - usb_uart_bridge
-      - user_leds
       - user_buttons
+      - user_leds
     BoardURL: https://qmtech.aliexpress.com/store/1199788
     Status: active
   - Id: trenz_te0710
@@ -807,6 +893,12 @@ Boards:
     BoardURL: https://www.xilinx.com/products/boards-and-kits/ek-a7-ac701-g.html
   - Id: alinx_ax7101
     BoardName: "Alinx AX7101"
+    Devices:
+      - ftdi_ft2232h
+      - silabs_cp2102
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: XC7A100T-2FGG484I
     Bridges:
@@ -814,16 +906,24 @@ Boards:
     Programmer: vivado_hw
     Features:
       - ddr3_memory
+      - microsd_socket
       - qspi_flash
       - sd_card_socket
+      - usb_jtag_bridge
       - usb_uart_bridge
-      - user_leds
       - user_buttons
+      - user_leds
     BoardURL: https://coderobin.com/products/alinx-ax7101-xilinx-artix-7-xc7a100t-fpga-development-board
     Status: active
     Notes: "Companion of AX7102/AX7103 — minimum-feature variant. XDC for LED/KEY/UART from vendor GitHub."
   - Id: alinx_ax7201
     BoardName: "Alinx AX7201"
+    Devices:
+      - ftdi_ft2232h
+      - silabs_cp2102
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: XC7A200T-2FBG484I
     Bridges:
@@ -831,16 +931,24 @@ Boards:
     Programmer: vivado_hw
     Features:
       - ddr3_memory
+      - microsd_socket
       - qspi_flash
       - sd_card_socket
+      - usb_jtag_bridge
       - usb_uart_bridge
-      - user_leds
       - user_buttons
+      - user_leds
     BoardURL: https://coderobin.com/products/alinx-ax7201-xilinx-artix-7-xc7a200t-fpga-development-board
     Status: active
     Notes: "Companion of AX7202/AX7203 — minimum-feature variant. Same chip family as AC7200 SOM."
   - Id: alinx_ax7a200
     BoardName: "Alinx AX7A200"
+    Devices:
+      - ftdi_ft2232h
+      - silabs_cp2102
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: XC7A200T-2FBG484I
     Bridges:
@@ -848,16 +956,18 @@ Boards:
     Programmer: vivado_hw
     Features:
       - ddr3_memory
+      - ethernet_phy_gigabit
+      - hdmi_input
+      - hdmi_output
+      - microsd_socket
+      - pcie_endpoint
       - qspi_flash
       - sd_card_socket
       - sfp_cage
-      - hdmi_output
-      - hdmi_input
-      - ethernet_phy_gigabit
-      - pcie_endpoint
+      - usb_jtag_bridge
       - usb_uart_bridge
-      - user_leds
       - user_buttons
+      - user_leds
     BoardURL: https://coderobin.com/products/alinx-ax7a200-xilinx-artix-7-xc7a200t-fpga-development-board
     Status: active
     Notes: "Single-board (non-SOM) AX7A200 — pairs with AX7A035 (already in catalog)."
@@ -880,6 +990,16 @@ Boards:
     Status: active
   - Id: alinx_ax7203
     BoardName: AX7203
+    Features:
+      - usb_jtag_bridge
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
+    Devices:
+      - ftdi_ft2232h
+      - silabs_cp2102
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: XC7A200T-2FBG484I
     Bridges:

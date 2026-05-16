@@ -43,6 +43,14 @@ Boards:
     Status: preview
   - Id: gowin_gw1nr9_devkit
     BoardName: GW1NR-9 Dev Kit
+    Features:
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
+    Devices:
+      - ftdi_ft2232h
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: gowin_semi
     Chip: GW1NR-LV9QN88PC6/I5
     Bridges:
@@ -51,6 +59,11 @@ Boards:
     BoardURL: https://www.gowinsemi.com/en/support/devkits_detail/29/
   - Id: gowin_gw1nr9_lv_devkit
     BoardName: GW1NR-9 Starter Kit
+    Devices:
+      - ftdi_ft2232h
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
     BoardProducer: gowin_semi
     Chip: GW1NR-LV9LQ144PC6/I5
     Bridges:
@@ -59,11 +72,12 @@ Boards:
     ExtraProgrammers:
       - openFPGALoader[*]
     Features:
-      - mipi_csi2_input
-      - user_leds
-      - user_buttons
-      - usb_jtag_bridge
+      - dip_switches
       - jtag_header
+      - mipi_csi2_input
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
     BoardURL: https://www.gowinsemi.com/en/support/devkits_detail/16/
     Status: active
   - Id: marsohod3gw2

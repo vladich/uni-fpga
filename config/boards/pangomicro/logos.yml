@@ -7,43 +7,66 @@ Description: ""
 Boards:
   - Id: pangomicro_alinx_pgl12g
     BoardName: "ALINX PGL12G Development Board"
+    Devices:
+      - silabs_cp2102
+      - winbond_w9825g6kh
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: pangomicro
     Chip: PGL12G-6MBG324
     Bridges:
       - jtag
     Programmer: pango_pgm
     Features:
-      - sdr_sdram
-      - qspi_flash
-      - hdmi_output
-      - usb_uart_bridge
-      - parallel_camera_input
-      - jtag_header
       - gpio_header_generic
+      - hdmi_output
+      - jtag_header
+      - microsd_socket
+      - parallel_camera_input
+      - qspi_flash
+      - sdr_sdram
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     BoardURL: https://www.pangomicro.com/open/4254.html
     Status: active
     Notes: "ALINX third-party board listed on Pango's official catalog page."
   - Id: alinx_axp12
     BoardName: "ALINX AXP12 Development Board"
+    Devices:
+      - silabs_cp2102
+      - winbond_w9825g6kh
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: PGL12G-6MBG324
     Bridges:
       - jtag
     Programmer: pango_pgm
     Features:
-      - sdr_sdram
-      - qspi_flash
+      - ethernet_phy_gigabit
+      - gpio_header_generic
       - hdmi_output
+      - jtag_header
+      - microsd_socket
+      - parallel_camera_input
+      - qspi_flash
+      - sdr_sdram
       - usb_2_device
       - usb_uart_bridge
-      - ethernet_phy_gigabit
-      - parallel_camera_input
-      - jtag_header
-      - gpio_header_generic
+      - user_buttons
+      - user_leds
     BoardURL: https://www.pangomicro.com/open/4256.html
     Status: active
   - Id: pangomicro_pangu_22k_devkit
     BoardName: "PGL22G Development Board (Pangu 22K / 盘古22K)"
+    Devices:
+      - silabs_cp2102
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: pangomicro
     Chip: PGL22G-MBG324
     Bridges:
@@ -52,17 +75,25 @@ Boards:
     Features:
       - ddr3_memory
       - ethernet_phy_gigabit
+      - gpio_header_generic
       - hdmi_input
       - hdmi_output
-      - usb_uart_bridge
       - jtag_header
+      - microsd_socket
       - pmod_connector
-      - gpio_header_generic
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     BoardURL: https://www.pangomicro.com/open/4257.html
     Status: active
     Notes: "Pango-branded board sold via 小眼睛半导体 Taobao."
   - Id: pangomicro_pangu_eu22k_devkit
     BoardName: "PGL22G Development Board (Pangu EU-22K)"
+    Devices:
+      - silabs_cp2102
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: pangomicro
     Chip: PGL22G-MBG324
     Bridges:
@@ -86,6 +117,11 @@ Boards:
     Status: active
   - Id: pangomicro_alinx_pgl22g
     BoardName: "ALINX PGL22G Development Board"
+    Devices:
+      - silabs_cp2102
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: pangomicro
     Chip: PGL22G-6MBG324
     Bridges:
@@ -93,19 +129,27 @@ Boards:
     Programmer: pango_pgm
     Features:
       - ddr3_memory
-      - qspi_flash
+      - ethernet_phy_gigabit
+      - gpio_header_generic
       - hdmi_output
+      - jtag_header
+      - microsd_socket
+      - parallel_camera_input
+      - qspi_flash
       - usb_2_device
       - usb_uart_bridge
-      - ethernet_phy_gigabit
-      - parallel_camera_input
-      - jtag_header
-      - gpio_header_generic
+      - user_buttons
+      - user_leds
     BoardURL: https://www.pangomicro.com/open/4261.html
     Status: active
     Notes: "ALINX third-party SoM+baseboard kit; 256 MB DDR3, 128 Mbit QSPI."
   - Id: pangomicro_atk_dfpgl22g
     BoardName: "ATK-DFPGL22G (紫光PGL22) Development Board"
+    Devices:
+      - silabs_cp2102
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: pangomicro
     Chip: PGL22G-6MBG324
     Bridges:
@@ -113,12 +157,15 @@ Boards:
     Programmer: pango_pgm
     Features:
       - ddr3_memory
-      - hdmi_output
       - ethernet_phy_gigabit
-      - parallel_camera_input
-      - mipi_dsi_output
-      - microsd_socket
       - gpio_header_generic
+      - hdmi_output
+      - microsd_socket
+      - mipi_dsi_output
+      - parallel_camera_input
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     BoardURL: https://www.pangomicro.com/open/4262.html
     Status: active
     Notes: "ALIENTEK 'ATK' brand; all-domestic chip BOM."
@@ -136,6 +183,11 @@ Boards:
     Notes: "Bare core/SoM; 16-bit DDR3 800 Mbps; commercial 0-85 C."
   - Id: pangomicro_pangu_25k_devkit
     BoardName: "Pangu 25K Development Board (DFPGL25G_DevKit, 盘古25K核心板)"
+    Devices:
+      - silabs_cp2102
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: pangomicro
     Chip: PGL25G2-6CMBG324
     Bridges:
@@ -161,26 +213,43 @@ Boards:
     Notes: "Manual: DFPGL25G_DevKit--UserManual.CHINESE-v1.0.pdf at chili-chips-ba/tango-with-pango."
   - Id: pangomicro_alinx_avp50g
     BoardName: "ALINX AVP50G Development Board"
+    Devices:
+      - silabs_cp2102
+      - vga666_resistor_dac
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: pangomicro
     Chip: PGL50G-6IFBG484
     Bridges:
       - jtag
     Programmer: pango_pgm
     Features:
+      - analog_video_decoder
       - ddr3_memory
-      - qspi_flash
+      - ethernet_phy_gigabit
+      - gpio_header_generic
       - hdmi_input
       - hdmi_output
-      - analog_video_decoder
-      - ethernet_phy_gigabit
-      - parallel_camera_input
       - jtag_header
-      - gpio_header_generic
+      - microsd_socket
+      - parallel_camera_input
+      - qspi_flash
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
+      - vga_output
     BoardURL: https://www.pangomicro.com/open/4265.html
     Status: active
     Notes: "ALINX board with 4x AV inputs."
   - Id: alinx_axp50_teaching_box
     BoardName: "ALINX AXP50 Teaching Experimental Kit (教学实验箱)"
+    Devices:
+      - silabs_cp2102
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
     BoardProducer: alinx
     Chip: PGL50H-6IFBG484
     Bridges:
@@ -188,20 +257,29 @@ Boards:
     Programmer: pango_pgm
     Features:
       - ddr3_memory
+      - dip_switches
+      - ethernet_phy_gigabit
+      - gpio_header_generic
+      - hdmi_output
+      - microsd_socket
+      - parallel_camera_input
       - qspi_flash
       - sfp_cage
       - sma_io_pair
-      - hdmi_output
-      - ethernet_phy_gigabit
       - usb_2_device
       - usb_uart_bridge
-      - parallel_camera_input
-      - gpio_header_generic
+      - user_buttons
+      - user_leds
     BoardURL: https://www.pangomicro.com/open/4267.html
     Status: active
     Notes: "ALINX education/competition kit; 1 GB DDR3."
   - Id: alinx_axpgl50h
     BoardName: "ALINX AXPGL50H Development Board"
+    Devices:
+      - silabs_cp2102
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: PGL50H-6IFBG484
     Bridges:
@@ -209,50 +287,74 @@ Boards:
     Programmer: pango_pgm
     Features:
       - ddr3_memory
-      - qspi_flash
+      - ethernet_phy_gigabit
+      - gpio_header_generic
       - hdmi_output
+      - jtag_header
+      - microsd_socket
+      - parallel_camera_input
+      - qspi_flash
       - usb_2_device
       - usb_uart_bridge
-      - ethernet_phy_gigabit
-      - parallel_camera_input
-      - jtag_header
-      - gpio_header_generic
+      - user_buttons
+      - user_leds
     BoardURL: https://www.pangomicro.com/open/4269.html
     Status: active
     Notes: "1 GB DDR3 + 128 Mbit QSPI; HSST transceivers exposed."
   - Id: pangomicro_sa_pgl50h_evkb1
     BoardName: "SA_PGL50H_EVKB1 Evaluation Kit"
+    Devices:
+      - silabs_cp2102
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: pangomicro
     Chip: PGL50H-6IFBG484
     Bridges:
       - jtag
     Programmer: pango_pgm
     Features:
-      - ddr3_memory
-      - usb_3_host
       - adc_chip
+      - ddr3_memory
+      - microsd_socket
+      - usb_3_host
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     BoardURL: https://www.pangomicro.com/open/4272.html
     Status: active
     Notes: "Smartseason separated-EVK (SoM + expansion); USB 3.0 + ADC."
   - Id: pangomicro_sa_sobgl50h_k004
     BoardName: "SA_SOBGL50H_K004 Development Board"
+    Devices:
+      - silabs_cp2102
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: pangomicro
     Chip: PGL50H-6IFBG484
     Bridges:
       - jtag
     Programmer: pango_pgm
     Features:
+      - adc_chip
       - ddr3_memory
+      - microsd_socket
       - nor_flash
       - usb_3_host
-      - adc_chip
-      - user_leds
+      - usb_uart_bridge
       - user_buttons
+      - user_leds
     BoardURL: https://www.pangomicro.com/open/4274.html
     Status: active
     Notes: "Smartseason 12-bit ADC data-acquisition board."
   - Id: pangomicro_pangu_50k_devkit
     BoardName: "Pangu 50K Development Board (盘古50K)"
+    Devices:
+      - silabs_cp2102
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: pangomicro
     Chip: PGL50H-6IFBG484
     Bridges:
@@ -261,14 +363,16 @@ Boards:
     Features:
       - ddr3_memory
       - ethernet_phy_gigabit
-      - sfp_cage
+      - gpio_header_generic
       - hdmi_input
       - hdmi_output
+      - microsd_socket
       - pcie_endpoint
       - pmod_connector
-      - user_leds
+      - sfp_cage
+      - usb_uart_bridge
       - user_buttons
-      - gpio_header_generic
+      - user_leds
     BoardURL: https://www.pangomicro.com/open/4276.html
     Status: active
     Notes: "Pango-branded; 4x HSST 6.375 Gbps; 2x GbE; dual SFP."

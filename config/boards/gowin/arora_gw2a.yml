@@ -7,6 +7,18 @@ Description: Mid-range Gowin FPGA (Arora series).
 Boards:
   - Id: gowin_gw2a18_devkit
     BoardName: GW2A-18 Dev Kit
+    Features:
+      - ddr3_memory
+      - dip_switches
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
+    Devices:
+      - micron_mt41k128m16
+      - ftdi_ft2232h
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
     BoardProducer: gowin_semi
     Chip: GW2A-LV18PG256C8/I7
     Bridges:
@@ -15,6 +27,12 @@ Boards:
     BoardURL: https://www.gowinsemi.com/en/support/devkits_detail/32/
   - Id: gowin_gw2a18_video_devkit
     BoardName: GW2A-18 Video Dev Kit
+    Devices:
+      - micron_mt41k128m16
+      - tmds_direct
+      - ftdi_ft2232h
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: gowin_semi
     Chip: GW2A-LV18PG484C8/I7
     Bridges:
@@ -35,6 +53,13 @@ Boards:
     Status: active
   - Id: gowin_gw2a55_devkit
     BoardName: GW2A-55 Dev Kit
+    Devices:
+      - micron_mt41k128m16
+      - microsd_socket_generic
+      - ftdi_ft2232h
+      - led_discrete_generic
+      - pushbutton_smd_generic
+      - dip_switch_generic
     BoardProducer: gowin_semi
     Chip: GW2A-LV55PG484C8/I7
     Bridges:
@@ -43,16 +68,17 @@ Boards:
     ExtraProgrammers:
       - openFPGALoader[*]
     Features:
+      - can_transceiver
       - ddr3_memory
+      - dip_switches
       - ethernet_phy_gigabit
+      - jtag_header
       - microsd_socket
       - mipi_csi2_input
       - mipi_dsi_output
-      - can_transceiver
-      - user_leds
-      - user_buttons
       - usb_jtag_bridge
-      - jtag_header
+      - user_buttons
+      - user_leds
     BoardURL: https://www.gowinsemi.com/en/support/devkits_detail/22/
     Status: active
   - Id: sipeed_tang_console

@@ -79,6 +79,12 @@ Boards:
     Status: eol
   - Id: qmtech_max10_core
     BoardName: MAX 10 Core Board
+    Features:
+      - user_buttons
+      - user_leds
+    Devices:
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: qmtech
     Chip: 10M16SAU169C8G
     Bridges:

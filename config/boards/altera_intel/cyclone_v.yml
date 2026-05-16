@@ -121,6 +121,12 @@ Boards:
     Status: eol
   - Id: qmtech_cyclonev_gx_starter
     BoardName: Cyclone V GX Starter Board
+    Features:
+      - user_buttons
+      - user_leds
+    Devices:
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: qmtech
     Chip: 5CGXFC5C6F23C7N
     Bridges:

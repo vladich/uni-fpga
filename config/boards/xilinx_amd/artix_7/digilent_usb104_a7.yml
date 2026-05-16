@@ -1,0 +1,11 @@
+# digilent_usb104_a7 pin map.
+# Source: official Digilent XDC
+#   https://raw.githubusercontent.com/Digilent/digilent-xdc/master/USB104-A7-100T-Master.xdc
+
+Board:
+  id: digilent_usb104_a7
+  pinBanks:
+    onboard_buttons:
+      pins: [V16, U17]
+    onboard_leds:
+      pins: [R17, P15, R15, T14]

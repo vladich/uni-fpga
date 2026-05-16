@@ -7,6 +7,18 @@ Description: GW5A with safety/security features.
 Boards:
   - Id: gowin_gw5ast138_devkit
     BoardName: GW5AST-138 Dev Kit
+    Features:
+      - ddr3_memory
+      - microsd_socket
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
+    Devices:
+      - micron_mt41k128m16
+      - microsd_socket_generic
+      - ftdi_ft2232h
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: gowin_semi
     Chip: GW5AST-LV138PG484AC1/I0
     Bridges:

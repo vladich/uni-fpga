@@ -143,6 +143,12 @@ Boards:
     BoardURL: https://github.com/MiSTer-devel/Wiki_MiSTer
   - Id: qmtech_cyclonev_soc_5cse_core
     BoardName: QMtech Cyclone V SoC 5CSEMA6 Core Board
+    Devices:
+      - micron_mt41k256m16
+      - microchip_ksz9031rnx
+      - tmds_direct
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: qmtech
     Chip: 5CSEMA6U23A7N
     Bridges:
@@ -150,10 +156,12 @@ Boards:
     Programmer: quartus_pgm
     Features:
       - ddr3_memory
-      - microsd_socket
-      - hdmi_output
       - ethernet_phy_gigabit
+      - hdmi_output
+      - microsd_socket
       - usb_uart_bridge
+      - user_buttons
+      - user_leds
     BoardURL: https://qmtech.aliexpress.com/store/1199788
     Status: active
   - Id: terasic_atlas_soc

@@ -7,6 +7,16 @@ Description: High-end Titan with SerDes/PCIe. PDS.
 Boards:
   - Id: pangomicro_pgt180h_devkit
     BoardName: PGT180H Development Kit
+    Features:
+      - microsd_socket
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
+    Devices:
+      - silabs_cp2102
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: pangomicro
     Chip: PGT180HFBG484
     Bridges:

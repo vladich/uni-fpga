@@ -55,6 +55,11 @@ Boards:
     Status: active
   - Id: alinx_axau15
     BoardName: "Alinx AXAU15"
+    Devices:
+      - silabs_cp2102
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: XCAU15P-2FFVB676E
     Bridges:
@@ -62,19 +67,25 @@ Boards:
     Programmer: vivado_hw
     Features:
       - ddr4_memory
+      - ethernet_phy_gigabit
+      - fmc_hpc
+      - microsd_socket
+      - pcie_endpoint
       - qspi_flash
       - sd_card_socket
-      - pcie_endpoint
-      - fmc_hpc
-      - ethernet_phy_gigabit
       - usb_uart_bridge
-      - user_leds
       - user_buttons
+      - user_leds
     BoardURL: https://coderobin.com/products/alinx-axau15-xilinx-artix-ultrascale-xcau15p-fpga-development-board
     Status: active
     Notes: "Top-end Artix UltraScale+ SoM+carrier kit. Industrial-grade equivalent XCAU15P-2FFVB676I noted on product page; mapped to existing XCAU15P-2FFVB676E in registry."
   - Id: alinx_axau25
     BoardName: "Alinx AXAU25"
+    Devices:
+      - silabs_cp2102
+      - microsd_socket_generic
+      - led_discrete_generic
+      - pushbutton_smd_generic
     BoardProducer: alinx
     Chip: XCAU25P-2E
     Bridges:
@@ -82,14 +93,15 @@ Boards:
     Programmer: vivado_hw
     Features:
       - ddr4_memory
+      - ethernet_phy_gigabit
+      - fmc_hpc
+      - microsd_socket
+      - pcie_endpoint
       - qspi_flash
       - sd_card_socket
-      - pcie_endpoint
-      - fmc_hpc
-      - ethernet_phy_gigabit
       - usb_uart_bridge
-      - user_leds
       - user_buttons
+      - user_leds
     BoardURL: https://coderobin.com/products/alinx-axau25-xilinx-artix-ultrascale-xcau25p-fpga-development-board
     Status: active
     Notes: "ACAU25 SOM + carrier. Industrial XCAU25P-2FFVB676I per product page; mapped to registry XCAU25P-2E."
