@@ -1,0 +1,45 @@
+# fomu_pvt pin map.
+# Source: LiteX-Boards platform file
+#   https://raw.githubusercontent.com/litex-hub/litex-boards/master/litex_boards/platforms/kosagi_fomu_pvt.py
+
+Board:
+  id: fomu_pvt
+  pinBanks:
+    qspi_flash_clk:
+      pins:
+        pin: D1
+    qspi_flash_cs_n:
+      pins:
+        pin: C1
+    qspi_flash_dq:
+      pins: [F1, E1, F2, B1]
+    qspi_flash_hold:
+      pins:
+        pin: B1
+    qspi_flash_miso:
+      pins:
+        pin: E1
+    qspi_flash_mosi:
+      pins:
+        pin: F1
+    qspi_flash_wp:
+      pins:
+        pin: F2
+    rgb_led_b:
+      pins:
+        pin: A5
+    rgb_led_g:
+      pins:
+        pin: B5
+    rgb_led_r:
+      pins:
+        pin: C5
+    usb_d_n:
+      pins:
+        pin: A2
+    usb_d_p:
+      pins:
+        pin: A1
+    usb_pullup:
+      pins:
+        pin: A4

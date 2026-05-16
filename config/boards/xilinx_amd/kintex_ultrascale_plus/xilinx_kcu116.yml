@@ -1,0 +1,45 @@
+# xilinx_kcu116 pin map.
+# Source: LiteX-Boards platform file
+#   https://raw.githubusercontent.com/litex-hub/litex-boards/master/litex_boards/platforms/xilinx_kcu116.py
+
+Board:
+  id: xilinx_kcu116
+  pinBanks:
+    cpu_resetn:
+      pins: B9
+    onboard_leds:
+      pins: [C9, D9, E10, E11, F9, F10, G9, G10]
+    onboard_uart:
+      pins:
+        cts: Y13
+        rts: AA13
+        tx: W13
+        rx: W12
+    hdmi_clk:
+      pins:
+        pin: P20
+    qspi_flash:
+      pins: [AA12, U22]
+    hdmi_d:
+      pins: [V21, V22, T22, T23, W19, W20, Y22, Y25, Y26, AA24, AA25, W25, W26, V23, V24, W24]
+    hdmi_de:
+      pins:
+        pin: U20
+    hdmi_hsync:
+      pins:
+        pin: V19
+    hdmi_spdif:
+      pins:
+        pin: T20
+    hdmi_spdif_out:
+      pins:
+        pin: U19
+    hdmi_vsync:
+      pins:
+        pin: U21
+    i2c_scl:
+      pins:
+        pin: AE13
+    i2c_sda:
+      pins:
+        pin: AF13

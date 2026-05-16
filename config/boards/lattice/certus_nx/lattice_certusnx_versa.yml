@@ -1,0 +1,47 @@
+# lattice_certusnx_versa pin map.
+# Source: LiteX-Boards platform file
+#   https://raw.githubusercontent.com/litex-hub/litex-boards/master/litex_boards/platforms/lattice_certuspro_nx_versa.py
+
+Board:
+  id: lattice_certusnx_versa
+  pinBanks:
+    onboard_buttons:
+      pins: H21
+    onboard_leds:
+      pins: [R5, R4, R8, R9, U8, R7, R6, P8]
+    onboard_uart:
+      pins:
+        rx: L8
+        tx: M9
+    i2c_scl:
+      pins:
+        pin: M7
+    i2c_sda:
+      pins:
+        pin: M6
+    qspi_flash_clk:
+      pins:
+        pin: G6
+    qspi_flash_cs_n:
+      pins:
+        pin: H3
+    qspi_flash_dq:
+      pins: [H7, H6, K5, H4]
+    qspi_flash_hold:
+      pins:
+        pin: H4
+    qspi_flash_miso:
+      pins:
+        pin: H6
+    qspi_flash_mosi:
+      pins:
+        pin: H7
+    qspi_flash_wp:
+      pins:
+        pin: K5
+    sys_clk_n:
+      pins:
+        pin: AB18
+    sys_clk_p:
+      pins:
+        pin: AB19

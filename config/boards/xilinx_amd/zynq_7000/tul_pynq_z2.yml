@@ -1,0 +1,17 @@
+# tul_pynq_z2 pin map.
+# Source: LiteX-Boards platform file
+#   https://raw.githubusercontent.com/litex-hub/litex-boards/master/litex_boards/platforms/tul_pynq_z2.py
+
+Board:
+  id: tul_pynq_z2
+  pinBanks:
+    onboard_buttons:
+      pins: [D19, D20, L20, L19]
+    onboard_switches:
+      pins: [M20, M19]
+    onboard_leds:
+      pins: [R14, P14, N16, M14]
+    onboard_uart:
+      pins:
+        tx: T14
+        rx: U12

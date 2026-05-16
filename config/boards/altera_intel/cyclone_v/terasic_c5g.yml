@@ -1,0 +1,15 @@
+# terasic_c5g pin map.
+# Source: basics-graphics-music repo
+#   https://raw.githubusercontent.com/yuri-panchul/basics-graphics-music/main/boards/c5gx/board_specific.qsf
+
+Board:
+  id: terasic_c5g
+  pinBanks:
+    onboard_buttons:
+      pins: [PIN_P11, PIN_P12, PIN_Y15, PIN_Y16]
+    onboard_switches:
+      pins: [PIN_AC9, PIN_AE10, PIN_AD13, PIN_AC8, PIN_W11, PIN_AB10, PIN_V10, PIN_AC10, PIN_Y11, PIN_AE19]
+    onboard_uart:
+      pins:
+        tx: PIN_L9
+        rx: PIN_M9

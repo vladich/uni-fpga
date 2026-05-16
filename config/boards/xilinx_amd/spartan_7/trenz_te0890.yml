@@ -1,0 +1,29 @@
+# trenz_te0890 pin map.
+# Source: LiteX-Boards platform file
+#   https://raw.githubusercontent.com/litex-hub/litex-boards/master/litex_boards/platforms/trenz_te0890.py
+
+Board:
+  id: trenz_te0890
+  pinBanks:
+    sys_clk:
+      pins: L5
+    cpu_resetn:
+      pins: B10
+    onboard_leds:
+      pins: D14
+    onboard_uart:
+      pins:
+        tx: A5
+        rx: A12
+    qspi_flash_clk:
+      pins:
+        pin: A8
+    qspi_flash_cs_n:
+      pins:
+        pin: C11
+    qspi_flash_miso:
+      pins:
+        pin: B12
+    qspi_flash_mosi:
+      pins:
+        pin: B11

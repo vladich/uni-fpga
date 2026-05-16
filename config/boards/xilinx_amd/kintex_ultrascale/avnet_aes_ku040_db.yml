@@ -1,0 +1,41 @@
+# avnet_aes_ku040_db pin map.
+# Source: LiteX-Boards platform file
+#   https://raw.githubusercontent.com/litex-hub/litex-boards/master/litex_boards/platforms/avnet_aesku40.py
+
+Board:
+  id: avnet_aes_ku040_db
+  pinBanks:
+    cpu_resetn:
+      pins: N24
+    onboard_uart:
+      pins:
+        tx: D20
+        rx: C19
+    ethernet_rx:
+      pins:
+        pin: E11
+    ethernet_tx:
+      pins:
+        pin: G10
+    ethernet_mdio:
+      pins:
+        pin: C8
+    ethernet_int_n:
+      pins:
+        pin: Y14
+    ethernet_mdc:
+      pins:
+        pin: C9
+    ethernet_rst_n:
+      pins:
+        pin: D9
+    ethernet_rx_ctl:
+      pins:
+        pin: D11
+    ethernet_rx_data:
+      pins: [A10, B10, B11, C11]
+    ethernet_tx_ctl:
+      pins:
+        pin: G9
+    ethernet_tx_data:
+      pins: [H8, H9, J9, J10]

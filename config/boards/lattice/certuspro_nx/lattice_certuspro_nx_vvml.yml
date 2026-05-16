@@ -1,0 +1,46 @@
+# lattice_certuspro_nx_vvml pin map.
+# Source: LiteX-Boards platform file
+#   https://raw.githubusercontent.com/litex-hub/litex-boards/master/litex_boards/platforms/lattice_certuspro_nx_vvml.py
+
+Board:
+  id: lattice_certuspro_nx_vvml
+  pinBanks:
+    sys_clk:
+      pins: M22
+    onboard_buttons:
+      pins: [N1, N2]
+    onboard_leds:
+      pins: [M6, M7, N6, N5]
+    onboard_uart:
+      pins:
+        rx: E22
+        tx: D22
+    qspi_flash_clk:
+      pins:
+        pin: F15
+    qspi_flash_cs_n:
+      pins:
+        pin: F17
+    qspi_flash_dq:
+      pins: [E18, C21, C22, E16]
+    qspi_flash_hold:
+      pins:
+        pin: E16
+    qspi_flash_miso:
+      pins:
+        pin: C21
+    qspi_flash_mosi:
+      pins:
+        pin: E18
+    qspi_flash_wp:
+      pins:
+        pin: C22
+    rgb_led_b:
+      pins:
+        pin: P4
+    rgb_led_g:
+      pins:
+        pin: R4
+    rgb_led_r:
+      pins:
+        pin: R3
