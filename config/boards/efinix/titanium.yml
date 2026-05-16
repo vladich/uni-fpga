@@ -12,7 +12,7 @@ Boards:
     Bridges:
       - jtag
     Programmer: efinity_pgm
-    BoardURL: https://www.efinixinc.com/products-devkits-titaniumti120.html
+    Status: eol
   - Id: efinix_ti180_devkit
     BoardName: Titanium Ti180 Development Kit
     Devices:
@@ -22,7 +22,7 @@ Boards:
     Bridges:
       - jtag
     Programmer: efinity_pgm
-    BoardURL: https://www.efinixinc.com/products-devkits-titaniumti180.html
+    BoardURL: "https://www.efinixinc.com/products-devkits-titaniumti180j484.html"
   - Id: efinix_ti35_devkit
     BoardName: Titanium Ti35 Development Kit
     BoardProducer: efinix
@@ -30,7 +30,7 @@ Boards:
     Bridges:
       - jtag
     Programmer: efinity_pgm
-    BoardURL: https://www.efinixinc.com/products-devkits-titaniumti35.html
+    Status: eol
   - Id: efinix_ti375_devkit
     BoardName: Titanium Ti375 Development Kit
     Devices:
@@ -41,7 +41,7 @@ Boards:
     Bridges:
       - jtag
     Programmer: efinity_pgm
-    BoardURL: https://www.efinixinc.com/products-devkits-titaniumti375.html
+    BoardURL: "https://www.efinixinc.com/products-devkits-titaniumti375c529.html"
   - Id: efinix_ti375_n1156_devkit
     BoardName: Titanium Ti375 N1156 Development Kit
     Devices:

@@ -74,8 +74,7 @@ Boards:
       - fmc_hpc
       - pmod_connector
       - barrel_jack_input
-    BoardURL: https://www.avnet.com/shop/us/products/avnet-engineering-services/aes-ku040-db-g-3074457345635221623/
-    Status: active
+    Status: eol
   - Id: htg_k800
     BoardName: HTG-K800 Kintex UltraScale PCIe Development Platform
     Devices:

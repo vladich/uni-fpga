@@ -1600,8 +1600,7 @@ Boards:
       - pushbutton_smd_generic
       - dip_switch_generic
       - led_discrete_generic
-    BoardURL: "https://www.avnet.com/shop/us/products/avnet-engineering-services/aes-z7ev-7z020-g-3074457345635221829/"
-    Status: active
+    Status: eol
   - Id: avnet_picozed_7010
     BoardName: "Avnet PicoZed 7010 SoM (SoM + breakout)"
     BoardProducer: avnet
@@ -1658,8 +1657,7 @@ Boards:
       - microsd_socket_generic
       - pushbutton_smd_generic
       - led_discrete_generic
-    BoardURL: "https://www.avnet.com/shop/us/products/avnet-engineering-services/aes-mbcc-iocc-g-3074457345628965181/"
-    Status: active
+    Status: eol
   - Id: enclustra_mercury_plus_st1
     BoardName: "Enclustra Mercury+ ST1 Base Board"
     BoardProducer: enclustra

@@ -35,7 +35,7 @@ Boards:
     Bridges:
       - jtag
     Programmer: efinity_pgm
-    BoardURL: https://www.efinixinc.com/products-devkits-triont120.html
+    BoardURL: "https://www.efinixinc.com/products-devkits-triont120bga576.html"
   - Id: efinix_t13_bga169_devkit
     BoardName: Trion T13 BGA169 Development Kit
     BoardProducer: efinix
@@ -43,7 +43,7 @@ Boards:
     Bridges:
       - jtag
     Programmer: efinity_pgm
-    BoardURL: https://www.efinixinc.com/products-devkits-triont13.html
+    Status: eol
   - Id: efinix_t20_bga169_devkit
     BoardName: Trion T20 BGA169 Development Kit
     BoardProducer: efinix
@@ -77,7 +77,7 @@ Boards:
     Bridges:
       - jtag
     Programmer: efinity_pgm
-    BoardURL: https://www.efinixinc.com/products-devkits-triont35.html
+    Status: eol
   - Id: efinix_t8_bga81_devkit
     BoardName: Trion T8 BGA81 Development Kit
     Devices:
@@ -114,7 +114,7 @@ Boards:
     Bridges:
       - jtag
     Programmer: efinity_pgm
-    BoardURL: https://www.crowdsupply.com/efinix/fireant
+    Status: eol
   - Id: trion_t20
     BoardName: Trion T20
     BoardProducer: efinix

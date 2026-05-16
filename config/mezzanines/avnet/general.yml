@@ -18,7 +18,7 @@ Mezzanines:
       - cypress_s25fl128s
       - microchip_lan8710a
       - silabs_cp2104
-    BoardURL: "https://www.avnet.com/shop/us/products/avnet-engineering-services/aes-z7mb-7z010-som-g/"
+    BoardURL: "https://www.tria-technologies.com/product/microzed/"
     Status: active
     DefaultCarrier: avnet_microzed_iocc
     CompatibleBoards:
@@ -40,7 +40,7 @@ Mezzanines:
       - cypress_s25fl128s
       - microchip_lan8710a
       - silabs_cp2104
-    BoardURL: "https://www.avnet.com/shop/us/products/avnet-engineering-services/aes-z7mb-7z020-som-g/"
+    BoardURL: "https://www.tria-technologies.com/product/microzed/"
     Status: active
     DefaultCarrier: avnet_microzed_iocc
     CompatibleBoards:
@@ -141,8 +141,7 @@ Mezzanines:
     Devices:
       - adi_adv7611
       - adi_adv7511
-    BoardURL: "https://www.avnet.com/shop/us/products/avnet-engineering-services/aes-fmc-imageon-g-3074457345623664485/"
-    Status: active
+    Status: eol
   - Id: avnet_fmc_motorcontrol
     Name: "Avnet FMC Motor Control FMC Card"
     Producer: avnet
@@ -152,8 +151,7 @@ Mezzanines:
       - adc_chip
       - dac_chip
       - power_monitor_i2c
-    BoardURL: "https://www.avnet.com/shop/us/products/avnet-engineering-services/aes-fmc-motcon2-g-3074457345629081032/"
-    Status: active
+    Status: eol
   - Id: avnet_fmc_hdmi_cam
     Name: "Avnet HDMI Input/Output FMC + Camera"
     Producer: avnet
