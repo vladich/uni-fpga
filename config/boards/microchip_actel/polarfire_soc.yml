@@ -13,19 +13,6 @@ Boards:
       - jtag
     Programmer: libero_fpexpress
     BoardURL: https://www.beagleboard.org/boards/beaglev-fire
-  - Id: enclustra_mars_ma3
-    BoardName: Mars MA3
-    Devices:
-      - micron_mt40a256m16
-      - macronix_mx25l25645g
-      - marvell_88e1512
-      - emmc_chip_generic
-    BoardProducer: enclustra
-    Chip: MPFS250T-FCVG484E
-    Bridges:
-      - jtag
-    Programmer: libero_fpexpress
-    BoardURL: https://www.enclustra.com/en/products/fpga-modules/mars-ma3/
   - Id: microchip_beaglev_fire
     BoardName: BeagleV-Fire
     Devices:

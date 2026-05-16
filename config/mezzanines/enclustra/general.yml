@@ -16,7 +16,7 @@ Mezzanines:
       - micron_mt41k256m16
       - macronix_mx25l25645g
       - marvell_88e1512
-    BoardURL: "https://www.enclustra.com/en/products/fpga-modules/mars-zx2/"
+    BoardURL: "https://www.enclustra.com/en/products/system-on-chip-modules/mars-zx2/"
     Status: active
     DefaultCarrier: enclustra_mars_eb1
     CompatibleBoards:
@@ -36,7 +36,7 @@ Mezzanines:
       - micron_mt41k256m16
       - macronix_mx25l25645g
       - marvell_88e1512
-    BoardURL: "https://www.enclustra.com/en/products/fpga-modules/mars-zx3/"
+    BoardURL: "https://www.enclustra.com/en/products/system-on-chip-modules/mars-zx3/"
     Status: active
     DefaultCarrier: enclustra_mars_eb1
     CompatibleBoards:
@@ -56,8 +56,7 @@ Mezzanines:
       - micron_mt41k256m16
       - macronix_mx25l25645g
       - marvell_88e1512
-    BoardURL: "https://www.enclustra.com/en/products/fpga-modules/mars-mx2/"
-    Status: active
+    Status: eol
     DefaultCarrier: enclustra_mars_eb1
     CompatibleBoards:
       - enclustra_mars_eb1
@@ -76,8 +75,7 @@ Mezzanines:
       - micron_mt41k256m16
       - macronix_mx25l25645g
       - marvell_88e1512
-    BoardURL: "https://www.enclustra.com/en/products/fpga-modules/mars-pm3/"
-    Status: active
+    Status: eol
     DefaultCarrier: enclustra_mars_eb1
     CompatibleBoards:
       - enclustra_mars_eb1
@@ -96,7 +94,7 @@ Mezzanines:
       - micron_mt40a256m16
       - marvell_88e1512
       - emmc_chip_generic
-    BoardURL: "https://www.enclustra.com/en/products/fpga-modules/mars-xu3/"
+    BoardURL: "https://www.enclustra.com/en/products/system-on-chip-modules/mars-xu3/"
     Status: active
     DefaultCarrier: enclustra_mars_eb1
     CompatibleBoards:
@@ -116,7 +114,7 @@ Mezzanines:
       - micron_mt41k256m16
       - macronix_mx25l25645g
       - marvell_88e1512
-    BoardURL: "https://www.enclustra.com/en/products/fpga-modules/mars-kx2/"
+    BoardURL: "https://www.enclustra.com/en/products/fpga-modules/mercury-kx2/"
     Status: active
     DefaultCarrier: enclustra_mars_eb1
     CompatibleBoards:
@@ -138,8 +136,7 @@ Mezzanines:
       - macronix_mx25l25645g
       - marvell_88e1512
       - emmc_chip_generic
-    BoardURL: "https://www.enclustra.com/en/products/fpga-modules/mars-ma3/"
-    Status: active
+    Status: eol
     DefaultCarrier: enclustra_mars_eb1
     CompatibleBoards:
       - enclustra_mars_eb1
@@ -160,7 +157,7 @@ Mezzanines:
       - marvell_88e1512
       - microchip_usb3343
       - emmc_chip_generic
-    BoardURL: "https://www.enclustra.com/en/products/fpga-modules/mercury-xu1/"
+    BoardURL: "https://www.enclustra.com/en/products/system-on-chip-modules/mercury-xu1/"
     Status: active
     DefaultCarrier: enclustra_mercury_plus_st1
     CompatibleBoards:
@@ -184,7 +181,7 @@ Mezzanines:
       - marvell_88e1512
       - microchip_usb3343
       - emmc_chip_generic
-    BoardURL: "https://www.enclustra.com/en/products/fpga-modules/mercury-xu5/"
+    BoardURL: "https://www.enclustra.com/en/products/system-on-chip-modules/mercury-xu5/"
     Status: active
     DefaultCarrier: enclustra_mercury_plus_st1
     CompatibleBoards:
@@ -208,7 +205,7 @@ Mezzanines:
       - marvell_88e1512
       - microchip_usb3343
       - emmc_chip_generic
-    BoardURL: "https://www.enclustra.com/en/products/fpga-modules/mercury-xu7/"
+    BoardURL: "https://www.enclustra.com/en/products/system-on-chip-modules/mercury-xu7/"
     Status: active
     DefaultCarrier: enclustra_mercury_plus_st1
     CompatibleBoards:
@@ -232,7 +229,7 @@ Mezzanines:
       - marvell_88e1512
       - microchip_usb3343
       - emmc_chip_generic
-    BoardURL: "https://www.enclustra.com/en/products/fpga-modules/mercury-xu8/"
+    BoardURL: "https://www.enclustra.com/en/products/system-on-chip-modules/mercury-xu8/"
     Status: active
     DefaultCarrier: enclustra_mercury_plus_st1
     CompatibleBoards:
@@ -253,7 +250,7 @@ Mezzanines:
       - micron_mt41k256m16
       - macronix_mx25l25645g
       - marvell_88e1512
-    BoardURL: "https://www.enclustra.com/en/products/fpga-modules/mercury-zx1/"
+    BoardURL: "https://www.enclustra.com/en/products/system-on-chip-modules/mercury-zx1/"
     Status: active
     DefaultCarrier: enclustra_mercury_plus_st1
     CompatibleBoards:
@@ -275,7 +272,7 @@ Mezzanines:
       - macronix_mx25l25645g
       - marvell_88e1512
       - emmc_chip_generic
-    BoardURL: "https://www.enclustra.com/en/products/fpga-modules/mercury-zx5/"
+    BoardURL: "https://www.enclustra.com/en/products/system-on-chip-modules/mercury-zx5/"
     Status: active
     DefaultCarrier: enclustra_mercury_plus_st1
     CompatibleBoards:

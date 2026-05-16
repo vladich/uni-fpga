@@ -41,18 +41,6 @@ Boards:
       - jtag
     Programmer: quartus_pgm
     BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&CategoryNo=183&No=921
-  - Id: enclustra_mars_pm3
-    BoardName: Mars PM3
-    Devices:
-      - micron_mt41k256m16
-      - macronix_mx25l25645g
-      - marvell_88e1512
-    BoardProducer: enclustra
-    Chip: 5CGXFC5C6F23C7N
-    Bridges:
-      - jtag
-    Programmer: quartus_pgm
-    BoardURL: https://www.enclustra.com/en/products/fpga-modules/mars-pm3/
   - Id: intel_cyclonev_e_devkit
     BoardName: Cyclone V E FPGA Development Kit
     Devices:
@@ -139,7 +127,7 @@ Boards:
       - macronix_mx25l25645g
       - marvell_88e1512
       - emmc_chip_generic
-    BoardURL: "https://www.enclustra.com/en/products/fpga-modules/mercury-sa1/"
+    BoardURL: "https://www.enclustra.com/en/products/system-on-chip-modules/mercury-sa1/"
     Status: active
   - Id: enclustra_mercury_sa2
     BoardName: "Enclustra Mercury SA2 Cyclone V SoC SoM (HPS+FPGA)"
@@ -158,5 +146,5 @@ Boards:
       - macronix_mx25l25645g
       - marvell_88e1512
       - emmc_chip_generic
-    BoardURL: "https://www.enclustra.com/en/products/fpga-modules/mercury-sa2/"
+    BoardURL: "https://www.enclustra.com/en/products/system-on-chip-modules/mercury-sa2/"
     Status: active

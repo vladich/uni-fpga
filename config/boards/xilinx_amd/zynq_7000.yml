@@ -528,62 +528,6 @@ Boards:
       - usb_powered
     BoardURL: https://allaboutfpga.com/product/edge-zynq-soc-fpga-development-board/
     Status: active
-  - Id: enclustra_mars_zx2
-    BoardName: Mars ZX2
-    Devices:
-      - micron_mt41k256m16
-      - macronix_mx25l25645g
-      - marvell_88e1512
-    BoardProducer: enclustra
-    Chip: XC7Z020-2CLG400I
-    Bridges:
-      - jtag
-    Programmer: vivado_hw
-    Features:
-      - ddr3_memory
-      - qspi_flash
-      - ethernet_phy_gigabit
-      - usb_2_otg
-      - jtag_header
-    BoardURL: https://www.enclustra.com/en/products/system-on-chip-modules/mars-zx2/
-    Status: active
-  - Id: enclustra_mars_zx3
-    BoardName: Mars ZX3
-    Devices:
-      - micron_mt41k256m16
-      - macronix_mx25l25645g
-      - marvell_88e1512
-    BoardProducer: enclustra
-    Chip: XC7Z020-2CLG484I
-    Bridges:
-      - jtag
-    Programmer: vivado_hw
-    BoardURL: https://www.enclustra.com/en/products/fpga-modules/mars-zx3/
-  - Id: enclustra_mercury_plus_zx1
-    BoardName: Mercury+ ZX1
-    Devices:
-      - micron_mt41k256m16
-      - macronix_mx25l25645g
-      - marvell_88e1512
-    BoardProducer: enclustra
-    Chip: XC7Z030-2FBG676I
-    Bridges:
-      - jtag
-    Programmer: vivado_hw
-    BoardURL: https://www.enclustra.com/en/products/fpga-modules/mercury-zx1/
-  - Id: enclustra_mercury_plus_zx5
-    BoardName: Mercury+ ZX5
-    Devices:
-      - micron_mt41k256m16
-      - macronix_mx25l25645g
-      - marvell_88e1512
-      - emmc_chip_generic
-    BoardProducer: enclustra
-    Chip: XC7Z045-2FFG900I
-    Bridges:
-      - jtag
-    Programmer: vivado_hw
-    BoardURL: https://www.enclustra.com/en/products/fpga-modules/mercury-zx5/
   - Id: imperix_bboard_pro
     BoardName: B-Board PRO
     BoardProducer: imperix
@@ -1791,7 +1735,7 @@ Boards:
       - marvell_88e1512
       - ftdi_ft4232h
       - microsd_socket_generic
-    BoardURL: "https://www.enclustra.com/en/products/base-boards/mars-pe1/"
+    BoardURL: "https://www.enclustra.com/en/products/base-boards/mars-eb1/"
     Status: active
   - Id: iwave_rainbow_g26m
     BoardName: "iW-RainboW-G26M Zynq-7045 SoM"

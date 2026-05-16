@@ -24,42 +24,6 @@ Boards:
       - barrel_jack_input
     BoardURL: https://allaboutfpga.com/product/edge-kintex-7-fpga-development-board/
     Status: active
-  - Id: enclustra_mars_kx2
-    BoardName: Mars KX2
-    Devices:
-      - micron_mt41k256m16
-      - macronix_mx25l25645g
-      - marvell_88e1512
-    BoardProducer: enclustra
-    Chip: XC7K160T-2FFG676I
-    Bridges:
-      - jtag
-    Programmer: vivado_hw
-    BoardURL: https://www.enclustra.com/en/products/fpga-modules/mars-kx2/
-  - Id: enclustra_mercury_kx1
-    BoardName: Mercury KX1
-    Devices:
-      - micron_mt41k256m16
-      - macronix_mx25l25645g
-      - marvell_88e1512
-    BoardProducer: enclustra
-    Chip: XC7K160T-2FFG676I
-    Bridges:
-      - jtag
-    Programmer: vivado_hw
-    BoardURL: https://www.enclustra.com/en/products/fpga-modules/mercury-kx1/
-  - Id: enclustra_mercury_kx2
-    BoardName: Mercury KX2
-    Devices:
-      - micron_mt41k256m16
-      - macronix_mx25l25645g
-      - marvell_88e1512
-    BoardProducer: enclustra
-    Chip: XC7K325T-2FFG900I
-    Bridges:
-      - jtag
-    Programmer: vivado_hw
-    BoardURL: https://www.enclustra.com/en/products/fpga-modules/mercury-kx2/
   - Id: genesys_2
     BoardName: Genesys 2
     Devices:

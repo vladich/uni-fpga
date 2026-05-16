@@ -391,54 +391,6 @@ Boards:
       - jtag_header
     BoardURL: https://www.enclustra.com/en/products/system-on-chip-modules/andromeda-xzu90/
     Status: active
-  - Id: enclustra_mars_xu3
-    BoardName: Mars XU3
-    Devices:
-      - micron_mt40a256m16
-      - marvell_88e1512
-      - emmc_chip_generic
-    BoardProducer: enclustra
-    Chip: XCZU3EG-2SBVA484I
-    Bridges:
-      - jtag
-    Programmer: vivado_hw
-    Features:
-      - ddr4_memory
-      - emmc_flash
-      - qspi_flash
-      - ethernet_phy_gigabit
-      - usb_2_otg
-      - jtag_header
-    BoardURL: https://www.enclustra.com/en/products/system-on-chip-modules/mars-xu3/
-    Status: active
-  - Id: enclustra_mercury_plus_xu1
-    BoardName: Mercury+ XU1
-    Devices:
-      - micron_mt40a256m16
-      - macronix_mx25l25645g
-      - marvell_88e1512
-      - microchip_usb3343
-      - emmc_chip_generic
-    BoardProducer: enclustra
-    Chip: XCZU2EG-1SFVC784I
-    Bridges:
-      - jtag
-    Programmer: vivado_hw
-    BoardURL: https://www.enclustra.com/en/products/fpga-modules/mercury-xu1/
-  - Id: enclustra_mercury_plus_xu5
-    BoardName: Mercury+ XU5
-    Devices:
-      - micron_mt40a256m16
-      - macronix_mx25l25645g
-      - marvell_88e1512
-      - microchip_usb3343
-      - emmc_chip_generic
-    BoardProducer: enclustra
-    Chip: XCZU5EV-1SFVC784I
-    Bridges:
-      - jtag
-    Programmer: vivado_hw
-    BoardURL: https://www.enclustra.com/en/products/fpga-modules/mercury-xu5/
   - Id: enclustra_mercury_plus_xu6
     BoardName: Mercury+ XU6
     Devices:
@@ -459,7 +411,7 @@ Boards:
       - ethernet_phy_gigabit
       - usb_3_host
       - jtag_header
-    BoardURL: https://www.enclustra.com/en/products/system-on-chip-modules/mercury-plus-xu6/
+    BoardURL: "https://www.enclustra.com/en/products/system-on-chip-modules/mercury-xu6/"
     Status: active
   - Id: enclustra_mercury_plus_xu61
     BoardName: Mercury+ XU61
@@ -481,36 +433,8 @@ Boards:
       - ethernet_phy_gigabit
       - usb_3_host
       - jtag_header
-    BoardURL: https://www.enclustra.com/en/products/system-on-chip-modules/mercury-plus-xu61/
+    BoardURL: "https://www.enclustra.com/en/products/system-on-chip-modules/mercury-xu61/"
     Status: active
-  - Id: enclustra_mercury_plus_xu7
-    BoardName: Mercury+ XU7
-    Devices:
-      - micron_mt40a256m16
-      - macronix_mx25l25645g
-      - marvell_88e1512
-      - microchip_usb3343
-      - emmc_chip_generic
-    BoardProducer: enclustra
-    Chip: XCZU7EV-1FFVC1156I
-    Bridges:
-      - jtag
-    Programmer: vivado_hw
-    BoardURL: https://www.enclustra.com/en/products/fpga-modules/mercury-xu7/
-  - Id: enclustra_mercury_plus_xu8
-    BoardName: Mercury+ XU8
-    Devices:
-      - micron_mt40a256m16
-      - macronix_mx25l25645g
-      - marvell_88e1512
-      - microchip_usb3343
-      - emmc_chip_generic
-    BoardProducer: enclustra
-    Chip: XCZU15EG-1FFVC900I
-    Bridges:
-      - jtag
-    Programmer: vivado_hw
-    BoardURL: https://www.enclustra.com/en/products/fpga-modules/mercury-xu8/
   - Id: enclustra_mercury_plus_xu9
     BoardName: Mercury+ XU9
     Devices:
@@ -531,7 +455,7 @@ Boards:
       - ethernet_phy_gigabit
       - usb_3_host
       - jtag_header
-    BoardURL: https://www.enclustra.com/en/products/system-on-chip-modules/mercury-plus-xu9/
+    BoardURL: "https://www.enclustra.com/en/products/system-on-chip-modules/mercury-xu9/"
     Status: active
   - Id: htg_z920
     BoardName: HTG-Z920 Zynq UltraScale+ MPSoC PCIe Development Platform
@@ -1705,7 +1629,7 @@ Boards:
       - adi_adv7511
       - ftdi_ft4232h
       - microsd_socket_generic
-    BoardURL: "https://www.enclustra.com/en/products/base-boards/mercury-pe1/"
+    BoardURL: "https://www.enclustra.com/en/products/base-boards/mercury-pe1-200-300-400/"
     Status: active
   - Id: enclustra_mercury_plus_pe3
     BoardName: "Enclustra Mercury+ PE3 PCIe Base Board"
@@ -1748,7 +1672,7 @@ Boards:
       - macronix_mx25l25645g
       - marvell_88e1512
       - emmc_chip_generic
-    BoardURL: "https://www.enclustra.com/en/products/fpga-modules/mercury-xu5/"
+    BoardURL: "https://www.enclustra.com/en/products/system-on-chip-modules/mercury-xu5/"
     Status: eol
   - Id: enclustra_mercury_xu7
     BoardName: "Enclustra Mercury XU7 SoM (legacy, pre-Mercury+)"
@@ -1767,7 +1691,7 @@ Boards:
       - macronix_mx25l25645g
       - marvell_88e1512
       - emmc_chip_generic
-    BoardURL: "https://www.enclustra.com/en/products/fpga-modules/mercury-xu7/"
+    BoardURL: "https://www.enclustra.com/en/products/system-on-chip-modules/mercury-xu7/"
     Status: eol
   - Id: enclustra_mercury_xu8
     BoardName: "Enclustra Mercury XU8 SoM (legacy, pre-Mercury+)"
@@ -1786,7 +1710,7 @@ Boards:
       - macronix_mx25l25645g
       - marvell_88e1512
       - emmc_chip_generic
-    BoardURL: "https://www.enclustra.com/en/products/fpga-modules/mercury-xu8/"
+    BoardURL: "https://www.enclustra.com/en/products/system-on-chip-modules/mercury-xu8/"
     Status: eol
   - Id: htg_z930
     BoardName: "HTG-Z930 Zynq UltraScale+ MPSoC ZU11EG PCIe Dev Platform"

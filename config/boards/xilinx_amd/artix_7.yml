@@ -263,18 +263,6 @@ Boards:
       - usb_powered
     BoardURL: https://allaboutfpga.com/product/edge-artix-7-fpga-development-board/
     Status: active
-  - Id: enclustra_mars_mx2
-    BoardName: Mars MX2
-    Devices:
-      - micron_mt41k256m16
-      - macronix_mx25l25645g
-      - marvell_88e1512
-    BoardProducer: enclustra
-    Chip: XC7A200T-2FBG484I
-    Bridges:
-      - jtag
-    Programmer: vivado_hw
-    BoardURL: https://www.enclustra.com/en/products/fpga-modules/mars-mx2/
   - Id: nexys4
     BoardName: Nexys 4
     Devices:

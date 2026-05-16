@@ -302,7 +302,6 @@ Boards:
     Devices:
       - macronix_mx25l25645g
       - marvell_88e1512
-    BoardURL: "https://www.enclustra.com/en/products/fpga-modules/mercury-ca1/"
     Status: eol
   - Id: alinx_ax530
     BoardName: AX530
