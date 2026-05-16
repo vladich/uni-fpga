@@ -17,7 +17,7 @@ Mezzanines:
       - micron_mt40a256m16
       - macronix_mx25l25645g
       - marvell_88e1512
-    BoardURL: "https://www.iwavesystems.com/product/zynq-ultrascale-mpsoc-system-on-module/"
+    BoardURL: "https://www.iwavesystems.com/product/zynq-ultrascale-mpsoc-zu7-zu5-zu4/"
     Status: active
     DefaultCarrier: iwave_rainbow_g30d
   - Id: iwave_g35m_som
@@ -35,7 +35,7 @@ Mezzanines:
       - micron_mt40a256m16
       - macronix_mx25l25645g
       - marvell_88e1512
-    BoardURL: "https://www.iwavesystems.com/product/zynq-ultrascale-mpsoc-uhs-som/"
+    BoardURL: "https://www.iwavesystems.com/product/zynq-ultrascale-mpsoc-zu19-zu17-zu11/"
     Status: active
     DefaultCarrier: iwave_rainbow_g35d
   - Id: iwave_g36m_som
@@ -69,7 +69,7 @@ Mezzanines:
     Devices:
       - micron_mt40a256m16
       - macronix_mx25l25645g
-    BoardURL: "https://www.iwavesystems.com/product/zynq-ultrascale-rfsoc-system-on-module/"
+    BoardURL: "https://www.iwavesystems.com/product/zynq-ultrascale-rfsoc-zu49-zu39-zu29dr/"
     Status: active
     DefaultCarrier: iwave_rainbow_g42p
   - Id: iwave_g45m_som
@@ -86,7 +86,7 @@ Mezzanines:
     Devices:
       - micron_mt40a256m16
       - macronix_mx25l25645g
-    BoardURL: "https://www.iwavesystems.com/product/intel-stratix-10-soc-system-on-module/"
+    BoardURL: "https://www.iwavesystems.com/product/stratix-10-soc-fpga/"
     Status: active
     DefaultCarrier: iwave_rainbow_g45m
   - Id: iwave_g57m_som

@@ -1754,8 +1754,7 @@ Boards:
       - micron_mt41k256m16
       - macronix_mx25l25645g
       - marvell_88e1512
-    BoardURL: "https://www.iwavesystems.com/product/zynq-7045-system-on-module/"
-    Status: active
+    Status: eol
   - Id: numato_styx_zynq_z2_dev
     BoardName: "Numato Styx Zynq Development Board (carrier)"
     BoardProducer: numato_lab

@@ -125,27 +125,6 @@ Boards:
       - usb_jtag_bridge
     BoardURL: https://www.hitechglobal.com/Boards/Versal_PCIE_Gen5.htm
     Status: active
-  - Id: iwave_rainbow_g57m
-    BoardName: iW-RainboW-G57M Versal AI Edge SoM
-    Devices:
-      - ftdi_ft4232h
-      - micron_mt40a256m16
-      - macronix_mx25l25645g
-      - microsd_socket_generic
-    BoardProducer: iwave
-    Chip: XCVE2002-1LSESFVA784
-    Bridges:
-      - jtag
-    Programmer: vivado_hw
-    Features:
-      - lpddr4_memory
-      - qspi_flash
-      - emmc_flash
-      - ethernet_phy_gigabit
-      - usb_2_otg
-      - usb_jtag_bridge
-    BoardURL: https://www.iwavesystems.com/product/versal-prime-ai-edge/
-    Status: active
   - Id: iwave_rainbow_g63m
     BoardName: iW-RainboW-G63M Versal Premium SoM
     Devices:
@@ -457,5 +436,5 @@ Boards:
       - qsfp_dd_cage
     Devices:
       - ftdi_ft4232h
-    BoardURL: "https://www.iwavesystems.com/product/versal-hbm-system-on-module/"
+    BoardURL: "https://www.iwavesystems.com/product/versal-premium-vp1802/"
     Status: active

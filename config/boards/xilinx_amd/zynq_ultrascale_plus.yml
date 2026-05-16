@@ -536,7 +536,7 @@ Boards:
       - sata_host
       - fmc_hpc
       - jtag_header
-    BoardURL: https://www.iwavesystems.com/product/zynq-ultrascale-mpsoc-system-on-module/
+    BoardURL: "https://www.iwavesystems.com/product/zynq-ultrascale-mpsoc-zu7-zu5-zu4/"
     Status: active
   - Id: iwave_rainbow_g35d
     BoardName: iW-RainboW-G35D Zynq UltraScale+ MPSoC (ZU19/17/11EG) UHS Dev Kit
@@ -569,7 +569,7 @@ Boards:
       - fmc_hpc
       - qsfp_cage
       - jtag_header
-    BoardURL: https://www.iwavesystems.com/product/zynq-ultrascale-mpsoc-zu19-zu17-zu11-eg-system-on-module/
+    BoardURL: "https://www.iwavesystems.com/product/zynq-ultrascale-mpsoc-zu19-zu17-zu11/"
     Status: active
   - Id: iwave_rainbow_g36d
     BoardName: iW-RainboW-G36D Zynq UltraScale+ MPSoC (ZU5/4/3T/3/2/1) Dev Kit
@@ -600,7 +600,7 @@ Boards:
       - pcie_endpoint
       - fmc_lpc
       - jtag_header
-    BoardURL: https://iwave-global.com/product/zynq-ultrascale-mpsoc-zu5-zu4-zu3t-zu3-zu2-zu1-system-on-module/
+    BoardURL: "https://www.iwavesystems.com/product/zynq-ultrascale-mpsoc-zu5-zu4-zu3t-zu3-zu2-zu1/"
     Status: active
   - Id: myir_fz3_card
     BoardName: MYIR FZ3 Card Deep-Learning Accelerator (ZU3EG)

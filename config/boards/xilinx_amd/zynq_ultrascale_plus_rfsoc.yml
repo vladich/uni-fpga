@@ -251,7 +251,7 @@ Boards:
       - pcie_endpoint
       - qsfp_cage
       - jtag_header
-    BoardURL: https://iwave-global.com/product/zynq-ultrascale-rfsoc-zu29-39-49dr-pcie-card/
+    BoardURL: "https://www.iwavesystems.com/product/zynq-ultrascale-rfsoc-zu49-zu39-zu29dr/"
     Status: active
   - Id: iwave_rainbow_g79m
     BoardName: iW-RainboW-G79M Zynq UltraScale+ RFSoC DFE SoM
