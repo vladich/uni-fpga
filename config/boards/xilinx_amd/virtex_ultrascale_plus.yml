@@ -398,8 +398,7 @@ Boards:
       - silabs_si570
       - micron_n25q256a
       - ddr4_sodimm_socket
-    BoardURL: "https://www.hitechglobal.com/Boards/UltraScale+_PCIe.htm"
-    Status: active
+    Status: eol
   - Id: bittware_xup_vvh
     BoardName: "BittWare XUP-VVH Virtex UltraScale+ HBM (VU37P/VU35P)"
     BoardProducer: bittware

@@ -9,8 +9,7 @@ Mezzanines:
     Connector: fmc_plus
     Features:
       - qsfp_cage
-    BoardURL: "https://www.hitechglobal.com/DaughterCards/FMC-X6QSFP28.htm"
-    Status: active
+    Status: eol
   - Id: htg_fmc_x4qsfpdd
     Name: "HTG-FMC-X4QSFPDD 4-Port QSFP-DD FMC+ Daughter Card"
     Producer: hitech_global
@@ -18,8 +17,7 @@ Mezzanines:
     Connector: fmc_plus
     Features:
       - qsfp_dd_cage
-    BoardURL: "https://www.hitechglobal.com/DaughterCards/FMC-X4QSFPDD.htm"
-    Status: active
+    Status: eol
   - Id: htg_fmc_dp_quad_sfp
     Name: "HTG-FMC-DP-QUAD-SFP+ Daughter Card"
     Producer: hitech_global
@@ -27,8 +25,7 @@ Mezzanines:
     Connector: fmc_hpc
     Features:
       - sfp_cage
-    BoardURL: "https://www.hitechglobal.com/DaughterCards/QuadSFP.htm"
-    Status: active
+    Status: eol
   - Id: htg_fmc_x4sfp28
     Name: "HTG-FMC-X4SFP28 4-Port SFP28 FMC+ Daughter Card (25 GbE)"
     Producer: hitech_global
@@ -36,8 +33,7 @@ Mezzanines:
     Connector: fmc_plus
     Features:
       - ethernet_25gbe_sfp28
-    BoardURL: "https://www.hitechglobal.com/DaughterCards/4SFP28.htm"
-    Status: active
+    Status: eol
   - Id: htg_fmc_pcie_gen3
     Name: "HTG-FMC-PCIE-Gen3 FMC PCIe x8 Daughter Card"
     Producer: hitech_global
@@ -45,8 +41,7 @@ Mezzanines:
     Connector: fmc_hpc
     Features:
       - pcie_endpoint
-    BoardURL: "https://www.hitechglobal.com/DaughterCards/FMC-PCIE.htm"
-    Status: active
+    Status: eol
   - Id: htg_fmc_ddr4_sodimm
     Name: "HTG-FMC-DDR4-SODIMM Dual DDR4 SODIMM FMC Card"
     Producer: hitech_global
@@ -56,8 +51,7 @@ Mezzanines:
       - ddr4_memory
     Devices:
       - ddr4_sodimm_socket
-    BoardURL: "https://www.hitechglobal.com/DaughterCards/FMC-DDR4-SODIMM.htm"
-    Status: active
+    Status: eol
   - Id: htg_fmc_qdrii_plus
     Name: "HTG-FMC-QDRII+ QDR-II+ SRAM FMC Card"
     Producer: hitech_global
@@ -65,8 +59,7 @@ Mezzanines:
     Connector: fmc_hpc
     Features:
       - qdrii_sram
-    BoardURL: "https://www.hitechglobal.com/DaughterCards/FMC-QDRII+.htm"
-    Status: active
+    Status: eol
   - Id: htg_fmc_hdmi_tx_rx
     Name: "HTG-FMC-HDMI HDMI TX/RX FMC Daughter Card"
     Producer: hitech_global
@@ -75,8 +68,7 @@ Mezzanines:
     Features:
       - hdmi_input
       - hdmi_output
-    BoardURL: "https://www.hitechglobal.com/DaughterCards/FMC-HDMI.htm"
-    Status: active
+    Status: eol
   - Id: htg_fmc_dual_sata
     Name: "HTG-FMC-2SATA Dual SATA Host FMC Card"
     Producer: hitech_global
@@ -84,8 +76,7 @@ Mezzanines:
     Connector: fmc_hpc
     Features:
       - sata_host
-    BoardURL: "https://www.hitechglobal.com/DaughterCards/FMC-SATA.htm"
-    Status: active
+    Status: eol
   - Id: htg_fmc_nvme
     Name: "HTG-FMC-NVMe Dual M.2 NVMe FMC Card"
     Producer: hitech_global
@@ -93,5 +84,4 @@ Mezzanines:
     Connector: fmc_hpc
     Features:
       - nvme_socket
-    BoardURL: "https://www.hitechglobal.com/DaughterCards/FMC-NVMe.htm"
-    Status: active
+    Status: eol

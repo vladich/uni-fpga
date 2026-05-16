@@ -202,7 +202,7 @@ Boards:
       - usb_uart_bridge
       - sfp_cage
       - jtag_header
-    BoardURL: https://www.hitechglobal.com/Boards/ZYNQ_UltraScale+_RFSoC.htm
+    BoardURL: "https://www.hitechglobal.com/Boards/Zynq_RFSoc.htm"
     Status: active
   - Id: htg_zrf_em
     BoardName: HTG-ZRF-EM Zynq RFSoC Extended Memory ZU49DR
@@ -560,5 +560,4 @@ Boards:
       - silabs_si5342
       - micron_n25q256a
       - ddr4_sodimm_socket
-    BoardURL: "https://www.hitechglobal.com/Boards/ZRF_DC.htm"
-    Status: active
+    Status: eol

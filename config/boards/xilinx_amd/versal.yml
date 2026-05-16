@@ -443,8 +443,7 @@ Boards:
       - silabs_si5342
       - micron_n25q256a
       - ddr4_sodimm_socket
-    BoardURL: "https://www.hitechglobal.com/Boards/Versal_VSL15.htm"
-    Status: active
+    Status: eol
   - Id: iwave_rainbow_g46m
     BoardName: "iW-RainboW-G46M Versal HBM VHK158 SoM"
     BoardProducer: iwave

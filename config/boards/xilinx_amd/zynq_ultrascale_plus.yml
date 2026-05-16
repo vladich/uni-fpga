@@ -1734,7 +1734,7 @@ Boards:
       - micron_n25q256a
       - ddr4_sodimm_socket
       - microsd_socket_generic
-    BoardURL: "https://www.hitechglobal.com/Boards/Zynq_UltraScale_PCIe.htm"
+    BoardURL: "https://www.hitechglobal.com/Boards/Zynq_UltraScale+_PCIe.htm"
     Status: active
   - Id: myir_myd_kr260_kv260_clone
     BoardName: "MyIR MYC-CZU7EV / MYD-CZU7EV Industrial AI Edge Kit"

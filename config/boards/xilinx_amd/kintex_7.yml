@@ -72,7 +72,7 @@ Boards:
       - qspi_flash
       - usb_uart_bridge
       - jtag_header
-    BoardURL: https://www.hitechglobal.com/Boards/Kintex7_PCIExpress.htm
+    BoardURL: "https://www.hitechglobal.com/Boards/Kintex-7_PCIE.htm"
     Status: active
   - Id: htg_k700
     BoardName: HTG-K700 Kintex-7 PCIe Dev Board K410T
