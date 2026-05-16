@@ -23,7 +23,7 @@ Boards:
     Bridges:
       - jtag
     Programmer: quartus_pgm
-    BoardURL: https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/arria/10-gx.html
+    Status: eol
   - Id: intel_arria10_soc_devkit
     BoardName: Arria 10 SoC Development Kit
     Devices:
@@ -45,7 +45,7 @@ Boards:
     Bridges:
       - jtag
     Programmer: quartus_pgm
-    BoardURL: https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/arria/10-sx.html
+    Status: eol
   - Id: terasic_arria10_gx_devkit
     BoardName: Arria 10 GX FPGA Development Kit
     Devices:

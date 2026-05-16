@@ -96,7 +96,7 @@ Boards:
     Bridges:
       - jtag
     Programmer: quartus_pgm
-    BoardURL: https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/cyclone/iv-e.html
+    Status: eol
   - Id: intel_cycloneiv_gx_starter
     BoardName: Cyclone IV GX FPGA Starter Kit
     Devices:
@@ -121,8 +121,7 @@ Boards:
       - dip_switches
       - pcie_endpoint
       - fmc_hpc
-    BoardURL: https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/cyclone/iv-gx.html
-    Status: active
+    Status: eol
   - Id: marsohod3
     BoardName: Marsohod3
     BoardProducer: marsohod
@@ -305,3 +304,11 @@ Boards:
       - marvell_88e1512
     BoardURL: "https://www.enclustra.com/en/products/fpga-modules/mercury-ca1/"
     Status: eol
+  - Id: alinx_ax530
+    BoardName: AX530
+    BoardProducer: alinx
+    Chip: EP4CE30F23C8
+    Bridges:
+      - jtag
+    Programmer: quartus_pgm
+    BoardURL: https://alinx.com/en/detail/43

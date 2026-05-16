@@ -5,14 +5,6 @@ Producer: Altera (Intel)
 Family: Cyclone V SoC
 Description: Cyclone V with hard ARM A9 dual-core (HPS). Quartus Prime.
 Boards:
-  - Id: alinx_ax545
-    BoardName: AX545
-    BoardProducer: alinx
-    Chip: 5CSEMA5F31C6N
-    Bridges:
-      - jtag
-    Programmer: quartus_pgm
-    BoardURL: https://alinx.com/en/detail/44
   - Id: de0_nano_soc
     BoardName: DE0-Nano-SoC
     Devices:
@@ -92,7 +84,7 @@ Boards:
     Bridges:
       - jtag
     Programmer: quartus_pgm
-    BoardURL: https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/cyclone/v-soc.html
+    Status: eol
   - Id: mister_de10nano
     BoardName: MiSTer (DE10-Nano based)
     BoardProducer: mister

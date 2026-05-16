@@ -154,7 +154,7 @@ Boards:
     Bridges:
       - jtag
     Programmer: quartus_pgm
-    BoardURL: https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/agilex/7-f-series.html
+    BoardURL: "https://www.altera.com/products/devkit/po-3202/agilex-7-fpga-f-series-development-kit-p-tile-and-e-tile"
   - Id: intel_agilex7_devkit_iseries
     BoardName: Agilex 7 I-Series FPGA Development Kit
     Devices:
@@ -172,7 +172,7 @@ Boards:
     Bridges:
       - jtag
     Programmer: quartus_pgm
-    BoardURL: https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/agilex/7-i-series.html
+    Status: eol
   - Id: intel_agilex7_mseries_devkit
     BoardName: Agilex 7 M-Series FPGA Development Kit
     Devices:
@@ -198,8 +198,7 @@ Boards:
       - qsfp_cage
       - pcie_endpoint
       - ethernet_10gbe_sfp
-    BoardURL: https://www.altera.com/products/boards-and-kits/dev-kits/altera/agilex-7-m-series-fpga-development-kit.html
-    Status: active
+    Status: eol
   - Id: intel_agilex7_soc_devkit
     BoardName: Agilex 7 SoC FPGA Development Kit
     Devices:
@@ -220,7 +219,7 @@ Boards:
     Bridges:
       - jtag
     Programmer: quartus_pgm
-    BoardURL: https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/agilex/7-soc-f-series.html
+    BoardURL: "https://www.altera.com/products/devkit/po-3003/agilex-7-fpga-f-series-transceiver-soc-development-kit-p-tile-and-e-tile"
   - Id: intel_fpga_ai_suite_evalkit
     BoardName: FPGA AI Suite Evaluation Kit
     Devices:
@@ -242,8 +241,7 @@ Boards:
       - usb_uart_bridge
       - pcie_endpoint
       - qsfp_cage
-    BoardURL: https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/agilex/fpga-ai-suite.html
-    Status: active
+    Status: eol
   - Id: terasic_agilex7_f_series_2x_f_tile
     BoardName: Agilex 7 FPGA F-Series Development Kit (2x F-Tile, AGF023)
     Devices:

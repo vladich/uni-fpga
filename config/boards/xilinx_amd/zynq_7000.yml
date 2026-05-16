@@ -21,14 +21,6 @@ Boards:
       - jtag
     Programmer: vivado_hw
     BoardURL: https://alinx.com/en/detail/4
-  - Id: alinx_ax7035
-    BoardName: AX7035
-    BoardProducer: alinx
-    Chip: XC7Z035-2FFG676I
-    Bridges:
-      - jtag
-    Programmer: vivado_hw
-    BoardURL: https://alinx.com/en/detail/5
   - Id: alinx_ax7100
     BoardName: AX7100
     BoardProducer: alinx
@@ -36,7 +28,7 @@ Boards:
     Bridges:
       - jtag
     Programmer: vivado_hw
-    BoardURL: https://alinx.com/en/detail/7
+    BoardURL: "https://www.en.alinx.com/Product/SoC-development-Boards/Zynq-7000-SoC/AX7Z100B.html"
   - Id: alinx_ax7z015
     BoardName: Alinx AX7Z015
     BoardProducer: alinx
@@ -71,7 +63,7 @@ Boards:
       - pcie_endpoint
       - usb_uart_bridge
       - microsd_socket
-    BoardURL: https://www.en.alinx.com/Product/SoC-development-Boards/Zynq-7000-SoC.html
+    BoardURL: "https://www.en.alinx.com/detail/268"
     Status: active
   - Id: alinx_ax7z035
     BoardName: Alinx AX7Z035
@@ -112,22 +104,6 @@ Boards:
       - fmc_hpc
     BoardURL: https://www.en.alinx.com/detail/835
     Status: active
-  - Id: alinx_zx1
-    BoardName: ZX1
-    BoardProducer: alinx
-    Chip: XC7Z010-1CLG400C
-    Bridges:
-      - jtag
-    Programmer: vivado_hw
-    BoardURL: https://alinx.com/en/detail/15
-  - Id: alinx_zx2
-    BoardName: ZX2
-    BoardProducer: alinx
-    Chip: XC7Z020-1CLG400C
-    Bridges:
-      - jtag
-    Programmer: vivado_hw
-    BoardURL: https://alinx.com/en/detail/16
   - Id: arty_z7_10
     BoardName: Arty Z7-10
     Devices:

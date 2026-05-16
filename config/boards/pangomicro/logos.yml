@@ -23,9 +23,9 @@ Boards:
     BoardURL: https://www.pangomicro.com/open/4254.html
     Status: active
     Notes: "ALINX third-party board listed on Pango's official catalog page."
-  - Id: pangomicro_alinx_axp12
+  - Id: alinx_axp12
     BoardName: "ALINX AXP12 Development Board"
-    BoardProducer: pangomicro
+    BoardProducer: alinx
     Chip: PGL12G-6MBG324
     Bridges:
       - jtag
@@ -179,9 +179,9 @@ Boards:
     BoardURL: https://www.pangomicro.com/open/4265.html
     Status: active
     Notes: "ALINX board with 4x AV inputs."
-  - Id: pangomicro_alinx_axp50_teaching_box
+  - Id: alinx_axp50_teaching_box
     BoardName: "ALINX AXP50 Teaching Experimental Kit (教学实验箱)"
-    BoardProducer: pangomicro
+    BoardProducer: alinx
     Chip: PGL50H-6IFBG484
     Bridges:
       - jtag
@@ -200,9 +200,9 @@ Boards:
     BoardURL: https://www.pangomicro.com/open/4267.html
     Status: active
     Notes: "ALINX education/competition kit; 1 GB DDR3."
-  - Id: pangomicro_alinx_axpgl50h
+  - Id: alinx_axpgl50h
     BoardName: "ALINX AXPGL50H Development Board"
-    BoardProducer: pangomicro
+    BoardProducer: alinx
     Chip: PGL50H-6IFBG484
     Bridges:
       - jtag

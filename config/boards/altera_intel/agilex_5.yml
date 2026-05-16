@@ -30,7 +30,7 @@ Boards:
       - microsd_socket
       - ethernet_phy_gigabit
       - pcie_endpoint
-    BoardURL: https://www.altera.com/products/boards-and-kits/dev-kits/altera/agilex-5-d-series-029-compact-development-kit.html
+    BoardURL: "https://www.altera.com/products/devkit/po-3196/agilex-5-fpga-e-series-013b-development-kit"
     Status: active
   - Id: intel_agilex5_devkit
     BoardName: Agilex 5 FPGA Development Kit
@@ -50,7 +50,7 @@ Boards:
     Bridges:
       - jtag
     Programmer: quartus_pgm
-    BoardURL: https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/agilex/5.html
+    BoardURL: "https://www.altera.com/products/devkit/po-3196/agilex-5-fpga-e-series-013b-development-kit"
   - Id: iwave_rainbow_g58m
     BoardName: iW-RainboW-G58M Intel Agilex 5 FPGA SoM
     Devices:

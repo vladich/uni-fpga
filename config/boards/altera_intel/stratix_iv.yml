@@ -29,8 +29,7 @@ Boards:
       - fmc_hpc
       - sfp_cage
       - ethernet_10gbe_sfp
-    BoardURL: https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/stratix/iv-gt.html
-    Status: active
+    Status: eol
   - Id: intel_stratixiv_gx_devkit
     BoardName: Stratix IV GX FPGA Development Kit
     Devices:
@@ -55,8 +54,7 @@ Boards:
       - fmc_hpc
       - sfp_cage
       - ethernet_phy_gigabit
-    BoardURL: https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/stratix/iv-gx.html
-    Status: active
+    Status: eol
   - Id: terasic_de4
     BoardName: DE4
     Devices:

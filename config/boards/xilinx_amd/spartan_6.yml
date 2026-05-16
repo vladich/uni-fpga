@@ -26,7 +26,7 @@ Boards:
   - Id: alinx_ax516
     BoardName: AX516
     BoardProducer: alinx
-    Chip: XC6SLX16-2FTG256C
+    Chip: XC6SLX16-2CSG324
     Bridges:
       - jtag
     Programmer: ise_impact
@@ -287,3 +287,11 @@ Boards:
       - jtag
     Programmer: ise_impact
     BoardURL: https://www.xilinx.com/products/boards-and-kits/ek-s6-sp605-g.html
+  - Id: alinx_ax545
+    BoardName: AX545
+    BoardProducer: alinx
+    Chip: XC6SLX45-2CSG324C
+    Bridges:
+      - jtag
+    Programmer: ise_impact
+    BoardURL: https://alinx.com/en/detail/44

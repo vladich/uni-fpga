@@ -22,7 +22,7 @@ Boards:
     Bridges:
       - jtag
     Programmer: quartus_pgm
-    BoardURL: https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/stratix/10-gx.html
+    Status: eol
   - Id: intel_stratix10_gx_etile_si_devkit
     BoardName: Stratix 10 GX E-Tile Transceiver Signal Integrity Development Kit
     Devices:
@@ -44,8 +44,7 @@ Boards:
       - pcie_endpoint
       - ddr4_memory
       - qspi_flash
-    BoardURL: https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/stratix/10-gx-signal-integrity-etile.html
-    Status: active
+    Status: eol
   - Id: intel_stratix10_gx_htile_si_devkit
     BoardName: Stratix 10 GX H-Tile Transceiver Signal Integrity Development Kit
     Devices:
@@ -67,8 +66,7 @@ Boards:
       - pcie_endpoint
       - ddr4_memory
       - qspi_flash
-    BoardURL: https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/stratix/10-gx-signal-integrity-htile.html
-    Status: active
+    Status: eol
   - Id: intel_stratix10_mx_devkit
     BoardName: Stratix 10 MX FPGA Development Kit
     Devices:
@@ -86,7 +84,7 @@ Boards:
     Bridges:
       - jtag
     Programmer: quartus_pgm
-    BoardURL: https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/stratix/10-mx.html
+    Status: eol
   - Id: intel_stratix10_nx_devkit
     BoardName: Stratix 10 NX FPGA Development Kit
     Devices:
@@ -104,7 +102,7 @@ Boards:
     Bridges:
       - jtag
     Programmer: quartus_pgm
-    BoardURL: https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/stratix/10-nx.html
+    Status: eol
   - Id: intel_stratix10_sx_devkit
     BoardName: Stratix 10 SX SoC Development Kit
     Devices:
@@ -125,7 +123,7 @@ Boards:
     Bridges:
       - jtag
     Programmer: quartus_pgm
-    BoardURL: https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/stratix/10-sx.html
+    Status: eol
   - Id: intel_stratix10_tx_devkit
     BoardName: Stratix 10 TX FPGA Development Kit
     Devices:
@@ -143,7 +141,7 @@ Boards:
     Bridges:
       - jtag
     Programmer: quartus_pgm
-    BoardURL: https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/stratix/10-tx.html
+    Status: eol
   - Id: iwave_rainbow_g45m
     BoardName: iW-RainboW-G45M Intel Stratix 10 SoC SoM
     Devices:

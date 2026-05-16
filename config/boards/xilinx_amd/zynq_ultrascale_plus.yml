@@ -1463,8 +1463,7 @@ Boards:
       - usb_uart_bridge
       - user_leds
       - user_buttons
-    BoardURL: https://coderobin.com/products/alinx-axu7ev-xilinx-zynq-ultrascale-mpsoc-xczu7ev-fpga-development-board
-    Status: active
+    Status: eol
     Notes: "ZU7EV with H.264/H.265 VCU."
   - Id: alinx_z7_p
     BoardName: "Alinx Z7-P"

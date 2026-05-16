@@ -37,7 +37,7 @@ Boards:
     Bridges:
       - jtag
     Programmer: quartus_pgm
-    BoardURL: https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/max/10-fpga.html
+    Status: eol
   - Id: intel_max10_evalkit
     BoardName: MAX 10 FPGA Evaluation Kit
     Devices:
@@ -52,7 +52,7 @@ Boards:
     Bridges:
       - jtag
     Programmer: quartus_pgm
-    BoardURL: https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/max/10-evaluation.html
+    Status: eol
   - Id: qmtech_max10_core
     BoardName: MAX 10 Core Board
     BoardProducer: qmtech

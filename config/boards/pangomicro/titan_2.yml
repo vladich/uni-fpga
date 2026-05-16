@@ -30,9 +30,9 @@ Boards:
       - jtag
     Programmer: pango_pgm
     BoardURL: https://www.pangomicro.com/en/Page/index/cid/4.html
-  - Id: pangomicro_alinx_axp390
+  - Id: alinx_axp390
     BoardName: "ALINX AXP390 Development Board"
-    BoardProducer: pangomicro
+    BoardProducer: alinx
     Chip: PG2T390H-6IFFBG900
     Bridges:
       - usb-jtag
@@ -51,9 +51,9 @@ Boards:
     BoardURL: https://www.pangomicro.com/open/4308.html
     Status: active
     Notes: "4x 10G SFP+; 8 GB DDR4 + 2 GB DDR3; PCIe x8."
-  - Id: pangomicro_alinx_axp391
+  - Id: alinx_axp391
     BoardName: "ALINX AXP391 Development Board"
-    BoardProducer: pangomicro
+    BoardProducer: alinx
     Chip: PG2T390H-6IFFBG900
     Bridges:
       - usb-jtag
@@ -66,9 +66,9 @@ Boards:
       - fmc_lpc
     BoardURL: https://www.pangomicro.com/open/4307.html
     Status: active
-  - Id: pangomicro_alinx_axp392
+  - Id: alinx_axp392
     BoardName: "ALINX AXP392 Development Board"
-    BoardProducer: pangomicro
+    BoardProducer: alinx
     Chip: PG2T390H-6IFFBG900
     Bridges:
       - usb-jtag

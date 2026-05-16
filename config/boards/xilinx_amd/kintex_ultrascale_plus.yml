@@ -118,7 +118,7 @@ Boards:
       - usb_uart_bridge
       - user_leds
       - user_buttons
-    BoardURL: https://coderobin.com/products/alinx-axku15-xilinx-kintex-ultrascale-xcku15p-fpga-development-board
+    BoardURL: "https://www.en.alinx.com/Product/FPGA-Development-Boards/Kintex-UltraScale-plus/AXKU15-D.html"
     Status: active
     Notes: "Industrial XCKU15P-2FFVE1517I per product page; closest registry entry XCKU15P-2FFVE1760E (verify package pin compat before use)."
   - Id: alinx_fx200

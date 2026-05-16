@@ -21,7 +21,7 @@ Boards:
     Bridges:
       - jtag
     Programmer: quartus_pgm
-    BoardURL: https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/arria/v-starter.html
+    Status: eol
   - Id: intel_arriav_gz_devkit
     BoardName: Arria V GZ FPGA Development Kit
     Devices:
@@ -38,4 +38,5 @@ Boards:
     Bridges:
       - jtag
     Programmer: quartus_pgm
-    BoardURL: https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/arria/v-gz.html
+
+    Status: eol

@@ -144,9 +144,9 @@ Boards:
     BoardURL: https://www.pangomicro.com/open/4300.html
     Status: active
     Notes: "Smartseason EVK."
-  - Id: pangomicro_alinx_axp100b
+  - Id: alinx_axp100b
     BoardName: "ALINX AXP100B Development Board"
-    BoardProducer: pangomicro
+    BoardProducer: alinx
     Chip: PG2L100HFBG484
     Bridges:
       - jtag
@@ -163,9 +163,9 @@ Boards:
       - gpio_header_generic
     BoardURL: https://www.pangomicro.com/open/4299.html
     Status: active
-  - Id: pangomicro_alinx_axp110
+  - Id: alinx_axp110
     BoardName: "ALINX AXP110 Development Board"
-    BoardProducer: pangomicro
+    BoardProducer: alinx
     Chip: PG2L100HFBG484
     Bridges:
       - jtag

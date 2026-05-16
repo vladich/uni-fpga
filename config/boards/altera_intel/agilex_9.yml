@@ -21,4 +21,4 @@ Boards:
     Bridges:
       - jtag
     Programmer: quartus_pgm
-    BoardURL: https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/agilex/9-direct-rf.html
+    BoardURL: "https://www.altera.com/products/devkit/po-3217/agilex-9-direct-rf-series-agrw014-development-kit"

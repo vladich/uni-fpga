@@ -30,8 +30,7 @@ Boards:
       - qsfp_cage
       - sfp_cage
       - ethernet_10gbe_sfp
-    BoardURL: https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/stratix/v-advanced-systems.html
-    Status: active
+    Status: eol
   - Id: intel_stratixv_gs_devkit
     BoardName: Stratix V GS FPGA Development Kit
     Devices:
@@ -48,7 +47,7 @@ Boards:
     Bridges:
       - jtag
     Programmer: quartus_pgm
-    BoardURL: https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/stratix/v-gs.html
+    Status: eol
   - Id: intel_stratixv_gt_devkit
     BoardName: Stratix V GT FPGA Development Kit
     Devices:
@@ -65,7 +64,7 @@ Boards:
     Bridges:
       - jtag
     Programmer: quartus_pgm
-    BoardURL: https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/stratix/v-gt.html
+    Status: eol
   - Id: intel_stratixv_gx_devkit
     BoardName: Stratix V GX FPGA Development Kit
     Devices:
@@ -82,7 +81,7 @@ Boards:
     Bridges:
       - jtag
     Programmer: quartus_pgm
-    BoardURL: https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/stratix/v-gx.html
+    Status: eol
   - Id: terasic_de5_net
     BoardName: DE5-Net
     Devices:

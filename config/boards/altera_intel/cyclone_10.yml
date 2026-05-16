@@ -22,7 +22,7 @@ Boards:
     Bridges:
       - jtag
     Programmer: quartus_pgm
-    BoardURL: https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/cyclone/10-gx.html
+    Status: eol
   - Id: intel_cyclone10lp_evalkit
     BoardName: Cyclone 10 LP Evaluation Kit
     Devices:
@@ -38,7 +38,7 @@ Boards:
     Bridges:
       - jtag
     Programmer: quartus_pgm
-    BoardURL: https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/cyclone/10-lp.html
+    Status: eol
   - Id: intel_cyclone10lp_starter
     BoardName: Cyclone 10 LP FPGA Starter Kit
     Devices:
@@ -62,8 +62,7 @@ Boards:
       - dip_switches
       - usb_powered
       - arduino_shield_header
-    BoardURL: https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/cyclone/10-lp.html
-    Status: active
+    Status: eol
   - Id: qmtech_cyc10lp_10cl025_core
     BoardName: QMtech Cyclone 10 LP 10CL025 Core Board
     BoardProducer: qmtech

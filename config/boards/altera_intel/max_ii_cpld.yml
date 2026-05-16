@@ -24,8 +24,7 @@ Boards:
       - user_leds
       - user_buttons
       - seven_segment_display
-    BoardURL: https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/max/v-cpld.html
-    Status: active
+    Status: eol
   - Id: omdazz_epm570
     BoardName: Omdazz EPM570
     BoardProducer: omdazz

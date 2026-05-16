@@ -22,7 +22,7 @@ Boards:
     Bridges:
       - jtag
     Programmer: quartus_pgm
-    BoardURL: https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/agilex/3.html
+    BoardURL: "https://www.altera.com/products/devkit/po-3000/agilex-3-fpga-and-soc-c-series-development-kit"
   - Id: terasic_de23_lite
     BoardName: DE23-Lite Development Kit
     Devices:

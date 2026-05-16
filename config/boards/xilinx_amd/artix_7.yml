@@ -50,10 +50,11 @@ Boards:
   - Id: alinx_ax7035b
     BoardName: Alinx AX7035B
     BoardProducer: alinx
-    Chip: xc7a35tfgg484-2
+    Chip: XC7A35T-2FGG484I
     Bridges:
       - jtag
     Programmer: vivado_hw
+    BoardURL: "https://www.en.alinx.com/Product/FPGA-Development-Boards/Artix-7/AX7035B.html"
   - Id: alinx_ax7102
     BoardName: Alinx AX7102
     BoardProducer: alinx
@@ -758,3 +759,11 @@ Boards:
       - marvell_88e1512
     BoardURL: "https://www.enclustra.com/en/products/fpga-modules/mars-ax3/"
     Status: active
+  - Id: alinx_ax7203
+    BoardName: AX7203
+    BoardProducer: alinx
+    Chip: XC7A200T-2FBG484I
+    Bridges:
+      - jtag
+    Programmer: vivado_hw
+    BoardURL: "https://www.en.alinx.com/Product/FPGA-Development-Boards/Artix-7/AX7203.html"
