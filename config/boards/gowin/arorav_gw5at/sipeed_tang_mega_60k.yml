@@ -1,0 +1,21 @@
+# sipeed_tang_mega_60k pin map.
+# Aggregated from Sipeed official Tang examples:
+#   https://github.com/sipeed/TangMega-60K-example/blob/main/cam_dvi/src/NEO_DOCK.cst
+#   https://github.com/sipeed/TangMega-60K-example/blob/main/ch569_hspi2cdc/CH569_HSPI_FPGA_60K/src/CH569_HSPI_FPGA.cst
+#   https://github.com/sipeed/TangMega-60K-example/blob/main/pcie_dma_demo/src/Pins.cst
+#   (+4 more)
+
+Board:
+  id: sipeed_tang_mega_60k
+  pinBanks:
+    sys_clk:
+      pins: V22
+    cpu_resetn:
+      pins: Y12
+    onboard_buttons:
+      pins: [AA13, AB13]
+    onboard_leds:
+      pins: [T18, R17, U21, R19]
+    hdmi_clk:
+      pins:
+        p: G15

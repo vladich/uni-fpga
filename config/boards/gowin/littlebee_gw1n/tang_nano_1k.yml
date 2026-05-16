@@ -1,0 +1,17 @@
+# tang_nano_1k pin map.
+# Aggregated from Sipeed official Tang examples:
+#   https://github.com/sipeed/TangNano-1K-examples/blob/main/example_lcd/lcd_480_272/src/rgb_test.cst
+#   https://github.com/sipeed/TangNano-1K-examples/blob/main/example_lcd/lcd_pjt/src/rgb_test.cst
+#   https://github.com/sipeed/TangNano-1K-examples/blob/main/example_led/led_prj/src/led_prj.cst
+
+Board:
+  id: tang_nano_1k
+  pinBanks:
+    sys_clk:
+      pins: 47
+    cpu_resetn:
+      pins: 13
+    onboard_buttons:
+      pins: 13
+    onboard_leds:
+      pins: [9, 10, 11]
