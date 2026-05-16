@@ -1,0 +1,21 @@
+# qmtech_cyclone_ep4cgx150_core pin map.
+# Source: LiteX-Boards platform file
+#   https://raw.githubusercontent.com/litex-hub/litex-boards/master/litex_boards/platforms/qmtech_ep4cgx150.py
+
+Board:
+  id: qmtech_cyclone_ep4cgx150_core
+  pinBanks:
+    sys_clk:
+      pins: B14
+    qspi_flash_clk:
+      pins:
+        pin: F6
+    qspi_flash_cs_n:
+      pins:
+        pin: D5
+    qspi_flash_miso:
+      pins:
+        pin: D6
+    qspi_flash_mosi:
+      pins:
+        pin: E6

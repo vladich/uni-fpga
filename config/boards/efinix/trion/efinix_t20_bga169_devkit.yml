@@ -1,0 +1,25 @@
+# efinix_t20_bga169_devkit pin map.
+# Source: LiteX-Boards platform file
+#   https://raw.githubusercontent.com/litex-hub/litex-boards/master/litex_boards/platforms/efinix_trion_t20_bga256_dev_kit.py
+
+Board:
+  id: efinix_t20_bga169_devkit
+  pinBanks:
+    sys_clk:
+      pins: L13
+    onboard_switches:
+      pins: [H14, H15, H16]
+    onboard_leds:
+      pins: [D14, E13, G13, F14, N14, N16, P15, M14]
+    qspi_flash_clk:
+      pins:
+        pin: M3
+    qspi_flash_cs_n:
+      pins:
+        pin: P3
+    qspi_flash_miso:
+      pins:
+        pin: N1
+    qspi_flash_mosi:
+      pins:
+        pin: L3

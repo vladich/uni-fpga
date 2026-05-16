@@ -1,0 +1,70 @@
+# panologic_g2 pin map.
+# Source: LiteX-Boards platform file
+#   https://raw.githubusercontent.com/litex-hub/litex-boards/master/litex_boards/platforms/pano_logic_g2.py
+
+Board:
+  id: panologic_g2
+  pinBanks:
+    cpu_resetn:
+      pins: AB14
+    onboard_leds:
+      pins: [E12, H13, F13]
+    onboard_uart:
+      pins:
+        tx: C14
+        rx: C17
+    ethernet_rx:
+      pins:
+        pin: AB11
+    ethernet_tx:
+      pins:
+        pin: Y11
+    ethernet_mdio:
+      pins:
+        pin: AA2
+    ethernet_col:
+      pins:
+        pin: V7
+    ethernet_crs:
+      pins:
+        pin: W4
+    ethernet_gtx:
+      pins:
+        pin: AA12
+    ethernet_int_n:
+      pins:
+        pin: AA4
+    ethernet_mdc:
+      pins:
+        pin: AB6
+    ethernet_rst_n:
+      pins:
+        pin: R11
+    ethernet_rx_data:
+      pins: [Y3, Y4, R9, R7, V9, R8, U9, Y9]
+    ethernet_rx_dv:
+      pins:
+        pin: Y7
+    ethernet_rx_er:
+      pins:
+        pin: Y8
+    ethernet_tx_data:
+      pins: [AB2, AB3, AB4, AB7, AB9, AB10, T7, Y10]
+    ethernet_tx_en:
+      pins:
+        pin: AA8
+    ethernet_tx_er:
+      pins:
+        pin: AB8
+    qspi_flash_clk:
+      pins:
+        pin: Y21
+    qspi_flash_cs_n:
+      pins:
+        pin: T5
+    qspi_flash_miso:
+      pins:
+        pin: AA20
+    qspi_flash_mosi:
+      pins:
+        pin: AB20

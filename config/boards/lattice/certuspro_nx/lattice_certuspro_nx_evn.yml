@@ -1,0 +1,15 @@
+# lattice_certuspro_nx_evn pin map.
+# Source: LiteX-Boards platform file
+#   https://raw.githubusercontent.com/litex-hub/litex-boards/master/litex_boards/platforms/lattice_certuspro_nx_evn.py
+
+Board:
+  id: lattice_certuspro_nx_evn
+  pinBanks:
+    sys_clk:
+      pins: R4
+    onboard_leds:
+      pins: [N5, N6, N7, N8, L6, N9, L8, M9, N1, N2, N3, M1, M2, M3, L3, N4, T4, T5, T6, T7, U8, T8, R9, P9]
+    onboard_uart:
+      pins:
+        rx: L2
+        tx: L1

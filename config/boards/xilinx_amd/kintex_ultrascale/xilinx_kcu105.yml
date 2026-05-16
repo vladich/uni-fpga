@@ -1,0 +1,56 @@
+# xilinx_kcu105 pin map.
+# Source: LiteX-Boards platform file
+#   https://raw.githubusercontent.com/litex-hub/litex-boards/master/litex_boards/platforms/xilinx_kcu105.py
+
+Board:
+  id: xilinx_kcu105
+  pinBanks:
+    cpu_resetn:
+      pins: AN8
+    onboard_leds:
+      pins: [AP8, H23, P20, P21, N22, M22, R23, P23]
+    onboard_uart:
+      pins:
+        cts: L23
+        rts: K27
+        tx: K26
+        rx: G25
+    hdmi_clk:
+      pins:
+        pin: AF13
+    hdmi_d:
+      pins: [AK11, AP11, AP13, AN13, AN11, AM11, AN12, AL12, AK12, AL13, AK13, AD11, AH12, AG12, AG10, AK8]
+    hdmi_de:
+      pins:
+        pin: AE11
+    hdmi_hsync:
+      pins:
+        pin: AE13
+    hdmi_spdif:
+      pins:
+        pin: AE12
+    hdmi_spdif_out:
+      pins:
+        pin: AF12
+    hdmi_vsync:
+      pins:
+        pin: AH13
+    i2c_scl:
+      pins:
+        pin: J24
+    i2c_sda:
+      pins:
+        pin: J25
+    microsd_clk:
+      pins:
+        pin: AL10
+    microsd_cmd:
+      pins:
+        pin: AD9
+    microsd_data:
+      pins: [AP9, AN9, AH9, AH8]
+    qspi_flash_cs_n:
+      pins:
+        pin: G26
+    qspi_flash_dq:
+      pins: [M20, L20, R21, R22]

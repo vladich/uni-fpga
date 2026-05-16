@@ -1,0 +1,52 @@
+# numato_nereid pin map.
+# Source: LiteX-Boards platform file
+#   https://raw.githubusercontent.com/litex-hub/litex-boards/master/litex_boards/platforms/numato_nereid.py
+
+Board:
+  id: numato_nereid
+  pinBanks:
+    sys_clk:
+      pins: F22
+    cpu_resetn:
+      pins: C26
+    onboard_uart:
+      pins:
+        tx: H22
+        rx: K22
+        rts: L22
+        cts: L23
+        cbus0: K23
+    microsd_clk:
+      pins:
+        pin: G22
+    microsd_cmd:
+      pins:
+        pin: H24
+    microsd_dat:
+      pins: [F25, E25, J23, H23]
+    qspi_flash_cs_n:
+      pins:
+        pin: C23
+    qspi_flash_dq:
+      pins: [B24, A25, B22, A22]
+    qspi_flash_hold:
+      pins:
+        pin: A22
+    qspi_flash_miso:
+      pins:
+        pin: A25
+    qspi_flash_mosi:
+      pins:
+        pin: B24
+    qspi_flash_wp:
+      pins:
+        pin: B22
+    rgb_led_b:
+      pins:
+        pin: G26
+    rgb_led_g:
+      pins:
+        pin: H26
+    rgb_led_r:
+      pins:
+        pin: J26

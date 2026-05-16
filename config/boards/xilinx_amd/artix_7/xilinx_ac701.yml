@@ -1,0 +1,59 @@
+# xilinx_ac701 pin map.
+# Source: LiteX-Boards platform file
+#   https://raw.githubusercontent.com/litex-hub/litex-boards/master/litex_boards/platforms/xilinx_ac701.py
+
+Board:
+  id: xilinx_ac701
+  pinBanks:
+    cpu_resetn:
+      pins: U4
+    onboard_leds:
+      pins: [M26, T24, T25, R26]
+    onboard_uart:
+      pins:
+        cts: V19
+        rts: W19
+        tx: U19
+        rx: T19
+    ethernet_rx:
+      pins:
+        pin: U21
+    ethernet_tx:
+      pins:
+        pin: U22
+    ethernet_mdio:
+      pins:
+        pin: T14
+    ethernet_mdc:
+      pins:
+        pin: W18
+    ethernet_rst_n:
+      pins:
+        pin: V18
+    ethernet_rx_ctl:
+      pins:
+        pin: U14
+    ethernet_rx_data:
+      pins: [U17, V17, V16, V14]
+    ethernet_tx_ctl:
+      pins:
+        pin: T15
+    ethernet_tx_data:
+      pins: [U16, U15, T18, T17]
+    qspi_flash_cs_n:
+      pins:
+        pin: P18
+    qspi_flash_dq:
+      pins: [R14, R15, P14, N14]
+    qspi_flash_hold:
+      pins:
+        pin: N14
+    qspi_flash_miso:
+      pins:
+        pin: R15
+    qspi_flash_mosi:
+      pins:
+        pin: R14
+    qspi_flash_wp:
+      pins:
+        pin: P14

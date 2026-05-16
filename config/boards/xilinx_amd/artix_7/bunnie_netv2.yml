@@ -1,0 +1,98 @@
+# bunnie_netv2 pin map.
+# Source: LiteX-Boards platform file
+#   https://raw.githubusercontent.com/litex-hub/litex-boards/master/litex_boards/platforms/kosagi_netv2.py
+
+Board:
+  id: bunnie_netv2
+  pinBanks:
+    sys_clk:
+      pins: J19
+    onboard_leds:
+      pins: [M21, N20, L21, AA21, R19, M16]
+    onboard_uart:
+      pins:
+        tx: E14
+        rx: E13
+    ethernet_mdio:
+      pins:
+        pin: F13
+    ethernet_crs_dv:
+      pins:
+        pin: C20
+    ethernet_int_n:
+      pins:
+        pin: D21
+    ethernet_mdc:
+      pins:
+        pin: F14
+    ethernet_ref_clk:
+      pins:
+        pin: D17
+    ethernet_rst_n:
+      pins:
+        pin: F16
+    ethernet_rx_data:
+      pins: [A20, B18]
+    ethernet_rx_er:
+      pins:
+        pin: B20
+    ethernet_tx_data:
+      pins: [C18, C19]
+    ethernet_tx_en:
+      pins:
+        pin: A19
+    hdmi_clk_n:
+      pins:
+        pin: G22
+    hdmi_clk_p:
+      pins:
+        pin: G21
+    hdmi_data0_n:
+      pins:
+        pin: D22
+    hdmi_data0_p:
+      pins:
+        pin: E22
+    hdmi_data1_n:
+      pins:
+        pin: B22
+    hdmi_data1_p:
+      pins:
+        pin: C22
+    hdmi_data2_n:
+      pins:
+        pin: A21
+    hdmi_data2_p:
+      pins:
+        pin: B21
+    hdmi_scl:
+      pins:
+        pin: W17
+    hdmi_sda:
+      pins:
+        pin: R17
+    microsd_clk:
+      pins:
+        pin: K18
+    microsd_cmd:
+      pins:
+        pin: L13
+    microsd_data:
+      pins: [L15, L16, K14, M13]
+    qspi_flash_cs_n:
+      pins:
+        pin: T19
+    qspi_flash_dq:
+      pins: [P22, R22, P21, R21]
+    qspi_flash_hold:
+      pins:
+        pin: R21
+    qspi_flash_miso:
+      pins:
+        pin: R22
+    qspi_flash_mosi:
+      pins:
+        pin: P22
+    qspi_flash_vpp:
+      pins:
+        pin: P21

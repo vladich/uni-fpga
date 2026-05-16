@@ -1,0 +1,23 @@
+# xilinx_alveo_u250 pin map.
+# Source: LiteX-Boards platform file
+#   https://raw.githubusercontent.com/litex-hub/litex-boards/master/litex_boards/platforms/xilinx_alveo_u250.py
+
+Board:
+  id: xilinx_alveo_u250
+  pinBanks:
+    cpu_resetn:
+      pins: AL20
+    onboard_switches:
+      pins: [AN22, AM19, AL19, AP20]
+    onboard_leds:
+      pins: [BC21, BB21, BA20]
+    onboard_uart:
+      pins:
+        rx: BF18
+        tx: BB20
+    i2c_scl:
+      pins:
+        pin: BF20
+    i2c_sda:
+      pins:
+        pin: BF17

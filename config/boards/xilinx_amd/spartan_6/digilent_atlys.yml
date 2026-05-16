@@ -1,0 +1,102 @@
+# digilent_atlys pin map.
+# Source: LiteX-Boards platform file
+#   https://raw.githubusercontent.com/litex-hub/litex-boards/master/litex_boards/platforms/digilent_atlys.py
+
+Board:
+  id: digilent_atlys
+  pinBanks:
+    sys_clk:
+      pins: L15
+    cpu_resetn:
+      pins: T15
+    onboard_buttons:
+      pins: [N4, P4, P3, F6, F5]
+    onboard_switches:
+      pins: [A10, D14, C14, P15, P12, R5, T5, E4]
+    onboard_leds:
+      pins: [U18, M14, N14, L14, M13, D4, P16, N12]
+    onboard_uart:
+      pins:
+        rx: A16
+        tx: B16
+    ethernet_rx:
+      pins:
+        pin: K15
+    ethernet_tx:
+      pins:
+        pin: K16
+    ethernet_mdio:
+      pins:
+        pin: N17
+    ethernet_col:
+      pins:
+        pin: C17
+    ethernet_crs:
+      pins:
+        pin: C18
+    ethernet_gtx:
+      pins:
+        pin: L12
+    ethernet_int_n:
+      pins:
+        pin: L16
+    ethernet_mdc:
+      pins:
+        pin: F16
+    ethernet_rst_n:
+      pins:
+        pin: G13
+    ethernet_rx_data:
+      pins: [G16, H14, E16, F15, F14, E18, D18, D17]
+    ethernet_rx_dv:
+      pins:
+        pin: F17
+    ethernet_rx_er:
+      pins:
+        pin: F18
+    ethernet_tx_data:
+      pins: [H16, H13, K14, K13, J13, G14, H12, K12]
+    ethernet_tx_en:
+      pins:
+        pin: H15
+    ethernet_tx_er:
+      pins:
+        pin: G18
+    hdmi_clk_n:
+      pins:
+        pin: H18
+    hdmi_clk_p:
+      pins:
+        pin: H17
+    hdmi_data0_n:
+      pins:
+        pin: K18
+    hdmi_data0_p:
+      pins:
+        pin: K17
+    hdmi_data1_n:
+      pins:
+        pin: L18
+    hdmi_data1_p:
+      pins:
+        pin: L17
+    hdmi_data2_n:
+      pins:
+        pin: J18
+    hdmi_data2_p:
+      pins:
+        pin: J16
+    hdmi_scl:
+      pins:
+        pin: M16
+    hdmi_sda:
+      pins:
+        pin: M18
+    qspi_flash_clk:
+      pins:
+        pin: R15
+    qspi_flash_cs_n:
+      pins:
+        pin: V3
+    qspi_flash_dq:
+      pins: [T13, R13, T14, V14]

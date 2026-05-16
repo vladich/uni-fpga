@@ -1,0 +1,82 @@
+# xilinx_vc707 pin map.
+# Source: LiteX-Boards platform file
+#   https://raw.githubusercontent.com/litex-hub/litex-boards/master/litex_boards/platforms/xilinx_vc707.py
+
+Board:
+  id: xilinx_vc707
+  pinBanks:
+    cpu_resetn:
+      pins: AV40
+    onboard_leds:
+      pins: [AM39, AN39, AR37, AT37, AR35, AP41, AP42, AU39]
+    onboard_uart:
+      pins:
+        rx: AU33
+        tx: AU36
+    hdmi_clk:
+      pins:
+        pin: AU23
+    ethernet_mdio:
+      pins:
+        pin: AK33
+    ethernet_int_n:
+      pins:
+        pin: AL31
+    ethernet_mdc:
+      pins:
+        pin: AH31
+    ethernet_rst_n:
+      pins:
+        pin: AJ33
+    ethernet_rx_n:
+      pins:
+        pin: AM7
+    ethernet_rx_p:
+      pins:
+        pin: AM8
+    ethernet_tx_n:
+      pins:
+        pin: AN1
+    ethernet_tx_p:
+      pins:
+        pin: AN2
+    hdmi_d:
+      pins: [AM22, AL22, AJ20, AJ21, AM21, AL21, AK22, AL20, AK20, AK23, AJ23, AN21, AP22, AP23, AM23, AN24, AY24, BB22, BA22, BA25, AY25, AY23, AV24, AU24, AW21, AV21, AT24, AR24, AT21, AW22, AW23, AV23]
+    hdmi_de:
+      pins:
+        pin: AP21
+    hdmi_hsync:
+      pins:
+        pin: AU22
+    hdmi_int:
+      pins:
+        pin: AM24
+    hdmi_spdif:
+      pins:
+        pin: AR23
+    hdmi_spdif_out:
+      pins:
+        pin: AR22
+    hdmi_vsync:
+      pins:
+        pin: AT22
+    i2c_scl:
+      pins:
+        pin: AT35
+    i2c_sda:
+      pins:
+        pin: AU32
+    microsd_clk:
+      pins:
+        pin: AN30
+    microsd_cmd:
+      pins:
+        pin: AP30
+    microsd_data:
+      pins: [AR30, AU31, AV31, AT30]
+    microsd_det:
+      pins:
+        pin: AP32
+    microsd_wp:
+      pins:
+        pin: AR32

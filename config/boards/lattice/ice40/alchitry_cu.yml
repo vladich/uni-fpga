@@ -1,0 +1,35 @@
+# alchitry_cu pin map.
+# Source: LiteX-Boards platform file
+#   https://raw.githubusercontent.com/litex-hub/litex-boards/master/litex_boards/platforms/alchitry_cu.py
+
+Board:
+  id: alchitry_cu
+  pinBanks:
+    sys_clk:
+      pins: P7
+    cpu_resetn:
+      pins: P8
+    onboard_leds:
+      pins: [J11, K11, K12, K14, L12, L14, M12, N14]
+    onboard_uart:
+      pins:
+        rx: P14
+        tx: M9
+    i2c_scl:
+      pins:
+        pin: A4
+    i2c_sda:
+      pins:
+        pin: A3
+    qspi_flash_clk:
+      pins:
+        pin: P12
+    qspi_flash_cs_n:
+      pins:
+        pin: P13
+    qspi_flash_miso:
+      pins:
+        pin: P11
+    qspi_flash_mosi:
+      pins:
+        pin: M11

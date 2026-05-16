@@ -1,0 +1,114 @@
+# xilinx_kc705 pin map.
+# Source: LiteX-Boards platform file
+#   https://raw.githubusercontent.com/litex-hub/litex-boards/master/litex_boards/platforms/xilinx_kc705.py
+
+Board:
+  id: xilinx_kc705
+  pinBanks:
+    cpu_resetn:
+      pins: AB7
+    onboard_leds:
+      pins: [AB8, AA8, AC9, AB9, AE26, G19, E18, F16]
+    onboard_uart:
+      pins:
+        cts: L27
+        rts: K23
+        tx: K24
+        rx: M19
+    hdmi_clk:
+      pins:
+        pin: K18
+    ethernet_rx:
+      pins:
+        pin: U27
+    ethernet_tx:
+      pins:
+        pin: M28
+    ethernet_mdio:
+      pins:
+        pin: J21
+    ethernet_col:
+      pins:
+        pin: W19
+    ethernet_crs:
+      pins:
+        pin: R30
+    ethernet_gtx:
+      pins:
+        pin: K30
+    ethernet_int_n:
+      pins:
+        pin: N30
+    ethernet_mdc:
+      pins:
+        pin: R23
+    ethernet_rst_n:
+      pins:
+        pin: L20
+    ethernet_rx_data:
+      pins: [U30, U25, T25, U28, R19, T27, T26, T28]
+    ethernet_rx_dv:
+      pins:
+        pin: R28
+    ethernet_rx_er:
+      pins:
+        pin: V26
+    ethernet_tx_data:
+      pins: [N27, N25, M29, L28, J26, K26, L30, J28]
+    ethernet_tx_en:
+      pins:
+        pin: M27
+    ethernet_tx_er:
+      pins:
+        pin: N29
+    hdmi_d:
+      pins: [B23, A23, E23, D23, F25, E25, E24, F26, E26, G23, G24, J19, H19, L17, K19, K20]
+    hdmi_de:
+      pins:
+        pin: H17
+    hdmi_hsync:
+      pins:
+        pin: J18
+    hdmi_int:
+      pins:
+        pin: AH24
+    hdmi_spdif:
+      pins:
+        pin: J17
+    hdmi_spdif_out:
+      pins:
+        pin: G20
+    hdmi_vsync:
+      pins:
+        pin: H20
+    i2c_scl:
+      pins:
+        pin: K21
+    i2c_sda:
+      pins:
+        pin: L21
+    microsd_clk:
+      pins:
+        pin: AB23
+    microsd_cmd:
+      pins:
+        pin: AB22
+    microsd_data:
+      pins: [AC20, AA23, AA22, AC21]
+    qspi_flash_cs_n:
+      pins:
+        pin: U19
+    qspi_flash_dq:
+      pins: [P24, R25, R20, R21]
+    qspi_flash_hold:
+      pins:
+        pin: R21
+    qspi_flash_miso:
+      pins:
+        pin: R25
+    qspi_flash_mosi:
+      pins:
+        pin: P24
+    qspi_flash_wp:
+      pins:
+        pin: R20

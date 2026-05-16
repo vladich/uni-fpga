@@ -1,0 +1,23 @@
+# xilinx_vcu118 pin map.
+# Source: LiteX-Boards platform file
+#   https://raw.githubusercontent.com/litex-hub/litex-boards/master/litex_boards/platforms/xilinx_vcu118.py
+
+Board:
+  id: xilinx_vcu118
+  pinBanks:
+    cpu_resetn:
+      pins: L19
+    onboard_leds:
+      pins: [AT32, AV34, AY30, BB32, BF32, AU37, AV36, BA37]
+    onboard_uart:
+      pins:
+        rx: AW25
+        rts: BB22
+        tx: BB21
+        cts: AY25
+    i2c_scl:
+      pins:
+        pin: AM24
+    i2c_sda:
+      pins:
+        pin: AL24

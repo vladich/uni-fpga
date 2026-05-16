@@ -1,0 +1,41 @@
+# alinx_ax7203 pin map.
+# Source: LiteX-Boards platform file
+#   https://raw.githubusercontent.com/litex-hub/litex-boards/master/litex_boards/platforms/alinx_ax7203.py
+
+Board:
+  id: alinx_ax7203
+  pinBanks:
+    cpu_resetn:
+      pins: T6
+    onboard_leds:
+      pins: [B13, C13, D14, D15]
+    onboard_uart:
+      pins:
+        tx: N15
+        rx: P20
+    hdmi_clk:
+      pins:
+        pin: M13
+    hdmi:
+      pins: J19
+    hdmi_b:
+      pins: [L18, M18, N18, N19, M20, N20, L21, M21]
+    hdmi_de:
+      pins:
+        pin: V13
+    hdmi_g:
+      pins: [K17, J17, L16, K16, L14, L15, M15, M16]
+    hdmi_hsync:
+      pins:
+        pin: T15
+    hdmi_r:
+      pins: [V14, H14, J14, K13, K14, L13, L19, L20]
+    hdmi_scl:
+      pins:
+        pin: E16
+    hdmi_sda:
+      pins:
+        pin: F16
+    hdmi_vsync:
+      pins:
+        pin: T14

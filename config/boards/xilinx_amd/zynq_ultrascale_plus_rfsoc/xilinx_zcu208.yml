@@ -1,0 +1,15 @@
+# xilinx_zcu208 pin map.
+# Source: LiteX-Boards platform file
+#   https://raw.githubusercontent.com/litex-hub/litex-boards/master/litex_boards/platforms/xilinx_zcu216.py
+
+Board:
+  id: xilinx_zcu208
+  pinBanks:
+    onboard_leds:
+      pins: [C13, D14, D12, D13, AW18, AV18, BA19, AP21]
+    sys_clk_n:
+      pins:
+        pin: G11
+    sys_clk_p:
+      pins:
+        pin: G12

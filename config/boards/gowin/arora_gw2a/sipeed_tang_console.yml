@@ -1,0 +1,35 @@
+# sipeed_tang_console pin map.
+# Source: LiteX-Boards platform file
+#   https://raw.githubusercontent.com/litex-hub/litex-boards/master/litex_boards/platforms/sipeed_tang_console.py
+
+Board:
+  id: sipeed_tang_console
+  pinBanks:
+    sys_clk:
+      pins: V22
+    onboard_leds:
+      pins: [G11, U12]
+    onboard_uart:
+      pins:
+        rx: V14
+        tx: U15
+    qspi_flash_clk:
+      pins:
+        pin: L12
+    qspi_flash_cs_n:
+      pins:
+        pin: T19
+    qspi_flash_dq:
+      pins: [P22, R22, P21, R21]
+    qspi_flash_hold:
+      pins:
+        pin: R21
+    qspi_flash_miso:
+      pins:
+        pin: R22
+    qspi_flash_mosi:
+      pins:
+        pin: P22
+    qspi_flash_wp:
+      pins:
+        pin: P21

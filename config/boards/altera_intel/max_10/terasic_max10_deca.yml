@@ -1,0 +1,140 @@
+# terasic_max10_deca pin map.
+# Source: LiteX-Boards platform file
+#   https://raw.githubusercontent.com/litex-hub/litex-boards/master/litex_boards/platforms/terasic_deca.py
+
+Board:
+  id: terasic_max10_deca
+  pinBanks:
+    sys_clk:
+      pins: [M8, P11]
+    onboard_buttons:
+      pins: [H21, H22]
+    onboard_switches:
+      pins: [J21, J22]
+    onboard_leds:
+      pins: [C7, C8, A6, B7, C4, A5, B4, C5]
+    hdmi_clk:
+      pins:
+        pin: A20
+    ethernet_rx:
+      pins:
+        pin: T6
+    ethernet_tx:
+      pins:
+        pin: T5
+    ethernet_mdio:
+      pins:
+        pin: N8
+    audio_bclk:
+      pins:
+        pin: R14
+    audio_din_mfp1:
+      pins:
+        pin: P15
+    audio_dout_mfp2:
+      pins:
+        pin: P18
+    audio_gpio_mfp5:
+      pins:
+        pin: M22
+    audio_mclk:
+      pins:
+        pin: P14
+    audio_miso_mfp4:
+      pins:
+        pin: N21
+    audio_reset_n:
+      pins:
+        pin: M21
+    audio_scl_ss_n:
+      pins:
+        pin: P20
+    audio_sclk_mfp3:
+      pins:
+        pin: P19
+    audio_sda_mosi:
+      pins:
+        pin: P21
+    audio_spi_select:
+      pins:
+        pin: N22
+    audio_wclk:
+      pins:
+        pin: R15
+    ethernet_col:
+      pins:
+        pin: R4
+    ethernet_crs:
+      pins:
+        pin: P5
+    ethernet_mdc:
+      pins:
+        pin: R5
+    ethernet_pcf_en:
+      pins:
+        pin: V9
+    ethernet_rst_n:
+      pins:
+        pin: R3
+    ethernet_rx_data:
+      pins: [U5, U4, R7, P8]
+    ethernet_rx_dv:
+      pins:
+        pin: P4
+    ethernet_rx_er:
+      pins:
+        pin: V1
+    ethernet_tx_data:
+      pins: [U2, W1, N9, W2]
+    ethernet_tx_en:
+      pins:
+        pin: P3
+    hdmi_b:
+      pins: [A13, C16, C12, B17, B12, B14, A18, C13]
+    hdmi_de:
+      pins:
+        pin: C9
+    hdmi_g:
+      pins: [C14, A17, B16, C15, A14, A15, A12, A16]
+    hdmi_hsync:
+      pins:
+        pin: B11
+    hdmi_i2s:
+      pins: [A9, A11, A8, B8]
+    hdmi_int:
+      pins:
+        pin: B10
+    hdmi_lrclk:
+      pins:
+        pin: A10
+    hdmi_mclk:
+      pins:
+        pin: A7
+    hdmi_r:
+      pins: [C18, D17, C17, C19, D14, B19, D13, A19]
+    hdmi_scl:
+      pins:
+        pin: C10
+    hdmi_sclk:
+      pins:
+        pin: D12
+    hdmi_sda:
+      pins:
+        pin: B15
+    hdmi_vsync:
+      pins:
+        pin: C11
+    microsd_clk:
+      pins:
+        pin: T20
+    microsd_cmd:
+      pins:
+        pin: T21
+    microsd_data:
+      pins: [R18, T18, T19, R20]
+    microsd_fb_clk:
+      pins:
+        pin: R22
+    microsd_sel:
+      pins:
+        pin: P13

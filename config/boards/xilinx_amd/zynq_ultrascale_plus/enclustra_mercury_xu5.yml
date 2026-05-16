@@ -1,0 +1,27 @@
+# enclustra_mercury_xu5 pin map.
+# Source: LiteX-Boards platform file
+#   https://raw.githubusercontent.com/litex-hub/litex-boards/master/litex_boards/platforms/enclustra_mercury_xu5.py
+
+Board:
+  id: enclustra_mercury_xu5
+  pinBanks:
+    cpu_resetn:
+      pins: N19
+    onboard_leds:
+      pins: [H2, P9, K5]
+    onboard_uart:
+      pins:
+        rx: AA10
+        tx: AA11
+    i2c_scl:
+      pins:
+        pin: D12
+    i2c_sda:
+      pins:
+        pin: C12
+    sys_clk_n:
+      pins:
+        pin: AD4
+    sys_clk_p:
+      pins:
+        pin: AD5

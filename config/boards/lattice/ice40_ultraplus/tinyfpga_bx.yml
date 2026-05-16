@@ -1,0 +1,38 @@
+# tinyfpga_bx pin map.
+# Source: LiteX-Boards platform file
+#   https://raw.githubusercontent.com/litex-hub/litex-boards/master/litex_boards/platforms/tinyfpga_bx.py
+
+Board:
+  id: tinyfpga_bx
+  pinBanks:
+    onboard_leds:
+      pins: B3
+    qspi_flash_clk:
+      pins:
+        pin: G7
+    qspi_flash_cs_n:
+      pins:
+        pin: F7
+    qspi_flash_dq:
+      pins: [G6, H7, H4, J8]
+    qspi_flash_hold:
+      pins:
+        pin: J8
+    qspi_flash_miso:
+      pins:
+        pin: H7
+    qspi_flash_mosi:
+      pins:
+        pin: G6
+    qspi_flash_wp:
+      pins:
+        pin: H4
+    usb_d_n:
+      pins:
+        pin: A4
+    usb_d_p:
+      pins:
+        pin: B4
+    usb_pullup:
+      pins:
+        pin: A3

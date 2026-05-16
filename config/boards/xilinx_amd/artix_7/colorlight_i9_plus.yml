@@ -1,0 +1,36 @@
+# colorlight_i9_plus pin map.
+# Source: LiteX-Boards platform file
+#   https://raw.githubusercontent.com/litex-hub/litex-boards/master/litex_boards/platforms/colorlight_i9plus.py
+
+Board:
+  id: colorlight_i9_plus
+  pinBanks:
+    sys_clk:
+      pins: K4
+    onboard_leds:
+      pins: A18
+    ethernet_rx:
+      pins:
+        pin: L3
+    ethernet_tx:
+      pins:
+        pin: M6
+    ethernet_mdio:
+      pins:
+        pin: G2
+    ethernet_mdc:
+      pins:
+        pin: G1
+    ethernet_rst_n:
+      pins:
+        pin: H2
+    ethernet_rx_ctl:
+      pins:
+        pin: R1
+    ethernet_rx_data:
+      pins: [N2, N3, P1, P2]
+    ethernet_tx_ctl:
+      pins:
+        pin: N5
+    ethernet_tx_data:
+      pins: [M5, M2, N4, P4]

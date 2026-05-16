@@ -1,0 +1,65 @@
+# efinix_ti375_devkit pin map.
+# Source: LiteX-Boards platform file
+#   https://raw.githubusercontent.com/litex-hub/litex-boards/master/litex_boards/platforms/efinix_ti375_c529_dev_kit.py
+
+Board:
+  id: efinix_ti375_devkit
+  pinBanks:
+    sys_clk:
+      pins: U4
+    onboard_leds:
+      pins: [R20, V4, U6, L18, E19]
+    onboard_uart:
+      pins:
+        tx: E9
+        rx: E10
+    ethernet_rx:
+      pins:
+        pin: D15
+    ethernet_tx:
+      pins:
+        pin: C17
+    ethernet_mdio:
+      pins:
+        pin: B14
+    ethernet_int_n:
+      pins:
+        pin: B11
+    ethernet_mdc:
+      pins:
+        pin: B19
+    ethernet_rst_n:
+      pins:
+        pin: D10
+    ethernet_rx_ctl:
+      pins:
+        pin: H18
+    ethernet_rx_data:
+      pins: [A18, A19, D16, D17]
+    ethernet_tx_ctl:
+      pins:
+        pin: B20
+    ethernet_tx_data:
+      pins: [B17, A16, A17, C19]
+    microsd_clk:
+      pins:
+        pin: C9
+    microsd_cmd:
+      pins:
+        pin: C10
+    microsd_data:
+      pins: [B9, B10, A8, A9]
+    qspi_flash_clk:
+      pins:
+        pin: G6
+    qspi_flash_cs_n:
+      pins:
+        pin: L4
+    qspi_flash_dq:
+      pins: [D5, D6, E4, E5]
+    qspi_flash_miso:
+      pins:
+        pin: D6
+    qspi_flash_mosi:
+      pins:
+        pin: D5

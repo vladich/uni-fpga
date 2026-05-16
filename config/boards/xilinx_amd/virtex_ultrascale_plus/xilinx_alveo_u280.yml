@@ -1,0 +1,19 @@
+# xilinx_alveo_u280 pin map.
+# Source: LiteX-Boards platform file
+#   https://raw.githubusercontent.com/litex-hub/litex-boards/master/litex_boards/platforms/xilinx_alveo_u280.py
+
+Board:
+  id: xilinx_alveo_u280
+  pinBanks:
+    cpu_resetn:
+      pins: L30
+    onboard_uart:
+      pins:
+        rx: A28
+        tx: B33
+    i2c_scl:
+      pins:
+        pin: C30
+    i2c_sda:
+      pins:
+        pin: C33

@@ -1,0 +1,58 @@
+# efinix_t120_bga576_devkit pin map.
+# Source: LiteX-Boards platform file
+#   https://raw.githubusercontent.com/litex-hub/litex-boards/master/litex_boards/platforms/efinix_trion_t120_bga576_dev_kit.py
+
+Board:
+  id: efinix_t120_bga576_devkit
+  pinBanks:
+    sys_clk:
+      pins: AA8
+    onboard_switches:
+      pins: [U16, T16, T15, U15]
+    onboard_leds:
+      pins: [AB16, AA16, AA15, Y15, Y16, W16, AD16, AC16]
+    ethernet_rx:
+      pins:
+        pin: M24
+    ethernet_tx:
+      pins:
+        pin: M18
+    ethernet_mdio:
+      pins:
+        pin: D24
+    ethernet_mdc:
+      pins:
+        pin: E22
+    ethernet_rst_n:
+      pins:
+        pin: E23
+    ethernet_rx_ctl:
+      pins:
+        pin: D23
+    ethernet_rx_data:
+      pins: [M8, L7, M7, N6]
+    ethernet_tx_ctl:
+      pins:
+        pin: E24
+    ethernet_tx_data:
+      pins: [N7, N9, N8, N5]
+    qspi_flash_clk:
+      pins:
+        pin: P22
+    qspi_flash_cs_n:
+      pins:
+        pin: R23
+    qspi_flash_dq:
+      pins: [N24, N23, R19, R17]
+    qspi_flash_hold:
+      pins:
+        pin: R17
+    qspi_flash_miso:
+      pins:
+        pin: N23
+    qspi_flash_mosi:
+      pins:
+        pin: N24
+    qspi_flash_wp:
+      pins:
+        pin: R19

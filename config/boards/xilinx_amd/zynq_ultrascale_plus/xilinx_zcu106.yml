@@ -1,0 +1,15 @@
+# xilinx_zcu106 pin map.
+# Source: LiteX-Boards platform file
+#   https://raw.githubusercontent.com/litex-hub/litex-boards/master/litex_boards/platforms/xilinx_zcu106.py
+
+Board:
+  id: xilinx_zcu106
+  pinBanks:
+    onboard_leds:
+      pins: [AL11, AL13, AK13, AE15, AM8, AM9, AM10, AM11]
+    onboard_uart:
+      pins:
+        cts: AP17
+        rts: AM15
+        tx: AL17
+        rx: AH17

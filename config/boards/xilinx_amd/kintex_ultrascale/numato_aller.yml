@@ -1,0 +1,20 @@
+# numato_aller pin map.
+# Source: LiteX-Boards platform file
+#   https://raw.githubusercontent.com/litex-hub/litex-boards/master/litex_boards/platforms/numato_aller.py
+
+Board:
+  id: numato_aller
+  pinBanks:
+    sys_clk:
+      pins: W19
+    onboard_leds:
+      pins: [AB21, AB22, U20]
+    rgb_led_b:
+      pins:
+        pin: U20
+    rgb_led_g:
+      pins:
+        pin: AB22
+    rgb_led_r:
+      pins:
+        pin: AB21

@@ -1,0 +1,25 @@
+# papilio_pro pin map.
+# Source: LiteX-Boards platform file
+#   https://raw.githubusercontent.com/litex-hub/litex-boards/master/litex_boards/platforms/gadgetfactory_papilio_pro.py
+
+Board:
+  id: papilio_pro
+  pinBanks:
+    onboard_leds:
+      pins: P112
+    onboard_uart:
+      pins:
+        tx: P105
+        rx: P101
+    qspi_flash_clk:
+      pins:
+        pin: P70
+    qspi_flash_cs_n:
+      pins:
+        pin: P38
+    qspi_flash_miso:
+      pins:
+        pin: P65
+    qspi_flash_mosi:
+      pins:
+        pin: P64

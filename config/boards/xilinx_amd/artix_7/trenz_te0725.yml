@@ -1,0 +1,37 @@
+# trenz_te0725 pin map.
+# Source: LiteX-Boards platform file
+#   https://raw.githubusercontent.com/litex-hub/litex-boards/master/litex_boards/platforms/trenz_te0725.py
+
+Board:
+  id: trenz_te0725
+  pinBanks:
+    sys_clk:
+      pins: P17
+    cpu_resetn:
+      pins: T8
+    onboard_leds:
+      pins: M16
+    onboard_uart:
+      pins:
+        tx: L18
+        rx: M18
+    qspi_flash_clk:
+      pins:
+        pin: E9
+    qspi_flash_cs_n:
+      pins:
+        pin: L13
+    qspi_flash_dq:
+      pins: [K17, K18, L14, M14]
+    qspi_flash_hold:
+      pins:
+        pin: M14
+    qspi_flash_miso:
+      pins:
+        pin: K18
+    qspi_flash_mosi:
+      pins:
+        pin: K17
+    qspi_flash_wp:
+      pins:
+        pin: L14

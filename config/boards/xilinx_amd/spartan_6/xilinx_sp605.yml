@@ -1,0 +1,72 @@
+# xilinx_sp605 pin map.
+# Source: LiteX-Boards platform file
+#   https://raw.githubusercontent.com/litex-hub/litex-boards/master/litex_boards/platforms/xilinx_sp605.py
+
+Board:
+  id: xilinx_sp605
+  pinBanks:
+    sys_clk:
+      pins: AB13
+    cpu_resetn:
+      pins: H8
+    onboard_buttons:
+      pins: [F3, G6, F5, C1]
+    onboard_leds:
+      pins: [D17, AB4, D21, W15]
+    onboard_uart:
+      pins:
+        cts: F19
+        rts: F18
+        rx: H17
+        tx: B21
+    ethernet_rx:
+      pins:
+        pin: P20
+    ethernet_tx:
+      pins:
+        pin: L20
+    ethernet_mdio:
+      pins:
+        pin: V20
+    ethernet_col:
+      pins:
+        pin: M16
+    ethernet_crs:
+      pins:
+        pin: N15
+    ethernet_gtx:
+      pins:
+        pin: AB7
+    ethernet_int_n:
+      pins:
+        pin: J20
+    ethernet_mdc:
+      pins:
+        pin: R19
+    ethernet_rst_n:
+      pins:
+        pin: J22
+    ethernet_rx_data:
+      pins: [P19, Y22, Y21, W22, W20, V22, V21, U22]
+    ethernet_rx_dv:
+      pins:
+        pin: T22
+    ethernet_rx_er:
+      pins:
+        pin: U20
+    ethernet_tx_data:
+      pins: [U10, T10, AB8, AA8, AB9, Y9, Y12, W12]
+    ethernet_tx_en:
+      pins:
+        pin: T8
+    ethernet_tx_er:
+      pins:
+        pin: U8
+    qspi_flash_clk:
+      pins:
+        pin: Y20
+    qspi_flash_cs_n:
+      pins:
+        pin: AA3
+    qspi_flash_dq:
+      pins: [AB20, AA20, R13, T14]

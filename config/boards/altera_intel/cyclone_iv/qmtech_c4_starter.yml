@@ -1,0 +1,79 @@
+# qmtech_c4_starter pin map.
+# Source: LiteX-Boards platform file
+#   https://raw.githubusercontent.com/litex-hub/litex-boards/master/litex_boards/platforms/qmtech_ep4ce15_starter_kit.py
+
+Board:
+  id: qmtech_c4_starter
+  pinBanks:
+    sys_clk:
+      pins: T2
+    onboard_leds:
+      pins: E3
+    onboard_uart:
+      pins:
+        tx: Y22
+        rx: Y21
+    vga_r:
+      pins: [AB19, AA19, AB20, AA20, AA21]
+    vga_g:
+      pins: [AB16, AA16, AB17, AA17, AA18, AB18]
+    vga_b:
+      pins: [AA14, AB13, AA15, AB14, AB15]
+    ethernet_rx:
+      pins:
+        pin: F21
+    ethernet_tx:
+      pins:
+        pin: R22
+    ethernet_mdio:
+      pins:
+        pin: W21
+    ethernet_col:
+      pins:
+        pin: K21
+    ethernet_crs:
+      pins:
+        pin: L22
+    ethernet_gtx:
+      pins:
+        pin: L21
+    ethernet_mdc:
+      pins:
+        pin: W22
+    ethernet_rst_n:
+      pins:
+        pin: N22
+    ethernet_rx_data:
+      pins: [D21, E22, E21, F22, H22, H21, J22, J21]
+    ethernet_rx_dv:
+      pins:
+        pin: D22
+    ethernet_rx_er:
+      pins:
+        pin: K22
+    ethernet_tx_data:
+      pins: [M21, N21, P22, P21, R21, U22, U21, V22]
+    ethernet_tx_en:
+      pins:
+        pin: M22
+    ethernet_tx_er:
+      pins:
+        pin: V21
+    qspi_flash_clk:
+      pins:
+        pin: K2
+    qspi_flash_cs_n:
+      pins:
+        pin: E2
+    qspi_flash_miso:
+      pins:
+        pin: E2
+    qspi_flash_mosi:
+      pins:
+        pin: D1
+    vga_hsync_n:
+      pins:
+        pin: AA13
+    vga_vsync_n:
+      pins:
+        pin: AB10

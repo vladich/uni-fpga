@@ -1,0 +1,25 @@
+# xilinx_zcu102 pin map.
+# Source: LiteX-Boards platform file
+#   https://raw.githubusercontent.com/litex-hub/litex-boards/master/litex_boards/platforms/xilinx_zcu102.py
+
+Board:
+  id: xilinx_zcu102
+  pinBanks:
+    cpu_resetn:
+      pins: AM13
+    onboard_buttons:
+      pins: [AG15, AE14, AF15, AG13]
+    onboard_leds:
+      pins: [AG14, AF13, AE13, AJ14, AJ15, AH13, AH14, AL12]
+    onboard_uart:
+      pins:
+        cts: E12
+        rts: D12
+        rx: E13
+        tx: F13
+    i2c_scl:
+      pins:
+        pin: J10
+    i2c_sda:
+      pins:
+        pin: J11

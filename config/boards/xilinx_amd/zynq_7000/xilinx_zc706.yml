@@ -1,0 +1,17 @@
+# xilinx_zc706 pin map.
+# Source: LiteX-Boards platform file
+#   https://raw.githubusercontent.com/litex-hub/litex-boards/master/litex_boards/platforms/xilinx_zc706.py
+
+Board:
+  id: xilinx_zc706
+  pinBanks:
+    cpu_resetn:
+      pins: A8
+    onboard_leds:
+      pins: [Y21, G2, W21, A17]
+    i2c_scl:
+      pins:
+        pin: AJ14
+    i2c_sda:
+      pins:
+        pin: AJ18

@@ -1,0 +1,27 @@
+# efinix_t20_mipi_devkit pin map.
+# Source: LiteX-Boards platform file
+#   https://raw.githubusercontent.com/litex-hub/litex-boards/master/litex_boards/platforms/efinix_trion_t20_mipi_dev_kit.py
+
+Board:
+  id: efinix_t20_mipi_devkit
+  pinBanks:
+    sys_clk:
+      pins: D13
+    onboard_leds:
+      pins: [E1, F2]
+    onboard_uart:
+      pins:
+        tx: K5
+        rx: K6
+    qspi_flash_clk:
+      pins:
+        pin: K1
+    qspi_flash_cs_n:
+      pins:
+        pin: L1
+    qspi_flash_miso:
+      pins:
+        pin: J2
+    qspi_flash_mosi:
+      pins:
+        pin: J1

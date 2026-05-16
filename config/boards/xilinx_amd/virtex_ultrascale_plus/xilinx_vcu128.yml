@@ -1,0 +1,44 @@
+# xilinx_vcu128 pin map.
+# Source: LiteX-Boards platform file
+#   https://raw.githubusercontent.com/litex-hub/litex-boards/master/litex_boards/platforms/xilinx_vcu128.py
+
+Board:
+  id: xilinx_vcu128
+  pinBanks:
+    cpu_resetn:
+      pins: BM29
+    onboard_leds:
+      pins: [BH24, BG24, BG25, BF25, BF26, BF27, BG27, BG28]
+    onboard_uart:
+      pins:
+        rx: BK28
+        rts: BL26
+        tx: BJ28
+        cts: BL27
+    ethernet_mdio:
+      pins:
+        pin: BG23
+    ethernet_int_n:
+      pins:
+        pin: BF22
+    ethernet_mdc:
+      pins:
+        pin: BN27
+    ethernet_n:
+      pins:
+        pin: BJ27
+    ethernet_p:
+      pins:
+        pin: BH27
+    ethernet_rx_n:
+      pins:
+        pin: BK21
+    ethernet_rx_p:
+      pins:
+        pin: BJ22
+    ethernet_tx_n:
+      pins:
+        pin: BH22
+    ethernet_tx_p:
+      pins:
+        pin: BG22
