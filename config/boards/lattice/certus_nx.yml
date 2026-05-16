@@ -15,7 +15,7 @@ Boards:
     Bridges:
       - jtag
     Programmer: openFPGALoader
-    BoardURL: https://www.latticesemi.com/products/developmentboardsandkits/certus-nx-versa-eval-board
+    BoardURL: "https://www.latticesemi.com/products/developmentboardsandkits/certus_nx_versa_eval"
   - Id: lattice_crosslink_nx_evn
     BoardName: CrossLink-NX Evaluation Board
     Devices:
@@ -26,4 +26,4 @@ Boards:
     Bridges:
       - jtag
     Programmer: openFPGALoader
-    BoardURL: https://www.latticesemi.com/products/developmentboardsandkits/crosslink-nx-evaluation-board
+    BoardURL: "https://www.latticesemi.com/en/Products/DevelopmentBoardsAndKits/CrossLink-NXEvaluationBoard"

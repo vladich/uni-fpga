@@ -15,7 +15,7 @@ Boards:
     Bridges:
       - jtag
     Programmer: openFPGALoader
-    BoardURL: https://www.latticesemi.com/products/developmentboardsandkits/machxo5-nx-evaluation-board
+    BoardURL: "https://www.latticesemi.com/products/developmentboardsandkits/machxo5-nx-development-board"
   - Id: lattice_machxo5_nx_15d_devkit
     BoardName: "MachXO5-NX-15D Development Board"
     BoardProducer: lattice

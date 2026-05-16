@@ -64,7 +64,7 @@ Boards:
     Bridges:
       - jtag
     Programmer: openFPGALoader
-    BoardURL: https://wiki.sipeed.com/hardware/en/tang/tang-console/console.html
+    BoardURL: "https://wiki.sipeed.com/hardware/en/tang/tang-console/mega-console.html"
   - Id: sipeed_tang_primer_20k_module
     BoardName: Tang Primer 20K Module
     BoardProducer: sipeed

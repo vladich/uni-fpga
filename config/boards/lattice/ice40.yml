@@ -39,7 +39,7 @@ Boards:
     Bridges:
       - jtag
     Programmer: iceprog
-    BoardURL: https://www.latticesemi.com/products/developmentboardsandkits/ice40hx1kevaluationkit
+    BoardURL: "https://www.latticesemi.com/iCEblink40-HX1K"
   - Id: lattice_ice40_hx8k_breakout
     BoardName: iCE40-HX8K Breakout Board
     Devices:

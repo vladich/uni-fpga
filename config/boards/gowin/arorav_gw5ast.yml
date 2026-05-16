@@ -59,7 +59,7 @@ Boards:
     Bridges:
       - jtag
     Programmer: openFPGALoader
-    BoardURL: https://wiki.sipeed.com/hardware/en/tang/tang-mega-138k-pro/mega-138k-pro.html
+    BoardURL: "https://wiki.sipeed.com/hardware/en/tang/tang-mega-138k/mega-138k-pro.html"
   - Id: tang_mega_138k_pro_dock
     BoardName: Tang Mega 138k Pro Dock
     Devices:
@@ -69,4 +69,4 @@ Boards:
     Bridges:
       - jtag
     Programmer: openFPGALoader
-    BoardURL: https://wiki.sipeed.com/hardware/en/tang/tang-mega-138k-pro/mega-138k-pro.html
+    BoardURL: "https://wiki.sipeed.com/hardware/en/tang/tang-mega-138k/mega-138k-pro.html"

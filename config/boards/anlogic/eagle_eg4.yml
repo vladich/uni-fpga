@@ -22,4 +22,4 @@ Boards:
     Bridges:
       - jtag
     Programmer: td_pgm
-    BoardURL: https://wiki.sipeed.com/hardware/en/tang/Lichee-Tang/Lichee-Tang.html
+    BoardURL: "https://wiki.sipeed.com/hardware/en/tang/Tang-Nano/Nano.html"

@@ -15,7 +15,7 @@ Boards:
     Bridges:
       - jtag
     Programmer: openFPGALoader
-    BoardURL: https://www.latticesemi.com/products/developmentboardsandkits/certuspro-nx-evaluation-board
+    BoardURL: "https://www.latticesemi.com/products/developmentboardsandkits/certuspro-nxevaluationboard"
   - Id: lattice_certuspro_nx_pcieb
     BoardName: CertusPro-NX PCIe Bridge Board
     Devices:

@@ -37,7 +37,7 @@ Boards:
     Bridges:
       - jtag
     Programmer: openFPGALoader
-    BoardURL: https://www.latticesemi.com/products/developmentboardsandkits/avant-e-eval-board
+    BoardURL: "https://www.latticesemi.com/products/developmentboardsandkits/avant-e-evaluation-board"
   - Id: lattice_avant_g_versa
     BoardName: Avant-G Versa Board
     Devices:

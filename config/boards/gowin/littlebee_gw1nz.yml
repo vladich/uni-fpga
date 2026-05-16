@@ -28,4 +28,4 @@ Boards:
     Bridges:
       - jtag
     Programmer: openFPGALoader
-    BoardURL: https://wiki.sipeed.com/hardware/en/tang/tang-nano-1k/nano-1k.html
+    BoardURL: "https://wiki.sipeed.com/hardware/en/tang/Tang-Nano-1K/Nano-1k.html"

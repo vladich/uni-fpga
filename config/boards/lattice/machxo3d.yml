@@ -15,7 +15,7 @@ Boards:
     Bridges:
       - jtag
     Programmer: openFPGALoader
-    BoardURL: https://www.latticesemi.com/products/developmentboardsandkits/machxo3devaluationboard
+    BoardURL: "https://www.latticesemi.com/en/Products/DevelopmentBoardsAndKits/MachXO39400DevBoard"
   - Id: lattice_machxo3d_breakout
     BoardName: MachXO3D Breakout Board
     Devices:
