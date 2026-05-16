@@ -21,14 +21,16 @@ Boards:
     Programmer: ise_impact
     Features:
       - ddr2_memory
+      - dip_switches
       - ethernet_phy_gigabit
-      - usb_uart_bridge
+      - jtag_header
+      - nor_flash
+      - parallel_lcd
       - pcie_endpoint
       - sata_host
-      - user_leds
+      - usb_uart_bridge
       - user_buttons
-      - dip_switches
-      - jtag_header
+      - user_leds
     BoardURL: https://docs.amd.com/v/u/en-US/ug347
     Status: eol
   - Id: xilinx_ml506
@@ -48,14 +50,16 @@ Boards:
     Programmer: ise_impact
     Features:
       - ddr2_memory
+      - dip_switches
       - ethernet_phy_gigabit
-      - usb_uart_bridge
+      - jtag_header
+      - nor_flash
+      - parallel_lcd
       - pcie_endpoint
       - sata_host
-      - user_leds
+      - usb_uart_bridge
       - user_buttons
-      - dip_switches
-      - jtag_header
+      - user_leds
     BoardURL: https://docs.amd.com/v/u/en-US/ug347
     Status: eol
   - Id: xilinx_ml507
@@ -74,13 +78,14 @@ Boards:
     Programmer: ise_impact
     Features:
       - ddr2_memory
+      - dip_switches
       - ethernet_phy_gigabit
-      - usb_uart_bridge
+      - jtag_header
+      - parallel_lcd
       - pcie_endpoint
       - sata_host
-      - user_leds
+      - usb_uart_bridge
       - user_buttons
-      - dip_switches
-      - jtag_header
+      - user_leds
     BoardURL: https://docs.amd.com/v/u/en-US/ug347
     Status: eol

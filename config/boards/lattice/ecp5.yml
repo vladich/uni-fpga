@@ -63,6 +63,10 @@ Boards:
     Status: eol
   - Id: lattice_ecp5_evn
     BoardName: ECP5 Evaluation Board
+    Features:
+      - microsd_socket
+      - qspi_flash
+      - usb_jtag_bridge
     Devices:
       - ftdi_ft2232h
       - micron_n25q128a
@@ -76,6 +80,12 @@ Boards:
     BoardURL: https://www.latticesemi.com/products/developmentboardsandkits/ecp5evaluationboard
   - Id: lattice_ecp5_versa_5g
     BoardName: ECP5 Versa-5G
+    Features:
+      - ddr3_memory
+      - ethernet_phy_gigabit
+      - microsd_socket
+      - qspi_flash
+      - usb_jtag_bridge
     Devices:
       - ftdi_ft2232h
       - micron_mt41k128m16

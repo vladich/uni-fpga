@@ -18,17 +18,19 @@ Boards:
       - usb-jtag
     Programmer: vivado_hw
     Features:
-      - ddr4_memory
-      - qspi_flash
-      - ethernet_phy_10_100
-      - hdmi_output
-      - sfp_cage
-      - pcie_endpoint
-      - fmc_lpc
-      - mikrobus_socket
-      - usb_uart_bridge
-      - usb_jtag_bridge
       - barrel_jack_input
+      - ddr4_memory
+      - ethernet_phy_10_100
+      - ethernet_phy_gigabit
+      - fmc_lpc
+      - hdmi_output
+      - microsd_socket
+      - mikrobus_socket
+      - pcie_endpoint
+      - qspi_flash
+      - sfp_cage
+      - usb_jtag_bridge
+      - usb_uart_bridge
     BoardURL: https://www.avnet.com/americas/products/avnet-boards/avnet-board-families/auboard-15p-fpga-development-kit/
     Status: active
   - Id: opalkelly_xem8320_au25p

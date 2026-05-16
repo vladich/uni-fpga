@@ -7,6 +7,12 @@ Description: 65 nm high-end. Quartus II.
 Boards:
   - Id: terasic_de3
     BoardName: DE3
+    Features:
+      - ddr2_memory
+      - dip_switches
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - usb_blaster_ii_built_in
       - led_discrete_generic

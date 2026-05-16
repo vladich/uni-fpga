@@ -7,6 +7,16 @@ Description: Refresh of Cyclone family. Cyclone 10 LP = Lite; Cyclone 10 GX = Pr
 Boards:
   - Id: intel_cyclone10gx_devkit
     BoardName: Cyclone 10 GX FPGA Development Kit
+    Features:
+      - ddr4_memory
+      - dip_switches
+      - ethernet_phy_gigabit
+      - microsd_socket
+      - qspi_flash
+      - usb_jtag_bridge
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - micron_mt40a256m16
       - micron_n25q256a
@@ -25,6 +35,14 @@ Boards:
     Status: eol
   - Id: intel_cyclone10lp_evalkit
     BoardName: Cyclone 10 LP Evaluation Kit
+    Features:
+      - ddr3_memory
+      - dip_switches
+      - ethernet_phy_10_100
+      - usb_jtag_bridge
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - micron_mt41k256m16
       - usb_blaster_ii_built_in
@@ -55,13 +73,15 @@ Boards:
       - usb-jtag
     Programmer: quartus_pgm
     Features:
-      - usb_jtag_bridge
-      - usb_uart_bridge
-      - user_leds
-      - user_buttons
-      - dip_switches
-      - usb_powered
       - arduino_shield_header
+      - ddr3_memory
+      - dip_switches
+      - seven_segment_display
+      - usb_jtag_bridge
+      - usb_powered
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     Status: eol
   - Id: qmtech_cyc10lp_10cl025_core
     BoardName: QMtech Cyclone 10 LP 10CL025 Core Board

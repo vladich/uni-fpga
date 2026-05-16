@@ -7,6 +7,15 @@ Description: Top-end Direct-RF Agilex.
 Boards:
   - Id: intel_agilex9_directrf
     BoardName: Agilex 9 Direct RF-Series Development Kit
+    Features:
+      - ddr4_memory
+      - dip_switches
+      - ethernet_phy_gigabit
+      - qspi_flash
+      - usb_jtag_bridge
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - ddr4_sodimm_socket
       - micron_n25q256a

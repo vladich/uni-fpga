@@ -43,6 +43,14 @@ Boards:
     Status: active
   - Id: xilinx_kcu116
     BoardName: KCU116
+    Features:
+      - ddr4_memory
+      - dip_switches
+      - microsd_socket
+      - qspi_flash
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - micron_mt40a256m16
       - micron_n25q256a

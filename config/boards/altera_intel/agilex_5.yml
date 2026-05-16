@@ -23,17 +23,32 @@ Boards:
       - usb-jtag
     Programmer: quartus_pgm
     Features:
+      - ddr4_memory
+      - dip_switches
+      - ethernet_phy_gigabit
       - lpddr4_memory
+      - microsd_socket
+      - pcie_endpoint
       - qspi_flash
       - usb_jtag_bridge
       - usb_uart_bridge
-      - microsd_socket
-      - ethernet_phy_gigabit
-      - pcie_endpoint
+      - user_buttons
+      - user_leds
     BoardURL: "https://www.altera.com/products/devkit/po-3196/agilex-5-fpga-e-series-013b-development-kit"
     Status: active
   - Id: intel_agilex5_devkit
     BoardName: Agilex 5 FPGA Development Kit
+    Features:
+      - ddr4_memory
+      - dip_switches
+      - emmc_flash
+      - ethernet_phy_gigabit
+      - microsd_socket
+      - qspi_flash
+      - usb_jtag_bridge
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - ddr4_sodimm_socket
       - micron_n25q256a
@@ -64,12 +79,15 @@ Boards:
       - jtag
     Programmer: quartus_pgm
     Features:
-      - lpddr4_memory
-      - qspi_flash
+      - ddr4_memory
       - emmc_flash
       - ethernet_phy_gigabit
+      - lpddr4_memory
+      - microsd_socket
+      - qspi_flash
       - usb_2_otg
       - usb_jtag_bridge
+      - usb_uart_bridge
     BoardURL: https://www.iwavesystems.com/press-release/agilex-5-system-on-module-ai-optimized-fpga-for-edge-ai-applications/
     Status: active
   - Id: terasic_agilex5_e065b_modular
@@ -89,14 +107,17 @@ Boards:
     Programmer: quartus_pgm
     Features:
       - ddr4_memory
-      - sfp_cage
-      - hdmi_output
+      - dip_switches
       - displayport_output
+      - fmc_plus
+      - hdmi_output
+      - microsd_socket
       - mipi_csi2_input
       - pcie_endpoint
-      - fmc_plus
-      - microsd_socket
+      - sfp_cage
       - usb_jtag_bridge
+      - user_buttons
+      - user_leds
     BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&CategoryNo=123&No=1382
     Status: active
   - Id: terasic_atum_a5
@@ -116,13 +137,17 @@ Boards:
     Programmer: quartus_pgm
     Features:
       - ddr4_memory
-      - qsfp_cage
+      - dip_switches
+      - ethernet_phy_gigabit
+      - fmc_plus
       - hdmi_output
+      - microsd_socket
       - mipi_csi2_input
       - pcie_endpoint
-      - fmc_plus
-      - ethernet_phy_gigabit
+      - qsfp_cage
       - usb_jtag_bridge
+      - user_buttons
+      - user_leds
     BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&No=1342
     Status: active
   - Id: terasic_de25_nano
@@ -140,9 +165,10 @@ Boards:
       - usb-jtag
     Programmer: quartus_pgm
     Features:
-      - lpddr4_memory
-      - hdmi_output
+      - ddr4_memory
       - ethernet_phy_gigabit
+      - hdmi_output
+      - lpddr4_memory
       - microsd_socket
       - usb_jtag_bridge
       - user_buttons
@@ -168,14 +194,17 @@ Boards:
       - usb-jtag
     Programmer: quartus_pgm
     Features:
-      - ddr4_memory
-      - hdmi_output
-      - mipi_csi2_input
+      - accelerometer
       - audio_codec
+      - ddr4_memory
+      - dip_switches
       - ethernet_phy_gigabit
+      - hdmi_output
+      - microsd_socket
+      - mipi_csi2_input
+      - seven_segment_display
       - usb_jtag_bridge
       - user_buttons
-      - dip_switches
-      - seven_segment_display
+      - user_leds
     BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&No=1354
     Status: active

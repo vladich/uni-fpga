@@ -15,6 +15,8 @@ Boards:
     Status: eol
   - Id: sipeed_lichee_tang
     BoardName: Sipeed Lichee Tang
+    Features:
+      - usb_jtag_bridge
     Devices:
       - ftdi_ft2232h
     BoardProducer: sipeed

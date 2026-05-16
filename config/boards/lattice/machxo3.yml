@@ -23,6 +23,8 @@ Boards:
     Status: active
   - Id: lattice_machxo3lf_9400
     BoardName: MachXO3LF Starter Kit
+    Features:
+      - usb_jtag_bridge
     Devices:
       - ftdi_ft2232h
     BoardProducer: lattice

@@ -7,6 +7,17 @@ Description: 40 nm Virtex (2009). ISE 14.7 last.
 Boards:
   - Id: xilinx_ml605
     BoardName: ML605
+    Features:
+      - ddr3_memory
+      - dip_switches
+      - ethernet_phy_gigabit
+      - microsd_socket
+      - nor_flash
+      - parallel_lcd
+      - qspi_flash
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - silabs_cp2103
       - microsd_socket_generic

@@ -36,6 +36,7 @@ Boards:
       - ddr4_memory
       - pcie_endpoint
       - qsfp_cage
+      - qspi_flash
       - usb_uart_bridge
     BoardURL: https://www.bittware.com/products/xup-p3r/
     Status: active
@@ -56,6 +57,7 @@ Boards:
       - ddr4_memory
       - pcie_endpoint
       - qsfp_cage
+      - qspi_flash
       - usb_uart_bridge
     BoardURL: https://www.bittware.com/products/xup-vv8/
     Status: active
@@ -79,8 +81,11 @@ Boards:
       - ddr4_memory
       - pcie_endpoint
       - qsfp_cage
-      - usb_uart_bridge
+      - qspi_flash
       - usb_jtag_bridge
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     BoardURL: https://www.hitechglobal.com/Boards/VirtexUltraScale+_LowProfile_PCIExpress.htm
     Status: active
   - Id: htg_9200
@@ -122,10 +127,13 @@ Boards:
     Programmer: vivado_hw
     Features:
       - ddr4_memory
-      - pcie_endpoint
       - fmc_plus
-      - usb_uart_bridge
+      - pcie_endpoint
+      - qspi_flash
       - usb_jtag_bridge
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     BoardURL: https://www.hitechglobal.com/Boards/VirtexUltraScale+_VU19P_PCIe.htm
     Status: active
   - Id: htg_960
@@ -144,10 +152,11 @@ Boards:
     Programmer: vivado_hw
     Features:
       - ddr4_memory
-      - fmc_plus
       - ethernet_phy_gigabit
-      - usb_uart_bridge
+      - fmc_plus
+      - qspi_flash
       - usb_jtag_bridge
+      - usb_uart_bridge
     BoardURL: https://www.hitechglobal.com/Boards/VirtexUltraScale+_VU19P_Board.htm
     Status: active
   - Id: xilinx_alveo_sn1022
@@ -166,6 +175,8 @@ Boards:
     Status: active
   - Id: xilinx_alveo_u200
     BoardName: Alveo U200
+    Features:
+      - ddr4_memory
     Devices:
       - ddr4_sodimm_socket
     BoardProducer: xilinx_amd
@@ -176,6 +187,8 @@ Boards:
     BoardURL: https://www.xilinx.com/products/boards-and-kits/alveo/u200.html
   - Id: xilinx_alveo_u250
     BoardName: Alveo U250
+    Features:
+      - ddr4_memory
     Devices:
       - ddr4_sodimm_socket
     BoardProducer: xilinx_amd
@@ -186,6 +199,8 @@ Boards:
     BoardURL: https://www.xilinx.com/products/boards-and-kits/alveo/u250.html
   - Id: xilinx_alveo_u280
     BoardName: Alveo U280
+    Features:
+      - ddr4_memory
     Devices:
       - ddr4_sodimm_socket
     BoardProducer: xilinx_amd
@@ -228,6 +243,14 @@ Boards:
     BoardURL: https://www.xilinx.com/products/boards-and-kits/alveo/u55c.html
   - Id: xilinx_vcu118
     BoardName: VCU118
+    Features:
+      - ddr4_memory
+      - dip_switches
+      - microsd_socket
+      - qspi_flash
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - micron_mt40a256m16
       - micron_n25q256a
@@ -247,6 +270,14 @@ Boards:
     BoardURL: https://www.xilinx.com/products/boards-and-kits/vcu118.html
   - Id: xilinx_vcu128
     BoardName: VCU128
+    Features:
+      - ddr4_memory
+      - dip_switches
+      - microsd_socket
+      - qspi_flash
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - micron_n25q256a
       - silabs_cp2105
@@ -282,15 +313,22 @@ Boards:
     Programmer: vivado_hw
     Features:
       - ddr4_memory
-      - qsfp_cage
+      - dip_switches
       - fmc_plus
-      - usb_uart_bridge
-      - pcie_endpoint
       - jtag_header
+      - microsd_socket
+      - pcie_endpoint
+      - qsfp_cage
+      - qspi_flash
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     BoardURL: https://www.amd.com/en/products/adaptive-socs-and-fpgas/evaluation-boards/vcu129.html
     Status: eol
   - Id: xilinx_vcu1525
     BoardName: VCU1525
+    Features:
+      - ddr4_memory
     Devices:
       - ddr4_sodimm_socket
     BoardProducer: xilinx_amd
@@ -386,12 +424,13 @@ Boards:
       - usb-jtag
     Programmer: vivado_hw
     Features:
-      - pcie_endpoint
       - ddr4_memory
-      - qsfp_cage
       - fmc_plus
-      - usb_uart_bridge
+      - pcie_endpoint
+      - qsfp_cage
+      - qspi_flash
       - usb_jtag_bridge
+      - usb_uart_bridge
     Devices:
       - ftdi_ft4232h
       - silabs_si5342
@@ -407,12 +446,13 @@ Boards:
       - pcie-jtag
     Programmer: vivado_hw
     Features:
-      - pcie_endpoint
-      - hbm2e_in_package
-      - qsfp_dd_cage
       - ddr4_memory
-      - usb_uart_bridge
+      - hbm2e_in_package
+      - pcie_endpoint
+      - qsfp_dd_cage
+      - qspi_flash
       - usb_jtag_bridge
+      - usb_uart_bridge
     Devices:
       - ftdi_ft4232h
       - silabs_si5342
@@ -428,11 +468,12 @@ Boards:
       - pcie-jtag
     Programmer: vivado_hw
     Features:
+      - ddr4_memory
       - pcie_endpoint
       - qsfp_cage
-      - ddr4_memory
-      - usb_uart_bridge
+      - qspi_flash
       - usb_jtag_bridge
+      - usb_uart_bridge
     Devices:
       - ftdi_ft4232h
       - silabs_si5342
@@ -448,11 +489,12 @@ Boards:
       - pcie-jtag
     Programmer: vivado_hw
     Features:
+      - ddr4_memory
       - pcie_endpoint
       - qsfp_cage
-      - ddr4_memory
-      - usb_uart_bridge
+      - qspi_flash
       - usb_jtag_bridge
+      - usb_uart_bridge
     Devices:
       - ftdi_ft4232h
       - silabs_si5342

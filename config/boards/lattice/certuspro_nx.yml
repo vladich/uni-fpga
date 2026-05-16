@@ -7,6 +7,9 @@ Description: Larger Nexus FPGA. Radiant + nextpnr-nexus.
 Boards:
   - Id: lattice_certuspro_nx_evn
     BoardName: CertusPro-NX Evaluation Board
+    Features:
+      - microsd_socket
+      - usb_jtag_bridge
     Devices:
       - ftdi_ft2232h
       - microsd_socket_generic

@@ -7,6 +7,12 @@ Description: Rad-tolerant flash FPGA (space). Libero SoC.
 Boards:
   - Id: microchip_rtg4_devkit
     BoardName: RTG4 Development Kit
+    Features:
+      - dip_switches
+      - spi_flash
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - ftdi_ft4232h
       - led_discrete_generic

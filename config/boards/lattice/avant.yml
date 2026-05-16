@@ -30,6 +30,8 @@ Boards:
     Status: active
   - Id: lattice_avant_evalboard
     BoardName: Avant Evaluation Board
+    Features:
+      - usb_jtag_bridge
     Devices:
       - ftdi_ft2232h
     BoardProducer: lattice

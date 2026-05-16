@@ -7,6 +7,13 @@ Description: Flash FPGA (current). Libero SoC.
 Boards:
   - Id: microchip_iglo2_evalkit
     BoardName: IGLOO2 Evaluation Kit
+    Features:
+      - dip_switches
+      - ethernet_phy_10_100
+      - spi_flash
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - ftdi_ft2232h
       - led_discrete_generic

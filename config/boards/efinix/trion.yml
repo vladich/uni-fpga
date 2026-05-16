@@ -99,6 +99,8 @@ Boards:
     Status: active
   - Id: efinix_xyloni
     BoardName: Xyloni Dev Kit
+    Features:
+      - microsd_socket
     Devices:
       - microsd_socket_generic
     BoardProducer: efinix

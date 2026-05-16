@@ -7,6 +7,9 @@ Description: Industrial Nexus FPGA. Radiant + nextpnr-nexus.
 Boards:
   - Id: lattice_certusnx_versa
     BoardName: Certus-NX Versa Eval Board
+    Features:
+      - microsd_socket
+      - usb_jtag_bridge
     Devices:
       - ftdi_ft2232h
       - microsd_socket_generic
@@ -18,6 +21,9 @@ Boards:
     BoardURL: "https://www.latticesemi.com/products/developmentboardsandkits/certus_nx_versa_eval"
   - Id: lattice_crosslink_nx_evn
     BoardName: CrossLink-NX Evaluation Board
+    Features:
+      - microsd_socket
+      - usb_jtag_bridge
     Devices:
       - ftdi_ft2232h
       - microsd_socket_generic

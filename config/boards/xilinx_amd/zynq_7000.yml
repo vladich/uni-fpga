@@ -106,6 +106,19 @@ Boards:
     Status: active
   - Id: arty_z7_10
     BoardName: Arty Z7-10
+    Features:
+      - audio_amp_class_d
+      - ddr3_memory
+      - dip_switches
+      - ethernet_phy_gigabit
+      - hdmi_output
+      - microsd_socket
+      - qspi_flash
+      - rgb_leds
+      - usb_2_otg
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - cypress_s25fl128s
       - ftdi_ft2232h
@@ -127,6 +140,19 @@ Boards:
     Programmer: vivado_hw
   - Id: arty_z7_20
     BoardName: Arty Z7-20
+    Features:
+      - audio_amp_class_d
+      - ddr3_memory
+      - dip_switches
+      - ethernet_phy_gigabit
+      - hdmi_output
+      - microsd_socket
+      - qspi_flash
+      - rgb_leds
+      - usb_2_otg
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - cypress_s25fl128s
       - ftdi_ft2232h
@@ -148,6 +174,11 @@ Boards:
     Programmer: vivado_hw
   - Id: avnet_microzed_7010
     BoardName: MicroZed 7010
+    Features:
+      - ddr3_memory
+      - ethernet_phy_10_100
+      - qspi_flash
+      - usb_uart_bridge
     Devices:
       - micron_mt41k256m16
       - cypress_s25fl128s
@@ -176,17 +207,25 @@ Boards:
     Programmer: vivado_hw
     Features:
       - ddr3_memory
-      - qspi_flash
+      - ethernet_phy_10_100
       - ethernet_phy_gigabit
-      - usb_2_otg
-      - usb_uart_bridge
-      - usb_jtag_bridge
       - microsd_socket
       - pmod_connector
+      - qspi_flash
+      - usb_2_otg
+      - usb_jtag_bridge
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     BoardURL: https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/microzed/
     Status: active
   - Id: avnet_microzed_7020
     BoardName: MicroZed 7020
+    Features:
+      - ddr3_memory
+      - ethernet_phy_10_100
+      - qspi_flash
+      - usb_uart_bridge
     Devices:
       - micron_mt41k256m16
       - cypress_s25fl128s
@@ -215,13 +254,16 @@ Boards:
     Programmer: vivado_hw
     Features:
       - ddr3_memory
-      - qspi_flash
+      - ethernet_phy_10_100
       - ethernet_phy_gigabit
-      - usb_2_otg
-      - usb_uart_bridge
-      - usb_jtag_bridge
       - microsd_socket
       - pmod_connector
+      - qspi_flash
+      - usb_2_otg
+      - usb_jtag_bridge
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     BoardURL: https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/microzed/
     Status: active
   - Id: avnet_microzed_fmc_cc
@@ -242,21 +284,33 @@ Boards:
       - usb-jtag
     Programmer: vivado_hw
     Features:
+      - audio_codec
+      - barrel_jack_input
       - ddr3_memory
-      - qspi_flash
+      - ethernet_phy_10_100
       - ethernet_phy_gigabit
-      - usb_uart_bridge
-      - usb_jtag_bridge
+      - fmc_lpc
+      - hdmi_input
+      - hdmi_output
       - microsd_socket
       - pmod_connector
-      - fmc_lpc
-      - user_leds
+      - qspi_flash
+      - usb_jtag_bridge
+      - usb_uart_bridge
       - user_buttons
-      - barrel_jack_input
+      - user_leds
     BoardURL: https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/microzed/
     Status: active
   - Id: avnet_minized
     BoardName: MiniZed
+    Features:
+      - audio_codec
+      - ddr3_memory
+      - imu_chip
+      - microsd_socket
+      - qspi_flash
+      - usb_jtag_bridge
+      - wifi_radio
     Devices:
       - micron_mt41k256m16
       - micron_n25q128a
@@ -273,6 +327,11 @@ Boards:
     BoardURL: https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/minized/
   - Id: avnet_picozed_7015
     BoardName: PicoZed 7015
+    Features:
+      - ddr3_memory
+      - emmc_flash
+      - ethernet_phy_gigabit
+      - qspi_flash
     Devices:
       - micron_mt41k256m16
       - micron_n25q256a
@@ -286,6 +345,11 @@ Boards:
     BoardURL: https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/picozed/
   - Id: avnet_picozed_7030
     BoardName: PicoZed 7030
+    Features:
+      - ddr3_memory
+      - emmc_flash
+      - ethernet_phy_gigabit
+      - qspi_flash
     Devices:
       - micron_mt41k256m16
       - micron_n25q256a
@@ -313,22 +377,32 @@ Boards:
       - usb-jtag
     Programmer: vivado_hw
     Features:
+      - barrel_jack_input
       - ddr3_memory
-      - qspi_flash
+      - emmc_flash
       - ethernet_phy_gigabit
-      - usb_uart_bridge
-      - usb_jtag_bridge
-      - microsd_socket
+      - fmc_lpc
       - hdmi_output
-      - sfp_cage
+      - microsd_socket
       - pcie_endpoint
       - pmod_connector
-      - fmc_lpc
-      - barrel_jack_input
+      - qspi_flash
+      - sfp_cage
+      - usb_jtag_bridge
+      - usb_uart_bridge
     BoardURL: https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/picozed/
     Status: active
   - Id: cora_z7_07s
     BoardName: Cora Z7-07S
+    Features:
+      - ddr3_memory
+      - ethernet_phy_gigabit
+      - microsd_socket
+      - rgb_leds
+      - usb_2_otg
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - micron_mt41k256m16
       - ftdi_ft2232h
@@ -346,6 +420,15 @@ Boards:
     Programmer: vivado_hw
   - Id: cora_z7_10
     BoardName: Cora Z7-10
+    Features:
+      - ddr3_memory
+      - ethernet_phy_gigabit
+      - microsd_socket
+      - rgb_leds
+      - usb_2_otg
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - micron_mt41k256m16
       - ftdi_ft2232h
@@ -387,6 +470,19 @@ Boards:
     BoardURL: https://digilent.com/reference/programmable-logic/cora-z7/start
   - Id: digilent_pynq_z1
     BoardName: PYNQ-Z1
+    Features:
+      - audio_codec
+      - ddr3_memory
+      - dip_switches
+      - ethernet_phy_gigabit
+      - hdmi_output
+      - microsd_socket
+      - qspi_flash
+      - rgb_leds
+      - usb_2_otg
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - micron_mt41k256m16
       - cypress_s25fl128s
@@ -409,6 +505,19 @@ Boards:
     BoardURL: https://digilent.com/reference/programmable-logic/pynq-z1/start
   - Id: digilent_pynq_z2
     BoardName: PYNQ-Z2
+    Features:
+      - audio_codec
+      - ddr3_memory
+      - dip_switches
+      - ethernet_phy_gigabit
+      - hdmi_output
+      - microsd_socket
+      - qspi_flash
+      - rgb_leds
+      - usb_2_otg
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - micron_mt41k256m16
       - cypress_s25fl128s
@@ -448,25 +557,39 @@ Boards:
       - jtag
     Programmer: vivado_hw
     Features:
-      - ddr3_memory
-      - qspi_flash
-      - hdmi_output
-      - vga_output
       - audio_codec
-      - ethernet_phy_gigabit
-      - usb_2_otg
-      - usb_uart_bridge
-      - usb_jtag_bridge
-      - pmod_connector
-      - user_leds
-      - user_buttons
-      - dip_switches
-      - fmc_lpc
       - barrel_jack_input
+      - ddr3_memory
+      - dip_switches
+      - ethernet_phy_gigabit
+      - fmc_lpc
+      - hdmi_output
+      - microsd_socket
+      - pmod_connector
+      - qspi_flash
+      - usb_2_otg
+      - usb_jtag_bridge
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
+      - vga_output
     BoardURL: https://digilent.com/shop/zedboard-zynq-7000-arm-fpga-soc-development-board/
     Status: active
   - Id: digilent_zybo
     BoardName: Zybo
+    Features:
+      - audio_codec
+      - ddr3_memory
+      - dip_switches
+      - ethernet_phy_gigabit
+      - hdmi_output
+      - microsd_socket
+      - qspi_flash
+      - usb_2_otg
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
+      - vga_output
     Devices:
       - cypress_s25fl128s
       - realtek_rtl8211e
@@ -488,6 +611,16 @@ Boards:
     BoardURL: https://digilent.com/reference/programmable-logic/zybo/start
   - Id: eclypse_z7
     BoardName: Eclypse Z7
+    Features:
+      - ddr3_memory
+      - ethernet_phy_gigabit
+      - microsd_socket
+      - qspi_flash
+      - rgb_leds
+      - usb_2_otg
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - cypress_s25fl128s
       - ftdi_ft2232h
@@ -587,16 +720,19 @@ Boards:
     ExtraProgrammers:
       - openFPGALoader[*]
     Features:
+      - bluetooth_le_radio
       - ddr3_memory
       - emmc_flash
-      - qspi_flash
       - ethernet_phy_gigabit
-      - usb_2_otg
-      - usb_uart_bridge
-      - microsd_socket
-      - wifi_radio
-      - bluetooth_le_radio
       - jtag_header
+      - microsd_socket
+      - qspi_flash
+      - usb_2_otg
+      - usb_jtag_bridge
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
+      - wifi_radio
     BoardURL: https://iwave-global.com/product/zynq-7000-soc-sodimm-system-on-module/
     Status: active
   - Id: krtkl_snickerdoodle_black
@@ -651,10 +787,11 @@ Boards:
     Programmer: vivado_hw
     Features:
       - ddr3_memory
-      - qspi_flash
       - emmc_flash
       - ethernet_phy_gigabit
+      - qspi_flash
       - usb_2_otg
+      - usb_uart_bridge
     BoardURL: https://www.myirtech.com/list.asp?id=552
     Status: active
   - Id: myir_myd_c7z010_v2
@@ -674,12 +811,13 @@ Boards:
     Programmer: vivado_hw
     Features:
       - ddr3_memory
-      - qspi_flash
       - emmc_flash
       - ethernet_phy_gigabit
+      - microsd_socket
+      - qspi_flash
       - usb_2_otg
       - usb_uart_bridge
-      - microsd_socket
+      - user_buttons
       - user_leds
     BoardURL: https://www.myirtech.com/list.asp?id=698
     Status: active
@@ -728,13 +866,14 @@ Boards:
     Programmer: vivado_hw
     Features:
       - ddr3_memory
-      - qspi_flash
       - emmc_flash
       - ethernet_phy_gigabit
-      - usb_2_otg
-      - usb_uart_bridge
       - hdmi_output
       - microsd_socket
+      - qspi_flash
+      - usb_2_otg
+      - usb_uart_bridge
+      - user_buttons
       - user_leds
     BoardURL: https://www.myirtech.com/list.asp?id=681
     Status: active
@@ -820,12 +959,14 @@ Boards:
     Features:
       - ddr3_memory
       - emmc_flash
-      - microsd_socket
       - ethernet_phy_gigabit
+      - jtag_header
+      - microsd_socket
+      - qspi_flash
       - usb_2_otg
       - usb_uart_bridge
+      - user_buttons
       - user_leds
-      - jtag_header
     BoardURL: https://www.myirtech.com/list.asp?id=565
     Status: active
   - Id: myir_zturn_v2_7020
@@ -873,16 +1014,22 @@ Boards:
       - usb-jtag
     Programmer: vivado_hw
     Features:
+      - ddr3_memory
+      - ethernet_phy_gigabit
+      - microsd_socket
+      - qspi_flash
       - usb_jtag_bridge
       - usb_uart_bridge
-      - ddr3_memory
-      - qspi_flash
-      - microsd_socket
-      - ethernet_phy_gigabit
+      - user_buttons
       - user_leds
     Status: eol
   - Id: numato_tarak
     BoardName: Tarak
+    Features:
+      - qspi_flash
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - silabs_cp2102
       - micron_n25q128a
@@ -1057,6 +1204,9 @@ Boards:
     Status: eol
   - Id: trenz_te0700
     BoardName: TE0700
+    Features:
+      - ddr3_memory
+      - qspi_flash
     Devices:
       - micron_mt41k128m16
       - micron_n25q128a
@@ -1068,6 +1218,10 @@ Boards:
     BoardURL: https://shop.trenz-electronic.de/en/Products/Trenz-Electronic/TE07XX-Zynq-SoC/
   - Id: trenz_te0715
     BoardName: TE0715
+    Features:
+      - ddr3_memory
+      - ethernet_phy_gigabit
+      - qspi_flash
     Devices:
       - micron_mt41k256m16
       - micron_n25q128a
@@ -1098,6 +1252,10 @@ Boards:
     Status: active
   - Id: trenz_te0720
     BoardName: TE0720
+    Features:
+      - ddr3_memory
+      - ethernet_phy_gigabit
+      - qspi_flash
     Devices:
       - micron_mt41k256m16
       - micron_n25q128a
@@ -1156,6 +1314,11 @@ Boards:
     Status: active
   - Id: trenz_te0726_zynqberry
     BoardName: TE0726 ZynqBerry
+    Features:
+      - ddr3_memory
+      - ethernet_phy_10_100
+      - qspi_flash
+      - usb_2_otg
     Devices:
       - micron_mt41k256m16
       - micron_n25q128a
@@ -1223,6 +1386,9 @@ Boards:
     Status: active
   - Id: trenz_te0750
     BoardName: TE0750
+    Features:
+      - ddr3_memory
+      - qspi_flash
     Devices:
       - micron_mt41k256m16
       - micron_n25q256a
@@ -1300,6 +1466,17 @@ Boards:
     Status: active
   - Id: xilinx_zc702
     BoardName: ZC702
+    Features:
+      - ddr3_memory
+      - dip_switches
+      - ethernet_phy_gigabit
+      - hdmi_output
+      - microsd_socket
+      - qspi_flash
+      - usb_jtag_bridge
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - micron_mt41k128m16
       - micron_n25q128a
@@ -1319,6 +1496,17 @@ Boards:
     BoardURL: https://www.xilinx.com/products/boards-and-kits/ek-z7-zc702-g.html
   - Id: xilinx_zc706
     BoardName: ZC706
+    Features:
+      - ddr3_memory
+      - dip_switches
+      - ethernet_phy_gigabit
+      - hdmi_output
+      - microsd_socket
+      - qspi_flash
+      - usb_jtag_bridge
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - micron_n25q256a
       - marvell_88e1116r
@@ -1340,6 +1528,19 @@ Boards:
     BoardURL: https://www.xilinx.com/products/boards-and-kits/ek-z7-zc706-g.html
   - Id: zedboard
     BoardName: ZedBoard
+    Features:
+      - audio_codec
+      - ddr3_memory
+      - dip_switches
+      - ethernet_phy_gigabit
+      - hdmi_output
+      - microsd_socket
+      - qspi_flash
+      - sdr_sdram
+      - usb_2_otg
+      - user_buttons
+      - user_leds
+      - vga_output
     Devices:
       - micron_mt41k128m16
       - spansion_s25fl256s
@@ -1361,6 +1562,19 @@ Boards:
     BoardURL: https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/zedboard/
   - Id: zybo_z7
     BoardName: Zybo Z7
+    Features:
+      - audio_codec
+      - ddr3_memory
+      - dip_switches
+      - ethernet_phy_gigabit
+      - hdmi_output
+      - microsd_socket
+      - qspi_flash
+      - rgb_leds
+      - usb_2_otg
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - cypress_s25fl128s
       - micron_mt41k256m16
@@ -1570,23 +1784,24 @@ Boards:
       - usb-jtag
     Programmer: vivado_hw
     Features:
-      - ddr3_memory
-      - qspi_flash
-      - sram
-      - hdmi_output
-      - vga_output
       - audio_codec
-      - ethernet_phy_gigabit
-      - usb_2_otg
-      - usb_uart_bridge
-      - usb_jtag_bridge
-      - pmod_connector
-      - user_leds
-      - user_buttons
-      - dip_switches
-      - fmc_lpc
-      - microsd_socket
       - barrel_jack_input
+      - ddr3_memory
+      - dip_switches
+      - ethernet_phy_gigabit
+      - fmc_lpc
+      - hdmi_output
+      - microsd_socket
+      - pmod_connector
+      - qspi_flash
+      - sdr_sdram
+      - sram
+      - usb_2_otg
+      - usb_jtag_bridge
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
+      - vga_output
     Devices:
       - micron_mt41k128m16
       - spansion_s25fl256s
@@ -1743,9 +1958,10 @@ Boards:
     Programmer: vivado_hw
     Features:
       - ddr3_memory
-      - qspi_flash
       - ethernet_phy_gigabit
+      - qspi_flash
       - usb_2_host
+      - usb_jtag_bridge
     Devices:
       - ftdi_ft2232h
       - micron_mt41k256m16
@@ -1760,12 +1976,14 @@ Boards:
       - jtag
     Programmer: vivado_hw
     Features:
-      - usb_uart_bridge
+      - ddr3_memory
       - ethernet_phy_gigabit
-      - microsd_socket
       - hdmi_output
-      - user_leds
+      - microsd_socket
+      - qspi_flash
+      - usb_uart_bridge
       - user_buttons
+      - user_leds
     Devices:
       - silabs_cp2102
       - micron_mt41k256m16
@@ -1781,11 +1999,12 @@ Boards:
       - jtag
     Programmer: vivado_hw
     Features:
-      - microsd_socket
       - ddr3_memory
-      - usb_uart_bridge
-      - hdmi_output
       - ethernet_phy_gigabit
+      - hdmi_output
+      - microsd_socket
+      - qspi_flash
+      - usb_uart_bridge
       - user_leds
     Devices:
       - silabs_cp2102

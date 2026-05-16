@@ -26,6 +26,22 @@ Boards:
     Status: active
   - Id: genesys_2
     BoardName: Genesys 2
+    Features:
+      - audio_codec
+      - ddr3_memory
+      - dip_switches
+      - ethernet_phy_gigabit
+      - hdmi_output
+      - microsd_socket
+      - parallel_lcd
+      - qspi_flash
+      - usb_2_host
+      - usb_2_otg
+      - usb_jtag_bridge
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
+      - vga_output
     Devices:
       - ftdi_ft2232h
       - ftdi_ft232r
@@ -66,12 +82,17 @@ Boards:
       - jtag
     Programmer: vivado_hw
     Features:
-      - pcie_endpoint
-      - fmc_hpc
       - ddr3_memory
-      - qspi_flash
-      - usb_uart_bridge
+      - dip_switches
+      - ethernet_phy_gigabit
+      - fmc_hpc
       - jtag_header
+      - pcie_endpoint
+      - qspi_flash
+      - usb_jtag_bridge
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     BoardURL: "https://www.hitechglobal.com/Boards/Kintex-7_PCIE.htm"
     Status: active
   - Id: htg_k700
@@ -92,10 +113,14 @@ Boards:
     Programmer: vivado_hw
     Features:
       - ddr3_memory
-      - pcie_endpoint
+      - ethernet_phy_gigabit
       - fmc_lpc
-      - usb_uart_bridge
+      - pcie_endpoint
+      - qspi_flash
       - usb_jtag_bridge
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     BoardURL: https://www.hitechglobal.com/Boards/Kintex-7_PCIE.htm
     Status: active
   - Id: numato_telesto
@@ -112,12 +137,13 @@ Boards:
       - usb-jtag
     Programmer: vivado_hw
     Features:
+      - ddr3_memory
+      - fmc_lpc
+      - pcie_endpoint
+      - qspi_flash
       - usb_jtag_bridge
       - usb_uart_bridge
-      - ddr3_memory
-      - qspi_flash
-      - pcie_endpoint
-      - fmc_lpc
+      - user_buttons
       - user_leds
     Status: eol
   - Id: opalkelly_xem7360_k160t
@@ -198,6 +224,9 @@ Boards:
     Status: active
   - Id: trenz_te0741
     BoardName: TE0741
+    Features:
+      - ddr3_memory
+      - qspi_flash
     Devices:
       - micron_mt41k256m16
       - micron_n25q256a
@@ -218,8 +247,9 @@ Boards:
       - jtag
     Programmer: vivado_hw
     Features:
-      - qspi_flash
+      - ddr3_memory
       - jtag_header
+      - qspi_flash
     BoardURL: https://www.trenz-electronic.de/en/Products/Trenz-Electronic/TE0741-Kintex-7/
     Status: active
   - Id: trenz_te0741_k325t
@@ -233,8 +263,9 @@ Boards:
       - jtag
     Programmer: vivado_hw
     Features:
-      - qspi_flash
+      - ddr3_memory
       - jtag_header
+      - qspi_flash
     BoardURL: https://www.trenz-electronic.de/en/Products/Trenz-Electronic/TE0741-Kintex-7/
     Status: active
   - Id: trenz_te0741_k410t
@@ -248,8 +279,9 @@ Boards:
       - jtag
     Programmer: vivado_hw
     Features:
-      - qspi_flash
+      - ddr3_memory
       - jtag_header
+      - qspi_flash
     BoardURL: https://www.trenz-electronic.de/en/Products/Trenz-Electronic/TE0741-Kintex-7/
     Status: active
   - Id: trenz_te0741_k70t
@@ -263,12 +295,16 @@ Boards:
       - jtag
     Programmer: vivado_hw
     Features:
-      - qspi_flash
+      - ddr3_memory
       - jtag_header
+      - qspi_flash
     BoardURL: https://www.trenz-electronic.de/en/Products/Trenz-Electronic/TE0741-Kintex-7/
     Status: active
   - Id: trenz_te0745
     BoardName: TE0745
+    Features:
+      - ddr3_memory
+      - qspi_flash
     Devices:
       - micron_mt41k256m16
       - micron_n25q256a
@@ -280,6 +316,15 @@ Boards:
     BoardURL: "https://shop.trenz-electronic.de/en/TE0745-02-91C31-A-SoM-with-AMD-Zynq-XC7Z045-1FBG676C-1-GByte-DDR3L-SDRAM-5.2-x-7.6-cm"
   - Id: xilinx_kc705
     BoardName: KC705
+    Features:
+      - dip_switches
+      - ethernet_phy_gigabit
+      - microsd_socket
+      - qspi_flash
+      - usb_jtag_bridge
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - marvell_88e1111
       - silabs_cp2103
@@ -379,10 +424,13 @@ Boards:
       - pcie-jtag
     Programmer: vivado_hw
     Features:
-      - pcie_endpoint
       - ddr3_memory
-      - usb_uart_bridge
       - microsd_socket
+      - pcie_endpoint
+      - qspi_flash
+      - usb_jtag_bridge
+      - usb_uart_bridge
+      - user_leds
     Devices:
       - ftdi_ft2232h
       - micron_n25q128a

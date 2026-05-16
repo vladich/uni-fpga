@@ -50,6 +50,17 @@ Boards:
     Status: eol
   - Id: digilent_atlys
     BoardName: Atlys
+    Features:
+      - audio_codec
+      - ddr2_memory
+      - dip_switches
+      - ethernet_phy_gigabit
+      - hdmi_output
+      - qspi_flash
+      - usb_2_host
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - micron_n25q128a
       - microchip_pic24fj128_usb_host
@@ -69,6 +80,16 @@ Boards:
     BoardURL: https://digilent.com/reference/programmable-logic/atlys/start
   - Id: digilent_nexys3
     BoardName: Nexys 3
+    Features:
+      - dip_switches
+      - ethernet_phy_10_100
+      - nor_flash
+      - qspi_flash
+      - sdr_sdram
+      - seven_segment_display
+      - user_buttons
+      - user_leds
+      - vga_output
     Devices:
       - pushbutton_smd_generic
       - dip_switch_generic
@@ -128,14 +149,22 @@ Boards:
       - usb-jtag
     Programmer: vivado_hw
     Features:
-      - usb_jtag_bridge
-      - usb_uart_bridge
       - qspi_flash
-      - user_leds
+      - usb_jtag_bridge
       - usb_powered
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     Status: eol
   - Id: numato_mimas_v2
     BoardName: Mimas V2
+    Features:
+      - dip_switches
+      - qspi_flash
+      - seven_segment_display
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - silabs_cp2102
       - micron_n25q032a
@@ -151,6 +180,11 @@ Boards:
     BoardURL: https://numato.com/product/mimas-v2-spartan-6-fpga-development-board-with-ddr-sdram/
   - Id: numato_saturn_x
     BoardName: Saturn-X
+    Features:
+      - qspi_flash
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - ftdi_ft2232h
       - micron_n25q032a
@@ -256,6 +290,13 @@ Boards:
     Status: active
   - Id: xilinx_sp601
     BoardName: SP601
+    Features:
+      - dip_switches
+      - ethernet_phy_gigabit
+      - qspi_flash
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - micron_n25q128a
       - marvell_88e1111
@@ -271,6 +312,15 @@ Boards:
     BoardURL: https://www.xilinx.com/products/boards-and-kits/ek-s6-sp601-g.html
   - Id: xilinx_sp605
     BoardName: SP605
+    Features:
+      - dip_switches
+      - ethernet_phy_gigabit
+      - microsd_socket
+      - parallel_lcd
+      - qspi_flash
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - micron_n25q128a
       - marvell_88e1111

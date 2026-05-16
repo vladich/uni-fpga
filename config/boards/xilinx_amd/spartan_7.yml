@@ -54,6 +54,14 @@ Boards:
     Status: active
   - Id: arty_s7_25
     BoardName: Arty S7-25
+    Features:
+      - ddr3_memory
+      - dip_switches
+      - qspi_flash
+      - rgb_leds
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - cypress_s25fl128s
       - micron_mt41k128m16
@@ -69,6 +77,14 @@ Boards:
     Programmer: vivado_hw
   - Id: arty_s7_50
     BoardName: Arty S7-50
+    Features:
+      - ddr3_memory
+      - dip_switches
+      - qspi_flash
+      - rgb_leds
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - cypress_s25fl128s
       - micron_mt41k128m16
@@ -101,6 +117,12 @@ Boards:
     Status: active
   - Id: cmod_s7
     BoardName: CMOD S7
+    Features:
+      - qspi_flash
+      - rgb_leds
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - ftdi_ft2232h
       - pushbutton_smd_generic
@@ -216,13 +238,25 @@ Boards:
       - jtag
     Programmer: vivado_hw
     Features:
+      - hyperram
+      - jtag_header
       - qspi_flash
       - usb_powered
-      - jtag_header
+      - user_buttons
+      - user_leds
     BoardURL: https://www.trenz-electronic.de/en/S7-Mini-Fully-Open-Source-Module-with-AMD-Spartan-7S25-1C-64-Mbit-HyperRAM/TE0890-02-P1C-5-A
     Status: active
   - Id: xilinx_sp701
     BoardName: SP701
+    Features:
+      - dip_switches
+      - ethernet_phy_gigabit
+      - microsd_socket
+      - qspi_flash
+      - usb_jtag_bridge
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - micron_n25q256a
       - microchip_ksz9031rnx
@@ -247,8 +281,10 @@ Boards:
       - jtag
     Programmer: vivado_hw
     Features:
-      - usb_uart_bridge
       - nor_flash
+      - qspi_flash
+      - usb_jtag_bridge
+      - usb_uart_bridge
       - user_leds
     Devices:
       - ftdi_ft2232h

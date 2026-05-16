@@ -117,6 +117,15 @@ Boards:
     BoardURL: https://alinx.com/en/detail/9
   - Id: arty_a7
     BoardName: Arty A7
+    Features:
+      - ddr3_memory
+      - dip_switches
+      - ethernet_phy_10_100
+      - qspi_flash
+      - rgb_leds
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - micron_n25q128a
       - micron_mt41k128m16
@@ -139,6 +148,15 @@ Boards:
     BoardURL: https://digilent.com/reference/programmable-logic/arty-a7/start
   - Id: basys3
     BoardName: Basys 3
+    Features:
+      - dip_switches
+      - qspi_flash
+      - seven_segment_display
+      - usb_2_host
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
+      - vga_output
     Devices:
       - ftdi_ft2232h
       - pushbutton_smd_generic
@@ -173,6 +191,13 @@ Boards:
     Status: eol
   - Id: cmod_a7
     BoardName: CMOD A7
+    Features:
+      - qspi_flash
+      - rgb_leds
+      - sram
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - ftdi_ft2232h
       - pushbutton_smd_generic
@@ -206,6 +231,13 @@ Boards:
     Status: active
   - Id: digilent_usb104_a7
     BoardName: USB104 A7
+    Features:
+      - ddr3_memory
+      - microsd_socket
+      - qspi_flash
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - cypress_s25fl128s
       - micron_mt41k256m16
@@ -265,6 +297,22 @@ Boards:
     Status: active
   - Id: nexys4
     BoardName: Nexys 4
+    Features:
+      - accelerometer
+      - audio_amp_class_d
+      - digital_mic_pdm
+      - dip_switches
+      - ethernet_phy_10_100
+      - microsd_socket
+      - qspi_flash
+      - rgb_leds
+      - sdr_sdram
+      - seven_segment_display
+      - temperature_sensor_external
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
+      - vga_output
     Devices:
       - cypress_s25fl128s
       - ftdi_ft2232h
@@ -289,6 +337,22 @@ Boards:
     BoardURL: https://digilent.com/reference/programmable-logic/nexys-4/start
   - Id: nexys4_ddr
     BoardName: Nexys 4 DDR
+    Features:
+      - accelerometer
+      - audio_amp_class_d
+      - ddr2_memory
+      - digital_mic_pdm
+      - dip_switches
+      - ethernet_phy_10_100
+      - microsd_socket
+      - qspi_flash
+      - rgb_leds
+      - seven_segment_display
+      - temperature_sensor_external
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
+      - vga_output
     Devices:
       - cypress_s25fl128s
       - ftdi_ft2232h
@@ -313,6 +377,22 @@ Boards:
     BoardURL: https://digilent.com/reference/programmable-logic/nexys-4-ddr/start
   - Id: nexys_a7
     BoardName: Nexys A7
+    Features:
+      - accelerometer
+      - audio_amp_class_d
+      - ddr2_memory
+      - digital_mic_pdm
+      - dip_switches
+      - ethernet_phy_10_100
+      - microsd_socket
+      - qspi_flash
+      - rgb_leds
+      - seven_segment_display
+      - temperature_sensor_external
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
+      - vga_output
     Devices:
       - cypress_s25fl128s
       - ftdi_ft2232h
@@ -341,6 +421,21 @@ Boards:
     BoardURL: https://digilent.com/reference/programmable-logic/nexys-a7/start
   - Id: nexys_video
     BoardName: Nexys Video
+    Features:
+      - audio_codec
+      - ddr3_memory
+      - dip_switches
+      - ethernet_phy_gigabit
+      - hdmi_input
+      - hdmi_output
+      - microsd_socket
+      - parallel_lcd
+      - qspi_flash
+      - usb_2_host
+      - usb_jtag_bridge
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - micron_mt41k256m16
       - realtek_rtl8211e
@@ -372,6 +467,14 @@ Boards:
     Programmer: vivado_hw
   - Id: numato_mimas_a7
     BoardName: Mimas A7
+    Features:
+      - ddr3_memory
+      - dip_switches
+      - microsd_socket
+      - qspi_flash
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - ftdi_ft2232h
       - micron_mt41k128m16
@@ -408,6 +511,12 @@ Boards:
     Status: eol
   - Id: numato_neso_artix7
     BoardName: Neso Artix 7
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - ftdi_ft2232h
       - micron_n25q128a
@@ -432,10 +541,11 @@ Boards:
       - usb-jtag
     Programmer: vivado_hw
     Features:
+      - jtag_header
       - pcie_endpoint
       - qspi_flash
+      - usb_jtag_bridge
       - user_leds
-      - jtag_header
     Status: eol
   - Id: numato_vesnin
     BoardName: Numato Vesnin Artix-7 FPGA Development Board
@@ -614,12 +724,16 @@ Boards:
       - jtag
     Programmer: vivado_hw
     Features:
-      - qspi_flash
+      - ddr3_memory
       - jtag_header
+      - qspi_flash
     BoardURL: https://www.trenz-electronic.de/en/FPGA-Module-with-AMD-Artix-7A35T-2I-16-MByte-Flash-3-3V-Config.-3-x-4-cm/TE0714-04-42I-7-B
     Status: active
   - Id: trenz_te0725
     BoardName: TE0725
+    Features:
+      - ddr3_memory
+      - qspi_flash
     Devices:
       - micron_mt41k128m16
       - micron_n25q128a
@@ -631,6 +745,8 @@ Boards:
     BoardURL: "https://shop.trenz-electronic.de/en/TE0725-04-72C-1-A-FPGA-Module-with-AMD-Artix-7A100T-2C-2-x-50-Pin-Header-3-5-x-7-3-cm"
   - Id: trenz_te0790
     BoardName: TE0790
+    Features:
+      - usb_jtag_bridge
     Devices:
       - ftdi_ft2232h
     BoardProducer: trenz_electronic
@@ -642,6 +758,13 @@ Boards:
     Notes: "Catalog erroneously lists FPGA chip XC7A35T; TE0790 is actually Trenz's XMOD FTDI JTAG adapter (no FPGA). Entry kept for slug stability; chip field is incorrect."
   - Id: usb104_a7_100t
     BoardName: USB104 A7-100T
+    Features:
+      - ddr3_memory
+      - microsd_socket
+      - qspi_flash
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - cypress_s25fl128s
       - micron_mt41k256m16
@@ -656,6 +779,16 @@ Boards:
     Programmer: vivado_hw
   - Id: xilinx_ac701
     BoardName: AC701
+    Features:
+      - ddr3_memory
+      - dip_switches
+      - ethernet_phy_gigabit
+      - microsd_socket
+      - qspi_flash
+      - usb_jtag_bridge
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - micron_mt41k256m16
       - micron_n25q256a

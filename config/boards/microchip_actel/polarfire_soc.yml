@@ -27,19 +27,27 @@ Boards:
       - jtag
     Programmer: libero_fpexpress
     Features:
-      - microsd_socket
       - emmc_flash
-      - qspi_flash
       - ethernet_phy_gigabit
-      - usb_uart_bridge
-      - user_leds
-      - user_buttons
+      - microsd_socket
+      - qspi_flash
+      - spi_flash
       - usb_jtag_bridge
       - usb_powered
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     BoardURL: https://www.microchip.com/en-us/development-tool/beaglev-fire
     Status: active
   - Id: microchip_iglooicicle
     BoardName: PolarFire SoC Icicle Kit
+    Features:
+      - ethernet_phy_gigabit
+      - microsd_socket
+      - spi_flash
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - ftdi_ft4232h
       - microsd_socket_generic
@@ -55,6 +63,12 @@ Boards:
     BoardURL: https://www.microchip.com/en-us/development-tool/MPFS-ICICLE-KIT-ES
   - Id: microchip_iglooicicle_disco
     BoardName: PolarFire SoC Discovery Kit
+    Features:
+      - microsd_socket
+      - spi_flash
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - ftdi_ft4232h
       - microsd_socket_generic
@@ -81,21 +95,29 @@ Boards:
       - jtag
     Programmer: libero_fpexpress
     Features:
-      - microsd_socket
-      - qspi_flash
       - ethernet_phy_gigabit
-      - usb_uart_bridge
-      - mipi_csi2_input
-      - raspi_hat_header
+      - microsd_socket
       - mikrobus_socket
-      - user_leds
-      - user_buttons
+      - mipi_csi2_input
+      - qspi_flash
+      - raspi_hat_header
+      - spi_flash
       - usb_jtag_bridge
       - usb_powered
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     BoardURL: https://www.microchip.com/en-us/development-tool/mpfs-disco-kit
     Status: active
   - Id: microchip_polarfiresoc_video
     BoardName: PolarFire SoC Video Kit
+    Features:
+      - ethernet_phy_gigabit
+      - microsd_socket
+      - spi_flash
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - ftdi_ft4232h
       - microsd_socket_generic
@@ -117,10 +139,11 @@ Boards:
       - jtag
     Programmer: libero_fpexpress
     Features:
-      - microsd_socket
       - ddr4_memory
-      - usb_uart_bridge
       - ethernet_phy_gigabit
+      - microsd_socket
+      - spi_flash
+      - usb_uart_bridge
       - user_leds
     Devices:
       - ftdi_ft4232h

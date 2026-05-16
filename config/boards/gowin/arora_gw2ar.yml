@@ -15,6 +15,10 @@ Boards:
     BoardURL: https://www.gowinsemi.com/en/support/devkits_detail/33/
   - Id: tang_nano_20k
     BoardName: Tang Nano 20k
+    Features:
+      - addressable_leds
+      - audio_amp_class_d
+      - microsd_socket
     Devices:
       - maxim_max98357
       - ws2812_led_chain

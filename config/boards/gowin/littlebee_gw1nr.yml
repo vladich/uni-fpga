@@ -75,6 +75,8 @@ Boards:
     Programmer: openFPGALoader
   - Id: tang_nano_9k
     BoardName: Tang Nano 9k
+    Features:
+      - microsd_socket
     Devices:
       - microsd_socket_generic
     BoardProducer: sipeed

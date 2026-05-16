@@ -7,6 +7,9 @@ Description: MachXO3 with security blocks (hardware root of trust). Diamond-only
 Boards:
   - Id: lattice_machxo3d_9400
     BoardName: MachXO3D-9400 Evaluation Kit
+    Features:
+      - microsd_socket
+      - usb_jtag_bridge
     Devices:
       - ftdi_ft2232h
       - microsd_socket_generic

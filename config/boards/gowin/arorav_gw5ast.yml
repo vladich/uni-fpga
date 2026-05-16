@@ -42,6 +42,8 @@ Boards:
     Status: active
   - Id: tang_mega_138k
     BoardName: Tang Mega 138k
+    Features:
+      - microsd_socket
     Devices:
       - microsd_socket_generic
     BoardProducer: sipeed
@@ -52,6 +54,8 @@ Boards:
     BoardURL: https://wiki.sipeed.com/hardware/en/tang/tang-mega-138k/mega-138k.html
   - Id: tang_mega_138k_pro
     BoardName: Tang Mega 138k Pro
+    Features:
+      - microsd_socket
     Devices:
       - microsd_socket_generic
     BoardProducer: sipeed
@@ -62,6 +66,8 @@ Boards:
     BoardURL: "https://wiki.sipeed.com/hardware/en/tang/tang-mega-138k/mega-138k-pro.html"
   - Id: tang_mega_138k_pro_dock
     BoardName: Tang Mega 138k Pro Dock
+    Features:
+      - microsd_socket
     Devices:
       - microsd_socket_generic
     BoardProducer: sipeed

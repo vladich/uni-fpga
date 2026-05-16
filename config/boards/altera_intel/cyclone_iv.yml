@@ -40,6 +40,15 @@ Boards:
     BoardURL: https://alinx.com/en/detail/42
   - Id: de0_nano
     BoardName: DE0-Nano
+    Features:
+      - accelerometer
+      - adc_chip
+      - dip_switches
+      - qspi_flash
+      - sdr_sdram
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - winbond_w9825g6kh
       - micron_n25q128a
@@ -57,6 +66,17 @@ Boards:
     BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&CategoryNo=139&No=593
   - Id: de2_115
     BoardName: DE2-115
+    Features:
+      - audio_codec
+      - dip_switches
+      - ethernet_phy_gigabit
+      - hdmi_input
+      - sdr_sdram
+      - seven_segment_display
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
+      - vga_output
     Devices:
       - winbond_w9825g6kh
       - wolfson_wm8731
@@ -84,6 +104,13 @@ Boards:
     Programmer: quartus_pgm
   - Id: intel_cycloneiv_e_devkit
     BoardName: Cyclone IV E FPGA Development Kit
+    Features:
+      - dip_switches
+      - ethernet_phy_gigabit
+      - usb_jtag_bridge
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - usb_blaster_ii_built_in
       - silabs_cp2102
@@ -237,6 +264,14 @@ Boards:
     Programmer: quartus_pgm
   - Id: terasic_p0530
     BoardName: P0530 (Cyclone IV)
+    Features:
+      - dip_switches
+      - microsd_socket
+      - qspi_flash
+      - seven_segment_display
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - cypress_s25fl128s
       - microsd_socket_generic

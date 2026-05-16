@@ -7,6 +7,12 @@ Description: 90 nm Spartan 3 derivative with more SRAM (2005). ISE.
 Boards:
   - Id: digilent_basys2
     BoardName: Basys 2
+    Features:
+      - dip_switches
+      - seven_segment_display
+      - user_buttons
+      - user_leds
+      - vga_output
     Devices:
       - pushbutton_smd_generic
       - dip_switch_generic
@@ -21,6 +27,14 @@ Boards:
     BoardURL: https://digilent.com/reference/programmable-logic/basys-2/start
   - Id: digilent_nexys2
     BoardName: Nexys 2
+    Features:
+      - dip_switches
+      - nor_flash
+      - sdr_sdram
+      - seven_segment_display
+      - user_buttons
+      - user_leds
+      - vga_output
     Devices:
       - pushbutton_smd_generic
       - dip_switch_generic
@@ -41,6 +55,13 @@ Boards:
     BoardURL: https://digilent.com/reference/programmable-logic/nexys-2/start
   - Id: digilent_spartan3e_starter
     BoardName: Spartan-3E Starter Kit
+    Features:
+      - dip_switches
+      - ethernet_phy_10_100
+      - nor_flash
+      - user_buttons
+      - user_leds
+      - vga_output
     Devices:
       - pushbutton_smd_generic
       - dip_switch_generic

@@ -23,12 +23,16 @@ Boards:
     Programmer: quartus_pgm
     Features:
       - ddr3_memory
+      - dip_switches
+      - ethernet_10gbe_sfp
+      - ethernet_phy_gigabit
+      - fmc_hpc
+      - pcie_endpoint
+      - sfp_cage
       - usb_jtag_bridge
       - usb_uart_bridge
-      - pcie_endpoint
-      - fmc_hpc
-      - sfp_cage
-      - ethernet_10gbe_sfp
+      - user_buttons
+      - user_leds
     Status: eol
   - Id: intel_stratixiv_gx_devkit
     BoardName: Stratix IV GX FPGA Development Kit
@@ -48,15 +52,25 @@ Boards:
     Programmer: quartus_pgm
     Features:
       - ddr3_memory
+      - dip_switches
+      - ethernet_phy_gigabit
+      - fmc_hpc
+      - pcie_endpoint
+      - sfp_cage
       - usb_jtag_bridge
       - usb_uart_bridge
-      - pcie_endpoint
-      - fmc_hpc
-      - sfp_cage
-      - ethernet_phy_gigabit
+      - user_buttons
+      - user_leds
     Status: eol
   - Id: terasic_de4
     BoardName: DE4
+    Features:
+      - ddr2_memory
+      - dip_switches
+      - ethernet_phy_gigabit
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - usb_blaster_ii_built_in
       - led_discrete_generic
@@ -72,6 +86,12 @@ Boards:
     BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&CategoryNo=138&No=501
   - Id: terasic_tr4
     BoardName: TR4
+    Features:
+      - ddr3_memory
+      - dip_switches
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - ddr3_sodimm_socket
       - usb_blaster_ii_built_in

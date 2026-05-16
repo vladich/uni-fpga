@@ -91,12 +91,14 @@ Boards:
       - jtag
     Programmer: vivado_hw
     Features:
-      - pcie_endpoint
-      - fmc_hpc
       - ddr4_memory
+      - fmc_hpc
+      - jtag_header
+      - pcie_endpoint
       - qspi_flash
       - usb_uart_bridge
-      - jtag_header
+      - user_buttons
+      - user_leds
     BoardURL: https://www.hitechglobal.com/Boards/Kintex-UltraScale.htm
     Status: active
   - Id: htg_k816
@@ -118,12 +120,21 @@ Boards:
     Features:
       - ddr4_memory
       - pcie_endpoint
-      - usb_uart_bridge
+      - qspi_flash
       - usb_jtag_bridge
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     BoardURL: https://www.hitechglobal.com/Boards/Kintex_UltraScale_half-size_PCIe.htm
     Status: active
   - Id: numato_aller
     BoardName: Aller
+    Features:
+      - ddr3_memory
+      - qspi_flash
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - ftdi_ft2232h
       - micron_n25q128a
@@ -138,6 +149,12 @@ Boards:
     Status: eol
   - Id: numato_skoll
     BoardName: Skoll
+    Features:
+      - ddr4_memory
+      - qspi_flash
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - ftdi_ft2232h
       - micron_n25q256a
@@ -165,6 +182,9 @@ Boards:
     Status: active
   - Id: trenz_te0841
     BoardName: TE0841
+    Features:
+      - ddr4_memory
+      - qspi_flash
     Devices:
       - micron_mt40a256m16
       - macronix_mx25l25645g
@@ -190,6 +210,15 @@ Boards:
     Status: active
   - Id: xilinx_kcu105
     BoardName: KCU105
+    Features:
+      - ddr4_memory
+      - dip_switches
+      - ethernet_phy_gigabit
+      - microsd_socket
+      - qspi_flash
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - micron_mt40a256m16
       - micron_n25q256a
@@ -220,10 +249,11 @@ Boards:
     Programmer: vivado_hw
     Features:
       - ddr4_memory
-      - qsfp_cage
-      - pcie_endpoint
-      - usb_uart_bridge
       - jtag_header
+      - pcie_endpoint
+      - qsfp_cage
+      - qspi_flash
+      - usb_uart_bridge
     BoardURL: https://www.amd.com/en/products/adaptive-socs-and-fpgas/evaluation-boards/dk-u1-kcu1500-g.html
     Status: eol
   - Id: alinx_axku041

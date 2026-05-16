@@ -7,6 +7,15 @@ Description: Single-chip non-volatile FPGA (sold as CPLD replacement). Quartus P
 Boards:
   - Id: de10_lite
     BoardName: DE10-Lite
+    Features:
+      - accelerometer
+      - dip_switches
+      - sdr_sdram
+      - seven_segment_display
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
+      - vga_output
     Devices:
       - winbond_w9825g6kh
       - vga666_resistor_dac
@@ -24,6 +33,14 @@ Boards:
     BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&CategoryNo=218&No=1021
   - Id: intel_max10_devkit
     BoardName: MAX 10 FPGA Development Kit
+    Features:
+      - dip_switches
+      - hdmi_output
+      - seven_segment_display
+      - usb_jtag_bridge
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - usb_blaster_ii_built_in
       - silabs_cp2102
@@ -40,6 +57,13 @@ Boards:
     Status: eol
   - Id: intel_max10_evalkit
     BoardName: MAX 10 FPGA Evaluation Kit
+    Features:
+      - dip_switches
+      - seven_segment_display
+      - usb_jtag_bridge
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - usb_blaster_ii_built_in
       - silabs_cp2102
@@ -70,6 +94,19 @@ Boards:
     Programmer: quartus_pgm
   - Id: terasic_max10_deca
     BoardName: MAX 10 DECA
+    Features:
+      - accelerometer
+      - adc_chip
+      - audio_codec
+      - ddr3_memory
+      - dip_switches
+      - ethernet_phy_10_100
+      - hdmi_output
+      - microsd_socket
+      - usb_2_otg
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - micron_mt41k128m16
       - adi_adv7513
@@ -91,6 +128,13 @@ Boards:
     BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&No=1021
   - Id: terasic_max10_nanoboard
     BoardName: MAX 10 NanoBoard
+    Features:
+      - dip_switches
+      - sdr_sdram
+      - seven_segment_display
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - winbond_w9825g6kh
       - usb_blaster_ii_built_in
@@ -106,6 +150,14 @@ Boards:
     BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&No=1018
   - Id: terasic_max10_neek
     BoardName: MAX 10 NEEK
+    Features:
+      - ethernet_phy_gigabit
+      - hdmi_input
+      - microsd_socket
+      - usb_jtag_bridge
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - adi_adv7611
       - microchip_ksz9031rnx

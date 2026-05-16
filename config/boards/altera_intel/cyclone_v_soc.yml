@@ -7,6 +7,16 @@ Description: Cyclone V with hard ARM A9 dual-core (HPS). Quartus Prime.
 Boards:
   - Id: de0_nano_soc
     BoardName: DE0-Nano-SoC
+    Features:
+      - accelerometer
+      - adc_chip
+      - ddr3_memory
+      - dip_switches
+      - ethernet_phy_gigabit
+      - microsd_socket
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - micron_mt41k256m16
       - microsd_socket_generic
@@ -25,6 +35,16 @@ Boards:
     BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&CategoryNo=165&No=941
   - Id: de10_nano
     BoardName: DE10-Nano
+    Features:
+      - adc_chip
+      - ddr3_memory
+      - dip_switches
+      - ethernet_phy_gigabit
+      - hdmi_output
+      - microsd_socket
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - micron_mt41k256m16
       - microchip_ksz9031rnx
@@ -43,6 +63,20 @@ Boards:
     BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&CategoryNo=167&No=1046
   - Id: de1_soc
     BoardName: DE1-SoC
+    Features:
+      - accelerometer
+      - adc_chip
+      - audio_codec
+      - ddr3_memory
+      - dip_switches
+      - ethernet_phy_gigabit
+      - microsd_socket
+      - sdr_sdram
+      - seven_segment_display
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
+      - vga_output
     Devices:
       - micron_mt41k128m16
       - winbond_w9825g6kh
@@ -65,6 +99,20 @@ Boards:
     BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&CategoryNo=165&No=836
   - Id: intel_cyclonev_soc_devkit
     BoardName: Cyclone V SoC Development Kit
+    Features:
+      - audio_codec
+      - ddr3_memory
+      - dip_switches
+      - emmc_flash
+      - ethernet_phy_gigabit
+      - microsd_socket
+      - parallel_lcd
+      - qspi_flash
+      - usb_2_host
+      - usb_jtag_bridge
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - micron_mt41k256m16
       - micron_n25q128a
@@ -110,6 +158,15 @@ Boards:
     Status: active
   - Id: terasic_atlas_soc
     BoardName: Atlas-SoC Kit
+    Features:
+      - accelerometer
+      - ddr3_memory
+      - dip_switches
+      - ethernet_phy_gigabit
+      - microsd_socket
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - micron_mt41k256m16
       - microsd_socket_generic
@@ -127,6 +184,20 @@ Boards:
     BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&CategoryNo=205&No=941
   - Id: terasic_de10_standard
     BoardName: DE10-Standard
+    Features:
+      - accelerometer
+      - adc_chip
+      - audio_codec
+      - ddr3_memory
+      - dip_switches
+      - ethernet_phy_gigabit
+      - microsd_socket
+      - sdr_sdram
+      - seven_segment_display
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
+      - vga_output
     Devices:
       - micron_mt41k256m16
       - winbond_w9825g6kh
@@ -149,6 +220,19 @@ Boards:
     BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&No=1081
   - Id: terasic_sockit
     BoardName: Terasic SoCKit
+    Features:
+      - accelerometer
+      - adc_chip
+      - audio_codec
+      - ddr3_memory
+      - dip_switches
+      - ethernet_phy_gigabit
+      - microsd_socket
+      - seven_segment_display
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
+      - vga_output
     Devices:
       - micron_mt41k256m16
       - adi_ssm2603

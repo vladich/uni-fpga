@@ -7,6 +7,9 @@ Description: Nexus-based MachXO5. Radiant.
 Boards:
   - Id: lattice_machxo5nx_evn
     BoardName: MachXO5-NX Evaluation Board
+    Features:
+      - microsd_socket
+      - usb_jtag_bridge
     Devices:
       - ftdi_ft2232h
       - microsd_socket_generic

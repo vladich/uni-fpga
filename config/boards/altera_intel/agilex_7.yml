@@ -18,10 +18,11 @@ Boards:
       - pcie-jtag
     Programmer: quartus_pgm
     Features:
+      - ddr4_memory
       - pcie_endpoint
       - qsfp_cage
-      - ddr4_memory
       - qspi_flash
+      - usb_uart_bridge
     BoardURL: https://www.bittware.com/products/ia-420f/
     Status: active
   - Id: bittware_ia_440i
@@ -37,10 +38,11 @@ Boards:
       - pcie-jtag
     Programmer: quartus_pgm
     Features:
+      - ddr4_memory
       - pcie_endpoint
       - qsfp_cage
-      - ddr4_memory
       - qspi_flash
+      - usb_uart_bridge
     BoardURL: https://www.bittware.com/products/ia-440i/
     Status: active
   - Id: bittware_ia_441i
@@ -59,6 +61,7 @@ Boards:
       - ddr4_memory
       - pcie_endpoint
       - qsfp_cage
+      - qspi_flash
       - usb_uart_bridge
     BoardURL: https://www.bittware.com/products/ia-441i/
     Status: active
@@ -78,6 +81,7 @@ Boards:
       - ddr4_memory
       - pcie_endpoint
       - qsfp_cage
+      - qspi_flash
       - usb_uart_bridge
     BoardURL: https://www.bittware.com/products/ia-720i/
     Status: active
@@ -94,10 +98,11 @@ Boards:
       - pcie-jtag
     Programmer: quartus_pgm
     Features:
+      - ddr4_memory
       - pcie_endpoint
       - qsfp_cage
-      - ddr4_memory
       - qspi_flash
+      - usb_uart_bridge
     BoardURL: https://www.bittware.com/products/ia-780i/
     Status: active
   - Id: bittware_ia_840f
@@ -113,10 +118,11 @@ Boards:
       - pcie-jtag
     Programmer: quartus_pgm
     Features:
+      - ddr4_memory
       - pcie_endpoint
       - qsfp_cage
-      - ddr4_memory
       - qspi_flash
+      - usb_uart_bridge
     BoardURL: https://www.bittware.com/products/ia-840f/
     Status: active
   - Id: bittware_ia_860m
@@ -131,14 +137,25 @@ Boards:
       - pcie-jtag
     Programmer: quartus_pgm
     Features:
+      - ddr4_memory
       - pcie_endpoint
       - qsfp_cage
-      - ddr4_memory
       - qspi_flash
+      - usb_uart_bridge
     BoardURL: https://www.bittware.com/products/ia-860m/
     Status: active
   - Id: intel_agilex7_devkit_fseries
     BoardName: Agilex 7 F-Series FPGA Development Kit
+    Features:
+      - ddr4_memory
+      - dip_switches
+      - ethernet_phy_gigabit
+      - microsd_socket
+      - qspi_flash
+      - usb_jtag_bridge
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - ddr4_sodimm_socket
       - micron_n25q256a
@@ -157,6 +174,16 @@ Boards:
     BoardURL: "https://www.altera.com/products/devkit/po-3202/agilex-7-fpga-f-series-development-kit-p-tile-and-e-tile"
   - Id: intel_agilex7_devkit_iseries
     BoardName: Agilex 7 I-Series FPGA Development Kit
+    Features:
+      - ddr4_memory
+      - dip_switches
+      - ethernet_phy_gigabit
+      - microsd_socket
+      - qspi_flash
+      - usb_jtag_bridge
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - ddr4_sodimm_socket
       - micron_n25q256a
@@ -192,15 +219,33 @@ Boards:
     Programmer: quartus_pgm
     Features:
       - ddr4_memory
+      - dip_switches
+      - ethernet_10gbe_sfp
+      - ethernet_phy_gigabit
+      - lpddr4_memory
+      - microsd_socket
+      - pcie_endpoint
+      - qsfp_cage
       - qspi_flash
       - usb_jtag_bridge
       - usb_uart_bridge
-      - qsfp_cage
-      - pcie_endpoint
-      - ethernet_10gbe_sfp
+      - user_buttons
+      - user_leds
     Status: eol
   - Id: intel_agilex7_soc_devkit
     BoardName: Agilex 7 SoC FPGA Development Kit
+    Features:
+      - ddr4_memory
+      - dip_switches
+      - emmc_flash
+      - ethernet_phy_gigabit
+      - microsd_socket
+      - qspi_flash
+      - usb_2_host
+      - usb_jtag_bridge
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - ddr4_sodimm_socket
       - micron_mt40a256m16
@@ -236,11 +281,13 @@ Boards:
     Programmer: quartus_pgm
     Features:
       - ddr4_memory
+      - pcie_endpoint
+      - qsfp_cage
       - qspi_flash
       - usb_jtag_bridge
       - usb_uart_bridge
-      - pcie_endpoint
-      - qsfp_cage
+      - user_buttons
+      - user_leds
     Status: eol
   - Id: terasic_agilex7_f_series_2x_f_tile
     BoardName: Agilex 7 FPGA F-Series Development Kit (2x F-Tile, AGF023)
@@ -258,10 +305,14 @@ Boards:
     Programmer: quartus_pgm
     Features:
       - ddr4_memory
-      - qsfp_cage
-      - pcie_endpoint
+      - dip_switches
       - fmc_plus
+      - microsd_socket
+      - pcie_endpoint
+      - qsfp_cage
       - usb_jtag_bridge
+      - user_buttons
+      - user_leds
     BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&CategoryNo=142&No=1294
     Status: active
   - Id: terasic_agilex7_f_series_devkit
@@ -280,10 +331,14 @@ Boards:
     Programmer: quartus_pgm
     Features:
       - ddr4_memory
-      - qsfp_cage
-      - pcie_endpoint
+      - dip_switches
       - fmc_plus
+      - microsd_socket
+      - pcie_endpoint
+      - qsfp_cage
       - usb_jtag_bridge
+      - user_buttons
+      - user_leds
     BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&CategoryNo=142&No=1262
     Status: active
   - Id: terasic_agilex7_f_series_soc_devkit
@@ -303,12 +358,16 @@ Boards:
     Programmer: quartus_pgm
     Features:
       - ddr4_memory
-      - qsfp_cage
-      - pcie_endpoint
-      - fmc_plus
+      - dip_switches
       - emmc_flash
+      - ethernet_phy_gigabit
+      - fmc_plus
       - microsd_socket
+      - pcie_endpoint
+      - qsfp_cage
       - usb_jtag_bridge
+      - user_buttons
+      - user_leds
     BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&CategoryNo=142&No=1261
     Status: active
   - Id: terasic_agilex7_i_series_4x_f_tile
@@ -327,12 +386,15 @@ Boards:
     Programmer: quartus_pgm
     Features:
       - ddr4_memory
-      - qsfp_cage
-      - pcie_endpoint
-      - fmc_plus
+      - dip_switches
       - emmc_flash
+      - fmc_plus
       - microsd_socket
+      - pcie_endpoint
+      - qsfp_cage
       - usb_jtag_bridge
+      - user_buttons
+      - user_leds
     BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&CategoryNo=142&No=1305
     Status: active
   - Id: terasic_agilex7_starter_kit
@@ -352,10 +414,14 @@ Boards:
     Programmer: quartus_pgm
     Features:
       - ddr4_memory
-      - qsfp_cage
+      - dip_switches
       - hdmi_output
+      - microsd_socket
       - pcie_endpoint
+      - qsfp_cage
       - usb_jtag_bridge
+      - user_buttons
+      - user_leds
     BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&No=1295
     Status: active
   - Id: terasic_de10_agilex
@@ -376,9 +442,15 @@ Boards:
     Programmer: quartus_pgm
     Features:
       - ddr4_memory
-      - qsfp_cage
-      - pcie_endpoint
+      - dip_switches
       - fmc_plus
+      - hdmi_output
+      - microsd_socket
+      - pcie_endpoint
+      - qsfp_cage
+      - qspi_flash
       - usb_jtag_bridge
+      - user_buttons
+      - user_leds
     BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&CategoryNo=142&No=1252
     Status: active

@@ -7,6 +7,17 @@ Description: 20 nm with hard FP DSP. Quartus Prime Std/Pro.
 Boards:
   - Id: intel_arria10_gx_devkit
     BoardName: Arria 10 GX FPGA Development Kit
+    Features:
+      - ddr3_memory
+      - ddr4_memory
+      - dip_switches
+      - ethernet_phy_gigabit
+      - microsd_socket
+      - qspi_flash
+      - usb_jtag_bridge
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - ddr4_sodimm_socket
       - micron_mt41k256m16
@@ -26,6 +37,19 @@ Boards:
     Status: eol
   - Id: intel_arria10_soc_devkit
     BoardName: Arria 10 SoC Development Kit
+    Features:
+      - ddr4_memory
+      - dip_switches
+      - emmc_flash
+      - ethernet_phy_gigabit
+      - hdmi_output
+      - microsd_socket
+      - qspi_flash
+      - usb_2_host
+      - usb_jtag_bridge
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - ddr4_sodimm_socket
       - micron_mt40a256m16
@@ -60,13 +84,16 @@ Boards:
       - usb-jtag
     Programmer: quartus_pgm
     Features:
-      - ddr4_memory
       - ddr3_memory
+      - ddr4_memory
+      - dip_switches
+      - fmc_lpc
+      - pcie_endpoint
       - qsfp_cage
       - sfp_cage
-      - pcie_endpoint
-      - fmc_lpc
       - usb_jtag_bridge
+      - user_buttons
+      - user_leds
     BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&CategoryNo=228&No=996
     Status: active
   - Id: terasic_arria10_sx_soc_devkit
@@ -86,15 +113,29 @@ Boards:
     Programmer: quartus_pgm
     Features:
       - ddr4_memory
-      - sfp_cage
-      - pcie_endpoint
+      - dip_switches
+      - ethernet_phy_gigabit
       - fmc_hpc
       - microsd_socket
+      - pcie_endpoint
+      - sfp_cage
       - usb_jtag_bridge
+      - user_buttons
+      - user_leds
     BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&CategoryNo=228&No=997
     Status: active
   - Id: terasic_de10_advanced
     BoardName: DE10-Advanced
+    Features:
+      - ddr4_memory
+      - dip_switches
+      - ethernet_phy_gigabit
+      - hdmi_output
+      - microsd_socket
+      - qspi_flash
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - ddr4_sodimm_socket
       - cypress_s25fl128s
@@ -113,6 +154,12 @@ Boards:
     BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&No=1090
   - Id: terasic_de5a_net
     BoardName: DE5a-Net
+    Features:
+      - ddr3_memory
+      - dip_switches
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - ddr3_sodimm_socket
       - usb_blaster_ii_built_in
@@ -127,6 +174,12 @@ Boards:
     BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&No=970
   - Id: terasic_de5a_net_ddr4
     BoardName: DE5a-Net DDR4
+    Features:
+      - ddr4_memory
+      - dip_switches
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - ddr4_sodimm_socket
       - usb_blaster_ii_built_in
@@ -157,15 +210,20 @@ Boards:
     Programmer: quartus_pgm
     Features:
       - ddr4_memory
-      - sfp_cage
-      - hdmi_output
+      - dip_switches
       - displayport_output
-      - sata_host
-      - pcie_endpoint
-      - fmc_hpc
       - ethernet_10gbe_sfp
+      - ethernet_phy_gigabit
+      - fmc_hpc
+      - hdmi_output
+      - microsd_socket
+      - pcie_endpoint
+      - sata_host
+      - sfp_cage
       - usb_3_host
       - usb_jtag_bridge
+      - user_buttons
+      - user_leds
     BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&No=1133
     Status: active
   - Id: terasic_tr10a_hl
@@ -182,9 +240,13 @@ Boards:
       - usb-jtag
     Programmer: quartus_pgm
     Features:
-      - qsfp_cage
+      - ddr4_memory
+      - dip_switches
       - pcie_endpoint
+      - qsfp_cage
       - usb_jtag_bridge
+      - user_buttons
+      - user_leds
     BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&CategoryNo=228&No=1074
     Status: active
   - Id: terasic_tr10a_hl2
@@ -201,9 +263,13 @@ Boards:
       - usb-jtag
     Programmer: quartus_pgm
     Features:
-      - qsfp_cage
+      - ddr4_memory
+      - dip_switches
       - pcie_endpoint
+      - qsfp_cage
       - usb_jtag_bridge
+      - user_buttons
+      - user_leds
     BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&CategoryNo=228&No=1167
     Status: active
   - Id: terasic_tr10a_lp
@@ -219,9 +285,12 @@ Boards:
       - usb-jtag
     Programmer: quartus_pgm
     Features:
-      - qsfp_cage
+      - dip_switches
       - pcie_endpoint
+      - qsfp_cage
       - usb_jtag_bridge
+      - user_buttons
+      - user_leds
     BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&CategoryNo=228&No=1177
     Status: active
   - Id: bittware_385a_sc
@@ -232,9 +301,10 @@ Boards:
       - pcie-jtag
     Programmer: quartus_pgm
     Features:
+      - ddr4_memory
       - pcie_endpoint
       - qsfp_cage
-      - ddr4_memory
+      - qspi_flash
       - usb_uart_bridge
     Devices:
       - ftdi_ft4232h

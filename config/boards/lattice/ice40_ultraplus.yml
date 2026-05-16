@@ -53,6 +53,8 @@ Boards:
     BoardURL: https://1bitsquared.com/products/icebreaker
   - Id: lattice_ice40_up5k_mdp
     BoardName: iCE40 UltraPlus MDP
+    Features:
+      - usb_jtag_bridge
     Devices:
       - ftdi_ft2232h
     BoardProducer: lattice

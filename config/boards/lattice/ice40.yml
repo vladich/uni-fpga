@@ -32,6 +32,8 @@ Boards:
     BoardURL: https://www.olimex.com/Products/FPGA/iCE40/iCE40HX8K-EVB/
   - Id: lattice_ice40_hx1k_evb
     BoardName: iCE40-HX1K Evaluation Kit
+    Features:
+      - usb_jtag_bridge
     Devices:
       - ftdi_ft2232h
     BoardProducer: lattice
@@ -42,6 +44,8 @@ Boards:
     BoardURL: "https://www.latticesemi.com/iCEblink40-HX1K"
   - Id: lattice_ice40_hx8k_breakout
     BoardName: iCE40-HX8K Breakout Board
+    Features:
+      - usb_jtag_bridge
     Devices:
       - ftdi_ft2232h
     BoardProducer: lattice
@@ -52,6 +56,8 @@ Boards:
     BoardURL: https://www.latticesemi.com/products/developmentboardsandkits/ice40hx8kbreakoutboard
   - Id: lattice_ice40_stick
     BoardName: iCEstick Evaluation Kit
+    Features:
+      - usb_jtag_bridge
     Devices:
       - ftdi_ft2232h
     BoardProducer: lattice

@@ -15,6 +15,8 @@ Boards:
     Status: eol
   - Id: efinix_ti180_devkit
     BoardName: Titanium Ti180 Development Kit
+    Features:
+      - microsd_socket
     Devices:
       - microsd_socket_generic
     BoardProducer: efinix
@@ -33,6 +35,9 @@ Boards:
     Status: eol
   - Id: efinix_ti375_devkit
     BoardName: Titanium Ti375 Development Kit
+    Features:
+      - emmc_flash
+      - microsd_socket
     Devices:
       - microsd_socket_generic
       - emmc_chip_generic
@@ -71,6 +76,8 @@ Boards:
     Status: active
   - Id: efinix_ti60_devkit
     BoardName: Titanium Ti60 F225 Development Kit
+    Features:
+      - microsd_socket
     Devices:
       - microsd_socket_generic
     BoardProducer: efinix

@@ -19,11 +19,12 @@ Boards:
       - usb-jtag
     Programmer: quartus_pgm
     Features:
+      - dip_switches
+      - seven_segment_display
       - usb_jtag_bridge
       - usb_powered
-      - user_leds
       - user_buttons
-      - seven_segment_display
+      - user_leds
     Status: eol
   - Id: omdazz_epm570
     BoardName: Omdazz EPM570

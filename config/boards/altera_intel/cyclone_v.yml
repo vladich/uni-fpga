@@ -7,6 +7,18 @@ Description: 28 nm Cyclone (2011). Quartus Prime + nextpnr-mistral (open).
 Boards:
   - Id: c5gx
     BoardName: Cyclone V GX Starter Kit
+    Features:
+      - audio_codec
+      - ddr3_memory
+      - dip_switches
+      - microsd_socket
+      - qspi_flash
+      - seven_segment_display
+      - usb_jtag_bridge
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
+      - vga_output
     Devices:
       - wolfson_wm8731
       - adi_adv7123
@@ -26,6 +38,15 @@ Boards:
     Programmer: quartus_pgm
   - Id: de0_cv
     BoardName: DE0-CV
+    Features:
+      - dip_switches
+      - microsd_socket
+      - sdr_sdram
+      - seven_segment_display
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
+      - vga_output
     Devices:
       - winbond_w9825g6kh
       - vga666_resistor_dac
@@ -43,6 +64,14 @@ Boards:
     BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&CategoryNo=183&No=921
   - Id: intel_cyclonev_e_devkit
     BoardName: Cyclone V E FPGA Development Kit
+    Features:
+      - ddr3_memory
+      - dip_switches
+      - ethernet_phy_gigabit
+      - usb_jtag_bridge
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - micron_mt41k256m16
       - usb_blaster_ii_built_in
@@ -59,6 +88,14 @@ Boards:
     Status: eol
   - Id: intel_cyclonev_gt_devkit
     BoardName: Cyclone V GT FPGA Development Kit
+    Features:
+      - ddr3_memory
+      - dip_switches
+      - ethernet_phy_gigabit
+      - usb_jtag_bridge
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - ddr3_sodimm_socket
       - micron_mt41k256m16
@@ -92,6 +129,18 @@ Boards:
     BoardURL: https://qmtech.aliexpress.com/store/1199788
   - Id: terasic_c5g
     BoardName: Cyclone V GX Starter Kit (C5G)
+    Features:
+      - audio_codec
+      - ddr3_memory
+      - dip_switches
+      - microsd_socket
+      - qspi_flash
+      - seven_segment_display
+      - usb_jtag_bridge
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
+      - vga_output
     Devices:
       - wolfson_wm8731
       - adi_adv7123

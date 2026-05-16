@@ -7,6 +7,14 @@ Description: 65 nm Cyclone (2007). Quartus II 13.x.
 Boards:
   - Id: de0
     BoardName: DE0
+    Features:
+      - dip_switches
+      - sdr_sdram
+      - seven_segment_display
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
+      - vga_output
     Devices:
       - hynix_hy57v641620
       - usb_blaster_ii_built_in
@@ -23,6 +31,14 @@ Boards:
     BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&CategoryNo=56&No=364
   - Id: dk_dev_3c120n
     BoardName: Altera Cyclone III FPGA Development Kit
+    Features:
+      - ddr2_memory
+      - dip_switches
+      - ethernet_phy_gigabit
+      - nor_flash
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - usb_blaster_ii_built_in
       - led_discrete_generic

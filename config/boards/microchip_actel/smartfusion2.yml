@@ -7,6 +7,11 @@ Description: Cortex-M3 + IGLOO2 fabric. Libero SoC.
 Boards:
   - Id: m2s025_starter
     BoardName: SmartFusion2 Starter Kit (M2S025T)
+    Features:
+      - dip_switches
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - ftdi_ft2232h
       - led_discrete_generic
@@ -19,6 +24,13 @@ Boards:
     Programmer: libero_fpexpress
   - Id: microchip_sf2_advkit
     BoardName: SmartFusion2 Advanced Development Kit
+    Features:
+      - dip_switches
+      - ethernet_phy_10_100
+      - spi_flash
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - ftdi_ft4232h
       - led_discrete_generic
@@ -34,6 +46,13 @@ Boards:
     BoardURL: https://www.microchip.com/en-us/development-tool/M2S150-ADV-DEV-KIT
   - Id: microchip_sf2_devkit
     BoardName: SmartFusion2 Development Kit
+    Features:
+      - dip_switches
+      - ethernet_phy_10_100
+      - spi_flash
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - ftdi_ft2232h
       - led_discrete_generic
@@ -49,6 +68,11 @@ Boards:
     BoardURL: https://www.microchip.com/en-us/development-tool/M2S090-DEV-KIT
   - Id: microchip_sf2_starter
     BoardName: SmartFusion2 Starter Kit
+    Features:
+      - dip_switches
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - ftdi_ft2232h
       - led_discrete_generic
@@ -68,11 +92,14 @@ Boards:
       - jtag
     Programmer: libero_fpexpress
     Features:
-      - usb_uart_bridge
-      - ethernet_phy_gigabit
-      - user_leds
-      - user_buttons
       - dip_switches
+      - ethernet_phy_10_100
+      - ethernet_phy_gigabit
+      - spi_flash
+      - usb_jtag_bridge
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - ftdi_ft2232h
       - winbond_w25q128

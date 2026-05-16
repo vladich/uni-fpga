@@ -17,14 +17,15 @@ Boards:
       - jtag
     Programmer: ise_impact
     Features:
-      - sdr_sdram
-      - user_leds
-      - user_buttons
       - dip_switches
+      - ethernet_phy_gigabit
+      - jtag_header
+      - parallel_lcd
+      - sdr_sdram
       - seven_segment_display
       - usb_uart_bridge
-      - jtag_header
-      - ethernet_phy_gigabit
+      - user_buttons
+      - user_leds
     BoardURL: https://docs.amd.com/v/u/en-US/ug080
     Status: eol
   - Id: xilinx_ml402
@@ -41,14 +42,15 @@ Boards:
       - jtag
     Programmer: ise_impact
     Features:
-      - sdr_sdram
-      - user_leds
-      - user_buttons
       - dip_switches
+      - ethernet_phy_gigabit
+      - jtag_header
+      - parallel_lcd
+      - sdr_sdram
       - seven_segment_display
       - usb_uart_bridge
-      - jtag_header
-      - ethernet_phy_gigabit
+      - user_buttons
+      - user_leds
     BoardURL: https://docs.amd.com/v/u/en-US/ug080
     Status: eol
   - Id: xilinx_ml403
@@ -65,13 +67,14 @@ Boards:
       - jtag
     Programmer: ise_impact
     Features:
-      - sdr_sdram
-      - user_leds
-      - user_buttons
       - dip_switches
+      - ethernet_phy_gigabit
+      - jtag_header
+      - parallel_lcd
+      - sdr_sdram
       - seven_segment_display
       - usb_uart_bridge
-      - jtag_header
-      - ethernet_phy_gigabit
+      - user_buttons
+      - user_leds
     BoardURL: https://docs.amd.com/v/u/en-US/ug080
     Status: eol

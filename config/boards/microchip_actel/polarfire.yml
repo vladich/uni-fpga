@@ -30,6 +30,14 @@ Boards:
     Status: active
   - Id: microchip_polarfire_evalkit
     BoardName: PolarFire Evaluation Kit
+    Features:
+      - dip_switches
+      - ethernet_phy_gigabit
+      - microsd_socket
+      - spi_flash
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - ftdi_ft4232h
       - microsd_socket_generic
@@ -46,6 +54,12 @@ Boards:
     BoardURL: https://www.microchip.com/en-us/development-tool/MPF300-EVAL-KIT
   - Id: microchip_polarfire_splash
     BoardName: PolarFire Splash Kit
+    Features:
+      - microsd_socket
+      - spi_flash
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - ftdi_ft4232h
       - microsd_socket_generic
@@ -60,6 +74,12 @@ Boards:
     BoardURL: https://www.microchip.com/en-us/development-tool/MPF300-VIDEO-KIT
   - Id: microchip_polarfire_video
     BoardName: PolarFire Video Kit
+    Features:
+      - microsd_socket
+      - spi_flash
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - ftdi_ft4232h
       - microsd_socket_generic
@@ -88,10 +108,11 @@ Boards:
       - jtag
     Programmer: libero_fpexpress
     Features:
-      - usb_uart_bridge
-      - pcie_endpoint
       - ddr4_memory
       - microsd_socket
+      - pcie_endpoint
+      - spi_flash
+      - usb_uart_bridge
     Devices:
       - ftdi_ft4232h
       - microsd_socket_generic
@@ -106,11 +127,12 @@ Boards:
       - jtag
     Programmer: libero_fpexpress
     Features:
+      - ddr4_memory
       - hdmi_input
       - hdmi_output
-      - mipi_csi2_input
-      - ddr4_memory
       - microsd_socket
+      - mipi_csi2_input
+      - spi_flash
       - usb_uart_bridge
     Devices:
       - ftdi_ft4232h

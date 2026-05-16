@@ -7,6 +7,15 @@ Description: 90 nm low-cost FPGA (2004). Quartus II 13.0sp1 last.
 Boards:
   - Id: de1
     BoardName: DE1
+    Features:
+      - audio_codec
+      - dip_switches
+      - sdr_sdram
+      - seven_segment_display
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
+      - vga_output
     Devices:
       - hynix_hy57v641620
       - wolfson_wm8731
@@ -24,6 +33,15 @@ Boards:
     BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&CategoryNo=53&No=83
   - Id: de2
     BoardName: DE2
+    Features:
+      - audio_codec
+      - dip_switches
+      - sdr_sdram
+      - seven_segment_display
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
+      - vga_output
     Devices:
       - hynix_hy57v641620
       - wolfson_wm8731
@@ -41,6 +59,16 @@ Boards:
     BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&CategoryNo=53&No=30
   - Id: terasic_de2_70
     BoardName: DE2-70
+    Features:
+      - audio_codec
+      - dip_switches
+      - hdmi_input
+      - sdr_sdram
+      - seven_segment_display
+      - usb_jtag_bridge
+      - user_buttons
+      - user_leds
+      - vga_output
     Devices:
       - hynix_hy57v641620
       - wolfson_wm8731

@@ -7,6 +7,16 @@ Description: Newest low-cost Agilex (2024). Quartus Prime Pro.
 Boards:
   - Id: intel_agilex3_devkit
     BoardName: Agilex 3 FPGA Development Kit
+    Features:
+      - ddr4_memory
+      - dip_switches
+      - ethernet_phy_gigabit
+      - microsd_socket
+      - qspi_flash
+      - usb_jtag_bridge
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - micron_mt40a256m16
       - micron_n25q256a
@@ -39,11 +49,13 @@ Boards:
       - usb-jtag
     Programmer: quartus_pgm
     Features:
+      - adc_chip
+      - dip_switches
       - hdmi_output
+      - sdr_sdram
+      - seven_segment_display
       - usb_jtag_bridge
       - user_buttons
-      - dip_switches
-      - seven_segment_display
       - user_leds
     BoardURL: https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&No=1383
     Status: active

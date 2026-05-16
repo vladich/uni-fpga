@@ -23,15 +23,27 @@ Boards:
     Programmer: vivado_hw
     Features:
       - ddr4_memory
-      - pcie_endpoint
-      - fmc_plus
       - fmc_hpc
-      - usb_uart_bridge
+      - fmc_plus
+      - pcie_endpoint
+      - qspi_flash
       - usb_jtag_bridge
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     BoardURL: https://www.hitechglobal.com/Boards/Virtex-UltraScale-FPGA.htm
     Status: active
   - Id: xilinx_vcu108
     BoardName: VCU108
+    Features:
+      - ddr4_memory
+      - dip_switches
+      - ethernet_phy_gigabit
+      - microsd_socket
+      - qspi_flash
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - micron_mt40a256m16
       - micron_n25q256a
@@ -70,12 +82,17 @@ Boards:
     Programmer: vivado_hw
     Features:
       - ddr4_memory
-      - qsfp_cage
+      - dip_switches
       - fmc_hpc
       - fmc_plus
-      - usb_uart_bridge
-      - pcie_endpoint
       - jtag_header
+      - microsd_socket
+      - pcie_endpoint
+      - qsfp_cage
+      - qspi_flash
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     BoardURL: https://www.amd.com/en/products/adaptive-socs-and-fpgas/evaluation-boards/dk-u1-vcu110-g.html
     Status: eol
   - Id: htg_811
@@ -87,12 +104,13 @@ Boards:
       - usb-jtag
     Programmer: vivado_hw
     Features:
-      - pcie_endpoint
       - ddr4_memory
-      - qsfp_cage
       - fmc_hpc
-      - usb_uart_bridge
+      - pcie_endpoint
+      - qsfp_cage
+      - qspi_flash
       - usb_jtag_bridge
+      - usb_uart_bridge
     Devices:
       - ftdi_ft4232h
       - silabs_si5342

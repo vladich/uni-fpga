@@ -24,10 +24,15 @@ Boards:
     Programmer: vivado_hw
     Features:
       - ddr3_memory
-      - pcie_endpoint
+      - dip_switches
+      - ethernet_phy_gigabit
       - fmc_hpc
-      - usb_uart_bridge
+      - pcie_endpoint
+      - qspi_flash
       - usb_jtag_bridge
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     BoardURL: https://www.hitechglobal.com/boards/virtex7_v2000t.htm
     Status: active
   - Id: htg_703
@@ -49,14 +54,29 @@ Boards:
     Programmer: vivado_hw
     Features:
       - ddr3_memory
-      - pcie_endpoint
+      - dip_switches
+      - ethernet_phy_gigabit
       - fmc_hpc
-      - usb_uart_bridge
+      - pcie_endpoint
+      - qspi_flash
       - usb_jtag_bridge
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     BoardURL: https://www.hitechglobal.com/Boards/Virtex7_PCIE_Gen3.htm
     Status: active
   - Id: xilinx_vc707
     BoardName: VC707
+    Features:
+      - ddr3_memory
+      - dip_switches
+      - ethernet_phy_gigabit
+      - microsd_socket
+      - qspi_flash
+      - usb_jtag_bridge
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - micron_n25q256a
       - silabs_cp2103
@@ -77,6 +97,15 @@ Boards:
     BoardURL: https://www.xilinx.com/products/boards-and-kits/ek-v7-vc707-g.html
   - Id: xilinx_vc709
     BoardName: VC709
+    Features:
+      - ddr3_memory
+      - dip_switches
+      - microsd_socket
+      - qspi_flash
+      - usb_jtag_bridge
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - micron_n25q256a
       - silabs_cp2103
@@ -103,11 +132,12 @@ Boards:
       - usb-jtag
     Programmer: vivado_hw
     Features:
-      - pcie_endpoint
       - ddr3_memory
       - fmc_hpc
-      - usb_uart_bridge
+      - pcie_endpoint
+      - qspi_flash
       - usb_jtag_bridge
+      - usb_uart_bridge
     Devices:
       - ftdi_ft2232h
       - silabs_si570

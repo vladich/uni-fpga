@@ -7,6 +7,14 @@ Description: 28 nm Arria GX/GZ/SX. Quartus Prime.
 Boards:
   - Id: intel_arriav_gx_devkit
     BoardName: Arria V GX Starter Kit
+    Features:
+      - ddr3_memory
+      - dip_switches
+      - ethernet_phy_gigabit
+      - usb_jtag_bridge
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - micron_mt41k256m16
       - ddr3_sodimm_socket
@@ -24,6 +32,14 @@ Boards:
     Status: eol
   - Id: intel_arriav_gz_devkit
     BoardName: Arria V GZ FPGA Development Kit
+    Features:
+      - ddr3_memory
+      - dip_switches
+      - ethernet_phy_gigabit
+      - usb_jtag_bridge
+      - usb_uart_bridge
+      - user_buttons
+      - user_leds
     Devices:
       - ddr3_sodimm_socket
       - micron_mt41k256m16
