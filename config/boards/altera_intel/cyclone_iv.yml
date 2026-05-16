@@ -129,7 +129,7 @@ Boards:
     Bridges:
       - jtag
     Programmer: quartus_pgm
-    BoardURL: https://marsohod.org/projects-mars3
+    Status: eol
   - Id: omdazz
     BoardName: Omdazz Cyclone IV
     BoardProducer: omdazz

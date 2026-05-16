@@ -12,7 +12,7 @@ Boards:
     Bridges:
       - ft2232h-jtag
     Programmer: ecpprog
-    BoardURL: https://www.colorlightinside.com/Product/Receiver-card
+    Status: eol
   - Id: colorlight_5a_75b_v7
     BoardName: Colorlight 5A-75B v7.0/v8.x
     BoardProducer: colorlight
@@ -36,7 +36,7 @@ Boards:
     Bridges:
       - ft2232h-jtag
     Programmer: ecpprog
-    BoardURL: https://www.colorlightinside.com/Product/Receiver-card
+    Status: eol
   - Id: colorlight_i5
     BoardName: ColorLight i5
     BoardProducer: colorlight
@@ -44,7 +44,7 @@ Boards:
     Bridges:
       - ft2232h-jtag
     Programmer: ecpprog
-    BoardURL: https://www.colorlightinside.com/Product/Receiver-card
+    Status: eol
   - Id: colorlight_i9
     BoardName: ColorLight i9
     BoardProducer: colorlight
@@ -52,7 +52,7 @@ Boards:
     Bridges:
       - ft2232h-jtag
     Programmer: ecpprog
-    BoardURL: https://www.colorlightinside.com/Product/Receiver-card
+    Status: eol
   - Id: karnix_ecp5
     BoardName: Karnix ASB-254
     BoardProducer: fabmicro
@@ -60,7 +60,7 @@ Boards:
     Bridges:
       - ft2232h-jtag
     Programmer: ecpprog
-    BoardURL: https://github.com/Karnix-fpga/karnix-base
+    Status: eol
   - Id: lattice_ecp5_evn
     BoardName: ECP5 Evaluation Board
     Devices:

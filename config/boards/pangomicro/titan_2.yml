@@ -20,7 +20,7 @@ Boards:
       - pcie_endpoint
       - fmc_hpc
       - user_leds
-    BoardURL: https://www.pangomicro.com/en/list_77/192.html
+    BoardURL: "https://www.pangomicro.com/product/titan_family/"
     Status: active
   - Id: pangomicro_pg2t560h_devkit
     BoardName: PG2T560H Development Kit
@@ -29,7 +29,7 @@ Boards:
     Bridges:
       - jtag
     Programmer: pango_pgm
-    BoardURL: https://www.pangomicro.com/en/Page/index/cid/4.html
+    BoardURL: "https://www.pangomicro.com/product/titan_family/"
   - Id: alinx_axp390
     BoardName: "ALINX AXP390 Development Board"
     BoardProducer: alinx

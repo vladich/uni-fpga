@@ -12,4 +12,5 @@ Boards:
     Bridges:
       - jtag
     Programmer: ace_pgm
-    BoardURL: https://www.achronix.com/product/speedster22ihd
+
+    Status: eol

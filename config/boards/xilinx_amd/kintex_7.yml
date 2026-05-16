@@ -206,7 +206,7 @@ Boards:
     Bridges:
       - jtag
     Programmer: vivado_hw
-    BoardURL: https://shop.trenz-electronic.de/en/Products/Trenz-Electronic/TE07XX-Kintex-FPGA/
+    BoardURL: "https://shop.trenz-electronic.de/en/TE0741-03-325-2IF-FPGA-Module-with-AMD-Kintex-7-XC7K325T-2IF-4-x-5-cm-standard-footprint"
   - Id: trenz_te0741_k160t
     BoardName: TE0741 Kintex-7 160T SoM
     Devices:
@@ -277,7 +277,7 @@ Boards:
     Bridges:
       - jtag
     Programmer: vivado_hw
-    BoardURL: https://shop.trenz-electronic.de/en/Products/Trenz-Electronic/TE07XX-Kintex-FPGA/
+    BoardURL: "https://shop.trenz-electronic.de/en/TE0745-02-91C31-A-SoM-with-AMD-Zynq-XC7Z045-1FBG676C-1-GByte-DDR3L-SDRAM-5.2-x-7.6-cm"
   - Id: xilinx_kc705
     BoardName: KC705
     Devices:

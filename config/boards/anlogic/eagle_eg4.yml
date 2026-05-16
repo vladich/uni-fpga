@@ -12,7 +12,7 @@ Boards:
     Bridges:
       - jtag
     Programmer: td_pgm
-    BoardURL: https://www.anlogic.com/eng/prod/53.html
+    Status: eol
   - Id: sipeed_lichee_tang
     BoardName: Sipeed Lichee Tang
     Devices:

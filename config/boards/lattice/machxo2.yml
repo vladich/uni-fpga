@@ -30,7 +30,7 @@ Boards:
     Bridges:
       - jtag
     Programmer: openFPGALoader
-    BoardURL: https://tinyfpga.com/a-series/a-series-guide.html
+    BoardURL: "https://tinyfpga.com/a-series-guide.html"
   - Id: tinyfpga_a2
     BoardName: TinyFPGA A2
     BoardProducer: tinyfpga
@@ -38,7 +38,7 @@ Boards:
     Bridges:
       - jtag
     Programmer: openFPGALoader
-    BoardURL: https://tinyfpga.com/a-series/a-series-guide.html
+    BoardURL: "https://tinyfpga.com/a-series-guide.html"
   - Id: tinyfpga_ax1
     BoardName: TinyFPGA AX1
     BoardProducer: tinyfpga
@@ -46,7 +46,7 @@ Boards:
     Bridges:
       - ft2232h-jtag
     Programmer: openFPGALoader
-    BoardURL: https://tinyfpga.com/a-series/a-series-guide.html
+    BoardURL: "https://tinyfpga.com/a-series-guide.html"
   - Id: tinyfpga_ax2
     BoardName: TinyFPGA AX2
     BoardProducer: tinyfpga
@@ -54,4 +54,4 @@ Boards:
     Bridges:
       - ft2232h-jtag
     Programmer: openFPGALoader
-    BoardURL: https://tinyfpga.com/a-series/a-series-guide.html
+    BoardURL: "https://tinyfpga.com/a-series-guide.html"

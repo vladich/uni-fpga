@@ -12,7 +12,7 @@ Boards:
     Bridges:
       - jtag
     Programmer: renesas_go_pgm
-    BoardURL: https://www.renesas.com/us/en/products/programmable-mixed-signal-asic-ip-products/forgefpga-low-density-fpga-family
+    BoardURL: "https://www.renesas.com/en/design-resources/boards-kits/slg7evbforge"
   - Id: renesas_slg47004_eval
     BoardName: SLG47004 ForgeFPGA Eval Kit
     BoardProducer: renesas
@@ -20,7 +20,7 @@ Boards:
     Bridges:
       - jtag
     Programmer: renesas_go_pgm
-    BoardURL: https://www.renesas.com/us/en/products/programmable-mixed-signal-asic-ip-products/forgefpga-low-density-fpga-family/slg47004
+    Status: eol
   - Id: renesas_slg47010_eval
     BoardName: SLG47010 ForgeFPGA Eval Kit
     BoardProducer: renesas
@@ -28,7 +28,7 @@ Boards:
     Bridges:
       - jtag
     Programmer: renesas_go_pgm
-    BoardURL: https://www.renesas.com/us/en/products/programmable-mixed-signal-asic-ip-products/forgefpga-low-density-fpga-family/slg47010
+    Status: eol
   - Id: vicharak_shrike
     BoardName: Vicharak Shrike
     BoardProducer: vicharak

@@ -12,4 +12,5 @@ Boards:
     Bridges:
       - jtag
     Programmer: td_pgm
-    BoardURL: https://www.anlogic.com/eng/prod/58.html
+
+    Status: eol

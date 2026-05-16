@@ -173,7 +173,7 @@ Boards:
     Bridges:
       - jtag
     Programmer: vivado_hw
-    BoardURL: https://shop.trenz-electronic.de/en/Products/Trenz-Electronic/TE08XX-Kintex-UltraScale/
+    BoardURL: "https://shop.trenz-electronic.de/en/TE0841-03-41I31-A-Micromodule-with-AMD-Kintex-UltraScale-KU040-2-GByte-DDR4-4-x-5-cm"
   - Id: tul_ku115
     BoardName: TUL PCIe KU115 Accelerator
     BoardProducer: tul

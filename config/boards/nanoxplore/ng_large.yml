@@ -12,4 +12,4 @@ Boards:
     Bridges:
       - jtag
     Programmer: nanoxmap_impulse
-    BoardURL: https://www.nanoxplore.com/page/products
+    BoardURL: "https://www.nanoxplore.com"

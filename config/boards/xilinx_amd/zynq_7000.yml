@@ -1054,7 +1054,7 @@ Boards:
     Bridges:
       - jtag
     Programmer: vivado_hw
-    BoardURL: https://www.sundance.com/emc2-dp/
+    Status: eol
   - Id: trenz_te0700
     BoardName: TE0700
     Devices:
@@ -1166,7 +1166,7 @@ Boards:
     Bridges:
       - jtag
     Programmer: vivado_hw
-    BoardURL: https://shop.trenz-electronic.de/en/TE0726-03M-ZynqBerry-Module-with-Xilinx-Zynq-7010-in-Raspberry-Pi-Form-Factor
+    BoardURL: "https://shop.trenz-electronic.de/en/TE0726-04-41C94-A-ZynqBerry-SoC-Module-with-AMD-Zynq-7010-1C-Raspberry-Pi-3-compatible"
   - Id: trenz_te0727
     BoardName: TE0727 Zynq-7010 Pi-Zero Form Factor
     Devices:

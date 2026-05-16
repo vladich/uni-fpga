@@ -12,4 +12,4 @@ Boards:
     Bridges:
       - jtag
     Programmer: pango_pgm
-    BoardURL: https://www.pangomicro.com/en/Page/index/cid/4.html
+    BoardURL: "https://www.pangomicro.com/product/titan_family/"

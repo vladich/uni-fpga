@@ -12,7 +12,7 @@ Boards:
     Bridges: []
     Bootloader: usb-cdc-bootloader
     Programmer: qorc_flash
-    BoardURL: https://www.quicklogic.com/products/eos-s3/
+    Status: eol
   - Id: quicklogic_qomu
     BoardName: QuickLogic Qomu EOS S3 USB Stick
     BoardProducer: quicklogic
@@ -34,4 +34,5 @@ Boards:
     Bridges: []
     Bootloader: usb-cdc-bootloader
     Programmer: openocd
-    BoardURL: https://www.quicklogic.com/products/eos-s3/quickfeather-development-kit/
+
+    Status: eol

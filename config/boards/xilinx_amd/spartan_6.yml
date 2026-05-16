@@ -114,7 +114,7 @@ Boards:
     Programmer: mojoload
     ExtraProgrammers:
       - mojoload[*]
-    BoardURL: https://alchitry.com/mojo
+    BoardURL: "https://alchitry.com/boards/au/"
   - Id: numato_galatea
     BoardName: Numato Galatea Spartan-6 FPGA Module
     Devices:
@@ -236,7 +236,7 @@ Boards:
     Bridges:
       - jtag
     Programmer: ise_impact
-    BoardURL: https://fpgaarcade.com/replay-board/
+    Status: eol
   - Id: trenz_te0600
     BoardName: TE0600 GigaBee Spartan-6
     Devices:

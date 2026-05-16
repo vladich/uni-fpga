@@ -12,7 +12,7 @@ Boards:
     Bridges:
       - jtag
     Programmer: pango_pgm
-    BoardURL: https://www.pangomicro.com/en/Page/index/cid/4.html
+    BoardURL: "https://www.pangomicro.com/product/logos_family/"
   - Id: pangomicro_pangu_200k_som
     BoardName: "Pangu 200K Core Board (盘古200K核心板)"
     BoardProducer: pangomicro

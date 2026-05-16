@@ -43,7 +43,7 @@ Boards:
     Bridges:
       - jtag
     Programmer: quartus_pgm
-    BoardURL: https://marsohod.org/projects-mars2
+    Status: eol
   - Id: marsohod_mcy316
     BoardName: Marsohod MCY316
     BoardProducer: marsohod
