@@ -1,0 +1,20 @@
+# qmtech_artix7_wukong pin map.
+# Source: github.com/DavidJRichards/QMTECH_XC7A100T_Wukong_Board
+
+Board:
+  id: qmtech_artix7_wukong
+  pinBanks:
+    sys_clk:
+      pins: M21
+    hdmi_clk:
+      pins:
+        p: D4
+        n: C4
+    hdmi_data_p:
+      pins: [E1, F2, G2]
+    hdmi_data_n:
+      pins: [D1, E2, G1]
+    ps2:
+      pins:
+        clock: AC26
+        data: AB26
