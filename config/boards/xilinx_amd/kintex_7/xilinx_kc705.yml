@@ -95,6 +95,23 @@ Board:
         pin: AB22
     microsd_data:
       pins: [AC20, AA23, AA22, AC21]
+    pcie_clk_n:
+      pins:
+        pin: U7
+    pcie_clk_p:
+      pins:
+        pin: U8
+    pcie_rst_n:
+      pins:
+        pin: G25
+    pcie_rx_n:
+      pins: [M5, P5, R3, T5, V5, W3, Y5, AA3]
+    pcie_rx_p:
+      pins: [M6, P6, R4, T6, V6, W4, Y6, AA4]
+    pcie_tx_n:
+      pins: [L3, M1, N3, P1, T1, U3, V1, Y1]
+    pcie_tx_p:
+      pins: [L4, M2, N4, P2, T2, U4, V2, Y2]
     qspi_flash_cs_n:
       pins:
         pin: U19
@@ -112,3 +129,15 @@ Board:
     qspi_flash_wp:
       pins:
         pin: R20
+    sfp_rxn:
+      pins:
+        pin: G3
+    sfp_rxp:
+      pins:
+        pin: G4
+    sfp_txn:
+      pins:
+        pin: H1
+    sfp_txp:
+      pins:
+        pin: H2

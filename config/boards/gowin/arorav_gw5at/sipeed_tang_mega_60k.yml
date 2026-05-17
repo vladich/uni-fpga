@@ -19,3 +19,5 @@ Board:
     hdmi_clk:
       pins:
         p: G15
+    pcie_perst:
+      pins: W11

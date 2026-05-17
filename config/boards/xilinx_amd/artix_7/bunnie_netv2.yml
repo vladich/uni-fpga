@@ -79,6 +79,23 @@ Board:
         pin: L13
     microsd_data:
       pins: [L15, L16, K14, M13]
+    pcie_clk_n:
+      pins:
+        pin: E10
+    pcie_clk_p:
+      pins:
+        pin: F10
+    pcie_rst_n:
+      pins:
+        pin: E18
+    pcie_rx_n:
+      pins: [C11, A10, C9, A8]
+    pcie_rx_p:
+      pins: [D11, B10, D9, B8]
+    pcie_tx_n:
+      pins: [C5, A6, C7, A4]
+    pcie_tx_p:
+      pins: [D5, B6, D7, B4]
     qspi_flash_cs_n:
       pins:
         pin: T19

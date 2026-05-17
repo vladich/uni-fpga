@@ -17,3 +17,49 @@ Board:
     i2c_sda:
       pins:
         pin: C33
+    pcie_clk_n:
+      pins:
+        pin: AR14
+    pcie_clk_p:
+      pins:
+        pin: AR15
+    pcie_rst_n:
+      pins:
+        pin: BH26
+    pcie_rx_n:
+      pins: [AL1, AM3, AN5, AN1]
+    pcie_rx_p:
+      pins: [AL2, AM4, AN6, AN2]
+    pcie_tx_n:
+      pins: [AL10, AM8, AN10, AP8]
+    pcie_tx_p:
+      pins: [AL11, AM9, AN11, AP9]
+    qsfp_clk_n:
+      pins:
+        pin: M43
+    qsfp_clk_p:
+      pins:
+        pin: M42
+    qsfp_intl:
+      pins:
+        pin: E29
+    qsfp_lpmode:
+      pins:
+        pin: F29
+    qsfp_modprsl:
+      pins:
+        pin: F33
+    qsfp_modskll:
+      pins:
+        pin: D30
+    qsfp_resetl:
+      pins:
+        pin: E33
+    qsfp_rxn:
+      pins: [G54, F52, E54, D52]
+    qsfp_rxp:
+      pins: [G53, F51, E53, D51]
+    qsfp_txn:
+      pins: [G49, E49, C49, A50]
+    qsfp_txp:
+      pins: [G48, E48, C48, A49]

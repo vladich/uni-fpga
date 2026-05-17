@@ -24,6 +24,23 @@ Board:
         pin: H24
     microsd_dat:
       pins: [F25, E25, J23, H23]
+    pcie_clk_n:
+      pins:
+        pin: K5
+    pcie_clk_p:
+      pins:
+        pin: K6
+    pcie_rst_n:
+      pins:
+        pin: E21
+    pcie_rx_n:
+      pins: [J3, L3, N3, R3]
+    pcie_rx_p:
+      pins: [J4, L4, N4, R4]
+    pcie_tx_n:
+      pins: [H1, K1, M1, P1]
+    pcie_tx_p:
+      pins: [H2, K2, M2, P2]
     qspi_flash_cs_n:
       pins:
         pin: C23

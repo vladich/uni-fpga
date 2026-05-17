@@ -9,6 +9,23 @@ Board:
       pins: W19
     onboard_leds:
       pins: [AB21, AB22, U20]
+    pcie_clk_n:
+      pins:
+        pin: E6
+    pcie_clk_p:
+      pins:
+        pin: F6
+    pcie_rst_n:
+      pins:
+        pin: AB20
+    pcie_rx_n:
+      pins: [A8, C11, A10, C9]
+    pcie_rx_p:
+      pins: [B8, D11, B10, D9]
+    pcie_tx_n:
+      pins: [A4, C5, A6, C7]
+    pcie_tx_p:
+      pins: [B4, D5, B6, D7]
     rgb_led_b:
       pins:
         pin: U20

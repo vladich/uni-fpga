@@ -39,3 +39,20 @@ Board:
     hdmi_vsync:
       pins:
         pin: T14
+    pcie_clk_n:
+      pins:
+        pin: E10
+    pcie_clk_p:
+      pins:
+        pin: F10
+    pcie_rst_n:
+      pins:
+        pin: J20
+    pcie_rx_n:
+      pins: [C11, A8, A10, C9]
+    pcie_rx_p:
+      pins: [D11, B8, B10, D9]
+    pcie_tx_n:
+      pins: [C5, A4, A6, C7]
+    pcie_tx_p:
+      pins: [D5, B4, B6, D7]

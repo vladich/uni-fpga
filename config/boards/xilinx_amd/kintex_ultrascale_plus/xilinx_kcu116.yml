@@ -43,3 +43,35 @@ Board:
     i2c_sda:
       pins:
         pin: AF13
+    pcie_clk_n:
+      pins:
+        pin: V6
+    pcie_clk_p:
+      pins:
+        pin: V7
+    pcie_rst_n:
+      pins:
+        pin: T19
+    pcie_rx_n:
+      pins: [P1, T1, V1, Y1, AB1, AD1, AE3, AF1]
+    pcie_rx_p:
+      pins: [P2, T2, V2, Y2, AB2, AD2, AE4, AF2]
+    pcie_tx_n:
+      pins: [R4, U4, W4, AA4, AC4, AD6, AE8, AF6]
+    pcie_tx_p:
+      pins: [R5, U5, W5, AA5, AC5, AD7, AE9, AF7]
+    pcie_wake_n:
+      pins:
+        pin: P19
+    sfp_rxn:
+      pins:
+        pin: F1
+    sfp_rxp:
+      pins:
+        pin: F2
+    sfp_txn:
+      pins:
+        pin: G4
+    sfp_txp:
+      pins:
+        pin: G5

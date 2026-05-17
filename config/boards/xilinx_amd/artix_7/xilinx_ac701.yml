@@ -40,6 +40,23 @@ Board:
         pin: T15
     ethernet_tx_data:
       pins: [U16, U15, T18, T17]
+    pcie_clk_n:
+      pins:
+        pin: E11
+    pcie_clk_p:
+      pins:
+        pin: F11
+    pcie_rst_n:
+      pins:
+        pin: M20
+    pcie_rx_n:
+      pins: [C12, A13, C14, A11]
+    pcie_rx_p:
+      pins: [D12, B13, D14, B11]
+    pcie_tx_n:
+      pins: [C10, A9, C8, A7]
+    pcie_tx_p:
+      pins: [D10, B9, D8, B7]
     qspi_flash_cs_n:
       pins:
         pin: P18
@@ -57,3 +74,15 @@ Board:
     qspi_flash_wp:
       pins:
         pin: P14
+    sfp_rxn:
+      pins:
+        pin: AD12
+    sfp_rxp:
+      pins:
+        pin: AC12
+    sfp_txn:
+      pins:
+        pin: AD10
+    sfp_txp:
+      pins:
+        pin: AC10

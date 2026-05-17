@@ -6,7 +6,9 @@ Board:
   id: terasic_de25_standard
   pinBanks:
     sys_clk:
-      pins: PIN_BM71
+      pins: PIN_F127
+    cpu_resetn:
+      pins: PIN_T124
     onboard_buttons:
       pins: [PIN_BW59, PIN_CA59, PIN_CF71, PIN_CH71]
     onboard_switches:

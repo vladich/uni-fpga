@@ -13,6 +13,12 @@ Board:
       pins:
         rx: V14
         tx: U15
+    pcie_rst_n:
+      pins:
+        pin: W11
+    pcie_wake_n:
+      pins:
+        pin: T14
     qspi_flash_clk:
       pins:
         pin: L12

@@ -6,7 +6,9 @@ Board:
   id: terasic_de25_nano
   pinBanks:
     sys_clk:
-      pins: PIN_BF23
+      pins: PIN_N72
+    cpu_resetn:
+      pins: PIN_DN55
     onboard_buttons:
       pins: [PIN_C8, PIN_C11]
     onboard_switches:

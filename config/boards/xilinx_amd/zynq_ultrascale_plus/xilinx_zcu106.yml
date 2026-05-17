@@ -13,3 +13,20 @@ Board:
         rts: AM15
         tx: AL17
         rx: AH17
+    pcie_clk_n:
+      pins:
+        pin: AB7
+    pcie_clk_p:
+      pins:
+        pin: AB8
+    pcie_rst_n:
+      pins:
+        pin: L8
+    pcie_rx_n:
+      pins: [AE1, AF3, AG1, AJ1]
+    pcie_rx_p:
+      pins: [AE2, AF4, AG2, AJ2]
+    pcie_tx_n:
+      pins: [AD3, AE5, AG5, AH3]
+    pcie_tx_p:
+      pins: [AD4, AE6, AG6, AH4]

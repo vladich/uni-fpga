@@ -49,8 +49,37 @@ Board:
         pin: AD9
     microsd_data:
       pins: [AP9, AN9, AH9, AH8]
+    pcie_clk_n:
+      pins:
+        pin: AB5
+    pcie_clk_p:
+      pins:
+        pin: AB6
+    pcie_rst_n:
+      pins:
+        pin: K22
+    pcie_rx_n:
+      pins: [AB1, AD1, AF1, AH1, AJ3, AK1, AM1, AP1]
+    pcie_rx_p:
+      pins: [AB2, AD2, AF2, AH2, AJ4, AK2, AM2, AP2]
+    pcie_tx_n:
+      pins: [AC3, AE3, AG3, AH5, AK5, AL3, AM5, AN3]
+    pcie_tx_p:
+      pins: [AC4, AE4, AG4, AH6, AK6, AL4, AM6, AN4]
     qspi_flash_cs_n:
       pins:
         pin: G26
     qspi_flash_dq:
       pins: [M20, L20, R21, R22]
+    sfp_rxn:
+      pins:
+        pin: V1
+    sfp_rxp:
+      pins:
+        pin: V2
+    sfp_txn:
+      pins:
+        pin: W3
+    sfp_txp:
+      pins:
+        pin: W4

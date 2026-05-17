@@ -5,9 +5,31 @@
 Board:
   id: terasic_de10_pro_stratix10_gx
   pinBanks:
+    sys_clk:
+      pins: PIN_E29
+    cpu_resetn:
+      pins: PIN_AB13
     onboard_buttons:
       pins: [PIN_D24, PIN_D23]
     onboard_switches:
       pins: [PIN_C23, PIN_B23]
     onboard_leds:
       pins: [PIN_B24, PIN_A24, PIN_A25, PIN_A26]
+    pcie_perst:
+      pins: PIN_AJ34
+    pcie_refclk:
+      pins:
+        p: PIN_AM41
+        n: PIN_AM40
+    pcie_rx_n:
+      pins: [PIN_BH40, PIN_BJ42, PIN_BE42, PIN_BC42, PIN_BD44, PIN_BA42, PIN_BB44, PIN_AW42, PIN_AY44, PIN_AU42, PIN_AV44, PIN_AR42, PIN_AT44, PIN_AP44, PIN_AN42]
+    pcie_rx_p:
+      pins: [PIN_BH41, PIN_BJ43, PIN_BG43, PIN_BE43, PIN_BC43, PIN_BD45, PIN_BA43, PIN_BB45, PIN_AW43, PIN_AY45, PIN_AU43, PIN_AV45, PIN_AR43, PIN_AT45, PIN_AP45, PIN_AN43]
+    pcie_smbus:
+      pins: PIN_BF40
+    pcie_tx_n:
+      pins: [PIN_BJ45, PIN_BF44, PIN_BG46, PIN_BE46, PIN_BF48, PIN_BC46, PIN_BD48, PIN_BA46, PIN_BB48, PIN_AW46, PIN_AY48, PIN_AU46, PIN_AV48, PIN_AR46, PIN_AT48, PIN_AP48]
+    pcie_tx_p:
+      pins: [PIN_BJ46, PIN_BF45, PIN_BG47, PIN_BE47, PIN_BF49, PIN_BC47, PIN_BD49, PIN_BA47, PIN_BB49, PIN_AW47, PIN_AY49, PIN_AU47, PIN_AV49, PIN_AR47, PIN_AT49, PIN_AP49]
+    pcie_wake:
+      pins: PIN_BC33

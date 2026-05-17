@@ -19,6 +19,27 @@ Board:
     i2c_sda:
       pins:
         pin: M6
+    pcie_clk_n:
+      pins:
+        pin: E20
+    pcie_clk_p:
+      pins:
+        pin: F20
+    pcie_perst:
+      pins:
+        pin: R26
+    pcie_refret:
+      pins: [E22, G21, E19, D18]
+    pcie_rext:
+      pins: [E21, G20, D19, C18]
+    pcie_rx_n:
+      pins: [G25, D25, B23, C22]
+    pcie_rx_p:
+      pins: [G24, E24, C24, C21]
+    pcie_tx_n:
+      pins: [E26, B26, A24, A21]
+    pcie_tx_p:
+      pins: [F26, C26, A25, A22]
     qspi_flash_clk:
       pins:
         pin: G6

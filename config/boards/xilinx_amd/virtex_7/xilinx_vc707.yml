@@ -80,3 +80,32 @@ Board:
     microsd_wp:
       pins:
         pin: AR32
+    pcie_clk_n:
+      pins:
+        pin: AB7
+    pcie_clk_p:
+      pins:
+        pin: AB8
+    pcie_rst_n:
+      pins:
+        pin: AV35
+    pcie_rx_n:
+      pins: [Y3, AA5, AB3, AC5, AD3, AE5, AF3, AG5]
+    pcie_rx_p:
+      pins: [Y4, AA6, AB4, AC6, AD4, AE6, AF4, AG6]
+    pcie_tx_n:
+      pins: [W1, AA1, AC1, AE1, AG1, AH3, AJ1, AK3]
+    pcie_tx_p:
+      pins: [W2, AA2, AC2, AE2, AG2, AH4, AJ2, AK4]
+    sfp_rxn:
+      pins:
+        pin: AL5
+    sfp_rxp:
+      pins:
+        pin: AL6
+    sfp_txn:
+      pins:
+        pin: AM3
+    sfp_txp:
+      pins:
+        pin: AM4

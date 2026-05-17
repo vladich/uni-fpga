@@ -5,6 +5,10 @@
 Board:
   id: terasic_de10_agilex
   pinBanks:
+    sys_clk:
+      pins: PIN_CL34
+    cpu_resetn:
+      pins: PIN_CU22
     onboard_buttons:
       pins: [PIN_J54, PIN_G54]
     onboard_switches:
@@ -13,3 +17,55 @@ Board:
       pins: [PIN_CR54, PIN_DB57, PIN_CY57, PIN_CU52]
     onboard_leds_bracket:
       pins: [PIN_CT57, PIN_CV55, PIN_CR56, PIN_CU56]
+    pcie_clkreq:
+      pins: PIN_F55
+    pcie_perst:
+      pins: PIN_BU58
+    pcie_rx_n:
+      pins: [PIN_BR62, PIN_BM59, PIN_BL62, PIN_BH59, PIN_BG62, PIN_BD59, PIN_BC62, PIN_AY59, PIN_AW62, PIN_AT59, PIN_AR62, PIN_AM59, PIN_AL62, PIN_AH59, PIN_AG62, PIN_AD59]
+    pcie_rx_p:
+      pins: [PIN_BP61, PIN_BN58, PIN_BK61, PIN_BJ58, PIN_BF61, PIN_BE58, PIN_BB61, PIN_BA58, PIN_AV61, PIN_AU58, PIN_AP61, PIN_AN58, PIN_AK61, PIN_AJ58, PIN_AF61, PIN_AE58]
+    pcie_smbus:
+      pins: PIN_J52
+    pcie_tx_n:
+      pins: [PIN_BR56, PIN_BM53, PIN_BL56, PIN_BH53, PIN_BG56, PIN_BD53, PIN_BC56, PIN_AY53, PIN_AW56, PIN_AT53, PIN_AR56, PIN_AM53, PIN_AL56, PIN_AH53, PIN_AG56, PIN_AD53]
+    pcie_tx_p:
+      pins: [PIN_BP55, PIN_BN52, PIN_BK55, PIN_BJ52, PIN_BF55, PIN_BE52, PIN_BB55, PIN_BA52, PIN_AV55, PIN_AU52, PIN_AP55, PIN_AN52, PIN_AK55, PIN_AJ52, PIN_AF55, PIN_AE52]
+    pcie_wake:
+      pins: PIN_J50
+    qsfpa_ctrl:
+      pins:
+        initmode: PIN_DB21
+        scl: PIN_H21
+        sda: PIN_H23
+    qsfpa_refclk:
+      pins:
+        p: PIN_AJ12
+        n: PIN_AH11
+    qsfpa_rx_n:
+      pins: [PIN_BE8, PIN_BJ8, PIN_BH11, PIN_BM11, PIN_BN8, PIN_BU8, PIN_BT11, PIN_BY11]
+    qsfpa_rx_p:
+      pins: [PIN_BF7, PIN_BK7, PIN_BG10, PIN_BL10, PIN_BP7, PIN_BV7, PIN_BR10, PIN_BW10]
+    qsfpa_tx_n:
+      pins: [PIN_BE2, PIN_BJ2, PIN_BH5, PIN_BM5, PIN_BN2, PIN_BU2, PIN_BT5, PIN_BY5]
+    qsfpa_tx_p:
+      pins: [PIN_BF1, PIN_BK1, PIN_BG4, PIN_BL4, PIN_BP1, PIN_BV1, PIN_BR4, PIN_BW4]
+    qsfpb_ctrl:
+      pins:
+        initmode: PIN_DA18
+        scl: PIN_CY17
+        sda: PIN_H19
+    qsfpb_refclk:
+      pins:
+        p: PIN_AT13
+        n: PIN_AP13
+    qsfpb_rx_n:
+      pins: [PIN_AJ8, PIN_AN8, PIN_AM11, PIN_AT11, PIN_AU8, PIN_BA8, PIN_AY11, PIN_BD11]
+    qsfpb_rx_p:
+      pins: [PIN_AK7, PIN_AP7, PIN_AL10, PIN_AR10, PIN_AV7, PIN_BB7, PIN_AW10, PIN_BC10]
+    qsfpb_tx_n:
+      pins: [PIN_AJ2, PIN_AN2, PIN_AM5, PIN_AT5, PIN_AU2, PIN_BA2, PIN_AY5, PIN_BD5]
+    qsfpb_tx_p:
+      pins: [PIN_AK1, PIN_AP1, PIN_AL4, PIN_AR4, PIN_AV1, PIN_BB1, PIN_AW4, PIN_BC4]
+    sys_clk_p:
+      pins: PIN_CU50

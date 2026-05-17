@@ -23,3 +23,15 @@ Board:
     i2c_sda:
       pins:
         pin: J11
+    sfp_rxn:
+      pins:
+        pin: A3
+    sfp_rxp:
+      pins:
+        pin: A4
+    sfp_txn:
+      pins:
+        pin: A7
+    sfp_txp:
+      pins:
+        pin: A8

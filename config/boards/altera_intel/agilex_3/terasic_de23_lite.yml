@@ -6,7 +6,7 @@ Board:
   id: terasic_de23_lite
   pinBanks:
     sys_clk:
-      pins: PIN_A8
+      pins: PIN_BK32
     onboard_buttons:
       pins: [PIN_K26, PIN_K27, PIN_BK10, PIN_W12]
     onboard_switches:
