@@ -1,0 +1,19 @@
+# terasic_de25_nano pin map.
+# Source: Terasic user manual PDF
+#   ~/Terasic/DE25-Nano_User_manual_revB.pdf
+
+Board:
+  id: terasic_de25_nano
+  pinBanks:
+    sys_clk:
+      pins: PIN_BF23
+    onboard_buttons:
+      pins: [PIN_C8, PIN_C11]
+    onboard_switches:
+      pins: [PIN_DK24, PIN_DD24, PIN_DD27, PIN_DF27]
+    onboard_leds:
+      pins: [PIN_DF35, PIN_DJ32, PIN_DN22, PIN_DP23, PIN_DN25, PIN_DP25, PIN_DJ27, PIN_DP30]
+    hdmi_clk:
+      pins: PIN_DJ24
+    hdmi_data_p:
+      pins: [PIN_AV19, PIN_AT11, PIN_BE11, PIN_AV14, PIN_AT19, PIN_AT14, PIN_AV16, PIN_AV11, PIN_BH11, PIN_BE14, PIN_BE19, PIN_BH14, PIN_BV6, PIN_BJ23, PIN_BV4, PIN_BU23, PIN_BH16, PIN_DA1, PIN_BH19, PIN_CP2, PIN_CM1, PIN_DA2, PIN_CP1, PIN_CU2]

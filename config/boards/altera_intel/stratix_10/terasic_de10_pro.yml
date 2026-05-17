@@ -1,0 +1,13 @@
+# terasic_de10_pro pin map.
+# Source: Terasic user manual PDF
+#   ~/Terasic/DE10-Pro_User_Manual.pdf
+
+Board:
+  id: terasic_de10_pro
+  pinBanks:
+    onboard_buttons:
+      pins: [PIN_D24, PIN_D23]
+    onboard_switches:
+      pins: [PIN_C23, PIN_B23]
+    onboard_leds:
+      pins: [PIN_B24, PIN_A24, PIN_A25, PIN_A26]

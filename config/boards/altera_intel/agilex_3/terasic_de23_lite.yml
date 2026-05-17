@@ -1,15 +1,19 @@
 # terasic_de23_lite pin map.
-# Source: basics-graphics-music repo
-#   https://raw.githubusercontent.com/yuri-panchul/basics-graphics-music/main/boards/de23_lite/board_specific.qsf
+# Source: Terasic user manual PDF
+#   ~/Terasic/DE23_Lite_User_manual_revB.pdf
 
 Board:
   id: terasic_de23_lite
   pinBanks:
+    sys_clk:
+      pins: PIN_A8
     onboard_buttons:
       pins: [PIN_K26, PIN_K27, PIN_BK10, PIN_W12]
     onboard_switches:
       pins: [PIN_A37, PIN_B37, PIN_B26, PIN_A42, PIN_K32, PIN_A26, PIN_B27, PIN_A29, PIN_D32, PIN_A34]
-    onboard_uart:
-      pins:
-        tx: PIN_J1
-        rx: PIN_BH10
+    onboard_leds:
+      pins: [PIN_B39, PIN_B42, PIN_K35, PIN_F32, PIN_A19, PIN_B24, PIN_A24, PIN_A44, PIN_B34, PIN_D40]
+    hdmi_clk:
+      pins: PIN_A22
+    hdmi_data_p:
+      pins: [PIN_AC2, PIN_N1, PIN_P4, PIN_V2, PIN_P6, PIN_AA6, PIN_AD6, PIN_AA4, PIN_AB9, PIN_AC1, PIN_AF2, PIN_AF1, PIN_AG2, PIN_AK1, PIN_AK2, PIN_AM6, PIN_AR1, PIN_AR2, PIN_AV1, PIN_AE12, PIN_AH9, PIN_AJ4, PIN_AJ6, PIN_AH12]

@@ -1,0 +1,19 @@
+# terasic_de25_standard pin map.
+# Source: Terasic user manual PDF
+#   ~/Terasic/DE25-Standard_User_manual_revD.pdf
+
+Board:
+  id: terasic_de25_standard
+  pinBanks:
+    sys_clk:
+      pins: PIN_BM71
+    onboard_buttons:
+      pins: [PIN_BW59, PIN_CA59, PIN_CF71, PIN_CH71]
+    onboard_switches:
+      pins: [PIN_BM62, PIN_BP62, PIN_BH62, PIN_BH59, PIN_BM59, PIN_BK59, PIN_BU62, PIN_CF59, PIN_BU59, PIN_BR59]
+    onboard_leds:
+      pins: [PIN_CC71, PIN_BH78, PIN_CH69, PIN_CF69, PIN_CA62, PIN_CC62, PIN_CF62, PIN_BM69, PIN_CA71, PIN_BR62]
+    hdmi_clk:
+      pins: PIN_CH59
+    hdmi_data_p:
+      pins: [PIN_CD134, PIN_CD135, PIN_CG134, PIN_CG135, PIN_CH132, PIN_CF132, PIN_CF128, PIN_CK134, PIN_CL125, PIN_CF121, PIN_CF118, PIN_BU118, PIN_BR118, PIN_CA118, PIN_BW118, PIN_CL128, PIN_CL130, PIN_CK125, PIN_CK128, PIN_BF111, PIN_BH109, PIN_BE115, PIN_BF115, PIN_BU109]

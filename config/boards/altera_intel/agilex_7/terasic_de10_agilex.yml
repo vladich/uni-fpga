@@ -1,0 +1,15 @@
+# terasic_de10_agilex pin map.
+# Source: Terasic user manual PDF
+#   ~/Terasic/DE10-Agilex_User_Manual_revc.pdf
+
+Board:
+  id: terasic_de10_agilex
+  pinBanks:
+    onboard_buttons:
+      pins: [PIN_J54, PIN_G54]
+    onboard_switches:
+      pins: [PIN_H51, PIN_F51]
+    onboard_leds:
+      pins: [PIN_CR54, PIN_DB57, PIN_CY57, PIN_CU52]
+    onboard_leds_bracket:
+      pins: [PIN_CT57, PIN_CV55, PIN_CR56, PIN_CU56]
